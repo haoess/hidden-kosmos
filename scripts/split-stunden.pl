@@ -28,9 +28,9 @@ foreach my $file ( @ARGV ) {
 
     foreach my $session ( $xpc->findnodes('//tei:div[@type="session"]') ) {
         my $n    = $session->findvalue( '@n' );
-        my $data = $session->toString;
+        my $data = '<TEI xmlns="http://www.tei-c.org/ns/1.0"><text><body>' . $session->toString . '</body></text></TEI>';
 
-        open( my $fh, '>:utf8', "$target/$n.xml" ) or die $!;
+        open( my $fh, '>:utf8', "$target/$n.orig.xml" ) or die $!;
         print $fh $data;
         close $fh;
     }
