@@ -30,7 +30,7 @@ foreach my $file ( @ARGV ) {
         my $n    = $session->findvalue( '@n' );
         my $data = '<TEI xmlns="http://www.tei-c.org/ns/1.0"><text><body>' . $session->toString . '</body></text></TEI>';
 
-        open( my $fh, '>:utf8', "$target/$n.orig.xml" ) or die $!;
+        open( my $fh, '>:utf8', sprintf("%s/%s_%s.orig.xml", $target, $base, $n) ) or die $!;
         print $fh $data;
         close $fh;
     }

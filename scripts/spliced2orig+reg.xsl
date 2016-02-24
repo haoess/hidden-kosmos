@@ -30,7 +30,7 @@
 
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <!-- main: template: sub-token structure: ignore -->
-  <xsl:template match="moot|tei:moot|xlit|tei:xlit|toka|tei:toka|ner|tei:ner" priority="10"/>
+  <xsl:template match="moot|tei:moot|xlit|tei:xlit|toka|tei:toka|ner|tei:ner|mlatin|tei:mlatin" priority="10"/>
 
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <!-- main: template: sentence structure: just recurse -->
