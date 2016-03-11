@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="[% base %]">
+    <title>Hidden Kosmos — Reconstructing Alexander von Humboldt's »Kosmos-Lectures«</title>
+
+    <!-- Bootstrap -->
+    <link href="[% base %]static/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.2/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/fixedheader/2.1.2/css/dataTables.fixedHeader.css">
+
+    <style type="text/css">
+      #data td { vertical-align:top }
+      .persname { font-weight:bold }
+      /* Universität */
+      a[href*="libelt_hs6623ii_1828"],       *[class*="libelt_hs6623ii_1828"]       { color:#060 }
+      a[href*="nn_msgermqu2345_1827"],       *[class*="nn_msgermqu2345_1827"]       { color:#060 }
+      a[href*="nn_n0171w1_1828"],            *[class*="nn_n0171w1_1828"]            { color:#060 }
+      a[href*="nn_oktavgfeo79_1828"],        *[class*="nn_oktavgfeo79_1828"]        { color:#060 }
+      a[href*="parthey_msgermqu1711_1828"],  *[class*="parthey_msgermqu1711_1828"]  { color:#060 }
+
+      /* Singakademie */
+      a[href*="nn_msgermqu2124_1827"],       *[class*="nn_msgermqu2124_1827"]       { color:#f00 }
+      a[href*="hufeland_privatbesitz_1829"], *[class*="hufeland_privatbesitz_1829"] { color:#a00 }
+    </style>
+  </head>
+  <body>
+ 
+    <div class="container">
+      [% content %]
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="[% base %]static/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript" src="//cdn.datatables.net/fixedheader/2.1.2/js/dataTables.fixedHeader.min.js"></script>
+
+    <script type="text/javascript">
+      // http://stackoverflow.com/questions/25944854/sorting-alphabetical-order-to-ignore-empty-cells-datatables
+      jQuery.extend( jQuery.fn.dataTableExt.oSort, {
+        "non-empty-string-asc": function (str1, str2) {
+          if(str1 == "")
+            return 1;
+          if(str2 == "")
+            return -1;
+          return ((str1 < str2) ? -1 : ((str1 > str2) ? 1 : 0));
+        },
+ 
+        "non-empty-string-desc": function (str1, str2) {
+          if(str1 == "")
+            return 1;
+          if(str2 == "")
+            return -1;
+          return ((str1 < str2) ? 1 : ((str1 > str2) ? -1 : 0));
+        },
+
+        "count-asc": function(str1, str2) {
+          var count1 = parseInt(str1.replace( /[\s\S]*\((\d+)\)[\s\S]*/, '$1' ));
+          var count2 = parseInt(str2.replace( /[\s\S]*\((\d+)\)[\s\S]*/, '$1' ));
+          return ((count1 < count2) ? 1 : ((count1 > count2) ? -1 : 0));
+        },
+
+        "count-desc": function(str1, str2) {
+          var count1 = parseInt(str1.replace( /[\s\S]*\((\d+)\)[\s\S]*/, '$1' ));
+          var count2 = parseInt(str2.replace( /[\s\S]*\((\d+)\)[\s\S]*/, '$1' ));
+          return ((count1 < count2) ? -1 : ((count1 > count2) ? 1 : 0));
+        }
+      } );
+
+      $(document).ready(function() {
+        var t = $('#data').dataTable({
+          'pageLength': -1,
+          'paginate': false,
+          'bLengthChange': false,
+          'aoColumns': [
+            { 'sWidth': '240px', 'sType': 'non-empty-string', 'sClass': 'persname' },
+            { 'sWidth': '120px', 'sType': 'count' },
+            { 'sWidth': '200px' },
+            { 'sWidth': '150px' }
+          ]
+        });
+        new $.fn.dataTable.FixedHeader( t );
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<h1>Personenverzeichnis „Hidden Kosmos“</h1>
+
+<div class="row">
+  <div class="col-md-4">
+    <p class="bg-info" style="padding:10px">
+      <b>Alle Dokumente</b><br />
+      Auszeichnungen mit <tt>&lt;persName&gt;</tt> insgesamt: [% stat.total | html %]<br />
+      <tt>&lt;persName&gt;</tt>s mit <tt>@ref</tt>: [% stat.with_ref | html %]<br />
+      <tt>&lt;persName&gt;</tt>s ohne <tt>@ref</tt>: [% stat.without_ref | html %]<br />
+      unique Personen: [% persons.keys.size - 1 %] (+ [% stat.without_ref %] ohne <tt>@ref</tt>)
+    </p>
+  </div>
+  [% FOREACH entry IN stat.file.pairs %]
+    <div class="col-md-4">
+      <p class="bg-info" style="padding:10px">
+        <b class="[% entry.key | html %]">[% entry.key | html %]</b><br />
+        Auszeichnungen mit <tt>&lt;persName&gt;</tt> insgesamt: [% entry.value.total | html %]<br />
+        <tt>&lt;persName&gt;</tt>s mit <tt>@ref</tt>: [% entry.value.with_ref | html %]<br />
+        <tt>&lt;persName&gt;</tt>s ohne <tt>@ref</tt>: [% entry.value.without_ref | html %]<br />
+        unique Personen: [% entry.value.unique.keys.size - 1 %] (+ [% entry.value.without_ref %] ohne <tt>@ref</tt>)
+      </p>
+    </div>
+  [% END %]
+</div>
+
+<table id="data" class="display compact" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Vorkommen</th>
+      <th>Formen</th>
+      <th>Normdaten</th>
+    </tr>
+  </thead>
+  <tbody>
+    [% FOREACH person IN persons.pairs %]
+      [% NEXT IF person.key == 'nognd' %]
+      <tr>
+        <td>[% person.value.preferred | html %]</td>
+        <td style="text-align:right">
+          [% SET person_count = 0; FOREACH count IN person.value.count.pairs; SET person_count = person_count + count.value %]
+            <span class="[% count.key | html %]">[% count.value %]</span>
+            [% ' + ' UNLESS loop.last %]
+            [% IF loop.last %]
+              ([% person_count %])
+            [% END %]
+          [% END %]
+        </td>
+        <td>
+          [% FOREACH form IN person.value.forms %]
+            [% form | html %]
+            [% FOREACH hit IN person.value.hits.$form %]<a href="http://www.deutschestextarchiv.de/[% hit.doc %]/[% hit.facs %]">&#8599;</a>[% ', ' UNLESS loop.last %][% END %]
+            <br />
+          [% END %]
+        </td>
+        <td>
+          [% IF person.key.search('^https?:') %]
+            <a href="[% person.key | html %]">[% person.key | html %]</a>
+          [% ELSE %]
+            [% person.key | html %]
+          [% END %]
+        </td>
+      </tr>
+    [% END %]
+    [% FOREACH person IN persons.nognd.hits.pairs %]
+      [% FOREACH nogndhit IN person.value %]
+        <tr>
+          <td>[% person.key | html %]</td>
+          <td style="text-align:right"><span class="[% nogndhit.doc | html %]">1</span> (1)</td>
+          <td>
+            [% person.key | html %]
+            <a href="http://www.deutschestextarchiv.de/[% nogndhit.doc %]/[% nogndhit.facs %]">&#8599;</a>
+          </td>
+          <td>-</td>
+        </tr>
+      [% END %]
+    [% END %]
+  </tbody>
+</table>
