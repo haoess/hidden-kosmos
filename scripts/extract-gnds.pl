@@ -23,7 +23,7 @@ foreach my $file ( @ARGV ) {
     my $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
     $xpc->registerNs( 'tei', $teins );
 
-    foreach my $ref ( $xpc->findnodes('//tei:persName/@ref') ) {
+    foreach my $ref ( $xpc->findnodes('//tei:text//tei:persName/@ref') ) {
         my $value = $ref->value;
         next unless $value;
 
