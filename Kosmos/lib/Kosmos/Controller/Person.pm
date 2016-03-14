@@ -52,8 +52,10 @@ sub complete :Private {
         my $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
         $xpc->registerNs( 'tei', $teins );
 
-        foreach my $persname ( $xpc->findnodes('//tei:text//tei:persName') ) {
+        foreach my $persname ( $xpc->findnodes('//tei:text//tei:persName[not(ancestor::tei:note[@type="editorial"])]') ) {
             my $persname_clone = $persname->cloneNode(1);
+
+            # remove <note>s within <persName>
             $persname_clone->removeChild( $_ ) for $xpc->findnodes( 'tei:note', $persname_clone );
 
             $stat{ total }++;
