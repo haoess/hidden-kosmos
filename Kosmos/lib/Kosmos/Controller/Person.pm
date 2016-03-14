@@ -52,17 +52,23 @@ sub complete :Private {
         my $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
         $xpc->registerNs( 'tei', $teins );
 
-        foreach my $persname ( $xpc->findnodes('//tei:text//tei:persName[not(ancestor::tei:note[@type="editorial"])]') ) {
-            my $persname_clone = $persname->cloneNode(1);
+        foreach my $persname ( $xpc->findnodes('//tei:text//tei:persName[not(ancestor::tei:note[@type="editorial"]) and not(ancestor::tei:del)]') ) {
+            my @unbind = (
+                '*//tei:note',
+                '*//tei:del',
+            );
 
-            # remove <note>s within <persName>
-            $persname_clone->removeChild( $_ ) for $xpc->findnodes( 'tei:note', $persname_clone );
+            foreach my $expr ( @unbind ) {
+                foreach my $node ( $xpc->findnodes( $expr, $persname ) ) {
+                    $node->unbindNode();
+                }
+            }
 
             $stat{ total }++;
             $stat{ file }{ $basename }{ total }++;
-            my $text = $persname_clone->textContent;
+            my $text = $persname->textContent;
             
-            my $ref = $persname_clone->getAttribute('ref');
+            my $ref = $persname->getAttribute('ref');
 
             $stat{ with_ref }++    if $ref;
             $stat{ without_ref }++ if !$ref;
