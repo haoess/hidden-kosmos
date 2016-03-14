@@ -52,10 +52,13 @@ sub complete :Private {
         my $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
         $xpc->registerNs( 'tei', $teins );
 
-        foreach my $persname ( $xpc->findnodes('//tei:text//tei:persName[not(ancestor::tei:note[@type="editorial"]) and not(ancestor::tei:del)]') ) {
+        my @nodes = $xpc->findnodes('//tei:text//tei:persName//tei:persName');
+        push @nodes, $xpc->findnodes('//tei:text//tei:persName[not(ancestor::tei:note[@type="editorial"]) and not(ancestor::tei:del)] | //tei:text//tei:persName//tei:persName');
+
+        foreach my $persname ( @nodes ) {
             my @unbind = (
-                '*//tei:note',
-                '*//tei:del',
+                'descendant::tei:note',
+                'descendant::tei:del',
             );
 
             foreach my $expr ( @unbind ) {
@@ -63,6 +66,11 @@ sub complete :Private {
                     $node->unbindNode();
                 }
             }
+
+            my ( $pb ) = $xpc->findnodes( 'preceding::tei:pb[1]', $persname );
+            next unless $pb; # unbinded node
+            my $facs = $pb->getAttribute('facs');
+            $facs =~ s/^#f(?:0+)//;
 
             $stat{ total }++;
             $stat{ file }{ $basename }{ total }++;
@@ -76,10 +84,6 @@ sub complete :Private {
             $stat{ file }{ $basename }{ without_ref }++ if !$ref;
             $ref ||= 'nognd';
             $stat{ file }{ $basename }{ unique }{ $ref }++;
-
-            my ( $pb ) = $xpc->findnodes( 'preceding::tei:pb[1]', $persname );
-            my $facs = $pb->getAttribute('facs');
-            $facs =~ s/^#f(?:0+)//;
 
             my @refs = split /\s+/, $ref;
             foreach my $value ( @refs ) {
