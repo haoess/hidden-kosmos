@@ -36,6 +36,9 @@ sub complete :Private {
     my ( $self, $c ) = @_;
 
     my @files = glob '/home/wiegand/src/hidden-kosmos/xml/{parthey_msgermqu1711_1828,nn_msgermqu2124_1827,hufeland_privatbesitz_1829}*.xml';
+
+    my $latest;
+
     my $teins = 'http://www.tei-c.org/ns/1.0';
 
     my %persons = ();
@@ -47,6 +50,10 @@ sub complete :Private {
             die "Could not parse $file: $@";
             next;
         }
+
+        # timestamp of newest file
+        $latest = (stat $file)[9] if (stat $file)[9] > $latest;
+
         my $basename = basename $file, '.TEI-P5.xml';
 
         my $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
@@ -75,7 +82,7 @@ sub complete :Private {
             $stat{ total }++;
             $stat{ file }{ $basename }{ total }++;
             my $text = $persname->textContent;
-            
+
             my $ref = $persname->getAttribute('ref');
 
             $stat{ with_ref }++    if $ref;
@@ -114,15 +121,28 @@ sub complete :Private {
             next;
         }
         my $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
+
         my ( $preferred ) = $xpc->findnodes('//gndo:preferredNameForThePerson');
         next unless $preferred;
         $persons{ $key }{ preferred } = $preferred->textContent;
+
+        my ( $birth ) = $xpc->findnodes('//gndo:dateOfBirth');
+        $persons{ $key }{ birth } = $birth->textContent if $birth;
+
+        my ( $death ) = $xpc->findnodes('//gndo:dateOfDeath');
+        $persons{ $key }{ death } = $death->textContent if $death;
+
+        for ( $persons{ $key }{ birth }, $persons{ $key }{ death } ) {
+            next unless $_;
+            s/^-?0*(\d+).*/$1/;
+        }
     }
 
     $c->stash(
         persons        => \%persons,
         stat           => \%stat,
         normalize_text => \&normalize_text,
+        latest         => $latest,
     );
 }
 

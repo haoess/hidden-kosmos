@@ -3,7 +3,7 @@
 <div class="row">
   <div class="col-md-4">
     <p class="bg-info" style="padding:10px">
-      <b>Alle Dokumente</b><br />
+      <b>Alle Dokumente</b> <span style="font-size:smaller">(Stand: [% USE date; date.format(latest, '%Y-%m-%d %H:%M:%S') | html %])</span><br />
       Auszeichnungen mit <tt>&lt;persName&gt;</tt> insgesamt: [% stat.total | html %]<br />
       <tt>&lt;persName&gt;</tt>s mit <tt>@ref</tt>: [% stat.with_ref | html %]<br />
       <tt>&lt;persName&gt;</tt>s ohne <tt>@ref</tt>: [% stat.without_ref | html %]<br />
@@ -36,7 +36,19 @@
     [% FOREACH person IN persons.pairs %]
       [% NEXT IF person.key == 'nognd' %]
       <tr>
-        <td>[% person.value.preferred OR 'N/A' | html %]</td>
+        <td>
+          [% person.value.preferred OR 'N/A' | html %]
+          [% IF person.value.birth OR person.value.death %]
+            <br />
+            <span style="font-weight:normal">([% IF person.value.birth AND person.value.death;
+                  person.value.birth _ '–' _ person.value.death | html;
+                ELSIF person.value.birth;
+                  '*' _ person.value.birth | html;
+                ELSE;
+                  '†' _ person.value.death | html;
+                END %])</span>
+          [% END %]
+        </td>
         <td style="text-align:right">
           [% SET person_count = 0; FOREACH count IN person.value.count.pairs; SET person_count = person_count + count.value %]
             <span class="[% count.key | html %]">[% count.value %]</span>
