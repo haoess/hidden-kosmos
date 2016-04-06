@@ -55,52 +55,6 @@
     <script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" language="javascript" src="//cdn.datatables.net/fixedheader/2.1.2/js/dataTables.fixedHeader.min.js"></script>
 
-    <script type="text/javascript">
-      // http://stackoverflow.com/questions/25944854/sorting-alphabetical-order-to-ignore-empty-cells-datatables
-      jQuery.extend( jQuery.fn.dataTableExt.oSort, {
-        "non-empty-string-asc": function (str1, str2) {
-          if(str1 == "N/A")
-            return 1;
-          if(str2 == "N/A")
-            return -1;
-          return ((str1 < str2) ? -1 : ((str1 > str2) ? 1 : 0));
-        },
- 
-        "non-empty-string-desc": function (str1, str2) {
-          if(str1 == "N/A")
-            return 1;
-          if(str2 == "N/A")
-            return -1;
-          return ((str1 < str2) ? 1 : ((str1 > str2) ? -1 : 0));
-        },
-
-        "count-asc": function(str1, str2) {
-          var count1 = parseInt(str1.replace( /[\s\S]*\((\d+)\)[\s\S]*/, '$1' ));
-          var count2 = parseInt(str2.replace( /[\s\S]*\((\d+)\)[\s\S]*/, '$1' ));
-          return ((count1 < count2) ? 1 : ((count1 > count2) ? -1 : 0));
-        },
-
-        "count-desc": function(str1, str2) {
-          var count1 = parseInt(str1.replace( /[\s\S]*\((\d+)\)[\s\S]*/, '$1' ));
-          var count2 = parseInt(str2.replace( /[\s\S]*\((\d+)\)[\s\S]*/, '$1' ));
-          return ((count1 < count2) ? -1 : ((count1 > count2) ? 1 : 0));
-        }
-      } );
-
-      $(document).ready(function() {
-        var t = $('#data').dataTable({
-          'pageLength': -1,
-          'paginate': false,
-          'bLengthChange': false,
-          'aoColumns': [
-            { 'sWidth': '240px', 'sType': 'non-empty-string', 'sClass': 'persname' },
-            { 'sWidth': '120px', 'sType': 'count' },
-            { 'sWidth': '200px' },
-            { 'sWidth': '150px' }
-          ]
-        });
-        new $.fn.dataTable.FixedHeader( t );
-      });
-    </script>
+    [% PROCESS js %]
   </body>
 </html>
