@@ -93,7 +93,7 @@
     </xsl:if>
     <xsl:if test="desc">
       <p style="font-size:smaller">
-        <xsl:value-of select="desc"/>
+        <xsl:apply-templates select="desc"/>
         <xsl:if test="desc/@source">
           <xsl:text> (</xsl:text>
           <xsl:element name="a">
@@ -138,6 +138,20 @@
     </xsl:if>
     <xsl:text>)</xsl:text>
   </xsl:if>
+</xsl:template>
+
+<xsl:template match="bibl">
+  <xsl:element name="a">
+    <xsl:attribute name="href"><xsl:value-of select="@ref"/></xsl:attribute>
+    <xsl:choose>
+      <xsl:when test="text()">
+        <xsl:apply-templates/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>(vgl.)</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:element>
 </xsl:template>
 
 </xsl:stylesheet>
