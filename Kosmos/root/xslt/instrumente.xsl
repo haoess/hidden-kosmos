@@ -39,7 +39,7 @@
     </td>
     <td>
       <xsl:for-each select="exemplar">
-        <div><xsl:apply-templates select="current()"/></div>
+        <xsl:apply-templates select="current()"/>
       </xsl:for-each>
     </td>
   </tr>
@@ -81,14 +81,30 @@
 </xsl:template>
 
 <xsl:template match="exemplar">
-  <xsl:if test="persName">
-    <xsl:for-each select="persName">
-      <xsl:apply-templates select="current()"/>
-      <xsl:if test="position() != last()">
-        <xsl:text>, </xsl:text>
-      </xsl:if>
-    </xsl:for-each>
-  </xsl:if>
+  <div class="exemplar">
+    <xsl:if test="persName">
+      <xsl:for-each select="persName">
+        <xsl:apply-templates select="current()"/>
+        <xsl:if test="position() != last()">
+          <xsl:text>, </xsl:text>
+        </xsl:if>
+      </xsl:for-each>
+      <br />
+    </xsl:if>
+    <xsl:if test="desc">
+      <p style="font-size:smaller">
+        <xsl:value-of select="desc"/>
+        <xsl:if test="desc/@source">
+          <xsl:text> (</xsl:text>
+          <xsl:element name="a">
+            <xsl:attribute name="href"><xsl:value-of select="desc/@source"/></xsl:attribute>
+            <xsl:text>Quelle</xsl:text>
+          </xsl:element>
+          <xsl:text>)</xsl:text>
+        </xsl:if>
+      </p>
+    </xsl:if>
+  </div>
 </xsl:template>
 
 <xsl:template match="persName">
