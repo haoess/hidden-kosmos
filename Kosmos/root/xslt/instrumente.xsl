@@ -65,7 +65,7 @@
     <xsl:otherwise>
       <xsl:element name="a">
         <xsl:attribute name="href">http://kaskade.dwds.de/dstar/dta/dstar.perl?fmt=html&amp;q=<xsl:value-of select="text()"/>+%23has%5Bflags%2C%2Favhkv%2F%5D</xsl:attribute>
-        <xsl:text>DTA</xsl:text>
+        <xsl:text>Nachschriften</xsl:text>
       </xsl:element>
     </xsl:otherwise>
   </xsl:choose>
