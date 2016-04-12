@@ -31,11 +31,11 @@
     <td><xsl:apply-templates select="name"/></td>
     <td><xsl:apply-templates select="alternative_names"/></td>
     <td>
-      <xsl:apply-templates select="avhkv-grep"/>
-      <xsl:if test="avhkv-grep/text() != 'no hit' and dingler-grep/@ref">
+      <xsl:apply-templates select="grep[@type='avhkv']"/>
+      <xsl:if test="grep[@type='avhkv']/text() != 'no hit' and grep[@type='humboldt']/@ref">
         <xsl:text>, </xsl:text>
       </xsl:if>
-      <xsl:apply-templates select="dingler-grep"/>
+      <xsl:apply-templates select="grep[@type='humboldt']"/>
     </td>
     <td>
       <xsl:for-each select="exemplar">
@@ -59,7 +59,7 @@
   </xsl:choose>
 </xsl:template>
 
-<xsl:template match="avhkv-grep">
+<xsl:template match="grep[@type='avhkv']">
   <xsl:choose>
     <xsl:when test="text() = 'no hit'"/>
     <xsl:otherwise>
@@ -71,7 +71,20 @@
   </xsl:choose>
 </xsl:template>
 
-<xsl:template match="dingler-grep">
+<xsl:template match="grep[@type='humboldt']">
+  <xsl:choose>
+    <xsl:when test="text() = 'no hit'"/>
+    <xsl:otherwise>
+      <xsl:element name="a">
+        <xsl:attribute name="href">http://kaskade.dwds.de/dstar/dta/dstar.perl?fmt=html&amp;q=<xsl:value-of select="text()"/>+%23has%5Bauthor%2C%2Fhumboldt%2Fi%5D</xsl:attribute>
+        <xsl:text>Humboldt-Korpus</xsl:text>
+      </xsl:element>
+    </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+
+
+<xsl:template match="grep[@type='dingler']">
   <xsl:if test="@ref">
     <xsl:element name="a">
       <xsl:attribute name="href"><xsl:value-of select="@ref"/></xsl:attribute>
