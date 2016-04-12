@@ -119,21 +119,12 @@
       <xsl:apply-templates/>
     </xsl:otherwise>
   </xsl:choose>
-  <xsl:if test="@source or @gnd">
+  <xsl:if test="@source">
     <xsl:text> (</xsl:text>
     <xsl:if test="@source">
       <xsl:element name="a">
         <xsl:attribute name="href"><xsl:value-of select="@source"/></xsl:attribute>
         <xsl:text>Quelle</xsl:text>
-      </xsl:element>
-    </xsl:if>
-    <xsl:if test="@gnd">
-      <xsl:if test="@source">
-        <xsl:text>, </xsl:text>
-      </xsl:if>
-      <xsl:element name="a">
-        <xsl:attribute name="href">http://d-nb.info/<xsl:value-of select="@gnd"/></xsl:attribute>
-        <xsl:text>GND</xsl:text>
       </xsl:element>
     </xsl:if>
     <xsl:text>)</xsl:text>
@@ -153,5 +144,15 @@
     </xsl:choose>
   </xsl:element>
 </xsl:template>
+
+<xsl:template match="placeName">
+  <xsl:element name="a">
+    <xsl:attribute name="href"><xsl:value-of select="@ref"/></xsl:attribute>
+      <xsl:if test="text()">
+        <xsl:apply-templates/>
+      </xsl:if>
+  </xsl:element>
+</xsl:template>
+
 
 </xsl:stylesheet>
