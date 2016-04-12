@@ -94,15 +94,7 @@
     <xsl:if test="desc">
       <p style="font-size:smaller">
         <xsl:apply-templates select="desc"/>
-        <xsl:if test="desc/@source">
-          <xsl:text> (</xsl:text>
-          <xsl:element name="a">
-            <xsl:attribute name="href"><xsl:value-of select="desc/@source"/></xsl:attribute>
-            <xsl:text>Quelle</xsl:text>
-          </xsl:element>
-          <xsl:text>)</xsl:text>
-        </xsl:if>
-      </p>
+              </p>
     </xsl:if>
   </div>
 </xsl:template>
