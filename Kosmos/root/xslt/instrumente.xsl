@@ -159,5 +159,15 @@
   </xsl:element>
 </xsl:template>
 
+<xsl:template match="orgName">
+  <xsl:element name="a">
+    <xsl:attribute name="href"><xsl:value-of select="@ref"/></xsl:attribute>
+      <xsl:if test="text()">
+        <xsl:apply-templates/>
+      </xsl:if>
+  </xsl:element>
+</xsl:template>
+
+
 
 </xsl:stylesheet>
