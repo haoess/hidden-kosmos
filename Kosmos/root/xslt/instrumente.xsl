@@ -32,7 +32,7 @@
     <td><xsl:apply-templates select="alternative_names"/></td>
     <td>
       <xsl:apply-templates select="grep[@type='avhkv']"/>
-      <xsl:if test="grep[@type='avhkv']/text() != 'no hit' and grep[@type='humboldt']/@ref">
+      <xsl:if test="grep[@type='avhkv']/text() != 'no hit' and grep[@type='humboldt']/text()">
         <xsl:text>, </xsl:text>
       </xsl:if>
       <xsl:apply-templates select="grep[@type='humboldt']"/>
