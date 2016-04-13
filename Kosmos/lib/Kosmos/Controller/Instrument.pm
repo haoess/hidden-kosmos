@@ -4,6 +4,7 @@ use namespace::autoclean;
 
 BEGIN { extends 'Catalyst::Controller'; }
 
+use URI::Escape;
 use XML::LibXML;
 use XML::LibXSLT;
 
@@ -24,7 +25,9 @@ Catalyst Controller.
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
-    my $xslt       = XML::LibXSLT->new;
+    my $xslt = XML::LibXSLT->new;
+    $xslt->register_function( 'urn:k', 'urlencode', \&URI::Escape::uri_escape_utf8 );
+    
     my $style_doc  = XML::LibXML->load_xml( location => $c->path_to('root/xslt/instrumente.xsl'), no_cdata => 1 );
     my $stylesheet = $xslt->parse_stylesheet( $style_doc );
 

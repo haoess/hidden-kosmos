@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:k="urn:k" version="1.0">
 
 <xsl:output
   method="html" media-type="text/html"
@@ -32,7 +32,7 @@
     <td><xsl:apply-templates select="alternative_names"/></td>
     <td>
       <xsl:apply-templates select="grep[@type='avhkv']"/>
-      <xsl:if test="grep[@type='avhkv']/text() != 'no hit' and grep[@type='humboldt']/@ref">
+      <xsl:if test="grep[@type='avhkv']/text() != 'no hit' and grep[@type='humboldt']/text()">
         <xsl:text>, </xsl:text>
       </xsl:if>
       <xsl:apply-templates select="grep[@type='humboldt']"/>
@@ -64,7 +64,7 @@
     <xsl:when test="text() = 'no hit'"/>
     <xsl:otherwise>
       <xsl:element name="a">
-        <xsl:attribute name="href">http://kaskade.dwds.de/dstar/dta/dstar.perl?fmt=html&amp;q=<xsl:value-of select="text()"/>+%23has%5Bflags%2C%2Favhkv%2F%5D</xsl:attribute>
+        <xsl:attribute name="href">http://kaskade.dwds.de/dstar/dta/dstar.perl?fmt=html&amp;q=<xsl:value-of select="k:urlencode(text())"/>+%23has%5Bflags%2C%2Favhkv%2F%5D</xsl:attribute>
         <xsl:text>Nachschriften</xsl:text>
       </xsl:element>
     </xsl:otherwise>
@@ -76,7 +76,7 @@
     <xsl:when test="text() = 'no hit'"/>
     <xsl:otherwise>
       <xsl:element name="a">
-        <xsl:attribute name="href">http://kaskade.dwds.de/dstar/dta/dstar.perl?fmt=html&amp;q=<xsl:value-of select="text()"/>+%23has%5Bauthor%2C%2Fhumboldt%2Fi%5D</xsl:attribute>
+        <xsl:attribute name="href">http://kaskade.dwds.de/dstar/dta/dstar.perl?fmt=html&amp;q=<xsl:value-of select="k:urlencode(text())"/>+%23has%5Bauthor%2C%2Fhumboldt%2Fi%5D</xsl:attribute>
         <xsl:text>Humboldt-Korpus</xsl:text>
       </xsl:element>
     </xsl:otherwise>
