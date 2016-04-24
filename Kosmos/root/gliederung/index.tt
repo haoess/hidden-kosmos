@@ -1,0 +1,51 @@
+<style type="text/css">
+  .cell-day { text-align:right; padding:4px }
+  .cell-day:hover { background:#ccc }
+</style>
+
+<div>
+  <div style="float:right">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+  </div>
+  <h1>Gliederung der Vorträge „Hidden Kosmos“</h1>
+</div>
+
+[% FOR y IN [ 1827..1828 ] %]
+  <h2>[% y | html %]</h2>
+  <div class="row">
+    [% FOR m IN [ 1..12 ] %]
+      [% NEXT IF y == 1827 AND m < 10 %]
+      [% NEXT IF y == 1828 AND m > 4 %]
+      <div class="col-md-3" style="height:220px">
+        [% USE dt = DateTime( year => y, month => m, day => 1, locale => 'de_DE' ) %]
+        <table border="0">
+          <tr>
+            <th colspan="7" style="background:#f3f3fb">[% dt.month_name %]</th>
+          </tr>
+          [% cnt = 0; WHILE (dt.mon == m) %]
+            [% '<tr>' IF cnt % 7 == 0  %]
+              [% IF dt.day == 1 AND dt.day_of_week != 1; cnt = dt.day_of_week_0 %]
+                <td colspan="[% dt.day_of_week_0 %]" style="background:#f9f9f9"></td>
+              [% END %]
+              <td class="cell-day">
+                <button type="button" class="btn
+                  [% IF map.${ dt.ymd }.place == 'sa';
+                      'btn-danger';
+                    ELSIF map.${ dt.ymd }.place == 'uni';
+                      'btn-success';
+                    ELSE;
+                      'btn-default';
+                    END %] btn-xs" data-toggle="modal" data-target="#event" data-day="[% dt.strftime('%Y-%m-%d') | html  %]">[% dt.strftime('%e').replace(' ', '&nbsp;&nbsp;') %]</button>
+              </td>
+            [% '</tr>' IF cnt % 7 == 6  %]
+            [% SET foo = dt.add( days => 1 ); SET cnt = cnt + 1 %]
+          [% END %]
+          [% IF dt.day_of_week != 1 %]
+            <td colspan="[% 7 - dt.day_of_week_0 %]" style="background:#f9f9f9"></td>
+          [% END %]
+          </tr>
+        </table>
+      </div>
+    [% END %]
+  </div>
+[% END %]
