@@ -12,34 +12,12 @@
 
 <div class="row">
   <div class="col-md-6">
-    <h2>Singakademie</h2>
-    [% FOREACH date IN map.keys.sort; NEXT UNLESS map.$date.sa %]
-      <h3>
-        [% date | html %]:
-        [% map.$date.sa.num %]. Stunde
-        [% FOREACH ref IN map.$date.sa.refs %]
-          <a href="[% ref %]">↗</a>
-        [% END %]
-      </h3>
-      [% FOREACH topic IN map.$date.topics %]
-        <div style="margin-left:[% (topic.level - 1) * 20 %]px">[% topic.value | html %]</div>
-      [% END %]
-    [% END %]
-  </div>
-  <div class="col-md-6">
-    <h2>Universität</h2>
-    [% FOREACH date IN map.keys.sort; NEXT UNLESS map.$date.uni %]
-      <h3>
-        [% date | html %]:
-        [% map.$date.uni.num %]. Stunde
-        [% FOREACH ref IN map.$date.uni.refs %]
-          <a href="[% ref %]">↗</a>
-        [% END %]
-      </h3>
-      [% FOREACH topic IN map.$date.topics %]
-        <div style="margin-left:[% (topic.level - 1) * 20 %]px">[% topic.value | html %]</div>
-      [% END %]
-    [% END %]
+    <p style="padding:5px;border:1px solid #ccc;background:#f0f0f0;margin-top:20px">
+      Sämtliche Recherchen geschahen und geschehen im Rahmen des Promotionsvorhabens
+      „‚... ein Gemisch von Gehörtem und Selbstzugesetztem‘: Nachschriften der
+      ‚Kosmos-Vorträge‘ A. v. Humboldts – Quellen zu deren Rekonstruktion"
+      [Arbeitstitel] von Christian Thomas (Humboldt-Universität zu Berlin).“
+    </p>
   </div>
 </div>
 
@@ -82,3 +60,36 @@
     [% END %]
   </div>
 [% END %]
+
+<div class="row">
+  <div class="col-md-6">
+    <h2>Singakademie</h2>
+    [% FOREACH date IN map.keys.sort; NEXT UNLESS map.$date.sa %]
+      <h3>
+        [% date | html %]:
+        [% map.$date.sa.num %]. Stunde
+        [% FOREACH ref IN map.$date.sa.refs %]
+          <a href="[% ref %]">↗</a>
+        [% END %]
+      </h3>
+      [% FOREACH topic IN map.$date.topics %]
+        <div style="margin-left:[% (topic.level - 1) * 20 %]px">[% topic.value | html %]</div>
+      [% END %]
+    [% END %]
+  </div>
+  <div class="col-md-6">
+    <h2>Universität</h2>
+    [% FOREACH date IN map.keys.sort; NEXT UNLESS map.$date.uni %]
+      <h3>
+        [% date | html %]:
+        [% map.$date.uni.num %]. Stunde
+        [% FOREACH ref IN map.$date.uni.refs %]
+          <a href="[% ref %]">↗</a>
+        [% END %]
+      </h3>
+      [% FOREACH topic IN map.$date.topics %]
+        <div style="margin-left:[% (topic.level - 1) * 20 %]px">[% topic.value | html %]</div>
+      [% END %]
+    [% END %]
+  </div>
+</div>
