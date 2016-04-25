@@ -25,19 +25,33 @@ Catalyst Controller.
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
-    $c->forward( 'complete' );
+    my @files = glob '/home/wiegand/src/hidden-kosmos/xml/{parthey_msgermqu1711_1828,nn_msgermqu2124_1827,hufeland_privatbesitz_1829}*.xml';
+
+    $c->forward( 'calc', [ \@files ] );
+}
+
+sub complete :Local {
+    my ( $self, $c ) = @_;
+
+    my @files = glob '/home/wiegand/src/hidden-kosmos/xml/*.xml';
+
+    $c->forward( 'calc', [ \@files ] );
+    $c->stash(
+        template => 'person/index.tt',
+    );
 }
 
 =head2 complete
 
 =cut
 
-sub complete :Private {
-    my ( $self, $c ) = @_;
+sub calc :Private {
+    my ( $self, $c, $files ) = @_;
 
-    my @files = glob '/home/wiegand/src/hidden-kosmos/xml/{parthey_msgermqu1711_1828,nn_msgermqu2124_1827,hufeland_privatbesitz_1829}*.xml';
+    my @files = @$files;
+    use Data::Dumper; warn Dumper \@files;
 
-    my $latest;
+    my $latest = 0;
 
     my $teins = 'http://www.tei-c.org/ns/1.0';
 
