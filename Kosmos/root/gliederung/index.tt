@@ -10,6 +10,39 @@
   <h1>Gliederung der Vorträge „Hidden Kosmos“</h1>
 </div>
 
+<div class="row">
+  <div class="col-md-6">
+    <h2>Singakademie</h2>
+    [% FOREACH date IN map.keys.sort; NEXT UNLESS map.$date.sa %]
+      <h3>
+        [% date | html %]:
+        [% map.$date.sa.num %]. Stunde
+        [% FOREACH ref IN map.$date.sa.refs %]
+          <a href="[% ref %]">↗</a>
+        [% END %]
+      </h3>
+      [% FOREACH topic IN map.$date.topics %]
+        <div style="margin-left:[% (topic.level - 1) * 20 %]px">[% topic.value | html %]</div>
+      [% END %]
+    [% END %]
+  </div>
+  <div class="col-md-6">
+    <h2>Universität</h2>
+    [% FOREACH date IN map.keys.sort; NEXT UNLESS map.$date.uni %]
+      <h3>
+        [% date | html %]:
+        [% map.$date.uni.num %]. Stunde
+        [% FOREACH ref IN map.$date.uni.refs %]
+          <a href="[% ref %]">↗</a>
+        [% END %]
+      </h3>
+      [% FOREACH topic IN map.$date.topics %]
+        <div style="margin-left:[% (topic.level - 1) * 20 %]px">[% topic.value | html %]</div>
+      [% END %]
+    [% END %]
+  </div>
+</div>
+
 [% FOR y IN [ 1827..1828 ] %]
   <h2>[% y | html %]</h2>
   <div class="row">
@@ -29,9 +62,9 @@
               [% END %]
               <td class="cell-day">
                 <button type="button" class="btn
-                  [% IF map.${ dt.ymd }.place == 'sa';
+                  [% IF map.${ dt.ymd }.sa;
                       'btn-danger';
-                    ELSIF map.${ dt.ymd }.place == 'uni';
+                    ELSIF map.${ dt.ymd }.uni;
                       'btn-success';
                     ELSE;
                       'btn-default';

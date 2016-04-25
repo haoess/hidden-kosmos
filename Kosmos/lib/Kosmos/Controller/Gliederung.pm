@@ -42,7 +42,7 @@ sub parse_uni :Private {
 
     open( my $fh, '<:utf8', '/home/wiegand/src/hidden-kosmos/lists/Gliederung_Universitaet.txt' ) or die $!;
 
-    my ( %last, %data, %hours );
+    my ( %last, %data, %hours, @topics );
 
     my $i = 0;
     while ( chomp(my $line = <$fh>) ) {
@@ -53,6 +53,10 @@ sub parse_uni :Private {
 
         foreach my $idx ( 0 .. scalar(@fields) - 1 ) {
             $data{ $fields[$idx] } = $split[$idx] || $last{ $fields[$idx] };
+            push @topics, {
+                level => reformat_level( $fields[$idx] ),
+                value => reformat_value( $data{ $fields[$idx] } ),
+            } if $fields[$idx] =~ /^div/ and $split[$idx];
         }
 
         if ( $data{stunde} != $last{stunde} ) {
@@ -60,15 +64,20 @@ sub parse_uni :Private {
                 datum                     => reformat_datum( $data{datum} ),
                 nn_n0171w1_1828           => reformat_facs( $data{iai_facs} ),
                 parthey_msgermqu1711_1828 => reformat_facs( $data{parthey_facs} ),
+                topics                    => [ @topics ],
             };
+            undef @topics;
         }
         %last = %data;
     }
 
     while ( my ($k, $v) = each %hours ) {
         $c->stash->{map}{ $v->{datum} } = {
-            $k    => [ 'http://www.deutschestextarchiv.de/nn_n0171w1_1828/'.$v->{nn_n0171w1_1828}, 'http://www.deutschestextarchiv.de/parthey_msgermqu1711_1828/'.$v->{parthey_msgermqu1711_1828} ],
-            place => 'uni',
+            uni => {
+                num  => $k,
+                refs => [ 'http://www.deutschestextarchiv.de/nn_n0171w1_1828/'.$v->{nn_n0171w1_1828}, 'http://www.deutschestextarchiv.de/parthey_msgermqu1711_1828/'.$v->{parthey_msgermqu1711_1828} ],
+            },
+            topics => $v->{topics},
         }
     }
 }
@@ -82,7 +91,7 @@ sub parse_sa :Private {
 
     open( my $fh, '<:utf8', '/home/wiegand/src/hidden-kosmos/lists/Gliederung_Singakademie.txt' ) or die $!;
 
-    my ( %last, %data, %hours );
+    my ( %last, %data, %hours, @topics );
 
     my $i = 0;
     while ( chomp(my $line = <$fh>) ) {
@@ -93,6 +102,11 @@ sub parse_sa :Private {
 
         foreach my $idx ( 0 .. scalar(@fields) - 1 ) {
             $data{ $fields[$idx] } = $split[$idx] || $last{ $fields[$idx] };
+
+            push @topics, {
+                level => reformat_level( $fields[$idx] ),
+                value => reformat_value( $split[$idx] ),
+            } if $fields[$idx] =~ /^div/ and $split[$idx];
         }
 
         if ( $data{stunde} != $last{stunde} ) {
@@ -100,15 +114,20 @@ sub parse_sa :Private {
                 datum                      => reformat_datum( $data{datum} ),
                 hufeland_privatbesitz_1829 => reformat_facs( $data{hufe_facs} ),
                 nn_msgermqu2124_1827       => reformat_facs( $data{nn2124_facs} ),
+                topics                     => [ @topics ],
             };
+            undef @topics;
         }
         %last = %data;
     }
 
     while ( my ($k, $v) = each %hours ) {
         $c->stash->{map}{ $v->{datum} } = {
-            $k    => [ $v->{hufeland_privatbesitz_1829}, $v->{nn_msgermqu2124_1827} ],
-            place => 'sa',
+            sa => {
+                num  => $k,
+                refs => [ $v->{hufeland_privatbesitz_1829}, $v->{nn_msgermqu2124_1827} ],
+            },
+            topics => $v->{topics},
         }
     }
 }
@@ -121,6 +140,20 @@ sub reformat_datum {
 
 sub reformat_facs {
     my $s = shift;
+    return $s;
+}
+
+sub reformat_level {
+    my $s = shift;
+    $s =~ s/\D//g;
+    return $s;
+}
+
+sub reformat_value {
+    my $s = shift;
+    for ( $s ) {
+        s/^\s+|\s+$//g;
+    }
     return $s;
 }
 
