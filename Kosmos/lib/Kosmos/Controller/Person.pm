@@ -25,7 +25,7 @@ Catalyst Controller.
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
-    my @files = glob '/home/wiegand/src/hidden-kosmos/xml/{parthey_msgermqu1711_1828,nn_msgermqu2124_1827,hufeland_privatbesitz_1829}*.xml';
+    my @files = glob '/home/wiegand/src/hidden-kosmos/xml/{parthey_msgermqu1711_1828,nn_msgermqu2124_1827,hufeland_privatbesitz_1829,nn_oktavgfeo79_1828,nn_msgermqu2345_1827,libelt_hs6623ii_1828,patzig_msgermfol841842_1828,riess_f2e1853_1828 }*.xml';
 
     $c->forward( 'calc', [ \@files ] );
 }
@@ -49,7 +49,6 @@ sub calc :Private {
     my ( $self, $c, $files ) = @_;
 
     my @files = @$files;
-    use Data::Dumper; warn Dumper \@files;
 
     my $latest = 0;
 
