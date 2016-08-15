@@ -37,7 +37,7 @@ foreach my $file ( @ARGV ) {
             my $target = sprintf "%s/gnd/%s", $project_dir, $gnd;
             next if -s $target;
 
-            my $url = sprintf "%s/about/lds", $value;
+            my $url = sprintf "%s/about/lds.rdf", $value;
             my $res = $ua->get( $url );
             print STDERR "fetching $url ...\n";
             if ( $res->is_success ) {
