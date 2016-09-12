@@ -1,0 +1,11 @@
+#FORMAT: BEACON
+#PREFIX: http://d-nb.info/gnd/
+#FEED: http://www.deutschestextarchiv.de/kosmos/person/beacon
+#INSTITUTION: Berlin-Brandenburgische Akademie der Wissenschaften
+#NAME: Hidden Kosmos
+#CONTACT: Frank Wiegand <wiegand@bbaw.de>
+#TIMESTAMP: [% USE date; date.format(date.now, '%Y-%m-%dT%H:%M:%SZ', 'C', 1) %]
+#TARGET: http://www.deutschestextarchiv.de/kosmos/person#gnd-{ID}
+[%- FOREACH person IN persons.pairs; NEXT IF person.key == 'nognd'; NEXT UNLESS person.key.search('http://d-nb.info/gnd/') %]
+[% person.key.replace('http://d-nb.info/gnd/', '') %]|[% SET person_count = 0; FOREACH count IN person.value.count.pairs; SET person_count = person_count + count.value; END; person_count %]
+[%- END -%]

@@ -42,6 +42,10 @@
       [% NEXT IF person.key == 'nognd' %]
       <tr>
         <td>
+          [% IF person.key.search('http://d-nb.info/gnd/') %]
+            <a name="gnd-[% person.key.replace('http://d-nb.info/gnd/', '') %]"></a>
+          [% END %]
+
           [% person.value.preferred OR 'N/A' | html %]
           [% IF person.value.birth OR person.value.death %]
             <br />

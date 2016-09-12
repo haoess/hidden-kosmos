@@ -30,6 +30,10 @@ sub index :Path :Args(0) {
     $c->forward( 'calc', [ \@files ] );
 }
 
+=head2 complete
+
+=cut
+
 sub complete :Local {
     my ( $self, $c ) = @_;
 
@@ -41,7 +45,23 @@ sub complete :Local {
     );
 }
 
-=head2 complete
+=head2 beacon
+
+=cut
+
+sub beacon :Local {
+    my ( $self, $c ) = @_;
+
+    my @files = glob '/home/wiegand/src/hidden-kosmos/xml/*.xml';
+    $c->forward( 'calc', [ \@files ] );
+    $c->stash(
+        template => 'person/beacon.tt',
+        view     => 'Plain',
+    );
+    $c->res->content_type( 'text/plain; charset=utf-8' );
+}
+
+=head2 calc
 
 =cut
 
