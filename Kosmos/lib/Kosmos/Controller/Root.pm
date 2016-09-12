@@ -72,6 +72,9 @@ Attempt to render a view, if needed.
 
 sub end : ActionClass('RenderView') {
     my ( $self, $c ) = @_;
+    if ( $c->stash->{view} eq 'Plain' ) {
+        $c->forward( $c->view('Plain') );
+    }
 }
 
 =head1 AUTHOR
