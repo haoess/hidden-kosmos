@@ -25,7 +25,7 @@ Catalyst Controller.
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
-    my @files = glob '/home/wiegand/src/hidden-kosmos/xml/{parthey_msgermqu1711_1828,nn_msgermqu2124_1827,hufeland_privatbesitz_1829,nn_oktavgfeo79_1828,nn_msgermqu2345_1827,libelt_hs6623ii_1828,patzig_msgermfol841842_1828,riess_f2e1853_1828}*.xml';
+    my @files = glob '/home/wiegand/src/hidden-kosmos/xml/{parthey_msgermqu1711_1828,nn_msgermqu2124_1827,hufeland_privatbesitz_1829,nn_oktavgfeo79_1828,nn_msgermqu2345_1827,libelt_hs6623ii_1828,patzig_msgermfol841842_1828,riess_f2e1853_1828,nn_n0171w1_1828,willisen_humboldt_1827}*.xml';
 
     $c->forward( 'calc', [ \@files ] );
 }
@@ -56,6 +56,22 @@ sub beacon :Local {
     $c->forward( 'calc', [ \@files ] );
     $c->stash(
         template => 'person/beacon.tt',
+        view     => 'Plain',
+    );
+    $c->res->content_type( 'text/plain; charset=utf-8' );
+}
+
+=head2 csv
+
+=cut
+
+sub csv :Local {
+    my ( $self, $c ) = @_;
+
+    my @files = glob '/home/wiegand/src/hidden-kosmos/xml/*.xml';
+    $c->forward( 'calc', [ \@files ] );
+    $c->stash(
+        template => 'person/csv.tt',
         view     => 'Plain',
     );
     $c->res->content_type( 'text/plain; charset=utf-8' );
