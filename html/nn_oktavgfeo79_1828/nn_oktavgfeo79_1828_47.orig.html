@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><span class="dta-supplied">[47. Vorlesung, 01.04.1828]</span><div class=""><div class=""><div class=""><div class="">   <div class="dta-head">5. <span class="u ">Temperaturverhältniſſe der Atmosphäre</span>.</div>   <br/>
+<p class="dta-p">Wenn wir uns zu den höhern Anſichten der Natur<br/>
+hinaufſchwingen, ſo finden wir bei einer tiefern mehr geiſtig<br/>
+reifern Betrachtung bis in die früheſten Zeiten hinaus,<br/>
+daß die <span class="u ">Luftwärme</span> das Wichtigſte für den Menſchen<br/>
+iſt; daß ſie den innigſten Zuſammenhang mit dem Zu-<br/>
+ſtande und der Verbindung des Menſchengeſchlechts hat,<br/>
+und ſo weit wichtiger als die Veränderungen des Drucks<br/>
+der Luft, der magnetiſchen Erſcheinungen, und anderer in<br/>
+in der Natur uns umgebenden Phänomene iſt. –</p><br/>
+<p class="dta-p">Hier iſt der Punct wo die phyſicaliſche Erdbeſchrei-<br/>
+bung mit der Entwickelung des Menſchengeſchlechts am<br/>
+innigſten zuſammenhängt. Am Eingange der Klimatologie<br/>
+erkennen wir den mächtigen Einfluß der mittlern Wärme<br/>
+in den verſchiedenen Zonen, auf die Entwickelungen des<br/>
+Geiſtes der Menſchheit in ſeinem ganzen Umfange,<br/>
+auf das Fortſchreiten der Kultur des Bodens und der<br/>
+Erlangung aller höhern mehr intellectuallen Productionen.<br/>
+Es iſt ſo ein weſentlicher Umſtand bei einer characteriſi-<br/>
+renden Beſchreibung der Völker, den Einfluß der Wärme<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0414 : 408.|</span><br/>
+zu kennen, denn es iſt nicht zu leugnen, das klimatiſche<br/>
+Verhältniſſe auf den Character einwirkten, die Neigungen<br/>
+und Handlungen der Menſchen ſelbſt begrenzen oder be-<br/>
+ſtimmen. – Wenn wir <span title="Schreibfehler: das2. bloß1. Abendland3." class="dta-corr">bloß das Abendland</span> be-<br/>
+trachten, ſo ſehen wir daß das gemäßigte Klima der<br/>
+Kultur am geeignetſten iſt, was zwiſchen den 30 bis<br/>
+45° N. Br. liegt. Wie groß erkennen wir die Verſchie-<br/>
+denheit in den Zonen ſelbſt, wo hier das nördliche Aſien<br/>
+rauh und unfruchtbar, klein Aſien, das eigentlich Griechen-<br/>
+land und Italien dagegen milde, fruchtbar und glücklich<br/>
+zu nennen iſt. In der mittlern jährigen Temperatur<br/>
+zwiſchen 11 und 14° R. iſt die Zone der Oelbäume, wo die<br/>
+mittlere Sommerwärme etwa 23° iſt, während ſich Berlin<br/>
+nur 13° zu erfreuen hat.</p><br/>
+<p class="dta-p">Die Meinung daß die mittlere Zone den größten<br/>
+Einfluß auf die Kultur der Völker, ihrer Verbreitung<br/>
+und ihres Wirkens hat, iſt nicht zu leugnen, aber auch<br/>
+gerade nicht völlig zu glauben. Denn dieſelbe noch ältere Men-<br/>
+ſchenkultur finden wir in Aegypten, Medina <span class="aq ">etc</span>. wo die<br/>
+mittlere <span title="T." class="dta-abbr">Temperatur</span> der Sommerwärme 24° iſt. Dieſe Zone des<br/>
+Zuckerrohrs kann man nur in ſofern gemäßigt nennen,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0415 : 409.|</span><br/>
+als ſie nicht zwiſchen den Wendekreiſen liegt, gehört<br/>
+aber faſt ſchon den Tropen an, und breitet ſich vom<br/>
+Ausfluſſe des Tigris bis zum perſiſchen Meerbuſen<br/>
+hin. So finden wir auf Meron, der ganzen ſüdweſtlichen<br/>
+Spitze Arabiens einen Sitz alter Kultur, und ſelbſt<br/>
+in der Mitte der Wendekreiſe giebt es leuchtende<br/>
+Puncte frühere Kultur, beſonders in dem Theile Indiens<br/>
+wo <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118501828">Alexander</a></span></span> nicht hinkam, ſondern mehr ſüdlich nach<br/>
+Kambaja, Karnatik und Theken liegt; wo die Kultur<br/>
+ſich mehr in Ebenen als Berghöhen zeigte. Mitten<br/>
+unter den Wendekreiſen auf dem alten Continente<br/>
+iſt in den Ebenen die mittlere <span title="T." class="dta-abbr">Temperatur</span> 26–27°, und das<br/>
+Klima iſt ſo ungemäßigt warm, daß in Benares z. B.<br/>
+die <span title="T." class="dta-abbr">Temperatur</span> im Sommer bis auf 34° ſteigt. Nach unſern<br/>
+Vorurtheile werden wir eine ſolche Wärme auf die geiſtige<br/>
+Entwickelung der Menſchen ungünſtig nennen.</p><br/>
+<p class="dta-p">Dieſe Thatſachen zeigen alſo, daß vom Aequator bis<br/>
+zum 45° N. Br. oder bis zur Zone des Oelbaums und des<br/>
+Weinbaum's das Klima der Kultur günſtig iſt. Möglich<br/>
+wäre es, daß Meron und Indien ihre Kultur von Norden<br/>
+her erhielten, und daß die Tropenkultur eine eingewanderte<br/>
+iſt. So ſtänden aber doch Memphis, Teheran und andere<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0416 : 410.|</span><br/>
+dieſer Meinung gegenüber, wo die Gluth der Sonne der<br/>
+Entwi<span class="dta-del" title="Streichung (#ow)">d</span><span class="dta-add" title="Hinzufügung (across)">ck</span>e<span class="dta-del" title="Streichung (#ow)">r</span><span class="dta-add" title="Hinzufügung (across)">l</span>ung des Menſchengeſchlechts entgegen zu arbeiten<br/>
+ſcheint, von wo aber dennoch die früheſte Kultur ſich ver-<br/>
+breitete, und die erſte Geſchichte des Wiſſens ſich zu<br/>
+bilden anfing, und es iſt daher keinesweges gerade erwieſen<br/>
+daß die Kultur durch Hitze oder Kälte zurück gehalten wurde.</p><br/>
+<p class="dta-p">Ganz anders iſt dagegen die Wärme oder Kälte, wo<br/>
+die mittlere <span title="T." class="dta-abbr">Temperatur</span> 1½° unter dem Gefrierpunkte iſt, und die<br/>
+höchſte mittlere <span title="T." class="dta-abbr">Temperatur</span> der Sommerwärme nur bis zu 7° ſteigt,<br/>
+einer Wärme bei der die Birken hier erſt anfangen aus-<br/>
+zuſchlagen, wo die Kultur aller Cerealien ſelbſt die der<br/>
+Gerſte aufhört. – So iſt das Klima vom nördlichen Aſien<br/>
+über den 60° N. B. hinaus, in Amerika ſchon von 56–57° N. B.<br/>
+in Europa aber erſt im nördlichſten Theile von Scandinavien,<br/>
+weil der weſtliche Theil dieſes Landes durch ſeine Lage<br/>
+und Gliederung ein ſo mildes Klima hat, daß ſelbſt noch die<br/>
+Gerſte nach <span title="H￼" class="dta-abbr">Herrn</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">v. Buch</a></span></span> bis zum 69½ gebauet wird.<br/>
+Der Theil von Nordaſien über den 60° hinaus, nach dem<br/>
+Ausfluſſe der Lena und Ob zu, wo Völker hunniſcher, ſamo-<br/>
+jediſcher und tunguſiſcher Abkunft gehauſt haben, iſt der Bildung<br/>
+der Menſchheit ſo ſchädlich geweſen, daß ſie in Gegenſatz zu<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0417 : 411.|</span><br/>
+denen die in <span class="gap">[unleserliches Material]</span>, Barbaren<br/>
+genannt wurden, weil hier immer die Art von Kultur herrſchen,<br/>
+die freilich der in Kleinaſien nicht gleich zu ſchätzen war. Ich<br/>
+erinnere hier an die Epoche der Thangs in der mongoliſchen<br/>
+Herrſchaft, wo unter <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/101926820">Ulu Beg</a></span></span> im 15<span title="Original: t￼" class="dta-reg"><span class="sup uu ">ten</span></span> Jahrhundert ſelbſt<br/>
+Aſtronomie getrieben wurde.</p><br/>
+<p class="dta-p">Alle dieſe Thatſachen beweiſen, daß übermäßige<br/>
+Kälte der Kultur und Bildung der Menſchen ſich ungünſtig<br/>
+zeigt. Wurde die Kultur aber von den ſüdlichen Breiten<br/>
+in die nördlichen Regionen eingeführt, ſo erhält ſie ſich auch,<br/>
+und greift wohl mächtig um ſich. So ſehen wir in Island<br/>
+die Poeſie in den ſchönſten dichteriſchen Geſängen ſich entfalten.<br/>
+Nicht ſo iſt es in den wärmern Gegenden am Euphrat, in<br/>
+Meroe und Indien, wo das Nichthindern der Muskelkraft <span title="u" class="dta-abbr">und</span><br/>
+die Entwickelung des Geiſtes und ſeinen Productionen wie<br/>
+in jenen kalten Gegenden, unbekannt iſt.</p><br/>
+<p class="dta-p">Unter allen Inſtrumenten iſt das Thermometer<br/>
+eines der wichtigſten; es iſt der Maaßſtab des Fort-<br/>
+ſchreitens und des Beſitzes der Völker, und erweckt<br/>
+weit mehr ſchönere und kräftigere Ideen als andere Er-<br/>
+findungen. Schon eher als das Thermometer von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100816207">Drebbel</a></span></span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0418 : 412.|</span><br/>
+in Alkmar erfunden und durch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118685783">Fahrenheit</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118749420">Reaumur</a></span></span><br/>
+verbeſſert war, hatte <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118720066">Halley</a></span></span> ſeine wichtigen Unter-<br/>
+ſuchungen über die Wärme mit ſolchen Ideen begonnen<br/>
+und ausgeführt, daß an einen Vergleich mit dem Thermo-<br/>
+meter nicht zu denken war, und wo die übertriebenſten Ge-<br/>
+rüchte von einer unmäßigen Hitze in wärmern Gegenden,<br/>
+ſich verbreitet hatten. – <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118749420">Reaumur</a></span></span> erſt brachte das<br/>
+Thermometer recht Anwendung, und gab es Reiſenden<br/>
+mit um richtige Vergleiche unter den Tropen anzuſtellen.</p><br/>
+<p class="dta-p">Wenn aber auch die Temperatur auf einzelnen Theilen<br/>
+der Oberfläche hauptſächlich von dem Einfallswinkel der<br/>
+Sonnenſtrahlen abfängt, ſo iſt doch aber auch die Quantität<br/>
+der Strahlen von denen die zurückgeworfen werden ohne<br/>
+Wärme zu erregen, und denen die eindringen und Wärme<br/>
+hervorbringen, zu betrachten nothwendig. Vom 30° an<br/>
+abnehmend iſt der Einfallswinkel, oder der Einfluß der<br/>
+Wärme welchen er äußert bedeutend, unter 80° aber<br/>
+<span class="dta-supplied">[ſ]</span>ehr geringe. Nicht blos auf den Höhenſtand der Sonne<br/>
+oder ihrer Declination kommt es an, ſondern daß auch Berge<br/>
+ſie begünſtigen können, da ſie Polygonalflächen ſind. –<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0419 : 413.|</span><br/>
+Unter den Tropen iſt die Sonne 12 Stunden abweſend,<br/>
+ſonſt würde die Hitze am andern Tage unerträglich ſein,<br/>
+ſo aber läßt ſie keine Wärme von ewigen Tage zurück.</p><br/>
+<p class="dta-p">Mit einer ähnlichen Betrachtung hängt es zuſammen,<br/>
+warum unter den Wendekreiſen nach ihren Grenzen zu,<br/>
+eine größere Wärme und ſelbſt mehr Kultur und Pro-<br/>
+duction als unter dem Aequator iſt. Hier liegen auch<br/>
+zufällig die größten Handelsplätze der Tropenwelt, im<br/>
+nördlichen Theile Havanah, Vera Cruz, Calcutta, Canton,<br/>
+im ſüdlichen Rio-Janeiro. In der mittleren Zone dagegen<br/>
+iſt die Temperatur der heiſſeſten Sommertage oft höher<br/>
+als unter dem Aequator, weil bei den kürzern Nächten<br/>
+der Erdboden nicht Zeit hat durch Ausſtrahlung zu er-<br/>
+kalten, und das Maximum der Wärme einzelner Monate<br/>
+iſt hier oft beträchtlicher als unter dem Aequator.</p><br/>
+<p class="dta-p">Zuerſt werde ich nun von der Unterlage des Luft-<br/>
+meer's reden, als von den Ebenen und Bergen die die<br/>
+Continente bilden, und zuletzt von dem Theile handeln,<br/>
+deſſen Boden der Ocean iſt. <hr/><br/>
+</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0420 : 414.|</span><br/>
+<div class="">   <div class="dta-head"><span class="u ">Unebenheiten, Nähe der Berge in den Ebenen</span>.</div>   <br/>
+<p class="dta-p">Da wo die Bergthäler in die Ebenen ausgehen wirken<br/>
+die Berge doppelt, <span class="aq ">a.</span> <span class="u ">Wärmegebend</span>, weil die Polygonal-<br/>
+flächen derſelben mehr Sonnenſtrahlen auffangen als die Ebe-<br/>
+nen, wie es z. B. in der Lombardei der Fall iſt, wo<br/>
+der Oelbaum gedeihet. <span class="aq ">b.</span> <span class="u ">Schützend</span> wirken die Berge<br/>
+da wo ſie den kältern Nordwinden den Zugang verſagen.<br/>
+Solche Länder wie Rußland, müßen daher wegen Mangel<br/>
+dieſes Schutzes mehr Kälte haben, als diejenigen wo<br/>
+Gebirge durch ihre Lage einflußreich ſind. Doch wird dieſer<br/>
+Zuſtande gewöhnlich mehr Einfluß zugeſchrieben, als ſich<br/>
+wirklich bewährt. Griechenland kann wegen der Glie-<br/>
+derung ſeiner Oberfläche, kein anderes Land zur Seite<br/>
+geſtellt werden, das ſo von einem Welle gleichſam um-<br/>
+zingelte Ebenen enthält. Bergketten wie in Europa,<br/>
+Aſien und Amerika, auch einzelne hohe Berge wie der<br/>
+Eliasberg Kamtſchatka gegenüber, könnten hier auch wie<br/>
+jene dort ſich ſchützend erheben, wenn ſie nicht durch ihre<br/>
+Eismaſſe kältegebend wären, und die kalten Nordwinde<br/>
+zurückhielten. Berge wirken auch erwärmend gegen die<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0421 : 415.|</span><br/>
+Ebenen, weil ſie dichte Erdmaſſen ſind, die die Wärme<br/>
+länger erhalten als die Luftſchichten; doch iſt dies nur dann<br/>
+der Fall, wenn die Gipfel niedrig ſind, dagegen höhere<br/>
+Maſſen von Berge die Wärme noch gar abſorbiren.</p><br/>
+<p class="dta-p">Auf der andern Seite wirken die Berge Kälte erre-<br/>
+gend durch das Herabſtrömen der Luftſchichten. Auf dieſelbe<br/>
+Weiſe, wie die Ströme der Luft von den Ebenen nach den<br/>
+Höhen ihre Richtung nehmen, wie wir es ſchon früher erwähnt,<br/>
+ſo gehen auch Strömungen von den Gipfeln nach den Thälern,<br/>
+weshalb in dieſen des Nachts auch immer eine geringere<br/>
+Temperatur herrſcht; doch zuviel darf man dieſer Wir-<br/>
+kung auch nicht zuſchreiben. Im ſüdlichen Peru hat man<br/>
+lange geglaubt, daß die dort häufig herrſchende Kälte<br/>
+von den Schneebergen herrühre. Am Fuße dieſer Ge-<br/>
+birge iſt aber ein wahrhaft indiſches Klima, und nur<br/>
+dem Schnee nach näher empfindet man die von ihm kom-<br/>
+menden kalten Luftſtröme.</p><br/>
+<p class="dta-p">Auch wirken die Berge Kälte erregend, durch ihren<br/>
+Schatten. Denn für einen großen Theil der Fläche<br/>
+geht die Sonne denn früher unter, und ſie rauben ihr<br/>
+dadurch einen Theil der erwärmenden Sonnenſtrahlen.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0422 : 416.|</span><br/>
+Aber nicht allein die Nähe der Berge hat Einfluß auf<br/>
+die Temperatur, ſondern auch die Farbe des Bodens<br/>
+ſelbſt, ob ſie hell oder dunkel iſt. <span title="Original: /" class="dta-reg">(</span>Kalkſtein oder Schiefer<span title="Original: /" class="dta-reg">)</span><br/>
+Auch der Wärmeleitungs-Zuſtand der Luft iſt ſtärker<br/>
+oder geringer, je nachdem ſie feucht oder trocken iſt. Herr<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118524089">Davy</a></span></span> hat hierüber ſehr intereſſante Verſuche angeſtellt.<br/>
+So fand er daß in einer ſchwarzen Erde, die eine Stunde<br/>
+lang der Sonne ausgeſetzt war, das Thermometer auf<br/>
+18–20° ſtieg, während es in einer hellen thonhaltigen Erde<br/>
+nur 15–16½° erreichte. Die ſchwarzen Berge ſind daher<br/>
+immer viel wärmer, laſſen aber auch eben weil ſie<br/>
+die Wärme leichter abſorbiren, dieſelbe bald wieder<br/>
+fahren. So war die ſchwarze Erde in ½ Stunde ſchon wieder<br/>
+am 7° erkaltet, während die hellere thonhaltige Erde in<br/>
+derſelben Zeit ſich noch nicht um 2° abgekühlt hatte.</p><br/>
+<p class="dta-p">Auch Moräſte und Wälder wirken auf die Temperatur<br/>
+im Winter erwärmend, weil ſie theils durch Quellen<br/>
+frei von Froſt bleiben, theils die Wärme länger erhalten.<br/>
+Dagegen ſind ſie aber im Frühjahr Kälte gebend, weil wenn<br/>
+ſie ausgefroren das Eis und d. Schnee lange erhalten. Die<br/>
+Wälder aber ſind beſonders dadurch Kälte erregend,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0423 : 417.|</span><br/>
+weil ſie durch die Fälle ihrer Blätter, deren Flächen<br/>
+doch gewöhnlich horizontal ſtehen, Wärme ausſtrahlen.</p><br/>
+<p class="dta-p">Ein ähnliches Phänomen fährt aus auf die Reinheit<br/>
+und Lichtſchwächende Kraft der Atmosphäre beſonders unter<br/>
+den Tropen, wo die Strahlung ſtärker als in der tempe-<br/>
+rirten Zone iſt, weil in dieſer der Boden mehr Feuchtig-<br/>
+keit hat. Unter den Tropen iſt daher auch die Wirkung<br/>
+der Sonne ſtärker, weil nicht ſo viel Dämpfe die Durch-<br/>
+ſichtigkeit der Luft vermindern. Im ſüdlichen Theile<br/>
+von Peru, wo es ſo ſelten regnet, iſt der Himmel ge-<br/>
+wöhnlich in dieſer Zeit <span title="Original: /" class="dta-reg">(</span>oft 5–6 Monate wo kein Regen<br/>
+fällt<span title="Original: /" class="dta-reg">)</span> mit einem Nebel bedeckt, der dort Gerua genannt<br/>
+wird, und durch den die Sonne nur matt wie ein rother<br/>
+Fleck zu erkennen iſt; man kann alſo hier die Sonne<br/>
+wie den Mond mit bloßen Augen betrachten. Dieſe<br/>
+Art Höherauch iſt auch die Urſache, daß es dort weit<br/>
+kälter iſt als in andere Ländern unter gleichen Breite-<br/>
+graden, weil er die Strahlen der Sonne ſo bedeutend<br/>
+ſchwächt. In dieſer eigenthümlichen Gegend regnet oder<br/>
+donnert es nie während dieſer langen Nebelperiode, und<br/>
+nur in weiter Ferne erkennt man zuweile ein Wetter-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0424 : 418.|</span><br/>
+leuchten. Auf La Marguerita welches 10,000′ über<br/>
+dem Meere liegt iſt die mittlere Temperatur noch 13–15°,<br/>
+doch die Nächte ſind hier ſo kalt, daß es faſt in jedem<br/>
+Monate friert, und halten eine gute Getreideernte<br/>
+gedeihen läßt.</p></div></div></div></div></div></div></body></html>

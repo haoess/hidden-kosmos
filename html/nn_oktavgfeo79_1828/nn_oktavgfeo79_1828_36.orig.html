@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><span class="dta-supplied">[36. Vorlesung, 08.03.1828]</span><div class=""><div class=""><div class=""><div class=""><p class="dta-p">Von der Betrachtung der iſolirten Vulkane, komme<br/>
+ich nun wie ſie ſich in Gruppen an einander reihen. Nach<br/>
+Herrn <span class="aq ">L. von Buch</span> theilen ſich alle Vulkane der Erdfläche<br/>
+in zwei weſentlich von einander verſchiedene Klaſſen:<br/>
+in <span class="u ">Central-</span> und in <span class="u ">Reihen-Vulkane</span>. Jene bilden alle-<br/>
+mal den Mittelpunkt einer großen Menge, um ſie her,<br/>
+faſt gleichmäſſig nach allen Seiten hin wirkenden, Aus-<br/>
+brüche. Dieſe, die Reihenvulkane, liegen in einer<br/>
+Reihe hinter einander, oft nicht weit von einander ent-<br/>
+fernt, wie Eſſen auf einer groſſen Spalte, was ſie<br/>
+denn auch wohl ſein mögen. Man zählt auf ſolche Art<br/>
+zuweilen wohl 20, 30 oder auch noch mehr Vulkane, und<br/>
+ſo ziehen ſie ſich über bedeutende Theile der Erdoberfläche<br/>
+hin. In Hinſicht ihrer Lage, ſind ſie dann wiederum<br/>
+vor zweierlei Art. Entweder erheben ſie ſich als ein-<br/>
+zelne Kegelinſeln aus dem Grunde der See; dann läuft<br/>
+gewöhnlich ihnen zur Seite ein primitives Gebirge völlig<br/>
+in derſelben Richtung, deſſen Fuß ſie zu bezeichnen ſcheinen –<br/>
+oder dieſe Vulkane ſtehen auf den höchſten Rücken dieſer<br/>
+Gebirgsreiſe und bilden die Gipfel ſelbſt. In ihrer Zu-<br/>
+ſammenſetzung und in ihren Producten ſind dieſe beiden<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0264 : 258.|</span><br/>
+Arten von Vulkanen nicht von einander unterſchieden.<br/>
+Es ſind faſt jederzeit, mit nur wenigen Ausnahmen,<br/>
+Berge von Trachyt und die feſten Producte daraus<br/>
+laſſen ſich auf ſolchen Trachyt zurückführen. Wenn<br/>
+man dieſe Gebirgsreihen ſelbſt als Maſſen anſieht,<br/>
+welche aus großen Spalten durch Wirkung des Augit-<br/>
+porphyrs hervorgeſtiegen ſind, ſo läßt ſich dieſe Leg<br/>
+der Vulkane wohl einigermaſſen begreifen. Entweder<br/>
+des jenige, was in den Vulkanen wirkt, findet auf<br/>
+dieſer Hauptſpalte ſelbſt ſchon mehr Leichtigkeit, zur<br/>
+Oberfläche hinauf zu dringen; dann werden die Vulkane<br/>
+auf der Gebirgsfläche ſelbſt hervorſteigen. Oder die<br/>
+primitiven Gebirgsmaſſen über der Spalte ſind ihnen<br/>
+ein großes Hinderniß; dann werden ſie, wie es ſchon der<br/>
+ſchwarze Porphyr ſelbſt gewöhnlich thut, am Rande der Spalte<br/>
+ausbrechen, da, wo die Gebirge anfangen, ſich über der<br/>
+Oberfläche zu erheben, das iſt am Fuße der Gebirge hin.<br/>
+Wenn aber das, was unter der Oberfläche hervor-<br/>
+brechen will, keine ſolche Spalte vorfindet, welche der<br/>
+wirkenden Macht den Weg beſtimmt, den ſie nehmen<br/>
+ſoll, oder auch wenn das Hinderniß auf der Spalte überaus<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0265 : 259.|</span><br/>
+groß iſt, ſo wird die Kraft unter der Oberfläche an-<br/>
+wachſen, bis ſie das Hinderniß zu überwältigen und die<br/>
+darüber liegenden Gebirgsmaſſen ſelbſt zu zerſprengen<br/>
+vermag. Sie wird ſich ſelbſt eine neue Spalte bilden,<br/>
+und auf dieſer ſich eine ſtete Verbindung offen erhalten,<br/>
+wenn ſie ſtark genug iſt. Dann entſtehen <span class="u ">Centralvulkane</span>.<br/>
+Doch werden dieſe nur ſelten emporſteigen, ehe ſie ſich<br/>
+nicht vorher durch Erhebungsinſeln mit Erhebungscratern<br/>
+den Weg gebahnt haben.</p><br/>
+<div class="dta-list">   <div class="dta-head"><span class="u ">Zu den Centralvulkanen gehören</span>:</div>   <br/>
+<div class="dta-list-item">1. Die lipariſchen Inſeln. <span class="u ">Stromboli</span> iſt der Vulkan<br/>
+dieſer Gruppe. Seine beſtändig rauchende Spitze liegt<br/>
+2037′ über dem Meere. Alle Berge dieſer Inſeln beſtehen<br/>
+aus Trachyt.</div>   
+<div class="dta-list-item">2. <span class="u ">Der Aetna</span>. Er ſteht am Fuße der Granitreihen<br/>
+von Calabrien. Mandelſtein und Baſalt bilden von<br/>
+allen Seiten den Fuß des Vulkans. Die Laven ſind<br/>
+feldſpathreich. Seine Höhe beträgt nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118703897">Herſchel</a></span></span> 10,205′.</div>   
+<div class="dta-list-item">3. <span class="u ">Die phlegräiſchen Felder</span>. Dieſe und die nahe gele-<br/>
+genen Inſeln und der Veſuv gehören zu einem Syſtem.<br/>
+Der Epomeo auf Iſchia iſt trachytiſch, ohne Crater und<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0266 : 260.|</span><br/>
+hat nur ein Mal, ſo weit die Erinnerung reicht, Ausbruchs-<br/>
+erſcheinungen gezeigt. Der Veſuv iſt iſolirt, baſaltiſch,<br/>
+wie ſeine ganze Umgebung und ſeine Laven. Der höchſte<br/>
+öſtliche Punkt nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118554700">v. Humboldt</a></span></span> 3774′ über dem Meere.</div>   
+<div class="dta-list-item">4. <span class="u ">Island</span>. Von den 29 Vulkanen, welche <span class="aq "><span title="Personenname">Henderſon</span></span><br/>
+aufzählt, bilden nur Krabla, Leihrnukur und Trölladyngur<br/>
+im Norden, Heckla, Eyafiäll und Körligia im Süden,<br/>
+Orröſa Jöckul im Oſten, beſtimmte ununterbrochene Verbin-<br/>
+dungskanäle. Dieſe Vulkane liegen in einen breiten Gürtel<br/>
+eingeſchloſſen, welcher von Südoſt gegen Nordoſt die Inſel<br/>
+durchzieht. Der Heckla iſolirt wie der Veſuv, und größer<br/>
+an Maſſe, erhebt ſich nach <span class="aq "><span title="Personenname">Ohlſen</span></span> und <span class="aq "><span title="Personenname">Vetleſen</span></span> zu 4795′<br/>
+par. Fuß. Orröſa Jöckul iſt von <span class="aq "><span title="Personenname">Paulſon</span></span> 5561 par.<br/>
+Fuß hoch gefunden worden. Die Laven enthalten Feldſpath.</div>   
+<div class="dta-list-item">5. <span class="u ">Die azoriſchen Inſeln</span>. Der Pico der Inſel gleichen<br/>
+Namens iſt der Hauptverbindungskanal. Die Inſeln<br/>
+ſcheinen faſt durchaus aus Trachyt zu beſtehen. St. Michael<br/>
+iſt bekannt durch die Inſeln, welche wiederholt verſucht<br/>
+haben, in deſſen Nähe in die Höhe zu ſteigen.</div>   
+<div class="dta-list-item">6. <span class="u ">Die canariſchen Inſeln</span>. Der Pic von Teneriffa iſt<br/>
+der Hauptvulkan; er beſteht ganz aus Trachyt, ſoweit<br/>
+er vom Erhebungscrater abgeſondert iſt. Auch auf Palma<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0267 : 261.|</span><br/>
+und Gran Canaria iſt Trachyt. Lancarote und Fuerten-<br/>
+wentua ſind baſaltiſch.</div>   
+<div class="dta-list-item">7. <span class="u ">Die Cap-Verdiſchen Inſeln</span>. Die Inſel Fuego iſt<br/>
+der Vulkan dieſer Gruppe. Der Feuerberg dieſer kleinen<br/>
+Inſel ſoll über 7000′ hoch ſein.</div>   
+<div class="dta-list-item">8. <span class="u ">Die Gallapagos</span>. Die bilden eine ſehr thätige vul-<br/>
+kaniſche Gruppe. Narborough-Island, die weſtlichſte der<br/>
+Inſeln, ſcheint der Hauptvulkan zu ſein.</div>   
+<div class="dta-list-item">9. <span class="u ">Die Sandwich-Inſeln</span>. Owaihi, die größte und<br/>
+höchſte aller Inſeln der Südſee, iſt das Haupt der ganzen<br/>
+Gruppe, und ihr Hauptvulkan der Mowna Mororay, nach<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116345330">Kotzebue</a></span>,</span> 13,800 par. Fuß hoch.</div>   
+<div class="dta-list-item">10. <span class="u ">Die Marqueſas</span>. Der größte von dem geſehenen<br/>
+iſt baſaltiſch. Die größte und höchſte dieſer Inſeln ſcheint<br/>
+nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118534432">Forſter</a></span>'s</span> Beſchreibung, der ſie indeß nur von der<br/>
+See aus ſah, einen trachytiſchen Hauptvulkan zu enthalten.</div>   
+<div class="dta-list-item">11. <span class="u ">Die Societäts-Inſeln</span>. Otaheiti, die größte<br/>
+dieſer Inſeln, iſt auch die Hauptinſel für die innere<br/>
+vulkaniſche Verbindung, und der Berg von Tobreonu der<br/>
+Vulkan dieſer Gruppe, der eine Höhe von 11,000′ erreicht. Faſt<br/>
+alle Felſen dieſer Inſeln beſtehen aus Trachyt.</div>   
+<span class="dta-pb" style="padding-left:15em">|#f0268 : 262.|</span><br/>
+<div class="dta-list-item">12. <span class="u ">Die Freundſchaftlichen-Inſeln</span>. Tofua, der Vulkan<br/>
+dieſer Gruppe, erhebt ſich vielleicht bis zu 3000′, während<br/>
+die Berge aller andern Inſeln ſehr niedrig und nur einige<br/>
+hundert Fuß hoch ſind. Er ſcheint in beſtändigem Aufruhr zu ſein.</div>   
+<div class="dta-list-item">13. <span class="u ">Bourbon</span>. Die Inſel ſteht iſolirt. Der Vulkan<br/>
+liegt im öſtlichen Theile derſelben, und iſt einer der mächtig-<br/>
+ſten auf der Erdfläche.</div>   
+</div>   <p class="dta-p">Zu den Centralvulkanen ſcheinen noch gerechnet<br/>
+werden zu müſſen, die Berge, welche im Innern der<br/>
+Continente liegen und jetzt nur noch ſelten Spuren<br/>
+ihrer Wirkſamkeit zeigen. Hierher gehören der Dama-<br/>
+vand auf der Kette des Elbaurs, der Ararat, der<br/>
+Seiban-Dagh, die tatariſchen Berge öſtlich von China<br/>
+und die vulkaniſchen Berge in Kordofan.</p><br/>
+<p class="dta-p">Alle dieſe Centralvulkane erheben ſich aus der Mitte<br/>
+baſaltiſcher Umgebungen, ungeachtet ihre Kegel ſelbſt<br/>
+faſt überall aus trachytiſchen Maſſen beſtehen. Von<br/>
+Gebirgsarten anderer Formationen erſcheint entweder<br/>
+keine Spur, wie auf den Inſeln der Südſee, oder ſie<br/>
+ſind doch ſehr entfernt und nicht mit den Vulkanen in<br/>
+unmittelbarem Zuſammenhange. Dagegen ſteigen die<br/>
+Reihenvulkane entweder ſogleich aus dem Innern pri-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0269 : 263.|</span><br/>
+mitiver Gebirgsarten ſelbſt und über dem Rücken der<br/>
+Gebirgskette empor, oder Granit und ähnliche Geſteine<br/>
+ſind doch in der Nähe, vielleicht noch am Abhange des Vul-<br/>
+kans anſtehend, wenn die Reihe der Vulkane nur den<br/>
+Fuß der Gebirgsketten, oder den Saum der Continente<br/>
+begleitet.</p><br/>
+<div class="dta-list">   <div class="dta-head"><span class="u ">Zu den Reihenvulkanen gehören</span>:</div>   <br/>
+<div class="dta-list-item"><p class="dta-p">1. <span class="u ">Die griechiſchen Inſeln</span>. Sie ſind die einzigen<br/>
+in Europa, welche man mit einigen Rechte unter den Reihen-<br/>
+vulkanen aufführen könnte; allein die Natur hat hier bis-<br/>
+her immer nur verſucht Vulkane zu bilden, ohne daß<br/>
+dieſe zu wirklichen und dauernden gediehen wären. Die<br/>
+griechiſchen Inſeln haben die Natur der norwegiſchen und<br/>
+ſchwediſchen Scheeren. Durch ſie werden die Gebirgsreihen<br/>
+des feſten Landes in gleicher Reihe und mit gleichen Ge-<br/>
+birgsarten fortgeſetzt, bis in weiter Entfernung die<br/>
+einzelnen Erhebungen nicht mehr als Inſeln aus dem<br/>
+Meere ſteigen können.</p><br/>
+<p class="dta-p">Die Reihe der vulkaniſchen Inſeln, die feſt den Iſthmus<br/>
+von Corinth berührt und zu welcher Poros, Milo, Anti-<br/>
+milo, Eimdolis, Palino, Policandros, Thereſia und Santorin<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0270 : 264.|</span><br/>
+gehören, die aus Trachyt beſtehen, welcher wahrſcheinlich<br/>
+den Thonſchiefer durchbrochen hat, der in Böotien, ſüdlich<br/>
+von Theben, unter dem Kalkſtein liegt; denn Santorin,<br/>
+eine der merkwürdigſten und lehrreichſten Inſeln der<br/>
+Erdrinde, hat den Thonſchiefer mit in die Höhe gebracht.</p></div>   
+<div class="dta-list-item"><p class="dta-p">2. <span class="u ">Weſtauſtraliſche Reihe</span>.</p><br/>
+<p class="dta-p">Offenbar iſt Neuſeeland durch Neucaledonien, durch<br/>
+die neuen Hebriden, durch die Salomos-Inſeln und<br/>
+Louiſinde bis Neuguinea und durch dieſes große Land<br/>
+bis zu den Molucken fortgeſetzt. Der erſte und fürchter-<br/>
+lichſte Vulkan der Reihe iſt Tanna; es folgen Am-<br/>
+bryan, im Oſten der großen Inſel del Eſpirtu Santo,<br/>
+die Volcano-Inſeln bei St. Cruz, Seſarga unter den<br/>
+Salomons-Inſeln bei Guadalcanar, dann der Vulkan<br/>
+auf Neu-Britanien, Dampiers Vulkan <span class="aq ">etc. etc</span>.</p><br/>
+<p class="dta-p">Dieſe Vulkanreihe vereinigt ſich nun an der Weſt-<br/>
+ſeite von Neuguinea mit zwei andern, den Reihen<br/>
+der Vulkane der Inſeln von Sunde von Weſten her<br/>
+den der Philippinen und der Molucken von Norden<br/>
+herunter, zu einem wahren vulkaniſchen Knoten.</p></div>   
+<div class="dta-list-item"><p class="dta-p">3. <span class="u ">Reihe der Inſeln von Sunda</span>.</p><br/>
+<p class="dta-p">Hierher gehören: der Wawani auf Amboina, der<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0271 : 265.|</span><br/>
+Gonung-Api, der brennende Berg von Banda, Sorea,<br/>
+Damure, Gunong-Api in 6°36′ S. Pontare, Lombatta,<br/>
+Mangeray oder Flores, Sandelbos, die Feuerberge<br/>
+Java's, der Gede oder Tegal über 10,000′ hoch, und<br/>
+ſo weiter vielleicht noch 30 an der Zahl; im Golf<br/>
+von Bengalen, der letzte bekannte Vulkan dieſer Reihe.</p></div>   
+<div class="dta-list-item"><p class="dta-p">4. <span class="u ">Reihe der Molucken und der Philippinen</span>.</p><br/>
+<p class="dta-p">Schreckbar prachtvoll, ſagt <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100648282">Tuckey</a></span>,</span> iſt der Anblick<br/>
+der Philippinen. Die Berge, welche die Inſel nach allen<br/>
+Richtungen durchziehen, verſtecken ihre Häupter in den<br/>
+Wolken, während ihre Abfälle mit Schlacken und Laven<br/>
+und mit grenzenloſer Verwüſtung bedeckt ſind; heiße<br/>
+Wäſſer dringen faſt überall hervor, und an vielen<br/>
+Orten ſtehen Salvataren mit brennendem Schwefel.</p><br/>
+<p class="dta-p">Die beſtimmt bekannt gewordenen Vulkane dieſer aus-<br/>
+gezeichneten Reihe ſind folgende, von Amboina herauf:<br/>
+Machian, Motir, Ternate, Tidore, Tolo, Kemas,<br/>
+Siao, Aboe, Sanquil, Fuego, Mayon, Ambil,<br/>
+Taal, Aringuay und E<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">ami</span>guin. Außerhalb dieſer<br/>
+Reihe und iſolirt liegen der ſtets flammende Vulkan<br/>
+auf einer kleinen Inſel an der Weſtſeite von Bor-<br/>
+neo und ein Vulkan auf der Inſel Cap, in der Torreſſtraße.</p></div>   
+<span class="dta-pb" style="padding-left:15em">|#f0272 : 266.|</span><br/>
+<div class="dta-list-item"><p class="dta-p">5. <span class="u ">Reihe der japaniſchen und kuriliſchen<br/>
+Inſeln und von Kamtſchatka</span>.</p><br/>
+<p class="dta-p">Mit der Schwefelinſel beginnt nach langer Unter-<br/>
+brechung eine neue Reihe. Japan iſt, wie Java,<br/>
+Quito, Gilolo und Luçon, ein Hauptſitz vulkaniſcher<br/>
+Wirkungen. Tanegalina ſoll im Jahr 94 aus dem<br/>
+Meere geſtiegen ſein. Vulcanus oder Fuego, Aſo,<br/>
+Unſen, Firando, Fatſiſio, Fuſi, Alamo, Pic Tileſius,<br/>
+Koſima, der Vulkan auf Matsmai, der Vulkan von<br/>
+Chacodade, der Vulkan im Norden der Vulkansbay<br/>
+auf Matsmai ſind die erſten der langen kuriliſchen<br/>
+Vulkanreihe. Ferner gehören hierher der Vulkan<br/>
+auf Itturup, Tſchirpoi, Pic Peyrouſe auf Mareckan,<br/>
+Uſchiſchi, Matua, Naſchkoke, Ikarma, Onekotan,<br/>
+Paramuſir und Alait. Auf Kamtſchatka befinden<br/>
+ſich 14 Vulkane.</p></div>   
+<div class="dta-list-item"><p class="dta-p">6. <span class="u ">Reihe der aleutiſchen Inſeln</span>.</p><br/>
+<p class="dta-p">In den aleutiſchen Inſeln befinden ſich 11 Vulkane.<br/>
+Die Vulkane der Inſel Umnack ſind beſonders thätig.</p></div>   
+<div class="dta-list-item"><p class="dta-p">7. <span class="u ">Reihe der Marianen</span>.</p><br/>
+<p class="dta-p">Die Vulkane dieſer Reihe ſind ſehr unbekannt<br/>
+und eigentlich iſt nur die Inſel Aſſumpcion als ein<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0273 : 267.|</span><br/>
+wirklicher Vulkan erkannt worden. Doch bemerkt<br/>
+v. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118520040">Chamisſo</a></span>,</span> daß die Reihe der Marianen eine vulka-<br/>
+niſche ſei.</p></div>   
+<div class="dta-list-item"><p class="dta-p">8. <span class="u ">Reihe von Chili</span>.</p><br/>
+<p class="dta-p">Es werden in dieſer Reihe 24 Vulkane aufgeführt.<br/>
+Sie ſind indeſſen, ungeachtet ihrer Höhe und Be-<br/>
+deutung, kaum mehr als dem Namen nach bekannt.<br/>
+Miſti oder Vulkan de Arequipa, iſt der einzig<br/>
+bekannte Vulkan in Peru.</p></div>   
+<div class="dta-list-item"><p class="dta-p">9. <span class="u ">Reihe von Quito</span>.</p><br/>
+<p class="dta-p">Der ganze hochliegende Theil von Quito mit den<br/>
+angrenzenden Bergen ſcheint nur ein einziges un-<br/>
+geheures vulkaniſches Gewölbe zu bilden, welches<br/>
+ſich von Süden nach Norden erſtreckt und einen Raum<br/>
+von mehr als 600 □ Meilen einnimmt. Die Feuer-<br/>
+berge dieſer Reihe gehören zu den höchſten Bergen<br/>
+der Erde. Es ſind deren 16 bekannt.</p></div>   
+<div class="dta-list-item"><p class="dta-p">10. <span class="u ">Reihe der Antillen</span>.</p><br/>
+<p class="dta-p">Die Vulkane dieſer Reihe ſind nicht hoch. Die vul-<br/>
+kaniſchen Inſeln liegen alle in einer fortlaufenden<br/>
+Kette hintereinander, ohne von nicht vulkaniſchen Inſeln<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0274 : 268.|</span><br/>
+unterbrochen zu ſein. Grenada, St. Vincent, St. Lucia,<br/>
+Martinique, Dominica, Guadeloupe, Monſerrat, Mewes,<br/>
+St. Chriſtop<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">h</span>, St. Euſtache ſind die vulk. Inſeln.</p></div>   
+<div class="dta-list-item"><p class="dta-p">11. <span class="u ">Reihe von Guatemala</span>.</p><br/>
+<p class="dta-p">Die Andes ſind zwiſchen den beiden Meeren faſt<br/>
+verſchwunden; der Uebergang bei Panama iſt nicht<br/>
+über 1000′ hoch. Aber die vulkaniſchen Kegel dieſer<br/>
+Reihe ſteigen ſchnell und hoch in der Richtung von<br/>
+Südoſt gegen Nordweſt, über das niedere Land empor<br/>
+und längs der Küſte hin. Man hat deren 27 aufgezeichnet.</p></div>   
+<div class="dta-list-item"><p class="dta-p">12. <span class="u ">Reihe von Mexico</span>.</p><br/>
+<p class="dta-p">Beinahe völlig von Oſten nach Weſten, quer<br/>
+über die Landenge, und über einer Querſpalte,<br/>
+erheben ſich die Vulkane von Mexico, 8 an der Zahl,<br/>
+unter welchen der Popocatepetl 16,626′ hoch,<br/>
+der höchſte von allen bekannten Bergen in Mexico<br/>
+iſt. – –<span class="u "><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">L. v. Buch</a></span></span> in <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116250836">Poggendorf</a></span>'s</span> Jour<span class="dta-supplied">[nal]</span></span></p></div>   
+</div>   <p class="dta-p">Sehr ſelten findet man am Fuße der Vulkane an-<br/>
+ſtehendes Urgeſtein, und dann ſcheint es von den Vulkanen<br/>
+ſelbſt gehoben zu ſein, und <span class="u ">nicht</span> ausgeworfen, wie ich es<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0275 : 269.|</span><br/>
+auch in Südamerika fand.</p><br/>
+<p class="dta-p">Die Vulkane hat man lange nur als zerſtörend be-<br/>
+trachtet, und ſie erſt in neuerer Zeit als neue Gebilde<br/>
+ſchaffend und umwandelnd erkannt. Unabläßig bilden ſie<br/>
+Schichten körniges Geſtein oder Lavaſtrömen. Sie bilden neue<br/>
+Gebirge die im genauen Zuſammenhange mit den ältere ſtehen.</p><br/>
+<p class="dta-p">Die Laven ſind graue oder ſchwarze Eiſenſilicate die Augit,<br/>
+Olivin und Hornblende einſchlieſſen. Sie zeigen entſchiedene<br/>
+Analogie mit dem Baſalt und Porphyr. Sie verändern das<br/>
+anliegende Geſtein, ſo wird dichter Kalkſtein in körnigen<br/>
+verwandelt; oder neue Foſſilien wie Veſuvian, Zinn-<br/>
+ſtein u. ſ. w. treten hervor.</p><br/>
+<p class="dta-p">Eine beſondere Erwähnung verdienen die künſtlichen<br/>
+Foſſilien, als Kryſtalle von Glimmer, Augit, Olivin, Titan,<br/>
+etc. von <span title="H￼" class="dta-abbr">Herrn</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11858281X">Mitſcherlich</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117433144">Wollaſton</a></span>;</span> auch das körnig<br/>
+Geſtein der Vulkane hat man auf künſtliche Wege<br/>
+nachgemacht. Die erſteren Foſſilien ſind deren der<br/>
+Vulkane ſehr ähnlich nach gekünſtelt. <hr/><br/>
+</p><br/>
+</div>
+<span class="dta-pb" style="padding-left:15em">|#f0276 : 270.|</span><br/>
+<div class="">   <p class="dta-p">Wir kommen nun zur Unterſuchung der Erdrinde<br/>
+in Allgemeinen, der poſitiven Lagerungs-Geognoſie,<br/>
+ohne auf ihr Entſtehen Rückſicht zu nehmen.</p><br/>
+<p class="dta-p">Man hat lange gefragt, wie tief wir eigentlich in das<br/>
+Innere der Erde gedrungen ſind, und die Gruben von Anſin bei<br/>
+Valencienes von 850′ unter dem Meereſſpiegel für die<br/>
+tiefſten gehalten. Nach den trefflichen Unterſuchungen jedoch<br/>
+die wir den beiden Geognoſten <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/123197066">Blechen</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117110213">Oehlhauſen</a></span></span> ver-<br/>
+danken, welche Deutſchland, Frankreich und England in dieſer<br/>
+Rückſicht bereiſten, finden ſich die tiefſten Gruben oberhalb<br/>
+Lüttich von 1600′ Tiefe. Die größten Kohlenbergwerke<br/>
+ſind nur 1000′ tief. Zu Freiberg iſt man 1670′ einge-<br/>
+drungen, was jedoch noch nicht 500′ unter dem Niveau des<br/>
+Meers iſt, da Freiburg ſo hoch liegt. So iſt man an<br/>
+verſchiedenen Punkten bis gegen 1600′ tief in die Erde ein-<br/>
+gedrungen ohne darüber hinaus zu kommen. Alſo viermal tiefer<br/>
+als die größten Bauwerke über der Erde. Denn ſowohl<br/>
+die höchſten Pyramiden älterer Baukunſt wie die hohern<br/>
+Dome des Mittelalters erreichten etwa die Höhe von 440<br/>
+bis 450′. Selbſt wenn man der Hypotheſe folgen wollte<br/>
+daß vom Himallahgebirge die höchſte Spitze der Dhawalagiri<br/>
+26,000′ über der Meeresfläche, aber ſo tief aus dem Innern<br/>
+unter derſelben hervorgetrieben ſei, ſo würde dies mit dem<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0277 : 271.|</span><br/>
+Durchmeſſer der Erde verglichen, uns immer nur eine geringe<br/>
+Tiefe zeigen. Die Findlinge von den Vulkanen ausgeſchleudert<br/>
+kommen aus tiefern Punkten der Erde als ihre Baſis iſt.</p><br/>
+<p class="dta-p">In der äußern Rinde der Erde zeigen ſich 5 körnige Ge-<br/>
+birgsarten: 1. die weiſſe Lava, 2. die ältere Baſaltflöze,<br/>
+3. Trachyt, 4. Porphyr mit und ohne Quarz, und 5<span class="sup uu ">tens</span>, Granit,<br/>
+Sienith, Gneis und Granitmaſſen, die mit dem Namen Ur-<br/>
+gebirge bezeichnet werden.</p><br/>
+<p class="dta-p">Die feſten Schichten von oben herab ſind:</p><br/>
+<div class="dta-list">   <div class="dta-list-item">1. Lodere, erdige Schicht, mit Knochen von Vögeln und Säugethiere</div>   
+<div class="dta-list-item">2. Dichte Schicht von Kalkſtein, mit Meerproducten, Seefiſchen <span class="aq ">etc</span>.</div>   
+<div class="dta-list-item">3. Thonſchiefer, ſchwarzer Kalk, und thonartiges Geſtein.</div>   
+<div class="dta-list-item">4. Körniger Feldſpath, und Augitartiges Geſtein als Trachyt,<br/>
+Chlorit, Baſalt und Trümmerſtein.</div>   
+</div>   <p class="dta-p">Wird die 4<span title="Original: t￼" class="dta-reg"><span class="sup uu ">te</span></span> Gruppe uranfängliches Geſtein genannt,<br/>
+ſo iſt der 3<span title="Original: t￼" class="dta-reg"><span class="sup uu ">ten</span></span> der Name Uebergangsgebirge gegeben. In<br/>
+dieſer findet ſich das erſte Aufkeimen von Bambus- und Schilf-<br/>
+arten, auch Schildkröten ſind darin gefunden. Die Schichten der<br/>
+Lagerungen von Kalkſteinen heißen Flötzgebirge, und unter-<br/>
+ſcheiden ſich von den tertiären, daß der Kalk eine große<br/>
+Menge von Krokodillenarten, Knochen von andern Landthieren,<br/>
+Meer- und Süßwaſſer-Producten beigemiſcht enthält. Zwei<br/>
+große Zerſtörungen bezeichnen die Grenzen dieſer Flötz-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0278 : 272.|</span><br/>
+gebirgen, da ſie von den tertiären Gebirgen durch Lagerungen<br/>
+von Steinkohlen mit monocotyledoniſchen Stämmen, als Palmen,<br/>
+baumartigen Farrenkräutern und Gräſern getrennt ſind, auf<br/>
+der andern Seite dagegen iſt das Flötzgebirge von Lagerungen<br/>
+dicotyledoniſcher, unſerer Waldungen ähnlicher Baumſtämme be-<br/>
+grenzt, die ſich durch die Reize der Holzſchichten oder Jahrringe<br/>
+deutlich erkennen laſſen. Bei der in den Braunkohlenſchicht<br/>
+zwiſchen dem Flötz- und Tertiärengebirge eingeſchloſſenen Zer-<br/>
+ſtörung einer Palmenwelt, muß man nicht glauben daß ſi<span class="dta-supplied">[e]</span><br/>
+mitein<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">ander</span> verſchwänden ſei, denn auch in den Gypſen finden<br/>
+ſich Palmenſtämme. Wenn alſo einſt dieſe Gegenden den<br/>
+Tropenländern ähnlich waren, ſo unterſcheiden ſie ſich doch weſentlich<br/>
+von dieſen dadurch, daß die unanfängliche Vegetation nur allein<br/>
+aus monocotyledoniſchen Stämmen beſtand, und in den Flötzen<br/>
+ein dicotyledoniſche St. gefunden worden ſind.</p><br/>
+<p class="dta-p">Wer in den todten und ſtarren Gebirgsarten des Innern<br/>
+verfolgt, den feſſeln die Spuren der Reſte alter Thiere und<br/>
+Floren, dem erſcheint der Boden unheimiſch, wo Elephanten<br/>
+und crodillartige Thiere ſich vorfinden. Dieſes Aneinande<span class="dta-supplied">[r-]</span><br/>
+reihen von Organismus hat das Leben von coloſſalen<br/>
+Landthieren bis zum Corallenſtamme gallertartig umhüllt, verfolgt.<br/>
+Ein großer Theil der Gebirgsformationen iſt durch Spuren<br/>
+des Zuſammenlebens und des Alters nach, characteriſirt.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0279 : 273.|</span><br/>
+<p class="dta-p">Wie ſich in den Uebergangsgebirgen wozu auch der größere<br/>
+Theil des Harzes gehört, Bambusſchilf, Stengel von Farren-<br/>
+kräutern, eine Maſſe von Corallen finden, ſo zeigen ſich<br/>
+auch zugleich ſehr ausgebildete Thiere, als Tricholiten,<br/>
+Käfermuſcheln mit und ohne Gitterungen, ein Krebsartiges<br/>
+Gliederthier von 4–4½ Länge, ferner ſepienartige Thiere<br/>
+und Orzowalithen.</p><br/>
+<p class="dta-p">Das Flötzgebirge enthält zahlloſe Polytaninen Muſcheln,<br/>
+Ammonshörner, <span class="aq ">etc</span>. und ein Thier was man bisher für ganz<br/>
+verloren hielt, hat der Capt. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119227568">Boudin</a></span></span> auf ſeiner Reihe ſogar<br/>
+lebendig wieder gefunden, nämlich eine Art <span class="aq ">Spirula,</span> die<br/>
+ich ſelbſt zu Paris in Weingeiß ſah. Dieſe Art gehört<br/>
+zu den ſeltenen Thieren welche nicht wie die Schnecken<br/>
+im Gehäuſe leben, ſondern der hintere Theil iſt um das<br/>
+Gehäuſe angewachſen. Ferner Belemniten oder die ſo-<br/>
+genannten Blitzpfeile, ein und zweiſchalige Seethiere,<br/>
+ſelbſt Theile von Dintenfiſche. Der Prof. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116828315">Boxler</a></span></span> in Oxford<br/>
+fand noch die Blaſe mit der Sepia ſo gut erhalten, daß ich<br/>
+ſelbſt noch deren eine Abbildung mit der ihr eigenen Farbe<br/>
+geſehen habe. Die größte Maſſe von Fiſchen findet<br/>
+man überhaupt in dem Flötzgebirge.</p><br/>
+<p class="dta-p">In der neuern Formation finden wir Krokodillartige<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0280 : 274.|</span><br/>
+Thiere, die aber von denen der jetzigen Zeit ſehr abweichend<br/>
+ſind; als den Megaloſaurus von 40–50′ Länge <span title="Original: /" class="dta-reg">(</span>die<br/>
+jetzigen Krokodille haben nur eine Länge von 20–22′.<span title="Original: /" class="dta-reg">)</span><br/>
+Ein von ihm aufgefundener Schenkelknochen war gegen<br/>
+5 Fuß lang. Ferner den Pleſioſaurus ein Krokodill<br/>
+mit einem Schwanenhalſe, der ⅔ der Länge des ganzen<br/>
+Thiers ausmacht. Auch Krokodille mit Fiſchungen von<br/>
+einer ſonderbaren concaven Geſtalt. Endlich wirkliche Kro-<br/>
+kodille, und was ſehr merkwürdig iſt, fliegende Eidexen,<br/>
+deren Flügel gleichſam wie Finger zuſammen gehalten<br/>
+werden. Dies gab zu einem gelehrten Streit zwiſchen<br/>
+<span title="H￼" class="dta-abbr">Herrn</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118805193">Sommering</a></span></span> Veranlaſſung, da letzterer<br/>
+ſie für Fledermäuſe hielt. – Auch Reſte von<br/>
+Cetaceen, Wallfiſchen, warmblütigen Säugethiern der<br/>
+Meere und der Flüße. Ueber der Kreide nehmen<br/>
+dann die Säugethiere ihren Anfang, anfangs ganz un-<br/>
+bekannte Arten und Formen, ähnlich dem Rhinoceros, Tapir,<br/>
+dem Pferde u. ſ. w. So wie die Gattungen <span class="aq ">Ampletorion</span><br/>
+und <span class="aq ">Paleterion</span>, wovon <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span></span> allein um Paris 18 Arten<br/>
+geſammelt hat; und um ſo überraſchender war das Auf-<br/>
+finden eines koloſſalen Tapir's, da man es nur für<br/>
+eine ſüdamerikaniſche Gattung hielt, aber gerade zu<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0281 : 275.|</span><br/>
+derſelben Zeit wurde eine andere noch lebende Art in<br/>
+der alten Welt auf Malakka entdeckt. So iſt in neuerer<br/>
+Zeit erwieſen, daß unſer Rindvieh nicht von Auerochſen<br/>
+abſtammt, denn Knochen ihrer ganz analog ſind in Nord-<br/>
+amerika gefunden, und zeigen daß der Urtypus davon<br/>
+unterging. Auffallend dagegen iſt es, daß bis jetzt<br/>
+keine Spur foſſiler Knochen von Auerochſen gefunden iſt.<br/>
+Nun kommen Elephanten, Rhinoceros, Nilpferde, aber<br/>
+neue Arten der Gattungen. – 1771 wurde ein dem<br/>
+indiſchen Elephanten ähnliches Thier bei Jadegerſte mit<br/>
+Fleiſch entdeckt. 1799 aber entdeckte <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/12017507X">Adams</a></span></span> im<br/>
+Eiſe der Lena, eine ungeheure Eismaſſe, aus welcher<br/>
+Knochen hervorragten. Fünf Jahre ſpäter alſo 1804<br/>
+meldeten die Jakuten, daß jetzt erſt das Thier vom<br/>
+Eiſe frei ſei; man fand das Thier noch ſo mit Fleiſch<br/>
+umgeben, daß Hunde, Wölfe und andere Thiere dadurch<br/>
+angezogen wurden, und ſich lange deren gewährt haben.<br/>
+Selbſt ein Auge und viel Muskelfleiſch war durch<br/>
+die Kälte bis dahin gut erhalten. Es war mit 15<br/>
+Zoll langen Haaren bedeckt, und hieraus hat man ſchließen<br/>
+wollen, daß es von einem elephantenartigen Thiere des<br/>
+Norden's abſtamme; dieſe Erklärung iſt aber nicht wahr-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0282 : 276.|</span><br/>
+ſcheinlich, da man neben dieſem Thiere Palmenholz und baum-<br/>
+artige Farrenkräuter vorgefunden hat, die unmöglich hier<br/>
+ihren Urſprung haben konnten. Das Scelett iſt nachher<br/>
+nach Petersburg gebracht. Noch muß ich das große<br/>
+Faulthier <span title="Original: /" class="dta-reg">(</span><span class="aq ">Megaterion</span><span title="Original: /" class="dta-reg">)</span> erwähnen, das man neuerlich für<br/>
+ein Armadill oder Tatu erklärt hat, und ſo höchſt wunder-<br/>
+bar gebauet iſt, daß man es für einen Aerolithen halten<br/>
+möchte. Das Verdienſt dieſer Beobachtungen gebührt<br/>
+in frühern Zeiten <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119291827">Campe</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/118805193">Sommerring</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/116208503">Blumenbach</a></span>,</span><br/>
+und in neuern Zeiten vorzüglich <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span>.</span></p></div></div></div></div></div></body></html>

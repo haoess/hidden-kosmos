@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span title="Original: D. 16. Jan." class="dta-reg">21. Vorlesung, 16.01.1828</span></div><br/>
+<p class="dta-p">Wir gehen jetzt zu den Planeten über, die<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">untern Planeten</span><br/>
+</span><span class="u ">untern Planeten</span> genañt werden, weil ſie<br/>
+von der ellyptiſchen Erdbahn eingeſchloſſen<br/>
+werden u. von denen wir bis jetzt den<br/>
+Merkur u. die Venus keñen. Jſt ihn<br/>
+Standpunkt zwiſchen der Erde u. Soñe, so<br/>
+befinden ſie ſich in <span class="u ">der untern Conjunc-</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">untere<br/>
+u. obere Conjunc-<br/>
+tion</span><br/>
+</span>tion, ſo wie jenſeits der Soñe in der<br/>
+<span class="u ">obere Conjunction</span>, wo ſie viel erleuch-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Merkur</span><br/>
+</span>teter uns erſcheinen. <span class="u ">Merkur</span> iſt mi<span class="dta-supplied">[t]</span><br/>
+bloßen Augen ſehr ſchwer zu ſehen, u. <span title="Personenname"><a href="http://d-nb.info/gnd/118565273">Co<span class="dta-supplied">[per-]</span><br/>
+nikus</a></span> bereuete es auf dem Sterbebette<span class="dta-supplied">[,]</span><br/>
+denſelben nie geſehen zu haben. Jn den<br/>
+Tropen-Gegenden wird es bei reiner At-<br/>
+moſphäre viel leichter ihn zu erkeñen.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Lichtſtärke<br/>
+<span title="deſſelb￼" class="dta-abbr">deſſelben</span></span><br/>
+</span><span class="u ">Seine Lichtſtärke</span> iſt viel größer als di<span class="dta-supplied">[e]</span><br/>
+des Jupiter u. ſ<span class="u ">eine ſcheinbare Größe</span> va-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Scheinbare<br/>
+Größe<br/>
+wirkl. Größe</span><br/>
+</span>riirt von 4½–11 Secunden. Sein<br/>
+<span class="dta-del" title="Streichung (#ow)">S</span><span class="dta-add" title="Hinzufügung (across)">D</span>urchmeſſer beträgt 580 Meilen, der<br/>
+Umlauf 87 Tage u. ſeine Bahn iſt am<br/>
+meiſten excentriſch außer der, der<br/>
+Planeten Juno u. Pallas. <span class="u ">Seine Entfer-</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Entfernung</span><br/>
+</span><span class="u ">nung</span> von der Soñe beträgt 8 <span title="Million￼" class="dta-abbr">Millionen</span><br/>
+Meilen, während hier beiläufig geſagt d<span class="dta-supplied">[ie]</span><br/>
+Erde 21 Mill. Meilen von der Soñe u. de<span class="dta-supplied">[r]</span><br/>
+Mond 51,000 Meilen von der Erde ent-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Keñtniß</span><br/>
+<span class="dta-del" title="Streichung (#s)"><span class="u ">über</span> </span><span class="u ">der Egÿpter<br/>
+von dem Umlauf</span><span class="u ">s</span><span class="dta-del" title="Streichung (#s)"><span class="u ">zeit</span></span><br/>
+<span class="u ">des Merkurs</span><br/>
+</span>fernt iſt. Schon die Egypter nahmen<br/>
+an, daß Merkur u. Venus ſich um<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">die</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0135 : 131.|</span><br/>
+die Soñe drehen oder vielmehr um den<br/>
+von <span title="ihn￼" class="dta-abbr">ihnen</span> angenom̃enen Weltheerd, welches<br/>
+den <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118565273">Copernicus</a></span></span> auf ſein Sÿſtem leitete.<br/>
+Erſt im J. 1800 iſt die Umlaufszeit des-<br/>
+ſelben beſtim̃t worden. Durch Meſſun-<br/>
+gen von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11876196X">Schroetter</a></span></span> angeſtellt, will man<br/>
+auf dem Merkur hohe Berge bis zur<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Berge.</span><br/>
+</span><span class="u ">Höhe von 58000′</span> gefunden haben. Die<br/>
+Rotation iſt durch die Lichtgrenze bemerkt<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Umlaufs-<br/>
+zeit Beobacht.</span><br/>
+</span>worden u. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116474580">Harding</a></span></span> beobachtete den<br/>
+Umlauf eines Fleckens. Noch iſt es zwei-<br/>
+felhaft, ob er eine Atmoſphäre hat, oder<br/>
+ob die beobachteten Veränderungen<br/>
+von den Flüßigkeiten der Oberfläche<br/>
+herröhren. Mit Recht koñte man ver-<br/>
+muthen, <span title="dß" class="dta-abbr">daß</span> man erſtere beim Durchgange<br/>
+durch die Soñenſcheibe wahrnehmen köñte;<br/>
+allein ich habe ſelbſt bei dieſer Beobachtung<br/>
+in <span class="aq ">Lima</span> nichts davon wahrgenom̃en.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Durchgang<br/>
+durch die Soñe.</span><br/>
+</span><span class="u ">Der erſte Durchgang des Merkur durch</span> die<br/>
+Soñe wurde zuerſt von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118537695">Gasse<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">n</span>di</a></span></span> beobach-<br/>
+tet, der <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118561448">Kepler</a></span></span> vorhergeſagt hatte. Jn<br/>
+neuerer Zeit ging <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118720066">Halle</a></span></span> dieſer Beobachtung<br/>
+wegen nach <span class="aq ">St. Helena</span>, um beſonders<br/>
+hieraus die wahre Entfernung der Erde<br/>
+von der Soñe zu beſtim̃en, <span title="Schreibfehler: owohl" class="dta-corr">obwohl</span> die<br/>
+Venus dazu viel dienlicher geweſen.<br/>
+1832 u. 1835 werden die nächſten<br/>
+Durchgänge <span title="eintret￼" class="dta-abbr">eintreten</span>, welches letzten Jahr<br/>
+auch noch dadurch merkwürdig werden<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">1835<br/>
+kehrt der Comet<br/>
+v.</span> <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118720066">Halle</a></span></span> wieder.</span><br/>
+</span>dürfte, daß <span class="u ">in dieſem d. Comet von</span> <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118720066">Halle</a></span></span> wiederkehrte.</span></p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0136 : 132.|</span><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Venus</span><br/>
+</span>Wir kom̃en zu dem <span class="u ">Planeten</span> <span class="aq "><span class="u ">Venus</span></span>. Schon<br/>
+im Alterthum beſtim̃te es <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118591770">Parmenides</a></span></span>, daß er<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Morgen- u.<br/>
+Abendſtern.</span><br/>
+</span>als <span class="u ">Morgen u. Abendſtern erſch</span>eine u. ein<br/>
+u. derſelbe Stern ſey. Er leuchtet ſo ſtark<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Lichtſtärke</span><br/>
+</span><span title="dß" class="dta-abbr">daß</span> das Vollmondlicht ihn nur <span class="u ">3000 mal über</span><br/>
+trifft. Man ſieht auf ſeiner Oberfläche<br/>
+große Unebenheiten u. weñ <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117573752">La Hire</a></span></span> die<br/>
+Berge h<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">öh</span>er ſchätzt als <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">d</span>es Mondes, ſo giebt<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11876196X">Schroeder</a></span></span> ſie außer<span class="dta-del" title="Streichung (#erased)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">orden</span>tlich hoch, ſ<span class="u ">elbſt</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Höhe der<br/>
+Berge</span><br/>
+</span><span class="u ">bis auf 7 Meilen</span> an. Deutlich erblickt<br/>
+man auf der Venus Spuren der Däm̃erung.<br/>
+Ueber ihre Umdrehung iſt ein großer Streit<br/>
+entſtanden. Jn neuerer Zeit iſt die Geſtalt<br/>
+des ſüdlichen Hores hiezu benutzt worden<br/>
+u. man hat gefunden, daß Venus in 23 <span title="Std￼" class="dta-abbr">Stunden</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Umdrehungs-<br/>
+zeit</span><br/>
+</span>21 <span title="Minut￼" class="dta-abbr">Minuten</span> <span class="u ">rotirt</span>, wie dies <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Dominic Cassini</a></span></span><br/>
+ermittelt. Ueber den Mond der Venus<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Mond<br/>
+des Venus.</span><br/>
+</span>iſt viel gefa<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">be</span>lt worden u. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118568876">Lambert</a></span></span> h<span class="dta-supplied">[at]</span><br/>
+ſogar ſchon Tafeln für denſelben berechne<span class="dta-supplied">[t,]</span><br/>
+im J. 1769 beim Durchgang der Venus durch<br/>
+die Soñe iſt jedoch hievon nichts bemerkt<br/>
+worden. Die ſehr ſ<span class="u ">ichtbaren Phaſen de<span class="dta-supplied">[r]</span></span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Phaſen<br/>
+derſelben</span><br/>
+</span>Venus ſind ein ganz ſicherer Beweis von<br/>
+der Richtigkeit unſeres Syſtems. Sie geh<span class="dta-supplied">[ören]</span><br/>
+mit zu den früheſten Entdeckungen durch<br/>
+die Fernröhre, die geordnet ſo <span title="folg￼" class="dta-abbr">folgen</span><span class="dta-supplied">[:]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Folge<br/>
+der Entdeckun-<br/>
+gen neuerer<br/>
+Zeit.</span><br/>
+</span>zuerſt ſah man die Soñenflecken, dañ<br/>
+die Jupiterſtrabanten, dañ den Saturn<br/>
+Ring, dañ 1610 die Phaſen der Venus.<br/>
+Sie wird der <span class="u "><span class="aq ">Nuntius Siderius</span></span> genañt,<br/>
+u. <span title="Personenname"><a href="http://d-nb.info/gnd/118537229">Galilai</a></span> machte folgende Logegriph auf<br/>
+dieſelbe: <span class="aq ">Altissimum planetam tergeminum</span>.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Der</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0137 : 133.|</span><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Durchgang<br/>
+der Venus durch<br/>
+die Soñe</span><br/>
+</span>Der erſte <span class="u ">Durchgang der Venus</span> durch<br/>
+die Soñe wurde 1639 beobachtet, dañ 1761.<br/>
+der berühmteſte jedoch war der von <span class="aq ">Ceocx</span><br/>
+1769 beobachtete auf Otaheite, merkwür-<br/>
+dig wegen der Beſtim̃ung der Soñen <span class="aq ">Para-<br/>
+laxe</span>, um hieraus die Entfernung der Erde<br/>
+von der Soñe zu beſtim̃en. HErr <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116471727">Enke</a></span></span> hat<br/>
+Alles zuſam̃engeſtellt, was über die <span class="aq ">Paralaxe</span><br/>
+der Soñe ermittelt worden, u. der Jrthum<br/>
+hierin ſchwankt zwiſchen 8,5 u. 8,6 Sec.<br/>
+Die Entfernung von der Soñe wird dadurch<br/>
+um <span class="sup ">1</span>/<span class="sub ">230</span> unſicher, was ungefähr in dem Ver-<br/>
+hältniß ſteht, als weñ man bei Beſtim̃ung<br/>
+der Höhe der Schneekoppe von 4950 Fuß<br/>
+um 20 Fuß irrte. Den Abſtand des<br/>
+Mondes von der Erde kañ man jedoch 13–<br/>
+14 mal beßer <span title="wiß￼" class="dta-abbr">wißen</span>.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Erde.</span><br/>
+</span>Jn Beziehung auf die Erde werden<br/>
+wir hier nur von deren Rotation u.<br/>
+Translation ſprechen. <span class="u ">Die Meſſungen</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Meſſungen<br/>
+der Erde</span><br/>
+</span><span class="u ">der Erde</span>, die von 1683–1718 <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Cassini</a></span></span><br/>
+u. <span title="Personenname"><a href="http://d-nb.info/gnd/117541613">Maraldi</a></span> anſtellten, ergaben, daß<br/>
+am Aequator eine <span title="Schreibfehler: Applattung" class="dta-corr">Abplattung</span> ſtatt finde<br/>
+u. dieſelbe an den Polen zugeſpitzt ſei.<br/>
+Obgleich ſie hiebei nur unvollkomne Jnſtru-<br/>
+mente anwendeten; ſo lag doch der Jrthum-<br/>
+nicht in der Meſſung ſelbſt, ſondern in der<br/>
+großen Unregelmäßigkeit <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">de</span>r Figur der<br/>
+Oberfläche der Erde, wo <span title="gemeſſ￼" class="dta-abbr">gemeſſen</span> wurde.<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118731998">Maupertuis</a></span></span> u. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118778390">Condamine</a></span></span> im <span title="Nord￼" class="dta-abbr">Norden</span> u. <span title="Süd￼" class="dta-abbr">Süden</span><br/>
+haben die <span title="Schreibfehler: Applattung" class="dta-corr">Abplattung</span> der Erde an de<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">n</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">Pol</span>en</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0138 : 134.|</span><br/>
+Polen dargethan, obgleich auch die <span title="Meſſung￼" class="dta-abbr">Meſſungen</span><br/>
+des erſtern durch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117679100">Schwaneberg</a></span></span> verbeſſert<br/>
+worden. <span class="u ">Anſtatt 57400 Toiſen für einen</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Größe<br/>
+eines Grades</span><br/>
+</span><span class="u ">Grad, fand er nur 57288 Toiſen.</span> Ver-<br/>
+gleicht man die Gradmeſſungen in Peru<br/>
+mit denen in Frankreich, ſo beträgt die<br/>
+<span title="Schreibfehler: Applattung" class="dta-corr">Abplattung</span> <span class="sup ">1</span>/<span class="sub ">330</span>, vergl. man die in Frank-<br/>
+reich mit der in Lappland, ſo beträgt ſo<br/>
+<span class="sup ">1</span>/<span class="sub ">304</span>. Am Wahrſcheinlichſten iſt ſie <span class="sup ">1</span>/<span class="sub ">289</span> oder<br/>
+zwiſchen <span class="sup ">1</span>/<span class="sub ">305</span> u. <span class="sup ">1</span>/<span class="sub ">289</span>. Beobachtungen des<br/>
+Mondes, weiſen auf das erſtere, geödäti-<br/>
+ſche Meſſungen auf das zweite Verhältniß.<br/>
+Die ganze Ungewisheit beſteht darin ob<br/>
+um den Aequator eine 3500 Fuß höhere<br/>
+Maſſe aufgehäuft iſt, oder nicht. <span class="u ">Die Ex-</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Excentricität<br/>
+d. Erdbahn.</span><br/>
+</span><span class="u ">centricität der Erd<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">b</span>ah<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">n</span></span> iſt wie bei<br/>
+allen übrigen Planeten, außer Merkur<br/>
+u. Venus im Abnehmen, welche letztere Bahn<br/>
+hierin zunehmen. <span class="u ">Von der Rotation</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Rotation<br/>
+drei Beweiſe</span><br/>
+</span><span class="u ">unſeres Erdkörpers köñen wie drei-</span><br/>
+<span class="dta-marginal dta-marginal-left">1.,<br/>
+</span><span class="u ">erlei Beweiſe erwähnen, 1., Die Applat-<br/>
+tung</span> oder ſphäroidiſche Geſtalt der<br/>
+<span class="dta-marginal dta-marginal-left">2.,<br/>
+</span>Erde ſelbſt 2., <span class="u ">Die Pendelverſuche,</span> die,<br/>
+weñ ſie ſtille ſtände, an jedem Orte<br/>
+bei gleicher Länge derſelben, auch gleich<br/>
+<span class="dta-marginal dta-marginal-left">3.,<br/>
+</span>ſchlagen <span title="würd￼" class="dta-abbr">würden</span> u. 3., <span class="u ">der Fall des<br/>
+Körper ſelbſt.</span> Wäre die Rotation<br/>
+der Erde 17 mal ſchneller, ſo würde<br/>
+kein Körper am Aequator fallen, u.<br/>
+würde ſie noch ſchneller ſein, ſo würde<br/>
+alle Körper verſchleuder<span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[n]</span></span><span class="dta-add" title="Hinzufügung (across)">t</span> werden.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0139 : 135.|</span><br/>
+<p class="dta-p">Als das Copernikaniſche Syſtem von der Rotation<br/>
+der Erde bekañt wurde, kam man auf die<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Fall<br/>
+der Körper</span><br/>
+</span>Jdee, daß Körper, die von einer bedeuten-<br/>
+den Höhe fallen, nicht perpendicular<span class="dta-del" title="Streichung (#s)"> <span title="fall￼" class="dta-abbr">fallen</span></span><br/>
+ſondern <span title="weg￼" class="dta-abbr">wegen</span> des Umſchwungs der Erde wäh-<br/>
+rend der <span class="u ">Fallzeit nach <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">W</span>eſten fallen</span>. Dies<br/>
+verſuchte ſelbſt <span title="Personenname"><a href="http://d-nb.info/gnd/118514237">Tÿcho</a></span>, der grade das<br/>
+Gegentheil fand, ohne den Grund ſich erklä-<br/>
+ren zu köñen. Erſt <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118587544">Neuton</a></span></span> ermittelte es,<br/>
+daß Körper, indem ſie fallen ſchon<br/>
+die Wurfkraft <span title="erhalt￼" class="dta-abbr">erhalten</span>, wie Zb. ein<br/>
+Körper der von der Höhe eines Maſtes auf<br/>
+ein <span title="Original: ſeegelndes" class="dta-reg">ſegelndes</span> Schiff fällt, die Bewegung mit<br/>
+erhält. <span class="dta-del" title="Streichung (#ow)">Die</span><span class="dta-add" title="Hinzufügung (across)">Durch</span> Verſuche, die auf dem Thurme<br/>
+<span class="aq ">Asinelli</span> zu <span class="aq ">Bologna</span> u. von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119019930">Benzen-<br/>
+berg</a></span></span> in <span class="aq ">Hamburg</span> <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span> angeſtellt wurden, iſt<br/>
+die Rotation der Erde unwiderleglich be-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Deviation<br/>
+der Körper<br/>
+beim Fall</span> <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="u ">iſt</span> </span><span class="u ">nach Oſten.</span><br/>
+</span>wieſen; indem die Deviation der Körper<br/>
+beim <span class="u ">Fall, nach Oſten ſtatt findet</span>. Von<br/>
+einer Höhe von 250–60 Fuß betrug<br/>
+die Deviation nach Oſten 4–5″. Dieſe<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Erklärung</span><br/>
+</span><span class="u ">Erſcheinung rührt daher,</span> daß der höhere<br/>
+Punkt der Erde ſich ſchneller bewegt als<br/>
+der untere, u. daher dem Körper eine<br/>
+größere Wurfkraft mittheilt.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Beweiſe<br/>
+für die<br/>
+Translation</span><br/>
+</span><span class="u ">Beweiſe für die Translation der Erde</span><br/>
+ſind eben ſo ſicher. Da nach dem Coperni-<br/>
+kaniſchen Syſtem die Erdbahn 40 Mil. <span title="Meil￼" class="dta-abbr">Meilen</span><br/>
+Durchmeſſer hat, ſo entſtand bald die<br/>
+Frage, ob hiebei nicht eine Paralaxe der<br/>
+Sterne zu <span title="beobacht￼" class="dta-abbr">beobachten</span> ſein ſollte. Man<br/>
+ſtellte darüber ſehr genaue Beobachtungen<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">an</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0140 : 136.|</span><br/>
+an u. man bemerkte; weñ die Sterne<br/>
+bei Tage <span title="culminir￼" class="dta-abbr">culminiren</span> ſie <span title="geg￼" class="dta-abbr">gegen</span> Süden u.<br/>
+weñ ſie bei Nacht <span title="culminir￼" class="dta-abbr">culminiren</span> <span title="geg￼" class="dta-abbr">gegen</span> Norden<br/>
+<span title="abweich￼" class="dta-abbr">abweichen</span> u. den ſcheinbare Ort derſelben<br/>
+im̃er dahin geht, wo ſich die Erde hinbewegt.<br/>
+Die Ellypſe des Sterns iſt gleich 40 Secunde<br/>
+gleich dem Bogen welchen die Erde in 16 <span class="dta-supplied">[<span class="aq ">Sec</span>.]</span><br/>
+durchläuft; da aber die Geſchwindigkeit<br/>
+des Lichts 10000 geſchwinder iſt, als der<br/>
+Lauf der Erde, ſo erſcheint der Stern in<br/>
+der Richtung der Diagonale in dem Para-<br/>
+lelogram<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"> <span class="b ">der Kräfte</span></span>. Es iſt hiebei derſelbe Fall, a<span class="dta-supplied">[ls]</span><br/>
+weñ eine Kanonenkugel durch ein ſehr<br/>
+breites Schiff <span title="dring￼" class="dta-abbr">dringen</span> würde, welches eben<br/>
+in raſchem Laufe <span title="begriff￼" class="dta-abbr">begriffen</span> wäre; offenbar<br/>
+würde es die iñern Wände in einer ſchräge<span class="dta-supplied">[n]</span><br/>
+Richtung durchdringen u. nicht grade durch<br/>
+gehen. Der dritte Gegenſtand, über<br/>
+den wir noch <span title="ſprech￼" class="dta-abbr">ſprechen</span> wollen u. der mit<br/>
+dem Bildungsalter der menſchl. Cultur zuſam-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Vorrücken<br/>
+der Nachtglei-<br/>
+chen</span><br/>
+</span>menhängt. <span class="u ">Dies iſt die bemerkte Vorrückung<br/>
+der Nachtgleichen</span>, u. dies iſt wirklich, daß<br/>
+ſich die Erdaxe in 25700 J. um den ganzen<br/>
+Thierkreis dreht oder <span title="ein￼" class="dta-abbr">einen</span> Kreis beſchreibt.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Urſache<br/>
+dieſer Erſchei-<br/>
+nung.</span><br/>
+</span><span class="u ">Wäre die Erde eine vollkom̃ene Kugel,<br/>
+ſo würde ſie in gleicher Lage gegen die Soñe<br/>
+beharren</span> u. auf der Er<span class="dta-del" title="Streichung (#ow)">b</span><span class="dta-add" title="Hinzufügung (across)">d</span>bahn in gleicher<br/>
+Richtung <span title="ſteh￼" class="dta-abbr">ſtehen</span> bleiben; ſie hat aber eine<br/>
+gedrückte Pomeranzen-form, u. durch ihre<br/>
+ſchräge Stellung auf der Erdbahn gegen<br/>
+die Soñe iſt offenbar der untere Theil ſchwe-<br/>
+rer als der obere, u. dadurch will ſich<br/>
+der Aequator auf d. Erdbahn ſenken<span title="Schreibfehler: " class="dta-corr">.</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Die</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0141 : 137.|</span><br/>
+Die Schwung<span class="b ">kraft</span> von der Soñe hindert<br/>
+dies jedoch, u. es entſteht eine ausweichende<br/>
+Bewegung, n<span class="dta-del" title="Streichung (#erased)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)"><span class="b ">äm</span></span>lich der Axe, die ſich in<br/>
+verkehrter Richtung um ſich ſelbſt bewegt.<br/>
+Eine Kugel würde durch äußere Kraft<br/>
+keine Stöhrung erleiden, weil allenthal-<br/>
+ben gleich viel Maſſe wäre; bei der<br/>
+<span title="Schreibfehler: Applattung" class="dta-corr">Abplattung</span> muß aber dies Phänomen<br/>
+entſtehen, u. die Rotation der Erde<br/>
+hindert <span title="ds" class="dta-abbr">das</span> Zuſam̃enfallen der Ecclÿptik<br/>
+mit der Erdbahn, u. die Erdaxe geht<br/>
+<span title="dagg￼" class="dta-abbr">dagegen</span> allmählig von Oſten nach Weſten.</p></div></body></html>

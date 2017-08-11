@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session">   <div class="dta-head"><span title="Original: 38. 15. März." class="dta-reg">38. Vorlesung, 15.03.1828</span></div><br/>
+<p class="dta-p">Wir kommen nun zum lezten Theil der Geognosie, zur <span class="u ">Gliederung der<br/>
+Kontinente</span>, welche in genauer Verbindung steht mit der Vertheilung<br/>
+der Klimate, und dies macht dann den natürlichsten Übergang<br/>
+zur Klimatologie.</p><br/>
+<p class="dta-p">Es ist wahrscheinlich, dass die Hebung der Kontinente früher<br/>
+statt fand, als die der Bergketten selbst, und überall hängt die Ver-<br/>
+schiedenheit der Temperatur von dem Verhältnis der Kontinente zu<br/>
+den <span class="dta-del" title="Streichung (#ow)">F</span><span class="dta-add" title="Hinzufügung (across)">f</span>lüssigen Theilen<span class="dta-add" title="Hinzufügung (superlinear)"> ab</span>, aus denen sie emporstiegen: wenn man dieses<br/>
+Verhältnis ändern könte, so würde das Klima ganz anders werden.</p><br/>
+<p class="dta-p">Über diesen Theil der physikalischen Geographie haben die gros-<br/>
+artigen und geistreichen Ansichten des Prof. <span title="Personenname"><a href="http://d-nb.info/gnd/11860130X">Ritter</a></span> viel Licht<br/>
+verbreitet; er hat gezeigt, wie von dem Klima die Gesittung und<br/>
+der ganze Kulturzustand der Völker abhängt.</p><br/>
+<p class="dta-p">Die Oberfläche der Erde theilt sich<br/>
+<div class="dta-list">   <span class="dta-list-item">1, in das trokne, starre, – die Kontinente, und</span>
+<span class="dta-list-item">2, in das flüssige <span title="Schreibfehler: —〃" class="dta-corr">[…]</span> – die Meere.</span>
+</div></p>   <p class="dta-p">Der Kontakt dieser beiden Elemente bestimt die Form und<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0446 : 221v|</span><br/>
+<span title="Schreibfehler: und " class="dta-corr">[…]</span>den Umris der Kontinente, welcher (Umris) in Bezug auf die<br/>
+Kultur und den geselligen Zustand der Völker von der grösten Wich-<br/>
+tigkeit ist. Im allgemeinen hat zwar das Meer fast dasselbe<br/>
+Niveau rings um <span title="Schreibfehler: der" class="dta-corr">das</span> Sphäroid, das wir bewohnen, aber im ein-<br/>
+zelnen finden sich Abweichungen. So sind die Ansamlun-<br/>
+gen von süssen Binnenwassern, die Seeen von verschiedener<br/>
+Höhe gegen das Meer: d<span class="dta-del" title="Streichung (#ow)">as</span><span class="dta-add" title="Hinzufügung (across)">ie</span> kaspische <span class="dta-del" title="Streichung (#s)">Meer</span><span class="dta-add" title="Hinzufügung (superlinear)">See</span> ist niedriger als<br/>
+das schwarze Meer. Der höchste Binnensee ist der Munn-<br/>
+saraba <span class="dta-metamark" title="metamark">(?)</span> auf dem Himalaya. – Der See Tiliacca <span class="dta-metamark" title="metamark">(?)</span> in Peru<br/>
+hat 8000 Fus Höhe, und ist sehr reich an Fischen, die sich also<br/>
+in einer Region befinden, 3 mal höher als die Wolkenschich-<br/>
+ten in der jezigen Jahreszeit.</p><br/>
+<p class="dta-p">Die chemische Natur der Seeen ist sehr verschieden: man<br/>
+hat lange geglaubt, dass durch das Zuströmen von süssem<br/>
+Wasser und die Dekomposizion so vieler <span title="Schreibfehler: animalischen" class="dta-corr">animalischer</span> und<br/>
+<span title="Schreibfehler: vegetabilen" class="dta-corr">vegetabiler</span> Körper sich gewisse Salze bilden müsten, besonders<br/>
+wo kein unterirdischer Abflus stattfindet: es hat sich hierüber<br/>
+noch neuerdings ein Streit wegen des Seees <span class="u ">Tschad</span>, im Innern<br/>
+von Afrika erhoben, ob er süsses oder salziges Wasser habe<span title="Schreibfehler: ." class="dta-corr">[…]</span> (bei<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0447 : 222r|</span><br/>
+<div class="fw-top fw-sig">56.</div><br/>
+Gelegenheit der von <span title="Personenname"><a href="http://d-nb.info/gnd/117632368">Denham</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/119426943">Clapperton</a></span> gemachten Entdekkung<br/>
+dieses Seees)<span title="Schreibfehler: " class="dta-corr">.</span> Ich habe den See von Tacarigua, zwischen den bei-<br/>
+den Bergketten von Venezuela untersucht, und darin nur salz-<br/>
+sauren Kalk gefunden; es war kein Abflus desselben zu be-<br/>
+merken.</p><br/>
+<p class="dta-p">Ausser den Seeen giebt es schmale longitudinale Wasser-<br/>
+bekken, <span class="u ">Flüsse</span> genant, welche unendlich viel zur Belebung<br/>
+und Bevölkerung der Kontinente beitragen. Meist bilden sie<br/>
+ihr Wassersystem für sich, selten sind Verzweigungen oder Ana-<br/>
+stomosen derselben, wie in Südamerika; – als ob ein Arm des<br/>
+Rhein in die Donau fiele – solche inneren Inseln (wenn wir näm-<br/>
+lich jeden mit Wasser umschlossenen Raum so nennen wollen)<br/>
+welche durch Bifurkazion zweier Ströme entstehn, bilden Mesopo-<br/>
+tamie<span class="dta-add" title="Hinzufügung (superlinear)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span>n, wie zwischen dem Euphrat und Tigris, wo die beiden<br/>
+Flüsse mehrfach durch Kanäle verbunden sind: die gröste dieser<br/>
+Erscheinungen zeigt d<span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)">a</span>s spanische Guiana, von den Ausflüssen<br/>
+des Orenoco an, der einen Nebenarm, den Kasuiquiare in den<br/>
+Rio Negro sendet, und dieser fliest in den Amazonenstrom, wel-<br/>
+cher die Insel vollendet.</p><br/>
+<p class="dta-p">Die Breite der Flüsse ist oft so bedeutend, dass dadurch nicht<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0448 : 222v|</span><br/>
+allein die Wanderungen der Völker aufgehalten werden, sondern<br/>
+auch an beiden Ufern des Flusses ganz verschiedene Produk-<br/>
+zionen sich finden. Manche Flüsse in Amerika haben 200–<br/>
+300 Meilen von ihrem Ausflusse eine Breite von 12–18000<br/>
+Fus, und an ihrer Mündung Süswassergolfe von 40 Meilen<br/>
+Öfnung. Schon <span title="Personenname"><a href="http://d-nb.info/gnd/118534912">Franklin</a></span> machte die scharfsinnige Bemerkung,<br/>
+dass der gröste Theil dieser Golfe nicht in das Meer ausflies-<br/>
+se, weil dieses durch seine Fluten das Wasser zurükdrängt,<br/>
+sondern in die Luft verdunstet werde.</p><br/>
+<p class="dta-p">Wir müssen das <span class="u ">Wasser</span>, welches 4 mal so viel Sauerstof<br/>
+enthält, als die <span title="Schreibfehler: Luft" class="dta-corr">Luft</span>, und die Luft selbst, als die beiden<br/>
+Hauptbedingungen des organischen Lebens auf der Erde ansehn;<br/>
+(daher kann auf dem Monde das, was wir organisches Leben<br/>
+nennen, nicht statt finde<span class="dta-del" title="Streichung (#ow)">t</span><span class="dta-add" title="Hinzufügung (across)">n</span>; es giebt daselbst keine Flüssig-<br/>
+keit, wie das Wasser: denn, so weit man ihn untersucht hat,<br/>
+ist das Niveau von jeden 2 Punkten seiner Oberfläche unter<br/>
+sich verschieden.) Früher hielt man das Licht als unumgäng-<br/>
+lich nothwendig dafür: allein man hat diese Meinung auf-<br/>
+gegeben, seitdem man unterirdische Pflanzen und Thiere ken-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0449 : 223r|</span><br/>
+nen gelernt hat, und auf Fische aufmerksam geworden ist, welche<br/>
+in einer solchen Tiefe des Meeres leben, dass daselbst nach <span title="Personenname"><a href="http://d-nb.info/gnd/117622974">Bou-<br/>
+guers</a></span> und anderer Untersuchungen eine absolute Dunkelheit<br/>
+herschen mus.</p><br/>
+<p class="dta-p">Von den flüssigen Umhüllungen der Erde unterscheiden wir 2:<br/>
+<div class="dta-list">   <span class="dta-list-item">1, eine allgemeine: den Luftozean;</span>
+<span class="dta-list-item">2, eine partikuläre: das Wassermeer.</span>
+</div></p>   <p class="dta-p">Den Boden der ersten bilden das Meer und die Erde, deren höchste<br/>
+Berggipfel nichts anderes sind, als Untiefen auf dem Grunde<br/>
+des Luftozeans. Das Wasser ist in den oberen Schichten am mei-<br/>
+sten bewohnt, die Luft in den unteren: nur wenigen Geschöpfen<br/>
+ist es erlaubt, sich in die höhern Regionen der Luft zu erheben,<br/>
+am meisten den Vögeln. Auf 18000 Fus Höhe am Chimboraço<br/>
+fand ich: Geyer, Kondur's und Insekten, namentlich Schmet-<br/>
+terlinge: auch auf dem Himalaya hat man sie bemerkt: sie<br/>
+erheben sich aber nicht wilkührlich dahin, durch die Kraft<br/>
+ihrer Muskeln (wenn man ihnen überhaupt Muskeln zuschreiben<br/>
+kann) sondern durch aufströmende Luftzüge. Bei Tage nämlich<br/>
+erhizt sich die Erdoberfläche durch die auffallenden Sonnenstrahlen,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0450 : 223v|</span><br/>
+und es erzeugen sich „couran<span class="dta-del" title="Streichung (#s)">t</span>s ascend<span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)">a</span>nts” welche die Insekten<br/>
+bis zu einer Höhe heben, wo sie einige Zeit ohne Nahrung leben<br/>
+müssen. <span title="Hr." class="dta-abbr">Herr</span> <span title="Personenname"><a href="http://d-nb.info/gnd/101165250">Boussingault</a></span>, der nach mir die Silla von Caracas<br/>
+gemessen hat – (man behauptete nämlich, wie es gewöhnlich<br/>
+bei Erdbeben zu geschehn pflegt, dass bei dem lezten Erdbeben<br/>
+von 1812 ein Theil der Silla eingestürzt sei: deshalb war die<br/>
+Messung wichtig; sie differirte von der meinigen kaum um<br/>
+5–6 Fus, und zeigte, dass die Höhe des Berges ganz die-<br/>
+selbe wie früher ist.) – fand auf dieser Höhe von 9000 Fus eben-<br/>
+fals Insekten, und <span class="dta-add" title="Hinzufügung (superlinear)">– </span><span title="Schreibfehler: (" class="dta-corr">[…]</span>sehr merkwürdig,<span class="dta-add" title="Hinzufügung (superlinear)"> –</span> Halme von Gräsern: er<br/>
+bemerkte, dass leuchtende Körper aus der Athmosphäre nie-<br/>
+derfielen, sammelte sie, und <span title="H￼." class="dta-abbr">Herr</span> <span title="Personenname"><a href="http://d-nb.info/gnd/115674667">Kunth</a></span> in Paris bestim̃te,<br/>
+dass es eine neue Spezies von Tilingia sei, die in grosser Ent-<br/>
+fernung davon wächst, wo also der Saame sehr weit durch<br/>
+die „courans ascendents” geführt sein mus. – Der rothe<br/>
+Schnee am Nordpol ist ebenfals eine vegetabilische Sub-<br/>
+stanz, ein kleiner Pilz, durch den man auf die Vermuthung<br/>
+kam, als ob Luftvegetabilien existirten, die in den obern Schich-<br/>
+ten schwebend erhalten werden: allein wahrscheinlicher ist es<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0451 : 224r|</span><br/>
+wohl eine meteorische Flechte, die sich erst nach dem Fallen des<br/>
+Schnees bildete.</p><br/>
+<p class="dta-p">Erde, Wasser und Luft bilden ein Naturganzes, deshalb kann<br/>
+man die 3 Substanzen hier nicht von einander trennen: so wie<br/>
+die Klimatologie sich nicht auf die Luft allein beschränkt: son-<br/>
+dern vielmehr d<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 2 Zeichen fehlen]</span></span><span class="dta-add" title="Hinzufügung (across)">er</span> Geognosie anheim gefallen ist, da das Kli-<br/>
+ma durch so mannigfache Ursachen bestimt wird. Erst in<br/>
+neuer Zeit ist man auf die Wirkung aufmerksam geworden,<br/>
+welche die Wärmestralung der Erde auf das Klima hat: sie<br/>
+ist viel stärker bei klarem Himmel als bei bedektem: daher<br/>
+pflegt man zu sagen<span class="dta-del" title="Streichung (#ow)">:</span><span class="dta-add" title="Hinzufügung (across)">,</span> und zwar ganz richtig: dass sternen-<br/>
+klare Nächte kälter sind; – nicht als ob das Licht der Ster-<br/>
+ne Kälte hervorbrächte, sondern weil die Wärmestralung<br/>
+gegen den heitern Himmel stärker ist; eine Wolkenschicht<br/>
+dagegen läst die zurükgestralte Wärme nicht durch, son-<br/>
+dern wirft sie wieder auf die Erde zurük.</p><br/>
+<p class="dta-p">Die ganzen Kontinente mit ihren Bergketten sind durch<br/>
+Hebung über den Meeresspiegel hervorgetreten: die unterir-<br/>
+dischen Kräfte wirkten daher mittelbar mit zur Bildung der<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0452 : 224v|</span><br/>
+Erdoberfläche, wie wir sie jezt sehn. Nach der Erhärtung der äus-<br/>
+seren Rinde haben vielleicht kleine Zufälligkeiten im Unterschie-<br/>
+de des Gleichgewichtes mehr nach dem Nordpol hingewirkt, als<br/>
+nach dem Südpol, daher dort eine grössere Ländermasse als hier.<br/>
+Bei der Hebung von Amerika wirkten die unterirdischen Kräfte<br/>
+mehr von Norden nach Süden, vielleicht auf einer grossen<br/>
+Spalte: dagegen erstrekt sich der alte Kontinent mehr von<br/>
+Osten nach Westen. Ganz anders würde bei uns die Tempe-<br/>
+ratur sein, wenn etwa das Mittelmeer nicht existirte, wenn<br/>
+sein Bekken zu derselben Höhe wie die lombardischen Ebnen<br/>
+und die Flächen der Cyrenaica sich erhoben hätte. Europa<br/>
+würde viel kälter sein, wenn Afrika nicht aus den Fluten<br/>
+emporgestiegen wäre: nun aber liegt uns südlich in dem<br/>
+Meridian von Lissabon und vom Ural ein grosser fester<br/>
+Kontinent, der als opaker Körper die Sonnenstralen besser<br/>
+reflektirt, als der durchsichtige Ozean: daher müssen die<br/>
+unter dem Aequator erwärmten Luftschichten über Eu-<br/>
+ropa hinfliessen, und die Kälte mindern. Darum ist Asien<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0453 : 225r|</span><br/>
+kälter als Europa 1, weil es eine Ostküste ist, und diese alle<br/>
+sind kälter als die Westküsten 2, weil sein Aequator sich<br/>
+in einem transparenten Mittel befindet, und die Luftschich-<br/>
+ten über ihm nicht so erwärmt werden können, als über dem<br/>
+Lande. Ganz anders würde das Klima der Erde sein, wenn<br/>
+Amerika sich von Osten nach Westen in der Tropenzone aus-<br/>
+dehnte, anstatt dass jezt nur ein kleiner Theil davon unter<br/>
+den Wendekreisen liegt.</p><br/>
+<p class="dta-p">Die Quantität der Erhebung im allgemeinen ist sehr gering,<br/>
+insofern wir nämlich die Kontinente als Bergrükken ansehn,<br/>
+deren Fus im Meere liegt. Der grosse <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span></span> hat sich vielfäl-<br/>
+tig mit der Erhebung der Kontinente und mit der Meerestiefe<br/>
+beschäftigt, und eine Menge von Berechnungen darüber an-<br/>
+gestelt. Einzelne Tiefen des Meeres entscheiden hier nichts,<br/>
+sondern die Sache muste von einer andern Seite genommen<br/>
+werden. <span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span> hatte aus der Ebbe und Flut die Tiefe des<br/>
+Meeres auf 50–60,000 Fus, als 3–4 Meilen berechnet (wel-<br/>
+ches uns hier zu weit führen würde, genauer auszuführen)<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0454 : 225v|</span><br/>
+allein dies ist viel zu tief: er hat nachher seine Rechnungen wie-<br/>
+der vorgenommen, und einen andern Coëffizienten erhalten: er<br/>
+fand nun, dass die mittlere Tiefe des Meeres gleich sei der<br/>
+mittleren Höhe der Kontinente. Denkt man sich nämlich die gan-<br/>
+ze Masse der Gebirge gleichförmig über die Erde zerstreut, so dass<br/>
+kein Punkt höher ist als der andre, so wird natürlich diese Erhebung<br/>
+äusserst gering sein, und d<span class="dta-del" title="Streichung (#s)">as</span><span class="dta-add" title="Hinzufügung (intralinear)">ie</span> Oberfläche des Erdsphäroides läst<br/>
+sich dann in gleiche Polygonalfiguren theilen: eben dasselbe ge-<br/>
+schieht, wenn man die Tiefen des Meeres auf diese Weise gleich ver-<br/>
+theilt. Nach <span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span>'s lezter Rechnung ist nun diese Konvexität<br/>
+und Konkavität über und unter der mittleren Fläche des Meeres<br/>
+gleich 900–1000 Fus. Aber noch immer zu gros. Er forderte mich<br/>
+auf, diesen Gegenstand zu bearbeiten, und ich habe die Resultate<br/>
+in einer kleinen Abhandlung: über die Kulminazionspunkte der<br/>
+Erde niedergelegt. Die Pendelversuche, mit denen man sich in neu-<br/>
+ern Zeiten so viel beschäftigt hat, haben auch hierüber genauere<br/>
+Untersuchungen möglich gemacht: die mittlere Höhe ist nicht<br/>
+mehr als 500–600 Fus. Bei Frankreich und der Lombardei<br/>
+beträgt sie 4–500 Fus; – die Gegend zwischen Stettin, Dresden und<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0455 : 226r|</span><br/>
+<div class="fw-top fw-sig">57.</div><br/>
+Posen hat 180–200 Fus. – Rusland hat 870 Fus, also sehr beträchtlich:<br/>
+man hat dies nach einer Masse von Barometerbeobachtungen in<br/>
+Moskau berechnen können; – die Schweiz troz ihrer Berge 1300 Fus;<br/>
+– Bayern, zwar nur klein, aber sehr hoch: 1560 Fus; – Spanien, wo<br/>
+ich selbst bei meiner Durchreise viele Beobachtungen anstelte, in der<br/>
+Gegend zwischen Almanza und Astorga 2100 Fus; – die Ebne von<br/>
+Mysore in Indien 2760′; – die Wüste Gobi, zwischen Kiachta und Peking<br/>
+3000 Fus; – die Ebne von Tibet, nach einer ungefähren Berechnung, weil<br/>
+es hier an Barometerbeobachtungen sehr fehlt: 6000 Fus; – die höch-<br/>
+ste dieser Hochebnen findet sich aber jenseit (scil. nördlich) des Hi-<br/>
+malaya, unter 35–36° Breite, welche Captain <span title="Personenname"><a href="http://d-nb.info/gnd/172444462">Weddell</a></span> untersuchte,<br/>
+im Thale des Soutledge bei Dava (<span class="dta-metamark" title="metamark">?</span>Lata<span class="dta-metamark" title="metamark">?</span>) hier hat man die wunder-<br/>
+bare Erscheinung, dass Kornfelder sich bis auf 14000 Fus Höhe fin-<br/>
+den, so hoch als die Spize des Montblanc. – Auch in Amerika<br/>
+erheben sich die Thäler zu beinahe 12000 Fus, das von Huanteteka<span class="dta-add" title="Hinzufügung (right)"> <span class="dta-metamark" title="metamark">?</span></span><br/>
+hat 11600 Fus; – Mexiko 6000 Fus. – Wenn auch Europa diese Höhen<br/>
+nicht erreicht, so haben wir doch einige sehr bedeutende Punkte;<br/>
+früher hielt man Dörfer auf 4000 Fus Höhe für die <span title="Schreibfehler: höchten" class="dta-corr">höchsten</span>, aber <span title="H￼." class="dta-abbr">Herr</span><br/>
+<span title="Personenname">von Well</span> <span class="dta-metamark" title="metamark">?</span> hat in seinen Untersuchungen über den Mont-Rosa gezeigt,<br/>
+dass das Dorf Cetta <span class="dta-metamark" title="metamark">?</span> 7100 Fus hoch liege.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0456 : 226v|</span><br/>
+<p class="dta-p">Die Tiefe des Meeres ist nicht so leicht zu bestimmen; besonders ist<br/>
+es an einzelnen Stellen schwer, die perpendikuläre Tiefe zu erhalten:<br/>
+denn theils verliert das Senkblei einen Theil seiner Schwere durch das<br/>
+Schwimmen des Seiles, theils wird es durch Strömungen fortgeführt,<br/>
+und wenn man glaubt, dass es senkrecht hinabgehe, so macht es<br/>
+vielleicht einen Winkel von 40–50°; dies giebt also einen grossen Unter-<br/>
+schied, und die Tiefen werden bedeutender, als sie sind. Captain <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/11671350X">Sabine</a></span></span><br/>
+hat auf alle diese Umstände genau geachtet, und in den antillischen<br/>
+Meeren viele Sondirungen angestelt: südlich von <span class="u ">Cuba</span> hat er ther-<br/>
+mometrisch auf 7200 Fus perpendikulär sondirt; indem er ein Thermo-<br/>
+meter herablies, um die Temperatur des Meeresgrundes zu erforschen.<br/>
+In Südamerika ist die Andeskette ganz auf den Westrand hinge-<br/>
+drängt, vielleicht über einer Spalte vulkanisch in die Höhe gehoben:<br/>
+sie hat nicht mehr als 15–20 Meilen Breite und kaum 1 Meile Höhe;<br/>
+dagegen beträgt der Lauf des Amazonenstromes 6–700 <span title="geogr." class="dta-abbr">geographische</span> Meilen,<br/>
+ohne bedeutendes Gefälle: denkt man sich also die kleine zylindrische<br/>
+Masse der Anden auf die ganze Fläche verstreut, welche der Amazonen-<br/>
+strom bewässert, so sieht man leicht ein, dass dies für die ganze<br/>
+Fläche kaum <span class="u ">einige Zoll</span> Er<span class="dta-del" title="Streichung (#s)">hebung</span><span class="dta-add" title="Hinzufügung (superlinear)">höhung</span> ausmachen würde.</p><br/>
+<p class="dta-p">Man hat bis jezt viel häufiger die Berge als die Ebnen gemessen,<br/>
+welches zum Theil nur eine Befriedigung der Neugierde ist: viel nüz-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0457 : 227r|</span><br/>
+licher wäre es, wenn man durch Barometerbeobachtungen die Höhe der<br/>
+kultivirten Ebnen messen wolte, um zu bestimmen, wie hoch hinauf<br/>
+manche geselligen Pflanzen, wie die Cerealien <span title="Original: pp" class="dta-reg">pp.</span> leben können.</p><br/>
+<p class="dta-p">Der Umris unserer Kontinente, welcher durch den Kontakt des star-<br/>
+ren und flüssigen bestimt wird, würde ganz verschieden sein, wenn<br/>
+die Höhe des Meeres nur um ein geringes zunähme: daher ist d<span class="dta-del" title="Streichung (#s)">ie</span><span class="dta-add" title="Hinzufügung (superlinear)">as</span><br/>
+stabile Verhältnis dieser beiden Elemente für den geselligen Zustand<br/>
+von der höchsten Wichtigkeit; nur 130 Fus brauchte die Ostsee zu<br/>
+steigen, und ganz Norddeutschland so wie Polen würden verschwinden.<br/>
+Die Ebne des Amazonenstromes liegt nicht so hoch, als man glauben<br/>
+solte: ich ging ganz besonders an den östlichen Fus der Andeskette, um<br/>
+die Länge von Tamapenda zu erhalten, wo <span title="Personenname"><a href="http://d-nb.info/gnd/118778390">La Condamine</a></span> seine Arbeiten<br/>
+über den Amazonenstrom angefangen: bei dieser Gelegenheit bestimte<br/>
+ich die Höhe des Ortes auf 1200 Fus, (also niedriger als München) nicht<br/>
+weit vom Wasserfall von Rustega <span class="dta-metamark" title="metamark">?</span>, aber noch 700 Meilen vom Ausflusse:<br/>
+steigt man etwas weiter hinab, als Tamapenda, so ist die Höhe nur<br/>
+noch 400 Fus: also brauchte das Meer dort nur 400 Fus zu steigen, so<br/>
+würde ganz Südamerika untergehn, und die Andeskette wie <span title="Schreibfehler: ein" class="dta-corr">eine</span> lange<br/>
+schmale Insel von <span title="N." class="dta-abbr">Norden</span> nach <span title="S." class="dta-abbr">Süden</span> sich erstrekken.</p><br/>
+<p class="dta-p">Solten aber solche Erhöhungen des Niveau eintreten, so würden sie über<br/>
+die ganze Erde gleichmässig sich vertheilen müssen. So <span title="Schreibfehler: " class="dta-corr">hat</span> man fälschlich<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0458 : 227v|</span><br/>
+auf eine <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">Anschwellung und </span>Abnahme des Mittelmeeres geschlossen, weil man an den<br/>
+Säulen des Serapistempels bei Pozzuoli, 8 bis 10 Fus über dem Boden<br/>
+angebakne Muscheln aus Salzwasser herrührend, bemerkte. Dies<br/>
+müste aber in historischen Zeiten geschehn sein: denn der Serapistem-<br/>
+pel ist ganz gewis aus historischer Zeit: wie wäre es aber möglich:<br/>
+dass wir alsdann durchaus keine Erwähnung einer solchen Flut hätten,<br/>
+die hinreichend gewesen wäre, um die Ebnen von Valenza <span title="u" class="dta-abbr">und</span> Grenada,<br/>
+so wie ganz Aegypten plötzlich zu überschwemmen zu ersäufen?<br/>
+<span title="Schreibfehler: andre" class="dta-corr">Andre</span> meinen, die Säulen hätten lange Zeit im Wasser gelegen, und da<br/>
+hätten sich die Muscheln angesezt; ist auch unwahrscheinlich: denn<br/>
+theils würde man nicht solche beschädigten Säulen für den Tempel ge-<br/>
+braucht haben, theils hätte man sie gewis gereinigt, um sie aufzustellen.<br/>
+Das wahrscheinlichste ist, dass eine Dünenreihe vor dem Tempel nicht<br/>
+weit vom Ufer entstanden ist, und dass sich eine „Mare‟ oder Salz-<br/>
+lache bildete von 10 Fus Höhe, worin die Muscheln lebten. Solche Er-<br/>
+scheinungen von höheren Salzlachen am Ufer sind gar nicht selten.</p><br/>
+<p class="dta-p">Kleine Unterschiede des Niveau finden sich aber auch bei den<br/>
+grösten Wasserbekken der Erde: so nivellirten die französischen Ge-<br/>
+lehrten, besonders <span title="H￼." class="dta-abbr">Herr</span> <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/136648770">Lepire</a></span></span> die Meerenge von Suez, und fanden, dass<br/>
+das rothe Meer nach dem Stande der unbedeutenden Ebbe 25 oder<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0459 : 228r|</span><br/>
+30 Fus höher ist als das Mittelmeer, daher ist eine Kanalverbindung<br/>
+durch Schleusen sehr möglich. Dagegen liegt das kaspische Meer be-<br/>
+deutend tiefer als das schwarze. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/100827365">Engelhardt</a></span></span> und <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/100240445">Parrow</a></span></span> haben eine<br/>
+äusserst genaue doppelte Nivellirung zwischen dem Ausflus des Kuba<br/>
+und dem des Terek gemacht, wobei sie von 3 Meilen zu 3 Meilen ihre<br/>
+Barometer verglichen, und gefunden, dass das kaspische Meer 280 oder<br/>
+324 Fus niedriger liegt. Neuere Untersuchungen, welche man darüber an-<br/>
+gestelt hat, sind lange nicht so genau: denn man hat dabei nicht bestimt,<br/>
+ob die Kapillarität in den Barometern gleich <span class="dta-del" title="Streichung (#ow)">s</span><span class="dta-add" title="Hinzufügung (across)">g</span>ewirkt hat. Die Zweifel<br/>
+des <span title="H￼." class="dta-abbr">Herrn</span> <span class="u "><span title="Personenname">Patzner</span></span> gegen <span title="Personenname"><a href="http://d-nb.info/gnd/100827365">Engelhardt</a></span>s Messungen sind daher nicht gegründet;<br/>
+er fand indessen immer 200 Fus. Durch Vergleichungen von Barometerbe-<br/>
+obachtungen in Astrakan, Moskau und Petersburg hat man gefunden,<br/>
+dass auch die Ostsee um so viel höher liegt (nämlich 200 Fus) als das<br/>
+kaspische Meer, allein es ist vielmehr wahrscheinlich, dass das schwarze<br/>
+Meer etwas höher liegt als die Ostsee.</p><br/>
+<p class="dta-p">Auf die Sagen der Samothraken bauend, hatten die Alten ein ganzes<br/>
+Schleusensystem der Meere gegründet, wonach zuerst ein Durchbruch<br/>
+des schwarzen Meeres, dann des <span title="Schreibfehler: Mittelmeer" class="dta-corr">Mittelmeers</span> erfolgt seien: die beiden<br/>
+grossen Schleusen lagen bei Byzanz und Kalpe.</p><br/>
+<p class="dta-p"><span title="Personenname"><a href="http://d-nb.info/gnd/118788353">Rennell</a></span> (von dem die schöne Karte von Ostindien) hat sehr geistreiche<br/>
+theoretische Betrachtungen über die Höhe der beiden antillischen Meere<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0460 : 228v|</span><br/>
+angestelt, in denen der heftige Golfstrom allerdings einen Unterschied<br/>
+des Niveau hervorbringen mus. – Neuere Reisende haben den Isthmus<br/>
+von Panama <span class="dta-del" title="Streichung (#s)">b</span> untersucht, den ich nicht durchreichen konte, obgleich ich<br/>
+in Darien war: nach meinen Berechnungen wäre d<span class="dta-del" title="Streichung (#ow)">as</span><span class="dta-add" title="Hinzufügung (across)">a</span>s antillische Meer<br/>
+höher als die Südsee: man hält aber umgekehrt jezt die Südsee für<br/>
+10–12 Fus höher, welches für eine Kanalisirung sehr wenig ist. –</p><br/>
+</div></body></html>

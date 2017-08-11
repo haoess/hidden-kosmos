@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span title="Original: D. 21 April." class="dta-reg">57. Vorlesung, 21.04.1828</span></div><br/>
+<p class="dta-p">So wie unter den Pflanzen es der Fall iſt<br/>
+daß einige einſam andere in Geſellſchaft<br/>
+wachſen, ſo leben auch mehrere Thiere geſel-<br/>
+lig u. andern nicht Zb. ſind von erſterer<br/>
+<span class="b ">Ort</span> die Heulaffen, die Pſyttakusarten.<br/>
+Bei geringer Zahl der Gattungen köñen<br/>
+die einzelnen <span class="aq ">ſpecies</span> doch ſehr reichhaltig<br/>
+ſein. Unter der Tropen iſt die Mañigfaltig-<br/>
+keit ſehr groß, der vielen <span class="dta-del" title="Streichung (#s)">Gattungen</span><span class="dta-add" title="Hinzufügung (superlinear)">Species</span><br/>
+wegen. Unter den Pflanzen Grönlands hat<br/>
+oft <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Wort fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">die</span> Gattung nur eine Species, in<br/>
+Frankreich gehören durchſchnittlich 5 Species<br/>
+zu einer Gattung; viel mehr unter dem<br/>
+Aequator. Daß auf hohe<span class="dta-del" title="Streichung (#s)">n</span> Berge<span class="dta-del" title="Streichung (#s)">n</span> ein ſo<br/>
+großen Reichthum von Pflanzen iſt, iſt<br/>
+daher nur ſcheinbar, weil der Temperat.<br/>
+Abwechſelung wegen viele Gattungen<br/>
+aber weniger <span class="aq ">ſpecies</span> zu finden u. die<br/>
+Blüthen bei weitem das Apendiculär-<br/>
+ſyſtem überwiegen. Deutſchland mit<br/>
+der Schweitz zählt fünf Species zu einem<br/>
+Genus, Berlin nur 2–3 Species. Nach<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">der</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0375 : 358.|</span><br/>
+Nach der vortreflichen <span class="aq ">Flora</span> von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117282995">Schlecht<span class="dta-supplied">[en-]</span><br/>
+dahl</a></span></span> kom̃en bei Berlin ungefähr 420 <span class="aq ">genera</span><br/>
+auf 1000 Species u. in Frankreich 683 <span class="aq ">genera</span><br/>
+auf 3600 Species. Es iſt eine falſche Añahme<br/>
+weñ man glaubt in Nordamerika wachſen<br/>
+ſo viele europäiſche Pflanzen, umgekehrt köñte<br/>
+man daſſelbe behaupten. Die Aehnlichkeit iſt <span class="gap">[verlorenes Material – 1 Wort fehlt]</span><br/>
+ſehr groß u. es ſind beſondere Species bei ge<span class="dta-supplied">[nau-]</span><br/>
+erer Unterſuchung. Auf der Andeskette in<br/>
+Penſylvanien u. Europa giebt es Species vo<span class="dta-supplied">[n]</span><br/>
+Erdbeeren die große Aehnlichkeit haben u. deshalb<br/>
+doch nicht gleich ſind. Manche <span class="aq ">Genera</span> beſtehen <span class="gap">[unleserliches Material – 1 Wort fehlt]</span><br/>
+aus zwei <span class="aq ">Species</span> wie Zb. <span class="aq ">Platanus</span>, wo ei<span class="dta-supplied">[ne]</span><br/>
+Species von der andern oft 1000 Meilen weit<br/>
+entfernt iſt u. <span class="aq ">Valiſneria</span>. Einige erſetzend<br/>
+Species ſind von ſolcher Aehnlichkeit v. Zb.<br/>
+die Neſſel, welche man leicht verwechſeln ka<span class="dta-supplied">[ñ.]</span><br/>
+Wir kom̃en jetzt zum 4<span title="t￼" class="dta-abbr"><span class="sup u ">ten</span></span> Kapitel zur Verbr<span class="dta-supplied">[ei-]</span><br/>
+tung derſelben nach der Jdentität der Pflan-<br/>
+zenarten. Es iſt nicht genug Phyſiker u. Met<span class="dta-supplied">[e-]</span><br/>
+orologe ſein um Pflanzen u. Thiere gewiß <span class="dta-supplied">[zu]</span><br/>
+keñen, nicht genug iſt es Reiſebeſchreibungen<br/>
+zu leſen um zu richtigen Reſultaten zu gel<span class="dta-supplied">[an-]</span><br/>
+gen; ſondern muß zugleich beſchreibender Bo-<br/>
+taniker u. Zoologe ſein um Gewißheit von<br/>
+jeden Species zu erhalten. Allgemein wur<span class="dta-supplied">[de]</span><br/>
+angenom̃en, daß <span class="aq ">Solanum nigrum</span> <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span> eine koſ<span class="dta-supplied">[-]</span><br/>
+mopolitiſche Pflanzen ſei, welches vollkom̃e<span class="dta-supplied">[n]</span><br/>
+falſch iſt, da ſie nicht einmal in Nordamerika<br/>
+wächſt, welches mit Europa ſo viele Pflanze<br/>
+gemein hat. Die verſchiedenen Species ſ<span class="dta-supplied">[ind]</span><br/>
+nicht Produckte der Klimate; ſo wird <span class="dta-supplied">[un-]</span><br/>
+ter den Tropen die Schneegrenze mit der<br/>
+purpurrothen Blüthen des Rhododendrons<br/>
+beträgt, dies iſt in einer Strecke von<br/>
+250 <span title="Meil￼" class="dta-abbr">Meilen</span> in der Andeskette der Fall,<br/>
+gleicher Temperatur ſollte man glauben<br/>
+allenthalben wäre dieſelbe Species, welche<br/>
+aber nicht der Fall iſt, ſondern nur erſetz<span class="dta-supplied">[en-]</span><br/>
+de Formen. Von <span title="europäiſch￼" class="dta-abbr">europäiſchen</span> Pflanzenformen<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">wie</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0376 : 359.|</span><br/>
+wie Zb. von den <span class="aq ">gentiana</span> ſollte man gar<br/>
+nicht reden, da man allenthalben dieſelben<br/>
+Formen wieder findet. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116442921">Decandolle</a></span></span> neñt<br/>
+gewiße <span class="aq ">genera</span> ganz richtig <span class="aq ">ende</span>miſche <span class="aq ">Genera</span>.<br/>
+Zb. die <span class="aq ">Cactus</span> Arten in auffallende Form<br/>
+ſind allein Amerika eigen, ſo auch <span class="aq ">Fuchsia</span>.<br/>
+Die <span class="aq ">Rudenia</span> wieder Neu-Holland. Jch bin<br/>
+ſehr aufmerkſam auf die Orte geweſen <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">w</span>o<br/>
+gewiße Formen ganz ausgeſchloſſen ſind.<br/>
+So findet man in der ſüdl. Hemiſphäre durchaus<br/>
+kei<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">ne</span> Roſe u. Pinusart. Die <span class="aq ">Calceolaria</span><br/>
+von der es 50 Species in Peru giebt, geht<br/>
+kaum bis an den Aequator u. nicht nördlicher.<br/>
+Jn ganz Amerika iſt keine <span class="aq ">erica</span> oder Heide-<br/>
+kraut zu finden. – Die Grade der<br/>
+Verbreitung der Pflanzen ſind ſehr verſchie-<br/>
+den. Allgemein ſind verbreitet Pilze, Schim̃el <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span><br/>
+obgleich man glaubte, wenig Kryptogamen<br/>
+hätte die <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">Tro</span>pe<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">n</span>-Zone, ſo habe ich doch<br/>
+eine beträchtliche Sam̃lung mitgebracht. Mit<br/>
+Beſtim̃theit kañ ſagen, daß nur die<br/>
+niedern Stufen der Pflanzenwelt mehr Koſmopo-<br/>
+litiſch ſind. Bei Berlin findet man von der<br/>
+Gattung <span class="aq ">Hypnus</span> den 4<span class="u ">te</span> Theil aller Moſe<br/>
+nämlich 40 Species, von denen kein einziges<br/>
+in den vereinigten Staaten anzutreffen.<br/>
+An der weſtl. Küſte Britañiens hat man<br/>
+zwei kryptogamen gefunden, die in <span class="aq ">Jamaica</span><br/>
+wachſen. Von den Farrenkräuter, wo 1000<br/>
+Species ſind, ſind nur zwei in der alten<br/>
+u. neuen Welt zu finden. Von den Pflan-<br/>
+zen höhern Art ſind faſt nur <span class="aq ">monocoteli-<br/>
+donen</span> allgemein. Von <span class="aq ">Cyperus</span> ſind 22 Spe-<br/>
+cies unter den Tropen des alten u. neuen<br/>
+Continents zu finden. Bei den Dikotelido-<br/>
+nen zeigt ſich das Geſetz was <span title="Personenname"><a href="http://d-nb.info/gnd/118517252">Buffon</a></span> bei-<br/>
+den Thieren entdeckte, daß alle Wirbelthiere<br/>
+in den Tropen der neuen Welt, verſchieden<br/>
+von denen der alten Welt ſind. Einige<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Pflanzen</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0377 : 360.|</span><br/>
+Pflanzen folgen nur den Küſten, wie die <span class="dta-supplied">[Ma-]</span><br/>
+laiiſche Menſchen-Raçe, die an den Küſten wo<span class="dta-supplied">[h-]</span><br/>
+nen u. <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">wo </span>im Jñern andere Menſchen hauſen. Der<br/>
+Botaniker <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118674455">Braun</a></span></span> behauptet, es gäbe keine<br/>
+<span class="aq ">Decotelidonen</span> die gleichzeitig in der alten<br/>
+u. neuen Welt zu finden. Jn Surinam u.<br/>
+Braſilien will man jedoch einige Baum<span class="dta-supplied">[ar-]</span><br/>
+ten geſehen haben, die eine gleiche Species v<span class="dta-supplied">[on]</span><br/>
+den Bäumen der <span title="alt￼" class="dta-abbr">alten</span> Welt ſind.</p><br/>
+<p class="dta-p">Was die Jdentität der Anzahl der<br/>
+nördlichen u. <span title="ſüdlich￼" class="dta-abbr">ſüdlichen</span> Hälfte betrifft, ſo ſin<span class="dta-supplied">[d]</span><br/>
+150 Pfl. etwa den nördl. Erdhälfte eigenth<span class="dta-supplied">[üm-]</span><br/>
+lich, u. 8–10 Species Farrenkräuter<br/>
+gedeihen im Norden der vereinigten Staaten<br/>
+allein. Zonen von gleicher mittlere Temp<span class="dta-supplied">[e-]</span><br/>
+ratur köñen in Hinſicht der ſchönen Pflan-<br/>
+zenwelt höchſt verſchieden ſein. Amerika<br/>
+iſt unten gleicher <span class="dta-del" title="Streichung (#s)">Breiten viel </span>Temperatur<br/>
+viel ſchöner als Europa. Es ſind dorten<br/>
+allein 135 Bäume <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">Art </span>vorhanden, die über<br/>
+30 Fuß hoch ſind. Jn Europa hat es deren<br/>
+nur 45. Die <span title="einheimiſch￼" class="dta-abbr">einheimiſchen</span> Bäume blühen nicht<br/>
+auffallend; dorten ſind die Blätter 2 Fuß<br/>
+lang u. die Blüte 7″. Die größte Schönheit<br/>
+bilden die Bäume mit den mimoſenarti-<br/>
+gen Blättern, die Laurus-Arten <span title="Original: p" class="dta-reg"><span class="aq ">etc</span></span>. Ge-<br/>
+wiß trägt auch dazu bei die ungehinder<span class="dta-supplied">[-]</span><br/>
+te Verbindung des Nordens mit dem Tropen<br/>
+Continente, wo im Süden Europas ein<br/>
+Meer u. hinter demſelben die Wüſte<br/>
+<span class="aq ">Saahrah</span> liegt. Will man die Frage<br/>
+beantworten; giebt es in der <span title="magella-&#xA;niſch￼" class="dta-abbr">magell<span class="dta-supplied">[a-]</span><br/>
+niſchen</span> Meerenge dieſelben Pflanzen wie <span class="dta-supplied">[in]</span><br/>
+Schweden? ſo muß dies nur auf eine kle<span class="dta-supplied">[ine]</span><br/>
+Quantität eingeſchränkt werden. So wäch<span class="dta-supplied">[ſt]</span><br/>
+<span class="aq ">oſpidium aculeatum</span> auf dem Vorgeb. d<span class="dta-supplied">[er]</span><br/>
+gute Hoffnung u. eben ſo nördlich, nur<br/>
+in Amerika gar nicht. Jn Neuholland ha<span class="dta-supplied">[t]</span><br/>
+man 45 Species Zb. <span class="aq ">polent<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">ia</span> anresina</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">gefunden</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0378 : 361.|</span><br/>
+<span class="dta-del" title="Streichung (#s)">umgeben </span><span class="dta-del" title="Streichung (#ow)">ſei.</span><span class="dta-add" title="Hinzufügung (across)">Die</span> gewiß nicht hingebracht ſein<br/>
+köñen, da man ſie auch jenſeits der blauen<br/>
+Berge gefunden. Durch Einwanderungen ver-<br/>
+breiten ſich ſehr leicht Pflanzen, wie das<br/>
+<span class="aq ">erigeron canadense</span>. Peruvianiſche Pflan-<br/>
+zen ſind bis an die Thore Berlins verbreitet.<br/>
+Jn <span class="aq ">Montpellier</span> ſind auf den Plätzen, wo Baum-<br/>
+wollen-Ballen getrocknet wurden, oriental.<br/>
+Pflanzen, als <span class="aq ">hypericam crispum</span>, gefunden<br/>
+worden. Dies köñen <span title="Strömung￼" class="dta-abbr">Strömungen</span> des Meers,<br/>
+Handel u. Mandel der Menſchen veranlaſſen.<br/>
+Der Ackerbau, der ſich in der temper. Zone<br/>
+auf die <span title="Monokotelidon￼" class="dta-abbr">Monokotelidonen</span> nur <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">ein</span>ſchränkt<br/>
+macht die Cultur der Pflanzen nur höchſt ein-<br/>
+ſtetig u. einförmig u. ſie ſind allenthalben<br/>
+dem Menſchen gefolgt, wo <span class="dta-del" title="Streichung (#s)">er </span>Civiliſation<br/>
+entſtand. <span title="H￼." class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118654624">Beckmann</a></span></span> u. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/104268190">Link</a></span></span> in den<br/>
+Unterſuchungen der Urwelt haben gründlich<br/>
+erforſcht wo das Vaterland der Pflanzen<br/>
+zu ſuchen. Jch ſchließe dieſen Abſchnitt mit<br/>
+der Bemerkung wie man die Zahl der Arten<br/>
+nach Gruppen ziemlich genau beſtim̃en kañ;<br/>
+indem ſich die Formen unter einander ergän-<br/>
+zen. Wer die Vögel eines Orts keñt, kañ<br/>
+mit ziemlicher Sicherheit auf die Zahl der<br/>
+Säugethiere daſelbſt ſchließen. Wer das Quan-<br/>
+tum der Grasarten keñt, kañ nach Analogie<br/>
+finden, wieviel Malraceen es giebt. <span title="H￼." class="dta-abbr">Herr</span><br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118674455">Braun</a></span></span> unterſcheidet 3 große Abſchnitte unter<br/>
+den Vegetabilien die <span class="aq ">A-Mo</span> u. <span class="aq ">Di-kote-<br/>
+lidonen</span>, ich wandte die Verſuche auf<br/>
+alle drei Abtheil. an, u. war über die<br/>
+Sicherheit verwundert, mit der jede Rech-<br/>
+nung ein richtiges Reſultat gab. Weñ<br/>
+Zb. in Amerika 1000 Farrenkräuter, unter<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">den</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0379 : 362.|</span><br/>
+den Tropen 300 u. in N. Amerika 20 Speci<span class="dta-supplied">[es]</span><br/>
+wachſen, ſo kañ ich aus dieſen Verhältniſſen<br/>
+auch die <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">Zahl der </span>übrigen <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Pflanz￼" class="dta-abbr">Pflanzen</span> </span>finden. Von der Betracht<span class="dta-supplied">[ung]</span><br/>
+der Zahl der Species ſind die Jndividuen ver-<br/>
+ſchieden. So bedecken drei Species Pinusart<span class="dta-supplied">[en]</span><br/>
+hier viele 100 □ Ml. u. es iſt alsdañ von<br/>
+der Quantität der Jndividuen die Rede.<br/>
+Jn Hinſicht der akotelidonen ſind die Tropen<br/>
+wenig unterſucht. Frankreich hat mehr<span class="dta-del" title="Streichung (#s)"> kryto</span><br/>
+phanerog. als Kryptog. faſt 1600 <span title="Art￼" class="dta-abbr">Arten</span> <span class="gap">[unleserliches Material – 1 Wort fehlt]</span><br/>
+Deutſchland umgekehrt wie 4300 : 3400.<br/>
+Jn der Ebene der <span title="Trop￼" class="dta-abbr">Tropen</span> <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">ſind </span>wenig krÿptogam<span class="dta-supplied">[en]</span><br/>
+vorhanden, doch habe ich Flechten ſelbſt an Felſ<span class="dta-supplied">[-]</span><br/>
+<span class="gap">[unleserliches Material]</span> geſehen in 60–65° R. wie in der<br/>
+heißeſten Quelle ſo warm. – Da allenthal-<br/>
+ben Bambuſaceen u. Palmen zu finden aus e<span class="dta-supplied">[iner]</span><br/>
+untergegangenen Welt; ſo glaubte man, d<span class="dta-supplied">[ie]</span><br/>
+ganze Erde hätte einſtens eine Tropenvegeta-<br/>
+tion gehabt; doch deuten die Keime vom ein-<br/>
+fachen zum zuſam̃engeſetzten, daß auch der<br/>
+Anblick der Urwelt verſchieden geweſen ſ<span class="dta-supplied">[ein]</span><br/>
+muß. Jetzt findet man in den Tropen das<br/>
+Verhältniß der Monocot. zu <span class="aq ">Decotelid</span>. =<br/>
+1 : 6, im Norden wie 1 : 3, da Gräser<br/>
+mehr Kälte ertragen köñen. Die Maſſe<br/>
+der Gräser machen bei uns ⅛ der Vegetation<br/>
+aller Phanerogamen. Schmetterlingsblumen <span class="sup ">1</span>/<span class="sub ">18</span><br/>
+dies iſt der gleichen Fall in Amerika. <span class="gap">[]</span> Die<br/>
+Pflanzen haben gewiße Typen, nach denen<br/>
+ſie vom Aequator nach dem Pole hin zu u.<br/>
+alsdañ wieder abnehmen. Der Contraſt<br/>
+wird auffallenden, weñ man vom Aequa-<br/>
+tor ausgeht, wo kaum ein Doldengewächs<br/>
+zu finden, nach Lapland hin, wo wieder<br/>
+keine Malraceen wachſen u. dieſe Var<span class="dta-supplied">[i-]</span><br/>
+ationen bemerkt. Viele Gruppen erreich<span class="dta-supplied">[en]</span><br/>
+ihr <span class="aq ">Maximum</span> in der temper. Zone Zb.<br/>
+die <span class="aq ">labiaten</span>. Oft ſind zwei benachbart<span class="dta-supplied">[e]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Länder</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0380 : 363.|</span><br/>
+Länder, die eine gleiche Quant. Species haben,<br/>
+aber in den einzelnen <span class="aq ">Species</span> verſchieden ſind<br/>
+iſt eine <span class="aq ">Species</span> <span class="sup ">1</span>/<span class="sub ">7</span> ſo iſt ſie dort <span class="sup ">1</span>/<span class="sub ">6</span> u. iſt<br/>
+ſie hier <span class="sup ">1</span>/<span class="sub ">18</span> ſo dort <span class="sup ">1</span>/<span class="sub ">17</span>. Würde es mit der<br/>
+Jndividualität der <span title="Pflanz￼" class="dta-abbr">Pflanzen</span> zuſam̃enhängen,<br/>
+wie Zb. Raubvögel im Verhältn. zu andern <span title="Thier￼" class="dta-abbr">Thieren</span><br/>
+leben, ſo köñte man dies leichter erklären.<br/>
+So leben Zb. in Europa 400 Vögel u.<br/>
+80 Säugethiere = 5 : 1. Daſſelbe Verhältn.<br/>
+iſt mit den <span title="Syngeneſyſt￼" class="dta-abbr">Syngeneſyſten</span> u. Zapfenbäumen.<br/>
+Sämtl. Säugethiere ſind 900, ſämtl. Vögel<br/>
+der Erde 5000, wiederum das Verhältniß<br/>
+wie 1 : 5,5.</p></div></body></html>

@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session">   <div class="dta-head"><span title="Original: 15 Apr. 52.53." class="dta-reg">53. Vorlesung, 15.04.1828</span></div><br/>
+<p class="dta-p">Von den 6 Momenten über die luftförmige Hülle der Erde<br/>
+haben uns besonders die Zyanometrie und Diaphanometrie<br/>
+beschäftigt, wir kommen nun zum 6<span title="￼" class="dta-abbr"><span class="sup uu ">ten</span></span> Moment:</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0661 : 329r|</span><br/>
+<p class="dta-p"><span class="u ">Von der Geographie der Elektrizität.</span></p><br/>
+<p class="dta-p">Dies schliest sich sehr gut an die <span class="dta-del" title="Streichung (#ow)">T</span><span class="dta-add" title="Hinzufügung (across)">L</span>ehre von der Temperatur<br/>
+und der Feuchtigkeitsbildung an. Die Elektrizität giebt Wärme<br/>
+und Licht, und <span class="dta-del" title="Streichung (#s)"><span class="gap">[unleserliches Material – 1 Wort fehlt]</span></span> steht in Wechselwirkung mit dem ele-<br/>
+ktrischen Zustande der Erde; im starren Erdkörper erscheint sie<br/>
+als Magnetismus, in der Athmosphäre als elektrische Spannung:<br/>
+im ersten Falle bringt sie vielleicht mehr Wärme hervor, im 2<span title="￼" class="dta-abbr"><span class="sup uu ">ten</span></span> bil-<br/>
+det sie das Erd- oder Polarlicht.</p><br/>
+<p class="dta-p">Die Elektrizität kann durch 4–5 Mittel erregt werden, die sich<br/>
+vielleicht mit der Zeit alle auf Eins werden zurükführen lassen.<br/>
+1, durch Reibung, und dies ist wahrscheinlich nur eine Temperatur-<br/>
+veränderung. 2, durch Dampfbildung. 3, durch chemische Verän-<br/>
+derungen, neuerlich bewiesen durch <span title="Personenname"><a href="http://d-nb.info/gnd/116106875">Becquerel</a></span>s schöne Versuche, d<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">e</span>r<br/>
+mit einer Magnetnadel kleine Quantitäten von Säuren entdekte.<br/>
+4, durch Kontakt, worauf die Erfindung der <span title="Personenname"><a href="http://d-nb.info/gnd/119292556">Volta</a></span>schen Säule gegrün-<br/>
+det ist. 5, auf eine geheimnisvolle Weise im organischen Leben<br/>
+verbreitet, in den elektrischen Fischen am meisten. Bei den Gymno-<br/>
+ten von 5–6 Fus Länge, die ich untersuchte, und mit denen es mir<br/>
+sogar gelang, Pferde zu tödten, hat man es sonderbar gefunden,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0662 : 329v|</span><br/>
+dass diese Anhäufung von elektrischer Materie sich unter dem<br/>
+Wasser findet, welches zu den leitenden Körpern gehört, und nicht<br/>
+in der Luft, die nicht leitet. Die Einwirkung der Muskeln auf<br/>
+die Nerven hängt mit dieser elektrischen Erscheinung zusammen.<br/>
+Die Vögel haben gewis einen ähnlichen Prozes, nur kann er nicht<br/>
+bei ihnen sich so deutlich äussern, als bei den Gymnoten, wo<br/>
+die elektrische Materie in der Medullarsubstanz und in einer<br/>
+grossen Menge arteriellen Blutes angehäuft ist.</p><br/>
+<p class="dta-p">Die elektrische Spannung hängt auch mit dem Zustande der<br/>
+Dünste zusammen, der besonders unter den Tropen sehr wirk-<br/>
+sam ist, auch die räumliche Lage der Dämpfe hat Einflus, ob sie<br/>
+im Luftozean vertheilt, oder zu Wolken gebalt sind. Ich habe<br/>
+auf grossen Höhen hygrometrische Versuche angestelt, wo-<br/>
+nach in der Nähe der Wolken die Luft zum Verwundern<br/>
+trokken war. Die grosse Quantität von Elektrizität entsteht<br/>
+nach <span title="Personenname"><a href="http://d-nb.info/gnd/118716581">Gay Lussac</a></span>'s äusserst scharfsinniger Hypothese da-<br/>
+durch: dass jedes kleine Bläschen in der Luft eine elektri-<br/>
+sche Spannung hat; wenn sie nun zu einer Wolke zusam-<br/>
+men dringen, so bleibt keine Elektrizität mehr im Innern der<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0663 : 330r|</span><br/>
+Wolke, sondern wird auf die Oberfläche derselben vertheilt: da<br/>
+manche Wolke ½ Kubikmeile umfast: so läst sich denken, wie<br/>
+stark diese Spannung auf der Oberfläche sein mus. Daher ist es<br/>
+begreiflich, wie aus derselben Wolke sie viele Gewitterschläge nach<br/>
+einander kommen können, einzelne Theile werden entladen, und<br/>
+durch eine eigne Bewegung der Wolke wieder geladen.</p><br/>
+<p class="dta-p">Man ist früh darauf aufmerksam gewesen, dass ein Mangel<br/>
+an Gewittern in der arktischen Zone herscht, und in bestimten Jah-<br/>
+reszeiten auch unter den Tropen. In Grönland blizt es zwar, aber es<br/>
+donnert nicht. <span title="Personenname"><a href="http://d-nb.info/gnd/117654167">Scoresby</a></span>, der sich lange in den Sechziger und Sieb-<br/>
+ziger Graden der Nordbreite aufhielt, hat nie bei Spizbergen<br/>
+ein Gewitter bemerkt. Schon in den nördlichen Theilen von Skandi-<br/>
+navien sind sie sehr selten: in der Hudsonsbay dagegen häufig,<br/>
+doch erstrekt sich diese von 52 bis 64° <span title="Ndbr" class="dta-abbr">Nordbreite</span>. In der Barrowstrasse<br/>
+fehlen sie wiederum: obgleich die Luft dort so mit Dämpfen gesät-<br/>
+tigt ist, als es der geringe Wärmegrad erlaubt: allein theils schlägt<br/>
+sich das Wasser auf den Eisbergen nieder, theils können sich<br/>
+die Wolken nicht gut von dem Erdkörper absondern, und bilden<br/>
+dichte Nebel. –</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0664 : 330v|</span><br/>
+<p class="dta-p">Unter den Tropen kann man 2 Zeitabschnitte unterscheiden 1, vom<br/>
+Dezember bis in den Mai, wo weder Wolken noch Gewitter sich<br/>
+zeigen, und eine über dem Horizont hinziehende Wolke eben so auf-<br/>
+fallend sein würde als ein Aërolith. Während dieser Zeit fand ich<br/>
+immer positive Elektrizität in der Luft. 2, vom Mai bis in den<br/>
+Oktober, dies <span class="dta-del" title="Streichung (#ow)">s</span><span class="dta-add" title="Hinzufügung (across)">i</span>st die Regenzeit, und in diesen Gegenden der Winter:<br/>
+auch sind in den dortigen Sprachen: Regen, Winter und Donner-<br/>
+wetter gleichbedeutend, die bei uns freilich verschiedene Begrif-<br/>
+fe bezeichnen. In dieser Zeit sind die Passatwinde nicht mehr<br/>
+so regelmässig als früher: ich fand von 8 Uhr früh bis 1 Uhr<br/>
+keine Spur von <span title="Elektr." class="dta-abbr">Elektrizität</span> in der Luft: dann aber, nach dem Durch-<br/>
+gange der Sonne durch den Meridian zeigt sich eine starke<br/>
+Spannung; beim Gewitter selbst springt sie schnell vom posi-<br/>
+tiven zum negativen und umgekehrt. Das Gewitter fängt<br/>
+gewöhnlich 2 Stunden nach dem Maximum der Wärme an,<br/>
+und bleibt bis gegen Sonnenuntergang: dann heitert sich die<br/>
+Athmosphäre auf, und in der Nacht zeigt sich keine Spur von<br/>
+Elektrizität. Ich konte diese Phänomene bis zu einer Höhe<br/>
+von 14000 Fus verfolgen, und fand, dass sie nur dem Grade,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0665 : 331r|</span><br/>
+<div class="fw-top fw-sig">83.</div><br/>
+nicht der Art nach von einander verschieden sind. –</p><br/>
+<p class="dta-p">Mit dem Wetterleuchten haben sich die Physiker noch nicht<br/>
+genug beschäftigt. Manche Wolken geben es fast ununter-<br/>
+brochen, wie phosphoreszirend: niemals aber sieht man es<br/>
+über 42° Höhe, noch weniger je im Zenith, sondern meist<br/>
+in 10 bis 25° Höhe über dem Horizont. Die gewöhnliche Hy-<br/>
+pothese, dass es von einem fernen Gewitter herrühre, reicht<br/>
+nicht mehr aus: denn wenn man die Höhe der Wolken auf<br/>
+6000 Fus annimt: so müste ein Gewitter 23 Meilen weit<br/>
+im Zenith stehn, um uns unter einem Winkel von 10° zu<br/>
+erscheinen: da aber bei uns die Wolken meist 3000 Fus<br/>
+hoch stehn, so müste es nur 5 Meilen entfernt sein –<br/>
+Ferner hat man bemerkt, dass das Wetterleuchten sich<br/>
+in 12 bis 15 Sekunden wiederholt, beim Gewitter dagegen<br/>
+die Blize selten unter 30–40 Sek. sich wiederholen. Es<br/>
+ist eine verbreitete Meinung unter den Tropen, dass, da die<br/>
+Wolken höher ziehn, der Bliz auch selten die Erde er-<br/>
+reiche: da aber jene Gegenden weit weniger bewohnt sind<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0666 : 331v|</span><br/>
+<span title="Schreibfehler: " class="dta-corr">als </span>Europa, so kann man nicht so viel Beobachtungen darüber<br/>
+haben, und die Sache bleibt noch unsicher.</p><br/>
+<p class="dta-p">Auf die <span class="u ">Blizröhren</span> ist man erst in neueren Zeiten auf-<br/>
+merksam geworden, seitdem <span title="Personenname">Henser</span> <span class="dta-metamark" title="metamark">?</span> in der Senner Haide in<br/>
+Westphalen eine gefunden hat. Es sind lange hohle Massen,<br/>
+die man mit dem <span title="Personenname"><a href="http://d-nb.info/gnd/118749420">Réaumur</a></span>schen Porzellan vergleichen kann;<br/>
+sie sind eine ähnliche Verglasung der Sandkörner durch den<br/>
+Bliz: in Dresden bewahrt man eine von 14 Fus, die abgebro-<br/>
+chen ist: vielleicht hatte sie bis 30 Fus Länge. Neuerdings<br/>
+fand man eine grosse bei Bahia, und <span title="Personenname"><a href="http://d-nb.info/gnd/119426943">Clapperton</a></span> hat<br/>
+einige aus der Wüste nördlich vom See Tschad mitge-<br/>
+bracht, obgleich man bis jezt gar nichts in jenen Gegenden<br/>
+von Gewittern weis. Einige Naturforscher haben daraus<br/>
+auf eine grosse Temperatur-veränderung in diesen Orten<br/>
+schliessen wollen. Dass diese Röhren wirklich vom Blize<br/>
+herrühren, hat man noch kürzlich in Amrun in<br/>
+Schleswig eruiren können. Matrosen sahen <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">vorbeifahrend </span>einen Bliz<br/>
+am Lande einschlagen, <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">a</span>ls sie ausstiegen, und auf die<br/>
+Stelle gingen, fanden sie eine porzellanartige Verglasung,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0667 : 332r|</span><br/>
+die in das Kabinet von Amrun gebracht wurde. Ihre wahre<br/>
+Natur und Beschaffenheit wurde zuerst von <span title="Personenname"><a href="http://d-nb.info/gnd/118520490">Chladni</a></span> er-<br/>
+kant. Eine merkwürdige Erscheinung zeigte sich mir auf dem<br/>
+Vulkan von Toluca in Mexiko, der sich über 14000 Fus er-<br/>
+hebt: die äussersten Spizen des sehr zerklüfteten Kraters, <br/>
+die kaum 5–6 Fus in Durchmesser haben, sind verglast<br/>
+völlig wie die Blizröhren, auch ist der harte Trachytpor-<br/>
+phyr durchlöchert, und das Innere dieser Löcher ebenso<br/>
+verglaset.</p><br/>
+<p class="dta-p"><span class="u ">Von den Meteorsteinen.</span></p><br/>
+<p class="dta-p">Mit den <span title="Original: ebengenanten" class="dta-reg">eben genanten</span> Fulguriten mus man nicht die<br/>
+Aërolithen oder Meteorsteine verwechseln. <span title="Personenname"><a href="http://d-nb.info/gnd/118520490">Chladni</a></span> war<br/>
+der erste, der sie für unabhängige Weltkörper hielt, die im<br/>
+Raume herumfliegen, daher hätten sie beim Zodiakallicht abge-<br/>
+handelt werden müssen: insofern sie aber erst beim Eintritt in<br/>
+unsre Athmosphäre sich entzünden und sichtbar werden: so<br/>
+gehören sie auch hieher in den Luftkreis.</p><br/>
+<p class="dta-p">Steine, die vom Himmel gefallen sein sollen, werden sehr häu-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0668 : 332v|</span><br/>
+fig in der Geschichte erwähnt, am ältesten ist eine Andeutung in<br/>
+den chinesischen Annalen. Bekant ist der Steinfall von Aegos-<br/>
+potamos, der des <span title="Personenname"><a href="http://d-nb.info/gnd/122673093">Numa</a></span>, viele Fälle unter den Khalifen, bekant:<br/>
+dass mongolische Fürsten aus Meteorsteinen sich Dolche und Schwerd-<br/>
+ter klingen machen liessen: dennoch wolt<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">e</span> niemand an die Sache<br/>
+glauben, bis <span title="Personenname"><a href="http://d-nb.info/gnd/118520490">Chladni</a></span> 1794 Licht über diese Erscheinungen verbrei-<br/>
+tete. Noch 1751 als das bischöfliche Kollegium in Agram in<br/>
+Kroazien über 2 Steinmassen, die vor den Augen vieler Menschen<br/>
+vom Himmel gefallen waren, nach dem Zeugenverhör, eine völlig<br/>
+beglaubigte, juristische Urkunde darüber abfassen lies, und<br/>
+die Steine samt der Schrift nach Wien schikte, wolte niemand<br/>
+etwas davon wissen, ja der Abbée <span title="Personenname"><a href="http://d-nb.info/gnd/100827845">Stütz</a></span> <span class="dta-metamark" title="metamark">?</span> welcher darüber<br/>
+schrieb, sagt: er zweifle, dass jemand eine solche Fabel glauben<br/>
+werde. – Ich war selbst in Paris, als <span title="Personenname"><a href="http://d-nb.info/gnd/11948496X">Pictet</a></span> in der Akademie<br/>
+von <span title="Personenname"><a href="http://d-nb.info/gnd/118520490">Chladni</a></span>'s Bemühungen und den Steinfällen in Indien Be-<br/>
+richt abstattete, und die ganze Akademie lächelte ungläubig:<br/>
+aber sonderbar genug, in demselben Monat, 26. April 1803 ereig-<br/>
+nete sich in Frankreich selbst einer der grösten Steinfälle bei<br/>
+Aigues <span class="dta-metamark" title="metamark">?</span> im Dép. de l'Orme<span class="dta-del" title="Streichung (#ow)">:</span><span class="dta-add" title="Hinzufügung (across)">,</span> wo über 2000 Steine auf einer<br/>
+Fläche von 2 Quadratmeilen niederfielen. <span title="Personenname"><a href="http://d-nb.info/gnd/11618860X">Biot</a></span> wurde von der<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0669 : 333r|</span><br/>
+Akademie hingeschikt, und las ein sehr interessantes Mémoire<br/>
+darüber, wodurch die Sache konstatirt ward.</p><br/>
+<p class="dta-p">Seitdem zweifelt Niemand mehr daran, und man ist aufmerk-<br/>
+sam geworden, dass schon in der ionischen Schule sich ähnliche<br/>
+Ideen vorfanden. <span title="Personenname"><a href="http://d-nb.info/gnd/118672029">Diogenes von Apollonia</a></span> sagt: Mit den <span class="dta-del" title="Streichung (#s)">Erd-</span><br/>
+Weltkörpern bewegen sich <span title="Original: nicht leuchtende" class="dta-reg">nicht-leuchtende</span> Ste<span class="dta-del" title="Streichung (#ow)">r</span><span class="dta-add" title="Hinzufügung (across)">i</span>ne, die auf<br/>
+die Erde fallen. <span title="Personenname"><a href="http://d-nb.info/gnd/118525859">Diogenes Laërtius</a></span> meint, sie fielen aus der Sonne.<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118502727">Anaxagoras</a></span>: die seien von der Erde weggeschleudert, kreisen um<br/>
+dieselbe und fallen darauf zurük. Dies alles ist schön auseinan-<br/>
+dergesezt in <span title="Personenname"><a href="http://d-nb.info/gnd/116571721">H. Ritter</a></span>s Geschichte der ionischen Philosophie.<br/>
+Man hat auch behauptet, dass bei Mondfinsternissen Steine<br/>
+fallen. In Syrien ist es Meinung des Volkes, dass sie aus dem<br/>
+Monde fallen, daher fürchtet man <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">auf </span><span title="Schreibfehler: eine" class="dta-corr">einer</span> Nachtreise bei kla-<br/>
+rem Mondschein getroffen zu werden; – der Stein in der<br/>
+Kabba von Mekka ist nach <span title="Personenname"><a href="http://d-nb.info/gnd/119328593">Seetzen</a></span>s genauesten Nachrichten<br/>
+ein Meteorolith; nicht wie jener Spanier behauptet, ein<br/>
+Basalt mit Feldspathkrystallen. Eine berühmte Masse ist<br/>
+die, welche 1492, am 7 <span title="Nov." class="dta-abbr">November</span>: <span class="dta-add" title="Hinzufügung (superlinear)">e </span>clará unbe coelo<span title="q￼" class="dta-abbr">que</span> sereno in En-<br/>
+zisheim herabfiel, und 270 ℔ wog. Kayser <span title="Personenname"><a href="http://d-nb.info/gnd/118579371">Maximilian</a></span> lies<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0670 : 333v|</span><br/>
+sie zerschlagen, und ein Stük davon in die Mauer von Enzis-<br/>
+heim einsezen. – <span title="Personenname"><a href="http://d-nb.info/gnd/118591371">Pallas</a></span> fand eine sehr grosse Meteormasse in<br/>
+Asien 1774, von der eine mongolische Tradizion sagte, sie sei<br/>
+vom Himmel gefallen, und welche schon 1749 von den Kosakken<br/>
+gekant war.</p><br/>
+<p class="dta-p"><span class="u ">Von der Grösse der Massen.</span></p><br/>
+<p class="dta-p">Die gröste zuverlässig bekante fand der spanische Offizier <span title="Personenname"><a href="https://www.wikidata.org/wiki/Q6015085">Celis</a></span> <span class="dta-metamark" title="metamark">?</span><br/>
+in Südamerika bei Yotunga in Chacca: sie ist 7½ Fus lang,<br/>
+und 4½ Fus breit, und wiegt 300 Zentner – eine andere fand<br/>
+<span title="Personenname"><a href="http://viaf.org/viaf/143334181">Morney</a></span> in Brasilien, 7 Fus lang, 2 breit, 3 hoch; wovon <span title="Personenname"><a href="http://d-nb.info/gnd/117433144">Wol-<br/>
+laston</a></span> Stükke untersuchte<span title="Schreibfehler: .;" class="dta-corr">.</span> Unsicher ist die Masse von<br/>
+mehreren 100 Fus Durchmesser, die neuerlich nach der Anga-<br/>
+be der Kantoner Zeitung in China herabgefallen sein soll. –<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/100318371">Abel Rémusat</a></span> fand in den chinesischen Annalen, dass ein<br/>
+Fels von 40 Fus Höhe vom Himmel herabgefallen sei; auch<br/>
+dies ist nicht sicher. Nehmen wir aber auch blos den Stein von<br/>
+7 Fus Länge als den grössesten an, so bleibt immer noch die<br/>
+Vergleichung mit dem kleinsten Planeten, der Vesta, und den gros-<br/>
+sen Sonnen richtig.</p><br/>
+<p class="dta-p"><span class="u ">Von den chemischen Bestandtheilen.</span></p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0671 : 334r|</span><br/>
+<p class="dta-p">Es herscht eine grosse Verschiedenheit zwischen den Massen selbst,<br/>
+in Hinsicht auf ihre Zusammensezung. Die einen enthalten gediege-<br/>
+nes Eisen und Nikkel, die andern erdige, steinartige Substanzen,<br/>
+wie schwarze Basalte; oft sind auch ganze grobkörnige Gebirgs-<br/>
+massen herabgefallen. <span title="Personenname"><a href="http://d-nb.info/gnd/116609036">G. Rose</a></span>, der darüber trefliche Untersuchun-<br/>
+gen anstelte, fand eine Masse, dem Labrador ähnlich; 5–6 Mas-<br/>
+sen waren ganz ohne Nikkel. Ihre Dichtigkeit ist nicht immer<br/>
+verschieden: die Masse von Allay <span class="dta-metamark" title="metamark">?</span> 1806 war zerreiblich: ähnlich<br/>
+einem schwarzen Torf, enthielt Kohlenstof, und hatte ein spezi-<br/>
+fisches Gewicht von nur 2,0. Man findet aber Massen die 3,0 bis<br/>
+3¼ spezif. Gewicht haben, und dies ist grade die Dichtigkeit <span class="u ">der</span><br/>
+Planeten, welche diesseit der kleinen Planeten kreisen. Saturn<br/>
+hat eine Dichtigkeit, die der des Wassers noch nicht gleichkomt:<br/>
+man könte daher glauben, dass die Meteormassen im Weltraume<br/>
+uns näher liegen. <span title="Personenname"><a href="http://d-nb.info/gnd/118520490">Chladni</a></span> führt an, dass man <span class="dta-del" title="Streichung (#s)">auch</span> staubartige<br/>
+Massen hat herabfallen sehn, allein da diese vom Winde können<br/>
+in die Höhe geführt sein, so ist dies noch unsicher: auch flössen<br/>
+die Analysen, die man in Italien davon gemacht, kein grosses<br/>
+Vertrauen ein. Der Stein von Jouvenas <span class="dta-metamark" title="metamark">?</span> <span class="dta-del" title="Streichung (#s)">sieht</span> ist einer Syenitmasse<br/>
+nicht unähnlich. Im Äussern zeigt sich eine grosse Übereinstimmung<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0672 : 334v|</span><br/>
+bei allen Massen: sie haben meist eine glasige schwarze Rinde: da<br/>
+diese oft zweigartig über die Oberfläche verbreitet ist, und wohl ent-<br/>
+fernt den verschlungenen arabischen Schriftzügen ähnelt: so glaub-<br/>
+ten einige arabische Schriftsteller, es sei die Adresse der Personen,<br/>
+welche von den Dämonen getödtet werden solten.</p><br/>
+<p class="dta-p">Die chemischen Bestandtheile sind sehr mannigfaltig: man fand:<br/>
+Eisen, Nikkel, Kobalt und Chrom; Schwefel, Natron und Kali; –<br/>
+Salzsäure mit Sicherheit; Kieselerde, Alaunerde und Wasser, sehr<br/>
+deutlich: Die Gebirgsarten sind nicht so sicher: der Prozes ist sehr<br/>
+mühsam, um sie aufzufinden, indessen gelang es doch dem <span title="H￼." class="dta-abbr">Herrn</span><br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/116609036">G. Rose</a></span> durch Schlemmen und durch äussere Kennzeichen Olivin und<br/>
+Pyroxen darin zu entdekken.</p><br/>
+<p class="dta-p">Man kann 2 Abtheilungen von Meteorsteinen machen: die erste,<br/>
+welche <span class="u ">viel</span> Nikkel enthält, hat auch viel Talk, aber wenig Kalk;<br/>
+die 2<span title="￼" class="dta-abbr"><span class="sup uu ">te</span></span> die wenig Nikkel <span title="Original: –– ––– ––" class="dta-reg">〃 〃 〃</span> wenig <span title="Original: –––– ––––" class="dta-reg">〃 〃</span> viel <span title="Original: –––" class="dta-reg">〃</span><span title="Schreibfehler: " class="dta-corr">.</span></p><br/>
+<p class="dta-p">Das <span class="u ">Herabfallen</span> geht gewöhnlich so vor sich: bei hellem Tage<br/>
+sieht man einen leuchtenden Punkt, der sich in Dämpfe hült,<br/>
+und ein kleines schwarzes Gewölk bildet, aus welchen Lichtflam-<br/>
+men von einer sehr grossen Intensität herausfahren, die dem<br/>
+Sonnenlicht gleichkommen. (Kurz vor meiner Ankunft in Popayan,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0673 : 335r|</span><br/>
+<div class="fw-top fw-sig">84.</div><br/>
+war zwischen 12 <span title="u" class="dta-abbr">und</span> 1 Uhr Mittags eine Feuerkugel über die Stadt hin-<br/>
+gefahren, von solcher Helligkeit, dass das Innere aller Häuser zum<br/>
+Schrekken vieler Personen davon erleuchtet wurde. Man kann sich leicht<br/>
+denken, welch eine Intensität von Licht dazu gehört, um das Sonnen-<br/>
+licht unter den Tropen am Mittage zu überstralen.) Man hat die<br/>
+Höhe dieses schwarzen Rauches und Dampfes messen können, wobei<br/>
+freilich der Fehler die Hälfte des Ganzen betragen kann, und ihn in<br/>
+10, 12 bis 15 deutschen Meilen Höhe gefunden.</p><br/>
+<p class="dta-p">Die <span class="u ">Richtung</span> ist kein Herabfallen: sondern sie geht horizon-<br/>
+tal fort, wie ein Projektil, und nähert sich nur almählig der<br/>
+Erde. Die <span class="u ">Geschwindigkeit</span> ist ganz der der Weltkörper gleich.<br/>
+Man hat sie mit grosser Gewisheit 1771 <span title="u" class="dta-abbr">und</span> 1798 messen können,<br/>
+bei Feuerkugeln, die über Dublin, Paris und Deutschland fort-<br/>
+zogen: sie beträgt 5–6 Meilen in einer Sekunde (während eine<br/>
+Kanonenkugel nur 1500 Fus in der ersten Sek. zurüklegt)<span title="Schreibfehler: " class="dta-corr">.</span> Schon<br/>
+hieraus geht hervor, dass schwerlich die Wurfkraft eines Vulkans<br/>
+sie zu uns senden kann. <span class="u ">Ablenkungen</span> von der Richtung<br/>
+sind sehr selten, kommen aber vor, ja sogar Ricochets, welches<br/>
+sich bei der grossen Geschwindigkeit dieser Körper recht gut aus<br/>
+dem Widerstande der Luft erklären läst. Man hört beim Fallen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0674 : 335v|</span><br/>
+immer ein Getöse bis auf 18 Meilen weit, das oft dem Kanonendonner,<br/>
+oft dem Kleingewehrfeuer ähnlich ist. Beim Fall sind die Steine heis,<br/>
+versengen aber nicht einmal das Gras. <span title="Personenname"><a href="http://d-nb.info/gnd/118510185">Berzelius</a></span> schlos daraus sehr<br/>
+scharfsinnig, dass das Innere der Massen durch die Verglasung<br/>
+nicht gelitten habe, auch fand <span title="Hr." class="dta-abbr">Herr</span> <span title="Personenname"><a href="http://d-nb.info/gnd/117045535">v. Schreibers</a></span> in Wien, dass der<br/>
+Schwefelkies darin unverändert sei: daher gehört die hohe Tempe-<br/>
+ratur nur der äusseren Masse an. Im Jahre 1810 fiel <span class="dta-del" title="Streichung (#s)">ein</span> Meteor-<br/>
+stein auf ein amerikanisches Schiff; (wenn man die Ausdehnung<br/>
+des atlantischen Ozeans und die winzige Kleinheit des Schiffes<br/>
+bedenkt: so gehört dies zu den ungeheuersten Zufällen, die man<br/>
+sich denken kann;) schlug das Verdek durch, schwärzte aber nicht<br/>
+einmal das Holz, obgleich man ihn sehr heis fand.</p><br/>
+<p class="dta-p">Ihr <span class="u ">Vorkommen</span> ist völlig unabhängig von den Jahreszeiten,<br/>
+auch ihre Richtung nicht bestimt: man hat nichts periodisches<br/>
+dabei finden können, eben so wenig hängen sie mit den Nordlich-<br/>
+tern und Sonnenflekken zusammen, wie man wohl sonst angenom-<br/>
+men hat. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117045535">Schreibers</a></span></span> in Wien warf die Frage auf, wie viel Steinfälle<br/>
+überhaupt vorkommen mögen, und fand nach der Wahrscheinlichkeits-<br/>
+rechnung, <span class="dta-del" title="Streichung (#s)">dass</span> indem er, freilich unsicher genug, vom bekanten auf<br/>
+das unbekante schlos, dass in 2000 Jahren 100,000 Steine herab-<br/>
+gekommen sein mögen: <span class="dta-del" title="Streichung (#s)">auf</span><span class="dta-add" title="Hinzufügung (superlinear)">in</span> ein<span class="dta-add" title="Hinzufügung (sublinear)">em</span> Jahre ungefähr 2500.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0675 : 336r|</span><br/>
+<p class="dta-p">Über die <span class="u ">Ursachen</span> des Phänomenes hat man 3 Hypothesen: 1,<br/>
+dass sich die Steine in der Athmosphäre der Erde bilden, indem man<br/>
+annimt, dass an den äussersten Gränzen der <span title="Athm." class="dta-abbr">Athmosphäre</span> sich eine grosse<br/>
+Menge Wasserstof befinde, der durch eine elektrische Explosion zusam-<br/>
+mengeschmolzen würde: dies ist unhaltbar: denn in einer Höhe, wo<br/>
+der Barometerdruk noch nicht 0,01 Linie beträgt, würde eine ganze<br/>
+Athmosphäre nöthig sein, um einen <span title="Schreibfehler: mässigen" class="dta-corr">massigen</span> Aerolithen zu ma-<br/>
+chen: ferner spricht <span class="dta-del" title="Streichung (#s)">auch</span> die Schnelligkeit der Massen dagegen, welche<br/>
+viel grösser ist, als durch blossen Fall möglich wäre; endlich findet<br/>
+man durchaus keine Spur von Wasserstofgas, so hoch man auch<br/>
+in der Athmosphäre gekommen ist: bis zu <span class="dta-del" title="Streichung (#s)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span> <span class="sup ">1</span>/<span class="sub ">3000</span> der <span title="athmosph." class="dta-abbr">athmosphärischen</span><br/>
+Luft beigemengt, würde man ihn noch entdekken können. 2, dass<br/>
+sie aus den Mondvulkanen hergeschleudert werden. Mit Unrecht<br/>
+hat man diese Meinung <span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/11858975X">Olbers</a></span> zugeschrieben: diese<br/>
+beiden grossen Astronomen haben nur untersucht, wie gros die<br/>
+Wurfkraft sein müsse, um die Steine bis zu uns zu bringen. Aber<br/>
+wahrscheinlich giebt es im Monde gar keine Vulkane, und die<br/>
+leuchtende Stelle im Aristarch, welche man dafür hielt, zeigt<br/>
+uns wahrscheinlich nur das reflektirte Erdlicht, welches sogar<br/>
+verschieden erscheint, je nachdem es von dem dunkeln Meere, oder<br/>
+von dem hell erleuchten Innern von Afrika kömt. <span title="Personenname"><a href="http://d-nb.info/gnd/116261293">Poisson</a></span> hat berech-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0676 : 336v|</span><br/>
+net, dass eine Wurfkraft von 7100 Fus in der 1<span title="￼" class="dta-abbr"><span class="sup uu ">ten</span></span> Sekunde dazu gehört<br/>
+um die Steine vom Monde auf die Erde zu schleudern: also 4 mal<br/>
+stärker als eine Kanonenkugel. <span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span> fand, dass auf diese Art<br/>
+ein Stein in 2½ Tagen zu uns kommen könne: allein <span title="Personenname"><a href="http://d-nb.info/gnd/11858975X">Olbers</a></span> bewies<br/>
+mit musterhaftem Scharfsinn, dass <span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span> dabei nicht auf die<br/>
+Translazion des Mondes gerechnet habe, und dass, wenn man diese<br/>
+in Anschlag bringt, die Steine aus den Mondvulkanen Erdsatelli-<br/>
+ten werden würden. Im Jahre 1660 wurde in Mayland ein Fran-<br/>
+ziskanermönch durch einen Meteorstein getödtet, wie der Physiker<br/>
+Tortona berichtet, und schon um dieselbe <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 2 Zeichen fehlen]</span></span><span class="dta-add" title="Hinzufügung (across)">Ze</span>it 1660, sagte <span title="Personenname"><a href="http://d-nb.info/gnd/117616214">Turzago</a></span><br/>
+in einem Mémoire darüber: dass der Stein aus dem Monde gekom-<br/>
+men sei. 3, und dies ist das wahrscheinlichste, dass die Steine im<br/>
+Weltraume selbst herumfliegen, welches von <span title="Personenname"><a href="http://d-nb.info/gnd/118520490">Chladni</a></span> zuerst ausge-<br/>
+sprochen wurde: die relativen Grössen im Weltraume sind nichts,<br/>
+wie wir an der Vergleichung der Vesta mit den Sonnen gesehn ha-<br/>
+ben. Jene kleinen Meteormassen fallen durch eigne Perturba-<br/>
+zionen bald auf den einen, bald auf den andern Weltkörper,<br/>
+dem sie sich am meisten in ihren Bahnen nähern. <span title="Personenname"><a href="http://d-nb.info/gnd/11858975X">Olbers</a></span><br/>
+hat die Meinung, dass ihre grosse Menge vielleicht von einem<br/>
+grössern zerplazten Weltkörper herrühre, und dass dies vielleicht<br/>
+der Fall könne gewesen sein, als die 4 kleinen Planeten sich<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0677 : 337r|</span><br/>
+gebildet. <span title="Personenname"><a href="http://d-nb.info/gnd/118568698">Lagrange</a></span> hat kurz vor seinem Tode ein äusserst tiefsin-<br/>
+niges Mémoire <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">darüber </span>herausgegeben.</p><br/>
+<hr/><br/>
+</div></body></html>

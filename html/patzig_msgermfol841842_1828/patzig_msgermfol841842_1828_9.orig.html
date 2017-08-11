@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span title="Original: D. 1. Dcbr. 1827." class="dta-reg">9. Vorlesung, 01.12.1827</span></div><br/>
+<p class="dta-p"><span class="u ">Dieſe Geſetze der Einheit ſind bis jetzt</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Geſetze der Einheit<br/>
+finden wir leichter, beſtim̃ten<br/>
+bei entfernten als naher<br/>
+Erſcheinungen.</span><br/>
+</span><span class="u ">viel richtiger, ſicherer u. beſtim̃ter bei Er-<br/>
+ſcheinungen gefunden dies uns am entfern-<br/>
+teſten ſind, als bei denen die uns näher<br/>
+liegen u.</span> uns umgeben. So iſt es gelungen<br/>
+die Trabanten des Jupiters bis auf die<br/>
+Secunde zu berechnen, weñ ſie in die<br/>
+Schatten ihres Planeten treten, während<br/>
+unſere Lufterſcheinungen noch ganz unbe-<br/>
+ſtim̃t ſind. <span class="u ">Der große Unterſchied zwi-</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Unterſchied<br/>
+zwiſchen coeleſtiſchen<br/>
+u. telluriſchen Erſchein.</span><br/>
+</span><span class="u ">ſchen den Beobachtungen der phyſiſchen Aſtro-<br/>
+nomie u. der telluriſchen Erſcheinungen<br/>
+liegt darin,</span> daß wir uns bei erſten bloß<br/>
+auf räumliche, quantitative, mechaniſche<br/>
+Verhältniße beziehen dürfen, u. bei letz-<br/>
+tern außer dieſen Erſcheinungen des Maßes<br/>
+u. der Bewegung noch die Quantität,<br/>
+dh. die Heterogenität des Stoffes in<br/>
+Anſchlag bringen müſſen. Jn der phÿſi-<br/>
+ſche Aſtronomie haben <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118568698">Lagr<span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)">a</span>nge</a></span></span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">La-<br/>
+place</a></span></span> wunderbares geleiſtet u. auf-<br/>
+geſtellt; wohingegen in den telluriſchen<br/>
+Verhältnißen noch im̃er Röhrungen ſich<br/>
+ereignen, nach welchen bis jetzt keines-<br/>
+wegs die Einheit der Geſetze aufgefun-<br/>
+den, die wir bei der Mechanik des<br/>
+Him̃els erkañt haben. Uebrigens bleibt<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Vorurtheil der<br/>
+neuern Zeit.</span><br/>
+</span>hier noch das Vorurtheil der neuern<br/>
+Zeit zu widerlegen, als weñ bei den<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">große</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0061 : 5[7]|</span><br/>
+großen Kataſtrophen des Erdballs viele<br/>
+Kräfte gemeinſam wirkten u. daß ſomit<br/>
+bei der vereinzelten Unterſuchung einfa-<br/>
+cher Stoffe kein Licht über die Erſchei-<br/>
+nungen verbreitet werden kañ. Grade<br/>
+das Gegentheil; deñ welche Entdeckungen<br/>
+knüpfen ſich nicht an den Verſuch mit der<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/119292556">Volta</a></span>iſchen Säule, u. ſo müßten wir<br/>
+auf ähnlichem Wege auch die Natur des<br/>
+Nordlichts, die Erſcheinung des Gewitter-<br/>
+regens, der gleichzeitig oft hunderten<br/>
+von Kubik Meilen oder Atmoſphäre<br/>
+in Bewegung ſetzt, zu erforſchen<br/>
+u. unter Geſetze zu bringen ſuchen.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Litteratur<br/>
+der Kosmographie</span><br/>
+</span><span class="u ">Wir kom̃en jetzt zur Litteratur der<br/>
+Kosmographie oder</span> zu den Quellen der<br/>
+Wiſſenſchaft ſelbſt. Dieſe ſind einmal<br/>
+das Studium der Natur ſelbſt, u. dañ<br/>
+das Studium der Schriften, wo die Beobach-<br/>
+tungen u. Erfahrungen geſam̃elt ſind. Was<br/>
+im Gebiete der Natur <span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)">E</span>iner beobachtet iſt<br/>
+unendlich gering gegen das, was im Laufe<br/>
+eines Jahrhunderts <span class="dta-del" title="Streichung (#ow)">v</span><span class="dta-add" title="Hinzufügung (across)">V</span>iele allmählig ſam̃el-<br/>
+ten u. ſomit iſt eine vielſeitiges Studium<br/>
+hier unerlaßlich. <span class="u ">Nothwendig wird es zugleich</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Nothwendig<br/>
+irgendeinen Theil der<br/>
+Natur ſelbſt zu ſtudiren.</span><br/>
+</span><span class="u ">daß man irgend einen Theil der Natur ſelbſt<br/>
+beobachtet habe,</span> weil dem Ganzen da-<br/>
+durch Leben gegeben u. die von andern<br/>
+gemachten Beobachtungen beſſer verſtanden<br/>
+u. gewürdigt werden. Man muß bei dieſen<br/>
+Beobachtungen aber wohl unterſcheiden, was<br/>
+nützlich iſt für den Lehrer oder Wiſſenſchaft<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">selbſt u.</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0062 : 58.|</span><br/>
+selbſt, u. was für diejenigen, die weni-<br/>
+ger Zeit auf dieſe Beſchäftigung anwenden<br/>
+köñen. Die beſte Quelle dieſer Wiſſenſchaft<br/>
+bleibt ſtets das Studium der ſpeciellen Ab-<br/>
+handlung über einen Gegenſtand. Diejenigen ſind<br/>
+glücklich in der Erkeñtniß des Genereller<br/>
+die das Specielle beſonders gefaßt u.<br/>
+denen das hier gemeinſame Gut aller Natio-<br/>
+nen, die gleichzeitig angeſtellten Beobachtungen<br/>
+der Natur, zugänglich geworden. Ohne dies<br/>
+iſt es unmöglich zu einer reinen großen Na-<br/>
+turanſicht zu gelangen. <span class="u ">Kom̃en wir jetzt</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Litteratur</span><br/>
+ſelbſt<br/>
+<span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118803948">Barenius</a></span></span><br/>
+</span><span class="u ">zur Litteratur der Phyſikaliſchen Erdbeſchrei-<br/>
+bung ſo iſt zuerſt hier</span> <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118803948">Barenius</a></span></span></span>, aus der<br/>
+Mitte des 17<span class="u ">te</span> Jahrhunderts zu werken, in ſeine<br/>
+<span class="aq ">Geograhia generalis et ſpecialis</span>. Es iſt den<br/>
+erſte Anregung, nur das generelle mit dem<br/>
+ſpecielle zu ſehr verwechſelt. Der Stoff<br/>
+iſt nicht ganz bezähmt u. geſondert aus ein-<br/>
+zeln wichtig oder unwichtig iſt. Dañ iſt ſpä-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/121787109">Culof</a></span></span><br/>
+</span>ter zu merken <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/121787109">Lulof</a></span></span>: Einleitung in<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/119384981">Bergmañ</a></span></span> u. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/139373365">Mitter-<br/>
+bacher</a></span></span></span>.<br/>
+</span>die Natur <span class="u ">u.</span> <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/119384981">Bergmann</a></span>s</span> u. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/139373365">Mitter-<br/>
+bacher</a></span>s</span></span> phyſiſche Erdbeſchreibung. Jn<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118559796">Kant</a></span></span><br/>
+</span>neuerer Zeit iſt <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118559796">Kant</a></span>s</span> phÿſiſche Geogra-<br/>
+phie berühmt geworden. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118559796">Kant</a></span></span> iſt es jedoch<br/>
+wie dem Mineralogen <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118767089">Werner</a></span></span> gegangen.<br/>
+Es blieben <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">von </span>beiden unglücklicher Weiſe eine<br/>
+Menge Hefte übrig, mit oft unrichtigen<br/>
+Zuſätzen, wo beiden in der Folge zu ge-<br/>
+ſchrieben wurde, was ihren Anſichten<br/>
+gar nicht gehört. Ein beſſeres Werk<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">iſt hi</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0063 : 5[9]|</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/116653531">Delametrie</a></span></span><br/>
+</span>iſt hier <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/116653531">Delametrie</a></span>: theorie de la terre</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/11754096X">Malte-Brun</a></span></span><br/>
+</span>4 Bde; ferner <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/11754096X">Malte-Brun</a></span>: Geographie<br/>
+univerſelle</span>. Letzteres Werk enthält eine<br/>
+ſehr ſpecielle Beſchreibung, freilich auch mit<br/>
+dem Fehler, <span title="dß" class="dta-abbr">daß</span> <span title="ds" class="dta-abbr">das</span> Generelle u. Specielle<br/>
+nicht genug geſchieden iſt. Er hebt beſonders<br/>
+die Anſicht über die verſch. Menſchen-Racen<br/>
+hervor, wie überhaupt <span title="ds" class="dta-abbr">das</span>, was auf<br/>
+die organiſche Natur Bezug hat; jedoch<br/>
+muß das ganze Werk mit Vorſicht ſtudirt<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname">Parer</span></span><br/>
+</span>werden. Ferner iſt zu beachten <span class="aq u "><span title="Personenname">Parer</span></span>:<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/116921617">Hochſtaedter</a></span></span></span> <span class="u ">Grundſätze der Geo</span><span class="dta-del" title="Streichung (#ow)"><span class="u ">g</span></span><span class="dta-add" title="Hinzufügung (across)"><span class="u ">l</span></span><span class="u ">ogie 1815, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116921617">Hochſtaedt-<br/>
+ter</a></span></span>: Phyſiſche Geographie: 1820,</span> <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117181641">Munker</a></span></span></span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/117181641">Munker</a></span></span><br/>
+</span>Anfangsgründe der mathematiſchen u. phy-<br/>
+ſikaliſchen Geographie. Eine von letzterm<br/>
+Verfaſſer mit beſondern Fleiß bearbeitete<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/100055427">Brandes</a></span></span><br/>
+</span>Abhandlung des Artikels: <span class="u ">Erde in</span> <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/100055427">Brandes</a></span></span> <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span></span><br/>
+phyſikaliſchem Wörterbuche iſt beſonders<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/104268190">Link</a></span></span><br/>
+</span>wohl gelungen. <span class="u ">Auch</span> <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/104268190">Link</a></span>s</span></span>, <span class="u ">Betrachtun-</span><br/>
+gen der Urwelt ſind außerordentlich Lehr-<br/>
+<span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[R]</span></span><span class="dta-add" title="Hinzufügung (across)">r</span>eich. Anſichten vom ausgedehnten Welt-<br/>
+raume u. vom Gebiete der Aſtronomie ſelbſt<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span></span><br/>
+</span>giebt beſonders <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span></span> in ſeinem ſchönen<br/>
+Werke: <span class="aq ">Sÿſtem du monde</span>. Kein Volk<br/>
+kañ ein gleichartiges Buch aufweiſen. Dañ<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/117108278">Schubert</a></span></span><br/>
+</span>iſt auch <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/117108278">Schubert</a></span></span> mit ſeinen aſtronomiſchen<br/>
+Werken hier anzuführen. Bücher die<br/>
+ſich zugleich auf Naturgeſchichte beziehen<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118774662">v. Hoff</a></span>.</span><br/>
+</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">ſind</span> HErrn <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118774662">v. Hoff</a></span>s</span> Geſchichte, der durch<br/>
+Ueberlieferungen nachgewieſenen Ver-<br/>
+änderungen der Oberfläche der Erde<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">worin</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0064 : 60.|</span><br/>
+worin die Geſchichte der verſch. Hypotheſe<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/117280607">Uckert</a></span></span><br/>
+</span>lehr<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">re</span>ich dargeſtellt ſind, u. <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/117280607">Uckert</a></span>s</span><br/>
+mathem. u. phyſikal. Erdbeſchreibung<br/>
+der Griechen u. Römer 1816–1821.</p><br/>
+<p class="dta-p">Es bleibt nur noch übrig Anhangsreiſe<br/>
+nicht als eigentliche Quellen des Studiums, ſon-<br/>
+dern mehr zur Belebung der Einbildungs-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Aeſtetiſche Be-<br/>
+handlung großerñNaturſcenen</span>.<br/>
+</span>kraft, <span class="u ">der äſtetiſchen Behandlung großer<br/>
+Naturſcenen zu erwähnen.</span> Es iſt dies<br/>
+ein neuer Zweig der Litteratur gewor-<br/>
+den, der ſo gut dazu beiträgt, wie die<br/>
+botaniſchen Gärten mit ihren exotiſchen Pflan-<br/>
+zenformen, der Wunſch wozu regen, fremde<br/>
+Länder zu ſchauen. Hinzu geſellet ſich die<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Landſchaftsmalerei</span><br/>
+</span><span class="u ">Landſchaftsmalerei</span>, die ſich jetzt weniger<br/>
+mit den Maſſen der Gegend beſchäftigt,<br/>
+als auf die Richtigkeit der Natur- u. beſon-<br/>
+ders <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">der </span>Pflanzenformen ſieht. <span class="u ">Bei Griechen</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Geſchmack der Grie-<br/>
+chen u. Römer</span><br/>
+</span><span class="u ">u. Römern war die äſtetiſche Behandlung<br/>
+erhabener Naturſcenen</span> nur bei den Dichter<br/>
+zu finden; die Proſaiker erzählten nur<br/>
+Schlachten u. beſchrieben die Schlachtfelder<br/>
+u. rohe Völker in dieſem Geiſte u. weñ<br/>
+von großen Naturſcenen die Rede iſt, ſo<br/>
+<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">sind</span> dieſe nur der Hintergrund, für ihre<br/>
+hiſtoriſchen Figuren u. Gruppen. Alles w<span class="dta-supplied">[as]</span><br/>
+<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (intralinear)">mit </span>dem Leidenſchaften der Menſchen zuſam̃en-<br/>
+hängt u. aus denſelben hervorgeht u.<br/>
+hinwieder auf ſie einwirkt, das lag<br/>
+ihnen beſonders nahe. Dabei hatten ſie<br/>
+allerdings Siñ für Natur; dies beweiſe<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">ihre</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0065 : [61]|</span><br/>
+ihre ſehr geſchmakvoll angelegten Gärten<br/>
+u. ihr Genuß der ſie in der Natur<br/>
+fanden, wie aus dies <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118520814">Cicero</a></span></span> u. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118595091">Plinius</a></span></span><br/>
+in ihren Briefen zu erkeñen geben; doch<br/>
+war dies ein irgend eine Hauptſache in<br/>
+ihrer Litteratur, ſondern nur im̃er der<br/>
+Hintergrund, um ihren lebenden Figuren<br/>
+Anmuth u. Gewicht zu geben. <span class="u ">Die äſte-</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Dieſe äſtetiſche<br/>
+Behandlung der Natur<br/>
+mehr dem Judiſch-Germa-</span><br/>
+niſchen Stam̃e eigen.<br/>
+</span><span class="u ">tiſche Behandlung der Natur war mehr<br/>
+dem Jndiſch-Germaniſchen Stam̃e eigen</span>.<br/>
+Die Jnder bewahren das tiefſte Gefühl<br/>
+für das Unbelebte, beobachten die R<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 2 Zeichen fehlen]</span></span><span class="dta-add" title="Hinzufügung (across)">it</span>en<br/>
+der Thiere <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span> wie wir es bei den Alten<br/>
+ganz entbehren. Jm Mittelalter war<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118658115">Bembo</a></span></span><br/>
+</span>zuerſt <span class="u ">der Cardinal</span> <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118658115">Bembo</a></span></span></span>, der in ſeine<br/>
+Jugend über die Vegetation der Pflanzen-<br/>
+welt ſchrieb. Jn neueren Zeit iſt überall<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118517252">Buffon</a></span></span><br/>
+</span><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118517252">Buffon</a></span></span> berühmt geworden, nur herrſchte<br/>
+bei ihm allenthalben eine Kälte vor, die<br/>
+daraus entſpringt, daß er nicht eigne<br/>
+Selbſtanſicht von den Naturgegenſtänden<br/>
+beſaß. Hier gebührt vor Allem ein<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118534416">Georg Forſter</a></span></span><br/>
+</span>großes Verdienſt dem <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118534416">Georg Forſter</a></span></span><br/>
+durch ſeine herrliche ſchöne Beſchreibung<br/>
+der Südſee-Jnſeln. Jn einen vor-<br/>
+treflichen Gemählde finden wir alle er-<br/>
+habenen Naturſcenen der Tropenwelt<br/>
+vereinigt u. auf das natürlichſte u.<br/>
+ſchlüße geſchildert, dies iſt in den Werke<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118604945">Bernandin de St.<br/>
+Pierre</a></span></span><br/>
+</span>von <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118604945">Bernandin de St. Pierre</a></span></span>: Paul<br/>
+u. Virgiel. Aehnliche große Gemählde<br/>
+der Naturwerke finden <span class="u ">wir in </span><span title="Personenname"><a href="http://d-nb.info/gnd/118520237"><span class="u ">Ch<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">a</span>t<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">au</span>-</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">briand's</span></div></a></span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0066 : 62.|</span><br/>
+<span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118520237">Chataubriand</a></span>s Attala</span>, le Martyr</span> <span title="Original: pp" class="dta-reg"><span class="aq ">etc</span>. <span class="aq ">etc</span>.</span></p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118540238">Goethe</a></span></span><br/>
+</span>Ebenſo dringen <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118540238">Goethe</a></span>s</span> unſterbliche Ver-<br/>
+dienſte um die Aeſtetik <span title="allenthalb￼" class="dta-abbr">allenthalben</span> durch<br/>
+u. wie er ſelbſt das Gebiet der Natur<br/>
+durch ſeine treflichen optiſchen Verſuche er-<br/>
+leuchtet. Allerdings iſt dabei nicht zu<br/>
+läugnen, <span class="u ">daß die äſtetiſche Behandlung<br/>
+der Natur auch auf gewaltige Abwege<br/>
+geführt hat</span>; deñ viele Reiſende haben<br/>
+bloß poetiſch geſchildert, aber dabei nicht<br/>
+wahr. Sie waren nicht genug gebildet<br/>
+mit dem Studium der Natur vertraut, u.<br/>
+wurden ſomit <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Wort fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">in</span> ihren Beſchreibungen<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Natur<br/>
+des wahrhaft poe-<br/>
+tiſchen</span><br/>
+</span>geſchmacklos. <span class="u ">Das wahrhaft poetiſche<br/>
+kañ nur aus der Tiefe des eigenſten <span class="gap">[unleserliches Material]</span>-<br/>
+ſten Gemüthes entſtehen,</span> u. jeder fremde<br/>
+Schmuck in die Schilderung großer Scenen<br/>
+gebracht, iſt im̃er ſehr gefährlich. Deſſen un-<br/>
+geachtet kañ Wahrheit in die Schilderung <span title="kom̃￼" class="dta-abbr">kom̃en</span>,<br/>
+u. nie braucht ſie des poetiſchen Bildes zu<br/>
+entbehren; man muß nur nichts hinzuſetzen<br/>
+wollen. Die Größe der Natur muß <span class="dta-supplied">[nie]</span><br/>
+ſelbſt angeſchaut werden, u. die Schilderung<br/>
+muß nicht ſchwächern Eindruck machen auf<br/>
+den der es lieſt, als die Natur ſelbſt<br/>
+auf den, der es zur Darſtellung brach-<br/>
+te. <span class="u ">Ueber dieſer äſtetiſchen Natur-</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Näheres<br/>
+über die Landſchfts-<br/>
+malerei</span><br/>
+</span><span class="u ">beſchreibung iſt auch die Landſchaftsma-<br/>
+lerei zu werken.</span> Bei den Griechen u. Rö-<br/>
+mern war dies kein eigner Gegenſtand <span class="dta-supplied">[der]</span><br/>
+Kunſt, ſondern ſie blühete zuerſt auf in<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">der</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0067 : [63].|</span><br/>
+der von Eyckſchen Schule. Als die hiſto-<br/>
+riſchen Figuren verkleinert wurden, war<br/>
+dies zugleich der Anfang u. begiñ der Land-<br/>
+ſchaftsmalerei, wenigſtens wurde ſie da-<br/>
+durch vorbereitet. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118622994">Tizian</a></span></span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/122262727">Bassano</a></span></span> u.<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118519255">Carragio</a></span></span> waren weniger treu u. Nach-<br/>
+ahnung exotiſchen Formen. Erſt um die Mitte<br/>
+des 17 Jahrhdts wurde dieſe mit mehr<br/>
+Wahrheit nachgebildet. Jm J. 1647.<br/>
+ging der holländiſche Maler <span class="dta-metamark" title="metamark">⎡</span><br/>
+mit Graf <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118738097">Nassau</a></span></span> nach Braſilien, er ſehe<br/>
+die gewaltigen Ufer des Amazonenflüſſes<br/>
+u. treffend ſind ſeine in <span class="aq ">Schleicheim</span><br/>
+befindlichen Gemählde; aber ſo wahr<br/>
+ſind die Abbildungen der Ufer des Ganges<br/>
+von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/123488893">Hagges</a></span></span>. Die Phÿſiognomik der<br/>
+Welt maleriſch darzuſtellen iſt nicht un-<br/>
+wichtig geweſen, die Luſt an Reiſen zu<br/>
+erwecken u. dadurch zur Vermehrung<br/>
+u. Erweiterung der Weltanſicht zu ge-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Veranlaſſung<br/>
+der Reiſen des<br/>
+<span title="H￼." class="dta-abbr">Herrn</span> <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span> <span title="Personenname"><a href="http://d-nb.info/gnd/118554700">v Humbold</a></span></span><br/>
+</span>langen. <span class="u ">Weñ ich mich ſelbſt frage, was<br/>
+mich zuerſt bewog fremde Länder u.<br/>
+die Tropenwelt zu beſuchen,</span> ſo waren<br/>
+dies zunächſt <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118534416">Georg Forſter</a></span>s</span> Beſchreibung<br/>
+der Südſee-Jnſeln, u. der Anblick der<br/>
+wunderbaren Formen des Drachenbau-<br/>
+mes in dem hieſigen botaniſchen Garten.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Ueberſicht<br/>
+der Propedeutik</span><br/>
+</span><span class="u ">Die Propedeutik der</span> <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="u ">Natur-</span></span><span class="u ">Wiſſenſchaft<br/>
+wie ich hiemit ſchließen.</span> Wir haben uns<br/>
+<div class="dta-list"><span class="dta-list-item">1., mit einer Ueberſicht der Natur-Erſchei-<br/>
+nungen im Weltraume</span>
+<span class="dta-list-item">2., mit <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">d</span>er Definitione der Wiſſenſchaft</span>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">3.,</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0068 : 64.|</span><br/>
+<span class="dta-list-item">3., mit der Geſchichte der Wiſſenſchaft</span>
+<span class="dta-list-item">u. 4., mit den Quellen des Studiums <span title="derſelb￼" class="dta-abbr">derſelben</span>,<br/>
+ſowohl mit der Litteratur, als den<br/>
+Anreizungsmitteln zum lebendigen Studium<br/>
+der Erdkunde beſchäftiget; wir gehen<br/>
+jetzt zur Wiſſenſchaft der <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">phyſikaliſchen </span>Weltbeſchreibung￼<span class="dta-marginal dta-marginal-left">nicht phyſiſche Geographie.<br/>
+</span><br/>
+als ein Natur-Ganzes ſelbſt über<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Betrachtung<br/>
+der Wiſſenſchaft ſelbſt.</span><br/>
+</span><span class="u ">u. betrachten die Anhäufung der Materie</span><br/>
+<div class="dta-list"><span class="dta-list-item"><span class="u ">1., nach ihrer absoluten u. relativen Größe</span></span>
+<span class="dta-list-item"><span class="u ">2., nach dem Unterſchiede ihrer iñern od. chemiſchen<br/>
+Natur u.</span></span>
+<span class="dta-list-item"><span class="u ">3., nach ihren Entfernungen von einander</span></span>
+</div></span>
+</div></p>  <p class="dta-p"><span class="dta-marginal dta-marginal-left">1. <span class="u ">absolute u. relative<br/>
+Größe der Materie.</span><br/>
+</span><span class="u ">Sehen wir zuerſt auf die absolute oder<br/>
+relative Größe der Weltkörper;</span> ſo wer-<br/>
+den wir dabei nicht die Berechnungen aufſtellen<br/>
+um den Unterſchied des Volumens eines Sund-<br/>
+karas u. des Soñenkörpers <span class="dta-del" title="Streichung (#s)">berechnen</span><span class="dta-add" title="Hinzufügung (superlinear)">zu beſtim̃en</span>; ſon-<br/>
+dern nur in welchen Verhältniſſen der<br/>
+Weltkörper ſtehen. <span class="u ">So iſt Zb. der Durchmeſſer</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Vergleich des Aero-<br/>
+lith zur Veſts u. dies.<br/>
+zu einem Central-Körper</span><br/>
+</span><span class="u ">der Veſta 59–60 deutſche Meilen u. der größe<br/>
+Aerolith der bis jetzt in Amerika gefunden<br/>
+etwa 5 Fuß im Durchmeſſer.</span> D<span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)">er</span> Durch-<br/>
+meſſer der Veſta, verhält ſich zum Durchmeſſer<br/>
+der Aerolithen ungefähr wie 270,000 : 1.<br/>
+Der Durchmeſſer de Soñe hingegen zum Durch-<br/>
+meſſer der Veſta wie 3300 : 1; daher<br/>
+iſt der Durchmeſſer der Veſta etwa 80 mal<br/>
+größer im Verhältniß des Durchmeſſers der<br/>
+Aerolithen, als der Durchmeſſer der Soñe<br/>
+zu dem der Veſta. Die Fixſterne <span class="aq ">Sy<span class="dta-supplied">[ri-]</span><br/>
+us</span> oder <span class="aq ">Veja</span> ſind indeß Beiläufig 34<br/>
+od. 35 mal größer im Durchmeſſer als die<br/>
+Soñe; vergleiche ich die Veſta mit dieſer<br/>
+ſo verkleinert ſich dieſe in ihrem Verhält-<br/>
+niß zur Soñe u. in ihrem Verhältniße<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">zum</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0069 : [65]|</span><br/>
+zum Aerolithen übertrifft ſie denſelben<br/>
+nur 2 bis 3 mal; deñ der Durchmeſſer<br/>
+de<span class="dta-del" title="Streichung (#ow)">s</span><span class="dta-add" title="Hinzufügung (across)">r</span> Aerolithen: zu dem <span title="dr" class="dta-abbr">der</span> Veſta =<br/>
+1 : 270000 u. der der Veſta, zum<br/>
+Veja = 1 : 112,000. Vergleiche ich<br/>
+jetzt einen Saturns-Trabant od. <span title="ein￼" class="dta-abbr">einen</span> der<br/>
+kl. Cometen, mit dieſem großen Central-<br/>
+körper ſo iſt das Verhältniß wie 1 :<br/>
+224000, weil dieſe die Hälfte des Durch-<br/>
+meſſers der Veſta haben, u. der Durchmeſſer<br/>
+des Aerolithen: zu dem des Saturnſtra-<br/>
+banten 1 : 135000 u. nun finde ich, daß<br/>
+der Durchmeſſer des Satellits im Vergleich<br/>
+mit dem des großen Weltkörpers kleiner iſt,<br/>
+als der Durchmeſſer des Meteorſteines zum<br/>
+dem des Satelliten, oder, 135000 Aerolithen<br/>
+bilden einen Cometen oder Satelliten<br/>
+von der Größe der halben Veſta, wäh-<br/>
+rend 224000 Satelliten erſt der Größe<br/>
+des Centralkörpers gleich ſind u. der<br/>
+Aerolith wurde ſich zum Centralkörper<br/>
+verhalten wie 1 : 28,000 Mill. So <span title="laſſ￼" class="dta-abbr">laſſen</span><br/>
+ſich alle dieſe Beſtim̃ungen zwiſchen den<br/>
+Grenzen des <span class="aq ">maximu<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">m</span></span> u. <span class="aq ">minimu<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">ms</span></span> an-<br/>
+geben u. es laſſen ſich alle Anhäufungen<br/>
+der Materie unter einem Geſichtspunkte<br/>
+betrachten. Bis jetzt haben wir die<br/>
+ſtarren Materien mit den ſtarren ver-<br/>
+gleichen; außer dieſen giebt es eine große<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Betrachtung<br/>
+der dunſtförmigen<br/>
+Materie</span><br/>
+</span><span class="u ">Anhäufung dunſtförmiger Materie</span> die<br/>
+zum Theil ſichtbar <span class="dta-del" title="Streichung (#erased)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">iſt, t</span>heils auch gefol-<br/>
+gert werden kañ. So giebt es einen<br/>
+Lichtſchim̃er am Horizonte, der nicht zur<br/>
+Soñenatmoſphäre gehörig iſt, das<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Zodiakal-</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0070 : 66.|</span><br/>
+Zodiakal- oder Thierkreislicht, welches<br/>
+bei uns nur zu Zeiten im Frühjahr u. Herbſt<br/>
+unter den Tropen aber faſt täglich zu ſehen<br/>
+u. von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Cassini</a></span></span> zuerſt beobachtet iſt.<br/>
+Es leuchtet ſtoßweiſe. Außer dieſem<br/>
+Lichte giebt es Nebelflecke im Weltrau-<br/>
+me, die nicht bloß ſcheinbar ſich in Ster-<br/>
+nenhäufen auflöſen, ſondern wirklich<br/>
+unauflöſlich ſind, in welche kein einzigen<br/>
+Körper eingeſenkt iſt u. welche bei<br/>
+einer 70, 80–900 maligen Vergrößerung<br/>
+dieſelbe gleichmäßigen Erleuchtung behat-<br/>
+ten. So giebt es Grunde auch auf die<br/>
+Exiſtenz anderer dunſtförmigen Maſſen<br/>
+zu ſchließen, durch welche z.B. die Come-<br/>
+ten in ihrem Lauf aufgehalten werden<br/>
+u. welche d<span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)">em</span> Lauf der ſtarren Körper nicht hem̃en<br/>
+kañ. Es iſt eine ſiñreiche Bemerkung<br/>
+von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118720066">Halle</a></span></span> zuerſt u. deñ von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11858975X">Olbers</a></span></span><br/>
+ausgeſprochen. Durch Teleskope ſehen<br/>
+wir nehmlich Geſtirne des fernſten Weltall<span class="dta-supplied">[s]</span><br/>
+u. erblicken in jedem Raume einen erhellenden<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Warum erſcheint<br/>
+uns das Himmelsgewölbe<br/>
+nicht als ein leuchtender Stern</span><br/>
+</span>Körper der aus ſein Licht zu ſendet. <span class="u ">Hieraus<br/>
+folgt daß uns das ganze Him̃elsgewölbe als<br/>
+ein leuchtender Stern erſcheinen müßte,</span> weñ<br/>
+nicht eine lichtſchwächende Materie dies <span title="Original: hindete" class="dta-reg">hinderte</span><span class="dta-supplied">[.]</span><br/>
+Jn erſterm Falle wären ſelbſt von der<br/>
+Soñe nur ihre Dunkeln Flecke zu ſehen u.<br/>
+die Planeten würden ſich um Him̃elsgewöl-<br/>
+be wie ſchwarze Punkte bewegen, daher<br/>
+ſchloß <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11858975X">Olbers</a></span></span> mit Reiht auf dies Hinde-<br/>
+rungsmittel des Lichtes.</p></div></body></html>

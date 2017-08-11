@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[40. Vorlesung, 22.03.1828]</span></div><br/>
+<div class=""><div class=""><p class="dta-p">wie <span title="z.B." class="dta-abbr">zum Beispiel</span> <span class="aq ">Mont <span title="Original: Roſe" class="dta-reg">Rose</span></span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Mont Blanc</span> an den<br/>
+Punkten liegen wo die <span class="aq ">Alpen</span> <span title="Original: ſich" class="dta-reg">sich</span> zu wenden<br/>
+<span title="Original: beginen" class="dta-reg">Beginen</span>. So <span title="Original: iſt" class="dta-reg">ist</span> auch <span class="aq ">Chimborazzo</span> an einem<br/>
+Punkte gelegen, wo bis an 80 <span title="Mlen" class="dta-abbr">Meilen</span> weit<br/>
+in der <span title="ſüdl." class="dta-abbr"><span title="Original: ſüdlichen" class="dta-reg">südlichen</span></span> <span class="aq ">Provinz Quito</span> bis an <span class="aq ">Laxa</span><br/>
+wo <span title="Original: ſich" class="dta-reg">sich</span> die <span class="aq "><span title="Original: China" class="dta-reg">Chinawälder</span></span><span title="Original: wälder" class="dta-reg"/> erheben, die <span class="aq "><span title="Original: Andes" class="dta-reg"><span title="Original: Andes-" class="dta-reg">Andenkette</span></span></span><span title="Original: &#xA;kette" class="dta-reg"/> die <span title="Original: niedrigſten" class="dta-reg">niedrigsten</span> Gipfel erhebt von<br/>
+einer Höhe die der der <span class="aq ">Pyrinaeen</span> gleicht.<br/>
+Die Berge untereinander bilden <span title="Original: Thäler" class="dta-reg">Täler</span>.<br/>
+Es <span title="Original: ſind" class="dta-reg">sind</span> 1) <span title="Original: Querthäler" class="dta-reg">Quertäler</span> welche mit der<br/>
+<span title="Original: Axe" class="dta-reg">Achse</span> der <span title="Original: Gebürgskette" class="dta-reg">Gebirgskette</span> <span class="aq "><span title="Original: paralell" class="dta-reg">parallel</span></span> laufen,<br/>
+oder <span title="Original: dieſelbe" class="dta-reg">dieselbe</span> senkrecht <span title="Original: durchſchneiden" class="dta-reg">durchschneiden</span>,<br/>
+oder es <span title="Original: ſind" class="dta-reg">sind</span> 2) <span title="Original: Längenthäler" class="dta-reg">Längentäler</span> die oft<br/>
+von einer beträchtlichen Höhe <span title="Original: ſind" class="dta-reg">sind</span>. Das<br/>
+<span title="Original: Längenthal" class="dta-reg">Längental</span> <span class="dta-del" title="Streichung (#s)">von </span>der <span class="aq "><span title="Original: Andes" class="dta-reg">Andenkette</span></span><span title="Original: kette" class="dta-reg"/> <span title="Original: iſt" class="dta-reg">ist</span> an<br/>
+8000 <span class="aq "><span title="Original: Fuss" class="dta-reg">Fuß</span></span> hoch und erfreuet <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: deßhalb" class="dta-reg">deshalb</span><br/>
+eines milden <span class="aq "><span title="Original: Clima" class="dta-reg">Klima</span></span>, die <span title="Schreibfehler: mehrſten" class="dta-corr">meisten</span><br/>
+Städte von <span class="aq ">Quito</span> breiten <span title="Original: ſich" class="dta-reg">sich</span> auf<br/>
+<span title="dſr" class="dta-abbr"><span title="Original: dieſer" class="dta-reg">dieser</span></span> Ebene aus. Das <span title="Original: Längenthal" class="dta-reg">Längental</span> von<br/>
+<span class="aq ">Vallis</span> wo die <span class="aq ">Rhone</span> ihren <span title="Original: Urſprung" class="dta-reg">Ursprung</span><br/>
+<span title="Original: nim̃t" class="dta-reg">nimmt</span> hat 1300 <span class="aq "><span title="Original: Fuss" class="dta-reg">Fuß</span> absoluter</span> Höhe. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0125 : 260|</span><br/>
+<p class="dta-p">Die <span title="Original: Verhältniſſe" class="dta-reg">Verhältnisse</span> von Berg <span title="ud" class="dta-abbr">und</span> <span title="Original: Thal" class="dta-reg">Tal</span> von<br/>
+Tief <span title="ud" class="dta-abbr">und</span> Hochländer würde <span title="Original: ſich" class="dta-reg">sich</span> ganz ändern<br/>
+<span title="Original: weñ" class="dta-reg">wenn</span> wir uns die Meere ausgetrocknet<br/>
+dächten. Alle <span title="Original: unſere" class="dta-reg">unsere</span> Niederungen <span title="Original: wurden" class="dta-reg">würden</span><br/>
+die <span title="Original: Geſtalt" class="dta-reg">Gestalt</span> <span title="Schreibfehler: hohen" class="dta-corr">hoher</span> <span class="aq "><span title="Original: Plateau" class="dta-reg">Plateau's</span></span><span title="Original: 's" class="dta-reg"/> annehmen,<br/>
+den Gegensatz <span title="Original: zwiſchen" class="dta-reg">zwischen</span> Vertiefungen<br/>
+und Erhöhungen würde ein <span class="aq "><span title="Schreibfehler: colosſalen" class="dta-corr"><span title="Original: colosſaler" class="dta-reg">kolossaler</span></span></span><br/>
+<span title="Original: ſein" class="dta-reg">sein</span>, die Unebenheiten, würden denen<br/>
+auf dem Monde gleichen, die <span class="aq ">absolute</span><br/>
+Höhe würde <span title="Original: verſchwinden" class="dta-reg">verschwinden</span>, weil <span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: ſich" class="dta-reg">sich</span><br/>
+<span title="Original: blos" class="dta-reg">bloß</span> nach dem Stande <span title="ds" class="dta-abbr">des</span> Meeres <span title="Original: Spie-&#xA;gels" class="dta-reg">Spiegels</span> richtet, die Temperatur, die <span title="Original: Thier" class="dta-reg">Tier</span> <span title="ud" class="dta-abbr">und</span><br/>
+Pflanzenwelt würde <span title="Schreibfehler: ein" class="dta-corr">eine</span> ganz andere<br/>
+<span title="Original: ſein" class="dta-reg">sein</span>. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">Der Ort wo die Ausbrüche der <span title="Original: Gebürge" class="dta-reg">Gebirge</span><br/>
+<span title="Original: geſchehen" class="dta-reg">geschehen</span> <span title="Original: iſt" class="dta-reg">ist</span> merkwürdig; auf dem<br/>
+neuen <span class="aq "><span title="Original: Continente" class="dta-reg">Kontinente</span></span> <span title="Original: ſind" class="dta-reg">sind</span> alle Höhen von<br/>
+9000 <span title="F." class="dta-abbr"><span title="Original: Fuss" class="dta-reg">Fuß</span></span> im <span title="Schreibfehler: Weſtlichen" class="dta-corr"><span title="Original: weſtlichen" class="dta-reg">westlichen</span></span> <span title="Original: Theile" class="dta-reg">Teile</span> <span title="Original: desſelben" class="dta-reg">desselben</span><br/>
+in der <span class="aq "><span title="Original: Andes" class="dta-reg">Andenkette</span></span><span title="Original: kette" class="dta-reg"/> unweit den <span title="Original: Küſten" class="dta-reg">Küsten</span><br/>
+<span title="Original: zuſam̃engedrängt" class="dta-reg">zusammengedrängt</span>. Man <span title="Original: kañ" class="dta-reg">kann</span> dazu die<br/>
+etwas <span title="Original: höhern" class="dta-reg">höheren</span> <span class="aq ">Sta Marta</span> kette reihen<br/>
+<span title="Original: zwiſchen" class="dta-reg">zwischen</span> der <span title="Original: nord" class="dta-reg">Nord</span> <span title="ud" class="dta-abbr">und</span> West-Kette der<br/>
+<span class="aq "><span title="Original: Andes" class="dta-reg">Anden</span></span>. In <span class="aq ">Südamerika</span> findet <span title="Original: ſich" class="dta-reg">sich</span><br/>
+auf einer Fläche von 3000 □ <span title="Mlen" class="dta-abbr">Meilen</span><br/>
+in dem <span title="Original: Gebürge" class="dta-reg">Gebirge</span> <span title="v" class="dta-abbr">von</span> <span class="aq "><span title="Original: Braſilien" class="dta-reg">Brasilien</span></span> kein<br/>
+<span title="Original: einz-" class="dta-reg">einzeinziger</span>
+<span class="dta-pb" style="padding-left:15em">|#f0126 : 261|</span><br/>
+<span title="Original: einziger" class="dta-reg"/> Schneeberg, <span title="ud" class="dta-abbr">und</span> wie ganz<br/>
+anders <span title="Original: iſt" class="dta-reg">ist</span> es in den <span title="Original: Gebürgen" class="dta-reg">Gebirgen</span> der<br/>
+alten Welt. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">Es <span title="Original: iſt" class="dta-reg">ist</span> bei den <span title="Original: Gebürgen" class="dta-reg">Gebirgen</span> der Rücken<br/>
+von den Gipfeln zu <span title="Original: unterſcheiden" class="dta-reg">unterscheiden</span><span class="dta-marginal dta-marginal-right">Das <span title="Original: Verhältniß" class="dta-reg">Verhältnis</span> des<br/>
+Rückens zu dem<br/>
+Gipfel <span title="dr" class="dta-abbr">der</span> Berge.<br/>
+</span><br/>
+der <span title="Original: erſte" class="dta-reg">erste</span> <span title="Original: iſt" class="dta-reg">ist</span> eine <span title="Original: ungeheuere" class="dta-reg">ungeheure</span> <span class="aq "><span title="Schreibfehler: Ovale" class="dta-corr">ovale</span></span><br/>
+<span title="Original: Maſſe" class="dta-reg">Maße</span>, über welcher <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: erſt" class="dta-reg">erst</span> ein<br/>
+Kegel, der <span title="eigentl" class="dta-abbr">eigentliche</span> Gipfel <span title="ds" class="dta-abbr">des</span> Berges<br/>
+erhebt. Bei allen <span class="aq "><span title="Original: Trachyt" class="dta-reg">Trachytbergen</span></span><span title="Original: bergen" class="dta-reg"/><br/>
+bilden die Gipfel domartige Kuppeln<br/>
+bei anderen, wie bei den <span class="aq ">Alpen</span> <span title="Original: ſind" class="dta-reg">sind</span><br/>
+es zackige zugespitzte Felsen. <span title="Original: Beyde" class="dta-reg">Beide</span><br/>
+der Rücken <span title="ud" class="dta-abbr">und</span> der Gipfel <span title="Original: ſind" class="dta-reg">sind</span> oft von<br/>
+einerlei Gesteine, oft aber <span title="Original: iſt" class="dta-reg">ist</span> der<br/>
+Rücken von Granit <span title="Original: Gnei" class="dta-reg">Gneis</span><span class="dta-del" title="Streichung (#ow)">t</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: s" class="dta-reg"/></span>, während<br/>
+der Gipfel <span title="Original: ſelbſt" class="dta-reg">selbst</span> einen <span class="aq "><span title="Original: Vulcan" class="dta-reg">Vulkan</span></span> bildet<br/>
+aus <span class="aq ">Porphyr</span> <span title="ud" class="dta-abbr">und</span> <span class="aq "><span title="Original: Sienit" class="dta-reg">Sienitarten</span></span><span title="Original: arten" class="dta-reg"/> <span title="Original: zuſam̃en" class="dta-reg">zusammen</span><br/>
+<span title="Original: geſetzt" class="dta-reg">gesetzt</span>. <span title="Original: Zwiſchen" class="dta-reg">Zwischen</span> den Rücken <span title="ud" class="dta-abbr">und</span><br/>
+den Gipfeln der <span title="Original: Gebürge" class="dta-reg">Gebirge</span> findet ein<br/>
+<span class="aq "><span title="Original: constantes" class="dta-reg">konstantes</span></span> <span title="Original: Verhältniß" class="dta-reg">Verhältnis</span> <span title="Original: ſtatt" class="dta-reg">statt</span>. Der<br/>
+Rücken <span title="Original: iſt" class="dta-reg">ist</span> gewöhnlich die Hälfte<br/>
+des Gipfels. Bei allen <span title="Original: Gebürgsketten" class="dta-reg">Gebirgsketten</span><br/>
+finden <span title="Original: ſich" class="dta-reg">sich</span> viele Pässe, <span title="Original: dieſe" class="dta-reg">diese</span> bilden<br/>
+<span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: im̃er" class="dta-reg">immer</span> an den <span title="Original: niedrigſten" class="dta-reg">niedrigsten</span> Punkten<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0127 : 262|</span><br/>
+der <span title="Original: Gebürgsmauer" class="dta-reg">Gebirgsmauer</span>, <span title="Original: nim̃t" class="dta-reg">nimmt</span> man die<br/>
+<span title="Original: höchſten" class="dta-reg">höchsten</span> Gipfel der Kette, <span title="Original: ſo" class="dta-reg">so</span> hat<br/>
+man ein <span class="aq ">Maximum</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Minimum</span><br/>
+<span title="Original: dazwiſchen" class="dta-reg">dazwischen</span> liegt die mittlere Höhe<br/>
+<span title="ds" class="dta-abbr">des</span> Rückens als Resultat, <span title="Original: weñ" class="dta-reg">wenn</span> man<br/>
+die mittlere Höhe <span title="dr" class="dta-abbr">der</span> Pässe zu der der<br/>
+<span title="Original: höchſten" class="dta-reg">höchsten</span> Gipfel <span title="Original: adirt" class="dta-reg">adert</span> <span title="ud" class="dta-abbr">und</span> durch 2 <span title="Original: dividirt" class="dta-reg">dividiert</span>.<br/>
+Das <span title="Original: Verhältniß" class="dta-reg">Verhältnis</span> des Glückens zum<br/>
+Gipfel <span title="Original: iſt" class="dta-reg">ist</span> 1 : 2 oder 1 : 1,8. Es hat <span title="Original: ſich" class="dta-reg">sich</span><br/>
+bei den <span title="Original: meiſten" class="dta-reg">meisten</span> <span title="Original: Gebürgszügen" class="dta-reg">Gebirgszügen</span> <span title="Original: be-&#xA;währt" class="dta-reg">bewährt</span>. Bei den <span class="aq ">Alpen</span> <span title="Original: iſt" class="dta-reg">ist</span> <span title="dr" class="dta-abbr">der</span> Rücken<br/>
+1200 <span class="aq "><span title="Original: toiſen" class="dta-reg"><span title="Original: Toiſen" class="dta-reg">Toisen</span></span></span> hoch (1 <span class="aq "><span title="Original: Toiſe" class="dta-reg">Toise</span></span> = 6 <span class="aq "><span title="Original: Fuss" class="dta-reg">Fuß</span></span>) die höchste<br/>
+Spitze <span title="dr" class="dta-abbr">der</span> <span class="aq ">Alpen <span title="M." class="dta-abbr">Mont</span> blanc</span> <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: 2" class="dta-reg">2460</span><span class="dta-del" title="Streichung (#ow)">2</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: 4" class="dta-reg"/></span><span title="Original: 60" class="dta-reg"/> <span class="aq "><span title="Original: toiſen" class="dta-reg"><span title="Original: Toiſen" class="dta-reg">Toisen</span></span></span>.<br/>
+In der <span class="aq "><span title="Original: Andes" class="dta-reg">Andenkette</span></span><span title="Original: kette" class="dta-reg"/> <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: d" class="dta-reg">der</span><span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: er" class="dta-reg"/></span> Rücken 1815<br/>
+<span class="aq "><span title="Original: Toiſen" class="dta-reg">Toisen</span></span>. Der <span class="aq ">Chimborazzo</span> 3350 <span class="aq "><span title="Original: Toiſen" class="dta-reg">Toisen</span></span> hoch.<br/>
+Bei dem <span class="aq ">Himalaja</span> <span title="Schreibfehler: gebürge" class="dta-corr"><span title="Original: Gebürge" class="dta-reg">Gebirge</span></span> hat <span title="Original: ſich" class="dta-reg">sich</span><br/>
+aus den 14 bis jetzt <span title="Original: bekañten" class="dta-reg">bekannten</span> Pässen<br/>
+die Höhe des Rückens <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">auf </span>2420 <span class="aq "><span title="Original: toiſen" class="dta-reg"><span title="Original: Toiſen" class="dta-reg">Toisen</span></span></span> ergeben<br/>
+der <span class="aq ">Dubalagiri</span> <span title="Original: iſt" class="dta-reg">ist</span> 4400 <span class="aq "><span title="Original: Toiſen" class="dta-reg">Toisen</span></span> hoch<span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Bei <span class="aq "><span title="Original: Caucaſus" class="dta-reg">Kaukasus</span></span> <span title="Original: iſt" class="dta-reg">ist</span> nach den <span title="Original: Meſſungen" class="dta-reg">Messungen</span><br/>
+<span title="v" class="dta-abbr">von</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/1055022120">Miszewski</a></span></span> der höchste Berg <span class="aq ">Elbus</span><span class="dta-add" title="Hinzufügung (superlinear)">?</span><br/>
+2640<span class="dta-add" title="Hinzufügung (superlinear)">?</span> <span class="aq "><span title="Toiſ:" class="dta-abbr"><span title="Original: Toiſen" class="dta-reg">Toisen</span></span></span> der Rücken beträgt 1326 <span class="aq "><span title="Original: toiſ" class="dta-reg"><span title="Original: Toiſen" class="dta-reg">Toisen</span></span></span>.<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Bei</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0128 : 263|</span><br/>
+Bei <span class="aq ">Alegari</span> <span title="Original: Gebürge" class="dta-reg">Gebirge</span> <span title="Original: iſt" class="dta-reg">ist</span> die höchste<br/>
+Spitze 1400 der <span title="Original: Rucken" class="dta-reg">Rücken</span> 550 <span class="aq "><span title="toiſ." class="dta-abbr"><span title="Original: Toiſen" class="dta-reg">Toisen</span></span></span> hoch.<br/>
+Fast <span title="Original: daſſelbe" class="dta-reg">dasselbe</span> <span title="Verhältß" class="dta-abbr"><span title="Original: Verhältniß" class="dta-reg">Verhältnis</span></span> ist in dem<br/>
+<span class="aq "><span title="Original: brasiliani" class="dta-reg">brasilianischen</span></span><span title="Original: ſchen" class="dta-reg"/> <span title="Original: Gebürge" class="dta-reg">Gebirge</span>. Das <span title="Original: Gebürge" class="dta-reg">Gebirge</span><br/>
+<span class="aq "><span title="Original: Venezoella" class="dta-reg">Venezölle</span></span> ein <span title="Original: nordweſtlicher" class="dta-reg">nordwestlicher</span> Zweig der<br/>
+<span class="aq "><span title="Original: Andes" class="dta-reg">Anden</span></span> hat zum <span title="Original: höchſten" class="dta-reg">höchsten</span> Berge <span class="aq "><span title="Original: Sẽe" class="dta-reg">Sene</span> de<br/>
+Caraccas</span> 1315 <span class="aq "><span title="Toiſ:" class="dta-abbr"><span title="Original: Toiſen" class="dta-reg">Toisen</span></span></span> und der Rücken <span title="Original: be-&#xA;trägt" class="dta-reg">beträgt</span> 715. Die <span class="aq ">Pyryneen</span> machen eine<br/>
+Ausnahme <span title="Original: deñ" class="dta-reg">denn</span> ihr höchster Gipfel<br/>
+<span class="aq ">pique Netu</span> bei <span class="aq ">Maladetta</span> <span title="Original: iſt" class="dta-reg">ist</span> nur 1790<br/>
+<span class="aq "><span title="Original: toiſen" class="dta-reg"><span title="Original: Toiſen" class="dta-reg">Toisen</span></span></span> hoch, <span title="Original: alſo" class="dta-reg">also</span> viel niedriger als <span class="aq "><span title="Mt" class="dta-abbr">Mont</span><br/>
+blanc</span>, ihre Pässe aber <span title="Original: ſind" class="dta-reg">sind</span> aber bedeutend<br/>
+höher als die der <span class="aq ">Alpen</span>. <span title="Original: Indeſſen" class="dta-reg">Indessen</span> <span title="Original: ſtehen" class="dta-reg">stehen</span><br/>
+die <span class="aq ">Piryneen</span> mit den <span class="aq ">Alpen</span> in <span title="Verbindug" class="dta-abbr">Verbindung</span><br/>
+und <span title="Original: beyde" class="dta-reg">beide</span> Gruppen <span title="Original: köñen" class="dta-reg">können</span>, als <span class="u ">eine</span><br/>
+betrachtet werden die zu ihrer Spitze<br/>
+den <span class="aq "><span title="Mt" class="dta-abbr">Mont</span> blanc</span> <span title="ud" class="dta-abbr">und</span> <span class="aq "><span title="Mt" class="dta-abbr">Mont</span> <span title="Original: Roſe" class="dta-reg">Rose</span></span> hat. Bedeutend<br/>
+<span title="Original: iſt" class="dta-reg">ist</span> auch der <span title="Original: Unterſchied" class="dta-reg">Unterschied</span> bei den <span class="aq ">Apeninen</span><span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Aus den 3 Pässen, wovon den 2 <span title="Original: zwiſchen" class="dta-reg">zwischen</span><br/>
+<span class="aq ">Spoletto</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Maggiorata</span> <span title="ud" class="dta-abbr">und</span> <span title="Original: zwiſchen" class="dta-reg">zwischen</span><br/>
+<span class="aq ">Bologna</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Florenz</span> liegen, erhob <span title="Original: ſich" class="dta-reg">sich</span><br/>
+die Rückenhöhe auf 400 <span class="aq "><span title="Original: toiſe" class="dta-reg"><span title="Original: Toiſen" class="dta-reg">Toisen</span></span></span>. der<br/>
+höchste Gipfel der <span class="aq ">Apeninen</span> aber <span title="Original: iſt" class="dta-reg">ist</span> 1490<br/>
+<span class="aq "><span title="Original: toiſen" class="dta-reg"><span title="Original: Toiſen" class="dta-reg">Toisen</span></span></span>.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0129 : 264|</span><br/>
+<span title="Schreibfehler: während" class="dta-corr">Während</span> <span title="Original: alſo" class="dta-reg">also</span> bei den <span class="aq ">Pyrynaeen</span> die<br/>
+Pässe zu hoch <span title="Original: ſind" class="dta-reg">sind</span> <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ſind" class="dta-reg">sind</span> <span title="Original: ſie" class="dta-reg">sie</span> hier zu<br/>
+niedrig. <span title="Original: Daſſelbe" class="dta-reg">Dasselbe</span> wie bei den <span class="aq ">Apeninen</span><br/>
+findet bei den <span class="aq "><span title="Original: Scandinavi" class="dta-reg">skandinavischen</span></span><span title="Original: ſchen" class="dta-reg"/> <span title="Original: Ge-&#xA;bürgen" class="dta-reg">Gebirgen</span> <span title="Original: ſtatt" class="dta-reg">statt</span>. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100827268"><span title="Original: Hieſinger" class="dta-reg">Hiesinger</span></a></span></span> hat 13 Pässe<br/>
+<span title="Original: gemeſſen" class="dta-reg">gemessen</span>, daraus ergab <span title="Original: ſich" class="dta-reg">sich</span> die mittlere<br/>
+Rückenhöhe 420 <span class="aq "><span title="toiſ:" class="dta-abbr"><span title="Original: Toiſen" class="dta-reg">Toisen</span></span></span> der Gipfel beträgt<br/>
+1200. Aus <span title="Original: dieſen" class="dta-reg">diesen</span> Betrachtungen <span title="Original: er-&#xA;giebt" class="dta-reg">ergibt</span> <span title="Original: ſich" class="dta-reg">sich</span> <span title="dß" class="dta-abbr">daß</span> der Rücken der <span class="aq ">Alpen</span><br/>
+dem Gipfel der <span class="aq "><span title="Scandinav." class="dta-abbr"><span title="Original: scandinaviſchen" class="dta-reg">skandinavischen</span></span></span> <span title="Original: Gebürge" class="dta-reg">Gebirge</span> gleicht<br/>
+der Gipfel der <span class="aq ">Alpen</span> dem Rücken<br/>
+des <span class="aq ">Himalaia</span>. <span title="Original: Weñ" class="dta-reg">Wenn</span> man <span title="Original: ſich" class="dta-reg">sich</span> <span class="aq ">St Gothard</span><br/>
+auf <span class="aq ">Chimborazzo</span> gelegt denkt erhält<br/>
+man den Gipfel des <span class="aq ">Himalaja</span>.</p><br/>
+<p class="dta-p"><span title="Vergl:" class="dta-abbr">Vergleiche</span> <span title="v." class="dta-abbr">von</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118554700">Humboldt</a></span></span> <span title="Original: „" class="dta-reg">"</span>über das <span title="Original: Verhältniß" class="dta-reg">Verhältnis</span><br/>
+der Rücken zu den Gipfeln der <span title="Original: Gebürge" class="dta-reg">Gebirge</span>.”<br/>
+Alle <span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: Geſetzmäßigkeit" class="dta-reg">Gesetzmäßigkeit</span> würde<br/>
+<span title="Original: verſchwinden" class="dta-reg">verschwinden</span>, <span title="Original: weñ" class="dta-reg">wenn</span> der Meeresspiegel<br/>
+sinken würde, <span title="Original: deñ" class="dta-reg">denn</span> er bildet die <span class="aq "><span title="Original: Baſis" class="dta-reg">Basis</span></span><br/>
+der <span title="Original: Verhältniſſe" class="dta-reg">Verhältnisse</span>; <span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: Geſetze" class="dta-reg">Gesetze</span> deuten<br/>
+aber auf die Neuheit der <span title="Original: Gebürge" class="dta-reg">Gebirge</span>,<br/>
+welche mit der Erhebung der <span title="Original: Waſſer-&#xA;maſſen" class="dta-reg">Wassermassen</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0130 : 265|</span><br/>
+im <span title="Original: Zuſam̃enhang" class="dta-reg">Zusammenhang</span> <span title="Original: ſtehen" class="dta-reg">stehen</span> <span title="Original: müſſen" class="dta-reg">müssen</span>.</p><br/>
+<p class="dta-p">Die Axenlegung <span title="Original: kañ" class="dta-reg">kann</span> <span title="Original: ſich" class="dta-reg">sich</span> nach 5 <span class="aq "><span title="Original: Ele" class="dta-reg">Elementen</span></span><span title="Original: -" class="dta-reg"/><span class="dta-marginal dta-marginal-right">Die <span title="Original: Axen" class="dta-reg">Achsen</span> der <span title="Original: Gebürge" class="dta-reg">Gebirge</span>.<br/>
+</span><span title="Original: " class="dta-reg"/>
+<span class="aq "><span title="Original: menten" class="dta-reg"/></span> richten. 1.) man legt die<br/>
+<span title="Original: Axe" class="dta-reg">Achse</span> durch die <span title="Original: Gebürgskette" class="dta-reg">Gebirgskette</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span>,<br/>
+was gewöhnlich <span title="Original: geſchieht" class="dta-reg">geschieht</span> 2) man<br/>
+legt <span title="Original: ſie" class="dta-reg">sie</span> durch die <span title="Original: Waſſerſcheide" class="dta-reg">Wasserscheide</span><br/>
+<span class="aq ">Diuortia aquarum,</span> <span title="d.h." class="dta-abbr">das heißt</span> durch die Orte<br/>
+wo die Gewässer nach zwei <span title="Original: verſchiedenen" class="dta-reg">verschiedenen</span><br/>
+Seiten abweichen 3) durch die <span class="aq "><span title="Original: Culmi-&#xA;nationspunkte" class="dta-reg">Kulminationspunkte</span></span> oder die <span title="Original: höchſten" class="dta-reg">höchsten</span> Gipfel<br/>
+der <span title="Original: Gebürge" class="dta-reg">Gebirge</span> 4) durch die Natur der<br/>
+<span title="Original: Gesteinarten" class="dta-reg">Gesteinsarten</span> 5) durch die Streichung<br/>
+der Schichten, welche gewöhnlich, oft<br/>
+aber nicht, dem Ausgehen der <span title="Original: Gebürgs-&#xA;form" class="dta-reg">Gebirgsform</span> <span class="aq "><span title="Original: paralell" class="dta-reg">parallel</span></span> laufen. Alle <span title="Original: dieſe" class="dta-reg">diese</span><br/>
+<span title="Original: Axen" class="dta-reg">Achsen</span> brauchen gar nicht mit <span title="Original: einan-&#xA;der" class="dta-reg">einander</span> <span class="aq "><span title="Original: paralell" class="dta-reg">parallel</span></span> laufen. Bei den <span title="Original: Grenz-&#xA;streitigkeiten" class="dta-reg">Grenzstreitigkeiten</span> <span class="aq ">Spaniens</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Frankreichs</span><br/>
+zeigte <span title="Original: ſich" class="dta-reg">sich</span>, <span title="dß" class="dta-abbr">daß</span> die Linie <span title="dr" class="dta-abbr">der</span> <span title="Original: Waſſer-&#xA;ſcheide" class="dta-reg">Wasserscheide</span>, die als Grenzlinie <span title="Original: beſtim̃t" class="dta-reg">bestimmt</span><br/>
+worden <span title="Original: iſt" class="dta-reg">ist</span>, eine ganz andere <span title="Richtug" class="dta-abbr">Richtung</span><br/>
+hat, als die <span title="Original: Axe" class="dta-reg">Achse</span> durch die <span title="Original: Gebürge" class="dta-reg">Gebirge</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span>.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0131 : 266|</span><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left">Streichung der Schichten.<br/>
+</span>Auf die Streichung der <span title="Original: Erdſchichten" class="dta-reg">Erdschichten</span><br/>
+haben weit abliegende Ketten Einfluß,<br/>
+und <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: iſt" class="dta-reg">ist</span> gar nicht zufällig, <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ver-&#xA;breitet" class="dta-reg">verbreitet</span> <span title="Original: ſich" class="dta-reg">sich</span> in großen Strecken, die<br/>
+oft <span title="Original: 2–3" class="dta-reg">2-3</span> <span title="Original: mal" class="dta-reg">Mal</span> <span title="Original: ſo" class="dta-reg">so</span> groß <span title="Original: ſind" class="dta-reg">sind</span> als <span title="Original: Deutſchland" class="dta-reg">Deutschland</span><br/>
+und <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: beſtim̃ten" class="dta-reg">bestimmten</span> <span title="Original: Geſetzen" class="dta-reg">Gesetzen</span> <span title="Original: unter-&#xA;worfen" class="dta-reg">unterworfen</span>. Nach <span title="Original: dieſer" class="dta-reg">dieser</span> Streichung der<br/>
+Schichten hat <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">L. Buch</a></span></span> <span title="Original: Deutſchland" class="dta-reg">Deutschland</span> in<br/>
+4 <span class="aq ">Systeme</span> <span title="Original: eingetheilt" class="dta-reg">eingeteilt</span> 1.) das <span title="Original: niederlän-&#xA;diſche" class="dta-reg">niederländische</span> wozu die <span title="Original: brittiſchen" class="dta-reg">britischen</span> <span title="Original: Inſeln" class="dta-reg">Inseln</span><br/>
+gehören, die Streichen gehen von <span class="aq ">Belgien</span><br/>
+von Nord <span title="Original: Oſt" class="dta-reg">Ost</span> nach <span title="S." class="dta-abbr"><span title="Original: Süd" class="dta-reg">Süden</span></span> West 2) das <span title="Original: nord-&#xA;östliche" class="dta-reg">nordöstliche</span> System begreift die <span class="aq "><span title="Original: balti" class="dta-reg">baltischen</span></span><span title="Original: ſchen" class="dta-reg"/><br/>
+Länder von <span class="aq ">Teutoburger</span> Wald bis<br/>
+<span class="aq ">Donau</span> unterhalb <span class="aq "><span title="Original: Regenſburg" class="dta-reg">Regensburg</span></span> 3) das<br/>
+<span class="aq ">Rheinsystem</span> 4) das <span class="aq ">Alpensystem</span>. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">Der Richtung der <span title="Original: Erdſchichten" class="dta-reg">Erdschichten</span> <span title="Original: entſpricht" class="dta-reg">entspricht</span><br/>
+<span class="dta-del" title="Streichung (#s)">cht</span> die der <span title="Original: Flüſſe" class="dta-reg">Flüsse</span> <span title="ud" class="dta-abbr">und</span> <span title="Original: Gebürgszüge" class="dta-reg">Gebirgszüge</span><span title="Schreibfehler: " class="dta-corr">.</span><br/>
+<span title="Original: Nimt" class="dta-reg">Nimmt</span> man <span title="z.B." class="dta-abbr">zum Beispiel</span> <span title="ds" class="dta-abbr">das</span> <span title="Original: 2" class="dta-reg">2te</span><span class="sup u "><span title="Original: te" class="dta-reg"/></span> <span class="aq ">System</span> <span title="v" class="dta-abbr">von</span> <span title="Original: Deutſchland" class="dta-reg">Deutschland</span>,<br/>
+da <span title="Original: iſt" class="dta-reg">ist</span> die <span class="dta-del" title="Streichung (#s)">Reh </span>Streichung von <span title="N" class="dta-abbr">Nord</span> West<br/>
+nach <span title="Original: Süd" class="dta-reg">Süden</span> <span title="Original: Oſt" class="dta-reg">Ost</span>, <span title="Original: dieſelbe" class="dta-reg">dieselbe</span> Richtung hat<br/>
+das <span class="aq "><span title="Original: Eulen" class="dta-reg">Eulengebürge</span></span><span title="Original: gebürge" class="dta-reg"/> das Harzgebürge<br/>
+das <span title="grße" class="dta-abbr">große</span> <span class="aq "><span title="Original: Alpen" class="dta-reg">Alpengebürge</span></span><span title="Original: gebürge" class="dta-reg"/> <span title="weſtl" class="dta-abbr">westlich</span> <span title="v" class="dta-abbr">von</span> <span class="aq "><span title="Original: Regenſburg" class="dta-reg">Regensburg</span></span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0132 : 267|</span><br/>
+und die <span title="Original: Flüſſe" class="dta-reg">Flüsse</span>. Nach den <span title="Original: Beſtim̃ungen" class="dta-reg">Bestimmungen</span><br/>
+<span class="aq "><span title="Personenname"><span title="Original: Hoffman" class="dta-reg">Hoffmann's</span></span><span title="Original: ̃" class="dta-reg"/></span><span title="Original: 's" class="dta-reg"/> bildet die Spree <span title="ud" class="dta-abbr">und</span> <span class="aq ">Havel</span><br/>
+die <span title="Verbündug" class="dta-abbr">Verbindung</span> <span title="Original: zwiſchen" class="dta-reg">zwischen</span> <span title="dr" class="dta-abbr">der</span> <span class="aq ">Oder</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Elbe</span><br/>
+<span title="Original: ſollen" class="dta-reg">sollen</span> <span title="dſe" class="dta-abbr"><span title="Original: dieſe" class="dta-reg">diese</span></span> zwei <span title="grße" class="dta-abbr">großen</span> <span title="Original: Waſſerſyſteme" class="dta-reg">Wassersysteme</span><br/>
+der Streichung <span title="Original: entſprechen" class="dta-reg">entsprechen</span>, <span title="Original: ſo" class="dta-reg">so</span> hat<br/>
+die <span class="aq ">Oder</span> ihre Mündung in dem Busen<br/>
+von <span class="aq ">Hamburg</span>, die <span class="aq ">Elbe</span> in dem Busen<br/>
+von <span class="aq ">Bremen</span>. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">Es <span title="Original: giebt" class="dta-reg">gibt</span> keinen <span class="aq ">absoluten</span> <span title="Original: Unterſchied" class="dta-reg">Unterschied</span><span class="dta-marginal dta-marginal-right"><span class="u ">Ebenen</span><br/>
+</span><br/>
+<span title="Original: zwiſchen" class="dta-reg">zwischen</span> Ebenen und Bergen. Die<br/>
+größten Ebenen bilden die Steppen<br/>
+welche die Folge des längeren <span title="Original: Aufent-&#xA;halts" class="dta-reg">Aufenthalts</span> <span title="ds" class="dta-abbr">des</span> <span title="Original: Waſſers" class="dta-reg">Wassers</span> zu <span title="Original: ſein" class="dta-reg">sein</span> <span title="Original: ſcheinen" class="dta-reg">scheinen</span>.<br/>
+In <span class="aq ">Europa</span> würden nur die <span title="Original: Niede-&#xA;rungen" class="dta-reg">Niederungen</span> in <span class="aq ">Ungarn</span>, die man dort<br/>
+<span class="aq ">Pustas</span> <span title="Original: neñt" class="dta-reg">nennt</span>, eine <span title="Erwähnug" class="dta-abbr">Erwähnung</span> verdienen<br/>
+<span title="Original: ſie" class="dta-reg">sie</span> ziehen <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: zwiſchen" class="dta-reg">zwischen</span> den <span title="Original: Flüſſen" class="dta-reg">Flüssen</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq "><span title="Original: Theiſs" class="dta-reg">Theiss</span></span><br/>
+</span><span class="aq ">Teichs</span><span class="dta-add" title="Hinzufügung (superlinear)">?</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Donau</span>. Die Natur <span title="Original: ſolcher" class="dta-reg">solcher</span><br/>
+Ebenen <span title="Original: iſt" class="dta-reg">ist</span> die, <span title="dß" class="dta-abbr">daß</span> man auf ihnen,<br/>
+wie auf dem Meere<span class="dta-del" title="Streichung (#s)">s</span> die Gestirne<br/>
+auf und untergehen <span title="Original: ſieht" class="dta-reg">sieht</span>. Sie ziehen<br/>
+oft über 1700 Meilen weit. Sie <span title="Original: ſind" class="dta-reg">sind</span><br/>
+nicht <span title="Original: im̃er" class="dta-reg">immer</span> baumlos, <span title="ud" class="dta-abbr">und</span> überhaupt<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0133 : 268|</span><br/>
+<span title="Original: iſt" class="dta-reg">ist</span> die Wüste nicht der <span class="aq "><span title="Original: Character" class="dta-reg">Charakter</span></span> einer<br/>
+Steppe. In <span class="aq "><span title="Original: America" class="dta-reg">Amerika</span></span> <span title="Original: ſind" class="dta-reg">sind</span> 0 <span title="Original: Hauptebe-&#xA;nen" class="dta-reg">Hauptebenen</span> 1) die <span title="Original: zwiſchen" class="dta-reg">zwischen</span> <span class="aq ">Orinocco</span> <span title="fl." class="dta-abbr">Fluss</span> <span title="ud" class="dta-abbr">und</span><br/>
+<span class="aq ">Caraccas</span> 2) längst dem <span class="aq "><span title="Original: Amazonen" class="dta-reg">Amazonenflusse</span></span><span title="Original: fluſſe" class="dta-reg"/><br/>
+die <span title="Original: iſt" class="dta-reg">ist</span> voll von Waldungen <span title="Original: ſo" class="dta-reg">so</span> <span title="dß" class="dta-abbr">daß</span><br/>
+<span title="Original: weñ" class="dta-reg">wenn</span> <span title="Original: ſie" class="dta-reg">sie</span> nicht durch <span title="Original: Flußthäler" class="dta-reg">Flußtäler</span> <span title="Original: durch-&#xA;ſchnitten" class="dta-reg">durchschnitten</span> wären die Affen von Zweig<br/>
+zu Zweig an 700 <span title="Ml" class="dta-abbr">Meilen</span> weit, springen<br/>
+<span title="Original: köñten" class="dta-reg">könnten</span>, <span title="Original: ſie" class="dta-reg">sie</span> zieht vom <span title="ſüdl" class="dta-abbr">südlichen</span> <span class="aq "><span title="Original: Madera" class="dta-reg">Madeira</span></span><br/>
+bis zu nördlichen <span class="aq ">Orinocco</span> <span title="Fl" class="dta-abbr">Fluss</span>. Der<br/>
+dicken Waldungen wegen <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: dieſe" class="dta-reg">diese</span><br/>
+Ebene lange <span title="Original: vorkom̃t" class="dta-reg">vorkommt</span> <span title="Original: geweſen" class="dta-reg">gewesen</span>.<br/>
+3) Die Steppe <span title="v" class="dta-abbr">von</span> <span class="aq ">Pampas</span> oder <span class="aq ">Boenos<br/>
+Aires</span> zieht von <span class="aq ">La Plata</span> Strom bis nach<br/>
+<span class="aq "><span title="Original: Cap" class="dta-reg">Kap</span> Horn</span>. Die Ebenen <span title="v" class="dta-abbr">von</span> <span class="aq "><span title="Original: Africa" class="dta-reg">Afrika</span></span> <span title="Original: ſind" class="dta-reg">sind</span><br/>
+von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118529250">Ehrenberg</a></span></span> <span title="Original: unterſucht" class="dta-reg">untersucht</span> worden. Vor<br/>
+einigen Monaten <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: ſein" class="dta-reg">sein</span> Werk<br/>
+darüber <span title="Original: erſchienen" class="dta-reg">erschienen</span>. Er fand <span title="dß" class="dta-abbr">daß</span> es<br/>
+nicht durchgängige <span title="Original: Sandwüſten" class="dta-reg">Sandwüsten</span> <span title="Original: ſind" class="dta-reg">sind</span>,<br/>
+<span title="dß" class="dta-abbr">daß</span> <span title="Original: dieſe" class="dta-reg">diese</span> in <span title="Original: Verhältniß" class="dta-reg">Verhältnis</span> zur ganzen<br/>
+Ebene nur kleine Regionen einnehmen.<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Flüſſe</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0134 : 269|</span><br/>
+Die <span title="Original: Flüſſe" class="dta-reg">Flüsse</span> brechen in den <span title="Original: Längenthälern" class="dta-reg">Längentälern</span><span class="dta-marginal dta-marginal-right"><span title="Original: Flüſſe" class="dta-reg">Flüsse</span>.<br/>
+</span><br/>
+hervor, <span title="Original: verlaſſen" class="dta-reg">verlassen</span> das <span title="Original: Gebürge" class="dta-reg">Gebirge</span> durch die<br/>
+<span title="Original: Querthäler" class="dta-reg">Quertäler</span>, laufen eine <span title="Original: gewiſſe" class="dta-reg">gewisse</span> Strecke<br/>
+<span class="aq "><span title="Original: paralell" class="dta-reg">parallel</span></span> mit dem <span title="Original: Gebürgszuge" class="dta-reg">Gebirgszuge</span>, und dringen<br/>
+in ganz anderer <span title="Richtug" class="dta-abbr">Richtung</span> in die <span title="Schreibfehler: ebenen" class="dta-corr">Ebenen</span><span class="dta-marginal dta-marginal-right">der Lauf<br/>
+</span><br/>
+Länder herein. <span title="Original: Dieſe" class="dta-reg">Diese</span> <span title="Original: Anſichten" class="dta-reg">Ansichten</span> hat <span title="bſndrs" class="dta-abbr">besonders</span><br/>
+<span title="Pf." class="dta-abbr">Professor</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11860130X">Ritter</a></span></span> entwickelt. Da wo große Ebenen<br/>
+<span title="Original: ſind" class="dta-reg">sind</span>, bilden <span title="Original: ſich" class="dta-reg">sich</span> in der Mitte der <span class="aq "><span title="Original: Continente" class="dta-reg">Kontinente</span></span><br/>
+ganz <span title="Schreibfehler: dieſelbe" class="dta-corr"><span title="Original: dieſelben" class="dta-reg">dieselben</span></span> <span title="Original: Erſcheinungen" class="dta-reg">Erscheinungen</span>, wie an den<br/>
+Meeresufern, förmliche <span class="aq "><span title="Original: Delta" class="dta-reg">Deltalandschaften</span></span><span title="Original: land-&#xA;ſchaften" class="dta-reg"/>. Das <span title="Original: Flußthal" class="dta-reg">Flußtal</span> <span title="Original: iſt" class="dta-reg">ist</span> ein System<br/>
+von Punkten, wo alle Linien von <span title="Original: verſchie-&#xA;dener" class="dta-reg">verschiedener</span> Steigung in eine Rinne <span title="Original: zuſam̃en-&#xA;kom̃en" class="dta-reg">zusammenkommen</span>. <span title="Original: Weñ" class="dta-reg">Wenn</span> <span title="Original: Flüſſe" class="dta-reg">Flüsse</span> nahe an dem<br/>
+Grate fließen <span title="d.h." class="dta-abbr">das heißt</span> an der Grenze<br/>
+welche das <span title="Original: Flußthal" class="dta-reg">Flußtal</span> <span title="Original: beſtim̃t" class="dta-reg">bestimmt</span>, und ein Punkt<br/>
+<span title="Original: daſelbſt" class="dta-reg">daselbst</span> niedriger <span title="Original: iſt" class="dta-reg">ist</span>, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: entſteht" class="dta-reg">entsteht</span> eine<span class="dta-marginal dta-marginal-right">die <span class="aq ">bifocation</span><br/>
+</span><br/>
+<span class="aq ">bifocation</span> <span title="d.h." class="dta-abbr">das heißt</span> <span title="dß" class="dta-abbr">daß</span> ein Fluß 2 <span title="Original: Thälern" class="dta-reg">Tälern</span><br/>
+zugehört<span title="Schreibfehler: " class="dta-corr">.</span> <span title="Vergl:" class="dta-abbr">Vergleich</span> die Abhandlung: <span title="Original: „" class="dta-reg">"</span><span class="aq ">sur les rives</span>”<br/>
+<span class="aq ">dans les <span title="Original: memoires" class="dta-reg">mémoires</span> de l'<span title="Original: éccole" class="dta-reg">eccole</span> polytechnique<br/>
+par Humboldt et Bron's</span>. Der <span class="aq ">Orinocco</span><br/>
+<span title="ud" class="dta-abbr">und</span> der <span class="aq "><span title="Original: Amazonen" class="dta-reg">Amazonenstrom</span></span><span title="Original: ſtrom" class="dta-reg"/> <span title="Original: ſind" class="dta-reg">sind</span> auf <span title="dſe" class="dta-abbr"><span title="Original: dieſe" class="dta-reg">diese</span></span> Art<br/>
+durch 2 Arme die <span title="Original: dazwiſchen" class="dta-reg">dazwischen</span> liegen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0135 : 270|</span><br/>
+mit einander verbunden. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117528145">Arno</a></span></span> in <span class="aq ">Italien</span><br/>
+hat eben einen <span title="Original: ſolchen" class="dta-reg">solchen</span> Arm <span class="aq ">Arno Tiberoni</span><br/>
+<span title="Original: genañt" class="dta-reg">genannt</span> der durch das <span class="aq ">Valle de Kiana</span><br/>
+fließt nahe <span title="Schreibfehler: an" class="dta-corr">am</span> <span class="aq "><span title="Original: Traſimeni" class="dta-reg">Trasimenischen</span></span><span title="Original: ſchen" class="dta-reg"/> See<span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">L. Buch</a></span></span> <span title="Original: iſt" class="dta-reg">ist</span> der Fluß <span class="aq "><span title="Original: Kaliſel" class="dta-reg">Kalisel</span></span> bei <span class="aq ">Torneo</span><br/>
+<span title="ud" class="dta-abbr">und</span> <span title="dr" class="dta-abbr">der</span> <span title="Fl." class="dta-abbr">Fluss</span> <span class="aq ">Torneo</span> in <span title="Original: ſolchem" class="dta-reg">solchem</span> <span title="Original: Zuſam̃enhange" class="dta-reg">Zusammenhange</span><span title="Schreibfehler: " class="dta-corr">.</span><br/>
+<span title="Original: Une" class="dta-reg">Unentwickelte</span><span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Original: n" class="dta-reg"/></span><span title="Original: twickelte" class="dta-reg"/> <span title="Original: Flußſyſteme" class="dta-reg">Flußsysteme</span> können<br/>
+die <span class="aq ">difocation</span> hindern. Die <span class="aq ">Delta's</span> <span title="Original: ſind" class="dta-reg">sind</span><br/>
+nur <span class="aq ">difocation</span>, da wo <span title="Original: ſie" class="dta-reg">sie</span> fehlen<br/>
+<span title="Original: köñen" class="dta-reg">können</span> <span title="Original: ſie" class="dta-reg">sie</span> durch <span title="Original: ſtarke" class="dta-reg">starke</span> Regengüsse<br/>
+bewirkt werden, wie es bei dem <span class="aq "><span title="Original: ameri-&#xA;kani" class="dta-reg">amerikanischen</span></span><span title="Original: ſchen" class="dta-reg"/> <span title="Original: Fluße" class="dta-reg">Flusse</span> <span class="aq ">Oreo</span> der Fall <span title="Original: iſt" class="dta-reg">ist</span>. <span title="Original: Ver-&#xA;möge" class="dta-reg">Vermöge</span> einer <span title="Original: ſolchen" class="dta-reg">solchen</span> <span class="aq ">bifocation</span> <span title="Original: iſt" class="dta-reg">ist</span> auch die<br/>
+Südsee mit <span class="aq "><span title="Original: atlanti" class="dta-reg">atlantischen</span></span><span title="Original: ſchen" class="dta-reg"/> <span title="Original: Oceane" class="dta-reg">Ozeane</span> verbunden<br/>
+durch den <span class="aq "><span title="Original: Canal" class="dta-reg">Kanal</span> aspuduna</span> der die Quellen<br/>
+2 großer <span title="amerik:" class="dta-abbr"><span title="Original: amerikaniſcher" class="dta-reg">amerikanischer</span></span> <span title="Original: Flüſſe" class="dta-reg">Flüsse</span> verbindet in der<br/>
+Gegend bei <span class="aq ">Guanama</span>. Der <span class="aq "><span title="Original: Canal" class="dta-reg">Kanal</span></span> <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: erſt" class="dta-reg">erst</span><br/>
+während des letzten <span class="aq "><span title="amerik:" class="dta-abbr"><span title="Original: amerikaniſchen" class="dta-reg">amerikanischen</span></span></span> <span title="Krges" class="dta-abbr">Krieges</span> <span title="Original: er-&#xA;weitert" class="dta-reg">erweitert</span> worden, anfangs war es nur<br/>
+<span class="gap">[unleserliches Material – 1 Wort fehlt]</span> eine <span title="Ableitg" class="dta-abbr">Ableitung</span> der Gewässer der<br/>
+einen Quellen zu denen der anderen,<br/>
+welche ein einzelner Mönch gemacht<br/>
+hat, um <span title="Original: Fiſche" class="dta-reg">Fische</span> von beiden <span title="Original: Flüſſen" class="dta-reg">Flüssen</span> zu haben.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0136 : 271|</span><br/>
+Da nun die <span class="aq ">bifocation</span> <span title="Original: entſteht" class="dta-reg">entsteht</span>, <span title="dß" class="dta-abbr">daß</span> die <span title="Original: Schei-&#xA;degrenze" class="dta-reg">Scheidegrenze</span> <span title="Original: zwiſchen" class="dta-reg">zwischen</span> 2 Flußbetten in das<br/>
+eine <span title="Original: ſich" class="dta-reg">sich</span> neigt, <span title="Original: ſo" class="dta-reg">so</span> wird, <span title="Original: weñ" class="dta-reg">wenn</span> der eine<br/>
+Fluß ein kleinerer <span title="Original: iſt" class="dta-reg">ist</span>, <span class="dta-del" title="Streichung (#ow)">s</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: d" class="dta-reg">der</span></span><span title="Original: er" class="dta-reg"/> ganze Fluß<br/>
+abgelenkt, umgekehrt, <span title="Original: iſt" class="dta-reg">ist</span> der Fluß, der<br/>
+abgeleitet wird ein größerer, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ent-&#xA;ſteht" class="dta-reg">entsteht</span> in dem kleineren eine gefährliche<br/>
+<span title="Waſſeranſchwellug" class="dta-abbr">Wasseranschwellung</span> <span title="Original: –" class="dta-reg">-</span> <span title="Original: D" class="dta-reg">Der</span><span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: er" class="dta-reg"/></span> <span title="Original: Fl" class="dta-reg">Fluss</span><span class="dta-del" title="Streichung (#ow)">ü</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: u" class="dta-reg"/></span><span title="Original: ſſ" class="dta-reg"/><span class="dta-del" title="Streichung (#s)">e</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span><span class="dta-marginal dta-marginal-right">das Flußbette.<br/>
+</span><br/>
+bildet nur bei geringen Strömen ein<br/>
+Bette, bei allen großen <span title="Original: Flüſſen" class="dta-reg">Flüssen</span>, <span title="Original: iſt" class="dta-reg">ist</span><br/>
+jeder Strom ein System von Strömen<br/>
+welche Furchenweise an einander gereiht<br/>
+<span title="Original: ſind" class="dta-reg">sind</span>, und oft <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: zwiſchen" class="dta-reg">zwischen</span> je zwei <span title="Original: ſolchen" class="dta-reg">solchen</span><br/>
+Furchen eine <span title="Original: ſeichte" class="dta-reg">seichte</span> Ebene von 2 bis 3000<br/>
+<span class="aq "><span title="Original: Fuss" class="dta-reg">Fuß</span></span> lang, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: iſt" class="dta-reg">ist</span> es bei dem <span class="aq ">La Plata</span> <span title="Fl." class="dta-abbr">Fluss</span><br/>
+bei dem <span class="aq "><span title="Original: Amazonen" class="dta-reg">Amazonenstrom</span></span><span title="Original: ſtrom" class="dta-reg"/>. Bei dem letzten<br/>
+<span title="Original: iſt" class="dta-reg">ist</span> wegen der hier in <span title="Original: Maſſen" class="dta-reg">Massen</span> lebenden<br/>
+<span class="aq ">Crocodille</span>, das <span title="Original: durchwaden" class="dta-reg">durchwaten</span> der <span title="Original: ſeichten" class="dta-reg">seichten</span><br/>
+Stellen <span title="Original: ſehr" class="dta-reg">sehr</span> gefährlich.</p></div></div></div></body></html>

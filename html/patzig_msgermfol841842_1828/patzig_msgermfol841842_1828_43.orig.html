@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span title="Original: D. 26 Maerz." class="dta-reg">43. Vorlesung, 26.03.1828</span></div><br/>
+<p class="dta-p">Wie geſagt iſt das Maximum der Dich<span class="dta-supplied">[-]</span><br/>
+tigkeit des Waſſers bei + 3,3 ° R. Es<br/>
+dehnt ſich ſogleich mehr aus weñ es ſich<br/>
+mehr erkältet oder <span class="dta-del" title="Streichung (#s)">weniger</span><span class="dta-add" title="Hinzufügung (superlinear)">mehr</span> er<span class="dta-del" title="Streichung (#erased)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)"><span class="b ">w</span></span>ärmt<span class="dta-supplied">[.]</span><br/>
+Jn den nordiſchen Seen iſt daher die un<span class="dta-supplied">[-]</span><br/>
+terſte Waſſerſchicht nie unter + 3,3° R<br/>
+dies hat einen ſehr wohlthätigen Einflu<span class="dta-supplied">[ß]</span><br/>
+auf die Geſchöpfe die in der Tiefe hier lebe<span class="dta-supplied">[n]</span><br/>
+deñ die Gewäſſer frieren ſomit nie ein<br/>
+u. da Waſſer ein ſchlechter Wärmeleiter<br/>
+iſt, ſo leben ſie hier ſtets in 3–4°+ R<span class="dta-supplied">[.]</span><br/>
+Wie ſchon angeführt, ſind mehrere der Meinu<span class="dta-supplied">[ng]</span><br/>
+daß im Meer in großer Tiefe das Waſ<span class="dta-supplied">[ſer]</span><br/>
+dem Gefrierpunkte nahe iſtx<span class="dta-marginal dta-marginal-left">u. Graf <span class="aq ">Romfort</span> behauptet, daß na-<br/>
+mentl. Salzwaſſer nicht die größte Dichtig-<br/>
+keit bei + 3–4° R. añehme.<br/>
+</span>. Der berüh<span class="dta-supplied">[m-]</span><br/>
+te Chemiker <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118510185">Berzelius</a></span></span> iſt ſelbſt dieſer Me<span class="dta-supplied">[i-]</span><br/>
+nung, obwohl ich añehmen muß, daß er dies n<span class="dta-supplied">[icht]</span><br/>
+ſelbſt unterſucht hat. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117654167">Scoresby</a></span></span> behaupt<span class="dta-supplied">[et]</span><br/>
+indeß ſehr glaubwürdig, warmes Waſſ<span class="dta-supplied">[er]</span><br/>
+unter der kalten gefunden zu haben. B<span class="dta-supplied">[ei]</span><br/>
+1200–2000 Fuß Tiefe war bei Spitzberg<span class="dta-supplied">[en]</span><br/>
+das Meerwaſſer + 2° R u. auf der Ob<span class="dta-supplied">[er-]</span><br/>
+fläche − 1,5° R. Wäre letzteres ſpeci-<br/>
+fiſch dichter, ſo köñte dies nicht gefunde<span class="dta-supplied">[n]</span><br/>
+werden<br/>
+<hr/>.</p><br/>
+<p class="c ">|: Fortſetzung im <span title="nächſt￼" class="dta-abbr">nächſten</span> Hefte :|</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0282 : 265.|</span><br/>
+<p class="dta-p">Ein anderes höchſt merkwürdiges Phänomen<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Durch Termo-<br/>
+meter Sandbänke<br/>
+beſtim̃en</span><br/>
+</span>iſt das, durch Termometer die Nähe von<br/>
+Sandbänken zu errathen. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118534912">Benj. Franklin</a></span></span><br/>
+ſahe daß Matroſen im einem Boot oft die<br/>
+Hand in das Waſſer tauchten, um zu unter-<br/>
+ſuchen, ob die Bank nahe ſei. Dies iſt durch<br/>
+Termometer-Verſuche ganz gegründet<br/>
+gefunden. Bedeutende Bänke über die eine<br/>
+ſchnelle Strömung geht erwärmen ſich wenig;<br/>
+dañ ruht auch eine Nebelſchicht in der Regel<br/>
+auf denſelben, welche die äußern Tempera-<br/>
+tur verändert. Dieſe Beobachtung iſt von<br/>
+Wichtigkeit für die Schiffahrt, u. auf neuern<br/>
+Reiſen hat man ſtets von 2 zu 2 R. die<br/>
+Temperat. Des Meeres zu beſtim̃en geſucht.<br/>
+Nim̃t die Temperatur plötzlich ab, ſo nähert<br/>
+man ſich entweder einer Strömung, oder einer<br/>
+Sandbank. Die Erkältung des Waſſers auf<br/>
+Neu-F<span class="dta-del" title="Streichung (#erased)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span>undland habe ich, weñ ich nicht irre<br/>
+im Monat <span class="aq ">Aug.</span> im Golfſtrom ſelbſt + 17–<br/>
+18° R., das Waſſer nach Norden außer dem<br/>
+Golfſtrom + 15–16° R. auf der Bank<br/>
+ſelbſt aber nur + 12° gefunden. Die Erkäl-<br/>
+tung beträgt daher hier + 4–5° R. Auf<br/>
+die Menge der Vermiſchung der untern Waſſer<br/>
+mit den obern köñen die Erkältung der<br/>
+obern Schichten veranlaſſen. Durch Stürme<br/>
+kañ die Temperatur des Meeres um<br/>
+− 2–3° R. verändert werden, u. ſich<br/>
+um ſoviel erkälten.</p><br/>
+<p class="dta-p">Wir kom̃en jetzt zur Betrachtung<br/>
+des Meereswaſſers als ein Starres, Erſtes,<br/>
+<span class="dta-marginal dta-marginal-left">Eis<br/>
+</span>Eis genañt. Auf die Cultur u. den Zu-<br/>
+ſtand des Menſchengeſchlechts hat dies gro-<br/>
+ßen Einfluß gehabt. Das Eis kan gleich-<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">ſam</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0283 : 266.|</span><br/>
+ſam als eine Gebirgsart angeſehen wer<span class="dta-supplied">[den]</span><br/>
+die nicht mit dem Erdboden im Zuſam̃enhang<br/>
+ſteht. Die größte Dicke des Eiſes, die in de<span class="dta-supplied">[n]</span><br/>
+Polar<span class="dta-del" title="Streichung (#s)">landern</span><span class="dta-add" title="Hinzufügung (superlinear)">gegenden</span> in dem Meere ſich bildet, iſ<span class="dta-supplied">[t]</span><br/>
+6–7 Fuß. Man ſieht hier zweierlei Ei<span class="dta-supplied">[ſe]</span><br/>
+nämlich Eisberge u. Eisfelder. Die Eisberg<span class="dta-supplied">[e]</span><br/>
+bilden ſich <span class="dta-del" title="Streichung (#s)">ſich </span>am Lande in den Thälern<br/>
+der Gebirge, an ſteilen Ufern, ganz ſ<span class="dta-supplied">[o]</span><br/>
+wie die Gletſcher. Man findet ſie ſowohl<br/>
+am Nord- wie am Süd-Pol. Jn der Baffin<span class="gap">[verlorenes Material]</span><br/>
+Bai erreichen ſie oft eine Höhe von 1800 Fu<span class="dta-supplied">[ß.]</span><br/>
+Ueber dem Meere ragen ſie oft 300-<br/>
+400 Fuß hoch empor. Kap. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11935439X">Roſs</a></span></span> ſahe<br/>
+700 dergl. Eisberge gleichzeitig ſchwim̃en<br/>
+gleich Kreidefelſen. An hohen Küſten wer-<br/>
+den ſie von Schnee u. Bächen gebildet, l<span class="dta-supplied">[öſen]</span><br/>
+ſich bei einiger Wärme des Erdbodens ab<br/>
+u. ſchwim̃en als dañ in wärmere Klimate<br/>
+Oben auf denſelben ſieht man zuweilen<br/>
+große Granitblöcke liegen u. <span class="aq ">Dr. <span title="Personenname"><a href="http://d-nb.info/gnd/116569514">Eſch-<br/>
+holz</a></span></span> beobachtete auf <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116345330">Kotzebue</a></span>s</span> Reiſe auf<br/>
+einem eine förmliche Vegetation mit Erde<br/>
+was viel Aufſehen erregt hat. Aber al<span class="dta-supplied">[le]</span><br/>
+neuern Reiſenden haben die gleiche Beobach-<br/>
+tung wiederholt, u. es <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">iſt </span>natürlich, daß z<span class="dta-supplied">[u-]</span><br/>
+weilen von den ſchrägen Abhängen ganze<br/>
+Erdſchichten mit Raſen herabſtürzen u.<br/>
+auf dem Eisfelde zu vegetiren fortfahr<span class="dta-supplied">[en.]</span><br/>
+Uebrigens ſahe <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116569514">Eſchholz</a></span></span> auch Ueberreſte<br/>
+von <span title="untergegangen￼" class="dta-abbr">untergegangenen</span> Thiergeſchlechtern. D<span class="dta-supplied">[ie]</span><br/>
+ſich bewegenden Eisfelder ſtehen 4–5′ üb<span class="dta-supplied">[er]</span><br/>
+u. oft 20′ unter dem Waſſer. Bei der<br/>
+verſchiedenen Geſtaltung kom̃en dieſe gro<span class="dta-supplied">[ßen]</span><br/>
+Maſſen ins Gedränge u. man kañ leicht er<span class="dta-supplied">[-]</span><br/>
+meſſen, weñ dieſe Eismaſſen von der Gr<span class="dta-supplied">[öße]</span><br/>
+wie die Provinz Altmark u. größer, 20<span class="gap">[unleserliches Material]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Meil<span class="dta-supplied">[en]</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0284 : 267.|</span><br/>
+Meilen lang u. 12 Meilen breit ſich in<br/>
+eine rotirende Bewegung ſetzen, wel-<br/>
+ches Krachen u. welche Zertrüm̃erung<br/>
+an der Peripherie ſtatt finden muß.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="b ">Süß-<br/>
+u. Salzwaſſer-<br/>
+Eis</span><br/>
+</span>Von den Walfiſchhängern wird das Eis<br/>
+in Süß- u. Salzwaſſer-Eis eingetheilt,<br/>
+doch iſt ſehr wenig Eis frei von Salztheil-<br/>
+chen, welches im̃er in der Poren zu finden.<br/>
+Merkwürdig iſt, wie durch Strömungen, Eis-<br/>
+berge bis zu ſüdlichen Breiten vordringen.<br/>
+Vor einigen Jahren fand man bei den<br/>
+Azoren bis 40° N. B. noch Eisberge. Merk-<br/>
+würdig genug iſt es, daß keine Eisberge<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">keine<br/>
+Eisberge<br/>
+an den Hebriden</span><br/>
+</span>an die Hebriden u. Schottland getrieben<br/>
+werden. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117654167">Scoresbi</a></span></span> hat hiebei die Meinung<br/>
+aufgeſtellt, daß weñ ſie gleich in Strömun-<br/>
+gen kom̃en die nach Europa gehen, doch<br/>
+einer tiefer liegenden größern Strömung<br/>
+ſie folgen, die ſie bei ihrer tiefen Lage<br/>
+nach dem Aequator hin treiben. <span class="sup ">8</span>/<span class="sub ">9</span> der<br/>
+Eisberge ſind unter dem Waſſer u. <span class="sup ">1</span>/<span class="sub ">9</span><br/>
+nur auf <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Wort fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> über der Oberfläche. Jn der<br/>
+Ferne zeichnen ſie ſich durch ein gewißes<br/>
+Leuchten am Horizont aus, der Eisblink<br/>
+genañt. Jndem das Eis <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">Licht </span>zurückſtrahlt, re-<br/>
+flectiren nach optiſchen Geſetzen die da-<br/>
+zwiſchen liegenden Spiegel der Waſſerbecken<br/>
+als ganz dunkle Flecken, die den Eisblink<br/>
+gleich einer lichten Däm̃erung hervorheben.<br/>
+Die Wirkung des Eiſes auf die Atmos-<br/>
+phäre iſt ſehr wichtig. Weñ Eisberge<br/>
+langſam ſtrömend ziehen, ſo reinigen<br/>
+ſie die Luft, große Eisfelder machen<br/>
+ſie hingegen durch ihre Zerſetzung trübe.<br/>
+Nicht zu erklären iſt, daß die Eisberge<br/>
+den Wind nehmen u. ihn finden. Weniger<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">auffallend</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0285 : 268.|</span><br/>
+auffallend iſt es, weñ ſie in wärmern Ge-<br/>
+genden durch die Erkältung der Atmoſphäre<br/>
+die Luftſtrömung aufheben; aber dies iſt<br/>
+der Fall ſelbſt da, wo die äußere Tempe-<br/>
+ratur ſo erkältet iſt wie ſie ſelbſt. Dieſe<br/>
+Erſcheinung iſt zwar von Vortheil für Schiff<span class="dta-supplied">[e]</span><br/>
+die zwiſchen ihnen ſegeln, bringt ſie aber<br/>
+dagegen doch oft in Verlegenheit. Der<br/>
+Capitain <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Perry</a></span></span> fand unter 73° N B. die<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Dicke des<br/>
+Eiſes</span><br/>
+</span>Dicke des Eiſes des offenen Meeres im<br/>
+Monat <span class="dta-del" title="Streichung (#s)">Februar</span><span class="dta-add" title="Hinzufügung (superlinear)">December</span> 38½″, im Febr. 55<br/>
+u. als <span class="aq ">Maximum</span> im Mai 86″ engl. <span class="gap">[unleserliches Material]</span><br/>
+gleich ſechs franzöſiſch<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (intralinear)">en</span> Fuß. Am wich-<br/>
+tigſten für die Klimate iſt die Beſtim̃ung<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Schnee u.<br/>
+Eisgrenze.</span><br/>
+</span>der Grenze des Eiſes u. des Schnees im Som-<br/>
+mer u. Winter. So wie man bei uns<br/>
+eine Oſcillation der Schneegrenze auf<br/>
+den Bergen, bei einer Höhe von 12–1300<br/>
+Toiſen bemerkt; ſo giebt es in der Ebene<br/>
+auch eine dergleichen Eisgrenze, oder<br/>
+Ufer des ewigen Schnees. Für das Klima<br/>
+Europas iſt dieſe Grenze ſehr glücklich<br/>
+geſtaltet. Die Wintergrenze des Eiſens<br/>
+zieht ſich durch den mittlern Theil von Jslan<span class="dta-supplied">[d]</span><br/>
+bis zum ſüdlichen Theil von Spitzbergen<br/>
+Das Nord-Cap bleibt hiebei frei. Jn<br/>
+Januar iſt das Meer von <span class="aq ">Wardehous</span><br/>
+bis Spitzbergen ganz frei, die Bären<span class="dta-supplied">[-]</span><br/>
+inſel añoch eingeſchloſſen; dañ geht die<br/>
+Grenze nach ſüdlichern Gegenden. Hingeg<span class="dta-supplied">[en]</span><br/>
+bei der Som̃ergrenze iſt Jsland ganz<br/>
+frei, eben ſo das nördliche Spitzberge<span class="dta-supplied">[n]</span><br/>
+u. der Oſten iſt nur im Verbande mit de<span class="dta-supplied">[r]</span><br/>
+Küſte Aſiens durch ewiges Eis. Die Urſ<span class="dta-supplied">[a-]</span><br/>
+che dieſer großen nördl. Bucht des freie<span class="dta-supplied">[n]</span><br/>
+Meeres ſind die Strömungen des atlantiſ<span class="dta-supplied">[chen]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Meers</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0286 : 269.|</span><br/>
+Meeres. Ganz anderes wäre der Zuſtand<br/>
+der Welt, weñ die Behringsſtraße nicht<br/>
+ſo enge wäre, deñ köñte das Eis von<br/>
+der Küſte Aſiens fort nach dem Südmeer<br/>
+treiben. Durch die Berührung mit er-<br/>
+wärmten Waſſer ſchmilzt im Norden<br/>
+Europas das Eis fort, welches weiter<br/>
+nach Oſten ſie nicht der Fall iſt, daher<br/>
+auch <span class="aq ">Novaja <span class="dta-del" title="Streichung (#ow)">Z</span><span class="dta-add" title="Hinzufügung (across)"><span class="b ">S</span></span>em<span class="dta-del" title="Streichung (#ow)">bla</span><span class="dta-add" title="Hinzufügung (across)"><span class="b ">lia</span></span></span> w<span class="dta-del" title="Streichung (#ow)">er</span><span class="dta-add" title="Hinzufügung (across)"><span class="b ">e</span></span>der im Norden<br/>
+noch Süden, weder Som̃ers noch Winters<br/>
+zu umſchiffen iſt. Das <span class="aq ">Maximum</span> der<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b "><span class="aq ">Maximum</span><br/>
+der Kälte.</span><br/>
+</span>Kälte herrſcht keineswegs unter dem Pol,<br/>
+eben ſo wenig fällt es in die Gegend<br/>
+des magnetiſchen Pols, ſondern in die Ge-<br/>
+gend zwiſchen <span class="aq ">Novaja Semlia</span> u. Spitzber-<br/>
+gen, unterm 82° N Br. köm̃t man über den<br/>
+Pol hinaus, weiter nach S. O. ſo würde<br/>
+daſelbſt das <span class="aq ">Maximum</span> der Kälte unter<br/>
+72° N. B. anzutreffen ſein.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="b ">Die Luft.</span><br/>
+Zu bemerken iſt der Kontraſt der Atmoſphä-<br/>
+ren um die verſchiedenen Weltkörper.<br/>
+Während die Atmoſphäre <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Wort fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">des</span> Mondes kaum<br/>
+½ Linie Druck auf unſern Barometer ausüben<br/>
+würde, u. daher gleich den <span class="aq ">Vacuo</span> zu <span title="ſetz￼" class="dta-abbr">ſetzen</span>,<br/>
+iſt die Dunſthülle des <span title="Bielaſch￼" class="dta-abbr"><span title="Personenname"><a href="http://d-nb.info/gnd/116164603">Biela</a></span>ſchen</span> Kometen<br/>
+4⅔ Erdhalbmeſſer; obgleich der Durch-<br/>
+meſſer ſeines feſten Kerns kaum 50 Ml.<br/>
+u. die ruchbaren Theile deſſelben kaum<br/>
+ſo viel Volumen als das eines Meteor-<br/>
+ſteins betragen.<br/>
+</span>Wir kom̃en jetzt zu der elaſtiſchen Flü-<br/>
+ßigkeit die den Erdball umhüllt, u. von der<br/>
+⅔ auf dem Ozean u. ⅓ auf dem Continente<br/>
+ruhen. Die Luft hat eine ganz andere elek-<br/>
+triſche Spañung weñ ſie auf flüßigem Boden<br/>
+als weñ ſie über Vegetabilien u. Bergen <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span><br/>
+ſteht. Wahrſcheinlich exiſtirt noch Luft in ei-<br/>
+ner Höhe von 32<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">–40</span> Meilen, die dem Vacuum<br/>
+unter unſern Luftpumpen gleich geſetzt wer-<br/>
+den kañ; deñ ſo hoch befinden ſich die Stern-<br/>
+ſchnuppen, die, wie die Aerolithen ſich erſt<br/>
+erleuchte<span class="dta-del" title="Streichung (#ow)">nd</span><span class="dta-add" title="Hinzufügung (across)">t</span> zeigen, weñ ſie mit dem Sauer-<br/>
+ſtoff der Luft in Verbindung geſetzt werden.<br/>
+Wir müſſen hierbei betrachten<br/>
+<div class="dta-list"><span class="dta-list-item">1. Die lichtſchwächende Kraft derſelben<br/>
+u. Farbe.</span>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">2.,</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0287 : 270.|</span><br/>
+<span class="dta-marginal dta-marginal-left"><div class="dta-list"><span class="dta-list-item"><span class="dta-add" title="Hinzufügung (left)">2. chemiſche Beſtandtheile der Luft.</span></span>
+<span class="dta-list-item"><span class="dta-add" title="Hinzufügung (left)">3. Der Druck derſelben.</span></span>
+<span class="dta-list-item"><span class="dta-add" title="Hinzufügung (left)">4. Die hygronom<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">iſch</span>e Beſchaffenheit</span></span>
+</div></span>  <span class="dta-list-item"><span class="dta-del" title="Streichung (#ow)">2</span><span class="dta-add" title="Hinzufügung (across)">5</span>., Die Producte welche die Luft erzeugt,<br/>
+als Regen, Schnee, Hagel <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span></span>
+<span class="dta-list-item"><span class="dta-del" title="Streichung (#ow)">3</span><span class="dta-add" title="Hinzufügung (across)">6</span>., Die Temperatur derſelben u.</span>
+<span class="dta-list-item"><span class="dta-del" title="Streichung (#ow)">4</span><span class="dta-add" title="Hinzufügung (across)">7</span>., Die <span title="Erſcheinung￼" class="dta-abbr">Erſcheinungen</span>, die ihre Electricität<br/>
+veranlaßt.</span>
+</div></p>   <p class="dta-p"><span class="dta-marginal dta-marginal-left">1., Färbung<br/>
+</span>Die Färbung der Luft iſt in den verſchie-<br/>
+denen Zonen verſchieden. Unter den Tropen<br/>
+iſt die Bläue derſelben viel dunkler a<span class="dta-supplied">[ls]</span><br/>
+in nördlichern Him̃elsſtrichen. Je mehr Dunſt<span class="dta-supplied">[-]</span><br/>
+bläſchen in der Luft ſchwim̃en, um ſo mehr<br/>
+ſtrahlen dieſe das Licht zurück, u. der Him̃el<br/>
+wird weniger blau, ſondern milchig. Drück-<br/>
+ten die Luftſchichten nicht ſo ſehr auf ein-<br/>
+ander, daß, wie ſchon angeführt, in einer<br/>
+Tiefe von 12 Meilen eine Platinakugel ſchwim-<br/>
+men würde; bilden wir uns ein, daß es<br/>
+ſchwim̃ende luftartige Körper gäbe, bei den<br/>
+der Druck nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117551988">Mariott</a></span>iſchem</span> Geſetz nicht<br/>
+ſtatt fände, ſo würden wir eine lichtſchwä-<br/>
+chende Kraft nicht keñen. – Ein beſonders<br/>
+Phänomen findet auf dem Meere ſtatt, daß<br/>
+in Zeiten, wo das Meer kälter iſt wie<br/>
+die Luft, ſich doch in der Mittagſſtunde d<span class="dta-supplied">[ie]</span><br/>
+Luft erwärmt um 1° R. – Man hat<br/>
+verſucht die Farbe des Him̃els zu meſſen<br/>
+u. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118804790">Saussure</a></span></span> hat ein Jnſtrument erfunden, de<span class="dta-supplied">[n]</span><br/>
+<span class="aq ">Cÿanometer</span>, durch welches man freilich ſe<span class="dta-supplied">[hr]</span><br/>
+unvollkom̃en die Farbe des Him̃els mit<br/>
+den hier gezeichneten Schattirungen von<br/>
+Blau vergleichen kañ. Der Unterſchie<span class="dta-supplied">[d]</span><br/>
+der Färbung iſt ſo groß, daß weñ die<br/>
+nach dem Jnſtrument bei uns 14° iſt, unt<span class="dta-supplied">[er]</span><br/>
+den Tropen <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Wort fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">die</span> </span>22° beträgt. Dieſe Beoba<span class="dta-supplied">[ch-]</span><br/>
+tungen ſind mit Hÿgrometriſchen <span title="Unter-&#xA;ſuchung￼" class="dta-abbr"><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">Un</span><span class="dta-supplied">[ter-]</span><br/>
+ſuchungen</span> in Verbindung geſetzt, u. hab<span class="dta-supplied">[e]</span><br/>
+ich hierüber einige Tabellen heraus<span class="dta-supplied">[-]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">gegeb<span class="dta-supplied">[en.]</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0288 : 271.|</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Luftperſpective</span><br/>
+</span>gegeben. – Die Luftperſpective wird<br/>
+ſehr durch die Beſchaffenheit der Luft<br/>
+modificirt. Jn ſüdlichern Ländern haben<br/>
+alle Umriſſe einen viel mildern Duft,<br/>
+wie man dies in <span class="aq ">Sorento</span> ſchon erblickt.<br/>
+Dieſer milde Duft der alle Gegenſtände<br/>
+<span class="dta-del" title="Streichung (#s)">veranlaſſen</span><span class="dta-add" title="Hinzufügung (superlinear)">umgiebt</span> wird nach Süden hin im̃er<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">2. chemiſche Beſtandtheile<br/>
+der Luft.</span><br/>
+</span>ſchöner u. ſchöner. Die chemiſche Beſchaf-<br/>
+fenheit u. Beſtandtheile der Luft ſind<br/>
+erſt in dieſem Jahrhundert bekañt ge-<br/>
+worden. Bis zum Jahr 1804 war ſelbſt<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11857034X">Lavoiſier</a></span></span> in dem Jrthum befangen, daß<br/>
+Sauerſtoff der Luft = 0,27 betrage. Einem<br/>
+Chemiker aus Spanien <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118930443">Demortie</a></span></span> verdanken<br/>
+wir die Entdeckung, daß der Sauerſtoff<br/>
+der Atmoſphäre nur = 0,21 iſt. Es fragt<br/>
+ſich, ob dies nicht nach den Jahreszeiten<br/>
+verſchieden iſt. So weit unſere Jnſtru-<br/>
+mente es anzuzeigen im Stande ſind, iſt<br/>
+die Quantität des Sauerſtoffes bei allen<br/>
+Winden u. in allen Jahreszeiten gleich. Die<br/>
+Jnſaluität der Luft wird durch die entzo-<br/>
+gene Quantität des Sauerſtoffes nicht ver-<br/>
+anlaßt, ſo weit wir dies beſtim̃en köñen.<br/>
+Jn Opernhäuſern u. Hoſpitälern <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span> habe<br/>
+ich Luft genom̃en, u. ſie der chemiſche Zer-<br/>
+ſetzung unterworfen, aber ſtets gefun-<br/>
+den, daß zwar die Quantität der Kohlen-<br/>
+ſäure verſchieden iſt, jedoch dieſelbe<br/>
+Quantität Sauerſtoff ſtets vorhanden<br/>
+iſt. Jn Hoſpitälern, in denen ein anſtecken-<br/>
+der Typhus herrſchte, wurden Schwäm̃e<br/>
+mit diſtillirtem Waſſer aufgehängt u.<br/>
+dergl. auch in reiner Luft. Man unterſuchte<br/>
+beide nach einigen Stunden u. man ſahe<br/>
+auf dem au<span class="dta-del" title="Streichung (#ow)">s</span><span class="dta-add" title="Hinzufügung (across)">f</span>gepreßten Waſſer der erſtern<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">ſich</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0289 : 272.|</span><br/>
+ſich eine organiſche Haut abſetzen. Die<br/>
+Agiometrie der Luft beruft daher nicht<br/>
+auf der Maſſe des Sauerſtoffes, ſondern<br/>
+auf ganz andern Stoffen. So ſind es lee<span class="dta-supplied">[r]</span>e<br/>
+theoretiſche Träume, weñ man glaubt d<span class="dta-supplied">[aß]</span><br/>
+die Luft geſünder ſei wo Pflanzen wac<span class="dta-supplied">[h-]</span><br/>
+ſen oder Bäume. Eher köñte dies umgekeh<span class="dta-supplied">[rt]</span><br/>
+der Fall ſein. Es iſt kein Unterſchied der<br/>
+Abnahme des Sauerſtoffes zu finden, ſelbſt<br/>
+nicht auf dem Meere. Man hat berechnet<br/>
+daß weñ alle Thiere u. org. Weſen den<br/>
+Stickſtoff 7000 J. lang ausſtrömen, das<br/>
+Oxigen noch nicht um 0,1 abnehmen würde<br/>
+<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Wort fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> die Geſundheit nie in Gefahr kom̃en wi<span class="dta-supplied">[rd.]</span><br/>
+Man kañ einen bedeutenden Grad von ver-<br/>
+dorbener Luft vertragen, ohne ſich unwo<span class="dta-supplied">[hl]</span><br/>
+dabei zu befinden, ſelbſt in den <span class="aq ">Mophette<span class="dta-supplied">[n]</span></span><br/>
+der Gebirgsgruben. Die Beſtandtheile<br/>
+der <span title="Schreibfehler: gewohnlich" class="dta-corr">gewöhnlich</span> atmoſphäriſchen Luft ſind<br/>
+0,21 Sauerſtoff. 0,79 Stickſtoff u. 0,001 Ko<span class="dta-supplied">[h-]</span><br/>
+lenſäure. Eine Frage iſt öfters erör<span class="dta-supplied">[-]</span><br/>
+tert worden, ob es reines Waſſerſtoff<span class="dta-supplied">[-]</span><br/>
+gas in der obern Atmoſphäre giebt? E<span class="dta-supplied">[s]</span><br/>
+ſind dies eben ſolche Träume, als weñ <span class="dta-supplied">[man]</span><br/>
+behauptet, hieraus bilde ſich der Regen<span class="dta-supplied">[.]</span><br/>
+Man ſagte, daß ſelbſt die Aerolithen en<span class="dta-supplied">[t-]</span><br/>
+zündetes u. zuſam̃engeballtes Waſſerſtof<span class="dta-supplied">[f-]</span><br/>
+gas ſei<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (intralinear)"><span class="b ">en</span></span>. Die Atmoſphäre iſt im <span title="vollkom-&#xA;menſt￼" class="dta-abbr">vollkom<span class="dta-supplied">[-]</span><br/>
+menſten</span> Gemiſch wie Alkohol u. Waſſer u.<br/>
+liegt nicht Schlichtenweiſe. Jn jedem Augen-<br/>
+blick ſteigt <span title="Schreibfehler: Waſſerſtofgas" class="dta-corr">Waſſerſtoffgas</span> in die Höhe<br/>
+u. weñ die Quantität deſſelben auch nu<span class="dta-supplied">[r]</span><br/>
+0,03 wäre, ſo ließe ſich daßelbe<br/>
+prüfen, u. eine geringere koñte nie<br/>
+zur Entzündung kom̃en, da es zu ſehr<br/>
+verſetzt iſt. Durch den elektriſchen<br/>
+Schlag kañ daher auch kein Regen<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">ent</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0290 : 273.|</span><br/>
+entſtehen. Sollte Waſſerſtofgas oben ſich<br/>
+befinden, warum hat man nie eine Spur<br/>
+davon in der Höhe entdeckt, obgleich <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118716581">Jai<br/>
+Luſſac</a></span></span> ſich 18000 Fuß hoch erhoben. Durch<br/>
+Strömungen würde doch etwas herunter<br/>
+kom̃en u. unterſucht <span title="werd￼" class="dta-abbr">werden</span> köñen.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="b ">3. Druck<br/>
+der Luft.</span><br/>
+Beim Heraufſteigen mit der Täucherglocke aus<br/>
+einer Tiefe von 40–50 Fuß, wo der Druck der<br/>
+Luft gleich zwei Atmoſphären ſtark iſt, ſtellen<br/>
+ſich gleiche Blutungen ein, wie auf den Höhen,<br/>
+aus den <span title="entgegengeſetzt￼" class="dta-abbr">entgegengeſetzten</span> Urſachen. Vögel<br/>
+köñen einen bedeutenden Luftdruck ertragen.<br/>
+Der Condor ſchwebt oft 3000′ über dem <span class="aq ">Chimborasſo</span><br/>
+u. ſtürzt plötzlich 19–20000 Fuß herunter in die<br/>
+Straßen von <span class="aq ">Quito</span> u. an die Seeküſte, ohne Schaden<br/>
+für ſeine <span class="dta-del" title="Streichung (#ow)">ö</span><span class="dta-add" title="Hinzufügung (across)">O</span>rg<span class="dta-del" title="Streichung (#ow)">ä</span><span class="dta-add" title="Hinzufügung (across)">a</span>niſation<br/>
+</span>An den Druck der atmoſphäriſchen Luft<br/>
+kañ ſich der Menſch leicht gewöhnen. Jn<br/>
+einer Taucherglocke hält der Menſch den<br/>
+Druck der Luft bis 64″ Barometer höhe<br/>
+aus. Auf Bergen habe ich ſelbſt 13″ öfters<br/>
+ertragen. Die <span title="gewöhnl￼." class="dta-abbr">gewöhnliche</span> Atmoſph. Luft<br/>
+druckt mit 28″. Auf großen Höhen fühlt<br/>
+man anfangs zwar einige Beklem̃ung, man<br/>
+wird aber in zwei Tagen vollkom̃en daran<br/>
+gewöhnt u. man kañ die Abnahme u. Zu-<br/>
+nahme des Drucks bald ertragen. Auf <span class="dta-del" title="Streichung (#s)">18-</span><br/>
+18,000 Fuß drängt ſich das Blut aus den<br/>
+Lippen u. Nägeln u. andere äußere feine<br/>
+Gefäßen. Die Elaſticität der eingeſchloſſe-<br/>
+nen Luft zerſprengt bei dem Mangel des<br/>
+Gegendrucks dieſe feinen Gefäße.￼<span class="dta-marginal dta-marginal-left">wie iſt es jedoch mit den<br/>
+feinern Theilen der Lunge? <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span><br/>
+</span></p></div></body></html>

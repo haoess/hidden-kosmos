@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[41. Vorlesung, 24.03.1828]</span></div><br/>
+<div class=""><div class=""><div class=""><div class=""><div class=""><p class="dta-p">Die Flüſse S. Amerikas haben ſehr geringe<span class="dta-add" title="Hinzufügung (intralinear)">(?)</span> Waſser<br/>
+maſse, ſie ſind ſo flach, daß man mehrere 1000<br/>
+Fuß hineinreiten kann.</p><br/>
+<p class="dta-p">Die Waſsermenge die <span class="dta-del" title="Streichung (#s)">E</span>in Fluß enthält, hängt von<br/>
+der Größe des Flußgebiets ab. Setzt man die<br/>
+Waſsermenge des Rheins = 1. ſo iſt die der Donau<br/>
+= 4., des Amazonenſtroms = 22. – Wenn das<br/>
+Flußgebiet ſehr groß und das Bette ſehr ſchmal<br/>
+iſt, ſo kann man auf eine um ſo größere<br/>
+Tiefe des Flußes ſchließen.</p><br/>
+<p class="dta-p">In den meiſten großen Strömen, zeigt ſich<br/>
+eine Gleichheit in der Quantitaet des Anſchwel-<br/>
+lens und auch in den Epochen der Anſchwellung.<br/>
+Der Nil ſteigt bei Cairo zu derſelben Höhe als<br/>
+die des Orinoko bei Angostura beträgt, 24′<br/>
+beide Orte liegen ungefähr gleich weit von<br/>
+der Mündung ab. Seit 1000 Jahren iſt dies Phä-<br/>
+nomen daſselbe geweſen, und das Maximum in<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">der</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0381 : 375|</span><br/>
+der Epoche des Anſchwellens iſt nur auf 2 bis<br/>
+3, höchſtens 5 Tage.</p><br/>
+<p class="dta-p">Die Maſse des Waſsers die ein Fluß ent-<br/>
+hält, wird beſtim̃t, nicht durch die Tiefe allein,<br/>
+ſondern durch die Area des ganzen Flußgebiets.<br/>
+Dazu kom̃t noch die Geſchwindigkeit des Fluſses<br/>
+ſelbſt. Es ſind bis jetzt nur wenige Flüſse bekannt,<br/>
+von den man eine gehörige Kenntniß der Ge-<br/>
+ſchwindigkeit hat. Die Unterſuchungen <span title="Personenname"><a href="http://d-nb.info/gnd/117545201">Girard</a></span>'s<br/>
+über den Nil können hier zum Musterdienen.</p><br/>
+<p class="dta-p">Die Flüſse ſelbſt münden ſich entweder in in-<br/>
+ländiſche Seen, <span class="u ">Steppenflüſse</span>, oder ins Meer,<br/>
+oder endlich wie <span title="Personenname"><a href="http://d-nb.info/gnd/118534912">Franklin</a></span> ſich ausdrückt, ſie<br/>
+haben ihre Mündung in der Atmosphäre.<br/>
+Je weiter die Flüſse gehen deſto mehr Neben-<br/>
+flüſse ne<span class="dta-del" title="Streichung (#ow)">b</span><span class="dta-add" title="Hinzufügung (across)">hm</span>en ſie auf und deſto größer wird<br/>
+ihre Waſsermaſse.</p><br/>
+<p class="dta-p">Meſsungen ſind angeſtellt: am Orangenfluß;<br/>
+<span class="aq ">Doc</span> ſelbſt am <span class="aq ">Rio Apure</span>, einem Nebenfluß<br/>
+des Orinoko, der ſo groß wie die Donau iſt.<br/>
+Wenn die Flüſse ins Meer einmünden,<br/>
+ſo entſteht durch die <span class="aq ">Oscillation</span> des Meeres,<br/>
+<span class="dta-metamark" title="metamark">|:</span> veranlaßt durch die Anziehung der Sonne und<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">des</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0382|</span><br/>
+des Mondes <span class="dta-metamark" title="metamark">:|</span> eine merkwürdige Erſcheinung.<br/>
+Da nämlich das Salzwaſser ſchwerer iſt als das ſüße<br/>
+Waſser, welches aus den Flüſsen herausſtrömt, ſo<br/>
+bilden ſich Süßwaſser-Meere und daß Flußwaſser<br/>
+wird gehoben durch das Seewaſser, ſo daß jenes je-<br/>
+nachdem dieſes vermöge der Flut und Ebbe ſteigt<br/>
+und füllt ebenfalls auch nieder geht.</p></div></div></div><br/>
+<div class=""><div class="dta-head"><span class="u ">Die flüſsigen Hüllen.</span></div><br/>
+<div class=""><div class="dta-head"><span class="u ">Das Meer</span></div><br/>
+<div class=""><p class="dta-p"><span class="aq ">Oscillation</span> des Meeres. Die Oscillation des Meeres<br/>
+giebt das deutlichſte Beiſpiel der Attraction von<br/>
+Weltkörpern auf die Erde. In frühern Zeiten<br/>
+wo man nur das mittelländiſche Meer kannte,<br/>
+war dies Phänomen nur den Phöniziern in ſei-<br/>
+ner ganzen Ausdehnung bekannt, daher ſah man<br/>
+am Indus dieſe Erſcheinung als ein großes<br/>
+Wunder an. <span title="Personenname"><a href="http://d-nb.info/gnd/118793764">Pÿthias</a></span> in Marſeille ſtellte ſchon<br/>
+Beobachtungen über das Meer an. <span title="Personenname"><a href="http://d-nb.info/gnd/118594893">Plato</a></span> glaubte<br/>
+es durch ein Herausſtrömen vom Innern der Er-<br/>
+de zu erklären. Doch hatte man ſchon bei den<br/>
+Römern <span title="Original: einigegute" class="dta-reg">einige gute</span> Erklärungen, ſo ſagt <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118595091">Plinius</a></span></span><br/>
+<q class="quote">„<span class="aq ">causa ſole, lunaque</span>„</q>. In neuern Zeiten<br/>
+gab <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118587544">Newton</a></span></span> 1687 eine Erklärung der Ebbe und<br/>
+Flut. Neuerdings iſt dies Phänomen durch die<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">trefflichen</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0383 : 377|</span><br/>
+trefflichen Arbeiten von <span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span> 1772.<br/>
+zum Gebiet der Analÿſe gekommen.</p><br/>
+<p class="dta-p">Die Regierung von Frankreich hat in Breſt<br/>
+vielfache Verſuche anſtellen laſsen, und der<br/>
+Erfolg daran war die letzte Arbeit von <span title="Personenname"><a href="http://d-nb.info/gnd/118726536">La-<br/>
+place</a></span>, kurz vor ſeinem Tode. Die Sonne zieht<br/>
+13 Mill. mal ſtärker die Erde an, als der<br/>
+Mond, daraus geht das Verhältniß <span class="dta-metamark" title="metamark">|:</span> wegen<br/>
+der Entfernung <span class="dta-metamark" title="metamark">⎡</span> hervor wie 2, 4 : 1. <span class="dta-add" title="Hinzufügung (intralinear)">(?)</span></p><br/>
+<p class="dta-p">Das Heben und Sinken des Meeres geſchieht<br/>
+2 mal zwiſchen jeder Culmination des Mon-<br/>
+des, und zwar ſo, daß jedesmal 42 bis 43′<br/>
+nach der Culmination erſt die Oscillation ein-<br/>
+tritt. Die größte Flut tritt beim Vollmond<br/>
+und Neumond ein, es wirken die Sonne und<br/>
+der Mond gleichmäßig; die kleinſte bei den<br/>
+Quadranten<span class="dta-add" title="Hinzufügung (superlinear)"><span class="gap">[unleserliches Material]</span></span>, da als dann die Sonne und Mond<br/>
+entgegen geſetzt wirkt.</p><br/>
+<p class="dta-p">Aus den Beobachtungen der Ebbe und Flut, hat man<br/>
+umgekehrt viele aſtronomiſche Elemente her-<br/>
+leiten können. So konnte <span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span> aus den<br/>
+Beobachtungen von <span title="Personenname"><a href="http://d-nb.info/gnd/116299762">Houward</a></span> und den in Brest<br/>
+angeſtellten, die Maſse des Mondes mit großer<br/>
+Schärfe beſtimmen.<span class="dta-add" title="Hinzufügung (intralinear)">(?)</span></p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Die</span></div><br/>
+<div class="&#xA;            fw-bottom-sig&#xA;          "><span class="aq ">x</span> 2</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0384|</span><br/>
+<p class="dta-p">Die Aenderung <span class="dta-del" title="Streichung (#s)">in </span>der Nähe, nicht nur des Mon-<br/>
+des ſondern auch der Sonne wirkt ſehr auffallend<br/>
+auf das Meer. Bei der Mondnähe ſteht das Waſser<br/>
+5′ hoher als bei der Mondferne. Der höchſte<br/>
+Punkt des Waſsers iſt nach dem Monde hinge-<br/>
+leitet. Die Anſchwellung des Mondes iſt nicht nur<br/>
+auf der Seite die dem Monde zugekehrt iſt, ſon-<br/>
+dern auch auf der entgegen geſetzten, indem nach<br/>
+Verhältniß des Quadrats <span title="d" class="dta-abbr">der</span> Entfernung die Anziehung<br/>
+des Mondes auf den Mittelpunkt der Erde ſtärker<br/>
+iſt als auf den Punkt der ſich im Nadir befindet,<br/>
+daher entfernt ſich dieſer Punkt vom Mittelpunkt<br/>
+der Erde und bleibt weiter zurück.</p><br/>
+<p class="dta-p">Es wird dies nur deutlich bei großen Meeren,<br/>
+bei andern kleinerm, treten andere Verhält-<br/>
+niße ein, weil die Waſsermaſsen nicht ſo<br/>
+ſchnell nachfließen können, und eine gewiße<br/>
+Zeit dazu gehört bis die entferntern Punkte<br/>
+anſchwellen können.</p><br/>
+<p class="dta-p">Bei Binnenmeeren iſt das Phänomen zurückge-<br/>
+hend, und es iſt zu wenig Zeit da, als daß die-<br/>
+ſe Anſchwellung gehörig geſchehen könnte. Auch<br/>
+kom̃t es ſehr auf die Richtung des Meeres am,<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">ob</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0385 : 379|</span><br/>
+ob es ſeine größere Ausdehnung von Oſten<br/>
+gegen Weſten, oder von <span class="dta-del" title="Streichung (#s)">Wst.</span><span class="dta-add" title="Hinzufügung (superlinear)">N</span>: geg: Sd. habe.</p><br/>
+<p class="dta-p">Die Flut des Mittelländiſchen Meeres zu der<br/>
+des Oceans verhält ſich wie ſein Durchmeſser<br/>
+von Oſten ge Weſten zu dem Durchmeſser der<br/>
+Erde. Die größere Ausdehnung des Kaspi-<br/>
+ſchen Meeres iſt dagegen von Weſten gegen<br/>
+Süden, es hat daher weniger an dieſer Oscil-<br/>
+lation Aehnlichkeit mit den übrigen Biñenmeeren.<br/>
+Viel macht auch bei den Binnenmeeren ihre Oef-<br/>
+fnung aus, ob dieſe gegen Oſten oder gegen Weſten<br/>
+gekehrt iſt. Wenn das mittelländiſche Meer<br/>
+gegen Oſten hin geöffnet wäre, ſo würde<br/>
+mehr Flut da ſein, da die Bewegung des<br/>
+Mondes von Oſten gegen Weſten iſt.</p><br/>
+<p class="dta-p">Nach der Theorie ſollte gegen den Nordpol<br/>
+zu keine Ebbe und Flut zu finden ſein, aber<br/>
+da man dieſe Oscillation noch in der Hudsons<br/>
+baÿ findet, ſo wird dies noch als eine Ursa-<br/>
+che des Zuſam̃enhanges mit dem Ocean ange-<br/>
+geben. – In der Oſtsee iſt keine Ebbe und<br/>
+Fluth die man als Folge der Sonne und des<br/>
+Mondes anſehen könnte, die Ursache des<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Anſchwellens</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0386|</span><br/>
+Anſchwellens ſind hier die Winde.</p><br/>
+<p class="dta-p"><span class="aq ">Doc</span> hat keine Flut unter 8 bis 10′ geſehen, die größ-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="dta-metamark" title="metamark">⎡</span><br/>
+</span>te bei <span class="aq ">St: Malo</span> betrug 46′ bisweilen 55 ja 60′<br/>
+(das <span class="aq u ">Mascarey</span> (?)) Bisweilen ſieht man zu gewöhn-<br/>
+lichen Zeiten an den Mündungen der Flüſse große<br/>
+Häuſerhoſe Waſsermaſsen anſchwellen; es iſt dies das<br/>
+Widerſtreben mehrerer Strömungen, beſonders iſt<br/>
+dies am Amazonenfluß auffallend.</p></div><br/>
+<div class=""><p class="dta-p"><span class="u ">Wellen.</span> Sehr verſchieden von dieſen Anſchwel-<br/>
+lungen ſind die Bewegungen der Wellen.</p><br/>
+<p class="dta-p">Man hat bei den Wellen hauptſächlich zwei<br/>
+Punkte zu unterſcheiden: 1, die Höhe der Wel-<br/>
+len und 2, die Tiefe derſelben.</p><br/>
+<p class="dta-p">Die Höhe der Wellen iſt häufig ein Gegenſtand<br/>
+des Streits geweſen. Man muß hier unterſchei-<br/>
+den, das Anſchlagen gegen feſte Körper, wo das Was-<br/>
+ſer bis auf eine auſserordentliche Höhe heranſtei-<br/>
+gen kann, gegen die Wellen welche auf dem offe-<br/>
+nen Meere aufſteigen. Von erſterer Art hat<br/>
+<span class="aq ">Doc</span> an dem Herkules Felsen Meſsungen angeſtellt,<br/>
+und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11671350X">Savÿ</a></span></span> in <span class="aq ">Scandinavien</span> (70° N. Br) wie eine Hoch-<br/>
+ebene von 400′ übr d. Meere. durch eine Welle ganz<br/>
+überſchwemmt wurde.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Die</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0387 : 381|</span><br/>
+<p class="dta-p">Die Meſsung der Höhe der Wellen iſt ſehr<br/>
+ſchwierig, und oft übertrieben worden, weil<br/>
+man ſie nur geſchätzt hat.</p><br/>
+<p class="dta-p"><span class="aq ">Doc</span> hat in der Südsee durch die Depres-<br/>
+ſion des Horizonts gemeſsen. Wenn nämlich<br/>
+die Sonne auf dem Schiffsverdeck ſchon un-<br/>
+tergegangen zu ſein ſcheint, ſo können Leute<br/>
+die ſich auf dem Maſtbaume befinden, dieſelbe<br/>
+noch ſehen. Während eines Sturmes kann<br/>
+man nun vermöge eines Spiegelſextanten<br/>
+ſobald man auf dem Rücken der Welle ſich<br/>
+befindet die Höhe der Sonne meſsen, und<br/>
+wenn man im Wellenthal iſt, ebenfalls.<br/>
+Aus dieſen beiden Meſsungen kann man<br/>
+alſo die Höhe der Welle berechnen.</p><br/>
+<p class="dta-p"><span class="aq ">Doc</span> hat ſo gefunden, daß die höchſten Wel-<br/>
+len 42 bis 44′ hoch waren, und dies ſtim̃t<br/>
+mit der Meinung der meiſten Seefahrer über<br/>
+ein. Die Höhe der Wellen hängt nicht<br/>
+blos von dem Inpuls der Winde und der In-<br/>
+terferenz der Wellen – wenn nämlich 2<br/>
+Wellen zuſammen kom̃en, und ſtatt ſich zu<br/>
+vernichten zur Anſchwellung beitragen –<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">ſondern</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0388|</span><br/>
+ſondern auch von der Tiefe des Meeres ab,<br/>
+das von den Winden aufgewühlt wird. –<br/>
+Ein vortreffliches Werk von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/142999881">Bremontier</a></span></span> über<br/>
+die Wellen ſagt, daß die Tiefe des Waſsers das<br/>
+aufgewühlt wird, wenigſtens 60 bis 80′ ſein<br/>
+müſse. Durch andere Betrachtungen kann man<br/>
+<span class="dta-marginal dta-marginal-left">?|<br/>
+</span>nämlich finden daß das Meer bei großen Wellen<br/>
+bis auf 260′ Tiefe (50–60 <span class="u ">Braſsen</span><span class="dta-add" title="Hinzufügung (superlinear)"> Toiſen</span>) aufge-<br/>
+wühlt wird. Nämlich wie oben angegeben<br/>
+findet es ſich an der Nadelbank an der Süd Spitze<br/>
+von Afrika, wo ſich die Richtung der Strömung<br/>
+verändert. Die Bewegung der Wellen wird<br/>
+bei 80′ dort nicht mehr geſpürt. Wir haben<br/>
+ein vorzügliches Werk von <span title="Personenname"><a href="http://d-nb.info/gnd/118765817">Ernſt</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/11862976X">Wilhelm</a></span><br/>
+Weber, über die Wellen. Beide Brüder fingen<br/>
+damit an, bloße Verſuche mit Quecksilber zu<br/>
+machen. Sie bemerkten hier die Interferenz<br/>
+des Quecksilbers und brachten die Dichtigkeit der Flüs-<br/>
+ſigkeit mit in Rechnung, da von dieſer der Wellen-<br/>
+ſchlag auch mit abhängt. Es geht daraus hervor, daß<br/>
+die gewöhnlichen Wellen das Meer noch bis 20 und 22′<br/>
+Tiefe aufwühlen. –</p><br/>
+<p class="dta-p">Das Meer nim̃t ⅔ der ganzen Oberfläche<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">des</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0389 : 383|</span><br/>
+des Erdkörpers ein. – Von der mittlern Tiefe<br/>
+deſselben iſt ſchon früher die Rede geweſen.<br/>
+Man hat bisher noch nie tiefer ſondirt als<br/>
+7000′. Merkwürdig iſt es daß die Alten<br/>
+nicht nur geahndet, ſondern auch ſchon die<br/>
+beſtimmte Idee gehabt haben, daß die<br/>
+größte Tiefe des Meeres gleich wäre der<br/>
+größten Höhe der Berge. Im <span title="Personenname"><a href="http://d-nb.info/gnd/118595237">Plutarch</a></span><br/>
+iſt eine Stelle wo erwähnt wird, die Höhe<br/>
+des Olÿmpos müſse auch die größte Tiefe des<br/>
+Meeres ſein.</p></div><br/>
+<div class=""><p class="dta-p">Ueber <span class="u ">die Dichtigkeit</span> und die Beſtandtheile<br/>
+des Meeres in den verſchiedenen Zonen hat<br/>
+man in neuern Zeiten viele Beobachtun-<br/>
+gen gemacht, und je mehr man ſich damit<br/>
+beſchäftigte, deſto unklarer iſt man dadurch ge-<br/>
+worden. Auch <span class="aq ">Doc</span> hat ſich häufig damit be-<br/>
+ſchäftigt. – Die Dichtigkeit des Waſsers<br/>
+iſt in der Art, daß die fixen Beſtandthei-<br/>
+le 3½ <span class="aq ">pro Ct</span> ausmachen, wie man dies<br/>
+ſowol aus <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118716581">Gay-Lusſac</a></span>s</span> Arbeiten wie aus<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parry</a></span>s und <span title="Personenname"><a href="http://d-nb.info/gnd/124760295">Fraÿſenais</a></span> Reiſen gefunden hat;<br/>
+<span class="dta-metamark" title="metamark">|:</span> auch hat man Verſuche darüber von <span class="aq "><span title="Personenname">Gerdé</span></span> <span class="dta-metamark" title="metamark">:|</span><br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118716581">Gay Lusſac</a></span></span> hat gezeigt, daß der Unterſchied<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">der</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0390|</span><br/>
+der Dichtigkeit, und des Salzgehalts im Meeres-<br/>
+waſser in den verſchiedenen Zonen eben ſo un-<br/>
+beträchtlich iſt, als der des Sauerſtoffs in der Atmos-<br/>
+phäre. Auch iſt es noch nicht erwiesen, daß die<br/>
+tiefern Waſsertheile ſalziger ſind, als die höhern.<br/>
+Chemiſche Beſchaffenheit. – Bisher hat man<br/>
+4 Stoffe mit Beſtim̃theit im Meereswaſser ge-<br/>
+funden: Salzsaures Natrum, 2, 6. Bittererde 0,5.<br/>
+ſchwefelſaures Natrum, 0,46. ſalzſauren Kalk 0,1.<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/117626708">Davÿ</a></span> und <span class="u "><span title="Personenname">Fife</span></span> fanden kein <span class="u ">Jod</span> im Meereswas-<br/>
+ſer. Später wurden aber <span class="u ">Brom</span> und <span class="u ">Jod</span> darin entdeckt.<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/117433144">Bullaſton</a></span> entdeckte ſalzſaures und ſchwefelſaures Kali<br/>
+<span class="sup ">1</span>/<span class="sub ">2000</span>, nie hat man ſalpeterſaures Salz gefunden.<br/>
+Ein merkwürdiger Beſtandtheil iſt die <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">K</span>ohlenſaure<br/>
+Kalkerde: wahrſcheinlich von den Schnalen der Con-<br/>
+chilien herſtammend.</p></div><br/>
+<div class=""><p class="dta-p"><span class="u ">Reinigung des Waſsers.</span> Man findet oft mitten<br/>
+im Meere Stellen ſüßen Waſsers, die ſo ent-<br/>
+fernt von einander ſind, daß man nicht glauben<br/>
+kann, ſie könnten durch hÿdroſtatiſchen Druck hervor-<br/>
+gebracht ſein.</p><br/>
+<p class="dta-p">Man hat das Meereswaſser durch Deſtillation<br/>
+vollkom̃en gereinigt. Eine andere Art durch<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Filtriren</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0391 : 385|</span><br/>
+Filtriren. 15′ trokner Sand iſt ſchon hinrei-<br/>
+chend, aber nur der erſte Theil der durchgeht iſt<br/>
+ſüß. Die Alten waren ſchon darauf auf-<br/>
+merkſam, Phÿtias und <span title="Personenname"><a href="http://d-nb.info/gnd/118650130">Ariſto<span class="dta-metamark" title="metamark">⎡</span></a></span> ſagen: wenn<br/>
+man Waſser durch Wachskuchen gehen laſse, ſo<br/>
+wird es verſüßt.</p><br/>
+<p class="dta-p">Auſserdem findet ſich noch ein bitterer Schleim<br/>
+im Meereswaſser, wahrſcheinlich der nahrhafte<br/>
+Theil des Meeres für die Fiſche.</p></div><br/>
+<div class=""><p class="dta-p"><span class="u ">Leuchten des Meeres.</span> Das Leuchten des Mee-<br/>
+res ſcheint auch damit zuſammen zu hängen.<br/>
+Es werden 2 Gründe für dieſes Leuchten<br/>
+angeführt: Nach der Meinung einiger ſind<br/>
+es einzelne Thierchen Pÿroſ<span class="dta-del" title="Streichung (#s)">a</span><span class="dta-add" title="Hinzufügung (superlinear)">o</span>men, die bei<br/>
+der Nacht leuchten, in ähnlicher Art wie<br/>
+man beim rothen Schnee Thierchen gefunden<br/>
+hat. Es kann dies aber nur ein ſehr geringer<br/>
+Theil ſein. Eine andere Ursache wie <span class="aq ">Doc</span><br/>
+und auch andere gefunden haben, ſind orga-<br/>
+niſche Theilchen die im Meere ſchwim̃en.<br/>
+<span class="aq ">Doc</span> fand beim Baden, daß leuchtende Punkte<br/>
+an ſeinem Körper ſich befanden. Bei<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">den</span></div><br/>
+<div class="&#xA;            fw-bottom-sig&#xA;          "><span class="aq ">y</span> 2</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0392|</span><br/>
+den ſtärkſten Vergrößerungen konnte man je-<br/>
+doch bei dieſen Theilchen keine wirklichen Thier-<br/>
+chen bemerken. <span class="aq ">Dr. <span title="Personenname"><a href="http://d-nb.info/gnd/118529250">Ehrenberg</a></span></span> iſt derſelben Mei-<br/>
+nung und es ſtim̃t auch ganz mit dem überein was<br/>
+Lichtenſtein am grünen Vorgebirge beobachtete.<br/>
+Leuchtende <span title="Original: Infusions Thierchen" class="dta-reg">Infusions-Thierchen</span> giebt es <span title="Schreibfehler: überhaubt" class="dta-corr">überhaupt</span><br/>
+nicht. Merkwürdig iſt es, daß Bewegung ein<br/>
+Leuchten erregen kann; ſo durch die Bewegung<br/>
+des Schiffs. Besonders ſchön iſt dies Phänomen<br/>
+bei der Brandung. Eben ſo kann ein Leuchten<br/>
+auch durch galvaniſchen Nervenreiz hervor<br/>
+<span class="dta-marginal dta-marginal-left"><span class="dta-del" title="Streichung (#erased)"><span class="u ">Meduſen?</span><span class="dta-metamark" title="metamark">X</span><br/>
+</span></span>gebracht werden. Meduſen leuchten häufig<br/>
+in der Tiefe des Meeres.</p><br/>
+<p class="dta-p">Durch Tücher kann man die organiſche Subſtanz<br/>
+die das Leuchten hervor bringt, den bittern Schleim<br/>
+abſondern.</p><br/>
+<p class="dta-p">Alle dieſe Erſcheinungen hängen mit der Witte-<br/>
+rung zuſammen, das Leuchten iſt einmal weit<br/>
+ſtärker als das andere mal. Wenn es Thiere<br/>
+wären die das Leuchten hervorbringen, ſo wä-<br/>
+re es leicht zu erklären, da die Thiere auch nur<br/>
+bei gewiſsen Temperaturen leuchten; bei der andern<br/>
+Meinung ſieht man freilich nicht die Urſache ein,<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">doch</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0393 : 387|</span><br/>
+doch muß man nicht in <span title="Personenname"><a href="http://viaf.org/viaf/74204458/">Robbertſon</a></span>s Meinung,<br/>
+daß das Ganze nur ein meteorologiſches Phä-<br/>
+nomen wäre, <span class="dta-add" title="Hinzufügung (intralinear)">eingehen</span>.</p></div></div></div></div></div></div></body></html>

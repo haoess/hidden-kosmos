@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[41. Vorlesung, 24.03.1828]</span></div><br/>
+<div class=""><div class="">  <p class="dta-p">In Hinſicht <span title="dr" class="dta-abbr">der</span> Größe <span title="ds" class="dta-abbr">des</span> Flußgebiets, den<span class="dta-marginal dta-marginal-right"><span title="ds" class="dta-abbr">das</span> Flußgebiet<br/>
+</span><br/>
+<span class="aq "><span title="Rheinfl." class="dta-abbr">Rheinfluss</span></span> = 1. geſetzt, beträgt die <span class="aq ">Donau</span><br/>
+4, der <span class="aq ">Amazonen</span>ſtrom 22. Indeſſen ſind<br/>
+die größten Ströme, nicht im̃er die<br/>
+tiefſten, aus oben angeführter Urſache<span title="Schreibfehler: " class="dta-corr">.</span><br/>
+So beträgt <span title="z.B." class="dta-abbr">zum Beispiel</span> der Waſſerfall des <span class="aq ">Rhein</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0137 : 272|</span><br/>
+in 11. Jahren 28 <span class="aq ">Zoll</span>, der des <span class="aq "><span title="Amazonenfl" class="dta-abbr">Amazonenfluſſes</span></span><br/>
+80. – Die Flüſſe können als <span class="aq ">Ambrometer</span><br/>
+oder Regenmeſſer dienen. <span title="Original: Merkwurdig" class="dta-reg">Merkwürdig</span><br/>
+iſt es <span title="dß" class="dta-abbr">daß</span> <span title="dr" class="dta-abbr">der</span> <span class="aq ">Nil</span> in ſeinem Untertheile<br/>
+bei <span class="aq ">Kairo</span> zu derſelben Höhe ſteigt, wie<br/>
+<span class="aq ">Orinocco</span> bei <span class="aq ">Angustura,</span> 80 <span title="Mlen" class="dta-abbr">Meilen</span> von<br/>
+der <span title="Mündug" class="dta-abbr">Mündung</span>, die Höhe beider iſt auf 24<br/>
+<span class="aq ">Fuss</span>. Das <span class="aq ">Maximum</span> <span title="ds" class="dta-abbr">des</span> Anſchwellens<br/>
+beider iſt auch nur um 5–6 Tage <span title="verſchden" class="dta-abbr">verschieden</span><br/>
+und ſeit Jahrtausenden haben <span title="dſe" class="dta-abbr">dieſe</span> Küſtn<br/>
+<span title="dſe" class="dta-abbr">dieſe</span> Gleichmäßigkeit beibehalten. Zur<br/>
+Beſtim̃ung des Waſſerg<span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)">e</span>biets eines <span title="Fl." class="dta-abbr">Fluſſes</span><br/>
+gehört die Meſſung der Tiefe, des <span class="aq ">Arials</span><br/>
+<span title="ud" class="dta-abbr">und</span> der Geſchwindigkeit desſelben. Die Meſſun-<br/>
+gen welche <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117545201">Gino</a></span></span> bei <span class="aq ">Nil</span> <span title="Fl." class="dta-abbr">Fluss</span> ange-<br/>
+ſtellt hat können allen anderen zu<br/>
+Muster dienen.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left">Die <span title="Mündug" class="dta-abbr">Mündung</span><br/>
+</span>Die <span title="Mündug" class="dta-abbr">Mündung</span> der Flüſſe iſt entweder in<br/>
+inländiſche Seen; <span title="ud" class="dta-abbr">und</span> dañ heißen ſie<br/>
+Steppenflüſſe, oder ins Meer. Im 2<span title="te" class="dta-abbr"><span class="sup u ">ten</span></span> Falle<br/>
+ſagt man ſie gehen in die <span class="aq ">Atmosphere</span><br/>
+über. Deñ vielfache Meſſungen wie bei<br/>
+dem <span class="aq ">Orange</span> <span title="Fl." class="dta-abbr">Fluss</span> zeigten, <span title="dß" class="dta-abbr">daß</span> je mehr ſich<br/>
+der Fluß <span title="ſnr" class="dta-abbr">ſeiner</span> Mündung nähert, deſto weniger<br/>
+hat er Waſſermaſſe. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118554700">Humboldt</a></span></span> fand<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0138 : 273|</span><br/>
+daſſelbe bei dem <span title="Fl." class="dta-abbr">Fluss</span> <span class="aq ">Rio Apure</span> der die<br/>
+Länge der <span class="aq ">Donau</span> hat und um ¼ breiter<br/>
+iſt. Unter den <span class="aq ">Tropenzonen</span> werden die<br/>
+Sandküſten bis auf 52° R. erwärmt,<br/>
+<span title="ds" class="dta-abbr">das</span> Waſſer verdampft nun theils an <span title="ſnr" class="dta-abbr">ſeiner</span><br/>
+Oberfläche, theils, indem es ſich, durch Wärme<br/>
+aus<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">ge</span>dähnt, auf dem heißen Sande ver-<br/>
+breitet, wird es von demſelben wie von<br/>
+einem Schwam̃ eingesogen.</p><br/>
+<p class="dta-p">Weñ Flüſſe ſich in <span title="ds" class="dta-abbr">das</span> Meer einmünden<span class="dta-marginal dta-marginal-right"><span class="aq ">Oscillation</span> <span title="dr" class="dta-abbr">der</span> Flüſſe<br/>
+</span><br/>
+ſo bilden ſie, vermöge der speziviſchen<br/>
+Leichtigkeit des ſüßen Waſſers, das<br/>
+ſich über dem ſalzigen einhäuft, einen<br/>
+ſüßen Busen, der an Tiefe abnehmend<br/>
+oft weit in das Meer hineingreift.<br/>
+Dieſes zeigten die Beobachtungen in<br/>
+Schottland, wo man, ſie aus <span title="klnerer" class="dta-abbr">kleinerer</span> oder<br/>
+größerer Tiefe <span title="ds" class="dta-abbr">des</span> Waſſers ſchöpfend,<br/>
+ſüßes oder ſalziges Waſſer ſchöpfte<br/>
+<span title="Dſer" class="dta-abbr">Dieſer</span> <span class="aq ">continuirte</span> Fluß im Meere, hebt<br/>
+<span class="aq ">periodiſch</span> ſeine Waſſermaſſen, welche<br/>
+ſich tief landeinwärts, den Fluß anſchwellend<br/>
+ergießen, weñ das untere Salzwaſſer<br/>
+durch <span class="dta-del" title="Streichung (#s)">Ebbe</span><span class="dta-add" title="Hinzufügung (superlinear)">Fluth</span> gehoben wird, und der Fluß<br/>
+sinkt wieder, weñ die Ebbe <span title="Schreibfehler: eintrit" class="dta-corr">eintritt</span></p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0139 : 274|</span><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left">Meere<br/>
+Ebbe <span title="ud" class="dta-abbr">und</span> Fluth<br/>
+</span>iſt die Folge der <span class="aq ">Attraction</span> der Sonne<br/>
+und des Mondes. In früheren Zeiten wo<br/>
+der Handel aller Völker nur auf <span title="ds" class="dta-abbr">das</span><br/>
+enge Mittel <span title="M." class="dta-abbr">Meer</span> beſchränkt war, koñten<br/>
+nur die <span class="aq ">Phoenicier</span>, die die Säulen <span title="ds" class="dta-abbr">des</span> <span class="aq ">Hercules</span><br/>
+überſtiegen, <span title="dſes" class="dta-abbr">dieſes</span> Fenomen <span title="dr" class="dta-abbr">der</span> <span class="aq ">Attraction</span><br/>
+in <span title="ſnr" class="dta-abbr">ſeiner</span> ganzen Größe wahrnehmen.<br/>
+Das Heer <span title="Personenname"><a href="http://d-nb.info/gnd/118501828"><span class="aq ">Alexanders</span> <span title="ds" class="dta-abbr">des</span> <span title="Grßn" class="dta-abbr">Großen</span></a></span> wurde mit<br/>
+Wunder benom̃en, als es die Fluth am<br/>
+<span class="aq ">Indus</span> Meere geſehen hat. Später iſt<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118793764">Pythias</a></span></span> nach <span class="aq ">Marſilien</span> gegangen, um<br/>
+das <span class="aq ">Fenomen</span>, bei <span title="verſchdenen" class="dta-abbr">verschiedenen</span> Mondesſtänden<br/>
+zu beobachten. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118594893">Plato</a></span></span> der durch Feuer <span title="ud" class="dta-abbr">und</span><br/>
+Waſſer erklärt hat, hat auch <span title="dr" class="dta-abbr">der</span> Fluth durch<br/>
+<span title="ds" class="dta-abbr">das</span> Emporſteigen des unterirdiſchen Feuers<br/>
+zu deuten geſucht. Indeſſen berichten<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118650130">Aristoteles</a></span></span> <span title="ud" class="dta-abbr">und</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118595091">Plinius</a></span></span>, die Sache richtiger,<br/>
+der letzte ſagt ausdrücklich <span class="aq ">causam eshe<br/>
+in sole lunaque</span>. Im <span title="J." class="dta-abbr">Jahr</span> 1687 hat man dieſes<br/>
+<span class="aq ">Fenomenen</span> auf die Theorie <span title="dr" class="dta-abbr">der</span> <span class="aq ">Gravitation</span><br/>
+zurückgebracht und durch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">La Place</a></span></span> erlangte<br/>
+die neuere <span class="aq ">Analyze</span> ihren Triumph indem<br/>
+ſie völlig <span title="dſe Erſchug" class="dta-abbr">dieſe Erſcheinung</span> gelöſt hat.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0140 : 275|</span><br/>
+<p class="dta-p"><span class="aq ">Cf</span>. die 13<span class="sup ">te</span> <span title="Lieferug ſnr" class="dta-abbr">Lieferung ſeiner</span> <span class="aq ">Mechanique<br/>
+celeste</span>. Im <span title="J." class="dta-abbr">Jahr</span> 1692 wurden in <span class="aq ">Brest</span><br/>
+wo die Fluth bis 44 <span class="aq ">Fuss</span> ſteigt, an 6000<br/>
+Beobachtungen angeſtellt, um die erſten<br/>
+C<span class="gap">[unleserliches Material – Zeichen fehlt]</span> der Reiſe zu beſtim̃en. Es ergab<br/>
+ſich <span title="dß" class="dta-abbr">daß</span> die Erde von der Soñe 13 <span class="aq ">Milionen</span><br/>
+mal ſtärker angezogen wird, als von<br/>
+dem Monde dadurch werden die flüſſi-<br/>
+gen Theile ſtärker angezogen als<br/>
+die ſtarren, dieſe <span title="Anſchwellug" class="dta-abbr">Anſchwellung</span> erfolgt<br/>
+2 mal (an 50 <span class="aq ">Minuten</span> ſpäter), zwiſchen<br/>
+jeder <span class="aq ">Culmination</span> <span title="ds" class="dta-abbr">des</span> Mondes, <span title="d.h." class="dta-abbr">das heißt</span> bei<br/>
+jedem Mond-Tag, oder bei jedem Eintritt<br/>
+<span title="ds" class="dta-abbr">des</span> Mondes in den <span class="aq ">Meridian</span> <span title="ds" class="dta-abbr">des</span> Ortes.<br/>
+Es iſt natürlich <span title="dß" class="dta-abbr">daß</span> die Fluth zu gleicher<br/>
+Zeit an 2 <span class="aq ">antipodiſchen</span> <span title="P." class="dta-abbr">Punkten</span> <span title="dr" class="dta-abbr">der</span> Erde ge-<br/>
+ſchehen muß, deñ während von dieſer<br/>
+Seite <span title="ds" class="dta-abbr">das</span> <span class="aq ">Centrum</span> <span title="dr" class="dta-abbr">der</span> Erde mehr ange-<br/>
+zogen wird, ſo wird die <span class="aq ">Attraction</span> des<br/>
+<span class="aq ">Centri</span> auf der entgegengeſetzten <span title="Ste" class="dta-abbr">Seite</span><br/>
+vermindert, und die <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">Kraft der </span>Flüſſigkeit ſich<br/>
+von dem <span class="aq ">Centro</span> loszureißen, wird stär-<br/>
+ker. Die Fluth iſt <span title="entw:" class="dta-abbr">entweder</span> eine ruhig<br/>
+anſchwellende, oder eine Springfluth<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0141 : 276|</span><br/>
+wie ſie <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118518275">Caesar</a></span></span> an den <span class="aq ">galli</span>ſchen Küſten<br/>
+beſchreibt. Sie iſt ſtärker oder geringen<br/>
+je nachdem der Mond ſelbſt oder mit der<br/>
+Soñe zugleich einwirkt, im erſten<br/>
+Falle iſt die <span title="Anſchwellug" class="dta-abbr">Anſchwellung</span> <span title="ds" class="dta-abbr">des</span> <span class="aq ">Elipſoids</span> gen<br/>
+Mond gerichtet, im 2<span class="sup ">ten</span> liegt ſie zwiſchen<br/>
+dem Monde <span title="ud" class="dta-abbr">und</span> <span title="dr" class="dta-abbr">der</span> Soñe, der letzten etwas<br/>
+näher. Die Theorie zeigte, <span title="dß" class="dta-abbr">daß</span> wie man<br/>
+auf einer Seite, aus den <span title="verſchdnen" class="dta-abbr">verschiedenen</span><br/>
+Einflüſſen die Ebbe <span title="ud" class="dta-abbr">und</span> Fluth beſtim̃t<br/>
+hat, man aus dieſer die Maſſe des<br/>
+Mondes, <span title="ud" class="dta-abbr">und</span> <span title="ds" class="dta-abbr">das</span> Wanken der Erdaxe<br/>
+finden kañ. Bei <span class="aq ">Brest</span> iſt die Fluth<br/>
+in der Mondesnähe um 5 <span class="aq ">Fuss</span> höher als<br/>
+in der Mondesweite. Einen großen<br/>
+Einfluß hat auch die Winter <span title="ud" class="dta-abbr">und</span> die<br/>
+Som̃erzeit, wo die Soñe mal der<br/>
+Erde <span title="Original: amnächſten" class="dta-reg">am nächsten</span>, mal <span title="Original: amweiteſten" class="dta-reg">am weiteſten</span><br/>
+von ihr entfernt ſich befindet. – Alle<br/>
+dieſe <span class="aq ">Fenomene</span> finden jedoch nur bei<br/>
+großen Meeren ſtatt. Bei geringen<br/>
+<span class="aq ">Arial</span> <span title="ds" class="dta-abbr">des</span> Meeres, und beſonders bei <span class="dta-del" title="Streichung (#ow)">i</span><span class="dta-add" title="Hinzufügung (across)">a</span>n<br/>
+geſchlossenen Meeren, iſt die <span title="Anziehug" class="dta-abbr">Anziehung</span><br/>
+der <span class="aq ">Planeten</span> geringer, und die Waſſer-<br/>
+maſſen können nicht ſchnell nachkom̃en.<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Auch</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0142 : 277|</span><br/>
+Auch iſt viel daran gelegen ob, <span class="dta-del" title="Streichung (#s)">es </span><span title="ds" class="dta-abbr">das</span><br/>
+Meer ſich in die Länge oder in Breite<br/>
+ausstreckt. Ist die <span title="Richtug" class="dta-abbr">Richtung</span> <span title="ds" class="dta-abbr">des</span> <span title="M." class="dta-abbr">Meeres</span> von Oſten<br/>
+nach Weſten dañ verhält ſich die Fluth<br/>
+eines ſolchen <span title="M." class="dta-abbr">Meeres</span> zur Fluth <span title="ds" class="dta-abbr">des</span> Oceanes,<br/>
+wie die Länge des Durchmeſſers des Meeres<br/>
+zu dem ½ Meſſer <span title="dr" class="dta-abbr">der</span> Erde. Das <span class="aq ">Caspia</span> <span title="M." class="dta-abbr">Meer</span><br/>
+hat <span title="kne" class="dta-abbr">keine</span> Ebbe <span title="ud" class="dta-abbr">und</span> Fluth. Die <span class="aq ">Oscillationen</span> dort<br/>
+ſind nur Folge der <span class="aq ">periodi</span>ſchen Winde,<br/>
+<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (intralinear)">und des ſich änderten Barometerſtandes</span><br/>
+deñ es iſt klein, eingeſchlossen, und er-<br/>
+streckt ſich von <span class="aq ">Norden</span> nach Süden. Im<br/>
+Mittelmeere iſt die Fluth nur bei <span class="aq ">Malta</span><br/>
+bemerkbar, weil dort das Meer die<br/>
+<span title="grßte" class="dta-abbr">größte</span> <span title="Entwicklug" class="dta-abbr">Entwicklung</span> hat. Die Größe der<br/>
+Oberfläche des Meeres, und <span title="ſne" class="dta-abbr">ſeine</span> Tiefe<br/>
+beſtim̃en die Größe <span title="dr" class="dta-abbr">der</span> <span title="Erſchug" class="dta-abbr">Erſcheinung</span>. Bei allen<br/>
+Biñen Meeren kom̃t nicht allein ihre<br/>
+Richtung in Betracht, ſondern auch ihre<br/>
+Oeffnung, ob dieſe im Oſten oder Weſten<br/>
+ſich findet. Deñ die <span title="Bewegug" class="dta-abbr">Bewegung</span> <span title="dr" class="dta-abbr">der</span> Fluth,<br/>
+nach der ſcheinbaren <span title="Bewegug" class="dta-abbr">Bewegung</span> <span title="ds" class="dta-abbr">des</span> Mondes,<br/>
+iſt von Oſten nach Weſten. So muß bei<br/>
+dem <span title="mittl. M." class="dta-abbr">Mittelmeer</span> die Fluth ſehr klein ſein,<br/>
+weil die <span class="aq ">Gibraltar</span><span title="öffug" class="dta-abbr">öffnung</span> nur eine <span class="aq ">paſsive</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0143 : 278|</span><br/>
+iſt, indem der ganze Ocean die Westküſten<br/>
+<span class="dta-del" title="Streichung (#s)">ud</span> <span class="aq ">Europa</span>'s <span title="ud" class="dta-abbr">und</span> <span class="aq ">Africa</span>'s <span class="gap">[unleserliches Material – 3 Zeichen fehlen]</span> der Fluth, flieht.<br/>
+Nach der Theorie findet vom 65° <span title="ſüdl" class="dta-abbr">ſüdlicher</span> <span title="ud" class="dta-abbr">und</span><br/>
+<span title="nördl" class="dta-abbr">nördlicher</span> <span title="Brte" class="dta-abbr">Breite</span> an, keine Fluth mehr ſtatt.<br/>
+Weñ nun in <span title="dr" class="dta-abbr">der</span> <span class="aq ">Baffinsbay</span> <span title="ud" class="dta-abbr">und</span> der <span class="aq ">Barro</span><span title="strße" class="dta-abbr">straße</span><br/>
+die Fluth nach bis zu 15 <span class="aq ">Fuss</span> ſteigt, ſo iſt es<br/>
+lediglich die Folge, <span title="dß" class="dta-abbr">daß</span> die <span title="Oeffug" class="dta-abbr">Oeffnung</span> im Oſten<br/>
+liegt, und durch die anſchwellende Maſſe<br/>
+<span title="ds" class="dta-abbr">des</span> <span class="aq ">Atlanta</span>oceans <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">die bay </span>gehoben wird. Im<br/>
+<span class="aq ">Antillen</span> <span title="M." class="dta-abbr">Meer</span> hebt die Fluth <span title="ds" class="dta-abbr">das</span> Meer 8–10<br/>
+Zoll, die größte Fluth hebt <span title="ds" class="dta-abbr">das</span> <span title="Wſſr" class="dta-abbr">Waſſer</span> 46–55<br/>
+<span class="aq ">Fuss</span>, wie bei <span class="aq ">St. Malo</span>, <span title="nordöstl" class="dta-abbr">nordöstlich</span> von <span class="aq ">Bretagne</span>,<br/>
+bei der <span title="Mündug" class="dta-abbr">Mündung</span> <span title="dr" class="dta-abbr">der</span> <span class="aq ">Saverne</span> etc. Das<br/>
+was man <span class="aq ">Maskaren</span>'s neñt, iſt eine<br/>
+Waſſermaſſe die man häuſerhoch an-<br/>
+geſchwollen, ſich der Küſte annähern<br/>
+ſieht, wie bei <span title="dr" class="dta-abbr">der</span> <span title="Mündug" class="dta-abbr">Mündung</span> <span title="dr" class="dta-abbr">der</span> <span class="aq ">Garonne</span><br/>
+<span title="ud" class="dta-abbr">und</span> des <span class="aq ">Amazonen</span> <span title="Fl." class="dta-abbr">Fluſſes</span></p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left">Höhe <span title="dr" class="dta-abbr">der</span> Wellen.<br/>
+</span>Durch das Anſchlagen der Wellen w<span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)">i</span>rd<span class="dta-del" title="Streichung (#s)">en</span><br/>
+<span title="ds" class="dta-abbr">das</span> Waſſer zu einer bedeu<span class="dta-del" title="Streichung (#ow)"><span class="dta-del" title="Streichung (#ow)">d</span><span class="dta-add" title="Hinzufügung (across)">ſ</span></span><span class="dta-add" title="Hinzufügung (across)">t</span>en<span class="dta-del" title="Streichung (#ow)"><span class="dta-del" title="Streichung (#ow)">d</span><span class="dta-add" title="Hinzufügung (across)">ſ</span></span><span class="dta-add" title="Hinzufügung (across)">d</span>en Höhe<br/>
+geſchleudert. In <span class="aq ">Tinnmark</span> unter 70° <span title="n. B." class="dta-abbr">nördliche Breite</span><br/>
+wird das ganze Land von 500 <span class="aq ">Fuss abſoluter</span><br/>
+Höhe, durch die aufſteigenden <span title="ud" class="dta-abbr">und</span> über-<br/>
+ſchlagenden<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0144 : 279|</span><br/>
+Wellen überſchwem̃t. Die bisherigen<br/>
+Meſſungen <span title="dr" class="dta-abbr">der</span> Wellen, geſchahen durch<br/>
+<span title="Schreibfehler: Schätzen" class="dta-corr">schätzen</span>, und <span class="dta-del" title="Streichung (#ow)">war</span><span class="dta-add" title="Hinzufügung (across)">die</span> Angaben waren<br/>
+meist übertrieben. Sie ſind verſchieden<br/>
+bei den Tiefen <span title="ud" class="dta-abbr">und</span> Untiefen <span title="ds" class="dta-abbr">des</span> Meeres<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118554700">Humboldt</a></span>s</span> Methode zur wirklichen <span title="Meſſug" class="dta-abbr">Meſſung</span><br/>
+<span title="dr" class="dta-abbr">der</span> Wellen iſt die durch <span class="u "><span class="aq ">Depresſion</span> <span title="ds" class="dta-abbr">des</span><br/>
+<span class="aq ">Horizontes</span></span> die er in der Südsee, wo<br/>
+ſich die tiefſten Wellen <span title="dr" class="dta-abbr">der</span> Welt, nach<br/>
+Angaben der Schiffe, befinden ange-<br/>
+ſtellt hat. Die <span title="Schreibfehler: ungeheuren" class="dta-corr">ungeheure</span> Ausbrei-<br/>
+tung <span title="ds" class="dta-abbr">des</span> Oceans in <span title="dſr" class="dta-abbr">dieſer</span> Gegend macht, <span title="dß" class="dta-abbr">daß</span><br/>
+weñ man auf dem Verdecke <span title="ds" class="dta-abbr">des</span> Schiffes<br/>
+die Soñe nicht mehr ſieht, man ſie noch<br/>
+auf dem Gipfel <span title="ds" class="dta-abbr">des</span> Mastbaumes er-<br/>
+blickt. <span title="Schreibfehler: alſo" class="dta-corr">Also</span> umgekehrt gibt die <span class="aq ">Differenz</span><br/>
+jeder zwei Höhen <span title="dr" class="dta-abbr">der</span> Soñe aus zwei ver-<br/>
+ſchiedenen Höhe<span class="aq ">punkten</span>, die <span title="Entfernug" class="dta-abbr">Entfernung</span><br/>
+<span title="dſr" class="dta-abbr">dieſer</span> Höhe<span class="aq "><span title="Schreibfehler: punkten" class="dta-corr">punkte</span></span>. Während <span title="ds" class="dta-abbr">des</span> Sturmes<br/>
+alſo mißt man mit einem Spiegel<br/>
+<span class="aq ">sextanten</span> <span title="dr" class="dta-abbr">der</span> Höhe <span title="dr" class="dta-abbr">der</span> Soñe ein mal während<br/>
+ſich <span title="ds" class="dta-abbr">das</span> Schiff in <span title="dr" class="dta-abbr">der</span> größten Tiefe befindet,<br/>
+andermal, weñ es auf den Gipfel der<br/>
+Welle getrieben wird. Die Höhe <span title="ds" class="dta-abbr">des</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0145 : 280|</span><br/>
+Schiffes hebt ſich nun in beyden <span title="Original: Fallen" class="dta-reg">Fällen</span><br/>
+auf, und der Unterſchied <span title="dr" class="dta-abbr">der</span> Höhe <span title="dr" class="dta-abbr">der</span> Soñe<br/>
+giebt die Höhe <span title="dr" class="dta-abbr">der</span> Welle an. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118554700">Humboldt</a></span></span><br/>
+fand nach <span title="dſr" class="dta-abbr">dieſer</span> <span class="aq ">Methode</span> <span title="dß" class="dta-abbr">daß</span> die höchſten<br/>
+Wellen 42–44 <span class="aq ">Fuss</span> Höhe betragen,<br/>
+das iſt auch <span title="ds" class="dta-abbr">das</span> gewöhnliche Urtheil der<br/>
+Seefahrer. – Die Höhe der Welle<br/>
+<span class="dta-marginal dta-marginal-left"><span class="ph dta-figure" type="1">
+        [Abbildung]
+        </span><br/>
+</span>auf offener See, hängt von <span class="aq ">Impulſion</span><br/>
+des Waſſers ab und von der <span class="aq ">Indifferenz</span><br/>
+der Wellen ſelbſt. Deñ die Welle erreicht<br/>
+dañ, die größte Hohe weñ die <span class="aq ">Convexitaet</span><br/>
+der einen, mit der <span class="aq ">Concavitaet</span> <span title="dr" class="dta-abbr">der</span> andern<br/>
+gleich iſt; iſt die eine <span title="grßr" class="dta-abbr">größer</span> als die an-<br/>
+dere, ſo findet eine <span title="Unterdrückug" class="dta-abbr">Unterdrückung</span> <span title="dr" class="dta-abbr">der</span><br/>
+Höhe ſtatt. Das letzte <span title="franz." class="dta-abbr">französiſche</span> Werk da-<br/>
+rüber iſt von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/142999881">Bremontier</a></span></span>, der die Tiefe<br/>
+<span title="dr" class="dta-abbr">der</span> Wellen auf 60 <span class="aq ">Fuss</span> beſtim̃t. Die Tiefe<br/>
+des Meeres hat einen weſentlichen Einfluß<br/>
+auf die Wellen, bei jeder Sandbank,<br/>
+<span title="ud" class="dta-abbr">und</span> Untiefe ſtanden die Wellen zu<br/>
+einer ungemeinen Höhe auf wie bei<br/>
+<span title="dr" class="dta-abbr">der</span> Bank auf <span class="aq ">Neufundland</span> die 200 <span class="aq ">Fuss</span><br/>
+Tiefe hat; die <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">Nadel</span>bank <span title="v" class="dta-abbr">von</span> Süd <span class="aq ">Africa</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0146 : 281|</span><br/>
+von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118788353">Rennell</a></span></span> auf 480 <span title="F." class="dta-abbr">Fuss</span> <span title="Tfe" class="dta-abbr">Tiefe</span> beſtim̃t,<br/>
+verändert ſogar die <span title="Richtug" class="dta-abbr">Richtung</span> <span title="dr" class="dta-abbr">der</span> Strö-<br/>
+mungen. – Die beſten Werke darüber<br/>
+ſind von den 2 Brüdern <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118765817">Ernst</a></span></span> <span title="ud" class="dta-abbr">und</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11862976X">Wilhelm<br/>
+Weber</a></span></span> aus <span class="aq ">Leipzig</span>, über die Wellen<br/>
+nach <span class="aq "><span title="physikal" class="dta-abbr">physikaliſchen</span></span> <span title="ud" class="dta-abbr">und</span> <span class="aq "><span title="Mathm:" class="dta-abbr">mathematiſchen</span></span> Lehren. Ein<br/>
+gründlicheres Werk hat <span title="kne" class="dta-abbr">keine</span> <span class="aq ">Nation</span><br/>
+aufzuweisen. Sie fingen ihre <span class="aq ">Experi-<br/>
+mente</span> im kleinen, bei Quecksilber, <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="reinigug" class="dta-abbr">reinigung</span> </span>an<br/>
+<span title="ud" class="dta-abbr">und</span> erweiterten ſie am <span title="Mittel: M." class="dta-abbr">Mittelmeer</span><br/>
+Sie brachten auch die Dichtigkeit der<br/>
+Flüſſigkeit in Anſchlag.</p><br/>
+<p class="dta-p">Das Meer beträgt an <span title="Ausdähnug" class="dta-abbr">Ausdähnung</span> ⅔ der Ober-<span class="dta-marginal dta-marginal-right">Die Maſſe <span title="dr" class="dta-abbr">der</span> Meere<br/>
+</span><br/>
+fläche der Erde, es iſt nie tiefer mit Ge-<br/>
+wißheit ſondirt worden als über 7000 <span class="aq ">Fuss</span><span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Es iſt eine merkwürdige Stelle bei <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118595237">Plutarch</a></span></span><br/>
+im Leben <span title="ds" class="dta-abbr">des</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11864713X">Aemilius Paulus</a></span>,</span> wo es heißt, <span title="dß" class="dta-abbr">daß</span><br/>
+die größte Tiefe der Meere gleich ſei der<br/>
+größten <span title="Erhebug" class="dta-abbr">Erhebung</span> <span title="dr" class="dta-abbr">der</span> Berge, und da man den<br/>
+<span class="aq ">Olympus</span> für den höchſten Berg <span title="dr" class="dta-abbr">der</span> Erde hielt,<br/>
+ſo beſtim̃te man die <span title="grßte" class="dta-abbr">größte</span> Tiefe <span title="dr" class="dta-abbr">der</span><br/>
+Meere auf 10 <span class="aq ">Stadien</span> = 7000 <span class="aq ">Fuss</span>.</p><br/>
+<p class="dta-p">Ueber die Dichtigkeit <span title="ud" class="dta-abbr">und</span> die Beſtandtheile<span class="dta-marginal dta-marginal-right">Dichtigkeit <span title="ud" class="dta-abbr">und</span> Beſtandthle<br/>
+<span title="ds" class="dta-abbr">des</span> Waſſers.<br/>
+</span><br/>
+der Meere ſind wir noch ſehr im dunkeln<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0147 : 282|</span><br/>
+Man hat gewöhnlich geglaubt, <span title="dß" class="dta-abbr">daß</span> unter dem<br/>
+<span class="aq ">Equator</span> die größte Dichtigkeit iſt <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118554700">Humboldt</a></span></span><br/>
+hat aber nachgewiesen <span title="dß" class="dta-abbr">daß</span> es um die Erde<br/>
+gewiſſe <span class="aq ">Zonen</span> giebt, wo die Dichtigkeit <span title="ds" class="dta-abbr">des</span><br/>
+<span title="Wſſrs" class="dta-abbr">Waſſers</span> die <span title="grßte" class="dta-abbr">größte</span> iſt, und die alle eine <span class="aq ">Curve</span><br/>
+bilden. Indeſſen bewährt ſich auch <span title="dſes" class="dta-abbr">dieſes</span>  völlig. Die <span title="Beſtandthle" class="dta-abbr">Bestandtheile</span> betragen 3½ <span class="aq ">procent</span><br/>
+der Dichtigkeit <span title="ds" class="dta-abbr">des</span> Waſſers, wie die Verſuche<br/>
+von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118716581">Guelisac</a></span></span> im <span class="aq ">Jordan</span> <span title="ud" class="dta-abbr">und</span> bei <span class="aq ">Ceylon</span> gezeigt<br/>
+haben. Die Unterſchiede der Länge haben<br/>
+größeren Einfluß auf die Dichtigkeit,<br/>
+als die Unterſchiede <span title="dr" class="dta-abbr">der</span> Breite. <span title="Dß" class="dta-abbr">Daß</span> in großen<br/>
+Tiefen das Waſſer ſalziger ſein ſollte<br/>
+iſt nicht im̃er der Fall. Als chemiſche beſtand-<br/>
+theile <span title="ds" class="dta-abbr">des</span> Waſſers gelten 1) ſalzsaueres<br/>
+<span class="aq ">Natron</span> 2,6 <span title="Thle" class="dta-abbr">Theile</span> 2) dickende 3) Schwefelsauers<br/>
+<span class="aq ">Natron</span> 4) Kalkſalzsäure. Die neueren<br/>
+Stoffe, die man im Meerwaſſer gefunden<br/>
+hat iſt 1) der Stoff <span class="aq ">Jode</span> der ſich auch in vielen<br/>
+Pflanzen befindet, und, von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117561061">Bellard</a></span></span>, auch<br/>
+im Mittel <span title="M." class="dta-abbr">Meer</span> gefunden wurde, 2) ſalzsaueres<br/>
+<span class="aq ">Cali</span> nur als <span class="sup ">1</span>/<span class="sub ">2000</span>, 3) <span title="Original: Kohlensäuere" class="dta-reg">Kohlensauere</span> Kalkerde<br/>
+die ſich frei vorfindet und wahrſcheinlich den<br/>
+Stoff aller <span class="aq ">Conchylien</span>ſchaalen ausmacht.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0148 : 283|</span><br/>
+<p class="dta-p">Die Menge des Kochſalzes zu den übrigen<br/>
+<span title="Beſtandthlen" class="dta-abbr">Bestandtheilen</span> iſt wie 2,6 : 1.</p><br/>
+<p class="dta-p">Die <span title="Reinigug" class="dta-abbr">Reinigung</span> des Seewaſſers <span title="Original: vonden" class="dta-reg">von den</span> <span title="Schreibfehler: be-" class="dta-corr">Be-</span><span class="dta-marginal dta-marginal-right"><span title="Reinigug" class="dta-abbr">Reinigung</span> <span title="ds" class="dta-abbr">des</span> <span title="Seewaſſes" class="dta-abbr">Seewaſſers</span><br/>
+</span><br/>
+ſtandtheilen macht entweder die <span title="Ntr" class="dta-abbr">Natur</span> oder die<br/>
+Kunst. In den Sandbänken findet man<br/>
+überall ſüße Quellen, die weit von dem<br/>
+Gebürge entfernt ſind, <span title="ud" class="dta-abbr">und</span> alſo nicht durch<br/>
+den <span class="aq ">hydroſteti</span>ſchen Druck entſtehen köñen,<br/>
+wie bei der Inſel <span class="aq ">Cuba</span>. Die dortigen See-<br/>
+kühe haben dieſe ſüßen Quellen aufge-<br/>
+funden <span title="wahrſchnlich" class="dta-abbr">wahrſcheinlich</span> durch Geruch ſie getrieben<span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Die <span title="Schreibfehler: Künstliche" class="dta-corr">künstliche</span> <span title="Reinigug" class="dta-abbr">Reinigung</span> <span title="ds" class="dta-abbr">des</span> Seewaſſers, iſt<br/>
+durch <span class="aq ">Diſtillation. <span title="Personenname"><a href="http://d-nb.info/gnd/124760295">Freſiné</a></span></span> auf <span title="ſnr" class="dta-abbr">ſeiner</span> Weltreise<br/>
+hat es durch <span class="aq ">Füll</span>triren gereiniget, <span title="ud" class="dta-abbr">und</span> zwar<br/>
+durch einen 15 <span class="aq ">Fuss</span> hohen <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">trockenen </span>Sand, indeſſen iſt <span title="dſe" class="dta-abbr">dieſe</span><br/>
+<span title="Reinigug" class="dta-abbr">Reinigung</span> unvollkom̃en. Bei den Alten war<br/>
+ſchon das <span class="aq ">Füll</span>triren üblich, man hat das<br/>
+Waſſer durch Wachskugeln gehen<br/>
+laſſen. Der ſüße Tau, als niedergeſchlagene<br/>
+Meerdämpfe hat ſie darauf geführt, ſie<br/>
+haben <span title="ds" class="dta-abbr">das</span> Meerwaſſer verdampfen laſſen,<br/>
+die Dämpfe am kalten Schwam̃ aufge-<br/>
+fangen, <span title="ud" class="dta-abbr">und</span> bekamen ſüßes Waſſer.<br/>
+Die Uebelkeit welche <span title="ds" class="dta-abbr">das</span> Meerwaſſer<br/>
+verursacht, hängt von einem bitteren Schleim<br/>
+ab, der in den Meeren verbreitet iſt<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0149 : 284|</span><br/>
+und einen nahrhaften Stoff für die Fiſche<br/>
+bildet.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left">Das Leuchten <span title="ds" class="dta-abbr">des</span> <span title="Wſſrs" class="dta-abbr">Waſſers</span><br/>
+</span>In manchen Gegenden <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">unter den <span class="aq ">Tropen</span> </span><span title="ud" class="dta-abbr">und</span> bei gewiſſen<br/>
+Jahreszeiten leuchtet <span title="dr" class="dta-abbr">der</span> See wie ein<br/>
+Feuerspiegel. Die Waſſerfurchen, welche<br/>
+die <span class="aq ">Delphinen</span> nach ſich ziehen ſcheinen fast<br/>
+Flam̃en heraus zu sprudeln. Die Urſache<br/>
+davon liegt in einzelnen ſehr kleinen<br/>
+Thierchen mit <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">feiner </span>glänzender Haut, welche ſich<br/>
+in manchen Gegenden anhäufen, oder<br/>
+es ſind leuchtende <span class="aq ">Zoofilen</span>, wie <span class="aq ">Beroe</span> <span title="ud" class="dta-abbr">und</span><br/>
+<span class="aq ">Meduſe</span> <span title="ud" class="dta-abbr">und</span> andere Strahlthiere. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118529250">Ehrenberg</a></span></span><br/>
+fand im rothen Meere <span title="Schreibfehler: fand" class="dta-corr">[…]</span> glänzende<br/>
+<span class="aq ">organiſche</span> Theile im Meere ſchwim̃en, bei<br/>
+denen er durch die größten <span class="aq ">Microscope</span> kein<br/>
+Leben bemerken koñte. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118554700">Humbold</a></span></span> fand<br/>
+es auch, <span title="dß" class="dta-abbr">daß</span> während er aus dem <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">Meer </span>Bade<br/>
+herausging, er an <span title="ſnem" class="dta-abbr">ſeinem</span> Körper, hier <span title="ud" class="dta-abbr">und</span><br/>
+da leuchtende Stellen bemerkte. <span title="Schreibfehler: er" class="dta-corr">Er</span><br/>
+<span title="sm̃lte" class="dta-abbr">sam̃elte</span> die <span class="aq "><span title="organ:" class="dta-abbr">organiſchen</span></span> <span title="Thle" class="dta-abbr">Theile</span>, aber fand kein Leben<br/>
+darin. <span class="aq ">Infuſions</span>thiere, die leuchten giebt<br/>
+es nicht. Das Leuchten wird durch <span title="Er-&#xA;ſchütterug" class="dta-abbr">Erschütterung</span>, vermehrt, auch erregt. <span title="z.B." class="dta-abbr">Zum Beispiel</span><br/>
+todte <span class="aq ">Meduſen</span> leuchten leicht legt man<br/>
+ſie aber auf einen Zinnenen Teller, und<br/>
+erſchüttert den ſelben durch einen Schlak<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">ſo,</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0150 : 285|</span><br/>
+ſo erblitzen die <span class="aq ">Meduſen</span>. Daſſelbe geſchieht<br/>
+weñ man ſie <span class="aq ">galwaniſirt</span>. Der Lichtprocess<br/>
+hängt endlich mit der <span title="Witterug" class="dta-abbr">Witterung</span> zuſam̃en<br/>
+dies würde ſchwer zu erklären ſein, weñ<br/>
+<span title="ds" class="dta-abbr">das</span> Leuchten von etwas unorganiſchem ab-<br/>
+hänge. Sind es Thiere, nun ſo hat die <span title="Witte-&#xA;rug" class="dta-abbr">Witterung</span> auf ſie Einfluß, und je lieber ſie<br/>
+an die Oberfläche kom̃en, deſto ſtärker<br/>
+iſt <span title="ds" class="dta-abbr">das</span> Leuchten <span title="dr" class="dta-abbr">der</span> Meere.</p></div></div></div></body></html>

@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[34. Vorlesung, 01.03.1828]</span></div><br/>
+<div class=""><div class=""><p class="dta-p">Alle <span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: Erſcheinungen" class="dta-reg">Erscheinungen</span> <span title="Original: ſtehen" class="dta-reg">stehen</span> in <span title="Original: gewiſſem" class="dta-reg">gewissem</span><br/>
+<span title="Original: Zuſam̃enhange" class="dta-reg">Zusammenhange</span>. Man <span title="Original: ſpürt" class="dta-reg">spürt</span> beim Ausbruche<br/>
+heißer Quellen eine <span title="klne" class="dta-abbr">kleine</span> <span title="Original: Erſchütterung" class="dta-reg">Erschütterung</span><br/>
+die einem Erdbeben gleich <span title="Original: iſt" class="dta-reg">ist</span>. Bei den Gasquellen<br/>
+<span title="Original: komt" class="dta-reg">kommt</span> Feuer zum <span title="Original: Vorſchein" class="dta-reg">Vorschein</span> eben <span title="Original: ſo" class="dta-reg">so</span> bei den<br/>
+<span title="Original: Schlamm" class="dta-reg">Schlammvulkanen</span><span class="aq "><span title="Original: vulcanen" class="dta-reg"/></span>. <span title="Original: Ueberall" class="dta-reg">Überall</span> <span title="Original: ſieht" class="dta-reg">sieht</span> man <span title="dß" class="dta-abbr">daß</span> die<br/>
+<span title="Original: iñern" class="dta-reg">inneren</span> Kräfte <span title="Original: ſchaffen" class="dta-reg">schaffen</span>, und zwar in <span title="dm" class="dta-abbr">dem</span> <span title="Original: ſie" class="dta-reg">sie</span><br/>
+die Verbindung auflösen, und <span title="Original: ſie" class="dta-reg">sie</span> bewegen<br/>
+die Auflösung. Bei dem <span class="aq ">Vulcane <span title="Original: Travestine" class="dta-reg">Travestien</span></span><br/>
+unweit Rom <span title="Original: ſieht" class="dta-reg">sieht</span> man überall <span title="Original: Waſſer" class="dta-reg">Wasserformationen</span><span class="aq "><span title="Original: forma-&#xA;tionen" class="dta-reg"/></span>, <span title="Original: Lettenmaſſen" class="dta-reg">Lettenmassen</span>, welche mehrere <span title="Original: Qua-&#xA;dratmeilen" class="dta-reg">Quadratmeilen</span> die Oberfläche bedecken.</p><br/>
+<p class="dta-p">Bei den eigentlichen <span class="aq "><span title="Original: Vulcanen" class="dta-reg">Vulkanen</span></span> werden wir 1)<br/>
+ihre <span title="Schreibfehler: Enſtehung" class="dta-corr"><span title="Original: Entſtehung" class="dta-reg">Entstehung</span></span> betrachten, wie <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: theils" class="dta-reg">teils</span> aus<br/>
+dem <span title="Original: Waſſer" class="dta-reg">Wasser</span>, <span title="Original: theils" class="dta-reg">teils</span> aus dem Trockenen <span title="Original: ſich" class="dta-reg">sich</span><br/>
+erheben. 2.) Ihre Reife oder den <span title="Original: Zuſtand" class="dta-reg">Zustand</span><br/>
+ihrer vollendeten <span title="Schreibfehler: wirksamkeit" class="dta-corr"><span title="Original: Wirksamkeit" class="dta-reg">Wirksamkeit.</span></span><span title="Original: ." class="dta-reg"/> 3) Die <span class="aq ">Solpheter</span><br/>
+oder die <span class="aq ">Vulcane</span> in ihrem Alter.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span title="Entſtehug" class="dta-abbr"><span title="Original: Entſtehung" class="dta-reg">Entstehung</span></span> der <span class="aq ">Vulcane</span>.<br/>
+</span>Schon die Alten bemerkten richtig, <span title="dß" class="dta-abbr">daß</span> die<br/>
+<span title="Erſchug" class="dta-abbr"><span title="Original: Erſcheinung" class="dta-reg">Erscheinung</span></span> der <span class="aq ">Vulcane</span> nicht eine <span class="aq "><span title="Original: locale" class="dta-reg">lokale</span></span> <span title="ſndrn" class="dta-abbr"><span title="Original: ſondern" class="dta-reg">sondern</span></span><br/>
+eine <span title="Original: ſolche" class="dta-reg">solche</span> <span title="Original: ſei" class="dta-reg">sei</span>, die in der Ferne <span title="dr" class="dta-abbr">der</span> <span title="Erſchug" class="dta-abbr"><span title="Original: Erſcheinung" class="dta-reg">Erscheinung</span></span><br/>
+ihren Grund hat. So <span title="Original: ſagt" class="dta-reg">sagt</span> ein alter Dichter<br/>
+von der <span class="aq "><span title="Original: Aetna" class="dta-reg">Ätna</span></span>, in <span class="aq ">ipso monte</span> von <span class="aq ">alimentum<br/>
+sed viam habere. <span title="Personenname"><a href="http://d-nb.info/gnd/116817569">Leopold Buch</a></span></span> hat zu <span title="Original: erſt" class="dta-reg">erst</span><br/>
+die Idee geäußert, <span title="dß" class="dta-abbr">daß</span> bei der <span title="Entſtehug" class="dta-abbr"><span title="Original: Entſtehung" class="dta-reg">Entstehung</span></span> <span title="dr" class="dta-abbr">der</span><br/>
+<span title="Original: Inſel" class="dta-reg">Insel</span>, der Boden des Meeres durch <span title="Original: elastiſche" class="dta-reg">elastische</span><br/>
+Dämpfe erhoben wird. Es <span title="Original: entſteht" class="dta-reg">entsteht</span><span title="Schreibfehler: ." class="dta-corr">[…]</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0076 : 211|</span><br/>
+kein weicher <span title="Original: ſchlam̃iger" class="dta-reg">schlammiger</span> Boden, <span title="Original: ſondern" class="dta-reg">sondern</span><br/>
+es erhebt <span title="Original: ſich" class="dta-reg">sich</span> eine feste <span title="Original: Maſſe" class="dta-reg">Maße</span>, und <span title="Original: erſt" class="dta-reg">erst</span><br/>
+nach einiger Zeit bildet <span title="Original: ſich" class="dta-reg">sich</span> in der Mitte<br/>
+der Ausbruch. Es bildet <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: nehmlich" class="dta-reg">nämlich</span> zu<br/>
+<span title="Original: erſt" class="dta-reg">erst</span> ein <span class="aq ">Trachyt</span> mit einer <span title="Oeffnug" class="dta-abbr"><span title="Original: Oeffnung" class="dta-reg">Öffnung</span></span>, das<br/>
+in der <span title="Original: Erhebungs" class="dta-reg">Erhebungskrater</span><span class="aq "><span title="Original: crater" class="dta-reg"/></span>, in ihm <span title="Original: entſteht" class="dta-reg">entsteht</span><br/>
+die Erhebung des <span class="aq "><span title="Original: Trachyt" class="dta-reg">Trachytkegels</span></span><span title="Original: kegels" class="dta-reg"/>, aus dem<br/>
+<span title="Original: erſt" class="dta-reg">erst</span> <span title="dr" class="dta-abbr">der</span> Ausbruch <span title="Original: geſchieht" class="dta-reg">geschieht</span>. Die <span title="Original: Inſel" class="dta-reg">Insel</span> <span class="aq "><span title="Original: Pal-" class="dta-reg">Palma</span></span><span class="dta-marginal dta-marginal-right"><span title="Erhebug" class="dta-abbr">Erhebung</span> <span title="dr" class="dta-abbr">der</span> <span title="vulcan:" class="dta-abbr"><span title="Original: vulcaniſchen" class="dta-reg">vulkanischen</span></span> <span title="Original: Inſeln" class="dta-reg">Inseln</span><br/>
+</span><span title="Original: " class="dta-reg"/>
+<span class="aq "><span title="Original: ma" class="dta-reg"/></span> die <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: entſtanden" class="dta-reg">entstanden</span> <span title="Original: iſt" class="dta-reg">ist</span>, bildet einen<br/>
+<span class="aq "><span title="Original: Vulcan" class="dta-reg">Vulkan</span></span>, ihre <span title="Original: Küſten" class="dta-reg">Küsten</span>, <span title="Original: ſind" class="dta-reg">sind</span> <span class="aq "><span title="Original: paralell" class="dta-reg">parallel</span></span> mit<br/>
+der <span title="Original: Oeffnung" class="dta-reg">Öffnung</span> des <span class="aq "><span title="Original: Craters" class="dta-reg">Kraters</span></span>. Der <span class="aq "><span title="Original: Pique" class="dta-reg">Pike</span></span> von<br/>
+<span class="aq ">Teneriffa</span> <span title="Original: iſt" class="dta-reg">ist</span> wie mit einen Mantel <span title="Original: über-&#xA;deckt" class="dta-reg">überdeckt</span>, der in der Entfernung einen <span title="Original: Porphyr-&#xA;artigen" class="dta-reg">Porphyrartigen</span> Wall bildet. Die Stadt <span class="aq ">Sta Maria</span><br/>
+auf einer der <span class="aq "><span title="canar." class="dta-abbr"><span title="Original: canariſchen" class="dta-reg">kanarischen</span></span></span> <span title="Original: Inſeln" class="dta-reg">Inseln</span>, liegt im <span class="aq "><span title="Original: Crater" class="dta-reg">Krater</span></span><br/>
+<span title="Original: ſelbſt" class="dta-reg">selbst</span> <span title="Original: –" class="dta-reg">-</span> Man bemerkte <span title="dß" class="dta-abbr">daß</span> bei der <span class="aq "><span title="Original: Convexi-&#xA;taet" class="dta-reg">Konvexität</span></span> <span title="ds" class="dta-abbr">des</span> <span title="Original: feſten" class="dta-reg">festen</span> Bodens, der aus dem Meere<br/>
+<span title="Original: emporſteigt" class="dta-reg">emporsteigt</span>, viele <span title="Original: Thäler" class="dta-reg">Täler</span> <span title="Original: ſich" class="dta-reg">sich</span> bilden die<br/>
+wie Strahlen aus einem gemeinsamen<br/>
+<span class="aq ">Centro</span> hervorgehen. Bei der <span title="Entſtehug" class="dta-abbr"><span title="Original: Entſtehung" class="dta-reg">Entstehung</span></span><br/>
+<span title="dr" class="dta-abbr">der</span> <span title="Original: Inſel" class="dta-reg">Insel</span> <span class="aq ">Amsterdam</span> <span title="Original: zwiſchen" class="dta-reg">zwischen</span> <span class="aq "><span title="Original: Cap" class="dta-reg">Kap</span> b. Esper</span>:<br/>
+und dem <span class="aq "><span title="Original: Vandiemens" class="dta-reg">Vandiemenslande</span></span><span title="Original: lande" class="dta-reg"/> hat <span title="Original: ſich" class="dta-reg">sich</span> bis jetzt<br/>
+kein <span class="aq "><span title="Original: Crater" class="dta-reg">Krater</span></span> gebildet. Die <span title="Original: Inſel" class="dta-reg">Insel</span> bildet einen<br/>
+Ring aus dem hier <span title="ud" class="dta-abbr">und</span> da <span title="Original: ſiedendes" class="dta-reg">siedendes</span> <span title="Original: Waſſer" class="dta-reg">Wasser</span><br/>
+hervorsprudelt. Die <span title="Original: Inſel" class="dta-reg">Insel</span> <span class="aq ">Palajo <span title="Original: Camelli" class="dta-reg">Kamellie</span></span><br/>
+erhob <span title="Original: ſich" class="dta-reg">sich</span> 200 v. <span class="aq "><span title="Original: Chr" class="dta-reg">Chr.</span></span><span title="Original: ." class="dta-reg"/> <span title="Original: dañ" class="dta-reg">dann</span> bildete <span title="Original: ſich" class="dta-reg">sich</span> im <span title="Original: Iñern" class="dta-reg">Innern</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0077 : 212|</span><br/>
+ein <span class="aq "><span title="Original: Crater" class="dta-reg">Krater</span></span>. 1709 erhob <span title="Original: ſich" class="dta-reg">sich</span> die neue <span class="aq "><span title="Original: Camelli" class="dta-reg">Kamellie</span></span><br/>
+wobei viele Schiffer es beobachtet haben<span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Es erhob <span title="Original: ſich" class="dta-reg">sich</span> ein fester Fels, der <span title="Original: erſt" class="dta-reg">erst</span> <span title="Schreibfehler: spater" class="dta-corr">später</span><br/>
+Spalten bekam und <span title="Original: dañ" class="dta-reg">dann</span> <span class="aq "><span title="Original: E" class="dta-reg">Eruptionen</span><span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (intralinear)"><span title="Original: r" class="dta-reg"/></span><span title="Original: uptionen" class="dta-reg"/></span>. Um<br/>
+die <span title="Original: Inſel" class="dta-reg">Insel</span> <span class="aq ">St. Michael</span> in den <span class="aq ">Azoren</span> <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: beſonders" class="dta-reg">besonders</span><br/>
+ein Raum, auf dem <span title="Original: ſehr" class="dta-reg">sehr</span> oft <span title="Original: Inſeln" class="dta-reg">Inseln</span> <span title="Original: entſtehen" class="dta-reg">entstehen</span><br/>
+und wieder vergehen, und man hat <span title="Original: ſogar" class="dta-reg">sogar</span><br/>
+eine <span class="aq "><span title="Original: Periodicitaet" class="dta-reg">Periodizität</span></span> darin finden wollen<br/>
+es <span title="Original: entſtand" class="dta-reg">entstand</span> eine 1638 <span title="ud" class="dta-abbr">und</span> <span title="Original: verſchwand" class="dta-reg">verschwand</span> wieder<br/>
+1719, an einem <span title="Original: andern" class="dta-reg">anderen</span> Ort aber nahe<br/>
+dabei <span title="Original: entſtand" class="dta-reg">entstand</span> wieder eine <span title="ud" class="dta-abbr">und</span> <span title="verſchw" class="dta-abbr">verschwand</span><br/>
+1811. Die <span title="Original: erſte" class="dta-reg">erste</span> Periode dauerte 81 <span title="Jhre" class="dta-abbr">Jahre</span><br/>
+die <span title="Original: 2" class="dta-reg">2te</span><span class="sup uu "><span title="Original: te" class="dta-reg"/></span> 92. Die Erhebung <span title="Original: iſt" class="dta-reg">ist</span> nun 300 <span class="aq "><span title="Original: Fuss" class="dta-reg">Fuß</span></span><br/>
+über dem <span title="Original: Meeresſpiegel" class="dta-reg">Meeresspiegel</span>, und eben <span title="Original: ſo" class="dta-reg">so</span> viel<br/>
+<span title="Original: iſt" class="dta-reg">ist</span> die <span title="Original: Sun" class="dta-reg">Sundung</span><span class="dta-del" title="Streichung (#ow)">t</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: d" class="dta-reg"/></span><span title="Original: ung" class="dta-reg"/>, an dem Orte, wo die <span title="Original: Inſel" class="dta-reg">Insel</span><br/>
+<span title="Original: verſchwindet" class="dta-reg">verschwindet</span>.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="aq "><span title="Original: Vulcan" class="dta-reg">Vulkanische</span></span><span title="Original: iſche" class="dta-reg"/> <span title="Original: Erſch." class="dta-reg">Ersch.</span> auf<br/>
+dem Monde.<br/>
+</span>Es <span title="Original: giebt" class="dta-reg">gibt</span> Orte auf den Meeren, <span title="beſndrs" class="dta-abbr">besonders</span> nahe<br/>
+an den <span title="Schreibfehler: Künste" class="dta-corr">Küsten</span>, wo plötzlich ohne <span title="dß" class="dta-abbr">daß</span> ein<br/>
+geringster Wind entstünde, eine <span title="grße" class="dta-abbr">große</span><br/>
+Unruhe im <span title="Original: Wellenſchlag" class="dta-reg">Wellenschlag</span> <span title="Original: ſich" class="dta-reg">sich</span> erhebt.<br/>
+<span title="Original: Dieſes" class="dta-reg">Dieses</span> <span title="Original: iſt" class="dta-reg">ist</span> der Fall bei den <span title="Original: Westküſten" class="dta-reg">Westküsten</span><br/>
+von <span class="aq ">Peru</span> und <span class="aq ">Lima</span>, wo die Wellen bei<br/>
+einer <span title="Original: Windſtille" class="dta-reg">Windstille</span> auf 25 <span class="aq "><span title="Original: Fuss" class="dta-reg">Fuß</span></span> Höhe <span title="Original: ſich" class="dta-reg">sich</span> erheben.<br/>
+Es <span title="Original: ſind" class="dta-reg">sind</span> <span title="Original: ſogar" class="dta-reg">sogar</span> <span title="Original: Flam̃en" class="dta-reg">Flammen</span> <span title="Original: geſehen" class="dta-reg">gesehen</span> worden,<br/>
+wie <span title="Original: dieſe" class="dta-reg">diese</span> aus den Tiefen <span title="ds" class="dta-abbr">des</span> Meeres<br/>
+<span title="Original: entſtehen" class="dta-reg">entstehen</span> können, <span title="Original: iſt" class="dta-reg">ist</span> unbegreiflich<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0078 : 213|</span><br/>
+denn es <span title="Original: iſt" class="dta-reg">ist</span> kein <span title="Original: Waſſerſtoffgas" class="dta-reg">Wasserstoffgas</span><br/>
+<span title="Schreibfehler: der" class="dta-corr">das</span> <span title="Original: breñt" class="dta-reg">brennt</span>. In <span class="aq ">Lamerotte</span> 1739 <span title="Original: ſind" class="dta-reg">sind</span> <span title="Original: todte" class="dta-reg">tote</span><br/>
+<span title="Original: Fiſche" class="dta-reg">Fische</span> in unzähliger Menge <span title="Original: geſehen" class="dta-reg">gesehen</span> worden<span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Einzelne Stellen des Meeres <span title="Original: ſind" class="dta-reg">sind</span> völlig<br/>
+heiß, wie in den <span class="aq "><span title="Azor:" class="dta-abbr">Azoren</span></span> Meeren. Im Golf<br/>
+<span class="aq ">Cariaco</span> <span title="Original: iſt" class="dta-reg">ist</span> ein ¾ □ <span title="Ml." class="dta-abbr">Meilen</span> weiter Fleck, völlig<br/>
+warm<span title="Schreibfehler: " class="dta-corr">.</span></p><br/>
+<p class="dta-p">Man bemerkt fast allgemein, <span title="dß" class="dta-abbr">daß</span> die <span class="aq "><span title="Original: Vulca" class="dta-reg">Vulcane</span></span><span title="Original: -" class="dta-reg"/><span class="dta-marginal dta-marginal-right">Die Nähe der <span class="aq ">Vulcane</span> an<br/>
+<span title="Original: de" class="dta-reg">den</span><span class="dta-del" title="Streichung (#s)">m</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: n" class="dta-reg"/></span> Gewässern</span><span title="Original: " class="dta-reg"/>
+<span class="aq "><span title="Original: ne" class="dta-reg"/></span> niemals weit von den <span title="Original: Meeresgesta-&#xA;den" class="dta-reg">Meeresgestaden</span> entfernt liegen. <span title="Schreibfehler: meiſtens" class="dta-corr"><span title="Original: Meiſtens" class="dta-reg">Meistens</span></span> bilden<br/>
+<span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſich" class="dta-reg">sich</span> auf den <span title="Original: Inſeln" class="dta-reg">Inseln</span>, <span title="ud" class="dta-abbr">und</span> wo <span title="Original: ſie" class="dta-reg">sie</span> auch<br/>
+tiefer im Lande liegen, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: iſt" class="dta-reg">ist</span> es <span title="Original: im̃er" class="dta-reg">immer</span> in<br/>
+der Nähe großer Seen. <span title="Dr" class="dta-abbr">Der</span> <span title="grße" class="dta-abbr">große</span> <span class="aq "><span title="Original: Mexi-&#xA;cani" class="dta-reg">mexikanische</span></span><span title="Original: ſche" class="dta-reg"/> <span title="Original: Vulcan" class="dta-reg">Vulkan</span> <span class="aq ">Popocatepetto</span> <span title="Original: zwiſchen" class="dta-reg">zwischen</span> <span title="de" class="dta-abbr">der</span><br/>
+Stadt <span class="aq "><span title="Original: Poella" class="dta-reg">Paella</span></span> <span title="ud" class="dta-abbr">und</span> <span class="aq "><span title="Original: Mexico" class="dta-reg">Mexiko</span></span> liegt 32 <span title="Mlen" class="dta-abbr">Meilen</span><br/>
+<span title="Original: landeinwerts" class="dta-reg">landeinwärts</span>. Der Hügel in <span class="aq ">Guagemajo</span><br/>
+bei dem <span title="Original: im̃er" class="dta-reg">immer</span> während ein <span title="Original: unterirdiſcher" class="dta-reg">unterirdischer</span><br/>
+<span title="Original: Doñer" class="dta-reg">Donner</span> gehört wird, östlich von der <span class="aq "><span title="Original: Andes" class="dta-reg">Anden</span></span><br/>
+Kette gegen den <span class="aq "><span title="Original: Amazon" class="dta-reg">Amazonenstrom</span></span><span title="Original: enſtrom" class="dta-reg"/> zu<span title="Schreibfehler: " class="dta-corr">,</span> liegt<br/>
+40 <span title="Mlen" class="dta-abbr">Meilen</span> vom Gestade ab. Nach <span class="aq "><span title="Personenname">Hutten</span></span><br/>
+<span title="Schreibfehler: sollen" class="dta-corr">soll</span> <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">es </span>in <span class="aq "><span title="Original: Africa" class="dta-reg">Afrika</span> Vulcane</span> geben, die<br/>
+120 <span title="Mlen" class="dta-abbr">Meilen</span> weit vom Meere abliegen.<br/>
+Im <span title="Original: Iñern" class="dta-reg">Innern</span> <span class="aq "><span title="Original: Aſiens" class="dta-reg">Asiens</span></span> finden <span title="Original: ſich" class="dta-reg">sich</span> einige <span class="aq ">Vulcane</span><br/>
+die nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/10082451X">Claprot</a></span></span> Bericht, in <span title="Original: chineſiſchen" class="dta-reg">chinesischen</span><br/>
+Schriften weitläufhig <span title="beſchrben" class="dta-abbr">beschrieben</span> werden<span title="Schreibfehler: " class="dta-corr">.</span></p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0079 : 214|</span><br/>
+<p class="dta-p">Darunter <span title="Original: iſt" class="dta-reg">ist</span> der <span class="aq "><span title="Original: Vulcan" class="dta-reg">Vulkan</span> Horszen</span> bei<br/>
+<span class="aq ">Kutszi</span> <span title="Original: 42½" class="dta-reg">421/2</span>° <span title="nörd" class="dta-abbr">nördliche</span> <span title="Brte" class="dta-abbr">Breite</span> im Meridian<br/>
+des <span class="aq "><span title="Original: Saisani" class="dta-reg">Saisanisees</span></span><span title="Original: sees" class="dta-reg"/>. Der <span title="Original: iſt" class="dta-reg">ist</span> vom <span title="Original: Indiſchen" class="dta-reg">Indischen</span> Meere<br/>
+270 <span title="Original: deutſche" class="dta-reg">deutsche</span> Meilen entfernt, <span title="Original: alſo" class="dta-reg">also</span> <span title="Original: ſo" class="dta-reg">so</span> weit<br/>
+wie <span class="aq "><span title="Original: Moscau" class="dta-reg">Moskau</span></span> vom <span title="Original: ſchwarzen" class="dta-reg">schwarzen</span> Meere. Man<br/>
+glaubte anfangs <span title="dß" class="dta-abbr">daß</span> dies keine <span class="aq ">Vulcane</span> <span title="Original: ſeien" class="dta-reg">seien</span><br/>
+<span title="Original: ſondern" class="dta-reg">sondern</span> nur <span title="Erſchn" class="dta-abbr">Erscheinungen</span> der <span class="aq "><span title="Original: Borax" class="dta-reg">Boraxsäure</span></span><span title="Original: säure" class="dta-reg"/> aus<br/>
+der <span class="aq "><span title="Original: Salmiac" class="dta-reg">Salmiak</span></span> <span title="Original: gewoñen" class="dta-reg">gewonnen</span> wird, wie in <span class="aq ">Florenz</span>.<br/>
+Allein laut den <span title="Beſchrbg" class="dta-abbr">Beschreibungen</span> <span title="dß" class="dta-abbr">daß</span> zerfloßene<br/>
+Steine herabfließen, und <span title="Original: dañ" class="dta-reg">dann</span> <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: erhär-&#xA;ten" class="dta-reg">erhärten</span>, <span title="dß" class="dta-abbr">daß</span> Feuer und ein leuchtender Rauch<br/>
+<span title="Original: emporſteigen" class="dta-reg">emporsteigen</span> <span title="Original: iſt" class="dta-reg">ist</span> <span title="dſe" class="dta-abbr"><span title="Original: dieſe" class="dta-reg">diese</span></span> <span title="Meinug" class="dta-abbr">Meinung</span> unrichtig. In<br/>
+der Nähe <span title="dſr" class="dta-abbr"><span title="Original: dieſer" class="dta-reg">dieser</span></span> <span class="aq ">Vulcane</span> <span title="Original: ſind" class="dta-reg">sind</span> <span title="grße" class="dta-abbr">große</span> Seen<br/>
+bei der <span title="Original: persiſchen" class="dta-reg">persischen</span> Hauptstadt <span class="aq ">Teran</span>, nahe<br/>
+<span class="dta-marginal dta-marginal-left">Ob <span title="Original: Waſſer" class="dta-reg">Wasser</span> bei den<br/>
+<span class="aq "><span title="Original: Vulcanen" class="dta-reg">Vulkanen</span></span> <span title="Original: mitwürke" class="dta-reg">mitwirke</span>?<br/>
+</span>am <span title="Original: Caspiſchen" class="dta-reg">Kaspischen</span> See. Daraus <span title="Original: ſcheint" class="dta-reg">scheint</span> zu<br/>
+folgen, <span title="dß" class="dta-abbr">daß</span> <span title="Original: Waſſer" class="dta-reg">Wasser</span> zu <span class="aq "><span title="Original: Vulcan" class="dta-reg">Vulkan</span></span>: <span title="Erſchgen" class="dta-abbr"><span title="Original: Erſcheinungen" class="dta-reg">Erscheinungen</span></span><br/>
+<span title="Original: nöthig" class="dta-reg">nötig</span> <span title="Original: ſei" class="dta-reg">sei</span>. Allein das <span title="Original: Waſſer" class="dta-reg">Wasser</span> dringt<br/>
+nicht in das <span title="Original: Iñere" class="dta-reg">Innere</span> <span title="dr" class="dta-abbr">der</span> Feuererde herein,<br/>
+<span title="Original: deñ" class="dta-reg">denn</span> damit wären viele <span class="aq "><span title="Original: fenomene" class="dta-reg">Phänomene</span></span> in <span title="Original: Wider-&#xA;spruch" class="dta-reg">Widerspruch</span>. Zwar <span title="Original: iſt" class="dta-reg">ist</span> der Rauch, der aus<br/>
+den <span class="aq "><span title="Original: Vulcanen" class="dta-reg">Vulkanen</span></span> <span title="Original: emporſteigt" class="dta-reg">emporsteigt</span> kein Holzrauch<br/>
+<span title="Original: ſondern" class="dta-reg">sondern</span> <span title="Original: Waſſerdämpfe" class="dta-reg">Wasserdämpfe</span>, allein <span title="dſes" class="dta-abbr"><span title="Original: dieſes" class="dta-reg">dieses</span></span><br/>
+<span title="Original: Waſſer" class="dta-reg">Wasser</span> <span title="Original: kom̃t" class="dta-reg">kommt</span> entweder aus dem <span title="Original: geſchmolzenen" class="dta-reg">geschmolzenen</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0080 : 215|</span><br/>
+Schnee, oder aus <span title="Schreibfehler: " class="dta-corr">der</span> <span title="Original: niedergeſchlagenen" class="dta-reg">niedergeschlagenen</span><br/>
+<span class="aq "><span title="Original: Atmosphere" class="dta-reg">Atmosphäre</span></span>.</p><br/>
+<p class="dta-p">Viel <span title="Original: ſeltener" class="dta-reg">seltener</span> <span title="Original: iſt" class="dta-reg">ist</span> die <span title="Erſchug" class="dta-abbr"><span title="Original: Erſcheinung" class="dta-reg">Erscheinung</span></span> des <span title="Original: Entſtehens" class="dta-reg">Entstehens</span><br/>
+der <span class="aq ">Vulcane</span> auf dem Trockenen. Es <span title="Original: ſind" class="dta-reg">sind</span><span class="dta-marginal dta-marginal-right"><span title="Original: Em" class="dta-reg">Emporsteigen</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 2 Zeichen fehlen]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: po" class="dta-reg"/></span><span title="Original: rſteigen" class="dta-reg"/> der <span class="aq ">Vulcane</span><br/>
+auf dem <span class="aq "><span title="Original: Continente" class="dta-reg">Kontinente</span></span>.<br/>
+</span><br/>
+mehr einzelne Ausbrüche, ohne <span class="aq "><span title="Schreibfehler: permanentes" class="dta-corr">permanente</span></span><br/>
+<span title="Verbindug" class="dta-abbr">Verbindung</span> mit dem <span title="Original: Innern" class="dta-reg">Inneren</span> <span title="dr" class="dta-abbr">der</span> Erde. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">In Montenuovo im <span title="J." class="dta-abbr">Jahr</span> 1538 bildete <span title="Original: ſich" class="dta-reg">sich</span> eine<br/>
+<span title="Original: Maſſe" class="dta-reg">Maße</span> <span title="ds" class="dta-abbr">des</span> Berges zu einem <span title="Original: Schlakhügel" class="dta-reg">Schlackhügel</span><br/>
+der einen kleinen Erguß <span title="v" class="dta-abbr">von</span> <span class="aq ">Lava</span> zeigte<span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Im <span title="J." class="dta-abbr">Jahr</span> 1302 <span title="Original: ſind" class="dta-reg">sind</span> Ausbrüche in <span class="aq ">Istria</span> <span title="Original: ge-&#xA;ſchehen" class="dta-reg">geschehen</span>. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">Buch</a></span></span> <span title="Original: beſchrieb" class="dta-reg">beschrieb</span> den <span class="aq ">Hipomeoberg</span><br/>
+in <span class="aq ">Istrien</span>, der kein <span class="aq "><span title="perman: Vul:" class="dta-abbr">permanenter <span title="Original: Vulcan" class="dta-reg">Vulkan</span></span></span> <span title="Original: iſt" class="dta-reg">ist</span>. In<br/>
+<span class="aq "><span title="Original: Mexico" class="dta-reg">Mexiko</span></span> <span title="Original: entſtand" class="dta-reg">entstand</span> <span title="dr" class="dta-abbr">der</span> <span class="aq "><span title="Original: Vulcan" class="dta-reg">Vulkan</span> Chorullio</span> in <span title="Original: ſchönen" class="dta-reg">schönen</span><br/>
+Ebenen in der Nähe von <span class="aq ">Trachyt</span> <span title="ud" class="dta-abbr">und</span><br/>
+<span class="aq "><span title="Original: Basalt" class="dta-reg">Basaltbergen</span></span><span title="Original: bergen" class="dta-reg"/> die mit <span class="aq ">Indigo</span> <span title="Schreibfehler: beflanzt" class="dta-corr">bepflanzt</span><br/>
+waren. Er erhob <span title="Original: ſich" class="dta-reg">sich</span> mit einem <span title="Original: Doñer" class="dta-reg">Donner</span>, es<br/>
+haben <span title="Original: ſich" class="dta-reg">sich</span> Klüfte gebildet, und <span title="Original: Bim̃stein" class="dta-reg">Bimsstein</span><br/>
+wurde <span title="Original: ausgeſchleudert" class="dta-reg">ausgeschleudert</span>, wie aus dem <span class="aq "><span title="Original: Veſuv" class="dta-reg">Vesuv</span></span><br/>
+zu <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118595083">Plinius</a></span></span> <span title="Original: zeiten" class="dta-reg">Zeiten</span>. Einige <span title="Original: Menſchen" class="dta-reg">Menschen</span> die in<br/>
+den Pflanzungen waren, merkten bald<br/>
+<span title="dß" class="dta-abbr">daß</span> <span title="Original: ſie" class="dta-reg">sie</span> ihre Strohhüte voll von <span title="Original: Aſche" class="dta-reg">Asche</span><br/>
+hatten. Sie liefen davon <span title="ud" class="dta-abbr">und</span> alle <span title="Original: Ein-&#xA;wohner" class="dta-reg">Einwohner</span> flohen auf den <span class="aq "><span title="Original: Aquajacs" class="dta-reg">Aquajaks</span></span> Hügel,<br/>
+und <span title="Original: ſahen" class="dta-reg">sahen</span> wie ein großer <span title="Original: Theil" class="dta-reg">Teil</span> der<br/>
+Erde <span title="Original: ſich" class="dta-reg">sich</span> erhoben hat. Die Höhe <span title="Original: iſt" class="dta-reg">ist</span> nach<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118554700"><span title="Original: Humboldt" class="dta-reg">Humboldts</span></a></span><span title="Original: s" class="dta-reg"/></span> <span title="Mſſug" class="dta-abbr"><span title="Original: Meſſung" class="dta-reg">Messung</span></span> 280 <span class="aq "><span title="Original: Fuss" class="dta-reg">Fuß</span></span>. Der <span title="Original: Felſ" class="dta-reg">Fels</span> war<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0081 : 216|</span><br/>
+wie eine <span title="grße" class="dta-abbr">große</span> Blase <span title="Original: geſtaltet" class="dta-reg">gestaltet</span>, in der<br/>
+<span title="Original: mitte" class="dta-reg">Mitte</span> bildete <span title="Original: ſich" class="dta-reg">sich</span> eine Spalte. Der<br/>
+<span class="aq "><span title="V" class="dta-abbr"><span title="Original: Vulcan" class="dta-reg">Vulkan</span></span></span> <span title="v" class="dta-abbr">von</span> <span class="aq ">Chorullio</span> hat noch 3 andere <span title="Oeffnugen" class="dta-abbr"><span title="Original: Oeffnungen" class="dta-reg">Öffnungen</span></span><br/>
+die <span title="Original: ſich" class="dta-reg">sich</span> in der <span title="Original: ſelben" class="dta-reg">selben</span> <span title="Richtug" class="dta-abbr">Richtung</span> erheben<br/>
+und <span title="Original: ſich" class="dta-reg">sich</span> mit <span class="aq "><span title="Original: Lava" class="dta-reg">Lavamassen</span></span><span title="Original: maſſen" class="dta-reg"/> ergießen.</p><br/>
+<p class="dta-p">Es haben <span title="Original: ſich" class="dta-reg">sich</span> an 4000 kleine Kegel gebildet<br/>
+<span title="Original: höchſtens" class="dta-reg">höchstens</span> 6 <span class="aq "><span title="Original: Fuss" class="dta-reg">Fuß</span></span> hoch aus denen Rauch <span title="Original: empor-&#xA;ſteigt" class="dta-reg">emporsteigt</span>, <span title="ud" class="dta-abbr">und</span> die aus dem Hügel betrachtet<br/>
+das Bild einer bewohnten Gegend geben.<br/>
+Beim <span class="aq "><span title="Original: Veſuv" class="dta-reg">Vesuv</span></span> finden <span title="Original: ſich" class="dta-reg">sich</span> ähnliche Kegel<span title="Schreibfehler: " class="dta-corr">.</span></p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left">Die <span class="aq ">Vulcane</span> in ihrer Reife<br/>
+</span><span title="Original: ſind" class="dta-reg">sind</span> in permanenter <span title="Verbindug" class="dta-abbr">Verbindung</span> mit dem<br/>
+Inneren der Erde. Der <span class="aq "><span title="Original: Vulcan" class="dta-reg">Vulkan</span> Stromboli</span><br/>
+war wie <span title="Original: ſchon" class="dta-reg">schon</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118618806">Strabo</a></span></span> berichtet alle 6 bis<br/>
+7 <span class="aq ">Minuten</span> von Stößen <span title="ud" class="dta-abbr">und</span> Auswurf <span title="Original: be-&#xA;gleitet" class="dta-reg">begleitet</span>. Die größeren <span class="aq ">Vulcane</span> haben<br/>
+viel <span title="Original: ſeltenere" class="dta-reg">seltenere</span> Ausbrüche. Die von <span class="aq "><span title="Original: Süd" class="dta-reg">Süden</span> <span title="Original: America" class="dta-reg">Amerika</span></span><br/>
+<span title="Original: ſind" class="dta-reg">sind</span> an <span title="Original: 4–5000" class="dta-reg">4-5000</span> <span class="aq "><span title="Original: Fuss" class="dta-reg">Fuß</span></span> höher als <span class="aq ">Mont Blanc</span>.<br/>
+<span class="dta-marginal dta-marginal-left">Ausbrüche<br/>
+</span>Die <span title="Original: Urſache" class="dta-reg">Ursache</span> liegt <span title="Original: ſchon" class="dta-reg">schon</span> darin <span title="dß" class="dta-abbr">daß</span> <span title="Original: ſie" class="dta-reg">sie</span><br/>
+die <span class="aq "><span title="Original: Lava" class="dta-reg">Lavamasse</span></span><span title="Original: maſſe" class="dta-reg"/> nicht <span title="Original: ſo" class="dta-reg">so</span> hoch treiben <span title="Original: köñen" class="dta-reg">können</span><br/>
+<span title="Original: weñ" class="dta-reg">wenn</span> nicht außerordentliche Kräfte <span title="Original: mit-&#xA;wirken" class="dta-reg">mitwirken</span>, und Seitenausbrüche können<br/>
+<span title="Original: ſich" class="dta-reg">sich</span> auch nicht bilden, weil <span title="Original: ſie" class="dta-reg">sie</span> meist im<br/>
+hohen <span class="aq ">Plateau</span> <span title="Original: ſtehen" class="dta-reg">stehen</span>. Nur alle <span title="Original: 70–80" class="dta-reg">70-80</span> <span title="Jhre" class="dta-abbr">Jahre</span><br/>
+<span title="Original: kom̃en" class="dta-reg">kommen</span> <span title="grße" class="dta-abbr">große</span> Ausbrüche vor. Der Rauch<br/>
+<span title="Original: ſteigt" class="dta-reg">steigt</span> auch nicht heraus, weil<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0082 : 217|</span><br/>
+wegen der Dünne der <span class="aq "><span title="Original: Atmosphere" class="dta-reg">Atmosphäre</span></span> in <span title="dſr" class="dta-abbr"><span title="Original: dieſer" class="dta-reg">dieser</span></span><br/>
+Höhe, <span title="Original: dieſelbe" class="dta-reg">dieselbe</span> nicht <span title="Original: niederſchlagen" class="dta-reg">niederschlagen</span> <span title="Original: kañ" class="dta-reg">kann</span>.<br/>
+Von allen <span class="aq "><span title="Original: Vulcanen" class="dta-reg">Vulkanen</span></span> welche speien <span title="Original: iſt" class="dta-reg">ist</span> <span class="aq "><span title="Original: Coto-&#xA;paxi" class="dta-reg">Cotopaxi</span></span> der höchste. <span title="Schreibfehler: e" class="dta-corr"><span title="Original: E" class="dta-reg">Er</span></span><span title="Original: r" class="dta-reg"/> <span title="Original: iſt" class="dta-reg">ist</span> 17700 <span class="aq "><span title="Original: Fuss" class="dta-reg">Fuß</span></span> hoch. <span class="aq "><span title="Original: Popocate-&#xA;petto" class="dta-reg">Popocatepetto</span></span> <span title="Original: iſt" class="dta-reg">ist</span> 16600 <span class="aq "><span title="Original: Fuss" class="dta-reg">Fuß</span></span> hoch. Die <span title="Original: meiſten" class="dta-reg">meisten</span> <span class="aq ">Vulcane</span><br/>
+<span title="Original: ſind" class="dta-reg">sind</span> <span title="Original: ſehr" class="dta-reg">sehr</span> steil gebaut wie <span class="aq "><span title="Original: Aetna" class="dta-reg">Ätna</span>, <span title="Original: Veſuv" class="dta-reg">Vesuv</span><br/>
+<span title="Original: Pique" class="dta-reg">Pike</span> <span title="v" class="dta-abbr">von</span> Teneriffa</span>, bei <span title="Original: dieſen" class="dta-reg">diesen</span> 3en verhält<br/>
+<span title="Original: ſich" class="dta-reg">sich</span> die Höhe zu dem Umfang wie<br/>
+1 : 28. Die Abhänge <span title="Original: ſind" class="dta-reg">sind</span> <span title="Original: ſo" class="dta-reg">so</span> gering, <span title="dß" class="dta-abbr">daß</span><br/>
+<span title="Original: ſie" class="dta-reg">sie</span> nur <span title="Original: 10–12" class="dta-reg">10-12</span>° haben.</p><br/>
+<p class="dta-p">Der <span title="Original: Aſchenkegel" class="dta-reg">Aschenkegel</span> <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: deſto" class="dta-reg">desto</span> kleiner<span class="dta-marginal dta-marginal-right"><span title="Original: Aſchenkegel" class="dta-reg">Aschenkegel</span><br/>
+</span><br/>
+je <span title="grßr" class="dta-abbr">größer</span> <span title="dr" class="dta-abbr">der</span> Berg. Beim <span class="aq "><span title="Original: Veſuv" class="dta-reg">Vesuv</span></span> <span title="Original: iſt" class="dta-reg">ist</span> er 200<br/>
+<span class="aq "><span title="Original: Toiſen" class="dta-reg">Toisen</span></span> hoch <span title="Original: alſo" class="dta-reg">also</span> <span title="Original: ⅓" class="dta-reg"> 1/3 </span> der Höhe <span title="ds" class="dta-abbr">des</span> Berges<br/>
+bei <span class="aq "><span title="Original: Pique" class="dta-reg">Pike</span></span> <span title="v" class="dta-abbr">von</span> <span class="aq ">Teneriffa</span> 84 <span class="aq "><span title="Schreibfehler: toiſen" class="dta-corr"><span title="Original: Toiſen" class="dta-reg">Toisen</span></span></span> hoch, <span title="Original: alſo" class="dta-reg">also</span><br/>
+<span class="sup "><span title="Original: 1" class="dta-reg">1/22</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 22" class="dta-reg"/></span> der Höhe <span title="ds" class="dta-abbr">des</span> Berges.</p><br/>
+<p class="dta-p">Als Zeichen der Ausbrüche hat man mehreres<br/>
+<span title="Original: aufgeſtellt" class="dta-reg">aufgestellt</span>. In <span class="aq ">Neapel</span> <span title="Original: kom̃en" class="dta-reg">kommen</span> <span title="Original: ſie" class="dta-reg">sie</span> mehr<br/>
+im Herbste vor als in <span title="Original: andern" class="dta-reg">anderen</span> <span title="Original: Jahres-&#xA;zeiten" class="dta-reg">Jahreszeiten</span>. Der <span class="aq "><span title="Original: Vulcan" class="dta-reg">Vulkan</span></span> <span title="v" class="dta-abbr">von</span> <span class="aq ">Stromboli</span> wirft<br/>
+wieder, mehr im Winter aus, als im<br/>
+<span title="Original: Som̃er" class="dta-reg">Sommer</span>. <span title="Original: Ueberhaupt" class="dta-reg">Überhaupt</span> wäre <span title="ds" class="dta-abbr">das</span> ein kleinlicher<br/>
+Begriff von der Größe <span title="dr" class="dta-abbr">der</span> <span title="Original: unterirdiſchen" class="dta-reg">unterirdischen</span><br/>
+Kraft, <span title="Original: weñ" class="dta-reg">wenn</span> man <span title="Original: dieſelbe" class="dta-reg">dieselbe</span> von der<br/>
+<span class="aq "><span title="Original: Atmosphere" class="dta-reg">Atmosphäre</span></span> regiert, <span title="Original: ſich" class="dta-reg">sich</span> dächte. Herzog<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/122861531">de la Torre</a></span></span> bemerkte, daß die Quellen<br/>
+von <span class="aq ">Resina</span> ausbleiben, ehe der Ausbruch<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0083 : 218|</span><br/>
+<span title="Original: geſchieht" class="dta-reg">geschieht</span>. <span title="Schreibfehler: vielleicht" class="dta-corr">Vielleicht</span> können durch die<br/>
+<span title="Original: ſtark" class="dta-reg">stark</span> eintretende Erwärmung die<br/>
+<span title="Schreibfehler: die " class="dta-corr">[…]</span>Dämpfe nicht mehr <span title="Original: niederſchlagen" class="dta-reg">niederschlagen</span><br/>
+aus denen <span title="Original: ſich" class="dta-reg">sich</span> gewöhnlich die Quellen<br/>
+bilden.</p><br/>
+<p class="dta-p">Die Größe <span title="ds" class="dta-abbr">des</span> <span title="Original: Craters" class="dta-reg">Kraters</span> <span title="Original: iſt" class="dta-reg">ist</span> auch nicht <span title="Original: imer" class="dta-reg">immer</span><br/>
+<span class="dta-marginal dta-marginal-left">der <span class="aq "><span title="Original: Crater" class="dta-reg">Krater</span></span><br/>
+</span>in <span title="Schreibfehler: Uebereingim̃ung" class="dta-corr"><span title="Original: Uebereinſtim̃ung" class="dta-reg">Übereinstimmung</span></span> mit der Größe<br/>
+<span title="ds" class="dta-abbr">des</span> <span class="aq "><span title="Original: vulcan" class="dta-reg">Vulkan</span></span> Berges. Der <span class="aq "><span title="Original: Crater" class="dta-reg">Krater</span></span> von <span class="aq "><span title="Original: Pique" class="dta-reg">Pike</span></span><br/>
+<span title="v" class="dta-abbr">von</span> <span class="aq ">Teneriffa</span> <span title="Original: iſt" class="dta-reg">ist</span> nicht über 300 <span class="aq "><span title="Original: Fuss" class="dta-reg">Fuß</span></span>. Der von<br/>
+<span class="aq "><span title="Original: Aetna" class="dta-reg">Ätna</span></span> <span title="Original: iſt" class="dta-reg">ist</span> unbedeutend zu <span title="dr" class="dta-abbr">der</span> Höhe des<br/>
+Berges. <span class="aq "><span title="Original: Vulcan" class="dta-reg">Vulkan</span> Picinza</span> an <span title="Original: deſſen" class="dta-reg">dessen</span> Füße<br/>
+die Stadt <span class="aq ">Quito</span> liegt hat den <span class="aq "><span title="Original: Crater" class="dta-reg">Krater</span></span><br/>
+von 4200 <span class="aq "><span title="Original: Fuss" class="dta-reg">Fuß</span></span> im <span title="Original: Durchmeſſer" class="dta-reg">Durchmesser</span>. Der<br/>
+<span class="aq "><span title="Original: Crater" class="dta-reg">Krater</span></span> <span title="Original: iſt" class="dta-reg">ist</span> gewöhnlich mit Rändern<br/>
+umgeben auf denen <span title="Original: ſich" class="dta-reg">sich</span> wieder<br/>
+Kegel bilden ganz Analog den <span class="aq "><span title="Schreibfehler: Crateren" class="dta-corr"><span title="Original: Cratern" class="dta-reg">Kratern</span></span></span><br/>
+auf dem Monde. Die Ränder des <span class="aq "><span title="Original: Crater" class="dta-reg">Krater</span></span><br/>
+<span title="Original: ſind" class="dta-reg">sind</span> nicht becherartig, <span title="Original: ſie" class="dta-reg">sie</span> haben die <span title="Original: Geſtalt" class="dta-reg">Gestalt</span><br/>
+aufgebauter Türmer<span class="dta-del" title="Streichung (#ow)">,</span><span class="dta-add" title="Hinzufügung (across)">.</span> Ist der <span class="aq "><span title="Original: Vulcan" class="dta-reg">Vulkan</span></span> genug<br/>
+hoch, <span title="Original: ſo" class="dta-reg">so</span> häufen <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: zwiſchen" class="dta-reg">zwischen</span> den Türmen<br/>
+<span title="Original: Schneemaſſen" class="dta-reg">Schneemassen</span> die oft 400 <span class="aq "><span title="Original: Fuss" class="dta-reg">Fuß</span></span> tief <span title="Original: ſind" class="dta-reg">sind</span>, und<br/>
+da <span title="Original: kañ" class="dta-reg">kann</span> man nur auf die <span title="Original: Thürme" class="dta-reg">Türme</span> klippend<br/>
+den <span class="aq "><span title="Original: Crater" class="dta-reg">Krater</span></span><span title="Schreibfehler: " class="dta-corr"> </span><span title="Original: beſteigen" class="dta-reg">besteigen</span>. <span title="Original: Dieſes" class="dta-reg">Dieses</span> <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: ſehr" class="dta-reg">sehr</span> gefährlich<br/>
+da der <span title="Original: Thurm" class="dta-reg">Turm</span> <span title="Original: ſehr" class="dta-reg">sehr</span> steil, <span title="Original: ſeine" class="dta-reg">seine</span> <span title="Original: Ausdähnug" class="dta-reg"><span title="Original: Ausdähnung" class="dta-reg">Ausdehnung</span></span> auf<br/>
+der Spitz kaum 9 <span class="aq "><span title="Original: Fuss" class="dta-reg">Fuß</span></span> beträgt. <span title="Original: Indeſſen" class="dta-reg">Indessen</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0084 : 219|</span><br/>
+dienen <span title="Original: ſolche" class="dta-reg">solche</span> Türme <span title="Original: ſehr" class="dta-reg">sehr</span> gut dazu den <span title="Original: Durch-&#xA;meſſer" class="dta-reg">Durchmesser</span> des <span class="aq "><span title="Original: Craters" class="dta-reg">Kraters</span></span> zu <span title="Original: meſſen" class="dta-reg">messen</span>. Der <span class="aq "><span title="Original: Crater" class="dta-reg">Krater</span></span><br/>
+von <span class="aq ">Pizinca</span> hat 4000 <span class="aq "><span title="Original: Fuss" class="dta-reg">Fuß</span></span> Tiefe, und 4200 <span class="aq "><span title="F." class="dta-abbr"><span title="Original: Fuss" class="dta-reg">Fuß</span></span></span> <span title="Original: Durch-&#xA;meſſer" class="dta-reg">Durchmesser</span>. Er <span title="Original: iſt" class="dta-reg">ist</span> nicht <span class="aq "><span title="Original: paralell" class="dta-reg">parallel</span></span> mit dem Spiegel<br/>
+der Südsee, <span title="Original: ſondern" class="dta-reg">sondern</span> <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: ſehr" class="dta-reg">sehr</span> <span title="Original: beträchtlicht" class="dta-reg">beträchtlich</span><br/>
+geneigt. Das Innere des <span class="aq "><span title="Original: Craters" class="dta-reg">Kraters</span></span> <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: bestän-&#xA;digen" class="dta-reg">beständigen</span> <span class="aq ">Revolutionen</span> unterworfen, <span title="Original: ſeine" class="dta-reg">seine</span><br/>
+Wände bleiben aber <span title="Original: im̃er" class="dta-reg">immer</span> <span title="Original: dieſelben" class="dta-reg">dieselben</span>. Man<br/>
+hat ihre Höhen<span title="Schreibfehler: " class="dta-corr"> </span><span title="Original: gemeſſen" class="dta-reg">gemessen</span> und fand in 50 Jahren<br/>
+keinen <span title="Original: Unterſchied" class="dta-reg">Unterschied</span>. Der <span title="Original: ſüdliche" class="dta-reg">südliche</span> <span class="aq "><span title="Original: Crater" class="dta-reg">Krater</span></span> des<br/>
+<span class="aq "><span title="Original: Veſuvs" class="dta-reg">Vesuvs</span></span> <span title="Original: ſoll" class="dta-reg">soll</span> durch den Ausbruch von 1712, 500 <span class="aq "><span title="Original: Fuss" class="dta-reg">Fuß</span></span><br/>
+niedriger geworden <span title="Original: ſein" class="dta-reg">sein</span>. Man hat ihn aber<br/>
+im <span title="J." class="dta-abbr">Jahr</span> 1805 <span title="ud" class="dta-abbr">und</span> 1822 <span title="Original: gemeſſen" class="dta-reg">gemessen</span> und fand mit<br/>
+wenigen <span title="Original: Unterſchied" class="dta-reg">Unterschied</span>, <span title="Original: beyde" class="dta-reg">beide</span> <span title="Original: male" class="dta-reg">Male</span> <span title="Original: dieſelbe" class="dta-reg">dieselbe</span><br/>
+Höhe wie <span class="dta-del" title="Streichung (#ow)">n</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: ſ" class="dta-reg">sie</span></span><span title="Original: ie" class="dta-reg"/> von Alten angegeben wird.</p></div></div></div></body></html>

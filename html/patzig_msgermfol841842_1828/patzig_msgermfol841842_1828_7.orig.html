@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span title="Original: D. 24 Novbr. 27." class="dta-reg">7. Vorlesung, 24.11.1827</span></div><br/>
+<p class="dta-p">Bei der Schwächung des römiſchen Reichs<br/>
+durch Theilung, verbreitete ſich im Weſten<br/>
+die Nacht des Wiſſens, während im Oſten<br/>
+noch helles Licht blieb. <span class="u ">Die ſogenañte</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Dunkle Zeit<br/>
+in Europa</span><br/>
+</span><span class="u ">Völkerwanderung</span> vernichtete dort Alles<br/>
+Wiſſen. Es iſt eine ſchöne Entdeckung v. <span title="Personenname"><a href="http://d-nb.info/gnd/10082451X">Klap-<br/>
+roth</a></span>, daß der bis jetzt angenom̃enen <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">erſt </span>Stoß der<br/>
+Völkerwanderung nicht von den <span class="aq ">Hunnen</span>, ſon-<br/>
+dern nach chineſiſchen Geſchichtsbüchern, von in-<br/>
+diſch-germaniſchen Stäm̃en, die in der jetzigen<br/>
+Mantſchurei am Baikalſee lebten. aus-<br/>
+gegangen iſt, die ſich auf die <span class="aq ">Hiongnus</span><br/>
+260 J. v. C. G. warfen. Es dauerte über<br/>
+400 J. bis dieſer Menſchenſtrom ſich <span title="weit￼" class="dta-abbr">weiter</span><br/>
+auf die Türkiſchen u. Fiñiſchen Stäm̃e wälzte.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Dritte Epoche<br/>
+Einfall der Araber<br/>
+u. ihre Cultur chemiſcher<br/>
+Keñtniſſe.</span><br/>
+</span><span class="u ">Wir kom̃en jetzt zur dritten Epoche<br/>
+wo die Geiſt des Wiſſens durch die Araber<br/>
+aufgefriſcht wurde</span>. Sie waren ein ſemiti-<br/>
+ſcher Stam̃ der zuerſt Nord-Afrika eroberte. Schon früher waren hier Völker<br/>
+eingedrungen, nach der Geſchichte die Hykros.<br/>
+Nun kamen die Araber u. in ihrer Glänzen-<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">ſten</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0048 : 44.|</span><br/>
+ſten Zeit herrſchten ſie vom Ganges<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Wanderungen der<br/>
+Araber.</span><br/>
+</span>bis zu den Herkules-Säulen. <span class="u ">Sie ſelbſt<br/>
+vergleichen ſich in ihren Dichtungen mit<br/>
+Wolkenzügen,</span> die ſich bald aufmachen u.<br/>
+über das Land einhergehen. Ein merkwür-<br/>
+diges Volk welches ſich in neueſten Zeit in<br/>
+ihre Religion, durch die Wahabiten Krieg<br/>
+bekañt gemacht. Man kañ ſie unwiſſen<br/>
+aber nicht roh neñen. <span class="u ">Eine eigene Liebe</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Jhre Liebe zur<br/>
+Natur.</span><br/>
+</span><span class="u ">zur Natur belebte ſie</span>. Bei ihnen<br/>
+lebten zuerſt die glänzenſten Zeiten<br/>
+der iñern Naturanſchauung auf, die<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">großartige Tendenz</span><br/>
+</span><span class="u ">Tendenz, die wir jetzt ſelbſt verſuchte<br/>
+u. von der die Alten weit entfernt<br/>
+waren, die nur beobachteten.</span> Arabien<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Begrenzung<br/>
+derſelben</span><br/>
+</span>war im Norden <span class="u ">mit ſemitiſchen Völkern<br/>
+im Süden mit Aethiopiern</span> im Zuſam̃enhange<br/>
+ſpäter mit Egypten was von den Zeiten<br/>
+der Ptolomäern im Flor war. Griechi-<br/>
+ſche Aerzte lebten zu <span class="aq ">Mecca</span> zu<span class="dta-del" title="Streichung (#s)">nter</span> Muſ<span class="gap">[unleserliches Material]</span><br/>
+Zeiten u. merkwürdig, <span title="dß" class="dta-abbr">daß</span> allenthalben we<span class="dta-supplied">[ñ]</span><br/>
+Bildung begañ, dieſe von den Griechen<br/>
+ausgingx)<span class="dta-marginal dta-marginal-left">in dieſe ſtets Strahlen des Lichtes<br/>
+zu der übrigen Menſchheit brachten.<br/>
+</span>. Dichtkunſt blühete ſchon vor<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118583158">Muhamed</a></span> u. bekañt ſind die dichteriſche<br/>
+Kampfſpiele zu <span class="aq ">Mecka</span> u. <span class="aq ">Ocka</span>. <span class="u ">Des großen<br/>
+Dichters <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118974009">Anthar</a></span>s</span> Geſänge werden noch</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Jhre damalige<br/>
+Bildung</span><br/>
+</span><span class="u ">jetzt in Mecca aufbewahrt.</span> Höchſte Flor<br/>
+der Araber war unter dem Chalifat<br/>
+der <span class="aq ">Abasciden</span>. Jn <span class="aq ">Mosul</span> u. <span class="aq ">Bagdad</span><br/>
+waren große Bibliotheken u. in allen<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">größern</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0049 : 45.|</span><br/>
+größern Orten wurden dieſe angelegt.<br/>
+Es iſt ſchwierig zuſam̃enzuſtellen was<br/>
+wir Alles den Arabern verdanken.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Was wir den<br/>
+Arabern verdanken</span><br/>
+</span><span class="u ">Sie beobachtete den Him̃el, erforſchten<br/>
+die Erde, kauten Pflanzen, erfanden<br/>
+aſtronomiſche Jnſtrumente.</span> Sie maßen<br/>
+ſelbſt die Erde in den Ebenen Meſopo-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Judiſche Zahlen<br/>
+Bezeichnung</span><br/>
+</span>tamiens. Sie führten die Judiſchen Zahlen<br/>
+in Europa ein, die wir <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Wort fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">noch</span> <span class="u ">im̃er Arabi-<br/>
+ſche Ziffern neñen</span>. Dieſe wurden ihren<br/>
+ſelbſt im Anfange des 10 ten Jahrhunderts<br/>
+bekañt. Durch den Werth der Poſitionen<br/>
+alle Gruppen der Einheit auszudrücken<br/>
+hatte den größten Einfluß auf den ge-<br/>
+ſam̃ten wiſſenſchaftlichen Verkehr. Fer-<br/>
+ner kañten ſie die Optik, die Lehre<br/>
+von der Refraction. <span class="u ">Jhnen waren Schriften</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Schriften der Alten</span><br/>
+</span><span class="u ">der Alten bekañt</span>, die wir ſelbſt von<br/>
+ihnen noch aufbewahrt erhalten haben,<br/>
+Zb. <span title="Personenname"><a href="https://www.wikidata.org/wiki/Q550477">Timocharis</a></span> Werke aus dem <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100499651">Hipparch</a></span></span><br/>
+über das Vorrücken der Nachtgleichen<br/>
+ſchöpfte, ſo wie die Optik des <span title="Personenname"><a href="http://d-nb.info/gnd/118641786">Ptolomäus</a></span>.<br/>
+Die Wiſſenſchaften hielten ſie für ſo wichtig<br/>
+daß ein eigner Ueberſetzungs-Ausſchuß<br/>
+ernañt wurde, freilich erſt im̃er in die<br/>
+Syriſche u. als dañ in die arabiſche<br/>
+Sprache. Jhr Geiſt war dabei ganz<br/>
+praktiſch; <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">a</span>ber nach dem Jslam mehr<br/>
+Eſoteriſch, das Allgemeine ausſchließend<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">u.</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0050 : 46.|</span><br/>
+u. nur in Kaſten fortlebend.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Chemiſche Entdeckungen</span><br/>
+</span><span class="u ">Das Letzte waren ihre Chemiſchen Ent-</span><br/>
+deckungen. Sie fanden die Salpeter<br/>
+Säure u. das <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">K</span>önigswaſſer, ohne wel-<br/>
+che die Chemie nicht beſtehen kañ u. die<br/>
+iſt dem Sabäer <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118864718">Geber</a></span></span> zu verdanken<br/>
+ferner ſind ſie die Erfinder des Diſtili-<br/>
+rens u. der Bereitung des Alkoholsx)<span class="dta-marginal dta-marginal-left">der Kunſt der Amalgamation <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span><br/>
+</span><br/>
+das Roſenöhl, welches aus einem Contakt<br/>
+mit Baumwolle gepreßt wird, iſt eine<br/>
+Erfindung ſpäterer Zeiten; auch ka<span class="dta-supplied">[ñten]</span><br/>
+ſie die Queckſilber-Oxide. Von ihn<span class="dta-supplied">[en]</span><br/>
+aus gingen zwei Reflexe, der ei<span class="dta-supplied">[ne]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u ">Ulukbei</span><br/>
+</span><span class="u ">bei Ulukbei</span>, einem Enkel des <span title="Personenname"><a href="http://d-nb.info/gnd/118622803">Timur</a></span><br/>
+unter den Mongolen; der andern in<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/11864811X">Alfons</a></span></span><br/>
+</span>Spanien. <span class="u ">Hier lebte</span> <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/11864811X">Alfons</a></span></span> der<br/>
+Weiſe in Caſtilien,</span> der einen Congre<span class="dta-supplied">[ß]</span><br/>
+<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (left)">der Aſtronomen, </span>von Juden, Saracenen, Chriſten berief<br/>
+um vereinigt aſtronomiſche Tafeln in<br/>
+Toledo anzufertigen u. von dem ma<span class="dta-supplied">[n]</span><br/>
+ſagt, daß er die Erde über den Him̃el<br/>
+verlohr; indem die Araber großen<br/>
+Eroberungen unter ihm machten. Der<br/>
+Abglanz der arabiſch-chemiſchen Kunſt finden<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118575279">Raimundus<br/>
+Lullus</a></span></span><br/>
+</span>wir <span class="u ">bei</span> <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118575279">Raimundus Lullus</a></span></span></span>, einem Spa<span class="gap">[verlorenes Material]</span><br/>
+genañt <span class="aq u ">Doctor illuminatissimus</span>, der<br/>
+die <span class="aq ">Ars magna</span> beſaß. Der berühmte<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b "><span title="Personenname"><a href="http://d-nb.info/gnd/118651595">Roges Baco</a></span></span><br/>
+</span><span title="Personenname"><a href="http://d-nb.info/gnd/118651595">Roger Baco</a></span> war indeß größer, fa<span class="dta-supplied">[ß-]</span><br/>
+te tiefer auf, u. wurde ein Opfer<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">seines</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0051 : 47.|</span><br/>
+seines intellektuellen Strebens. Beide<br/>
+erhielten die chemiſche Keñtniße u. führten<br/>
+zu denſelben, nach den Arabern.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Vierte Epoche<br/>
+Entdeckung Amerikas</span><br/>
+</span><span class="u ">Die vierte Epoche iſt die der Entdeckung<br/>
+Amerikas</span>. Sie wurde vorbereitet<br/>
+durch das Aufblühen des italiäniſchen Han-<br/>
+dels, durch die Anregung geiſtiger Kräfte<br/>
+in der allgemeinern Verbreitung der clas-<br/>
+ſiſchen Littera<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">tu</span>r die durch die Erfin-<br/>
+dung der Druckerkunſt befördert wurdex)<span class="dta-marginal dta-marginal-left">Auch hier ſind die Araber die Vorbreiter<br/>
+<span class="dta-supplied">[z]</span>u dieſer Entdeckung, durch ihre aſtronomiſche<br/>
+Tafeln. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119163586">Toſcanella</a></span></span> u. <span class="aq ">Talerico</span> waren<br/>
+<span title="Zeitgenoſſ￼" class="dta-abbr">Zeitgenoſſen</span> von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118768247">Americo Veſpucci</a></span></span> u. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118564994">Columbus</a></span></span><br/>
+<span class="dta-supplied">[E]</span>rſterer machte dem Letztern Mittheilungen von<br/>
+der großen Nähe des öſtl. Aſiens gegen <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">We</span>ſten.<br/>
+Jch habe ſelbſt zwei Briefe des Geheimſchreiber <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118740490">Petrus<br/>
+Martyr de Anpera</a></span></span> <span class="dta-del" title="Streichung (#s)">bei </span> <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">an</span> <span class="aq ">Kaiſer <span title="Personenname"><a href="http://d-nb.info/gnd/118560093">Karl V.</a></span></span> vorge-<br/>
+<span class="dta-supplied">[f]</span>unden in deren einen v. 1493 er ſich mit großem<br/>
+<span class="dta-supplied">[G]</span>eiſte über die wichtige Entdeckung der <span title="Antipod￼" class="dta-abbr">Antipoden</span><br/>
+ausſpricht.<br/>
+</span>.<br/>
+Schon 1450 lange vor der Eroberung Conſtan-<br/>
+tinopels herrſchte eine Verbindung zwiſchen<br/>
+Jtalien u. dieſem Orte. Jm Anfange des<br/>
+14te Jahrhunderts ſendete der König <span title="Personenname"><a href="http://d-nb.info/gnd/118789066">Roges<br/>
+von Neapel</a></span> ſchon Gelehrte nach Konſtanti-<br/>
+nopel, um dorten Keñtniße zu ſam̃eln.<br/>
+Es lebte in dieſer Zeit die <span title="gefeiertſt￼" class="dta-abbr">gefeiertſten</span><br/>
+Dichter Jtaliens. Ein freieres Sprach-<br/>
+Studium weckte den Geiſt u. einen wun-<br/>
+derbaren Einfluß übten die alten<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Vorzug des Clas-<br/>
+ſiſchen Studiums.</span><br/>
+</span><span class="u ">Claſſiker auf das Gemüth</span>. Es iſt ein<br/>
+<span class="u ">Vorurtheil, als ob dieſes Studium, welches</span><br/>
+den größten Theil der Menſchheit beſchä<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">ft</span>igte<br/>
+von dem Studium der Natur abgehalten<br/>
+hätte. Jm Gegentheil, weñ gleich nicht neue<br/>
+Keñtniſſe dadurch erlangt wurden, ſo<br/>
+iſt die geiſtige Richtung doch ſehr wichtig,<br/>
+die durch das Aufblühen der Litteratur<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118564994">Columbus</a></span> entdeckt<br/>
+nicht zuerſt Amerika</span><br/>
+</span>sich bildete. – <span class="u ">Die Entdeckung Ame-<br/>
+rikas durch <span title="Personenname"><a href="http://d-nb.info/gnd/118564994">Columbus</a></span> war nicht<br/>
+die erſte.</span> Schon 1005 hatten ſcandiſche Schiffer<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Neufoundl.</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0052 : 48.|</span><br/>
+Neufoundland entdeckt u. dieſe Jnſel das<br/>
+Weinland genañt. 1390 wurde Nordamerika wieder<br/>
+beſucht. <span class="u ">Der berühmte Venetianiſche Rei-</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118595563">Marco Polo</a></span></span><br/>
+</span><span class="u ">sende</span> <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118595563">Marco Polo</a></span></span></span> hatte kurz vorher große Jdeen erweckt<br/>
+der über Jndien wunderbare Nachrichten mitbrachte. Ein einze<span class="dta-supplied">[l-]</span><br/>
+ner Reiſenden kañ jedoch weniger auf das Geſam̃twiſſen der Länder<br/>
+einwirken, als weñ erſt gegenſeitig im Großen Verbindungen<br/>
+ſtattfinden. Die Entdeckung Amerikas iſt zu vergleichen, als<br/>
+weñ Jemand die uns abgekehrte Mondſeite entdecken möchte.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Mit Amerika werden<br/>
+Gebilde der alten<br/>
+Kunſt entdeckt.</span><br/>
+</span><span class="u ">Mit Amerika welches aus den Fluten ſtieg, ſteigen aus den<br/>
+Gräbern die Gebilde der alten Kunſt.</span> Man fand den La-<br/>
+okoon, den Apollo, den Torſo <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span> v. 1498–1511. Dabei<br/>
+wurde der Geiſt der Menſchen gewaltig aufgeregt durch die g<span class="dta-supplied">[roße]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Reformation</span><br/>
+</span><span class="u ">Reformation durch <span title="Personenname"><a href="http://d-nb.info/gnd/118575449">Luther</a></span> u. <span title="Personenname"><a href="http://d-nb.info/gnd/118518534">Calvin</a></span></span>, die ihm Freiheit u. Stärke<br/>
+verliehen, die beide nur eins ſind. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118565273">Copernikus</a></span> Entdeckungen</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Copernikaniſche<br/>
+Weltſyſtem</span><br/>
+</span><span class="u ">der Bahnen der Him̃elskörper hällt in dieſelbe Zeit. Jn Ame-<br/>
+rika fand man von Süd- bis Nord-Pol ein zuſam̃enhängend<span class="dta-supplied">[en]</span></span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Phyſikal. Entdeck.</span><br/>
+</span><span class="u ">Continent.</span> Man fand <span class="u ">auf den Höhen Schnee,</span> ſelbſt unter dem Ae-<br/>
+quator u. daß ſich die Schneelinie nach den Breitengraden ver-<br/>
+ändert. Man ſahe <span class="u ">den Einfluß der Höhe auf die Temperatur</span><br/>
+die Diſcuſſionen über <span class="u ">die Menſchen-Racen</span> änderten ſich. Wie<br/>
+im Norden Afrikas weiße Menſchen lebten, ſo waren tiefer <span class="gap">[unleserliches Material]</span><br/>
+nur ſchwarze Menſchen. Amerika hingegen bildete ein ganz abge-<br/>
+ſchloſſenes Syſtem von Völkern, die durch allgem. grammatiſchen<br/>
+Analogien der Sprache, Züge des Geſichts u. Farbe gleich waren<br/>
+ja ſogar daß <span class="u ">die Bewohner in heißern Gegenden dort weißer<br/>
+als die im hohen Norden u. Neger gar keine zu finden waren.</span><br/>
+Man fragte ſich warum die Hitze daſelbſt nicht ſo groß wie in Os-<br/>
+ten ſei. Ganz neu waren die <span class="u ">Vulkaniſchen Erſcheinungen</span> u. nicht zu-<br/>
+ſam̃enſtim̃end mit denen des Aetna u. Veſuv. Man ſprach von Weſt<span class="dta-supplied">[-]</span><br/>
+Vulkane, weil hier geſchmolzenes Schneewaſſer, oft mit ſam̃t viele<br/>
+Fiſchen herausgeworfen wird. Man entdeckte die Meeresſtr<span class="dta-supplied">[ömungen,]</span><br/>
+Paſſat-Winde <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span> <span class="u ">Nicht nur die Erde war neu, auch der Him̃el<br/>
+wurde anders gefunden.</span> Die <span title="Personenname"><a href="http://d-nb.info/gnd/117518530">Magellan</a></span>iſchen Wolken, die ſogena<span class="dta-supplied">[ñten]</span><br/>
+ſchwarzen Sterne – Canopen – des <span title="ſüdl." class="dta-abbr">ſüdlichen</span> Him̃els <span title="erregt￼" class="dta-abbr">erregten</span> Aufmerkſa<span class="dta-supplied">[mkeit.]</span><br/>
+<span class="u "><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/12116117X">Acosta</a></span>s</span> Naturerſch. im Anfange des 16te Jahrhund.</span> u. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118740490">Petrus Martyr de Angera</a></span></span> geſam̃elt<span class="dta-supplied">[e]</span><br/>
+Entdeckungen lehren dies Alles umher. Man war hiebei mehr aufmerkſam auf die Contraſte a<span class="dta-supplied">[ls]</span><br/>
+auf die Geſetze u. in <span title="Personenname"><a href="http://d-nb.info/gnd/118650130">Ariſtoteles</a></span> Jdeen gewickelt koñte man dieſe nicht finden, nach deren Keñt<span class="dta-supplied">[niß]</span><br/>
+wir jetzt ſtreben. <hr/></p></div></body></html>

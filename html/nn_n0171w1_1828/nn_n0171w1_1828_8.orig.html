@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[8. Vorlesung, 28.11.1827]</span></div><br/>
+<div class=""><div class=""><div class=""><p class="dta-p">Es wurden in <span title="Schreibfehler: den" class="dta-corr">dem</span> neu entdeckten Lande<br/>
+neue Städte, ja ſelbſt Univerſitäten ge-<br/>
+gründet. – <span title="Personenname"><a href="http://d-nb.info/gnd/118740490">A<span class="dta-del" title="Streichung (#ow)">u</span><span class="dta-add" title="Hinzufügung (across)">n</span>jeris</a></span> erſte Briefe <span class="dta-del" title="Streichung (#ow)">und</span><span class="dta-add" title="Hinzufügung (across)">über</span> die<br/>
+Entdeckung<span class="dta-del" title="Streichung (#ow)">s</span><span class="dta-add" title="Hinzufügung (across)"> A</span>merikas deuten uns den gro-<br/>
+ßen Eindruck an, welchen dieſe auf <span class="dta-del" title="Streichung (#s)">auf</span><br/>
+die Völker machte. – Die Beobachtung der<br/>
+Natur trat jetzt an die Stelle der ſcholaſ-<br/>
+tiſchen Philoſophie, die ſich nun nicht länger<br/>
+mehr halten konnte; vorzüglich trugen zu<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">ihrem</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0046 : 38|</span><br/>
+ihrem Sturze bei <span title="Personenname"><a href="http://d-nb.info/gnd/118516221">Jordano, Bruno</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/118505696">Bako</a></span>,<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/11863819X">Campaneglio</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/118565273">Copernicus</a></span>. Letzterer ſtellte<br/>
+das <span title="Schreibfehler: Welttall" class="dta-corr">Weltall</span> als ein unendliches Ganze dar<br/>
+und gab die erſte Idee zu den Geſetzen an,<br/>
+nach welchen ſich die Weltkörper bewegen. –<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118516221">Bruno</a></span> beſchäftigte ſich hauptſächlich mit Chemie<br/>
+und Aſtrologie. – Als Pantheiſt in Genf<br/>
+verketzert, und von der Inquiſition in<br/>
+Venedig verfolgt, trug er ſeine Kenntniſse<br/>
+in England und Ingolſtadt vor. – In den<br/>
+Werken <span title="Personenname"><a href="http://d-nb.info/gnd/118505696">Bako</a></span>s und <span title="Personenname"><a href="http://d-nb.info/gnd/11863819X">Campaneglio</a></span>s ſpricht<br/>
+ſich ſchon ein tiefes Gefühl über die Ein-<br/>
+heit der Natur aus.</p></div><br/>
+<div class=""><div class="dta-head">5<span class="sup ">te</span> Epoche.</div><br/>
+<hr/><br/>
+<p class="dta-p">Wenn die vorigen Epochen durch Reiſen,<br/>
+durch mathematiſche Unterſuchungen und<br/>
+philoſophiſche Betrachtungen bezeichnet waren,<br/>
+ſo war es der Zeit von 1590 bis 1643 vor-<br/>
+behalten neue Organe zu erſchaffen.</p><br/>
+<p class="dta-p">Es ſind vorzüglich deren 4 verſchiedene<br/>
+Arten, die jetzt geſchaffen wurden, und<br/>
+durch deren Hülfe man <span title="Schreibfehler: durch" class="dta-corr">dazu</span> kommen koñ-<br/>
+te, neue Entdeckungen im Gebiete der Kos-<br/>
+mographie zu machen: Fernröhre, Thermometer,<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Baro-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0047 : 39|</span><br/>
+Barometer, und Infiniteſimal-Rechnung.<br/>
+Durch die Fernröhre deren Erfindung und<br/>
+<span class="b ">erſte Vervollkommung</span> in die Zeit von 1590<br/>
+bis 1611 fällt, werden zuerſt die aufge-<br/>
+ſtellten Sätze des copernicaniſchen Syſtems<br/>
+beſtätigt; durch ihre Anwendung entdeckte<br/>
+man neue Planeten, die Monde des Jupi-<br/>
+ter uſw. Berge des Mondes und die Sonnen-<br/>
+flecke; zugleich unterſuchte man auch die Ur-<br/>
+ſachen der Weiße der Milchſtraße und fand<br/>
+ſie in der großen Zahl der Sterne die dort<br/>
+in Gruppen zuſammen liegen.</p><br/>
+<p class="dta-p">Die Thermometer wurden um 1600 in Al-<br/>
+bena erfunden, und im darauf folgenden<br/>
+Jahr von <span title="Personenname"><a href="http://d-nb.info/gnd/118749420">Reaumur</a></span> auf meteorologiſche Er-<br/>
+ſcheinungen angewendet. – Man fand vermit-<br/>
+telſt ihrer Hülfe den Einfluß der verſchiede-<br/>
+nen Klimate auf das <span title="Original: Vegetations Verhält-&#xA;niß" class="dta-reg">Vegetations-Verhält-<br/>
+niß</span>; die verſchiedenen Klimate in denſelben<br/>
+Breiten, Wärme des innern Erdkörpers u. dgl.<br/>
+meheres.</p><br/>
+<p class="dta-p"><span title="Schreibfehler: Die" class="dta-corr">Das</span> Barometer, eine Erfindung <span title="Personenname"><a href="http://d-nb.info/gnd/118623427">Tori-<br/>
+celli</a></span>'s um 1543 wurde zur Höhenmeſsung der<br/>
+Berge uſw. zuerſt von <span title="Personenname"><a href="http://d-nb.info/gnd/118591843">Pascal</a></span> angewendet.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Die</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0048 : 40|</span><br/>
+<p class="dta-p">Die Infiniteſimal-Rechnung, vorbereitet ſchon<br/>
+durch <span title="Personenname"><a href="http://d-nb.info/gnd/118505696">Bako</a></span>, zu gleicher Zeit von 2 großen<br/>
+Gelehrten, <span title="Personenname"><a href="http://d-nb.info/gnd/118587544">Ne<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">w</span>ton</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/118571249">Leibnitz</a></span> entdeckt <span class="dta-metamark" title="metamark">|:</span> 1670 <span class="dta-metamark" title="metamark">:|</span><br/>
+wurde nicht nur auf Aſtronomie ange-<br/>
+wendet, ſondern ſpäterhin auch mit vielem<br/>
+Glücke auf Phyſik.</p><br/>
+<p class="dta-p">Je mehr man ſich der neuern Zeit nähert<br/>
+<span title="Original: deſtoſchwerer" class="dta-reg">deſto ſchwerer</span> iſt es beſtimmte Epochen zu un-<br/>
+terſcheiden. Durch die größere Leichtigkeit<br/>
+mit der die Schiffarth betrieben wurde; durch<br/>
+die allgemeinere Zugänglichkeit des Erdkörpers<br/>
+und durch die Erfindung neuer Inſtrumen-<br/>
+te, wurden neue Entdeckungen in allen Ge-<br/>
+bieten der Natur gemacht, die ſich auf ein-<br/>
+ander häufen. Hieraus wollen wir nun die<br/>
+vorzüglichſten aufſtellen, die einen beſondern<br/>
+Einfluß gehabt haben.</p><br/>
+<div class="dta-list"><div class="dta-list-item">1, Eine genauere Kenntniß der Luftſtrömun-<br/>
+gen. – Schon die Alten kannten einzelne Strö-<br/>
+mungen, allein ſo wie überhaupt ihre Neigung<br/>
+mehr nach Con-traſten, als nach Regeln war<span class="dta-supplied">[,]</span><br/>
+ſie liebten mehr das Einzelne, die Ausnahme<br/>
+wodurch man jetzt das allgemeinere Princip zu<br/>
+erfaſsen ſucht. –<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0049 : 41|</span><br/>
+Jetzt waren es nicht mehr ſolche particulaire<br/>
+Luftſtrömungen wie man ſie ſchon zu <span title="Personenname"><a href="http://d-nb.info/gnd/118501828">Alexan-<br/>
+der</a></span>s Zeiten kannte, ſondern vielmehr die to-<br/>
+talen Strömungen. – <span title="Personenname"><a href="http://d-nb.info/gnd/118670956">Dampierre</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/118720066">Haller</a></span><br/>
+ſahen zuerſt ein, daß man die Luft als ei-<br/>
+nen großen Ozean betrachten müſse<span class="dta-del" title="Streichung (#s)">n</span>, und<br/>
+leiteten aus dieſer Anſicht die Erſcheinung der<br/>
+Winde und dergleichen her <span class="dta-metamark" title="metamark">|:</span> 1700 <span class="dta-metamark" title="metamark">:|</span></div>
+<div class="dta-list-item">2, Kenntniß der magnetiſchen beinah zu glei-<br/>
+cher Zeit mit den vorigen <span class="dta-metamark" title="metamark">|:</span> <span title="Personenname"><a href="http://d-nb.info/gnd/118720066">Haller</a></span> <span class="dta-metamark" title="metamark">:|</span></div></div></div><br/>
+<div class=""><div class="dta-head">6<span class="sup ">te</span> Epoche</div><br/>
+<hr/><br/>
+<p class="dta-p"><span title="Personenname"><a href="http://d-nb.info/gnd/118522027">Cooks</a></span> Reiſen um die Welt brachten in geogra-<br/>
+phiſcher Hinſicht eine neue Kenntniß des Erd-<br/>
+körpers hervor. – Entdeckung von Neuholland<br/>
+nicht die erſte, ſondern eine Umſchiffung –<br/>
+uſw. – Außer der Erweiterung der Kenntniſse<br/>
+und dem Einfluß den dieſe Reiſen auf die<br/>
+Aſtronomie und Naturgeſchichte haben, ſind<br/>
+ſie noch merkwürdig durch die Erweiterung<br/>
+der <span title="Schreibfehler: phyſichen" class="dta-corr">phyſiſchen</span> Kenntniſse. – Man lernte zu-<br/>
+erſt die Abweichung der Magnetnadel ſowohl<br/>
+näher in horizontaler als perpendiculairer<br/>
+Richtung kennen. <span title="Personenname"><a href="http://d-nb.info/gnd/118720066">Haller</a></span> verzeichnete zuerſt<br/>
+die magnetiſchen Linien, ſowohl nach Deklination<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">als</div><br/>
+<div class="&#xA;            fw-bottom-sig&#xA;          ">Phyſiſche Geographie <span class="aq ">f</span>.</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0050 : 42|</span><br/>
+als nach der Inclination.</p><br/>
+<p class="dta-p"><span title="Personenname">Georg Förſter</span> ſtellte die Entdeckungen, welche<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118522027">Cook</a></span>s Reiſen in allen Gebieten der Natur her-<br/>
+vorbrachten, in einem ſchönen Naturbilde zuſam̃en.<br/>
+Es waren natürlich dieſe Entdeckungen noch<br/>
+ſehr unvollkommen da es noch an manchen Hülfs-<br/>
+mitteln fehlte. Man kannte damals noch nicht<br/>
+die neuern Ideen der geognoſtiſchen Formation,<br/>
+und eben ſo wenig hatte man eine Kenntniß<br/>
+der Hygrometrie. Man kann ſagen dieſe Epoche<br/>
+iſt eine Berichtigung in allen Zweigen der Na-<br/>
+tur; d<span class="dta-del" title="Streichung (#ow)">o</span><span class="dta-add" title="Hinzufügung (across)">ur</span>ch die neu geſchaffenen Organe ſah man<br/>
+beſser und ſchärfer die Erſcheinung und erkañ-<br/>
+te den Zuſammenhang derſelben. – Dadurch er-<br/>
+hielten wir eine genauere Darſtellung der<br/>
+geographiſchen, geognoſtiſchen und hygrome-<br/>
+triſchen Verhältniſse der Erde. – <span title="Personenname"><a href="http://d-nb.info/gnd/118522027">Cook</a></span>s Reiſen ga-<br/>
+ben den Anſtoß in dieſer Art Reiſen zu unter-<br/>
+nehmen, fortzufahren; die neuern Reiſen laſsen<br/>
+den geographiſchen Geſichtspunkt zugleich fallen<br/>
+und nehmen den phyſikaliſchen um ſo ſchärfer<br/>
+auf, ſo waren die Reiſen <span title="Personenname">Bonnet</span>s <span class="dta-metamark" title="metamark">(?)</span> <span title="Personenname"><a href="http://d-nb.info/gnd/124760295">Freſeray</a></span>'s <span class="dta-metamark" title="metamark">(?)</span><br/>
+und andere mehere.</p><br/>
+<p class="dta-p">Die Landreiſen in dieſer Zeit waren dem Raume<br/>
+nach freilich nicht ſo umfaſsend als die der<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Ara-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0051 : 43|</span><br/>
+Araber im Mittelalter; aber dadurch wurden<br/>
+ſie auf die phyſikaliſche Erdbeſchreibung um ſo<br/>
+wichtiger, weil ſie mit neuen Organen unternom-<br/>
+men wurden. – Man unterſuchte die Formationen<br/>
+des Erdkörpers, in Bezug auf Gebirge, ausgebrañ-<br/>
+te<span class="dta-del" title="Streichung (#s)">r</span> Vulkane; <span title="Schreibfehler: organiſchen" class="dta-corr">organiſche</span> Ueberbleibſel; die<br/>
+Hebung der Inſeln, Berge in Rückſicht auf Geo-<br/>
+graphie uſw. So fand man z. B. daß das <span title="Original: Hi-&#xA;malaya Gebirge" class="dta-reg">Hi-<br/>
+malaya-Gebirge</span> höher ſei als die Gebirge<br/>
+in Europa. Die vorzüglichſten Reiſenden ſind:<br/>
+<span title="Personenname">Menu</span>, <span title="Personenname"><a href="http://d-nb.info/gnd/118591371">Palms</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/118804790">Sauſsuri</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/118591746">Munge Park</a></span> und viele<br/>
+andere.</p><br/>
+<p class="dta-p">Es iſt aus dieſen Reiſen häufig auch das Vor-<br/>
+urtheil entſtanden, man müſse um eine<br/>
+Betrachtung allgemein zu machen, und Regeln<br/>
+daraus zu ſchöpfen, mit einen großen Raum<br/>
+derſelben unterwerfen, um daraus Schlußfol-<br/>
+gen zu ziehen. – Da<span class="dta-del" title="Streichung (#ow)">ß</span><span class="dta-add" title="Hinzufügung (across)">s</span> Vorurtheil kann jetzt<br/>
+nicht mehr ſtattfinden da man bekannter mit<br/>
+den Erſcheinungen und mit den Geſetzen gewor-<br/>
+den iſt. – Es giebt Wiſsenſchaften bei denen<br/>
+die Engigkeit des Raumes <span title="Schreibfehler: wegen" class="dta-corr">weniger</span> hinderlich iſt,<br/>
+als bei andern. So die Geographie. – <span title="Personenname"><a href="http://d-nb.info/gnd/118767089">Werner</a></span> ging<br/>
+zur Aufſtellung ſeines Syſtems nur von einen<br/>
+kleinen Punkt der Erde aus. – <span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cou<span class="dta-del" title="Streichung (#ow)">r</span><span class="dta-add" title="Hinzufügung (across)">v</span>ier</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/116685298">Broniat</a></span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">unter-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0052 : 44|</span><br/>
+unterſuchten nun <span title="Schreibfehler: auch" class="dta-corr">auf</span> geringern Streken die<br/>
+tertiären Gebilde; ausgebrannte Vulkane; Tra-<br/>
+chyt, Sienyth, Porphyr; den Einfluß den die He-<br/>
+bung von Inſeln und Gebirge auf die Geogra-<br/>
+phie <span title="Original: aus üben" class="dta-reg">ausüben</span> uſw. <span title="Personenname"><a href="http://d-nb.info/gnd/116817569">Leopold von Buch</a></span> verbreitete<br/>
+dieſe Theorie auf die ganze Erde. – Er zeigte<br/>
+bei der Hebung der pommerſchen und ſchwediſchen<br/>
+Küſte daß nicht das Meer ſich ſenke ſondern<br/>
+vielmehr das Ufer ſich hebe. – Außerdem er-<br/>
+klärte man durch die neue Theorie die heißen<br/>
+Quellen, die Erdbeben und dgl. – Es traten noch<br/>
+phyſiſche Entdeckungen hinzu:</p><br/>
+<div class="dta-list"><div class="dta-list-item">1, Die <span title="Personenname"><a href="http://d-nb.info/gnd/119292556">volta</a></span>iſche Säule; die merkwürdig<br/>
+wurde durch die Anwendungen, welche <span title="Personenname"><a href="http://d-nb.info/gnd/104137932">Deluc</a></span> und<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118510185">Berzelius</a></span> damit machten. Man kam durch<br/>
+dieſe zur Kenntniß der Metalloiden und Al-<br/>
+kalien, und fand daß die Erdarten nur Oxy-<br/>
+de von Metallen ſind, ferner da<span class="dta-del" title="Streichung (#ow)">s</span><span class="dta-add" title="Hinzufügung (across)">ß</span> Metalle<br/>
+ſich ſelbſt unter dem Waſser entzünden können.</div>
+<div class="dta-list-item">2, <span title="Personenname"><a href="http://d-nb.info/gnd/118786784">Ohrſtädt</a></span>s Entdeckung der Identität des Mag-<br/>
+netismus und der Elektrizität. –</div>
+<div class="dta-list-item">3, <span title="Personenname"><a href="http://d-nb.info/gnd/116106875">Bequerel</a></span>s Beweis, daß jede chemiſche Ver-<br/>
+bindung <span title="Schreibfehler: electrokopiſch" class="dta-corr">electroskopiſch</span> ſei.</div>
+<div class="dta-list-item">4, Die Entdeckung daß <span title="Schreibfehler: Magnetimus" class="dta-corr">Magnetismus</span> und Elec-<br/>
+<span title="Schreibfehler: triſität" class="dta-corr">trizität</span> mit der Wärme in Verbindung ſtehen.</div>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">5,</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0053 : 45|</span><br/>
+<div class="dta-list-item">5, <span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arrago</a></span>s Entdeckung der Erregung der Elec-<br/>
+trizität und des <span title="Schreibfehler: Magnetimus" class="dta-corr">Magnetismus</span> bei allen Kör-<br/>
+pern vermöge der Rotation. – Dieß zeigt<br/>
+uns den Weg zur Erklärung des Nordlichts,<br/>
+der Gewitter und anderer hygrometriſchen<br/>
+Zuſtände der Luft. Lavoiſsier, Montigny,<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/100123848">Erman</a></span>̃, <span title="Personenname"><a href="http://d-nb.info/gnd/118678671">Dalten</a></span>, <span title="Personenname">Wels</span>, <span title="Personenname"><a href="http://d-nb.info/gnd/118716581">Gueliſar</a></span>; haben beſon-<br/>
+ders viel für die Electrizität und die Hy-<br/>
+grometrie gethan.</div>
+</div><p class="dta-p">Zu Ende des 18ten Jahrhunderts wurden die<br/>
+großen Fernröhre von <span title="Personenname"><a href="http://d-nb.info/gnd/117650390">Donner</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span> und<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/116746599">Frauenhofer</a></span> angefertigt. Durch ſie bekamen<br/>
+wir eine Kenntniß <span class="dta-del" title="Streichung (#ow)">der</span><span class="dta-add" title="Hinzufügung (across)">von</span> neuen Weltkörpern,<br/>
+neue Planeten wurden entdeckt, ſo wie 2<br/>
+kometartige Körper, die ſich nicht von unſerm<br/>
+Planetenſyſtem entfernen, der <span title="Personenname"><a href="http://d-nb.info/gnd/116471727">Enk</a></span>ſche und <span title="Personenname"><a href="http://d-nb.info/gnd/116164603">Bie-<br/>
+na</a></span>ſche Comet. Wir erhielten eine Kenntniß<br/>
+der Doppelſterne, Sonnen, von denen ſich ent-<br/>
+weder die eine um die andere, oder beide um<br/>
+einen gemeinſchaftlichen Schwerpunkt bewegen, der<br/>
+Nebelflecke uſw.</p><br/>
+<p class="dta-p">Hinſichts der optiſchen Entdeckungen fand man die<br/>
+farbige oder nicht farbige Polariſation des Lichts,<br/>
+wodurch wir unterſcheiden können ob das<br/>
+Licht von ſelbſtleuchtenden Körpern herrührt, oder<br/>
+ob es reflectirtes Licht iſt, ob die leuchtenden<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Kör-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0054 : 46|</span><br/>
+Körper feſt oder gasartig ſind.</p><br/>
+<p class="dta-p">In geographiſcher Hinſicht bleiben nur noch 26 Gra-<br/>
+de der Breite übrig die noch nicht bekannt ſind.<br/>
+Capit: <span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Paroy</a></span> hat Reiſen nach den Nor<span class="dta-add" title="Hinzufügung (intralinear)">d</span>pol unter-<br/>
+nommen, und die Wiederholung derſelben<br/>
+läßt uns günſtige Reſultate erwarten.</p><br/>
+<p class="dta-p">Die Weltanſicht wie ſie auf uns gekommen iſt,<br/>
+iſt ein Produckt der menſchlichen Intelligenz. –<br/>
+In frühern Zeiten hielt ſie nicht Schritt mit den<br/>
+phyſiſchen Wiſsenſchaften. Da die erſten Völker<br/>
+vielleicht eine größere Neigung zur Ph<span class="dta-del" title="Streichung (#ow)">i</span><span class="dta-add" title="Hinzufügung (across)">y</span>loſophie<br/>
+und zu der Speculation zeigten, und weniger<br/>
+auf Erfahrung hielten, ſo mußten natürlich<br/>
+manche Anſichten ganz vernachläſsiget werden.<br/>
+Jetzt, wo faſt ein jedes Volk Europas ſich mit<br/>
+einem andern Zweige der Natur beſchäftigt,<br/>
+muß die Weltanſicht gleichzeitig fortſchreiten.<br/>
+Jedoch ſind dieſe Fortſchritte deshalb nicht gleich-<br/>
+mäßig. – Einzelne Wiſsenſchaften gehen gleich-<br/>
+ſam ſtoßweiſe fort, indem oft eine neue<br/>
+Erfahrung, eine Erfindung Licht auf viele<br/>
+Punkte verbreitet die bis dahin dunkel waren,<br/>
+weil es eben an dieſer Erfahrung fehlte. –<br/>
+Das Streben in unſrer Zeit geht hauptſächlich<br/>
+nach allgemeinen Anſichten nach Principien<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">die</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0055 : 47|</span><br/>
+die alles einzelne in ſich faſsen. – Wir ver-<br/>
+danken die allgemeinen Geſetze in der Aſtro-<br/>
+nomie dem großen <span title="Personenname"><a href="http://d-nb.info/gnd/118561448">Keppler</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/118587544">Newton</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/11850178X">Dalem-<br/>
+bert</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/118568698">Lagrange</a></span>, vorzüglich in neuſten Zeiten.<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span> der in ſeiner Mechanik des Himmels<br/>
+ſeine Kenntniſse niedergelegt hat. Je höher<br/>
+man in der Unterſuchungen der Natur<br/>
+ſteigt, deſto mehr ergiebt es ſich daß alle Na-<br/>
+turerſcheinungen miteinander zuſam̃enhängen.</p><br/>
+<p class="dta-p">Es iſt eine auffallende Erſcheinung daß wir<br/>
+beſsere Kenntniſse und die Geſetze beſitzen<br/>
+nach welchen die fernern Weltkörper ſich bewegenAlle Bewegungen der Himmelskörper betrach-<span class="dta-marginal dta-marginal-right">?<br/>
+</span><br/>
+tet man jetzt als <span class="u ">eine</span> Aufgabe der Mecha-<br/>
+nik, indem man nur die Attraction<span class="dta-add" title="Hinzufügung (superlinear)">(?)</span> zu<br/>
+Hülfe nimmt.,<br/>
+als auch die uns näher liegenden Gegenſtände z. B.<br/>
+das Meer, die Luft uſw. Es liegt wohl der<br/>
+Grund darin daß bei jenen nur quantitätive<br/>
+Begriffe vorkommen, und man bei den tellu-<br/>
+riſchen <span class="b ">Gegenſtänden</span> zugleich den Stoff betrachten<br/>
+muß, aus denen ſie beſtehen, die Störungen<br/>
+verurſachen, welche nicht zu berechnen ſind, wes-<br/>
+halb man die Einheit der Geſetze auch noch nicht hat<br/>
+finden können. Ueber da<span class="dta-del" title="Streichung (#ow)">ß</span><span class="dta-add" title="Hinzufügung (across)">s</span>, was noch dunkel ge-<br/>
+blieben iſt in der Geognoſie und Meteorologie<br/>
+kann vielleicht durch die glückliche Entdeckung, eines<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Tages</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0056 : 48|</span><br/>
+Tages, einer Stunde ein unerwartetes Licht ver-<br/>
+breitet werden. Es iſt ein ſehr ungerechtes Vor-<br/>
+urtheil, wenn man glaubt eine große Menge<br/>
+von Stoffen und Kräften müſse zuſammen tre-<br/>
+ten um über mehere Erſcheinungen Licht zu ver-<br/>
+breiten, und es ſei nicht der Chemiker in ſeinen<br/>
+Laboratorium und der Phyſiker in ſeinen Kabine<span class="dta-supplied">[tt]</span><br/>
+im Stande da wieder zur Aufſtellung etwas bei-<br/>
+zutragen. Die neuſten Erfahrungen der Phyſik<br/>
+und Chemie ſprechen dagegen; man darf ſich nur<br/>
+erinnern wie viel zur allgemeinen Kenntni<span class="dta-supplied">[ß]</span><br/>
+die Entdeckung der <span title="Personenname"><a href="http://d-nb.info/gnd/119292556">volta</a></span>iſchen Säule beitrug.<br/>
+Man kann ſicher darauf rechnen, daß uns alle<br/>
+Erſcheinungen in der Atmosphäre nur durch<br/>
+dieſe beide Wiſsenſchaften aufgeklärt werden<br/>
+können.</p></div></div></div></div></body></html>

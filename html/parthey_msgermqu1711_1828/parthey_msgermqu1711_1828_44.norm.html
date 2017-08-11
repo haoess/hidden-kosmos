@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session">   <div class="dta-head"><span title="Original: 44. 28 März." class="dta-reg">44. Vorlesung, 28.03.1828</span></div><br/>
+<p class="dta-p">Der Effekt der <span title="Original: verdünten" class="dta-reg">verdünnten</span> Luft auf das Abdominalsystem ist noch<br/>
+viel bedeutender als der auf die <span title="Original: Respirazion" class="dta-reg">Respiration</span>. Das Bluten bemerkt<br/>
+man besonders bei jungen Personen, die eine feine Haut haben. Auf<br/>
+der <span title="Original: Hochebne" class="dta-reg">Hochebene</span> von Antisana, welche 1200 <span title="Original: Fus" class="dta-reg">Fuß</span> höher liegt als der Pic<br/>
+von Teneriffa steht ein vereinzelter Meierhof: die: <span title="Original: Ferma" class="dta-reg">Feme</span> de <span title="Original: An-&#xA;tisana" class="dta-reg">Antisana</span>, wo sich eine Menge verwilderter Stiere befinden: wenn diese<br/>
+von Reitern <span title="Original: gehezt" class="dta-reg">gehetzt</span> werden: so ist es nicht selten, dass sie Blut<br/>
+speien und stürzen, weil durch die Muskelbewegung das Blut sehr<br/>
+stark in Wallung <span title="Original: kömt" class="dta-reg">kommt</span>.</p><br/>
+<p class="dta-p">Ein Hauptübel auf jenen Höhen ist die Lust zum speien, die<br/>
+man <span title="Original: grade" class="dta-reg">gerade</span> so findet wie auf dem Meere: daher nennen die<br/>
+Spanier es auch: <span title="Original: mal" class="dta-reg">Mal</span> de <span title="Original: montañas" class="dta-reg">montannass</span>: es <span title="Original: äussert" class="dta-reg">äußert</span> sich <span title="Original: grade" class="dta-reg">gerade</span> so wie<br/>
+die Seekrankheit, und besonders bei Frauen und schwächeren Personen.<br/>
+Wenn diese aus den Hochebnen von <span title="Original: Bogotà" class="dta-reg">Bogota</span> ihre Verwandte in<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0538 : 267v|</span><br/>
+Guamanga an der Seeküste besuchen, so müssen sie über einen<br/>
+Pas, der höher ist als der Montblanc, und hier <span title="Original: stelt" class="dta-reg">stählt</span> sich die<br/>
+Übelkeit gewöhnlich ein, die meist von <span title="Original: grosser" class="dta-reg">großer</span> Mattigkeit <span title="Original: be-&#xA;gleitet" class="dta-reg">begleitet</span> ist. Dies rührt von der geringeren Quantität <span title="Original: Sauerstof" class="dta-reg">Sauerstoff</span><br/>
+her, welche bei jeder <span title="Original: Inspirazion" class="dta-reg">Inspiration</span> an das Blut tritt, denn die<br/>
+Luft wird durch den verringerten <span title="Original: Barometerdruk" class="dta-reg">Barometerdruck</span> dünner: nicht<br/>
+aber <span title="Original: nimt" class="dta-reg">nimmt</span> ihr <span title="Original: Sauerstofgehalt" class="dta-reg">Sauerstoffgehalt</span> ab. Ich habe zuerst wieder auf<br/>
+dieses Phänomen aufmerksam gemacht, nachdem es lange <span title="Original: ver-&#xA;gessen" class="dta-reg">vergessen</span> war. <span title="Personenname"><a href="http://d-nb.info/gnd/12116117X">Acosta</a></span> sagt in seinem Werke, welches als die erste<br/>
+physikalische Geographie zu betrachten ist, ganz deutlich, dass<br/>
+man auf hohen Bergen das Bluten und die Übelkeit <span title="Original: wahr-&#xA;nehme" class="dta-reg">wahrnehme</span>. <span title="Personenname"><a href="http://d-nb.info/gnd/100720463">Zumstein</a></span> <span title="Original: wolte" class="dta-reg">wollte</span> eine Messung des Mont Rosa machen,<br/>
+wurde aber durch Übelkeit davon abgehalten, und gab daher<br/>
+die Höhe des Berges viel <span title="Original: grösser" class="dta-reg">größer</span> an, als sie nachher von dem<br/>
+Baron <span title="Personenname"><a href="http://d-nb.info/gnd/100724833">Wrangel</a></span> <span class="dta-metamark" title="metamark">(?)</span> <span title="Original: bestimt" class="dta-reg">bestimmt</span> wurde. Durch die <span title="Original: lezten" class="dta-reg">letzten</span> Berichte<br/>
+haben wir erfahren, dass auch auf dem <span title="Original: Himalaya" class="dta-reg">Himalaja</span> die Luft<br/>
+von den Einwohnern für giftig gehalten wird, wofür es im <span title="Original: San-&#xA;skrit" class="dta-reg">Sanskrit</span> ein <span title="Original: eignes" class="dta-reg">eigenes</span> Wort <span title="Original: giebt" class="dta-reg">gibt</span>; die englischen Reisenden spürten<br/>
+den <span title="Original: Einflus" class="dta-reg">Einfluß</span> dieser giftigen Luft schon auf 15000 <span title="Original: Fus" class="dta-reg">Fuß</span> Höhe. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0539 : 268r|</span><br/>
+<p class="dta-p">Das <span class="u "><span title="Original: Feuer-anmachen" class="dta-reg">Feuer-Anmachen</span></span> und Kochen hat auf den hohen Bergen eine<br/>
+<span title="Original: eigne" class="dta-reg">eigene</span> Schwierigkeit. Ich habe mich viel damit beschäftigt, aber nur<br/>
+eine unvolkomne Methode anwenden können. Wasser, welches am<br/>
+Meere, also unter 28<span title="Original: ″" class="dta-reg">"</span> Barometerhöhe <span class="dta-del" title="Streichung (#s)">siedet, bra</span><span class="dta-add" title="Hinzufügung (intralinear)">bei 80° R. siedet,<br/>
+braucht</span> dazu auf hohen Bergen nur 62° R. In den Fällen, wo ich<br/>
+<span class="dta-del" title="Streichung (#s)">unter</span><span class="dta-add" title="Hinzufügung (superlinear)">über</span> der <span title="Original: Schneegränze" class="dta-reg">Schneegrenze</span> in <span title="Original: grossen" class="dta-reg">großen</span> Höhlen Feuer anzünden lies,<br/>
+war dies immer mit vielen Schwierigkeiten verbunden. Die <span title="Original: Flam̃e" class="dta-reg">Flamme</span><br/>
+hält nicht zusammen, sondern läuft gleichsam auf der Erde fort.<br/>
+Merkwürdig ist es, dass <span title="Personenname"><a href="http://d-nb.info/gnd/118595563">Marco Polo</a></span> dasselbe auf einem hohen<br/>
+<span title="Original: Bergrükken" class="dta-reg">Bergrücken</span> zwischen der <span title="Original: grossen" class="dta-reg">großen</span> und kleinen Bucharei bemerkte;<br/>
+und als eine Folge des mangelnden <span title="Original: Luftdrukkes" class="dta-reg">Luftdrucks</span> <span title="Original: angiebt" class="dta-reg">angibt</span>. <span title="Original: Die-&#xA;selben" class="dta-reg">Dieselben</span> Erscheinungen findet man bei der <span title="Original: Flam̃e" class="dta-reg">Flamme</span> im <span title="Original: luftverdün-&#xA;ten" class="dta-reg">luftverdünten</span> Raum unter der Luftpumpe.</p><br/>
+<p class="dta-p">Die <span class="u ">regelmässigen Störungen</span> des Luftozeans, welche man auch<br/>
+<span title="Original: Oszillazionen" class="dta-reg">Oszillationen</span> <span title="Original: genant" class="dta-reg">genannt</span> hat, <span title="Original: bestehn" class="dta-reg">bestehen</span> in einer stündlichen Ebbe und<br/>
+Flut, die sich am Barometer <span title="Original: äussert" class="dta-reg">äußert</span>. Unter den Tropen sind<br/>
+sie so <span title="Original: regelmässig" class="dta-reg">regelmäßig</span>, dass man bis auf ¼ Stunde genau die<br/>
+Zeit danach bestimmen kann. Das Barometer steht am<br/>
+höchsten um 9 Uhr früh, sinkt von da an, und erreicht seinen<br/>
+niedrigsten Stand um 4 Uhr Abend: dann steigt es, und steht<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0540 : 268v|</span><br/>
+um <span title="Original: 11½" class="dta-reg">111/2</span> Uhr am höchsten, sinkt dann, und steht um 4 Uhr<br/>
+Morgens <span title="Schreibfehler: an" class="dta-corr">am</span> niedrigsten, von wo es dann wieder um 9 Uhr<br/>
+früh seinen höchsten Stand erreicht. Man sieht also, dass<br/>
+die beiden Ebben um 4 Uhr früh und Abends fallen. Die<br/>
+<span title="Original: grösten" class="dta-reg">größten</span> Stürme, Erdbeben, Donnerwetter <span title="Original: pp" class="dta-reg">pp.</span> haben gar keinen<br/>
+<span title="Original: Einflus" class="dta-reg">Einfluß</span> darauf. Die erste Beobachtung darüber wurde<br/>
+1682 von den französischen Reisenden <span title="Personenname">Varel</span> und <span title="Personenname"><a href="http://viaf.org/viaf/27369279">Beau</a></span> <span class="dta-metamark" title="metamark">(??)</span><br/>
+an den Küsten von Afrika gemacht. Das Phänomen <span title="Original: er-&#xA;strekt" class="dta-reg">erstreckt</span> sich vom Meere an bis auf Höhen von <span title="Original: 12–14000" class="dta-reg">12-14000</span><br/>
+<span title="Original: Fus" class="dta-reg">Fuß</span>, auf denen ich lange genug verweilte, um diese <span title="Original: Beo-&#xA;bachtungen" class="dta-reg">Beobachtungen</span> machen zu können. Sehr merkwürdig ist es,<br/>
+dass allein in Ostindien, während der Monsuns diese<br/>
+Erscheinung unterbrochen wird, wo eine ungeheure Menge<br/>
+Wasser aus der <span title="Original: Athmosphäre" class="dta-reg">Atmosphäre</span> herabstürzt. <span title="Personenname"><a href="http://d-nb.info/gnd/117598275">Horsewood</a></span>,<br/>
+der dies <span title="Original: konstatirte" class="dta-reg">konstatierte</span>, fand zugleich, dass wenn man sich<br/>
+nur <span title="Original: 5–6" class="dta-reg">5-6</span> Meilen von der Küste entfernt, das <span title="Original: Phäno-&#xA;men" class="dta-reg">Phänomen</span> in seiner ganzen Regelmässigkeit wieder <span title="Original: eintrit" class="dta-reg">Eintritt</span>.<br/>
+In Europa kann man es wegen der Störungen in der <span title="Original: Wit-" class="dta-reg">Witterung</span>
+<span class="dta-pb" style="padding-left:15em">|#f0541 : 269r|</span><br/>
+<span title="Original: terung" class="dta-reg"/> nur nach <span title="Original: Mittelzalen" class="dta-reg">Mittelzahlen</span> <span title="Original: ausdrükken" class="dta-reg">ausdrücken</span>. Unter den Tropen<br/>
+braucht man einen Tag und eine Nacht, um die Erscheinung<br/>
+festzustellen: im Süden der gemässigten Zone, in Spanien <span title="Original: 10–14" class="dta-reg">10-14</span> Tage<span title="Schreibfehler: ." class="dta-corr">,</span><br/>
+<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: w" class="dta-reg">weiter</span></span><span title="Original: eiter" class="dta-reg"/> gegen Norden viel längere Zeit: doch ist das factum selbst<br/>
+in Königsberg und Petersburg <span title="Original: eruirt" class="dta-reg">eruiert</span> worden, und während<br/>
+<span title="Schreibfehler: der" class="dta-corr">die</span> <span class="dta-del" title="Streichung (#s)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span> übrigen <span title="Original: Perturbazionen" class="dta-reg">Perturbationen</span> in der <span title="Original: Athmosphäre" class="dta-reg">Atmosphäre</span> vom <span title="Original: Ae-&#xA;quator" class="dta-reg">Äquator</span> nach den Polen hin zunehmen: so ist es hierbei <span title="Original: um-&#xA;gekehrt" class="dta-reg">umgekehrt</span>: die Quantität der Ebbe und Flut <span title="Original: nimt" class="dta-reg">nimmt</span> nach den <span title="Original: Po-&#xA;len" class="dta-reg">Polen</span> zu ab. Unter dem <span title="Original: Aequator" class="dta-reg">Äquator</span> beträgt der Unterschied<br/>
+des maximum und <span title="Original: minimum" class="dta-reg">Minimum</span> <span class="sup "><span title="Original: 5" class="dta-reg">5/4</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 4" class="dta-reg"/></span> Linien, unter 30° Breite<br/>
+¾ Linien, in Königsberg 0,02 Linien. In dem mexikanischen<br/>
+Meerbusen werden die <span title="Original: Oszillazionen" class="dta-reg">Oszillationen</span> durch die Nordstürme<br/>
+unterbrochen, welche das Auslaufen aus dem Hafen von<br/>
+Vera-Cruz nach der <span title="Original: Havannah" class="dta-reg">Havanna</span> <span title="Original: p" class="dta-reg">pp.</span> so sehr gefährlich machen:<br/>
+daher erlaubte schon zu meiner Zeit der Hafenkapitain<br/>
+<span title="Personenname">Orta</span>, welcher noch <span title="Original: jezt" class="dta-reg">jetzt</span> dort ist, den Schiffen nicht eher<br/>
+auszulaufen, als bis die <span title="Original: Oszillazionen" class="dta-reg">Oszillationen</span> des Barometers sich<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0542 : 269v|</span><br/>
+<span title="Original: wiederhergestelt" class="dta-reg">wiederhergestellt</span> hatten: denn alsdann erst ist man sicher, dass<br/>
+der Nordsturm nicht wieder anfange, wenn auch sonst der<br/>
+Himmel ganz heiter ist. Der Name: Ebbe und Flut ist nicht<br/>
+gut gewählt, weil man dabei an dieselben Ursachen denken<br/>
+<span title="Original: könte" class="dta-reg">könnte</span>, welche die Flut im Meere bedingen. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/11850178X">D'Alembert</a></span></span> machte<br/>
+zuerst die Betrachtung, dass die luftförmigen Flüssigkeiten,<br/>
+welche <span title="Original: unsern" class="dta-reg">unseren</span> Planeten umgeben, eben so gut als die <span title="Original: tropf-&#xA;barflüssigen" class="dta-reg">tropfbarflüssigen</span> von den <span title="Original: andern" class="dta-reg">anderen</span> Himmelskörpern angezogen<br/>
+werden <span title="Original: müsten" class="dta-reg">müssten</span>. <span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span> unterwarf dies tiefsinnigen <span title="Original: Berech-&#xA;nungen" class="dta-reg">Berechnungen</span>, fand aber, dass nach der Theorie die Anziehung<br/>
+4 <span title="Original: mal" class="dta-reg">Mal</span> geringer sein <span title="Original: müste" class="dta-reg">müsste</span>, als in der Wirklichkeit: daher<br/>
+können die <span title="Original: Oszillazionen" class="dta-reg">Oszillationen</span> wohl nicht Folge der <span title="Original: Attrakzion" class="dta-reg">Attraktion</span><br/>
+der Sonne und des Mondes sein: es ist wahrscheinlicher,<br/>
+dass sie eine Wirkung der wärmeerregenden Kraft der<br/>
+Sonne sind, worüber wir aber noch nicht mit <span title="Original: Gewisheit" class="dta-reg">Gewißheit</span><br/>
+entscheiden können. Was man bis <span title="Original: jezt" class="dta-reg">jetzt</span> darüber geschrieben,<br/>
+ist durchaus nicht genau. So behauptet <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/116023325">Daniell</a></span></span>, in seiner<br/>
+Theorie der Luftströme, dass während das <span class="dta-del" title="Streichung (#s)">Ther</span><span class="dta-add" title="Hinzufügung (intralinear)">Barometer</span><br/>
+bei uns steigt, müsse es am Pol sinken: da dies aber nur<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0543 : 270r|</span><br/>
+<div class="fw-top fw-sig">68.</div><br/>
+<span class="sup "><span title="Original: 1" class="dta-reg">1/20,000</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 20,000" class="dta-reg"/></span> eines Zolles betragen soll, so <span title="Original: läst" class="dta-reg">lässt</span> sich leicht <span title="Original: begrei-&#xA;fen" class="dta-reg">begreifen</span>, dass eine so unbedeutende Quantität durch <span title="Original: Beobach-&#xA;tungen" class="dta-reg">Beobachtungen</span> nie wird ausgemittelt und bestätigt werden. Der<br/>
+ausgezeichnete amerikanische Chemiker <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/119559668">Muris</a></span></span> glaubt die<br/>
+<span title="Original: Ursach" class="dta-reg">Ursache</span> davon im Einflusse des Mondes zu finden. Ich habe<br/>
+sehr viel Beobachtungen darüber gemacht, die zum <span title="Original: Theil" class="dta-reg">Teil</span> von<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/101165250">Boussingault</a></span> wiederholt wurden, aber etwas gewisses <span title="Original: läst" class="dta-reg">lässt</span><br/>
+sich nicht darüber aussprechen. <span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span> hat <span title="Original: 10 jährige" class="dta-reg">10-jährige</span><br/>
+Beobachtungen vor sich gehabt, die er von <span title="Personenname"><a href="http://d-nb.info/gnd/116299762">Bouvard</a></span> berechnen<br/>
+lies: er fand <span class="sup "><span title="Original: 1" class="dta-reg">1/10,000</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 10,000" class="dta-reg"/></span> von einem Millimeter als Mittelzahl.</p><br/>
+<p class="dta-p">Unter den <span class="u ">regelmässigen Bewegungen</span> des Luftozeans<br/>
+versteht man die Passatwinde, vents <span title="Original: alisés" class="dta-reg">alises</span>, welche <span title="Original: eigent-&#xA;lich" class="dta-reg">eigentlich</span> in einer <span title="Original: grossen" class="dta-reg">großen</span> <span title="Original: Rotazion" class="dta-reg">Rotation</span> des Luftmeeres von <span title="O." class="dta-abbr">Ost</span><br/>
+nach <span title="W." class="dta-abbr">West</span> ihren Grund haben. Die Erklärung davon gaben<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/11850178X">D'Alembert</a></span> und nach ihm <span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span> mit <span title="Original: grossem" class="dta-reg">großem</span> Scharfsinn,<br/>
+sie ist auf das beste in den kosmischen Verhältnissen <span title="Original: un-&#xA;seres" class="dta-reg">unseres</span> Erdkörpers gegründet. Die Luft unter dem <span title="Original: Aequator" class="dta-reg">Äquator</span><br/>
+wird ungleich mehr <span title="Original: erhizt" class="dta-reg">erhitzt</span> als die unter <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: d" class="dta-reg">den</span></span><span title="Original: en" class="dta-reg"/> Polen: daher<br/>
+entsteht unter dem <span title="Original: Aequator" class="dta-reg">Äquator</span> ein beständiger warmer<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0544 : 270v|</span><br/>
+aufsteigender Luftstrom, welcher sich in den <span title="Original: obern" class="dta-reg">oberen</span> <span title="Original: Re-&#xA;gionen" class="dta-reg">Regionen</span> <span title="Original: unsrer" class="dta-reg">unserer</span> <span title="Original: Athmosphäre" class="dta-reg">Atmosphäre</span> nördlich und südlich<br/>
+nach den beiden Polen hin <span title="Original: ergiest" class="dta-reg">ergießt</span>. Da aber jeder Strom<br/>
+einen Gegenstrom <span title="Original: voraussezt" class="dta-reg">voraussetzt</span>: so <span title="Original: mus" class="dta-reg">muss</span> sich in den <span title="Original: untern" class="dta-reg">unteren</span><br/>
+Regionen, also nahe an der Erde, ein Strom kälterer Luft<br/>
+bilden, der von den Polen nach dem <span title="Original: Aequator" class="dta-reg">Äquator</span> hingeht.<br/>
+Die <span title="Original: Rotazionsgeschwindigkeit" class="dta-reg">Rotationsgeschwindigkeit</span> der Erde, mithin der<br/>
+Luft, ist aber unter den Polen geringer als unter dem<br/>
+<span title="Original: Aequator" class="dta-reg">Äquator</span>, daher werden die vom Pol herabkommenden<br/>
+Luftschichten nach ihrer natürlichen Trägheit <span title="Original: zurük-&#xA;bleiben" class="dta-reg">zurückbleiben</span>: sie können nicht so gleich die Geschwindigkeit<br/>
+unter dem <span title="Original: Aequator" class="dta-reg">Äquator</span> annehmen. Insofern <span class="dta-del" title="Streichung (#s)">nun</span> die <span title="Original: Bewe-&#xA;gung" class="dta-reg">Bewegung</span> der Erde von <span title="W." class="dta-abbr">West</span> nach <span title="O." class="dta-abbr">Ost</span> ist: so müssen alle Körper<br/>
+auf derselben mit ihrer östlichen Seite an die <span title="Original: träg-zurük-&#xA;bleibende" class="dta-reg">träg-zurückbleibende</span> Luft anschlagen, und dies bringt die Empfindung<br/>
+eines Ostwindes hervor, den man seiner Regelmässigkeit<br/>
+wegen den Passatwind <span title="Original: nent" class="dta-reg">nennt</span>. Es ist für die Schiffer von<br/>
+der <span title="Original: grösten" class="dta-reg">größten</span> Wichtigkeit, zu wissen, unter welchen Breiten<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0545 : 271r|</span><br/>
+sie auf regelmässige Winde treffen, daher ist diese <span title="Original: Erschei-&#xA;nung" class="dta-reg">Erscheinung</span> einer <span title="Original: besondern" class="dta-reg">besonderen</span> Untersuchung unterworfen worden.<br/>
+Wenn überall auf der Erde Kontinent oder Wasser wäre: so<br/>
+würde die <span title="Original: Gränze" class="dta-reg">Grenze</span> der Passatwinde genau unter dem <span title="Original: Aequa-&#xA;tor" class="dta-reg">Äquator</span> sein: da aber, wie wir oben <span title="Original: gesehn" class="dta-reg">gesehen</span> haben, im Norden<br/>
+<span title="Original: ⅓" class="dta-reg"> 1/3 </span> Kontinent mehr ist, als im Süden, und die Erwärmung<br/>
+auf der starren Erdhülle <span title="Original: grösser" class="dta-reg">größer</span> ist, als auf der <span title="Original: flüs-&#xA;sigen" class="dta-reg">flüssigen</span> (auf der opaken <span title="Original: grösser" class="dta-reg">größer</span> als auf der durchsichtigen) so<br/>
+wird der <span title="Original: Wärme-aequator" class="dta-reg">Wärme-Äquator</span> nördlicher fallen als der <span title="Original: physi-&#xA;sche" class="dta-reg">physische</span>, und die <span title="S. O. S.-O.-" class="dta-abbr"><span title="Original: Süd-Ost-" class="dta-reg">Süd-Ost-Winde</span></span><span title="Original: Winde" class="dta-reg"/> werden etwas nördlich über den<br/>
+<span title="Original: Aequator" class="dta-reg">Äquator</span> <span title="Original: hinausgehn" class="dta-reg">hinausgehen</span>. Dies ist aber sehr verschieden in<br/>
+dem engen Meeresthale des atlantischen Ozeans und in<br/>
+dem ausgedehnten <span title="Original: Bekken" class="dta-reg">Becken</span> der Südsee. Weil um den <span title="Original: atlan-&#xA;tischen" class="dta-reg">atlantischen</span> Ozean sich im Norden mehr Land befindet, als<br/>
+im Süden: so werden hier die Passatwinde nördlich über<br/>
+den <span title="Original: Aequator" class="dta-reg">Äquator</span> <span title="Original: hinausgehn" class="dta-reg">hinausgehen</span>. In der Südsee dagegen nähert<br/>
+sich der Zustand des <span title="Schreibfehler: Erdphäroïdes" class="dta-corr"><span title="Original: Erdsphäroïdes" class="dta-reg">Erdsphäroides</span></span> schon mehr demjenigen,<br/>
+wo es ein pelagischer Körper wäre: auch liegt, wenn man<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0546 : 271v|</span><br/>
+Kalifornien etwa <span title="Original: ausnimt" class="dta-reg">ausnimmt</span>, in der Südsee eben so wenig<br/>
+Land nördlich, wie südlich vom <span title="Original: Aequator" class="dta-reg">Äquator</span>, daher wird <span class="dta-del" title="Streichung (#ow)">de</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: hi" class="dta-reg">hier</span></span><span title="Original: er" class="dta-reg"/><br/>
+der <span title="Original: Wärmeaequator" class="dta-reg">Wärmeäquator</span> oder die <span title="Original: Gränze" class="dta-reg">Grenze</span> der Passatwinde<br/>
+sehr genau mit dem physischen <span title="Original: Aequator" class="dta-reg">Äquator</span> <span title="Original: zusammenfal-&#xA;len" class="dta-reg">zusammenfallen</span>. Die Regelmässigkeit der Passatwinde wurde schon<br/>
+frühe bemerkt, aber ohne den Grund davon angeben zu<br/>
+können, von <span title="Personenname"><a href="http://d-nb.info/gnd/118670956"><span title="Original: Dampère" class="dta-reg">Dampere</span></a></span> <span class="dta-metamark" title="metamark">(?)</span> 1666. Später gab <span title="Personenname"><a href="http://d-nb.info/gnd/118720066"><span title="Original: Ha" class="dta-reg">Hadley</span><span class="dta-del" title="Streichung (#s)">l</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Original: d" class="dta-reg"/></span><span title="Original: ley" class="dta-reg"/></a></span> eine <span title="Original: vor-&#xA;trefliche" class="dta-reg">vortreffliche</span> Abhandlung darüber. <span title="Original: –" class="dta-reg">-</span> Man findet die <span title="Original: Pas-&#xA;satwinde" class="dta-reg">Passatwinde</span> nicht immer in gleichen Höhen über der Erde:<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/116817569">L. v. Buch</a></span> in seiner Beschreibung der kanarischen Inseln<br/>
+macht auf diese Erscheinung aufmerksam; auf dem Pic<br/>
+von Teneriffa <span title="Original: herscht" class="dta-reg">herrscht</span> meist Westwind, und alle hohen<br/>
+Berge (über 14000 <span title="Original: Fus" class="dta-reg">Fuß</span>) welche den Tropengegenden nahe <span title="Original: lie-&#xA;gen" class="dta-reg">liegen</span>, haben denselben Westwind. Bei einem Ausbruche des<br/>
+Vulkans von St. Vincent, 1812 fiel die Asche auf die Insel<br/>
+Barbados, welche <span title="Schreibfehler: in" class="dta-corr">im</span> Osten davon liegt, und durch den <span title="Original: Ost-&#xA;wind" class="dta-reg">Ostwind</span> niemals Regen oder Wolken erhält. Mit dieser<br/>
+auffallenden Erscheinung ist der <span title="Original: rükkehrende" class="dta-reg">Rückkehrende</span> Strom in der<br/>
+Höhe erwiesen, und die Theorie der Passatwinde durch<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0547 : 272r|</span><br/>
+Erwärmung zu etwas mehr als <span title="Original: Vermuthung" class="dta-reg">Vermutung</span> geworden. Auch<br/>
+einen regelmässigen Land- und Seewind kann man aus <span title="Original: der-&#xA;selben" class="dta-reg">derselben</span> <span title="Original: Ursach" class="dta-reg">Ursache</span> erklären. Bei Tage, wo der opake Kontinent<br/>
+mehr erwärmt wird, als das Meer, bildet sich ein <span title="Original: aufsteigen-&#xA;der" class="dta-reg">aufsteigender</span> warmer Luftstrom, der einen Seewind <span title="Original: veranlast" class="dta-reg">veranlasst</span>: Abends<br/>
+dagegen, wo nach Sonnenuntergang das Meer länger seine <span title="Original: Tem-&#xA;peratur" class="dta-reg">Temperatur</span> behält, aus der <span title="Original: wärmeausstralende" class="dta-reg">wärmeausstrahlende</span> Kontinent, bildet<br/>
+sich ein Landwind, der oft weit in die See hinausreicht, und<br/>
+von den Küstenfahrern <span title="Original: benuzt" class="dta-reg">benutzt</span> wird.</p><br/>
+<p class="dta-p"><span class="u ">Unregelmässige Bewegungen</span> in der <span title="Original: Athmosphäre" class="dta-reg">Atmosphäre</span> sind die<br/>
+Stürme, über<span class="dta-del" title="Streichung (#s)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span> deren Kraft man verschiedentlich Messungen<br/>
+<span title="Original: angestelt" class="dta-reg">angestellt</span> hat. Die gewöhnliche Geschwindigkeit in einer Sekunde<br/>
+sind 60 <span title="Original: Fus" class="dta-reg">Fuß</span>, doch <span title="Original: giebt" class="dta-reg">gibt</span> es auch Stürme, die <span title="Original: 130–132" class="dta-reg">130-132</span> <span title="Original: Fus" class="dta-reg">Fuß</span> <span title="Original: zurük-&#xA;legen" class="dta-reg">zurücklegen</span>. Vergleicht man damit die Schnelligkeit der Pferde, so<br/>
+zeigt es sich, dass sie nur wenig <span title="Original: zurükbleibt" class="dta-reg">zurückbleibt</span>; das berühmte<br/>
+Pferd <span title="Original: Ecclipse" class="dta-reg">Eklipse</span>, bei dem man genauere Messungen hat <span title="Original: vorneh-&#xA;men" class="dta-reg">vornehmen</span> können, machte 58 <span title="Original: Fus" class="dta-reg">Fuß</span> in einer Sekunde, aber nur mit <span title="Original: an-&#xA;fangender" class="dta-reg">anfangender</span> Geschwindigkeit: denn auf die Dauer <span title="Original: konte" class="dta-reg">konnte</span> es eine so<br/>
+starke Muskelbewegung nicht aushalten. Ich bringe hierbei in<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0548 : 272v|</span><br/>
+Erinnerung, dass der Schall 1038 <span title="Original: Fus" class="dta-reg">Fuß</span>, eine Kanonenkugel mit <span title="Original: an-&#xA;fangender" class="dta-reg">anfangender</span> Geschwindigkeit 1500<span title="Original: ′" class="dta-reg">'</span> in einer Sekunde <span title="Original: zurüklegen" class="dta-reg">zurücklegen</span>.</p><br/>
+<p class="dta-p">Über die <span class="u ">hygrometrische Beschaffenheit</span> der Luft habe ich mit<br/>
+dem <span title="Personenname"><a href="http://d-nb.info/gnd/118804790"><span title="Original: Saussure" class="dta-reg">Sausureschen</span></a></span><span title="Original: 'schen" class="dta-reg"/> Hygrometer sehr genaue Versuche anstellen<br/>
+können; es zeigte sich, dass der Feuchtigkeitsgehalt viel <span title="Original: grösser" class="dta-reg">größer</span><br/>
+ist, als man glaubt, unter den Tropen war er gewöhnlich 96°,<br/>
+wenn 100° als das Maximum angenommen werden. Ich habe <span title="Original: da-&#xA;durch" class="dta-reg">dadurch</span> eine <span title="Original: grosse" class="dta-reg">große</span> Genauigkeit erreicht, dass ich die <span title="Original: Hygrome-&#xA;ter" class="dta-reg">Hygrometer</span> vor und nach den Beobachtungen sorgfältig verglich. Es ist<br/>
+eine der <span title="Original: lezten" class="dta-reg">letzten</span> schönen <span title="Original: Entdekkungen" class="dta-reg">Entdeckungen</span> von <span title="Personenname"><a href="http://d-nb.info/gnd/118716581">Gay Lussac</a></span>, dass <span class="dta-del" title="Streichung (#s)">er</span><br/>
+der Sättigungspunkt bei verschiedenen Flüssigkeiten verschieden<br/>
+ist, und manchmal schon bei 87° Saussure eintreten kann. Die<br/>
+Feuchtigkeit der Luft ist nach den Jahreszeiten und Zonen <span title="Original: ver-&#xA;schieden" class="dta-reg">verschieden</span>; unter den Tropen aber weit <span title="Original: grösser" class="dta-reg">größer</span>, als man nach dem<br/>
+wenigen Regen erwarten <span title="Original: solte" class="dta-reg">sollte</span>. Wie wäre es <span class="dta-del" title="Streichung (#s)">sonst</span> möglich,<br/>
+dass auf der Insel Marguerita, wo es oft in 2 Jahren nicht<br/>
+regnet, <span class="dta-del" title="Streichung (#s)">und</span><span class="dta-add" title="Hinzufügung (superlinear)">in</span> <span title="Original: Cumanà" class="dta-reg">Cumana</span>, in <span title="Original: Marañon" class="dta-reg">Marannon</span> am <span title="Original: obern" class="dta-reg">oberen</span> <span title="Original: Amazonen-&#xA;strom" class="dta-reg">Amazonenstrom</span>, die wegen ihrer <span title="Original: grossen" class="dta-reg">großen</span> <span title="Original: Trokkenheit" class="dta-reg">Trockenheit</span> <span title="Original: bekant" class="dta-reg">bekannt</span> sind, eine so<br/>
+herrliche <span title="Original: Vegetazion" class="dta-reg">Vegetation</span> <span title="Original: herschte" class="dta-reg">herrschte</span>, wenn nicht eine <span title="Original: grosse" class="dta-reg">große</span> Menge<br/>
+Feuchtigkeit in der Luft <span title="Original: suspendirt" class="dta-reg">suspendiert</span> wäre. In der <span title="Original: temperirten" class="dta-reg">temperierten</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0549 : 273r|</span><br/>
+Zone sind im Mittel 0,78 Wässerdämpfe erforderlich, um die<br/>
+Luft zu sättigen, in der <span title="Original: heissen" class="dta-reg">heißen</span> Zone<span class="dta-del" title="Streichung (#s)">n</span> aber 0,88. Es ist eine <span title="Original: merk-&#xA;würdige" class="dta-reg">merkwürdige</span> Eigenschaft der Pflanzen, dass sie die in der Luft <span title="Original: schwe-&#xA;benden" class="dta-reg">schwebenden</span> Wasserdünste <span title="Original: absorbiren" class="dta-reg">absorbieren</span>, daher kann es eine üppige <span title="Original: Ve-&#xA;getazion" class="dta-reg">Vegetation</span> in Gegenden geben, wo es nie regnet.</p><br/>
+<p class="dta-p">Die <span title="Original: Trokkenheit" class="dta-reg">Trockenheit</span> der Luft <span title="Original: nimt" class="dta-reg">nimmt</span> auf den Bergen nach oben hin<br/>
+zu, wie dies auch durch mehrere <span title="Original: aërostatische" class="dta-reg">aerostatische</span> Reisen bewiesen<br/>
+worden ist. <span title="Personenname"><a href="http://d-nb.info/gnd/118804790"><span title="Original: Saussure" class="dta-reg">Saussure's</span></a></span><span title="Original: 's" class="dta-reg"/> Hygrometer zeigte in Genf fortwährend<br/>
+76°, während es auf dem Montblanc auf 51° stand. Ich sah es<br/>
+auf noch <span title="Original: grösseren" class="dta-reg">größeren</span> Höhen bis 48 und 46° herabgehn. Man bediente<br/>
+sich zu diesen Beobachtungen früher eines feinen <span title="Original: Fischbeinstrei-&#xA;fens" class="dta-reg">Fischbeinstreifens</span>, an dem die Veränderung der Längendimension durch einen<br/>
+Zeiger angedeutet wird: dies ist aber wegen der ungleichmässigen<br/>
+Zusammenziehung des Fischbein's nicht ganz zuverlässig: später<br/>
+machte man Versuche mit sehr <span title="Original: konzentrirter" class="dta-reg">konzentrierter</span> Schwefelsäure,<br/>
+die man von salzsaurem Kalk <span title="Original: absorbiren" class="dta-reg">absorbieren</span> lies. Die beste <span title="Original: Beo-&#xA;bachtungsart" class="dta-reg">Beobachtungsart</span> ist aber die: dass man den Wärmegrad anmerkt,<br/>
+wobei ein kaltes <span title="Original: Gefäs" class="dta-reg">Gefäß</span> mit Wasserdünsten beschlägt, <span class="dta-del" title="Streichung (#s)">eine</span><span class="dta-add" title="Hinzufügung (superlinear)">die</span> <span title="Original: Me-&#xA;thode" class="dta-reg">Methode</span> wurde von dem englischen Physiker <span title="Personenname"><a href="http://d-nb.info/gnd/118678671">Dalton</a></span> angegeben, und<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/116023325">Daniels</a></span> verfertigte den Apparat dazu.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0550 : 273v|</span><br/>
+<p class="dta-p">Die <span class="u ">Fortpflanzung des Schalles</span> ist verschieden nach der <span title="Original: Luft-&#xA;reinheit" class="dta-reg">Luftreinheit</span> und nach den Tageszeiten. <span title="Personenname"><a href="http://d-nb.info/gnd/118650130">Aristoteles</a></span>, in den ihm <span title="Original: zuge-&#xA;schriebenen" class="dta-reg">zugeschriebenen</span> Problemen, hat schon die Bemerkung, dass man bei<br/>
+Nacht besser höre, als bei Tage, ohne den Grund davon zu <span title="Original: ken-&#xA;nen" class="dta-reg">kennen</span>. Man hat geglaubt, dass bei Tage das Schwirren der Insekten,<br/>
+und das Geräusch der Menschen den Schall schwäche. Allein in den<br/>
+<span title="Original: Wüsten" class="dta-reg">Wüssten</span> des Orenoko, wo die Nachtinsekten ein stark-summendes<br/>
+Geräusch machen, und wo der Lärm der <span title="Original: Brüll-affen" class="dta-reg">Brüll-Affen</span> und den von<br/>
+ihnen verfolgten Vögel gar nicht aufhört, sind die Nächte viel<br/>
+lauter als die Tage, und dennoch hört man das ferne Rauschen<br/>
+der Katarrakten in der Nacht ungleich deutlicher, als am<br/>
+Tage. Der Grund davon liegt <span title="Original: gewis" class="dta-reg">gewiß</span> in der <span class="dta-del" title="Streichung (#s)"><span class="gap">[unleserliches Material – 2 Zeichen fehlen]</span></span> <span title="Original: gleichmässigen" class="dta-reg">gleichmäßigen</span><br/>
+Temperatur und Ausdehnung der Luftschichten bei Nacht. Die<br/>
+Schallwellen werden gebrochen, wenn sie durch <span title="Original: nebeneinander-&#xA;stehende" class="dta-reg">nebeneinanderstehende</span> Luftschichten von verschiedener Dichtigkeit <span title="Original: gehn" class="dta-reg">gehen</span> <span title="Original: müs-&#xA;sen" class="dta-reg">müssen</span>. Dies ist bei Tage im höchsten Grade der Fall. Am Orenoko,<br/>
+wo der <span title="Original: weisse" class="dta-reg">weiße</span> Sand sich bis auf <span title="Original: 42–50" class="dta-reg">42-50</span>° R. <span title="Original: erhizt" class="dta-reg">erhitzt</span>, <span title="Original: mus" class="dta-reg">muss</span> die<br/>
+über demselben aufsteigende Luftsäule viel dünner sein, als<br/>
+eine <span title="Original: andre" class="dta-reg">andere</span>, welche über dem kühleren Rasen steht. Der <span title="Original: grosse" class="dta-reg">große</span><br/>
+Mathematiker <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/116261293">Poisson</a></span></span>, der meine <span class="dta-del" title="Streichung (#s)">Untersuchun</span><span class="dta-add" title="Hinzufügung (intralinear)">Beobachtungen</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0551 : 274r|</span><br/>
+<div class="fw-top fw-sig">69.</div><br/>
+der Berechnung unterworfen, hat gezeigt, dass in diesem Falle eine<br/>
+Art von Echo in der Luft entsteht, <span title="Schreibfehler: dass" class="dta-corr">das</span> den Schall schwächt. In<br/>
+dem Mémoire, welches ich darüber herausgegeben, habe ich einen<br/>
+sehr einfachen Versuch angeführt, der die Sache <span title="Original: in's" class="dta-reg">ins</span> Licht <span title="Original: sezt" class="dta-reg">setzt</span>: wenn<br/>
+man an ein schäumendes Glas Bier oder Champagner schlägt:<br/>
+so klingt es wie Holz, weil der Schall aus <span title="Original: de" class="dta-reg">dem</span><span class="dta-del" title="Streichung (#ow)">r</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: m" class="dta-reg"/></span> tropfbarflüssigen<br/>
+Körper in den gasförmigen <span title="Original: übergehn" class="dta-reg">übergehen</span> <span title="Original: mus" class="dta-reg">muss</span>: sobald sich der Schaum<br/>
+<span title="Original: gesezt" class="dta-reg">gesetzt</span> hat, erhält das Glas seinen natürlichen Klang wieder.<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parry</a></span> bemerkte am Nordpol, dass man während der langen Nacht<br/>
+sehr viel weiter höre, als sonst. Er <span title="Original: wolte" class="dta-reg">wollte</span> eine Basis messen, und<br/>
+hatte bis zum Ende derselben mehrere Personen <span title="Original: aufgestelt" class="dta-reg">aufgestellt</span>, um<br/>
+die Signale geben zu können: er fand bald, dass die mittleren <span title="Original: Per-&#xA;sonen" class="dta-reg">Personen</span> ganz <span title="Original: unnüz" class="dta-reg">unnütz</span> wären, weil man in der doppelten Entfernung<br/>
+sehr gut hören <span title="Original: konte" class="dta-reg">konnte</span>; er machte nun Versuche, wie weit sich dies<br/>
+treiben <span title="Original: liesse" class="dta-reg">ließe</span>, und fand, dass man in 6700 <span title="Original: Fus" class="dta-reg">Fuß</span> Entfernung <span title="Original: volkom-&#xA;men" class="dta-reg">vollkommen</span> gut verstanden wurde, ohne <span title="Original: übermässig" class="dta-reg">übermäßig</span> laut zu sprechen.<br/>
+Dies lag ohne Zweifel in der durchaus <span title="Original: gleichmässigen" class="dta-reg">gleichmäßigen</span> Temperatur<br/>
+und Windstille der Luft. <span title="Original: –" class="dta-reg">-</span> Der Schall <span title="Original: nimt" class="dta-reg">nimmt</span> ab, mit <span title="Original: abnehmen-&#xA;dem" class="dta-reg">abnehmendem</span> Thermometer- und <span title="Original: Barometerdruk" class="dta-reg">Barometerdruck</span>: daher <span title="Original: kömt" class="dta-reg">kommt</span> es, dass<br/>
+man nahe Schlachten oft gar nicht, entfernte in <span title="Original: grossen" class="dta-reg">großen</span> Weiten<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0552 : 274v|</span><br/>
+<span title="Schreibfehler: ten " class="dta-corr">[…]</span>hört. In der Nähe von Paris haben <span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/116299762">Bouvard</a></span> und ich<br/>
+Versuche mit <span title="Original: Geschüzen" class="dta-reg">Geschützen</span> in der Entfernung von 9500 Toisen <span title="Original: an-&#xA;gestelt" class="dta-reg">angestellt</span>, wo erst an dem einen Erde der Grundlinie, dann an dem<br/>
+<span title="Original: andern" class="dta-reg">anderen</span> abgefeuert würde, um so den <span title="Original: Einflus" class="dta-reg">Einfluß</span> aufzuheben, den der<br/>
+Wind auf die Beobachtungen haben <span title="Original: könte" class="dta-reg">könnte</span>. Wir fanden die <span title="Original: Ge-&#xA;schwindigkeit" class="dta-reg">Geschwindigkeit</span> des Schalles bei +8° R. von 1038 <span title="Original: Fus" class="dta-reg">Fuß</span>.</p><br/>
+<p class="dta-p">Wenn das Wassergas in die leichtere Luft aufsteigt: so <span title="Original: ge-&#xA;rint" class="dta-reg">gerinnt</span> es zu Bläschen, von denen <span title="Personenname"><a href="http://d-nb.info/gnd/118716581">Gay Lussac</a></span> <span title="Original: annimt" class="dta-reg">annimmt</span>, dass sie<br/>
+mit feuchter Luft, welche leichter ist, als <span title="Original: trokne" class="dta-reg">trockene</span>, <span title="Original: gefült" class="dta-reg">gefühlt</span> sind:<br/>
+so geschieht es, dass die feuchten Wolken, welche aus einer <span title="Original: gros-&#xA;sen" class="dta-reg">großen</span> Menge solcher Bläschen <span title="Original: bestehn" class="dta-reg">bestehen</span>, sich wie ein <span title="Original: Montgol-&#xA;fiere" class="dta-reg">Montgolfiere</span> mit leichterer Luft heben: auch scheint es <span title="Original: wahrschein-&#xA;lich" class="dta-reg">wahrscheinlich</span>, dass die Luft zwischen den Wolken leichter ist. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/119032902">Fresnel</a></span></span><br/>
+hat eine vortreffliche Abhandlung darüber geliefert. An Bergen<br/>
+aufsteigend, wo Wolken sich gelagert hatten, bemerkte ich oft,<br/>
+dass in <span title="Original: 4–5000" class="dta-reg">4-5000</span> <span title="Original: Fus" class="dta-reg">Fuß</span> Höhe die Temperatur <span title="Original: grösser" class="dta-reg">größer</span> war, als sie<br/>
+<span class="dta-del" title="Streichung (#s)"><span class="dta-marginal dta-marginal-left"><span class="dta-del" title="Streichung (#s)">undeutlich.</span><br/>
+</span></span>sein <span title="Original: solte" class="dta-reg">sollte</span>, weil <span class="dta-del" title="Streichung (#s)">(mit jeder Lichterscheinung eine Erhizung ver-<br/>
+bunden ist. ,)</span> man in dieser Höhe in die Wolkenschicht gelangt, <span title="Original: wel-&#xA;che" class="dta-reg">welche</span> meist einen Raum von <span title="Original: 2–3000" class="dta-reg">2-3000</span> <span title="Original: Fus" class="dta-reg">Fuß</span> <span title="Original: einnimt" class="dta-reg">einnimmt</span>, und durch die<br/>
+<span title="Original: Sonnenstralen" class="dta-reg">Sonnenstrahlen</span> erwärmt wird.</p><br/>
+<hr/><br/>
+</div></body></html>

@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><span class="dta-supplied">[56. Vorlesung, 19.04.1828]</span><div class=""><div class=""><div class=""><p class="dta-p">Der ſtatiſtiſche Theil der Pflanzengeographie giebt<br/>
+die Zahlenbeſtimmungen. Er beſchäfftigt ſich nicht allein<br/>
+mit dem Verhältniſſe der Zahl der Arten, ſondern auch<br/>
+mit den der er ſetzenden Formen, und der Zahl der Species<br/>
+in gleichen Gruppen. Wenn wir ſo die nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118674455">Brown</a></span></span> und<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116442921">Decandolle</a></span></span> angegebene Zahl der Phanerogame von 60<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0519 : 513.|</span><br/>
+bis 65,000 Species als die höchſte der bekannten Arten<br/>
+annehmen, und wenn alle Continente zuſammen genommen<br/>
+2½ Millionen Quadratmeilen enthalten, ſo kommt nur eine<br/>
+Pflanzenart auf 38 □ Meilen. In den engliſchen Gärten<br/>
+werden nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118674455">R. Brown</a></span></span> 16000 Species kultivirt, alſo ¼<br/>
+aller bekannten Gewächſe, woraus hervorgeht, daß jene<br/>
+Schätzung von 65000 Arten ehe zu geringe als zu groß iſt.<br/>
+Das größte Herbarium beſitzt <span title="H￼" class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116652292">Lambert</a></span></span> in London<br/>
+denn es enthält 32,000 Phanerogamen und 6000 Cryptogamen.<br/>
+Eigenthümlich iſt es, daß wir faſt eben ſo viele Thiere als<br/>
+Pflanzen kennen, da von jenen 46,000 beſchrieben und<br/>
+66,000 Arten gekannt ſind, worunter ſich allein 44,000<br/>
+Inſecten finden. Bei den Thieren iſt es eben gerade <span class="dta-supplied">[umge-]</span><br/>
+kehrt wie bei den Pflanzen, da die unterſten Thierklaſſen<br/>
+die zahlreichſten ſind, ja wenn man die 4 unterſten Thier-<br/>
+klaſſen, die Inſecten, Würmer, Mollusken und Zoophythen<br/>
+zuſammen zählt, ſo enthalten ſie ⅚ der geſammten Thiere,<br/>
+während bei den Pflanzen die niedrigſten Ausbildungen<br/>
+nur ⅐ der Geſammtzahl aus machen. Europa hat<br/>
+7000 Pflanzenarten, demnach kommen, wenn man dieſen<br/>
+Erdtheil zu 155,000 □ <span title="M." class="dta-abbr">Meter</span> annimmt, auf 22 derſelben nur<br/>
+eine Pflanzenart. Schließt man die Pflanzen welche Europa<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0520 : 514.|</span><br/>
+und Aſien gemeinſchaftlich haben davon aus, deren es<br/>
+4000 ſind, ſo bleiben für Europa kaum 2800–3000<br/>
+Arten. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116442921">Decandolle</a></span></span> glaubte früher, daß es in Allen<br/>
+nur 120,000 Species gäbe, was aber die neuern Entdeckungen<br/>
+widerlegt haben. Dieſe Angabe ſtimmte auf eine<br/>
+ſonderbare Weiſe mit einer alten perſiſchen Mythe<br/>
+von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118636227">Zoreoſter</a></span></span> in Kalabaka überein, nach der dieſelbe An-<br/>
+zahl Pflanzen aus dem Stierblute entſtanden, und<br/>
+ſich über die Erde verbreitet haben ſollen.</p><br/>
+<p class="dta-p">Man hat die Frage aufgeworfen, ob die Zahl der<br/>
+Pflanzen ſich noch vermehrn oder vermindern. Gehen wir in<br/>
+dieſer Rückſicht über die hiſtoriſchen Zeiten hinaus, ſo <span title="Schreibfehler: le-&#xA;rechtigen" class="dta-corr">be-<br/>
+<span class="dta-supplied">[rec]</span>htigen</span> uns die großen <span title="Schreibfehler: Ueberbleiſel" class="dta-corr">Ueberbleibſel</span> von Thierformen<br/>
+ſowohl als Palmenſtämmen, zu glauben, daß Species<br/>
+untergingen, aber auch neue wiederum entſtanden ſein<br/>
+können. So ſind auf der weſtafrikaniſchen Küſte, Thiere<br/>
+wie z. B. der <span class="aq ">Sydor</span> gänzlich untergegangen; ein foſſiler<br/>
+Kopf deren wird im Oxfordter Muſeum aufbewahrt, der<br/>
+in das Geſchlecht der Pingus übergeht. Pflanzen niederer<br/>
+Organiſation können ohne unſer Wiſſen entſtehen, die<br/>
+der höhern aber fällt außer den Grenzen naturhiſtoriſcher<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0521 : 515.|</span><br/>
+Traditionen. Dies führt uns auch auf die Entſtehung einiger<br/>
+Naturphänomene; ſo beſteht der Kern der Societäts-Inſeln<br/>
+nicht wie <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118534432">Forſter</a></span></span> glaubte aus Granit, ſondern aus Trachit,<br/>
+und dennoch hat man auf Otaheite ohne Urgebirge eigen-<br/>
+thümliche Arten von Süßwaſſerfiſchen gefunden. Ebenſo kommen<br/>
+in der Seen der Anden die 8–10000′ hoch liegen, ganz andere<br/>
+Arten von Fiſche vor, als an dem Fuſſe derſelben. Auch<br/>
+iſt es ſchwer einzuſehen, wie Pflanzen aus einem Flußbett,<br/>
+in ein anderes weit entferntes übergehen könnten. So iſt<br/>
+die in Italien nur im Po wachſende <span class="aq ">Aldrovanda</span> von<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116442921">Decandolle</a></span></span> auch im Thale der Rhone gefunden. Nicht ſelten<br/>
+entſtehen auch vor unſern Augen hybride Pflanzen oder<br/>
+ausgezeichnete Varietäten, wie die <span class="aq ">Fragarea monophylla</span><br/>
+in einem Garten bei Paris aus Saamen ſich bildete, die<br/>
+ſich ſo fortpflanzend in alle Gärten verbreitete.</p><br/>
+</div>   <div class="">   <div class="dta-head">3. <span class="u ">Geographiſche Verſchiedenheit der Pflanzen<br/>
+im geſelligen Leben.</span></div>   <br/>
+<p class="dta-p">Wenn wir die Zahl der Species nach der Verbrei-<br/>
+tung in den verſch. Zonen betrachten, ſo ſehen wir die<br/>
+größte Mannigfaltigkeit der vegetabiliſchen Formen in<br/>
+ihren Typen unter Aequator, und von dieſem nach den Polen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0522 : 516.|</span><br/>
+zu, bis zu den geringen Quantität derſelben abnehmen.<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118674455">R. Brown</a></span></span> glaubte, daß die größte Zahl der Pflanzenarten<br/>
+nicht innerhalb der Wendekreiſen beiſammen ſich fänden, ſondern<br/>
+in den ihren zur Seite gelegenen Erdſtrichen zwiſchen der 25<br/>
+und 30° der Breite, und daß der größte Reichthum an Pfl.<br/>
+ſich auf dem Continente von Neu-Holland fänden. Der <span class="aq ">Dr. <span title="Personenname"><a href="http://d-nb.info/gnd/104208899">Pohl</a></span></span><br/>
+hat aber in Braſilien allein ſo viele Pflanzen geſammelt,<br/>
+als <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118674455">Brown</a></span></span> für jenen Erdſtrich insgeſammt annahm, ſo daß<br/>
+er jetzt durch dieſe Widerlegung ſeine Meinung auf ge-<br/>
+geben hat. In Frankreich giebt es 3800 Phanerogamen,<br/>
+und faſt eben ſo viele hat auch Deutſchland, wenn wir die<br/>
+Schweiz mit dazu rechnen, nämlich 3400. Ohne die Schweiz hat<br/>
+aber Deutſchland nur 3200 aufzuweiſen. Aber dagegen<br/>
+beträgt die mittl. Temperatur hier 7–9°, während die<br/>
+von Frankreich 10–12° iſt, ein Umſtand der als einfluß-<br/>
+reich nicht außer Acht gelaſſen werden darf. Rechnen wir<br/>
+dagegen Tyrol mit zu Deutſchland, ſo werden die Bedingungen<br/>
+weit mannigfaltiger. Die Neumark hat nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117282995">Schlechten-<br/>
+dal</a></span>'s</span> Flora nur 950 Phanerogamen, und 1000 mit Einſchluß<br/>
+der kultivirten, aber 2200 wenn die Cryptogamen mit<br/>
+hinzu gerechnet werden. Nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117124354">Schübler</a></span>'s</span> Angabe hat ganz<br/>
+Würtenberg mit den ſchönſten Abwechſelungen von Bergen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0523 : 517.|</span><br/>
+und Thälern, nur 1230 Phanerogamen. Bei der Betrachtung<br/>
+der großen Zahl der Individuen, und der Mannigfaltigkeit<br/>
+der Formen, tritt bewundernswürdig die Wohlthätigkeit<br/>
+der Natur hervor, die in der großen Verſchiedenheit ſchöner<br/>
+Geſtalten, dem Auge wie dem Gefühle gleich anſprechend er-<br/>
+ſcheint, und dem reihern Nachdenken ein Feld der verſchieden-<br/>
+ſten Betrachtungen eröffnet. – Nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117560952">Wahlenberg</a></span></span> finden<br/>
+ſich in Lappland von 65–69° nur 526 Phanerogamen und mit<br/>
+Einfluß der Cryptogamen 1100, alſo etwa ſo viele als Pha-<br/>
+erogamen in der Neumark ſind. Island weit milder<br/>
+zwiſchen dem 63–67° gelegen, hat nur 374 Phanerogamen.<br/>
+Dem Pole noch unſer muß man ſich ſowohl über den Reich-<br/>
+thum als der Arten wundern, ſo ſind auf der Mallwilles<br/>
+Inſel zwiſchen den 74–75° noch 67 Phanerogamen von<br/>
+den Begleitern des Capit. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parry</a></span></span> geſammelt. Im Thale<br/>
+des Atlantiſchen Oceans giebt es Inſeln, die ärmer als<br/>
+jene, bei einem weit milden Klima, die beſchränkte Natur<br/>
+der Inſeln überhaupt zeigen. <span class="aq ">St. Helena</span> beſitzt<br/>
+nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117598275">Ronbourg</a></span></span> nur 50–60 Pflanzenarten. Die Inſeln des<br/>
+Triſtan d'<span class="aq ">Acunhan</span> oder die Erfriſchungsinſeln haben nur<br/>
+55 Phanerogamen. Einige Gegenden auf dem Continente<br/>
+der Tropen haben nicht den Reichthum, wie wir erwarten<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0524 : 518.|</span><br/>
+könnten, weil die oft anhaltende Dürre die Pflanzenzahl<br/>
+beſchränkt. Denn des weite Flußthal des Nils in Aegypten<br/>
+hat nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116324163">Delile</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118529250">Ehrenberg</a></span></span> nur 1000 Phanerogamen.<br/>
+In ganz Nubien und Dongola ſind nur 200 Phanerogamen<br/>
+nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118529250">Ehrenberg</a></span></span> gefunden, und wenn gleich Reiſende beim<br/>
+Sammeln nur auf die Umgebungen ihrer Route beſchränkt<br/>
+ſind, ſo glaubt doch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118529250">Ehrenberg</a></span></span> daß ſich in jenem Lande<br/>
+kaum noch 100 Pfl. außer jenen befinden. Der Contraſt<br/>
+der Tropengegenden iſt um ſo auffallender, wenn wir mit<br/>
+dieſen Gegenden die von Südamerika vergleichen, wo 7<br/>
+bis 8000 Arten in den Breitengraden ſich finden, wo<br/>
+hier nur wenige Hunderte ſind.</p><br/>
+<p class="dta-p">Von der geographiſchen Beſchaffenheit durch die phyſiſche<br/>
+beſchränkt, hängt wie wir geſehen haben im Allgemeinen die<br/>
+Zahl der Gewächſe ab. Man ſollte glauben daß gleichwirkende<br/>
+Verhältniſſe auch die Größe der Gew. bedingen, und die größten<br/>
+Baumformen gleichfalls den Tropen angehören müßten. Dies<br/>
+ſtreitet aber mit der Erfahrung, denn die höchſten Bäume<br/>
+ſind in der temperirten Zone gefunden, wenn gleich es die<br/>
+Gegenden ſind, die mit den Tropen Aehnlichkeit haben. Die<br/>
+noch in minder warmen Gegenden vorkommenden Coniferen<br/>
+oder Zapfenbäumen, können außer andere übereinſtimmenden<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0525 : 519.|</span><br/>
+Merkmalen, auch in dieſer Rückſicht mit den Palmen ver-<br/>
+glichen werden. Den größten Contraſt mit dieſen geben die<br/>
+microscopiſchen Gewächſe, als Oscillation <span class="aq ">etc.</span> denen ſelbſt einige<br/>
+Infusionsthierchen näher als der Thierwelt ſtehen, alſo mehr<br/>
+Pflanzen als Thier. Eine Art dieſer Gewächſe, findet ſich<br/>
+als kleiner Pilz in dem bekannten rothen Schnee, welchen<br/>
+Herr <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parry</a></span></span> auf ſeiner Reiſe im hohen Norden fand. Man<br/>
+glaubte anfänglich daß er von mineraliſchen Stoffen, oder<br/>
+von den Excrementen dort lebender Vögel roth gefärbt<br/>
+ſei; denn hat man es lange für eine Tremella gehalten,<br/>
+doch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119217945">Bauer</a></span></span> erkannte ſie für kleine Pilze, denn nachdem<br/>
+der Schnee geſchmolzen, blieben kleinen Kügelchen zurück,<br/>
+die er bei der großen Uebereinſtimmung mit den <span class="gap">[unleserliches Material – 1 Wort fehlt]</span><br/>
+der <span class="aq ">Nigrelo</span> <span title="Original: /" class="dta-reg">(</span><span class="gap">[unleserliches Material – 1 Wort fehlt]</span><span title="Original: /" class="dta-reg">)</span> Arten, für jene anerkannte. Sie<br/>
+wuchern ſo auf in dem Schnee, daß oft ganze Strecken von<br/>
+ihnen roth gefärbt ſind; auch pflanzen ſie ſich nicht nur<br/>
+bei einer niedern Temperatur fort, ſondern ſelbſt bei<br/>
++ 15–16° R. wie <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119217945">Bauer</a></span></span> in London, der ſie anderthalb<br/>
+Jahre kultivirte, und Andere in Paris und Genf beobachteten.</p><br/>
+<p class="dta-p">Von dieſen Betrachtungen ausgehend ſtehen in einem<br/>
+merkwürdigen Contraſte die Palmen der Andeskette, deren<br/>
+höchſten Arten auffallend genug die Bergpalmen ſind, von denen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0526 : 520.|</span><br/>
+es 6–7 Arten giebt, und deren Grenzen <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118661604">Bonpland</a></span></span> und<br/>
+ich beſtimmt haben. Sie erſcheinen erſt bei einer Höhe<br/>
+von 4000′ und ſteigen bis zu 8000′. Die höchſte unter<br/>
+dieſen iſt die Wachspalme, von der wir einige Stämme<br/>
+füllen ließen, deren Länge 180 Pariſer Fuß betrug, und von<br/>
+den dicke waren, daß ein Menſch aufrecht ſich hinter ihnen<br/>
+verbergen konnte. Auch in Neuholland erreichen einige<br/>
+<span class="aq ">Melaleucen</span> die Höhe von 170–180′. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118534432">Forſter</a></span></span> fand gleich-<br/>
+falls außerhalb den Tropen die <span class="aq ">Cupresſus columnaris</span><br/>
+<span title="Original: /" class="dta-reg">(</span><span class="aq ">Eutasſia heterophylla Salisb.</span><span title="Original: /" class="dta-reg">)</span> unter dem 29° S. Br. auf der<br/>
+Inſel Norfolk, 240′ hoch. In neuern Zeiten hat Herr<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117651656">Douglas</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118692844">Fränklin</a></span></span> am Columbiafluſſe in Kanada, eine<br/>
+Pinusart gefunden, die 260′ hoch war und 14–15′ im Durch-<br/>
+meſſer hatte, ſie trug Zapfen von 1½′ Länge.<br/>
+In der ganzen Organiſation erheben ſich ſo die Palmen und<br/>
+Zapfenbäume am höchſten, doch gegen die Pole zu werden<br/>
+<span title="Schreibfehler: werden" class="dta-corr">[…]</span> die Baumformen kleiner, und ſchrumpfen bis zur<br/>
+Niedrigkeit von 2′ zuſammen, wovon die <span class="aq ">Salix arctica</span><br/>
+ein Beiſpiel giebt. – Noch merkwürdiger aber iſt<br/>
+die Ausdehnung mancher Gewächſe in die Breite, wovon<br/>
+aber nur die Tropen ausgezeichnete Bildungen auf zu<br/>
+weiſen haben. Der <span class="aq ">Adanſonia</span> Stärke am Senegal<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0527 : 521.|</span><br/>
+wurde ſchon im 16<span title="Original: t￼" class="dta-reg"><span class="sup uu ">ten</span></span> Jahrhundert von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118675400">Cadamuſco</a></span></span> beſchrieben,<br/>
+und in neuern Zeiten von <span class="aq "><span title="Personenname">Bontveng</span>.</span> Es giebt Stämme<br/>
+von der <span class="aq ">Adanſonia</span> die 6′ über der Erde gemeſſen, 34′<br/>
+im Durchmeſſer haben, bei einer Höhe von 60′, da<br/>
+der Dattelbaum bei Orotava von 15 Durchmeſſer ſchon eine<br/>
+ſeltene Stärke hat. Der dickſte von den bekannten Stäm-<br/>
+men der <span class="aq ">Adanſonia digetata</span> iſt von Alter ausgehöhlt,<br/>
+von den Negern architectoniſch verziert, und ſo geräumig<br/>
+daß die Vorſteher einer Ortſchaft darin ihre Verſammlungen<br/>
+halten. –</p><br/>
+<p class="dta-p">Eben ſolche Contraſte finden ſich nun auch in Hinſicht<br/>
+der Blumen. Die größte unter allen iſt die <span class="aq ">Rafleſia</span> welche<br/>
+nach <span class="aq "><span title="Personenname"><a href="https://viaf.org/viaf/21195280/">Arnold</a></span></span> 15℔ wiegt und 3′ im Durchmeſſer hat, ſo daß<br/>
+alſo ein Kind bequem darin ſitzen kann. Es werden mehrere<br/>
+Exemplare davon in England aufbewahrt. Sie wächſt als<br/>
+Schmarotzerpflanze auf den Wurzeln der <span class="aq ">Cisſus <span title="angustifol￼" class="dta-abbr">angustifolia</span></span>.<br/>
+Auch eine <span class="aq ">Ariſtolochia</span> welche ich mit <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118661604">Bonpland</a></span></span> am Mag-<br/>
+dalenenſtrom fand, hatte Blumen von 16–17″ im Durchm.<br/>
+und wurden von den Einwohner als Mützen getragen.</p><br/>
+<p class="dta-p">Der Character der Tropen ſpricht ſich in der Größe<br/>
+der Formen, in dem energiſchen Aufwachſen mit den härte-<br/>
+ſten Faſern und der kräftigſten Textur aus, und ein<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0528 : 522.|</span><br/>
+großer Theil der Gewächſe, ſtrebt zu hohen Waldungen<br/>
+auf. Vergleichen wir dagegen die temperirte Zone, ſo<br/>
+hat Frankreich mit Einſchluß aller niedrigen Baumformen<br/>
+nur 70 Arten, in Lappland deren nur 11, und in Deutſch-<br/>
+land erreichen etwa 15–18 Arten die Höhe über 25, nur<br/>
+wenige aber haben die Höhe von 60–80′, dagegen unter<br/>
+den Tropen viele die Höhe von 120′ erreichen. Im Ver-<br/>
+gleich zu unſern Schilfarten von 6–8′ Länge, geben die<br/>
+Bambuſ<span class="gap">[unleserliches Material – 2 Zeichen fehlen]</span>arten ein Bild der Größe für die Tropen, da<br/>
+ſie 60–70′ hohe Waldungen bilden. Ebenſo erreichen auch<br/>
+dort die Farrenkräuter eine beträchtliche Höhe, die ſich hier<br/>
+kaum von der Erde erheben. Die Palmen erſtrecken<br/>
+ſich nur bis zum 35° d. Br., weil ſie wie alle baumar-<br/>
+tigen Monocotyledonen Tropenformen ſind. Der Contraſt<br/>
+im Uebergange von der temperirten Zone zu der der Tropen<br/>
+iſt nicht ſo fühlbar, als umgekehrt von der Tropenzone<br/>
+zu der temperirten. Die Begünſtigung der Baumfähig-<br/>
+keit, die beſonders unter den Tropen groß iſt, hängt auch<br/>
+von den Continenten ab. So hat der neue Continent in<br/>
+gleicher Breiter ſchon einige 40 Eichenarten, wo wir nur<br/>
+2 Arten beſitzen. Die Natur hat ſich dort in dieſen Formen<br/>
+ſo gefallen, daß <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118661604">Bonpland</a></span></span> und ich in Neu-Spanien noch 25<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0529 : 523.|</span><br/>
+neue Arten entdeckten. Auch einige Pflanzenformen die<br/>
+bei uns nur niedrig ſind, erheben ſich dort zu hohen baumartigen<br/>
+Gewächſen, wovon die <span class="aq ">Malvaceen</span> ein Beiſpiel geben.</p><br/>
+<p class="dta-p">Gleich wie die Tropen in der baumartigen Natur der Ge-<br/>
+wächſe und dem kräftigern Wuchſe des Stammes ſich aus-<br/>
+zeichnen, iſt dies auch der Fall in der Ausbildung prächtiger<br/>
+Blätter. Sie unterſcheiden ſich auch durch das feſtere und<br/>
+dickere Parenchym, und man findet ſie von der Größe<br/>
+daß ſie einen Mann bedecken können. Entgegengeſetzt <span class="dta-supplied">[a]</span>ber<br/>
+zeigen uns dort die <span class="aq ">Caſuariam &amp; Colletica</span> das größte Zu-<br/>
+ſammenziehen des Parenchyms, wobei die Blätter ganz<br/>
+verſchwinden. – Die temperirte Zone hat dagegen aber<br/>
+auch große Vorzüge, in dem gleichmäßigen ſanften Grün<br/>
+der Weiden und Wieſen, welche jenen Zonen ganz mangeln.<br/>
+Dies rührt von der größern Zahl der annuellen und bi<span class="gap">[unleserliches Material – 4 Zeichen fehlen]</span><br/>
+Pflanzen her, die die temperirte Zone vor der warmen hat,<br/>
+die ſowohl gegen die Pole wie nach dem Aequator zu ab-<br/>
+nehmen, denn in Lappland gehört nur <span class="sup ">1</span>/<span class="sub ">60</span> der Phanerogamen<br/>
+zu dieſen, in Deutſchland dagegen ſchon <span class="sup ">1</span>/<span class="sub ">30</span>.</p><br/>
+<p class="dta-p">Der auffallende Unterſchied zwiſchen den Zonen in<br/>
+dem Character der Baumformen, zeigt ſich auch in der Große<br/>
+der Blumen. In den kältern Klimaten gehören die meiſten<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0530 : 524.|</span><br/>
+Baume zu den <span class="aq ">Amentaceen</span> und <span class="aq ">Coniferen,</span> deren kleine un-<br/>
+anſehnliche Blumen in Kätzchen zuſammen gedrängt ſtehen.<br/>
+Unter den Tropen dagegen ſieht man das ganze Jahr<br/>
+hiedurch die herrlichſten Blumen. Wie hier cryptoganiſche<br/>
+Gewächſe, Mooſe und Flechten, die Baumſtämme bekleiden,<br/>
+ſind ſie dort oft von einer größern Menge ſchön blühende<br/>
+Gewächſe bedeckt, wie bei uns kaum ein Berg aufzu-<br/>
+weiſen hat.</p><br/>
+<p class="dta-p">Einen andern bedeutenden Unterſchied giebt auch das<br/>
+geſellige oder iſolirte Leben der Pflanzenarten. Das<br/>
+letztere iſt ein Hauptcharacter der Tropen, nur ſelten<br/>
+ſind dort Gruppen von gleichartigen Pflanzen, was die<br/>
+Schönheit jener Gegenden vermindert. Die Neu-Spanier<br/>
+unterſcheiden daher auch <span class="aq ">plantae ſolitariae</span> der Niede-<br/>
+rungen und <span class="aq ">pl. ſociales</span> der Gebirge. Ein Hauptcharacter<br/>
+der temperirten Zone iſt dagegen das geſellige Leben der<br/>
+Pflanzenarten, was die Gegenden ausdrucksvoller und<br/>
+ſchöner macht. Vorherrſchend ſind in dieſen beſonders<br/>
+die Nadelhölzer, deren Waldungen Europa decken, und<br/>
+die Heidearten, die in verſch. Formen wechſeln. Denn die<br/>
+<span class="aq ">Erica vulgaris</span> und <span class="aq ">L. Tetralis</span> welche nördlich weite<br/>
+Strecken überziehen, werden im mittlere Europa durch <span class="aq ">L.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0531 : 525.|</span><br/>
+herbacea</span> und <span class="aq ">cinerea,</span> und noch ſüdlicher durch <span class="aq ">L. arborea</span><br/>
+und <span class="aq ">ſcoparia</span> erſetzt. Selbſt zu den Cryptogamen,<br/>
+den Mooſen und Flechten ſteigt dies geſellige Leben<br/>
+herab, da die <span class="aq ">Sphagna</span> ganze Toofmoore bedecken, und<br/>
+die <span class="aq ">Mnia, Dicrana</span> und <span class="aq ">Hypna</span> große Polſter bilden.</p><br/>
+<p class="dta-p">Unter den Tropen finden wir das gesellige Leben<br/>
+nur einzeln, bei einigen <span class="aq ">Croton</span> arten, einigen <span class="aq ">Cactis</span><br/>
+beſonders den <span class="aq ">Cereen</span> und bei den <span class="aq ">Bambuſen.</span> Nur mit<br/>
+wenigen Ausnahmen läßt ſich unter den Tropen nicht<br/>
+angeben, woraus ein Wald beſteht, da er ein Gemiſch<br/>
+der verſchiedenſten Bäume iſt, bei uns dagegen läßt<br/>
+ſich dies leicht ſagen. Die <span class="aq ">Cactus</span> Arten welche oft 25<br/>
+bis 30′ hoch werden, geben Amerika einen eigenthümlichen <span class="dta-supplied">[A]</span>n-<br/>
+blick der der alten Welt ganz fehlt, und der beſonders<br/>
+durch die Länge der Stacheln ſo hervortritt. Die <span class="aq ">Cacti</span><br/>
+ſtehen oft ſo dicht beiſammen wie die Orgelpfeiffen, und werden<br/>
+ſogar zur Vertheidigung bei Feſtungen angebauet.</p><br/>
+<p class="dta-p">Für die Phyſiognomik der Gegenden und dem Schickſale<br/>
+der Völker iſt nichts wichtiger, als das geſellige oder ein-<br/>
+ſame Leben der Pflanzen. Wie einförmig erſcheinen nicht<br/>
+die Länder wo nur Nadelholzwälder oder Heidegegenden ſich<br/>
+ausbreiten, das unter den Tropen nie der Fall ſein kann,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0532 : 526.|</span><br/>
+nur in den Höhen bilden dort die <span class="aq ">Escalonien</span> und <span class="aq ">Pratis</span><br/>
+große Vereine. Als Waldungen legten die geselligen<br/>
+Pflanzen den Ackerbau Hinderniſſe entgegen und hemmten<br/>
+ſeine Verbreitung. Die Grasarten und <span class="aq ">Monocotyledonen</span><br/>
+der Weiden beſtimmten das Leben vieler Nationen.<br/>
+Die Ausbreitung weiter Grasſteppen von der chineſiſchen<br/>
+Mauer an bis hin zum caspiſchen Meere, hat den Hirten-<br/>
+völkern Verbindungen gegeben, aus denen das patriarcha-<br/>
+liſche Leben entſtand, dem ſich ſpäter der aſiatiſche Des-<br/>
+potismus anreihete. So wurden ſelbſt die verſchiedenen<br/>
+Regierungsſyſteme durch die wechſelnden Verbindungen der<br/>
+<span class="dta-supplied">[Ge]</span>wächſe veranlaßt.</p></div></div></div></div></body></html>

@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[30. Vorlesung, 16.02.1828]</span></div><br/>
+<div class=""><div class=""><div class=""><div class=""><div class="dta-head">Anmerkungen</div><br/>
+<p class="dta-p">Die Kraft welche die electen <span title="Original: magnetiſchen" class="dta-reg">magnetischen</span><br/>
+<span title="Original: Erſcheinungen" class="dta-reg">Erscheinungen</span> hervorbringt zeigt <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: lichtent-&#xA;bindend" class="dta-reg">lichtentbindend</span> an den Polen <span class="dta-metamark" title="metamark">|:</span> <span title="Original: ſ" class="dta-reg">s</span>. Nordlicht <span class="dta-metamark" title="metamark">:|</span></p><br/>
+<p class="dta-p"><span title="Original: Hauptſächlich" class="dta-reg">Hauptsächlich</span> folgende Entdeckungen haben näheres<br/>
+Licht über den Magnetismus verbreitet: die<br/>
+Erfindung der Magnetoscope, <span title="Original: Electroscope" class="dta-reg">Elektroskope</span>. <span title="Original: –" class="dta-reg">-</span><br/>
+Magnet Gewitter. Prof. <span title="Personenname"><a href="http://d-nb.info/gnd/117123544">Ottemanns</a></span>. <span title="Original: –" class="dta-reg">-</span> Die <span title="Original: Inden-&#xA;dität" class="dta-reg">Indendität</span> der <span title="Original: magnetiſchen" class="dta-reg">magnetischen</span> und <span title="Original: elektriſchen" class="dta-reg">elektrischen</span> Kraft.<br/>
+<span class="dta-metamark" title="metamark">|:</span> <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118786784"><span title="Original: Orſt" class="dta-reg">Orstädt</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: ä" class="dta-reg"/></span><span title="Original: dt" class="dta-reg"/></a></span></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span>, <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117654698"><span title="Original: Se" class="dta-reg">Seebeck</span><span title="Original: e" class="dta-reg"/><span title="Original: beck" class="dta-reg"/></a></span></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/119059452"><span title="Original: Ermann" class="dta-reg">Ermanne</span></a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/116106875">Requerel</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/101697406">Morichini</a></span>,<br/>
+<span class="u "><span title="Personenname">Nas</span></span> <span title="Personenname"><a href="http://d-nb.info/gnd/117476560">Sommervil</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/118653946">Baumgärtner</a></span></span> <span class="dta-metamark" title="metamark">:|</span> <span title="Original: –" class="dta-reg">-</span> Es <span title="Original: iſt" class="dta-reg">ist</span> die <span title="Original: Hoff-&#xA;nung" class="dta-reg">Hoffnung</span> daß man alle 3 <span title="Original: Erſcheinungen" class="dta-reg">Erscheinungen</span> des <span title="Original: Mag-&#xA;netismus" class="dta-reg">Magnetismus</span> <span class="dta-add" title="Hinzufügung (intralinear)">(</span><span class="u ">nur</span><span class="dta-add" title="Hinzufügung (intralinear)">)</span> einmal wird aus einer <span title="Original: Urſache" class="dta-reg">Ursache</span><br/>
+herleiten können; bisher <span title="Original: iſt" class="dta-reg">ist</span> man vom <span title="Original: Cauſal" class="dta-reg">Causal</span><br/>
+<span title="Original: Zuſammenhang" class="dta-reg">Zusammenhäng</span> noch weit entfernt. <span title="Original: Ueberall" class="dta-reg">Überall</span><br/>
+wo Heterogenität der Stoffe hinzu kommt darf<br/>
+man keine Hoffnung haben die <span title="Original: Cauſalverhält-&#xA;niſse" class="dta-reg">Causalverhältnisse</span> <span title="Original: ſobald" class="dta-reg">sobald</span> zu finden wie <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118587544">Newton</a></span></span> <span title="Original: ſein" class="dta-reg">sein</span> <span title="Original: Gra-&#xA;vitations" class="dta-reg">Gravitation</span> <span title="Original: Geſetz" class="dta-reg">Gesetz</span> fand.</p><br/>
+<hr/><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Wie</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0271 : [263]|</span><br/>
+<p class="dta-p">Wie oben erwähnt kennt man weder die Zahl<br/>
+noch die Lage der <span title="Original: magnetiſch" class="dta-reg">magnetisch</span> Pole, mit mehr <span title="Original: Ge-&#xA;nauigkeit" class="dta-reg">Genauigkeit</span> kennt man den <span title="Original: magnetiſchen" class="dta-reg">magnetischen</span> <span title="Original: Ae-&#xA;quator" class="dta-reg">Äquator</span>, wo immer die <span title="Original: Inclination" class="dta-reg">Inklination</span> = 0 <span title="Original: iſt" class="dta-reg">ist</span>. <span title="Original: –" class="dta-reg">-</span><br/>
+Von den <span title="Original: magnetiſchen" class="dta-reg">magnetischen</span> Polen liegt der eine,<br/>
+der mit etwas Genauigkeit <span title="Original: beſtimmt" class="dta-reg">bestimmt</span> <span title="Original: iſt" class="dta-reg">ist</span> <span class="aq ">n.</span><br/>
+von <span title="Original: Canada" class="dta-reg">Kanada</span>; ein 2ter <span class="u ">W. von <span title="Original: Teneſay" class="dta-reg">Tenesay</span></span> <span title="Original: 70–75" class="dta-reg">70-75</span>°<br/>
+<span class="aq ">n.B.</span> Die beiden <span title="Original: ſüdlichen" class="dta-reg">südlichen</span> Polen <span title="Original: ſind" class="dta-reg">sind</span> dem <span title="Original: Süd" class="dta-reg">Süden</span><br/>
+Pole näher als die nördliche; der eine ungefähr<br/>
+im Meridian von <span class="aq ">Van Dymens</span> Land, der andere<br/>
+in Meridian vom neuen Archipelagus <span class="dta-metamark" title="metamark">|:</span> <span title="Original: Sandwichs-&#xA;inſeln" class="dta-reg">Sandwichsinseln</span>, Georgien <span title="Original: Inſel" class="dta-reg">Insel</span> <span class="dta-metamark" title="metamark">:|</span> <span title="Original: –" class="dta-reg">-</span> <span title="Original: Dieſe" class="dta-reg">Diese</span> Pole <span title="Original: ſind" class="dta-reg">sind</span> ihrer<br/>
+Lage nach <span title="Original: ſehr" class="dta-reg">sehr</span> unzugänglich; nur der eine <span title="Original: nörd-&#xA;liche" class="dta-reg">nördliche</span> <span title="Original: ſcheint" class="dta-reg">scheint</span> von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parry</a></span></span> <span title="Original: beinah" class="dta-reg">beinahe</span> umgangen <span title="Original: wor-&#xA;den" class="dta-reg">worden</span> zu <span title="Original: ſein" class="dta-reg">sein</span>.</p><br/>
+<p class="dta-p">Vom <span title="Original: magnetiſchen" class="dta-reg">magnetischen</span> <span title="Original: Aequator" class="dta-reg">Äquator</span> hat man vor <span title="Original: we-&#xA;nigen" class="dta-reg">wenigen</span> Jahren gefunden daß er nicht ein größter<br/>
+Kreis <span title="Original: iſt" class="dta-reg">ist</span>, <span title="Original: ſondern" class="dta-reg">sondern</span> <span title="Original: ſich" class="dta-reg">sich</span> unregelmäßig <span title="Original: ſchlängelt" class="dta-reg">schlängelt</span><br/>
+und dem <span title="Original: Aequator" class="dta-reg">Äquator</span> <span title="Original: durchſchneidet" class="dta-reg">durchschneidet</span>. <span title="Original: Dieſe" class="dta-reg">Diese</span> <span title="Original: Unregel-&#xA;mäßigkeit" class="dta-reg">Unregelmäßigkeit</span> <span title="Original: giebt" class="dta-reg">gibt</span> für jede <span title="Original: mathematiſche" class="dta-reg">mathematische</span> <div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">An-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0272|</span><br/>
+Anwendung viele Schwierigkeiten. Was man<br/>
+<span title="Original: unterſucht" class="dta-reg">untersucht</span> hat von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118531379">Euler</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118579576">Tob. Mayer</a></span></span> an<br/>
+<span class="dta-add" title="Hinzufügung (intralinear)">bis </span><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11618860X">Biot</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116461357"><span title="Original: Hanſteen" class="dta-reg">Hansteen</span></a></span></span> hat in nichts <span title="Original: beſtanden" class="dta-reg">bestanden</span> als<br/>
+die Richtung der Linie ohne <span title="Original: Inclination" class="dta-reg">Inklination</span> zu <span title="Original: fin-&#xA;den" class="dta-reg">finden</span>.</p><br/>
+<p class="dta-p">Man hat den Erdmagnetismus und die Linien<br/>
+ohne Abweichung und <span title="Original: Inclination" class="dta-reg">Inklination</span> dadurch <span title="Original: er-&#xA;klären" class="dta-reg">erklären</span> wollen daß man einen Magnet im<br/>
+<span title="Original: Innern" class="dta-reg">Inneren</span> der Erde annahm, und um die <span title="Original: Periodici-&#xA;tät" class="dta-reg">Periodizität</span> zu erklären hat man ihm eine Bewegung<br/>
+zu <span title="Original: ſchreiben" class="dta-reg">schreiben</span> <span title="Original: müſsen" class="dta-reg">müssen</span>. Man kann nicht <span title="Original: ſagen" class="dta-reg">sagen</span><br/>
+daß <span title="Original: dieß" class="dta-reg">dies</span> eine Erklärung <span title="Original: ſei" class="dta-reg">sei</span>, man hat nur<br/>
+die Schwierigkeit von der Oberfläche der Erde in<br/>
+die Tiefe gebracht. <span title="Original: –" class="dta-reg">-</span> Eine große Schwierigkeit<br/>
+liegt darin, daß die Linien ohne Abweichung <span title="Original: wel-&#xA;che" class="dta-reg">welche</span> wir jetzt <span title="Original: ſehen" class="dta-reg">sehen</span> ganz <span title="Original: verſchieden" class="dta-reg">verschieden</span> <span title="Original: ſind" class="dta-reg">sind</span> von der<br/>
+die man im Anfang des 17ten Jahrhunderts <span title="Original: kann-&#xA;te" class="dta-reg">kannte</span>, <span title="Original: ſo" class="dta-reg">so</span> daß <span title="Original: ſie" class="dta-reg">sie</span> nicht nur ihre Lage <span title="Original: ſondern" class="dta-reg">sondern</span> auch<br/>
+ihre <span title="Original: Geſtalt" class="dta-reg">Gestalt</span> geändert hat. Man weiß nur <span title="Original: ſo" class="dta-reg">so</span> viel<br/>
+daß die Linien, wenn <span title="Original: ſie" class="dta-reg">sie</span> vom Meere auf den<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Cont-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0273 : 2[65]|</span><br/>
+<span title="Original: Continent" class="dta-reg">Kontinent</span> kommen dort länger verharren.<br/>
+Durch <span title="Original: mathematiſche" class="dta-reg">mathematische</span> Anwendung auf <span title="Original: empi-&#xA;riſche" class="dta-reg">empirische</span> <span title="Original: Geſetze" class="dta-reg">Gesetze</span> kann keine <span title="Original: Einſicht" class="dta-reg">Einsicht</span> in den <span title="Original: Cauſal" class="dta-reg">Causal</span><br/>
+<span title="Original: Zuſammenhang" class="dta-reg">Zusammenhäng</span> gegeben werden; <span title="Original: ſie" class="dta-reg">sie</span> wird <span title="Original: viel-&#xA;mehr" class="dta-reg">vielmehr</span> vorbereitet durch Beobachtungen und<br/>
+<span title="Original: Verſuche" class="dta-reg">Versuche</span>.</p><br/>
+<p class="dta-p"><span title="Original: Ueberall" class="dta-reg">Überall</span> wo von quantitativen <span title="Original: Verände-&#xA;rungen" class="dta-reg">Veränderungen</span> die Rede <span title="Original: iſt" class="dta-reg">ist</span> kann die Mathematik <span title="Original: ange-&#xA;wendet" class="dta-reg">angewendet</span> werden; man würde <span title="Original: ſo" class="dta-reg">so</span> z. B. einem Fluß<br/>
+durch eine <span title="Original: analytiſche" class="dta-reg">analytische</span> Formel ausdrücken<br/>
+können, doch würde <span title="Original: dieſe" class="dta-reg">diese</span> nur auf die Oberfläche<br/>
+nicht auf die <span title="Original: untern" class="dta-reg">unteren</span> Bewegungen Bezug haben<br/>
+können. Man kann <span title="Original: mathematiſch" class="dta-reg">mathematisch</span> interpetiren,<br/>
+da wo man die <span title="Original: Zwiſchen" class="dta-reg">Zwischen</span> <span title="Original: Zuſtände" class="dta-reg">Zustände</span> kennt; wenn<br/>
+man aber bedenkt daß alle genauen <span title="Original: Beob-&#xA;achtungen" class="dta-reg">Beobachtungen</span> <span title="Original: dieſer" class="dta-reg">dieser</span> Art nicht über 30 bis 35 Jahr<br/>
+hinaus gehen, und daraus auf eine Periode<br/>
+von 3000 bis 4000 Jahren <span title="Original: geſchloſsen" class="dta-reg">geschlossen</span> werden<br/>
+<span title="Original: ſoll" class="dta-reg">soll</span>, <span title="Original: ſo" class="dta-reg">so</span> kann natürlich keine Hoffnung für<br/>
+eine <span title="Original: Schärfe" class="dta-reg">Schärfeentstehen</span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="dta-metamark" title="metamark">⎡</span><span title="Original: entſtehen" class="dta-reg"/></span> wie wir <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſo" class="dta-reg">so</span> oft bei <span title="Original: aſtronomiſchen" class="dta-reg">astronomischen</span><br/>
+Berechnungen gefunden haben. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Spielend</span></div><br/>
+<div class="&#xA;            fw-bottom-sig&#xA;          "><span class="aq ">i</span>. 2</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0274|</span><br/>
+<p class="dta-p">Spielend hat man geglaubt die Zahl der <span title="Original: Um-&#xA;laufszeit" class="dta-reg">Umlaufszeit</span> in der <span title="Original: geheimniſsen" class="dta-reg">Geheimnissen</span> wollen Periode des<br/>
+<span class="aq "><span title="Original: Kaligus" class="dta-reg">Kaliguss</span></span> zu finden, und brachte durch ein Multiplum<br/>
+der wunderbaren Zahl, die Zahl 432 heraus. <span title="Original: –" class="dta-reg">-</span><br/>
+Am <span title="Original: beſten" class="dta-reg">besten</span> und <span title="Original: nützlichſten" class="dta-reg">nützlichsten</span> <span title="Original: iſt" class="dta-reg">ist</span> es auf die <span title="Original: em-&#xA;piriſchen" class="dta-reg">empirischen</span> <span title="Original: Geſetze" class="dta-reg">Gesetze</span> zurück zu gehen, und in <span title="Original: dieſer" class="dta-reg">dieser</span><br/>
+<span title="Original: Hinſicht" class="dta-reg">Hinsicht</span> <span title="Original: iſt" class="dta-reg">ist</span> der <span title="Original: Muth" class="dta-reg">Mut</span> des Prof. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116461357"><span title="Original: Hanſteen" class="dta-reg">Hansteen</span></a></span></span> in <span title="Original: Nor-&#xA;wegen" class="dta-reg">Norwegen</span> zu rühmen, der nachdem er viele <span title="Original: Unter-&#xA;ſuchungen" class="dta-reg">Untersuchungen</span> gemacht, <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: entſchloſsen" class="dta-reg">entschlossen</span> hat eine <span title="Original: Reiſe" class="dta-reg">Reise</span><br/>
+nach dem <span title="Original: öſtlichen" class="dta-reg">östlichen</span> <span title="Original: Aſien" class="dta-reg">Asien</span> zu machen.</p><br/>
+<p class="dta-p">Zu der <span title="Original: Declination" class="dta-reg">Deklination</span> <span title="Original: iſt" class="dta-reg">ist</span> noch hinzu zu <span title="Original: ſetzen" class="dta-reg">setzen</span> die<br/>
+<span title="Original: ſtündliche" class="dta-reg">stündliche</span> Abweichung der Magnetnadel. Sie <span title="Original: iſt" class="dta-reg">ist</span><br/>
+nicht, wie man häufig hört von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117553239">Graham</a></span></span> entdeckt,<br/>
+<span title="Original: ſchon" class="dta-reg">schon</span> ein <span title="Original: Jeſuit" class="dta-reg">Jesuit</span> entdeckte <span title="Original: ſie" class="dta-reg">sie</span> 1683. <span title="Original: –" class="dta-reg">-</span> Unter den<br/>
+Tropen <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: dieſe" class="dta-reg">diese</span> Abweichung nur <span title="Original: ſehr" class="dta-reg">sehr</span> gering. <span title="Original: –" class="dta-reg">-</span><br/>
+Ein vortreffliches <span class="dta-add" title="Hinzufügung (intralinear)">Mittel </span>zur Beobachtung <span title="Original: derſelben" class="dta-reg">derselben</span><br/>
+<span title="Original: giebt" class="dta-reg">gibt</span> das <span title="Original: magnetiſche" class="dta-reg">magnetische</span> Fernrohr <span class="dta-metamark" title="metamark">|:</span> <span title="Original: ſ" class="dta-reg">s</span>. oben <span class="dta-metamark" title="metamark">:|</span> das frei<br/>
+<span title="Original: ſchwebend" class="dta-reg">schwebend</span> aufgehängt <span title="Original: iſt" class="dta-reg">ist</span>. <span title="Original: –" class="dta-reg">-</span> Nach <span title="Original: Verſuchen" class="dta-reg">Versuchen</span> von<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119408007"><span title="Original: Casſini" class="dta-reg">Cassini</span></a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/12233020X">Gilpin</a></span></span> während 12 Jahren 2 Ebben<br/>
+und 2 <span title="Original: Fluthen" class="dta-reg">Fluten</span> der <span title="Original: magnetiſchen" class="dta-reg">magnetischen</span> Kraft.</p><br/>
+<p class="dta-p">Sie wird größer vom <span title="Original: Winterſolſtitium" class="dta-reg">Wintersolstitium</span>, bis zur<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Früh-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0275 : [267]|</span><br/>
+Frühlings Nachtgleiche, dann nimmt <span title="Original: ſie" class="dta-reg">sie</span> ab bis<br/>
+zum <span title="Original: Sommerſolſtitium" class="dta-reg">Sommersolstitium</span>, und <span class="u ">z. B.</span><span class="dta-add" title="Hinzufügung (superlinear)"> zu</span> bis zur <span title="Original: Herbſt-&#xA;nachtgleiche" class="dta-reg">Herbstnachtgleiche</span>, von wo <span title="Original: ſie" class="dta-reg">sie</span> bis zum <span title="Original: Winterſolſtitium" class="dta-reg">Wintersolstitium</span><br/>
+wieder abnimmt. <span title="Original: –" class="dta-reg">-</span> Eine ähnliche <span title="Original: Erſcheinung" class="dta-reg">Erscheinung</span><br/>
+wie es beim Barometer der Fall <span title="Original: iſt" class="dta-reg">ist</span>.</p><br/>
+<p class="dta-p">Die Quantität der Abweichung <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: ſehr" class="dta-reg">sehr</span> <span title="Original: verſchieden" class="dta-reg">verschieden</span><br/>
+in den <span title="Original: verſchiedenen" class="dta-reg">verschiedenen</span> Jahreszeiten; es <span title="Original: giebt" class="dta-reg">gibt</span><br/>
+Monate wo <span title="Original: ſie" class="dta-reg">sie</span> kaum <span title="Original: 2–3" class="dta-reg">2-3</span><span title="Original: ′" class="dta-reg">'</span> beträgt, <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſteigen" class="dta-reg">steigen</span><br/>
+aber bis 8 und 10 Minuten. Im <span title="Original: July" class="dta-reg">Juli</span> um 19<span title="Original: ′" class="dta-reg">'</span> im<br/>
+<span title="Original: December" class="dta-reg">Dezember</span> bis auf 6 oder 7<span title="Original: ′." class="dta-reg">'.</span> <span title="Original: –" class="dta-reg">-</span> Außerdem <span title="Original: ſteigt" class="dta-reg">steigt</span><br/>
+<span title="Original: dieſe" class="dta-reg">diese</span> Abweichung durch den Einfluß der <span title="Original: mag-&#xA;netiſchen" class="dta-reg">magnetischen</span> Ungewitter und Nordlichts und dgl.<br/>
+bis auf <span title="Original: 20–22" class="dta-reg">20-22</span><span title="Original: ′" class="dta-reg">'</span><span title="Original: " class="dta-reg">.</span></p><br/>
+<p class="dta-p">Neuerdings wurde in Paris <span title="Original: beſtätigt" class="dta-reg">bestätigt</span> was<br/>
+<span title="Original: ſchon" class="dta-reg">schon</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118653326">Celsius</a></span></span> in Schweden <span title="Original: entdekt" class="dta-reg">entdeckt</span> hatte, daß <span title="Original: Nord-&#xA;lichter" class="dta-reg">Nordlichter</span>, <span title="Original: ſelbſt" class="dta-reg">selbst</span> wenn <span title="Original: ſie" class="dta-reg">sie</span> nicht <span title="Original: geſehen" class="dta-reg">gesehen</span> wurden,<br/>
+den größten Einfluß auf die Magnetnadel<br/>
+haben. <span title="Original: –" class="dta-reg">-</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> zeichnete in Paris die Tage und<br/>
+Stunden auf wo die Abweichung der Magnetnadel<br/>
+am größten war, und es fand <span title="Original: ſich" class="dta-reg">sich</span> daß <span title="Original: dieß" class="dta-reg">dies</span> <span title="Original: die-&#xA;ſelben" class="dta-reg">dieselben</span> waren, an denen <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parry</a></span></span> auf <span title="Original: ſeiner" class="dta-reg">seiner</span> <span title="Original: Reiſe" class="dta-reg">Reise</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">die</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0276|</span><br/>
+die größten Nordlichter <span title="Original: ſah" class="dta-reg">sah</span>.</p><br/>
+<p class="dta-p">Merkwürdig <span title="Original: iſt" class="dta-reg">ist</span> es, daß bei uns, wo die Abweichung<br/>
+<span title="Original: weſtlich" class="dta-reg">westlich</span> <span title="Original: iſt" class="dta-reg">ist</span> die Magnetnadel von Morgens 7 Uhr<br/>
+bis Mittags 12 Uhr immer mehr gegen <span title="Original: Weſten" class="dta-reg">Westen</span><br/>
+geht. Man hat <span title="Original: dieß" class="dta-reg">dies</span> aus der Erwärmung der<br/>
+Erde herzuleiten <span title="Original: geſucht" class="dta-reg">gesucht</span>. <span title="Original: –" class="dta-reg">-</span> In der <span title="Original: ſüdlichen" class="dta-reg">südlichen</span><br/>
+Hemisphäre fand <span title="Original: ſich" class="dta-reg">sich</span> auf den <span title="Original: Reiſen" class="dta-reg">Reisen</span> von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/124760295"><span title="Original: Fre-&#xA;renay" class="dta-reg">Frerenay</span></a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117663476">Duperay</a></span></span> das <span title="Original: Gegentheil" class="dta-reg">Gegenteil</span>, die Nadel<br/>
+wurde dort gegen <span title="Original: Oſten" class="dta-reg">Osten</span> abgelenkt. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">Man muß nicht glauben daß <span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: Verän-&#xA;derungen" class="dta-reg">Veränderungen</span> der <span title="Original: Declination" class="dta-reg">Deklination</span> mit einer Unruhe<br/>
+begleitet <span title="Original: ſind" class="dta-reg">sind</span>. <span class="aq ">Doc</span> hat 1800 bei der <span title="Original: Erſcheinung" class="dta-reg">Erscheinung</span><br/>
+<span class="dta-marginal dta-marginal-left">(?)|<br/>
+</span>eines Nordlichts; die <span class="u ">Nadel nicht verändert <span title="Original: ge-&#xA;funden" class="dta-reg">gefunden</span></span>, aber wohl die <span title="Original: Intenſität" class="dta-reg">Intensität</span> der <span title="Original: magne-&#xA;tiſchen" class="dta-reg">magnetischen</span> Kraft, die geringer geworden war.<br/>
+Ihre <span title="Original: Declination" class="dta-reg">Deklination</span> hatte <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: ſehr" class="dta-reg">sehr</span> verändert,<br/>
+und zwar umgekehrt von der Gegend wo das<br/>
+<span title="Original: Centrum" class="dta-reg">Zentrum</span> des Nordlichts <span title="Original: ſich" class="dta-reg">sich</span> befand, <span title="Original: ſo" class="dta-reg">so</span> daß<br/>
+das Nordlicht eine <span title="Original: abſtoßende" class="dta-reg">abstoßende</span> Kraft zu<br/>
+äußere <span title="Original: ſcheint" class="dta-reg">scheint</span>. Es war aber <span title="Original: ſchlechterdings" class="dta-reg">schlechterdings</span> <span title="Original: kei-&#xA;ne" class="dta-reg">keine</span> <span title="Original: Osci" class="dta-reg">Oszillation</span><span class="u "><span title="Original: ll" class="dta-reg"/></span><span title="Original: ation" class="dta-reg"/> zu bemerken.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Beim</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0277 : [269]|</span><br/>
+<p class="dta-p">Beim <span title="Original: geſtirnten" class="dta-reg">gestirnten</span> Himmel, <span title="Original: giebt" class="dta-reg">gibt</span> es Stunden<br/>
+des Nachts, wo die Nadel <span title="Original: ſo" class="dta-reg">so</span> unruhig wird, daß<br/>
+man <span title="Original: ſie" class="dta-reg">sie</span> gar nicht beobachten kann. <span class="aq ">Doc</span> hat mit<br/>
+dem Prof. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117123544">Altmanns</a></span></span> darüber <span title="Original: Verſuche" class="dta-reg">Versuche</span> <span title="Original: ange-&#xA;ſtellt" class="dta-reg">angestellt</span> und mehrere Nächte hintereinander zu<br/>
+<span title="Original: derſelben" class="dta-reg">derselben</span> Stunde <span title="Original: dieſe" class="dta-reg">diese</span> Unruhe bemerkt; <span title="Original: ſie" class="dta-reg">sie</span><br/>
+<span title="Original: ſcheint" class="dta-reg">scheint</span> aus der Veränderung des <span title="Original: magnetiſchen" class="dta-reg">magnetischen</span><br/>
+Meridians hervorzugehen.</p><br/>
+<div class=""><div class="dta-head"><span title="Original: Magnetiſche" class="dta-reg">Magnetische</span> <span title="Original: Inclination" class="dta-reg">Inklination</span>.</div><br/>
+<p class="dta-p"><span class="dta-metamark" title="metamark">|:</span> Erklärung <span title="Original: ſ." class="dta-reg">s.</span> <span title="Original: Phyſik" class="dta-reg">Physik</span> 1826/27 <span class="dta-metamark" title="metamark">:|</span> <span title="Original: –" class="dta-reg">-</span> Unter allen<br/>
+<span title="Original: Inſtrumenten" class="dta-reg">Instrumenten</span> <span title="Original: iſt" class="dta-reg">ist</span> die <span title="Original: Inclination Nadel" class="dta-reg"><span title="Original: Inclinations-Nadel" class="dta-reg">Inklinations-Nadel</span></span> die<br/>
+<span title="Original: merkwürdigſte" class="dta-reg">merkwürdigste</span> <span title="Original: geweſen" class="dta-reg">gewesen</span>. Die <span title="Original: Beſtimmung" class="dta-reg">Bestimmung</span> des<br/>
+<span title="Original: magnetiſchen" class="dta-reg">magnetischen</span> <span title="Original: Aequators" class="dta-reg">Äquators</span>, derjenigen Linie wo keine<br/>
+Inklination <span title="Original: ſtatt" class="dta-reg">statt</span> findet <span title="Original: iſt" class="dta-reg">ist</span> von der größten <span title="Original: Wich-&#xA;tigkeit" class="dta-reg">Wichtigkeit</span>. <span class="aq ">Doc</span> hat vermöge <span title="Original: dieſes" class="dta-reg">dieses</span> <span title="Original: Inſtruments" class="dta-reg">Instruments</span><br/>
+den Punkt <span title="Original: beſtimmt" class="dta-reg">bestimmt</span> wo <span title="Original: dieſe" class="dta-reg">diese</span> Linie die <span title="Original: Andes-&#xA;kette" class="dta-reg">Andenkette</span> <span title="Original: durchſchneidet" class="dta-reg">durchschneidet</span>. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/124760295"><span title="Original: Freſenay" class="dta-reg">Fressenay</span></a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117663476">Duperay</a></span></span> haben <span title="Original: ſie" class="dta-reg">sie</span><br/>
+auf ihren großen <span title="Original: Reiſen" class="dta-reg">Reisen</span> mehrmals <span title="Original: durchſchnitten" class="dta-reg">durchschnitten</span><br/>
+auf der letzten <span title="Original: Reiſe" class="dta-reg">Reise</span> 6 <span title="Original: mal" class="dta-reg">Mal</span> <span title="Original: ſogar" class="dta-reg">sogar</span> in der <span title="Original: Südſee" class="dta-reg">Südsee</span>.<br/>
+In Afrika tritt der <span title="Original: magnetiſche" class="dta-reg">magnetische</span> <span title="Original: Aequator" class="dta-reg">Äquator</span> beim<br/>
+<span title="Original: Cap" class="dta-reg">Kap</span> <span class="aq ">Gardafu</span> <span title="Original: ſüdlich" class="dta-reg">südlich</span> von der Straße von <span title="Original: Ba" class="dta-reg">Babolmandel</span><span class="dta-del" title="Streichung (#s)">r</span><span title="Original: b" class="dta-reg"/><span class="dta-del" title="Streichung (#ow)">a</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: o" class="dta-reg"/><span title="Original: l" class="dta-reg"/></span><span title="Original: mandel" class="dta-reg"/><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">wie</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0278|</span><br/>
+wie er im <span title="Original: Innern" class="dta-reg">Inneren</span> weiter fortgeht weiß man<br/>
+nicht, doch bleibt er <span title="Original: ſüdlich" class="dta-reg">südlich</span> vom <span title="Original: Aequator" class="dta-reg">Äquator</span> der Erde<br/>
+vom <span title="Original: Innern" class="dta-reg">Inneren</span> Afrikas an<span class="dta-add" title="Hinzufügung (intralinear)">,</span> in dem Meere <span title="Original: zwiſchen" class="dta-reg">zwischen</span> <span title="Original: Afri-&#xA;ka" class="dta-reg">Afrika</span> und Amerika bis etwas <span title="Original: weſtlich" class="dta-reg">westlich</span> von den <span title="Original: Galla-&#xA;pagos" class="dta-reg">Gallapagos</span> <span title="Original: Inſeln" class="dta-reg">Inseln</span> dort geht er nördlich vom <span title="Original: Aequator" class="dta-reg">Äquator</span> über.<br/>
+Es hat <span title="Original: dieſe" class="dta-reg">diese</span> Linie eine merkwürdige Bewegung;<br/>
+<span title="Original: ſo" class="dta-reg">so</span> wie <span title="Original: ſich" class="dta-reg">sich</span> der <span title="Original: magnetiſche" class="dta-reg">magnetische</span> Nordpol von W. gegen<br/>
+O. bewegt, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ſchiebt" class="dta-reg">schiebt</span> <span title="Original: ſich" class="dta-reg">sich</span> der <span title="Original: Aequator" class="dta-reg">Äquator</span> von O. gegen<br/>
+W. d. h. die <span title="Original: Durchſchnitts" class="dta-reg">Durchschnitts</span> Punkte des <span title="Original: magnetiſchen" class="dta-reg">magnetischen</span><br/>
+<span title="Original: Aequators" class="dta-reg">Äquators</span> mit dem Erdäquator haben eine <span title="Original: Be-&#xA;wegung" class="dta-reg">Bewegung</span> von O. gegen <span class="dta-del" title="Streichung (#ow)">O</span><span class="dta-add" title="Hinzufügung (across)">W</span>. Da man <span title="Original: magnetiſche" class="dta-reg">magnetische</span><br/>
+Breite <span title="Original: neñt" class="dta-reg">nennt</span>: den <span title="Original: Abſtand" class="dta-reg">Abstand</span> von den <span title="Original: magnetiſchen" class="dta-reg">magnetischen</span><br/>
+<span title="Original: Aequator" class="dta-reg">Äquator</span> und davon die Größe der <span title="Original: Inclination" class="dta-reg">Inklination</span><br/>
+abhängt <span title="Original: ſo" class="dta-reg">so</span> hat man zugleich bemerkt daß das<br/>
+<span title="Original: Fortſchieben" class="dta-reg">Fortschieben</span> des <span title="Original: magnetiſchen" class="dta-reg">magnetischen</span> <span title="Original: Aequators" class="dta-reg">Äquators</span> eine<br/>
+<span title="Original: Urſache" class="dta-reg">Ursache</span> <span title="Original: iſt" class="dta-reg">ist</span> von der großen <span title="Original: Verſchiedenheit" class="dta-reg">Verschiedenheit</span> der<br/>
+<span title="Original: magnetiſchen" class="dta-reg">magnetischen</span> <span title="Original: Inclination" class="dta-reg">Inklination</span>. Im vorigen Jahr <span title="Original: fan-&#xA;den" class="dta-reg">fanden</span> <span class="aq ">Doc</span> mit <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119059452"><span title="Original: Ermann" class="dta-reg">Ermanne</span></a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116471727">Enke</a></span></span> für Berlin die <span title="Original: mag-&#xA;netiſche" class="dta-reg">magnetische</span> <span title="Original: Inclination" class="dta-reg">Inklination</span> 68°39<span title="Original: ′" class="dta-reg">'</span>. Im Jahre 1806 fand <span title="Original: ſie" class="dta-reg">sie</span><br/>
+<span class="aq ">Doc</span> mit <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118716581">Guelisac</a></span></span> <span class="dta-metamark" title="metamark">|:</span> <span title="Schreibfehler: nie" class="dta-corr">im</span> <span title="Original: Thiergarten" class="dta-reg">Tiergarten</span> <span class="dta-metamark" title="metamark">:|</span> 69°15<span title="Original: ′" class="dta-reg">'</span>; <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: iſt" class="dta-reg">ist</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">also</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0279 : [271]|</span><br/>
+<span title="Original: alſo" class="dta-reg">also</span> kleiner geworden. <span title="Original: –" class="dta-reg">-</span> Die größte <span title="Original: Inclination" class="dta-reg">Inklination</span><br/>
+die beobachtet worden <span title="Original: iſt" class="dta-reg">ist</span>, wurde von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parray</a></span></span> <span title="Original: be-&#xA;merkt" class="dta-reg">bemerkt</span>: bei 73° n.B. war <span title="Original: ſie" class="dta-reg">sie</span> 88°. <span title="Original: –" class="dta-reg">-</span> Ähnliche <span title="Original: Verän-&#xA;derungen" class="dta-reg">Veränderungen</span> der <span title="Original: Inclination" class="dta-reg">Inklination</span> wie in Berlin wurden<br/>
+in Paris bemerkt; <span class="aq ">Doc</span> fand aus Beobachtungen<br/>
+die er mit <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11762084X"><span title="Original: Borda" class="dta-reg">Boorda</span></a></span></span> <span title="Original: 17" class="dta-reg">1798</span><span class="dta-del" title="Streichung (#ow)">8</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: 9" class="dta-reg"/></span><span title="Original: 8" class="dta-reg"/> und 1827 anstellte eine<br/>
+jährliche Abnahme von 4<span title="Original: ′" class="dta-reg">'</span>. <span title="Original: –" class="dta-reg">-</span> In <span title="Original: Havannah" class="dta-reg">Havanna</span> hat<br/>
+<span class="aq ">Doc</span> <span title="Original: ſeine" class="dta-reg">seine</span> Beobachtungen mit der des <span class="aq "><span title="Original: Capt" class="dta-reg">kappt</span>. <span title="Personenname"><a href="http://d-nb.info/gnd/11671350X">Lavy</a></span></span> <span title="Original: ver-&#xA;glichen" class="dta-reg">verglichen</span> und fand einen <span title="Original: Unterſchied" class="dta-reg">Unterschied</span> von 4<span title="Original: ′" class="dta-reg">'</span>. <span title="Original: –" class="dta-reg">-</span><br/>
+Die <span title="Original: Inclination" class="dta-reg">Inklination</span> <span title="Original: wechſelt" class="dta-reg">wechselt</span> noch <span title="Original: ſtündlich" class="dta-reg">stündlich</span>. <span title="Original: Erſt" class="dta-reg">Erst</span> in<br/>
+<span title="Original: dieſem" class="dta-reg">diesem</span> Jahre hat man <span title="Original: dieß" class="dta-reg">dies</span> mit <span title="Original: Beſtimmtheit" class="dta-reg">Bestimmtheit</span><br/>
+gefunden. Sie wird größer von 9 Uhr des <span title="Original: Mor-&#xA;gens" class="dta-reg">Morgens</span> bis 6 Uhr des Abends und nimmt dann wieder<br/>
+ab. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> hat in Paris darüber eine Abhandlung<br/>
+<span title="Original: vorgeleſen" class="dta-reg">vorgelesen</span>.</p></div><br/>
+<div class=""><div class="dta-head"><span class="u "><span title="Original: Intenſitat" class="dta-reg">Intensitat</span> der <span title="Original: magnetiſchen" class="dta-reg">magnetischen</span> Kraft.</span></div><br/>
+<p class="dta-p">Seit 20 Jahren <span title="Original: erſt" class="dta-reg">erst</span> hat man genauere <span title="Original: Kenntniß" class="dta-reg">Kenntnis</span><br/>
+über die <span title="Original: Intenſität" class="dta-reg">Intensität</span> des Magnetismus. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11762084X"><span title="Original: Borda" class="dta-reg">Boorda</span></a></span></span> <span title="Original: iſt" class="dta-reg">ist</span><br/>
+<span title="Original: zuerſt" class="dta-reg">zuerst</span> auf die Idee gekommen ob die <span title="Original: magnetiſche" class="dta-reg">magnetische</span><br/>
+Kraft nicht <span title="Original: verſchieden" class="dta-reg">verschieden</span> <span title="Original: ſein" class="dta-reg">sein</span> <span title="Original: ſollte" class="dta-reg">sollte</span> bei <span title="Original: ver-" class="dta-reg">verschiedenen</span>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">schied-</span></div><span title="Original: " class="dta-reg"/>
+<span class="dta-pb" style="padding-left:15em">|#f0280|</span><br/>
+<span title="Original: ſchiedenen" class="dta-reg"/> Breiten. <span title="Original: E" class="dta-reg">Es</span><span class="dta-del" title="Streichung (#ow)">r</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: s" class="dta-reg"/></span> gab daher <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117594989">La <span title="Original: Peyrouſe" class="dta-reg">Peyrouse</span></a></span></span> auf<br/>
+<span title="Original: ſeiner" class="dta-reg">seiner</span> unglücklichen <span title="Original: Reiſe" class="dta-reg">Reise</span> die <span title="Original: Inſtruction" class="dta-reg">Instruktion</span> mit<br/>
+die Nadel in den <span title="Original: verſchiedenen" class="dta-reg">verschiedenen</span> Breiten <span title="Original: oscillire" class="dta-reg">oszilliere</span><br/>
+zu <span title="Original: laſsen" class="dta-reg">lassen</span>; man glaubte hierbei gefunden zu<br/>
+haben daß die <span title="Original: Oscillationen" class="dta-reg">Oszillationen</span> immer <span title="Original: dieſelben" class="dta-reg">dieselben</span><br/>
+geblieben <span title="Original: ſeien" class="dta-reg">seien</span>.</p><br/>
+<p class="dta-p"><span class="aq ">Doc</span> hat die Nadel auf <span title="Original: ſeiner" class="dta-reg">seiner</span> ganzen <span title="Original: Reiſe" class="dta-reg">Reise</span><br/>
+<span title="Original: oscilliren" class="dta-reg">oszillieren</span> <span title="Original: laſsen" class="dta-reg">lassen</span>, und bemerkte daß die <span title="Original: Inten-&#xA;ſität" class="dta-reg">Intensität</span> der <span title="Original: magnetiſchen" class="dta-reg">magnetischen</span> Kraft vom <span title="Original: Aequator" class="dta-reg">Äquator</span> <span title="Original: ge-&#xA;gen" class="dta-reg">gegen</span> den Pol hin zunehme. Durch andere wurde <span title="Original: die-&#xA;ſe" class="dta-reg">diese</span> Erfahrung <span title="Original: beſtätigt" class="dta-reg">bestätigt</span>. <span class="aq ">Doc</span> hat <span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: Verſuche" class="dta-reg">Versuche</span><br/>
+<span title="Original: angeſtellt" class="dta-reg">angestellt</span> vom 17° n. B. bis 59° n.B.</p><br/>
+<p class="dta-p">Wenn die Nadel bei 59° n.B. 240 <span title="Original: Oscillationen" class="dta-reg">Oszillationen</span><br/>
+macht, <span title="Original: ſo" class="dta-reg">so</span> machte <span title="Original: ſie" class="dta-reg">sie</span> in <span title="Original: denſelben" class="dta-reg">denselben</span> Zeitraum unter<br/>
+dem <span title="Original: Aequator" class="dta-reg">Äquator</span> nur 211.</p><br/>
+<p class="dta-p">Nennen wir die <span title="Original: Intenſität" class="dta-reg">Intensität</span> der <span title="Original: magnetiſchen" class="dta-reg">magnetischen</span> Kraft<br/>
+= 1, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: iſt" class="dta-reg">ist</span> <span class="dta-del" title="Streichung (#ow)">d</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: ſ" class="dta-reg">sie</span></span><span title="Original: ie" class="dta-reg"/> in Paris = 1,34, in Berlin 1,37. <span title="Original: –" class="dta-reg">-</span><br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116461357">Hansteen</a></span></span> hat <span title="Original: ſeine" class="dta-reg">seine</span> Nadel mit der des <span class="aq ">Doc</span> <span title="Original: ver-&#xA;glichen" class="dta-reg">verglichen</span> in Paris, und die Beobachtungen gegen<br/>
+den Nordpol hin <span title="Original: fortgeſetzt" class="dta-reg">fortgesetzt</span>; eben <span title="Original: ſo" class="dta-reg">so</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parry</a></span></span>; bei<br/>
+76° B. war die <span title="Original: Intenſität" class="dta-reg">Intensität</span> nach obiger Annahme 1,7.<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Während</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0281 : [273]|</span><br/>
+Während der <span title="Original: Erſcheinung" class="dta-reg">Erscheinung</span> eines Nordlichts <span title="Original: ſcheint" class="dta-reg">scheint</span> die<br/>
+Stärke der <span title="Original: magnetiſchen" class="dta-reg">magnetischen</span> Kraft abzunehmen, nach<br/>
+<span title="Original: Verſuchen" class="dta-reg">Versuchen</span> der <span class="aq ">Doc</span> und neuerdings nach <span title="Original: andern" class="dta-reg">anderen</span><br/>
+die in Norwegen <span title="Original: angeſtellt" class="dta-reg">angestellt</span> wurden.</p><br/>
+<p class="dta-p">Die <span title="Original: Intenſität" class="dta-reg">Intensität</span> verändert <span title="Original: ſich" class="dta-reg">sich</span> noch <span title="Original: ſtündlich" class="dta-reg">stündlich</span>; <span title="Original: ſie" class="dta-reg">sie</span><br/>
+nimmt ab von Morgen bis Mittag und darauf<br/>
+bis zum <span title="Original: andern" class="dta-reg">anderen</span> Morgen wieder zu.</p><br/>
+<p class="dta-p">Schade <span title="Original: iſt" class="dta-reg">ist</span> es daß man nicht ein <span title="Original: beſtimmtes" class="dta-reg">bestimmtes</span><br/>
+<span title="Original: Maaß" class="dta-reg">Maß</span> hat um die Nadel zu beobachten. Nach<br/>
+langer Zeit <span title="Original: iſt" class="dta-reg">ist</span> man nicht gewiß daß <span title="Original: dieſelbe" class="dta-reg">dieselbe</span><br/>
+Nadel auch <span title="Original: dieſelbe" class="dta-reg">dieselbe</span> Kraft hat.</p><br/>
+<p class="dta-p">Es wäre gut <span title="Original: ſich" class="dta-reg">sich</span> Nadeln von <span title="Original: verſchiedener" class="dta-reg">verschiedener</span><br/>
+Länge und Kraft zu bedienen. Würde das <span title="Original: Ver-&#xA;hältniß" class="dta-reg">Verhältnis</span> nicht <span title="Original: daſselbe" class="dta-reg">dasselbe</span> geblieben <span title="Original: ſein" class="dta-reg">sein</span>, <span title="Original: ſo" class="dta-reg">so</span> würde<br/>
+man daraus <span title="Original: ſchlieſsen" class="dta-reg">schließen</span> können, daß es <span title="Original: Wahr-&#xA;ſcheinlichkeit" class="dta-reg">Wahrscheinlichkeit</span> gebe daß die <span title="Original: Intenſität" class="dta-reg">Intensität</span> ab oder<br/>
+zugenommen haben. <span class="dta-metamark" title="metamark">|:</span> Die <span title="Original: Iſodynamischen" class="dta-reg">Isodynamischen</span> Linien<br/>
+<span title="Original: ſind" class="dta-reg">sind</span> nicht <span title="Original: paralell" class="dta-reg">parallel</span> mit den Linien von gleicher<br/>
+Abweichung. <span title="Original: –" class="dta-reg">-</span> <span class="dta-metamark" title="metamark">:|</span></p></div></div></div></div></div></div></body></html>

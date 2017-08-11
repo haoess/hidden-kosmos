@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><span class="dta-supplied">[60. Vorlesung, 24.04.1828]</span><div class=""><div class=""><div class=""><p class="dta-p">Zu den <span title="Original: Gegenſtänden" class="dta-reg">Gegenständen</span>, die mit einer <span title="Original: beſondern" class="dta-reg">besonderen</span>, <span title="Original: ſelbſt" class="dta-reg">selbst</span> <span title="Original: ge-" class="dta-reg">gehässigen</span>
+<span class="dta-supplied">[<span title="Original: häſ" class="dta-reg"/>]</span><span title="Original: ſigen" class="dta-reg"/> Lebendigkeit betrieben <span title="Original: ſind" class="dta-reg">sind</span>, gehört auch die <span title="Original: Unter-" class="dta-reg">Untersuchung</span>
+<span class="dta-pb" style="padding-left:15em">|#f0570 : 564.|</span><br/>
+<span title="Original: ſuchung" class="dta-reg"/> der <span title="Original: Menſchenracen" class="dta-reg">Menschenrassen</span>. Bei ihren Betrachtung <span title="Original: ſind" class="dta-reg">sind</span> gleich<br/>
+der <span title="Original: Geognoſie" class="dta-reg">Geognosie</span> Sachen vereinigt, die im Bezug auf <span title="Original: dieſen" class="dta-reg">diesen</span> <span title="Original: Gegen-&#xA;ſtand" class="dta-reg">Gegenstand</span> den <span title="Original: Unterſuchungen" class="dta-reg">Untersuchungen</span> fremd bleiben <span title="Original: müßen" class="dta-reg">müssen</span>. Große <span title="Original: hiſtoriſche" class="dta-reg">historische</span><br/>
+Entdeckungen des <span title="Original: innern" class="dta-reg">inneren</span> <span title="Original: Aſiens" class="dta-reg">Asiens</span>, haben auch ein Licht über<br/>
+die Bewohner Europa's verbreitet, die als von den alten<br/>
+Iberiern <span title="Original: abſtammend" class="dta-reg">abstammend</span>, betrachtet werden können.</p><br/>
+<p class="dta-p">Bei den <span title="Original: Unterſuchungen" class="dta-reg">Untersuchungen</span> hat man früher das <span title="Original: verwechſelt" class="dta-reg">verwechselt</span>,<br/>
+was <span title="Original: blos" class="dta-reg">bloß</span> <span title="Original: geſchichtlich" class="dta-reg">geschichtlich</span> <span title="Original: iſt" class="dta-reg">ist</span>, mit dem was den Beobachtungen<br/>
+angehört; beides werden wir trennen. Und da <span class="dta-del" title="Streichung (#ow)">L</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: l" class="dta-reg">letzteres</span></span><span title="Original: etzteres" class="dta-reg"/><br/>
+uns nur zu <span title="Original: Muthmaßungen" class="dta-reg">Mutmaßungen</span> führt, <span title="Original: ſo" class="dta-reg">so</span> werden wir uns länger<br/>
+bei der <span title="Original: Geſchichte" class="dta-reg">Geschichte</span> und den <span title="Original: verſchiedenen" class="dta-reg">verschiedenen</span> Betrachtungen, die<br/>
+<span title="Original: ſie" class="dta-reg">sie</span> darbietet, aufhalten.</p><br/>
+<p class="dta-p">Von den <span title="Original: phyſiſchen" class="dta-reg">physischen</span> <span title="Original: Eigenſchaften" class="dta-reg">Eigenschaften</span> der <span title="Original: Menſchen" class="dta-reg">Menschen</span> <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: ſchon" class="dta-reg">schon</span> die<br/>
+Rede <span title="Original: geweſen" class="dta-reg">gewesen</span>, bei deren Flexibilität <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſich" class="dta-reg">sich</span> von Pol zu Pol<br/>
+ausbreiten können. Wie die <span title="Original: herrſchende" class="dta-reg">herrschende</span> Kraft des <span title="Original: Intellec-&#xA;tuellen" class="dta-reg">Intellektuellen</span> im <span title="Original: Menſchen" class="dta-reg">Menschen</span> über den <span title="Original: phyſiſchen" class="dta-reg">physischen</span> <span title="Original: Theil" class="dta-reg">Teil</span> <span title="Original: deſſelben" class="dta-reg">desselben</span> hiervon<br/>
+die <span title="Original: Urſache" class="dta-reg">Ursache</span> <span title="Original: iſt" class="dta-reg">ist</span>, <span title="Original: ſehen" class="dta-reg">sehen</span> wir <span title="Original: beſonders" class="dta-reg">besonders</span> bei den Wilden, die<br/>
+nach <span title="Original: heut" class="dta-reg">heute</span> zu Tage lange keine <span title="Original: ſo" class="dta-reg">so</span> große Flexibilität haben;<br/>
+denn nur bei großen Opfern können die Wald-Indianer<br/>
+der Gebirge von Amerika in den Ebenen leben, da <span title="Original: ⅓" class="dta-reg"> 1/3 </span> und<br/>
+noch weit mehr bei <span title="Original: dieſem" class="dta-reg">diesem</span> <span title="Original: Wechſel" class="dta-reg">Wechsel</span> <span title="Original: ſterben" class="dta-reg">sterben</span>. Und <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: iſt" class="dta-reg">ist</span> es<br/>
+auch umgekehrt der Fall, wenn die Kupferindianer der<br/>
+Ebenen nach den Höhen gebracht werden.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0571 : 565.|</span><br/>
+<p class="dta-p">Bei den Negern hingegen finden war, daß <span title="Original: ſie" class="dta-reg">sie</span> den <span title="Original: Weiſſen" class="dta-reg">Weißen</span><br/>
+eine näher <span title="Original: ſtehende" class="dta-reg">stehende</span> Flexibilität haben, da <span title="Original: ſie" class="dta-reg">sie</span> oft aus der<br/>
+Hitze ihres Vaterlandes in ziemlich kalte Länder als<br/>
+<span title="Original: Sclaven" class="dta-reg">Sklaven</span> <span title="Original: verſetzt" class="dta-reg">versetzt</span> worden, und <span title="Original: ſich" class="dta-reg">sich</span> an eine ganz andere <span title="Original: Tempera-&#xA;tur" class="dta-reg">Temperatur</span> gewöhnen; doch muß <span title="Original: hierbe" class="dta-reg">hierbei</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: i" class="dta-reg"/></span> <span title="Original: berückſichtigt" class="dta-reg">berücksichtigt</span> werden, daß<br/>
+gerade nur die <span title="Original: Kräftigſten" class="dta-reg">Kräftigsten</span> <span title="Original: dieſer" class="dta-reg">dieser</span> Nationen durch die <span class="u "><span title="Original: unwür-&#xA;digſte" class="dta-reg">unwürdigste</span></span> <span title="Original: Habſucht" class="dta-reg">Habsucht</span> <span title="Original: dieſem" class="dta-reg">diesem</span> <span title="Original: Schickſale" class="dta-reg">Schicksale</span> Preis <span title="Schreibfehler: gegegeben" class="dta-corr">gegeben</span> <span title="Original: ſind" class="dta-reg">sind</span>, und<br/>
+daher auch leichter dem veränderten Klima <span title="Original: widerſtehen" class="dta-reg">widerstehen</span>.</p><br/>
+<p class="dta-p">Es bleibt uns nun noch übrig, von einigen <span title="Original: andern" class="dta-reg">anderen</span> angeblichen<br/>
+<span title="Original: Verſchiedenheiten" class="dta-reg">Verschiedenheiten</span> <span title="Original: zwiſchen" class="dta-reg">zwischen</span> der <span title="Original: Organiſation" class="dta-reg">Organisation</span> der <span title="Original: Menſchen" class="dta-reg">Menschen</span><br/>
+und der <span title="Original: höhern" class="dta-reg">höheren</span> <span title="Original: Thierorganiſation" class="dta-reg">Tierorganisation</span> zu reden. Lange hat man<br/>
+geglaubt, daß die <span title="Original: Menſchen" class="dta-reg">Menschen</span> allein Stimmorgane <span title="Original: beſitzen" class="dta-reg">besitzen</span>,<br/>
+doch die beiden großen Anatomen <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117397350"><span title="Original: Vict" class="dta-reg">Victasin</span><span title="Original: aſi" class="dta-reg"/><span title="Original: n" class="dta-reg"/></a></span></span> und <span class="aq "><span title="Personenname">Cammanon</span></span><br/>
+behaupten, daß <span title="Original: ſie" class="dta-reg">sie</span> auch den Affen nicht <span title="Original: verſagt" class="dta-reg">versagt</span> <span title="Original: ſind" class="dta-reg">sind</span>.<br/>
+Die Neger in Amerika haben den Glauben, daß die Affen<br/>
+nur <span title="Original: leiſe" class="dta-reg">leise</span> und heimlich mit einander reden, da <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſonſt" class="dta-reg">sonst</span> von den<br/>
+<span title="Original: Weiſſen" class="dta-reg">Weißen</span>, wenn <span title="Original: dieſe" class="dta-reg">diese</span> es wüßten, zur Arbeit gezwungen<br/>
+würden. Scherzhaft hat man auch wohl von den Affen <span title="Original: geſagt" class="dta-reg">gesagt</span>,<br/>
+daß <span title="Original: ſie" class="dta-reg">sie</span> deshalb <span title="Original: ſtumm" class="dta-reg">stumm</span> wären, weil <span title="Original: ſie" class="dta-reg">sie</span> über nichts zu <span title="Original: ſprechen" class="dta-reg">sprechen</span><br/>
+müßten.</p><br/>
+<p class="dta-p">Die <span title="Original: Thiere" class="dta-reg">Tiere</span> haben Laute, die <span title="Original: Menſchen" class="dta-reg">Menschen</span> aber <span title="Original: articulirte" class="dta-reg">artikulierte</span><br/>
+Töne, die nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/115526641">Rudolphi</a></span></span> nicht in dem <span title="Original: Phyſiſchen" class="dta-reg">Physischen</span> <span title="Original: ſondern" class="dta-reg">sondern</span> in den<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0572 : 566.|</span><br/>
+Anlagen der Seele begründet <span title="Original: ſind" class="dta-reg">sind</span>. Es <span title="Original: giebt" class="dta-reg">gibt</span> vielleicht eines<br/>
+Urtypus der <span title="Original: Menſchen" class="dta-reg">Menschen</span>, aber das was <span title="Original: ſie" class="dta-reg">sie</span> eigentlich <span title="Original: characte-&#xA;riſirt" class="dta-reg">charakterisiert</span>, muß nicht im Bau der Organe <span title="Original: ſondern" class="dta-reg">sondern</span> in der <span title="Original: geiſtigen" class="dta-reg">geistigen</span><br/>
+Intelligenz <span title="Original: geſucht" class="dta-reg">gesucht</span> werden. Denn im <span title="Original: Geiſtigen" class="dta-reg">Geistigen</span> <span title="Original: iſt" class="dta-reg">ist</span> wohl nur<br/>
+allein der <span title="Original: Unterſchied" class="dta-reg">Unterschied</span> zu <span title="Original: ſuchen" class="dta-reg">suchen</span>. Was den <span title="Original: Menſchen" class="dta-reg">Menschen</span> am<br/>
+<span title="Original: meiſten" class="dta-reg">meisten</span> <span title="Original: characteriſirt" class="dta-reg">charakterisiert</span>, <span title="Original: iſt" class="dta-reg">ist</span> das <span title="Original: Uebergewicht" class="dta-reg">Übergewicht</span> des Gehirns und<br/>
+<span title="Original: ſein" class="dta-reg">sein</span> aufrechter Gang, wodurch er <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: ſeiner" class="dta-reg">seiner</span> Bildung nach<br/>
+vor allen <span title="Original: andern" class="dta-reg">anderen</span> <span title="Original: Thieren" class="dta-reg">Tieren</span> auszeichnet.</p><br/>
+<p class="dta-p">Eine niedere <span title="Original: Entwickelung" class="dta-reg">Entwicklung</span> der Beiß- und Kauorgane<br/>
+und des Geruchs erzeugt <span title="Original: ſtarke" class="dta-reg">starke</span> Ausbildungen der Kiefern,<br/>
+und ein <span title="Original: Zurückſinken" class="dta-reg">Zurücksinken</span> der Stirn, wie wir es in einem <span title="Original: ſtär-&#xA;kern" class="dta-reg">stärkeren</span> oder <span title="Original: geringern" class="dta-reg">geringeren</span> Grade bei allen <span title="Original: Wirbelthieren" class="dta-reg">Wirbeltieren</span> finden.<br/>
+Dies <span title="Original: giebt" class="dta-reg">gibt</span> uns Anlaß zu den <span title="Original: Unterſuchungen" class="dta-reg">Untersuchungen</span> des <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119291827"><span title="Original: Kamp" class="dta-reg">Kampfchen</span></a></span><span title="Original: -&#xA;ſchen" class="dta-reg"/></span> <span title="Original: Geſichtswinkel" class="dta-reg">Gesichtswinkel</span>. Bei den <span title="Original: Helenen" class="dta-reg">Helene</span>, <span title="Original: Cirkaſſiern" class="dta-reg">Cirkassiern</span> und<br/>
+den <span title="Original: kaukaſiſchen" class="dta-reg">kaukasischen</span> Völkern, wurde die Schönheit durch den <span title="Original: Geſichts-&#xA;winkel" class="dta-reg">Gesichtswinkel</span> <span title="Original: zwiſchen" class="dta-reg">zwischen</span> <span title="Original: 80–85" class="dta-reg">80-85</span>° bedingt, und unter den <span title="Original: Kunſtwerken" class="dta-reg">Kunstwerken</span><br/>
+<span title="Original: dieſer" class="dta-reg">dieser</span> früher Zeit, finden <span title="Original: ſich" class="dta-reg">sich</span> übertriebene <span title="Original: Geſichtswinkel" class="dta-reg">Gesichtswinkel</span>, die<br/>
+die Natur wohl <span title="Original: ſchwerlich" class="dta-reg">schwerlich</span> erzeugt haben konnte, in <span title="Original: deſſen" class="dta-reg">dessen</span> <span title="Original: An-&#xA;wendung" class="dta-reg">Anwendung</span> jedoch <span title="Original: ſich" class="dta-reg">sich</span> eine richtige Idee von Schönheit <span title="Original: ausſpricht" class="dta-reg">ausspricht</span>.<br/>
+Bei den Negern geht der <span title="Original: Geſichtswinkel" class="dta-reg">Gesichtswinkel</span> bis zum <span title="Original: 70" class="dta-reg">70ten</span><span title="Original: t￼" class="dta-reg"><span class="sup uu "><span title="Original: ten" class="dta-reg"/></span></span> Grade.<br/>
+Bei den Neu-Seeländern, die zu der <span title="Original: malaiiſchen" class="dta-reg">malaiischen</span> <span title="Original: Race" class="dta-reg">Rasse</span> <span title="Original: ge-&#xA;hören" class="dta-reg">gehören</span> und auf den <span title="Original: Inſelgruppen" class="dta-reg">Inselgruppen</span> des <span title="Original: ſtillen" class="dta-reg">stillen</span> Meeres wohnen,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0573 : 567.|</span><br/>
+beträgt er nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117669962">Lishon</a></span></span> und <span class="aq "><span title="Personenname"><a href="https://viaf.org/viaf/17612241">Garrot</a></span></span> die mit <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117663476"><span title="Original: Duperet" class="dta-reg">Dupet</span></a></span></span> <span title="Original: reiſten" class="dta-reg">reisten</span><br/>
+65°. Herr <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118805193">Sömmering</a></span></span> hat keinen Affen gefunden, der einen<br/>
+<span title="Original: Geſichtswinkel" class="dta-reg">Gesichtswinkel</span> über 58° gehabt hätte, und nur kaum erreichen<br/>
+<span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: dieſen" class="dta-reg">diesen</span>; <span title="Original: ſelbſt" class="dta-reg">selbst</span> beim Champanca hat er nur 50°; und<br/>
+wenn man von <span title="Original: Orangutang" class="dta-reg">Orang-Utan</span> <span title="Original: ſagt" class="dta-reg">sagt</span>, daß er 65° habe, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: iſt" class="dta-reg">ist</span><br/>
+dies eine Unwahrheit.</p><br/>
+<p class="dta-p">Das <span title="Original: Verhältniß" class="dta-reg">Verhältnis</span> des Gehirns zu den Nerven nimmt<br/>
+nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116988703">Mickel</a></span></span> in Halle bei den Negern ab, wo das <span title="Original: 5" class="dta-reg">5te</span><span class="sup uu "><span title="Original: te" class="dta-reg"/></span><br/>
+Paar der Nerven <span title="Original: ſtärker" class="dta-reg">stärker</span> <span title="Original: iſt" class="dta-reg">ist</span>, als bei <span title="Original: andern" class="dta-reg">anderen</span> <span title="Original: Menſchenracen" class="dta-reg">Menschenrassen</span>.<br/>
+Diejenigen welche <span title="Original: ſich" class="dta-reg">sich</span> freuen, wozu ich aber nicht gehöre,<br/>
+daß die Neger vor den <span title="Original: Weiſſen" class="dta-reg">Weißen</span> etwas <span title="Original: Thieriſches" class="dta-reg">Tierisches</span> haben,<br/>
+<span title="Original: ſuchen" class="dta-reg">suchen</span> hierin einen Beweisgrund, und wenn gleich eine <span title="Original: ſolche" class="dta-reg">solche</span><br/>
+Annahme albern <span title="Original: iſt" class="dta-reg">ist</span>, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ſcheinen" class="dta-reg">scheinen</span> <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſich" class="dta-reg">sich</span> doch mehr dem <span title="Original: thieriſchen" class="dta-reg">tierischen</span><br/>
+<span title="Original: Character" class="dta-reg">Charakter</span> zu nähern.<span class="dta-metamark" title="metamark">?</span> <span title="Original: –" class="dta-reg">-</span> Noch einige weniger wichtige<br/>
+<span title="Original: Verſchiedenheiten" class="dta-reg">Verschiedenheiten</span> des <span title="Original: Menſchen" class="dta-reg">Menschen</span>, liegen in der mehr <span title="Original: ausge-&#xA;drückten" class="dta-reg">ausgedrückten</span> <span title="Original: Exiſtenz" class="dta-reg">Existenz</span> des Kinns, einer regelmäßigen <span title="Original: Anweſen-&#xA;heit" class="dta-reg">Anwesenheit</span> des <span title="Original: Hirnſandes" class="dta-reg">Hirnsandes</span>, den aber auch die <span title="Original: Hirſche" class="dta-reg">Hirsche</span> <span title="Original: beſitzen" class="dta-reg">besitzen</span>, eine<br/>
+<span title="Original: ſchiefe" class="dta-reg">schiefe</span> Lage des Herzens, mit der Spitze nach unten, und in den<br/>
+mehr entwickelten <span title="Original: größern" class="dta-reg">größeren</span> <span title="Original: Naſe" class="dta-reg">Nase</span>. Die <span class="aq ">Simia <span title="Original: roſtrata" class="dta-reg">rostrata</span></span><br/>
+hat aber ebenfalls eine <span title="Original: ſehr" class="dta-reg">sehr</span> entwickelte <span title="Original: Naſe" class="dta-reg">Nase</span>. Herr<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726102">de la Metri</a></span>,</span> Herausgeber des <span class="aq ">Journal de <span title="Original: phyſique" class="dta-reg">physique</span></span> <span title="Original: ſagt" class="dta-reg">sagt</span> <span title="Original: ſcherz-&#xA;hafterweiſe" class="dta-reg">scherzhafterweise</span>, daß wenn die Affen <span title="Original: ſich" class="dta-reg">sich</span> wie wir aus <span title="Original: ſchnaubten" class="dta-reg">schnaubten</span>,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0574 : 568.|</span><br/>
+<span title="Original: ſie" class="dta-reg">sie</span> auch eine größere und <span title="Original: ſpitzere" class="dta-reg">spitzere</span> <span title="Original: Naſe" class="dta-reg">Nase</span> bekommen würden;<br/>
+gleich wie die Sumpfvögel dadurch <span title="Original: ſo" class="dta-reg">so</span> hochbeinig geworden wären,<br/>
+weil <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: ſtets" class="dta-reg">stets</span> hüteten naß zu werden. Wenn aber auch<br/>
+<span title="Original: dieſes" class="dta-reg">dieses</span> wirklich die <span title="Original: Geſtalt" class="dta-reg">Gestalt</span> verändern <span title="Original: ſollte" class="dta-reg">sollte</span>, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ſind" class="dta-reg">sind</span> doch <span title="Original: ſolche" class="dta-reg">solche</span><br/>
+Ideen in <span title="Original: dieſer" class="dta-reg">dieser</span> Ausdehnung irrig.</p><br/>
+<p class="dta-p">Es liegt in den <span title="Original: neuern" class="dta-reg">neueren</span> <span title="Original: Unterſuchungen" class="dta-reg">Untersuchungen</span> etwas <span title="Original: liebloſes" class="dta-reg">liebloses</span>,<br/>
+wenn man von einer <span title="Original: Stuffenleiter" class="dta-reg">Stufenleiter</span> der Humanität der <span title="Original: Menſchen" class="dta-reg">Menschen</span><br/>
+<span title="Original: ſpricht" class="dta-reg">spricht</span>; einige <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 3 Zeichen fehlen]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: geh" class="dta-reg">gehen</span></span><span title="Original: en" class="dta-reg"/> von den höher <span title="Original: organiſirten" class="dta-reg">organisierten</span> <span title="Original: Thieren" class="dta-reg">Tieren</span><br/>
+<span title="Original: ſelbſt" class="dta-reg">selbst</span> bis zu den <span title="Original: Menſchen" class="dta-reg">Menschen</span> über, was <span title="Original: ſich" class="dta-reg">sich</span> aber nicht <span title="Original: an-&#xA;nehmen" class="dta-reg">annehmen</span> läßt. Nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116863498">Meiners</a></span></span> <span title="Original: ſoll" class="dta-reg">soll</span> <span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: aufſteigend" class="dta-reg">aufsteigend</span><br/>
+vom <span title="Original: Orangutang" class="dta-reg">Orang-Utan</span> zu den Waldnegern oder den <span title="Original: Menſchenfreſſen" class="dta-reg">Menschenfressen</span><br/>
+und von <span title="Original: dieſen" class="dta-reg">diesen</span> zu den <span title="Original: Buſchhottentotten" class="dta-reg">Buschhottentotten</span> <span title="Original: ſein" class="dta-reg">sein</span>; <span title="Original: dieſen" class="dta-reg">diesen</span> reihen<br/>
+<span title="Original: ſich" class="dta-reg">sich</span> nach ihm die Capus von Neu Guinea an, dann folgen<br/>
+die Mongolen und einige <span title="Original: tartariſche" class="dta-reg">tartarische</span> Völker, bis er<br/>
+zu den <span title="Original: Kaukaſen" class="dta-reg">Kaukasen</span> zu uns <span title="Original: ſelbſt" class="dta-reg">selbst</span> kommt.</p><br/>
+<p class="dta-p">Da in <span title="Original: neuern" class="dta-reg">neueren</span> Zeiten viel Licht über die Affen <span title="Original: ver-&#xA;breitet" class="dta-reg">verbreitet</span> <span title="Original: iſt" class="dta-reg">ist</span>, <span title="Original: ſo" class="dta-reg">so</span> will ich 2 <span title="Original: derſelben" class="dta-reg">derselben</span> anführen, die dem <span title="Original: Menſchen" class="dta-reg">Menschen</span><br/>
+noch am <span title="Original: ähnlichſten" class="dta-reg">ähnlichsten</span> <span title="Original: ſind" class="dta-reg">sind</span>. Eine große Ungewißheit<br/>
+<span title="Original: herrſcht" class="dta-reg">herrscht</span> über die <span title="Original: Thiere" class="dta-reg">Tiere</span>, welche unter dem Namen <span title="Original: Orang-&#xA;utang" class="dta-reg">Orang-Utan</span> <span title="Original: beſchrieben" class="dta-reg">beschrieben</span> <span title="Original: ſind" class="dta-reg">sind</span>. Seine Name <span title="Original: iſt" class="dta-reg">ist</span> von <span class="aq ">orang</span> <span title="Original: /" class="dta-reg">(</span>klug<span title="Original: /" class="dta-reg">)</span><br/>
+und <span class="aq ">utang</span> <span title="Original: /" class="dta-reg">(</span>wild<span title="Original: /" class="dta-reg">)</span> hergeleitet. In <span title="Original: neuer" class="dta-reg">neueren</span><span title="Original: e" class="dta-reg"/><span title="Original: n" class="dta-reg"/> Zeiten <span title="Original: ſind" class="dta-reg">sind</span> 3<br/>
+lebendige in Europa <span title="Original: geweſen" class="dta-reg">gewesen</span>, von denen ich 2 <span title="Original: ſah" class="dta-reg">sah</span>, es waren<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0575 : 569.|</span><br/>
+junge<span class="dta-del" title="Streichung (#erased)">n</span> Individuen, des in <span title="Original: ältern" class="dta-reg">älteren</span> Jahren <span title="Original: ſehr" class="dta-reg">sehr</span> bösartigen<br/>
+Affen Pongo. Sie blieben nur kurze Zeit am Leben, und<br/>
+waren <span title="Original: 35–36″" class="dta-reg">35-36"</span> hoch, jedoch <span title="Original: ſollen" class="dta-reg">sollen</span> <span title="Original: ſie" class="dta-reg">sie</span> in ihrer <span title="Original: Heimath" class="dta-reg">Heimat</span> gegen <span title="Original: 4′" class="dta-reg">4'</span><br/>
+hoch werden.</p><br/>
+<p class="dta-p">Je mehr man <span title="Original: ſich" class="dta-reg">sich</span> den Affenländern nähert, hören auch die<br/>
+Fabeln über <span title="Original: ſie" class="dta-reg">sie</span> auf, die oft an das Wunderbare grenzen.<br/>
+So <span title="Original: ſollten" class="dta-reg">sollten</span> <span title="Original: ſie" class="dta-reg">sie</span> unter andere in Maisfeldern links gedrehte<br/>
+Knoten machen. Eben <span title="Original: ſo" class="dta-reg">so</span> hat man die große Fertigkeit in den<br/>
+Daumen der Affen, <span title="Original: /" class="dta-reg">(</span>wodurch <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſich" class="dta-reg">sich</span> mit von den übrigen <span title="Original: Thieren" class="dta-reg">Tieren</span><br/>
+<span title="Original: unterſcheiden" class="dta-reg">unterscheiden</span><span title="Original: /" class="dta-reg">)</span> in <span title="Original: Uebereinſtimmung" class="dta-reg">Übereinstimmung</span> mit den <span title="Original: Menſchen" class="dta-reg">Menschen</span> gebracht,<br/>
+und geglaubt, daß die <span title="Original: Exiſtenz" class="dta-reg">Existenz</span> beider durch die <span title="Original: Anweſenheit" class="dta-reg">Anwesenheit</span><br/>
+<span title="Original: derſelben" class="dta-reg">derselben</span> bedingt <span title="Original: ſei" class="dta-reg">sei</span>. Wenn dies auch der Fall wäre, <span title="Original: ſo" class="dta-reg">so</span><br/>
+kann man vom <span title="Original: Menſchen" class="dta-reg">Menschen</span> nicht auf den Affen <span title="Original: ſchlieſſen" class="dta-reg">schließen</span>, da die<br/>
+4 Daumen ihm nur zur <span title="Original: Hülfe" class="dta-reg">Hilfe</span> beim Klettern verliehen <span title="Original: ſind" class="dta-reg">sind</span>.</p><br/>
+<p class="dta-p">Auch den <span title="Original: Orangutang" class="dta-reg">Orang-Utan</span> den der Lord <span class="aq "><span title="Personenname"><span title="Original: Armhorſt" class="dta-reg">Armhorst</span></span></span> <span title="Original: beſaß" class="dta-reg">besaß</span> habe ich<br/>
+<span title="Original: geſehen" class="dta-reg">gesehen</span>. <span title="Original: –" class="dta-reg">-</span> Auch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100565565"><span title="Original: Tileſius" class="dta-reg">Tilesius</span></a></span></span> hat gefunden in <span title="Original: neuern" class="dta-reg">neueren</span> Zeiten,<br/>
+daß alle für <span title="Original: Orangutangs" class="dta-reg">Orang-Utans</span> ausgegebenen Affen, junge <span title="Original: Thiere" class="dta-reg">Tiere</span><br/>
+waren, und ihm <span title="Original: ſtimmen" class="dta-reg">stimmen</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/115526641">Rudolphi</a></span></span> bei, daß <span title="Original: dieſe" class="dta-reg">diese</span><br/>
+artigen <span title="Original: Geſchöpfe" class="dta-reg">Geschöpfe</span> in <span title="Original: ſpätern" class="dta-reg">späteren</span> Zeiten <span title="Original: ſehr" class="dta-reg">sehr</span> häßliche und <span title="Original: bös-&#xA;artige" class="dta-reg">bösartige</span> Affen werden. Es <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: alſo" class="dta-reg">also</span> <span title="Original: ſehr" class="dta-reg">sehr</span> <span title="Original: wahrſcheinlich" class="dta-reg">wahrscheinlich</span>, daß<br/>
+der <span title="Original: Orangutang" class="dta-reg">Orang-Utan</span> ein Abkömmling des bösartigen Pongo <span title="Original: iſt" class="dta-reg">ist</span>.<span class="dta-add" title="Hinzufügung (right)"> <span title="Original: –" class="dta-reg">-</span></span><br/>
+In Menagerien hat man gefunden, daß die Paviane, deren Kopf<br/>
+wie bei einem Hunde <span title="Original: geſtaltet" class="dta-reg">gestaltet</span> <span title="Original: iſt" class="dta-reg">ist</span>, mit kugelrunden Köpfen geboren werden.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0576 : 570.|</span><br/>
+<p class="dta-p">Ein anderes <span title="Original: Thier" class="dta-reg">Tier</span> <span title="Original: iſt" class="dta-reg">ist</span> der <span title="Original: Jocko" class="dta-reg">Jako</span>, ein <span title="Original: afrikaniſcher" class="dta-reg">afrikanischer</span> Affe,<br/>
+auch Chimpanze genannt, welcher mit dem <span title="Original: Orangutang" class="dta-reg">Orang-Utan</span> häufig<br/>
+<span title="Original: verwechſelt" class="dta-reg">verwechselt</span> wird. Er <span title="Original: iſt" class="dta-reg">ist</span> aber noch weniger dem <span title="Original: Menſchen" class="dta-reg">Menschen</span><br/>
+ähnlich; man hat ihn aber <span title="Original: ſo" class="dta-reg">so</span> weit gebracht daß er als <span title="Original: Be-&#xA;diente" class="dta-reg">Bediente</span> <span title="Original: agiren" class="dta-reg">agieren</span> kann, und <span title="Original: ſelbſt" class="dta-reg">selbst</span> <span title="Original: Thee" class="dta-reg">Tee</span> in einer <span title="Original: Geſellſchaft" class="dta-reg">Gesellschaft</span> mit<br/>
+trinkt. <span title="Original: –" class="dta-reg">-</span> Der <span title="Original: ſchwarze" class="dta-reg">schwarze</span> <span class="aq ">Gibbon</span> hat <span title="Original: faſt" class="dta-reg">fast</span> keine Stirn,<br/>
+und <span title="Original: iſt" class="dta-reg">ist</span> am ganzen Körper mit Haaren <span title="Original: bewachſen" class="dta-reg">bewachsen</span>. <span title="Original: –" class="dta-reg">-</span><br/>
+Eine <span title="Original: ſolche" class="dta-reg">solche</span> Scala der Humanität kann es <span title="Original: alſo" class="dta-reg">also</span> nicht gut<br/>
+geben, wie <span title="H￼" class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116863498">Meiners</a></span></span> ausgesprochen hat.</p><br/>
+<p class="dta-p">Die <span title="Original: Unterſuchung" class="dta-reg">Untersuchung</span> ob es unter den <span title="Original: Menſchen" class="dta-reg">Menschen</span> mehrere<br/>
+Arten oder nur eine Species und Varietäten <span title="Original: giebt" class="dta-reg">gibt</span>, <span title="Original: iſt" class="dta-reg">ist</span><br/>
+<span title="Original: ſeit" class="dta-reg">seit</span> den letzten 80 Jahren <span title="Original: ſehr" class="dta-reg">sehr</span> lebendig betrieben. Man<br/>
+hat <span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: Unterſuchungen" class="dta-reg">Untersuchungen</span> mit der <span title="Original: Verwandſchaft" class="dta-reg">Verwandtschaft</span> der <span title="Original: Spra-&#xA;chen" class="dta-reg">Sprachen</span> in Verbindung gebracht, da es aber <span title="Original: mongoliſche" class="dta-reg">mongolische</span> <span title="Original: Völ-&#xA;ker" class="dta-reg">Völker</span> <span title="Original: giebt" class="dta-reg">gibt</span>, die <span title="Original: türkiſch" class="dta-reg">türkisch</span> reden, <span title="Original: andern" class="dta-reg">anderen</span> aber auch die <span title="Original: ſich" class="dta-reg">sich</span> ganz<br/>
+<span title="Original: verſchiedener" class="dta-reg">verschiedener</span> Sprachen bedienen, die in keiner <span title="Original: Verwand-&#xA;ſchaft" class="dta-reg">Verwandtschaft</span> mit jener <span title="Original: ſtehen" class="dta-reg">stehen</span>, <span title="Original: ſo" class="dta-reg">so</span> kann <span title="Original: dieſe" class="dta-reg">diese</span> Art der <span title="Original: Unterſuchung" class="dta-reg">Untersuchung</span><br/>
+nur zu <span title="Original: Irrthümern" class="dta-reg">Irrtümern</span> führen. <span title="Original: Ebenſo" class="dta-reg">Ebenso</span> <span title="Original: iſt" class="dta-reg">ist</span> die <span title="Original: europäiſche" class="dta-reg">europäische</span> Sprache<br/>
+aus der <span title="Original: griechiſchen" class="dta-reg">griechischen</span> und <span title="Original: römiſchen" class="dta-reg">römischen</span> <span title="Original: entſtanden" class="dta-reg">entstanden</span> oder mehr<br/>
+ausgebildet. So <span title="Original: iſt" class="dta-reg">ist</span> auch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118571249">Leibnitz</a></span></span> <span title="Original: ſchon" class="dta-reg">schon</span> durch die <span title="Original: Unter-&#xA;ſuchung" class="dta-reg">Untersuchung</span> über die <span title="Original: Abſtammung" class="dta-reg">Abstammung</span> der Sprachen irre geführt.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0577 : 571.|</span><br/>
+<p class="dta-p">Durch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100318371">Abel <span title="Original: Remuſat" class="dta-reg">Remusat</span></a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/10082451X">Julius Klaproth</a></span></span> <span title="Original: iſt" class="dta-reg">ist</span> in <span title="Original: neuern" class="dta-reg">neueren</span><br/>
+Zeiten über die Analogie der Völker <span title="Original: heimiſchen" class="dta-reg">heimischen</span> <span title="Original: Ur-&#xA;ſprungs" class="dta-reg">Ursprungs</span>, aus den <span title="Original: ſalzigen" class="dta-reg">salzigen</span> Ebenen vom <span title="Original: Kaspiſchen" class="dta-reg">Kaspischen</span> Meere und<br/>
+<span title="Original: Aralsſee" class="dta-reg">Aralssee</span> gegen die <span title="Original: chineſiſche" class="dta-reg">chinesische</span> Mauer zu, viel Licht verbreitet.<br/>
+Die <span title="Original: Samskritſprache" class="dta-reg">Samskritsprache</span> <span title="Original: iſt" class="dta-reg">ist</span> von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118659332"><span title="Original: Boch" class="dta-reg">Boche</span></a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/118607987">Schlegel</a></span></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/118554727">meinem<br/>
+Bruder</a></span> geprüft; die <span title="Original: Keilſchriften" class="dta-reg">Keilschriften</span> <span title="Original: ſind" class="dta-reg">sind</span> von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116760648">St. Martin</a></span></span><br/>
+entdeckt.</p><br/>
+<p class="dta-p">Die Griechen und Römer <span title="Original: unterſchieden" class="dta-reg">unterschieden</span> nur 3 Stämmen:<br/>
+Eingeboren, Erdgeborne und Eingewanderte. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118549855">Herodot</a></span></span> <span title="Original: giebt" class="dta-reg">gibt</span><br/>
+4 Stämme an, 2 <span title="Original: einheimiſche" class="dta-reg">einheimische</span> und 2 fremde. In Afrika hatte<br/>
+es vor der Einwanderung der <span title="Original: Saracenen" class="dta-reg">Sarazenen</span>, <span title="Original: ſchon" class="dta-reg">schon</span> 3 bis 4 <span title="Original: mal" class="dta-reg">Mal</span><br/>
+Einwanderungen gegeben, von <span title="Original: Perſern" class="dta-reg">Persern</span>, Medern und <span title="Original: andern" class="dta-reg">anderen</span><br/>
+<span title="Original: kaukaſiſchen" class="dta-reg">kaukasischen</span> Völkern, auch die <span title="Original: Hykſos" class="dta-reg">Hyksos</span> ein <span title="Original: arabiſcher" class="dta-reg">arabischer</span> Stamm,<br/>
+fiel <span title="Original: ſchon" class="dta-reg">schon</span> in frühen Zeiten ins nördliche <span title="Original: Aegypten" class="dta-reg">Ägypten</span> ein, und<br/>
+<span title="Original: faſt" class="dta-reg">fast</span> mit Gewißheit kann man <span title="Original: ſie" class="dta-reg">sie</span> für <span title="Original: arabiſche" class="dta-reg">arabische</span> <span title="Original: Hirten-&#xA;völker" class="dta-reg">Hirtenvölker</span> halten, da ein großer <span title="Original: Contraſt" class="dta-reg">Kontrast</span> <span title="Original: zwiſchen" class="dta-reg">zwischen</span> den <span title="Original: Nord-&#xA;ägyptern" class="dta-reg">Nordägyptern</span> und denen gegen <span title="Original: Merä" class="dta-reg">Märe</span> hin jetzt noch <span title="Original: ſtatt" class="dta-reg">statt</span> findet,<br/>
+und wovon <span title="Original: ſich" class="dta-reg">sich</span> der Abklang in der <span title="Original: ägyptiſchen" class="dta-reg">ägyptischen</span> Mythologie<br/>
+zeigt. Eine <span title="Original: 3" class="dta-reg">3te</span><span title="Original: t￼" class="dta-reg"><span class="sup uu "><span title="Original: te" class="dta-reg"/></span></span> Einwanderung <span title="Original: geſchah" class="dta-reg">geschah</span> <span title="Original: ſpäter" class="dta-reg">später</span>, bei der <span title="Original: ſo-&#xA;genannten" class="dta-reg">sogenannten</span> Völkerwanderung durch die Vandalen, von denen<br/>
+<span title="Original: ſich" class="dta-reg">sich</span> noch jetzt auf dem <span title="Original: weſtlichen" class="dta-reg">westlichen</span> Atlas ein Stamm die<br/>
+<span title="Original: C" class="dta-reg">Cubaien</span><span title="Original: ub" class="dta-reg"/><span title="Original: a" class="dta-reg"/><span title="Original: ien" class="dta-reg"/> findet.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0578 : 572.|</span><br/>
+<p class="dta-p">Wenn auch <span title="Personenname"><a href="http://d-nb.info/gnd/118549855">Herodot</a></span> nicht an die <span title="Original: Unterſuchungen" class="dta-reg">Untersuchungen</span> über<br/>
+den <span title="Original: Urſprung" class="dta-reg">Ursprung</span> der <span title="Original: Menſchen" class="dta-reg">Menschen</span> dachte, da <span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: erſt" class="dta-reg">erst</span> eine Folge<br/>
+des <span title="Original: Chriſtenthums" class="dta-reg">Christentums</span> waren, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ſpricht" class="dta-reg">spricht</span> <span title="Original: ſich" class="dta-reg">sich</span> doch in der <span title="Original: Lebens-&#xA;geſchichte" class="dta-reg">Lebensgeschichte</span> des <span title="Personenname"><span class="aq ">Fabius</span> von <span class="aq ">Agricola</span></span> ein Gedenke aus;<br/>
+der darauf hindeutet, daß alle Völker eine <span title="Original: Abſtammung" class="dta-reg">Abstammung</span> haben.<br/>
+Die Idee der Einheit des <span title="Original: Menſchengeſchlechts" class="dta-reg">Menschengeschlechts</span> wurde <span title="Original: erſt" class="dta-reg">erst</span><br/>
+durchs <span title="Original: Chriſtenthum" class="dta-reg">Christentum</span> <span title="Original: aufgeſtellt" class="dta-reg">aufgestellt</span> und <span title="Original: herrſchend" class="dta-reg">herrschend</span>, und eine der<br/>
+<span title="Original: wichtigſten" class="dta-reg">wichtigsten</span> <span title="Original: Wohlthaten" class="dta-reg">Wohltaten</span> <span title="Original: deſſelben" class="dta-reg">desselben</span> <span title="Original: iſt" class="dta-reg">ist</span>, daß es die <span title="Original: perſönliche" class="dta-reg">persönliche</span><br/>
+Freiheit eines großen <span title="Original: Theils" class="dta-reg">Teils</span> des <span title="Original: Menſchengeſchlechts" class="dta-reg">Menschengeschlechts</span> <span title="Original: ge-&#xA;gründet" class="dta-reg">gegründet</span> hat, und die <span title="Original: Menſchheit" class="dta-reg">Menschheit</span> in eine nähere Beziehung<br/>
+brachte.</p><br/>
+<p class="dta-p">Als Amerika entdeckt wurde, <span title="Original: entſtand" class="dta-reg">entstand</span> die Frage, ob die<br/>
+dort <span title="Original: Eingebornen" class="dta-reg">Eingeborenen</span> als <span title="Original: Menſchen" class="dta-reg">Menschen</span> betrachte werden könnten,<br/>
+der <span title="Original: Pabſt" class="dta-reg">Papst</span> <span title="Original: entſchied" class="dta-reg">entschied</span> <span title="Original: dieſe" class="dta-reg">diese</span> durch einige Bullen, welche die<br/>
+Einheit des <span title="Original: Menſchengeſchlechts" class="dta-reg">Menschengeschlechts</span> in allen Ländern der Erde<br/>
+bekannt machten. Die <span title="Original: Lebensweiſe" class="dta-reg">Lebensweise</span> jener neu <span title="Original: ent-&#xA;deckten" class="dta-reg">entdeckten</span> Völker war anderer Art, als die der alten Welt<br/>
+<span title="Original: ſie" class="dta-reg">sie</span> waren nicht Hirtenvölker, waren <span title="Original: ſie" class="dta-reg">sie</span> von der Natur<br/>
+durch die unermeßlichen Waldungen wohl verhindert wurden.<br/>
+Es <span title="Original: iſt" class="dta-reg">ist</span> wunderbar genug daß <span title="Original: dieſe" class="dta-reg">diese</span> Völker <span title="Original: ſich" class="dta-reg">sich</span> nicht einmal<br/>
+der <span title="Original: Biſons" class="dta-reg">Bisons</span> bedienten, <span title="Original: ſo" class="dta-reg">so</span> wie andere Völker in <span title="Original: öſtlichen" class="dta-reg">östlichen</span><br/>
+<span title="Original: Aſien" class="dta-reg">Asien</span> <span title="Original: ſich" class="dta-reg">sich</span> nicht die Milch und das <span title="Original: Fleiſch" class="dta-reg">Fleisch</span> nutzbar zu machen wußten,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0579 : 573.|</span><br/>
+obgleich <span title="Original: ſie" class="dta-reg">sie</span> von Hirtenvölkern umgeben waren. <span title="Original: –" class="dta-reg">-</span><br/>
+<span title="Original: Daſſelbe" class="dta-reg">Dasselbe</span> <span title="Original: iſt" class="dta-reg">ist</span> auch bei den <span title="Original: amerikaniſchen" class="dta-reg">amerikanischen</span> <span title="Original: Völkerſtämmen" class="dta-reg">Völkerstämmen</span><br/>
+der Fall, da einige Denkmäler <span title="Original: derſelben" class="dta-reg">derselben</span> uns ganz früher<br/>
+Zeit erkennen <span title="Original: laſſen" class="dta-reg">lassen</span>, daß ein großer Verkehr <span title="Original: zwiſchen" class="dta-reg">zwischen</span><br/>
+dem <span title="Original: öſtlichen" class="dta-reg">östlichen</span> <span title="Original: Theile" class="dta-reg">Teile</span> von <span title="Original: Aſien" class="dta-reg">Asien</span> und dem <span title="Original: weſtlichen" class="dta-reg">westlichen</span> Amerika<br/>
+<span title="Original: ſtatt" class="dta-reg">statt</span> gefunden hat.</p><br/>
+<p class="dta-p">Die <span title="Original: Sclaverei" class="dta-reg">Sklaverei</span> als <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſich" class="dta-reg">sich</span> im 15 Jahrhundert <span title="Original: ausbrei-&#xA;tete" class="dta-reg">ausbreitete</span>, wo man die Caraiben und Neger <span title="Original: gewaltſam" class="dta-reg">gewaltsam</span> aus<br/>
+ihrem Vaterlande <span title="Original: wegſchleppſte" class="dta-reg">wegschleppst</span>, muß man jedoch den <span title="Original: größen" class="dta-reg">Größen</span><br/>
+<span title="Original: Reichthum" class="dta-reg">Reichtum</span> an Ländern <span title="Original: zuſchreiben" class="dta-reg">zuschreiben</span>, da man <span title="Original: ſoviel" class="dta-reg">soviel</span> Land<br/>
+ohne Hände für die Benutzung <span title="Original: deſſelben" class="dta-reg">desselben</span> entdeckte.</p><br/>
+<p class="dta-p">Bei der nähern Betrachtung der <span title="Original: Menſchenracen" class="dta-reg">Menschenrassen</span>, wollen<br/>
+wir 2 Fragen aufwerfen: 1. Welche <span title="Original: Verſchiedenheit" class="dta-reg">Verschiedenheit</span><br/>
+des <span title="Original: menſchlichen" class="dta-reg">menschlichen</span> Körpers bietet <span title="Original: ſich" class="dta-reg">sich</span> bei den <span title="Original: Völker-&#xA;ſtämmen" class="dta-reg">Völkerstämmen</span> gegenwärtig dar? 2. Wie <span title="Original: ſind" class="dta-reg">sind</span> <span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: Ver-&#xA;ſchiedenheiten" class="dta-reg">Verschiedenheiten</span> auf dem Erdkörper verbreitet?</p><br/>
+<p class="dta-p">In dem <span title="Original: Cauſal" class="dta-reg">Causal</span> <span title="Original: zuſammenhange" class="dta-reg">zusammenhänge</span> der <span title="Original: Erſcheinungen" class="dta-reg">Erscheinungen</span> bieten<br/>
+<span title="Original: ſich" class="dta-reg">sich</span> zwei Möglichkeiten über die Verbreitung der <span title="Original: Menſchen" class="dta-reg">Menschen</span><br/>
+dar, denn entweder gab es einen Urtypus und eine <span title="Original: ge-&#xA;meinſchaftliche" class="dta-reg">gemeinschaftliche</span> <span title="Original: Abſtammung" class="dta-reg">Abstammung</span>, die durch Degenerationen und<br/>
+Abweichungen von der <span title="Original: urſprünglichen" class="dta-reg">ursprünglichen</span> Art bei Einwirkungen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0580 : 574.|</span><br/>
+des Klimas und der <span title="Original: Lebensweiſe" class="dta-reg">Lebensweise</span> die <span title="Original: Menſchenbildungen" class="dta-reg">Menschenbildungen</span><br/>
+<span title="Original: ſo" class="dta-reg">so</span> <span title="Original: verſchieden" class="dta-reg">verschieden</span> <span title="Original: geſtaltete" class="dta-reg">gestaltete</span>, wie wir <span title="Original: ſie" class="dta-reg">sie</span> gegenwärtig <span title="Original: ſehen" class="dta-reg">sehen</span>;<br/>
+oder es haben <span title="Original: ſich" class="dta-reg">sich</span> mehrere Urtypen über den Erdball<br/>
+verbreitet.</p><br/>
+<p class="dta-p">Im <span title="Original: erſten" class="dta-reg">ersten</span> Falle haben <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118591371">Pallas</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117697206"><span title="Original: Pritſcha" class="dta-reg">Pritsche</span></a></span></span> angenommen,<br/>
+daß die <span title="Original: ſchwarze" class="dta-reg">schwarze</span> Farbe und deren Formen die <span title="Original: Urſtämme" class="dta-reg">Urstämme</span> <span title="Original: ge-&#xA;weſen" class="dta-reg">gewesen</span> <span title="Original: ſind" class="dta-reg">sind</span>, von welchen die Mongolen als <span title="Original: Unterabtheilung" class="dta-reg">Unterabteilung</span><br/>
+durch Zeit und Klima weiß geworden wären, durch die<br/>
+Beobachtung, daß die dunkele Farbe der <span title="Original: Thiere" class="dta-reg">Tiere</span> <span title="Original: allmählig" class="dta-reg">allmählich</span><br/>
+zur <span title="Original: hellern" class="dta-reg">helleren</span> übergeht, wurden <span title="Original: ſie" class="dta-reg">sie</span> hierzu verleitet, was<br/>
+aber wenig Beifall findet. <span title="Original: –" class="dta-reg">-</span> Herr <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117632368">Denham</a></span></span> hat<br/>
+bei <span title="Original: ſeiner" class="dta-reg">seiner</span> Zurückkunft <span title="Original: verſichert" class="dta-reg">versichert</span>, daß <span title="Original: ſeine" class="dta-reg">seine</span> weiße Farbe<br/>
+und lange <span title="Original: Naſe" class="dta-reg">Nase</span> in Borneo und <span title="Original: Murſuk" class="dta-reg">Mursuk</span> bei den Negern<br/>
+<span title="Original: Uebelkeiten" class="dta-reg">Übelkeiten</span> erregte, die <span title="Original: beſonders" class="dta-reg">besonders</span> auffallend bei den<br/>
+Frauen hervortreten, die nicht allein vor ihm <span title="Original: ausſpuckten" class="dta-reg">ausspuckten</span>,<br/>
+<span title="Original: ſondern" class="dta-reg">sondern</span> <span title="Original: ſogar" class="dta-reg">sogar</span> in Ohnmacht fielen. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">Ideen von Schönheit und Häßlichkeit hängen von <span title="Original: na-&#xA;tionellen" class="dta-reg">nationalen</span> <span title="Original: Vorurtheilen" class="dta-reg">Vorurteilen</span> ab, jede Nation <span title="Original: ſucht" class="dta-reg">sucht</span> die Schönheit<br/>
+in ihren eigenen Individualitäten. Es <span title="Original: giebt" class="dta-reg">gibt</span> aber allgemeine<br/>
+Begriffe von Schönheit der Formen und <span title="Original: Anmuth" class="dta-reg">Anmut</span> der Züge,<br/>
+die aber nur zum völligen Ebenmaß, durch den Ausdruck der<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0581 : 575.|</span><br/>
+Ideen, die einer <span title="Original: höhern" class="dta-reg">höheren</span> Welt angehören, gelangen.<br/>
+So zart und <span title="Original: ſammetartig" class="dta-reg">samtartig</span> die <span title="Original: ſchwarze" class="dta-reg">schwarze</span> Haut auch <span title="Original: iſt" class="dta-reg">ist</span>, <span title="Original: ſo" class="dta-reg">so</span><br/>
+fehlt ihr doch der Ausdruck der <span title="Original: zarteſten" class="dta-reg">zartesten</span> Anregungen des<br/>
+Gefühls im <span title="Original: Erröthen" class="dta-reg">Erröten</span>. Negerfrauen werden zwar bisweilen<br/>
+<span title="Original: röthlich" class="dta-reg">rötlich</span>, aber denn <span title="Original: ſind" class="dta-reg">sind</span> es andere Einwirkungen; auch drücken<br/>
+Gram und Leiden, oder große Gemäße der Freuden durch<br/>
+die Wirkung des <span title="Original: innern" class="dta-reg">inneren</span> Gefühls <span title="Original: ſich" class="dta-reg">sich</span> dadurch aus, daß eine<br/>
+<span title="Original: Bläſſe" class="dta-reg">Blässe</span> die <span title="Original: angeborne" class="dta-reg">angeborene</span> Schwärze verdrängt.</p><br/>
+<p class="dta-p">Der Streit über die <span title="Original: Abſtammung" class="dta-reg">Abstammung</span> von einem oder<br/>
+mehreren Typen, kann aber <span title="Original: ſo" class="dta-reg">so</span> wenig <span title="Original: geſchlichtet" class="dta-reg">geschlichtet</span> werden,<br/>
+als der, ob alle Sprachen von einer <span title="Original: Urſprache" class="dta-reg">Ursprache</span> <span title="Original: ab-&#xA;ſtammen" class="dta-reg">abstammen</span>. Wohl zeigt es <span title="Original: ſich" class="dta-reg">sich</span> in vielen <span title="Original: indiſchen" class="dta-reg">indischen</span> und<br/>
+<span title="Original: andern" class="dta-reg">anderen</span> Schriften der <span title="Original: Inſeln" class="dta-reg">Inseln</span> des <span title="Original: indiſchen" class="dta-reg">indischen</span> Archipels, daß<br/>
+es mehrere <span title="Original: Unterſchiede" class="dta-reg">Unterschiede</span> in den Schriftzeichen als den<br/>
+Sprachen <span title="Original: giebt" class="dta-reg">gibt</span>; und man kann allerdings allgemeine<br/>
+Formeln anführen, die in allen <span title="Original: unſere" class="dta-reg">unsere</span> Sprachen, in den<br/>
+Trümmern wie in den Wurzeln <span title="Original: ſich" class="dta-reg">sich</span> zeigen und den <span title="Original: Ur-&#xA;typus" class="dta-reg">Urtypus</span> bilden, die aber immer nur die Verbindung der<br/>
+<span title="Original: Völkerſtämme" class="dta-reg">Völkerstämme</span> andeuten, ohne eine <span title="Original: Uebereinſtimmung" class="dta-reg">Übereinstimmung</span><br/>
+der <span title="Original: Menſchenracen" class="dta-reg">Menschenrassen</span> ergründen zu <span title="Original: laſſen" class="dta-reg">lassen</span>.</p><br/>
+<p class="dta-p">Bei einem <span title="Original: phyſiſchen" class="dta-reg">physischen</span> Naturgemälde und einer <span title="Original: Welt-" class="dta-reg">Weltbeschreibung</span>
+<span class="dta-pb" style="padding-left:15em">|#f0582 : 576.|</span><br/>
+<span title="Original: beſchreibung" class="dta-reg"/>, <span title="Original: beſchränke" class="dta-reg">beschränke</span> ich mich auf Vergleiche. Das<br/>
+<span title="Original: Chriſtenthum" class="dta-reg">Christentum</span> nahm die Idee auf daß alle <span title="Original: Menſchen" class="dta-reg">Menschen</span> von<br/>
+einem Paare <span title="Original: abſtammten" class="dta-reg">abstammten</span>, wie es die <span title="Original: moſaiſchen" class="dta-reg">mosaischen</span> <span title="Original: Tradi-&#xA;tionen" class="dta-reg">Traditionen</span> lehrten. Doch <span title="Original: dieſen" class="dta-reg">diesen</span> <span title="Original: iſt" class="dta-reg">ist</span> es <span title="Original: blos" class="dta-reg">bloß</span> eigen die <span title="Original: Natur-&#xA;geſetzen" class="dta-reg">Naturgesetzen</span> <span title="Original: unſers" class="dta-reg">unseres</span> Erdkörpers <span title="Original: ſowohl" class="dta-reg">sowohl</span> durch den Lauf der<br/>
+<span title="Original: Geſchichte" class="dta-reg">Geschichte</span> <span title="Original: darzuthun" class="dta-reg">darzutun</span>, wie die Einheit des <span title="Original: Menſchengeſchlechts" class="dta-reg">Menschengeschlechts</span><br/>
+als Folge einer <span title="Original: abſoluten" class="dta-reg">absoluten</span> <span title="Original: Abſtammung" class="dta-reg">Abstammung</span> herzuleiten.</p><br/>
+<p class="dta-p">Es <span title="Original: iſt" class="dta-reg">ist</span> aber auch kein Grund vorhanden, die <span title="Original: Abſtam-&#xA;mung" class="dta-reg">Abstammung</span> von einem <span title="Original: Menſchenpaare" class="dta-reg">Menschenpaare</span> gerade zu leugnen zu können,<br/>
+da <span title="Original: Uebergänge" class="dta-reg">Übergänge</span> von Stamm zu Stamm vorhanden <span title="Original: ſind" class="dta-reg">sind</span>,<br/>
+wo das Klima <span title="Original: verſchieden" class="dta-reg">verschieden</span> darauf wirkte. <span title="Original: Dieſelben" class="dta-reg">Dieselben</span> <span title="Original: kli-&#xA;matiſchen" class="dta-reg">klimatischen</span> <span title="Original: Verſchiedenheiten" class="dta-reg">Verschiedenheiten</span> finden wir auch bei den <span title="Original: Thier-&#xA;racen" class="dta-reg">Tierraken</span>, als bei Hunden, <span title="Original: Ochſen" class="dta-reg">Ochsen</span>, Schafen <span class="aq ">etc.</span> die den <span title="Original: Menſchen" class="dta-reg">Menschen</span><br/>
+überall folgten. Solche bleibende Abänderungen wie<br/>
+das Thier- und Pflanzenreich <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: aufzuweiſen" class="dta-reg">aufzuweisen</span> hat, <span title="Original: be-&#xA;weiſen" class="dta-reg">beweisen</span> die <span title="Original: neuern" class="dta-reg">neueren</span> abnormen Bildungen deren <span title="Original: Entſtehen" class="dta-reg">Entstehen</span><br/>
+<span title="Original: hiſtoriſch" class="dta-reg">historisch</span> nach <span title="Original: zuweiſen" class="dta-reg">zuweisen</span> <span title="Original: iſt" class="dta-reg">ist</span>, wie z. B. das neuerdings in<br/>
+Connecticut geborene, und von <span class="aq "><span title="Personenname"><span title="Original: Asconſchy" class="dta-reg">Asconschy</span></span></span> <span title="Original: beſchriebene" class="dta-reg">beschriebene</span> Schaf<br/>
+mit krummen <span title="Original: ſäbelartigen" class="dta-reg">säbelartigen</span> Vorderbeinen, das wie die <span title="Original: Känge-&#xA;ruhs" class="dta-reg">Kängeruhs</span> hüpft, und dadurch den <span title="Original: Vortheil" class="dta-reg">Vorteil</span> darbietet, daß es <span class="dta-supplied">[nicht]</span><br/>
+über die Hecken <span title="Original: ſpringen" class="dta-reg">springen</span> kann, von denen man jetzt in <span title="Original: Eng-" class="dta-reg">England</span>
+<span class="dta-pb" style="padding-left:15em">|#f0583 : 577.|</span><br/>
+<span title="Original: land" class="dta-reg"/> und Nordamerika <span title="Schreibfehler: ganz" class="dta-corr">ganze</span> <span title="Original: Heerden" class="dta-reg">Herden</span> zu gezogen hat, bei<br/>
+denen <span title="Original: ſich" class="dta-reg">sich</span> die krummen Beine treu fortpflanzen. Die<br/>
+früher angeführte <span class="aq "><span title="Original: Fragaria" class="dta-reg">Fragarie</span> monophylla</span> <span title="Original: giebt" class="dta-reg">gibt</span> ein <span title="Original: an-&#xA;deres" class="dta-reg">anderes</span> <span title="Original: Beiſpiel" class="dta-reg">Beispiel</span>, aber <span title="Original: ſo" class="dta-reg">so</span> die Schweine in Ungarn ohne<br/>
+Haare. Alles <span title="Original: dieſes" class="dta-reg">dieses</span> erinnert an die <span title="Original: Wahrſcheinlich-&#xA;keit" class="dta-reg">Wahrscheinlichkeit</span>, daß eine Urtype der <span title="Original: menſchlichen" class="dta-reg">menschlichen</span> Formen durch <span title="Original: kli-&#xA;matiſche" class="dta-reg">klimatische</span> Einwirkungen große Veränderungen erlitten hat.</p></div></div></div></div></body></html>

@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><span class="dta-supplied">[35. Vorlesung, 05.03.1828]</span><div class=""><div class=""><div class=""><div class=""><p class="dta-p">So wie wir die Bildung der Gebirgsarten erkennen können,<br/>
+giebt es 3 verſchiedene Wege derſelben.</p><br/>
+<div class="dta-list">   <div class="dta-list-item">1. <span class="u ">Unorganiſche Bildung</span>, in Folge eines Niederſchlags der Quellen,<br/>
+ſo wie der Traventins bei Rom entſtand, oder in Folge eines<br/>
+Niederſchlags lockerer Theile, die durch Anſchwemmungen herbei<br/>
+geführt wurden.</div>   
+<div class="dta-list-item">2. <span class="u ">Gleichfals eine unorganiſche Bildung</span>, aus den vulkaniſchen<br/>
+Wirkungen hervorgehend, indem ſie innere Lagen durchbrechen<br/>
+laſſen, die theils aus Porphyr, Granit und tuffartiges Ge-<br/>
+ſtein beſtehen, theils durch das Aus<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">werf</span>en der Krater von<br/>
+Steinen, Lava und Aſche gebildet wird.</div>   
+<span class="dta-pb" style="padding-left:15em">|#f0253 : 247.|</span><br/>
+<div class="dta-list-item">3. <span class="u ">Organiſche Bildung</span>, durch Erhebung von Kalkgebirgen,<br/>
+wie wir dies an den Coralleninſeln ſehen, die über die<br/>
+Oberfläche empor kommen, und veraltert und zertrümmert<br/>
+Eilande bilden. Dieſe ſchlieſſen in ſich einfache Gebirgs-<br/>
+arten und Conglomerate von mehreren, wie wir ſie im<br/>
+antilliſchen Meere ſüdlich von Cuba erkennen; dieſe Ei-<br/>
+lande wurden von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118564994">Columbus</a></span></span> die Gärten des Königs<br/>
+und der Königin genannt.</div>   
+</div>   <p class="dta-p">Zu dem Vulkane gehört eine permanente Verbindung<br/>
+mit dem Innern der Erde. Die Hebung der Trachitkegel iſt<br/>
+nicht durch die almählige Anhäufung der Lava und ſonſtigen<br/>
+Auswürfe entſtanden, ſondern ſie ſind gewaltſam empor<br/>
+gehoben, wie die Coralleneilande zeigen, bei denen <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11669811X">Ruppel</a></span></span><br/>
+3–400′ hoch noch Seepflanzungen im Tuff fand. Die andere Ent-<br/>
+ſtehung der Vulkane iſt nicht im Rücken des Gebirges<br/>
+ſelbſt, ſondern tiefer im Innern, denn von ihrer Bildung äußer-<br/>
+lich auf dem trocknen Boden des Luftmeers hat die Geſchichte<br/>
+kein Beiſpiel aufzuweiſen. Der Zuſtand des Alters und<br/>
+des Verlöſchens trit ein, wenn ſich im Innere vulkaniſche Seen<br/>
+bilden. So iſt der Pic von Teneriffa im Zuſtande der Solfatare.</p><br/>
+<p class="dta-p">Wir haben geſehen, daß die Vulkane meiſt kegelförmig<br/>
+ſind. Der Pichincha dagegen bildet einen langen Rücken gleich<br/>
+einer Mauer, wo der kegelförmige Theil auf dem Abhange gegen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0254 : 248.|</span><br/>
+die Südſee zu, liegt. Der Cotopaxi, von welchem im pittores-<br/>
+quen Atlas meiner Reiſe eine Abbildung iſt, hat eine ähnliche<br/>
+Geſtalt. Das Verhältniß des Umfangs der Vulkane zu<br/>
+ihrer Höhe iſt wie 28:1. Der Veſuv hat beinahe den größten<br/>
+Aſchenkegel, da er faſt ſo groß wie der des Pichincha iſt, nämlich<br/>
+⅓ der Höhe; der des Pic von <span title="T." class="dta-abbr">Teneriffa</span> dagegen hat nur <span class="sup ">1</span>/<span class="sub ">22</span> der Höhe.<br/>
+Es ſcheint, daß die niedrigen Vulkane überhaupt die größten<br/>
+Aſchenkegel haben.</p><br/>
+<div class="dta-list">   <div class="dta-list-item">Beim Veſuv iſt die Höhe des Aſchenkegels 1318′<br/>
+<span title="Original: " class="dta-reg">〃</span> die ganze Höhe 3450′ nach meiner Meſſung.</div>
+<div class="dta-list-item">Beim Aetna iſt die Höhe des Aſchenkegels 1020′<br/>
+<span title="Original: " class="dta-reg">〃</span> die ganze Höhe 10,200′ nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118804790">Sausſure</a></span>.</span></div>
+<div class="dta-list-item">Beim Pic iſt die Höhe des Aſchenkegels 504′<br/>
+<span title="Original: " class="dta-reg">〃</span> die ganze Höhe 11,430′ nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118703897">Herſchel</a></span></span>,<br/>
+<span class="et "><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">L. v. Buch</a></span></span> und mir.</span></div>
+</div>   <p class="dta-p">Die Höhe des Kegels <span title="Original: /" class="dta-reg">(</span>Aſchen<span title="Original: /" class="dta-reg">)</span> hängt von der Menge<br/>
+des Auswurfs ab. Zuweilen findet ſich gar kein eigentlicher<br/>
+Ausbruchskrater, unerachtet ſich Lavaſtröme ergieſſen. Ein<br/>
+Beiſpiel giebt einer der Vulkane von Antiſena, der 12,000<br/>
+hoch iſt, um welchen eine ſolche dünne Luft herſcht, daß das Rind-<br/>
+vieh wenn es gejagt wird, Blut auswirft, und bei dem <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">kein </span>Krater<br/>
+ſichtbar iſt; ob Oeffnungen an den Seiten ſind iſt ungewiß,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0255 : 249.|</span><br/>
+und doch finden ſich Lavaſtröme. Ebenſo iſt es mit dem<br/>
+Chimboraſſo, der zwar keine Lava aber doch Dämpfe aus-<br/>
+ſtrömen läßt, dagegen ſein Seitenvulkan der Guanako<br/>
+<span title="Original: /" class="dta-reg">(</span>d. i. Feuerberg<span title="Original: /" class="dta-reg">)</span> Lava ergießt. Der Krater des Veſuvs<br/>
+hat 1600′ im Durchmeſſer, der vom Pic kaum 300′. Dieſer<br/>
+hat aber noch einen 2<span title="Original: t￼" class="dta-reg"><span class="sup uu ">ten</span></span> Krater, der erſt neuerlich von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/102458561">Cordier</a></span></span><br/>
+entdeckt iſt. Der Krater des Pichincha hat wie auch<br/>
+ſchon erwähnt 4200′ im Durchmeſſer.</p><br/>
+<p class="dta-p">Die Wände des Kraters ſind ungemein dauerhaft, da-<br/>
+gegen iſt der obere Rand leicht Veränderungen unterworfen.<br/>
+Der nordweſtliche Rand des Veſuvs iſt 1786 von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118804790">Sausſure</a></span>,</span><br/>
+1805 von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">L. v. Buch</a></span></span> und 1820 von mir gemeſſen; vergleicht<br/>
+man dieſe Meſſungen, ſo findet ſich daß der Rocca del Pare<br/>
+in die Höhe gegangen, der ſüdliche Theil dagegen beim Aus-<br/>
+bruche von 1794 niedriger geworden, und von 1805 an bis jetzt<br/>
+der Rand unverändert geblieben iſt. Die Tiefe des Kraters,<br/>
+wovon wir ebenfalls eine genauere Kenntniß <span title="H￼" class="dta-abbr">Herrn</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">L. v. Buch</a></span></span> ver-<br/>
+danken, iſt das Maaß der wahrſcheinlichen Entfernung großer<br/>
+Ausbrüche, von denen der Boden oft ſo gehoben wird, daß er<br/>
+höher als die Ränder kommt. Um ſich einen deutlichen Begrif<br/>
+davon zumachen, ſtelle man ſich den Krater, wie ein Thal<br/>
+auf dem Gipfel eines Berges vor, in dem verſchiedene Schlacken-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0256 : 250.|</span><br/>
+kegel ſich finden. Die Kraterränder bleiben ſich gleich, doch<br/>
+der Boden mit den Schlackenkegeln hebt ſich oft über dieſelben<br/>
+hinaus, ſo daß ich ihn am Veſuv bei einer Eruption 1820<br/>
+von Neapel aus ſehen konnte. Die Schlackenkegel ſtürzen<br/>
+auch zuſammen, zuweilen ſind ſie doch ſehr dauerhaft, denn<br/>
+1822 ſtürzte in einer Nacht einer im Krater des Veſuvs<br/>
+zuſammen, der ſchon 300′ hoch war, und Jahrhunderte gewach<span class="dta-supplied">[ſen]</span><br/>
+war. Die Dicke der Kraterwände iſt ſehr beträchtlich, und<br/>
+doch verliert ein Krater zuweilen in einer Nacht ſeine Schnee-<br/>
+maſſen, ſo erſchien 1804 der Cotopaxi zum Schrecken der<br/>
+Einwohner nach einer Nacht, als ein ſchwarzer Kegel. die<br/>
+Wärme kann ſich nicht ſo ſchnell durch die feſten Theile mittheilen,<br/>
+ſondern die vielen Spalten in Conus bewirken dies. So<br/>
+wie der Rand nur außerhalb der Behaltſchicht ſteht, iſt er<br/>
+nur von äußern Schichten gebildet, in denen große Spalten<br/>
+entſtehen, die wieder durch Lavaſtrömungen gefüllt werden.</p><br/>
+<p class="dta-p"><span class="u ">Zum Eruptionsſyſtem ſelbſt.</span></p><br/>
+<p class="dta-p">Die Eruptionen zeigen ſich in einer Folge verſchiedener<br/>
+Erſcheinungen, und dieſe ſind</p><br/>
+<div class="dta-list">   <div class="dta-list-item">1. <span class="u ">Die Erdbeben ſelbſt</span>, als ihre Vorgänger, deren Erſchütte-<br/>
+rungen wie bekannt zerſtörend wirken. Aber auch durch ſtarken<br/>
+Druck der Luft, können Wohnungen ohne Erſchütterungen<br/>
+beſchädigt werden, ſo erhielten die Dächer in Portici<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0257 : 251.|</span><br/>
+Riſſe als der groſſe Aſchenkegel des Veſuvs ein-<br/>
+ſtürzte. Ihnen folgt</div>   
+<div class="dta-list-item">2. <span class="u ">Der Lavaausbruch</span>, der ſelten aus dem Krater, ſondern<br/>
+mehrentheils aus den Seitenöffnungen kommt, und in<br/>
+Lavaſtrömen ſich ergießt.</div>   
+<div class="dta-list-item">3. <span class="u ">Die Auswürfe</span>. Eine dunkele Rauchwolke ſchwebt über<br/>
+dem Krater, welche durch die elektriſche Spannung ein<br/>
+vulkaniſches Gewitter bildet. Während aus ihr Regen<br/>
+herabſtrömt und Blitze ſie durchzucken, fahren aus dem<br/>
+Krater Steine, erdige Maſſen, Aſche und ſelbſt zuweilen<br/>
+Waſſergüſſe empor. Durch das angeſammelte Regen-<br/>
+und Schneewaſſer werden die Waſſergüſſe veranlaßt.</div>   
+<div class="dta-list-item">4. Die Ausbrüche des kohlenſauren Gaſes durch die Seiten-<br/>
+öffnungen, wodurch <span title="Personenname"><a href="http://d-nb.info/gnd/118595083"><span class="aq ">Plinius</span> der Ältere</a></span> getödtet wurde.</div>   
+</div>   <p class="dta-p">Im Jahre 79 hatte der Veſuv ſeinen erſten und ſtärk-<br/>
+ſten Ausbruch, der ſich 306 wieder erneuerte, und dann periodiſch<br/>
+lange ruhte, bis 1631 neue und ſtarke Ausbrüche erfolgten,<br/>
+nachdem er über 300 Jahre ganz ruhig geweſen war, ſo daß,<br/>
+wie <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/1055129707">Bred<span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span>zohini</a></span></span> erzählt, Holz in ſeinem ganz bewachſenen<br/>
+Krater geſammelt wurde, und nach dieſer Zeit hat er ſeine<br/>
+Ausbrüche häufig wiederholt. Man muß aber nicht glauben, daß<br/>
+er während dieſer Ruhe im Zuſtande der Solfatara geweſen iſt.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0258 : 252.|</span><br/>
+<p class="dta-p">Da wo ſich die Vulkane über die Grenzen des ewigen<br/>
+Schnee's erheben, in den Tropen alſo etwa 2450 Toiſen,<br/>
+bieten ſie eigene intereſſante Erſcheinungen dar. So werden<br/>
+zuweilen viele Tauſende kleiner todter Fiſche ausgeworfen,<br/>
+welche wie es ſcheint, in Seen, die im Innere der Vulkane<br/>
+durch des Schneewaſſer ſich bilden, ihren Aufenthalt haben. Es<br/>
+ſind kleine Fiſche von wenigen Zollen mit Mundfäden, aus<br/>
+der Gattung <span class="aq ">Pimel</span><span class="dta-del" title="Streichung (#ow)"><span class="aq ">o</span></span><span class="aq ">des Cyclopum</span> <span title="Original: /" class="dta-reg">(</span>kleiner Wels<span title="Original: /" class="dta-reg">)</span>, die ſich über<span class="dta-supplied">[all]</span><br/>
+in den Flüſſen und Bächen der Gebirge finden, und durch unter-<br/>
+irdiſche Gewäſſer gleichſam wie in Röhren zur Höhe hinauf-<br/>
+ſteigen. Beſonders den 20<span title="Original: t￼" class="dta-reg"><span class="sup uu ">ten</span></span> Juni 1698 als der Caorunaſso<br/>
+ſeine Spitze verlor, bedeckten dieſe Fiſche in Letten ge-<br/>
+füllt, viele Quadratmeilen des Land. Deſſelben war beim<br/>
+Vulkan von Ribabuaon ſo ſtark der Fall, daß durch die<br/>
+Fäulniß dieſer ausgeworfenen Fiſche Krankheiten ent-<br/>
+ſtanden.</p><br/>
+<p class="dta-p">Die Maſſen welche von den Vulkanen ausgeworfen<br/>
+werden, beſtehen:</p><br/>
+<div class="dta-list">   <div class="dta-list-item"><span class="aq ">a,</span> aus Fragmenten von der uranfänglichen Geſtalt der<br/>
+Gebirgsarten vor dem Ausbruche, beſonders aus ſo genannte<br/>
+Granitgeſtein mit Granitglimmerſchiefer. Solche Maſſen finden<br/>
+ſich um den Veſuv dem Foſſa Blanca oft von Lava einge-<br/>
+ſchloſſen, vorzüglich häufig aber und weit zerſtreut auf<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0259 : 253.|</span><br/>
+auf der Inſel Palme wie <span title="H￼" class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">v. Buch</a></span></span> fand. Bisweilen<br/>
+ſind es aber nicht blos Fragmente ſondern große Maſſen wie<br/>
+beim Xorullio.</div>
+<div class="dta-list-item"><span class="aq ">b.</span> Aus Geſtein, auf welches die Vulkane ſchon einwirkten<br/>
+und es ganz veränderten; ſo verwandelt der Veſuv den<br/>
+dichten Kalkſtein in körnigen oder in carariſchen Marmor,<br/>
+und wenn Bittererde dabei iſt in körnigen Dolomit.</div>   
+<div class="dta-list-item"><span class="aq ">c.</span> Aus Lavaſtrömen und Lavamaſſen; Die Lavaſtröme<br/>
+ſind um ſo ſtärker, je tiefer ſie ausbrechen, und dies beſtimmt<br/>
+auch die Natur der Maſſen, wie z. B. die Obſidianſtröme von<br/>
+Pic herabkommen, Bimſtein bilden. Die Lava iſt mehr<br/>
+glasartig wenn ſie aus den Vulkanen, mehr erdartig<br/>
+aber wenn ſie nah aus tiefern Ausbrüchen hervorkommt.<br/>
+Aus dem Obſidian entſteht der Bimſtein, der wahrſcheinlich<br/>
+oft gleich in Aſche verwandelt wird, da manche Vulkane<br/>
+keinen hervorbringen. Der Aetna hat keines von beiden.<br/>
+Die Ebene von Tapie dagegen iſt ganz mit Bimſtein be-<br/>
+deckt, die größten Maſſen von Bimſtein finden ſich am<br/>
+Fuſſe des Cotopaxi, wo Lagerungen von 30′ Breite<br/>
+und 7′ Höhe vorkommen. Auch hat man große Glimmer-<br/>
+kryſtalle darin gefunden.</div>   
+</div>   <p class="dta-p">Die Oberfläche der erkalteten Lava iſt einigermaßen<br/>
+mit Eisſchollen zu vergleichen, und kann ſo Jahrhunderte trotzen,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0260 : 254.|</span><br/>
+ſie bleibt ganz nackt, nicht einmal Flechten vegetiren<br/>
+darauf. Wird ſie aber mit Aſche bedeckt, ſo kann der<br/>
+Boden bald wieder fruchtbar werden. Die elaſtiſchen Dämpfe<br/>
+bilden auch bisweilen kleine Kegel in der Lava, wie man<br/>
+dieſe oft zu hunderten beim Xorullio ſieht; beim Veſuv hat<br/>
+man dies Phänomen 1822 auch wahrnehmen wollen, doch in<br/>
+weit geringeren Grade.</p><br/>
+<p class="dta-p">Merkwürdig ſind noch die Höhlen, die oft in der Lava<br/>
+entſtehen, und deren Wände mit Metallkryſtallen be-<br/>
+ſetzt ſind. Man hat ſo ſchon 7 Metalle darin entdeckt,<br/>
+als: Eiſen, Titan, Kupfer, Arſenik, Selen, Mangan und oxyd<span class="dta-supplied">[.]</span><br/>
+Stibium. Dieſes iſt ſehr wichtig für die Erztheorie, wie<br/>
+ſie durch Gänge aufſteigen, und ſich niederſchlagen.</p><br/>
+<p class="dta-p">Die Urſachen der Wärme ſind gewiß ſehr tief zu ſuchen,<br/>
+aber die Maſſen der Lava finden ihre Stoffe nicht immer in<br/>
+der Tiefe, ſo ſind die erdartigen Stoffe mehr Umänderungen<br/>
+des Erdreichs in der Nähe. Wo man große Maſſen von<br/>
+Olivin findet, kann man auf die Verbindung mit Baſalt<br/>
+ſchieſſen. Feldſpathlava findet ſich wo Trach<span class="dta-del" title="Streichung (#ow)">i</span><span class="dta-add" title="Hinzufügung (across)">y</span>t in der<br/>
+Nähe iſt. Die Maſſen der Lava ſind ſehr verſchieden, ſo iſt<br/>
+in der des Aetna's kein Augit, wohl aber in der des Veſuv's.<br/>
+Selbſt bei nahen Vulkanen, und in den <span title="Schreibfehler: Lavaausausbrüchen" class="dta-corr">Lavaausbrüchen</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0261 : 255.|</span><br/>
+derſelben Vulkane, in einem Zeitraume von 6 Monaten,<br/>
+findet oft Verſchiedenheit der Maſſen ſtatt. Die feldſpath-<br/>
+artigen Lagen gehören den älteſten Auswürfen zu, wie beim<br/>
+Veſuv, der jetzt aber keinen Feldſpath mehr giebt. Die<br/>
+Lavaſtröme bilden theils ein dichtes Gewebe in ihren Lage-<br/>
+rungen, das baſaltartig iſt, bald einzelne Kryſtalle, die<br/>
+ſich individualiſiren und porphyrartig ſind.</p><br/>
+<p class="dta-p">Der Aſchenauswurf iſt als letzte Eruption zu betrachten.<br/>
+Gleich der Geſtalt der Pinie wird ſie durch die Gewalt der Dämpfe<br/>
+aus dem Ausbruchskrater in die Luft geſchleudert, was man<br/>
+beim Veſuv 70–80′ hoch ſehen kann. Man hat geglaubt daß von<br/>
+1631 bis 1822 groſſe Aſchenauswürfe waren, was aber nicht<br/>
+der Fall geweſen iſt, denn ich fand die Aſche aus 2–3′ hoch.<br/>
+Weit ſtärker müſſen dagegen die Aſchenauswürfe geweſen<br/>
+ſein, welche Herkulanum zerſtörten und 80′ hoch mit Aſche<br/>
+bedeckten, was beſtimmt keine Lava ſondern Aſche war.<br/>
+Die beiden Städte Herkulanum und Pompeii wurden 79<br/>
+Jahre nach Chriſti G. verſchüttet, und 1711 wieder entdeckt.<br/>
+Die Aſche kommt auch zuweilen aus den Seitenwänden<br/>
+hervor, ſo ſchien 1822 beim Veſuv ein Strom kochendes<br/>
+Waſſer am Fuſſe des Kraters heraus zukommen,<br/>
+nähere Unterſuchungen von <span title="H￼" class="dta-abbr">Herrn</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/10082708X">Steiniger</a></span></span> aber zeigten, daß<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0262 : 256.|</span><br/>
+trockne Ströme von Tuff und Aſche ſo täuſchten. 3<span class="sup uu ">tens</span><br/>
+wird die Aſche mit dem Schlamme zugleich ausgeworfen.<br/>
+4<span class="sup uu ">tens</span> mit einzelnen Maſſen, großen Tuffſchichten mit<br/>
+Waſſerſtrömen vermengt. Endlich 5<span class="sup uu ">tens</span> mit Regenwaſſer <span class="aq ">etc.</span></p><br/>
+<p class="dta-p">Der letzte Zuſtand der Vulkane iſt neu die <span class="aq ">Solfa-<br/>
+tara</span> ſelbſt, welche Schwefelwaſſerſtoffgas mit Waſſerdämpfen<br/>
+ausſtößt. Eine andere Art des alten Zuſtandes iſt<br/>
+die, daß ſich in ihrem Innern Seen bilden, wie z. B. die<br/>
+See des Toluca von 5000′ Höhe, d<span class="dta-del" title="Streichung (#ow)">er</span><span class="dta-add" title="Hinzufügung (across)">ie</span> freie Salz- und<br/>
+Schwefelſäure enthält. –</p><br/>
+<p class="dta-p">Das Emporſteigen der Schwefeldämpfe, <span title="Original: /" class="dta-reg">(</span>vorzüglich als<br/>
+Schwefelwaſſerſtoffgas, wo ſich nachher auch Schwefel wirklich<br/>
+niederſchlägt,<span title="Original: /" class="dta-reg">)</span> aus dem Innern durch große Spalten,<br/>
+iſt um ſo intereſſanter, da man früher glaubte, der<br/>
+Schwefel finde ſich nur in den tertiären Gebirgen. Ein<br/>
+anderer Fall iſt bei Quito, wo Schwefel in Quarzwaſſer<br/>
+und Glimmerſchiefer liegt. Wenn dieſe Schwefeldämpfe<br/>
+durch Flözkalkſtein brechen, ſo verwandeln ſie ihn in Gyps.<br/>
+Sehr ſelten findet man in der Nähe der brennenden<br/>
+Vulkane anſtehendes ausgeworfenes Urgeſtein, und dann<br/>
+ſcheint es von den Vulkanen ſelbſt gehoben zu ſein, wie ich es in Südamerika fand.</p></div></div></div></div></div></body></html>

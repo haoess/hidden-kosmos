@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[39. Vorlesung, 19.03.1828]</span></div><br/>
+<div class=""><div class=""><div class=""><p class="dta-p">Nach den Messungen von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117545201">Girard</a></span></span><br/>
+<span class="dta-marginal dta-marginal-left">W.<br/>
+</span>sind die Bitterseen in Aegÿpten 24 Fuß tiefer gelegen als das<br/>
+Mittelmeer. Auch kann man in den Strömungen einen Grund<br/>
+zu kleinen Niveau-Verschiedenheiten in dem Stande der Gewässer<br/>
+finden. Schon <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118534912">Franklin</a></span></span> bemerkte, daß in den großen Seen von<br/>
+Nordamerika dies der Fall sei: wenn lange der Wind in einer<br/>
+bestimmten Richtung geweht hatte, so hatte der eine Theil des<br/>
+Sees eine größere Convexität, als der andere. Ein sehr merk-<br/>
+würdiges Factum hat sich vor wenigen Jahren im <span title="südl:" class="dta-abbr">südlichen</span> Frankreich,<br/>
+in der <span class="aq ">Provence</span> ereignet, wo nach heftigem Wehen ein<span class="dta-del" title="Streichung (#ow)">s</span><span class="dta-add" title="Hinzufügung (across)">es</span> O. N. O.<br/>
+Windes der Hafen von <span class="aq ">Marseille</span> mehre Stunden lang trocken<br/>
+blieb. Dies muß einen Unterschied von 10–12′ im <span class="aq ">niveau</span> aus-<br/>
+gemacht haben. Im Genfer See <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> in den mexikanischen Seen<br/>
+findet eine ähnliche Erscheinung des Senkens <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> Steigens Statt,<br/>
+die man sogar für eine Ebbe <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> Fluth gehalten hat; wohl mit<br/>
+Unrecht, denn die Regelmäßigkeit, welche man nach den Jahres-<br/>
+zeiten wahrzunehmen glaubte, beruht nur auf den wiederkeh-<br/>
+renden Winden. Selbst die Veränderungen des Barometer-<br/>
+druckes haben Einfluß auf das Niveau.</p><br/>
+<p class="dta-p">Ich habe an einem andern Orte gezeigt, daß die Meeres-<br/>
+strömungen unter den Tropen eine Folge sind, von den stünd-<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">lichen</span></div>
+<span class="dta-pb" style="padding-left:15em">|#f0210 : [204]|</span><br/>
+<span title="Schreibfehler: stündlichen" class="dta-corr">lichen</span> Variationen des Barometers, indem diese Variationen<br/>
+an dem einen Orte früher eintreten, als an dem andern;<br/>
+so wird die Wasserfläche ungleich gedrückt <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> geräth ins Strömen.</p><br/>
+<div class=""><div class="dta-head"><span class="u ">Von der Gliederung der Continente</span>.</div><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left">S. 229<br/>
+</span>Wenn wir oben gesehen haben, daß der Contact des<br/>
+Starren und flüßigen die Umrisse auf unserm Erdsphaeroïd<br/>
+bedingt, so wenden wir uns nun zu den festen Theilen selbst <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span><br/>
+<span class="dta-marginal dta-marginal-left">W.<br/>
+</span>bemerken zuvörderst, daß sie in 2 große Ma<span class="dta-del" title="Streichung (#ow)">ß</span><span class="dta-add" title="Hinzufügung (across)">ss</span>en zerfallen,<br/>
+die man gewöhnlich den alten <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span>: <span class="dta-add" title="Hinzufügung (superlinear)"><span class="dta-metamark" title="metamark">⎡</span>den </span>neuen Continent nennt.<br/>
+<div class="dta-list"><span class="dta-list-item">1., <span class="u ">die alte Welt</span>, hat ihre Haupterstreckung von O<span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[.]</span></span><span class="dta-add" title="Hinzufügung (across)">st</span> nach W<span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[.]</span></span><span class="dta-add" title="Hinzufügung (sublinear)"><span class="dta-metamark" title="metamark">⎡</span>est</span> <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> dies<br/>
+hat, wie wir oben gesehen haben, nicht geringen Einfluß auf die<br/>
+Temperatur derselben; es folgt daraus, daß sie eine größere<br/>
+Kälte annehmen wird, wenn ihre nördlichen Flächen mit Schnee<br/>
+bedeckt sind; eine größere Wärme aber, wenn die Sonnenstrahlen<br/>
+von derselben, als von einem opaken Gegenstand reflectirt<br/>
+werden.</span>
+<span class="dta-list-item">2., <span class="u ">Die neue Welt</span>, hat ihre Hauptausdehnung von N<span class="dta-del" title="Streichung (#ow)">.</span><span class="dta-add" title="Hinzufügung (sublinear)">ord</span> nach S<span class="dta-del" title="Streichung (#ow)">.</span><span class="dta-add" title="Hinzufügung (sublinear)">üd</span> <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span><br/>
+daraus erklärt sich die merkwürdige geographische Verbreitung<br/>
+der Gewächse, daß z. E. Tropenpflanzen sich bis tief in die tem-<br/>
+perirte Zone hinein vorfinden; bei uns in Europa ist es ganz<br/>
+anders, da hindert das Mittelmeer die Wanderungen der<br/>
+Pflanzen <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> Thiere von den nord<span class="dta-del" title="Streichung (#erased)"><span class="gap">[verlorenes Material]</span></span><span class="dta-add" title="Hinzufügung (across)">-afri</span>kanischen Küsten.</span></div></p><br/>
+<p class="dta-p">Im alten Continent hat sich ein Busen gebildet, an dessen<br/>
+östlicher Seite Neuholland, an der westlichen Afrika liegt;<br/>
+dies ist der Busen der <span class="aq ">Mousone</span>, die abwechselnd in d<span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[.]</span></span><span class="dta-add" title="Hinzufügung (sublinear)">en</span> verschie-<br/>
+denen Jahreszeiten in entgegengesetzter Richtung wehen.</p><br/>
+<p class="dta-p">Die nördliche können wir eine Continental-halbkugel<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0211 : [205]|</span><br/>
+nennen, die südliche eine pelagische. Berechnet man den Un-<br/>
+terschied genauer: so hat die nördliche ⅓ <span class="aq ">Areal</span> des Continents<br/>
+mehr als die südliche. Die Hauptma<span class="dta-del" title="Streichung (#ow)">ß</span><span class="dta-add" title="Hinzufügung (across)">ss</span>e macht hier Asien aus,<br/>
+welches den Aequator nicht erreicht <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> zum Theil daher unter<br/>
+gleichen Breiten kälter ist als Europa.<br/>
+Eine auffallende Erscheinung ist es, daß gegen den Nord-<br/>
+<span class="dta-marginal dta-marginal-left">W.<br/>
+</span>pol zu alle Continente unter 70–73° N. B. abgeschnitten sind<br/>
+<span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> an das Meer stoßen. Die <span class="aq ">Barrow</span>straße liegt zwar noch<br/>
+viel nördlicher, aber südlich von derselben befindet sich wieder<br/>
+eine ganze Inselwelt. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/122917898">Hearne</a></span>'s</span> u. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/120907534">Mackenzie</a></span>'s</span> Reisen haben<br/>
+gezeigt, daß fast ganz Nordamerika unter 72° B. aufhört, da-<br/>
+gegen schließen sich eine Menge Inseln nach Norden an, und<br/>
+machen die Verbindung der Continente. Amerika hat eine<br/>
+große Menge von Inseln im N<span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[.]</span></span><span class="dta-add" title="Hinzufügung (sublinear)">ord</span> liegen; in Asien ist in der<br/>
+Länge des Nordcaps das Meer frei von Inseln, dann folgt<br/>
+aber die Bäreninsel und Spitzbergen; daher rührt zum Theil<br/>
+das milde Klima von Europa. Im Norden von Schweden friert<br/>
+das Meer nicht, <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> dies rührt hauptsächlich von der wärmeren<br/>
+Strömung her, die von <span class="aq ">S. O.</span> nach N. <span class="aq ">W.</span> an den Küsten in die Höhe<br/>
+zieht: so ist es zu erklären, warum die Küsten der skandinavischen<br/>
+Halbinsel wärmer sind, als die südlicher gelegenen Theile<br/>
+des innern Landes.</p><br/>
+<p class="dta-p">Wahrscheinlich ist der Nordpol frei von Land. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117565261">Barrington</a></span></span><span class="dta-marginal dta-marginal-right">S. 230<br/>
+</span><br/>
+hat neuerdings alles zusammengestellt, was man von<br/>
+Reisen dahin kennt. Aus seinem Werke ergiebt sich, daß schon<br/>
+im Jahr 1527 <span class="aq "><span title="Personenname"><span title="Personenname"><a href="https://www.wikidata.org/wiki/Q19104745">Robert Torte</a></span></span></span> aus <span class="aq ">Bristol</span> die Regierung auf<br/>
+diese Durchfahrt aufmerksam machte, <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> andeutete, daß man<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0212 : [206]|</span><br/>
+einen viel kürzeren Weg nach Indien, quer über den Nordpol<br/>
+nehmen könne. Unter <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118548204">Heinrich VIII</a></span></span> wurden wirklich Versuche<br/>
+zu dieser Durchfahrt gemacht; indeß muß man sagen, daß es<br/>
+bei dem jetzigen Stande des Eises sehr schwierig <span title="Schreibfehler: " class="dta-corr">ist,</span> nur bis 80°<br/>
+durchzudringen. Lord <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117610097">Mulgrave</a></span></span> kam auf seiner berühmten<br/>
+Expedition bis 80° 48′ <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> dies hielt man lange für die höchste <span title="nördl:" class="dta-abbr">nördliche</span><br/>
+Breite; neuerdings aber ist <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117654167">Scoresby</a></span></span> Mai 1806 bis 81° 13′<span class="dta-del" title="Streichung (#s)"><span class="dta-add" title="Hinzufügung (superlinear)">vorgedrunge<span class="dta-supplied">[n]</span></span></span>, wie<br/>
+er aus einer guten Mittagshöhe der Sonne abnehmen konnte <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span><br/>
+Nachmittags bis 81° 30′<span class="dta-add" title="Hinzufügung (superlinear)"><span class="dta-metamark" title="metamark">⎡</span> gekom̃en</span>. Er hat auch dargethan, daß die Breite von<br/>
+86° die nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117565261">Barrington</a></span></span> früher erreicht worden sein soll, gewiß<br/>
+<span class="dta-marginal dta-marginal-left">W.<br/>
+</span>übertrieben <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> falsch ist. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parrÿ</a></span>s</span> Expedition um zu Lande nach dem<br/>
+Pol zu kommen, ist bekanntlich nicht geglückt. Es ereignete sich nemlich<br/>
+der eigne Unfall, daß die Eisschollen, auf denen seine Kähne oder<br/>
+Schlitten fortgezogen wurden nach Süden in Bewegung waren: er<br/>
+kam daher mehr rück- als vorwärts. Er that bei dieser Gelegen-<br/>
+heit dasselbe was schon <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118564994">Chr: Columbus</a></span></span> gethan, er verbarg die<br/>
+wahre Breite seinen Leuten um sie nicht muthlos zu machen. Die<br/>
+englische Regierung hat einen Preis von 5000 ₤ für den ausge-<br/>
+setzt, der bis 89° vordringt, einen von 20000 ₤ für das Auf-<br/>
+finden einer N. W. Durchfahrt; aber beide sind noch nicht errungen.<br/>
+Bei der Stellung der Continente müssen wir bemerken, daß sie<br/>
+der Länge nach, auffallend auf eine Seite zusammengedrängt sind.<br/>
+Von der einen Seite nimmt das Land unter dem Aequator 250<br/>
+Längengrade ein; von der andern das Wasser 110°. Denken<br/>
+wir uns daher, daß die Erde so gesehen würde wie der Mond,<br/>
+so würde die erste Seite unter dem Aequator ganz voller Con-<br/>
+tinent erscheinen, dagegen auf der andern Seite, wo er durch<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0213 : [207]|</span><br/>
+das Wasser geht, würden auf jeder Seite nur 35° Continent<br/>
+hervorstehn. Aber nicht nur in der oben erwähnten Richtung (wenn<br/>
+man eine Ebene durch die Pole legt) theilt sich die Erdkugel in<br/>
+eine Continentalmaße, sondern auch wenn man die Ebene durch<br/>
+den Aequator legt: denn wird die südliche eine Wasserhalbkugel,<br/>
+die nördliche eine Landhalbkugel sein. Es ist klar, daß dies<br/>
+einen großen Einfluß auf die Temperatur der verschiedenen<br/>
+<span class="dta-marginal dta-marginal-left">W<span class="dta-supplied">[.]</span><br/>
+</span>Oerter haben muß. Man hat auch schon vorgeschlagen, die Südsee<br/>
+wegen ihrer bedeutenden Ausdehnung den großen Ocean zu<br/>
+nennen.</p><br/>
+<p class="dta-p">Westasien und Ostamerika ist von dem Becken des atlan-<span class="dta-marginal dta-marginal-right">232 l.<br/>
+</span><br/>
+tischen Oceans durchschnitten, <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> man hat in neuern Zeiten ange-<br/>
+fangen, diesen als eine wirkliche Thalbildung zwischen beiden Con-<br/>
+tinenten zu betrachten, um so mehr da die entgegenstehenden<br/>
+Theile der Continente eine gleiche Richtung haben. Für Amerika<br/>
+ist es merkwürdig, daß in Südamerika die französische <span class="aq ">Guiana</span><br/>
+in geognostischer Hinsicht viel Aehnlichkeit hat mit <span class="aq ">Labrador</span>,<br/>
+ganz Brasilien dagegen mit den <span class="aq ">Alleghanis</span>. Die Küste von<br/>
+Brasilien erstreckt sich von <span class="aq ">S. W.</span> nach <span class="aq ">N. O. Guiana</span> dagegen<br/>
+von <span class="aq ">S. O.</span> nach <span class="aq ">N. W.</span> u. Nordamerika wiederum von <span class="aq ">S. W.</span> nach N. O.,<br/>
+ebenso ist es ungefähr an der Westküste von Afrika <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> an der<br/>
+von Asien. (<span title="scil:" class="dta-abbr"><span class="aq ">scilicet</span></span> <span class="aq ">Europa</span>)</p><br/>
+<p class="dta-p">Im Norden der nördlichen Hemisphaere ist an den Ufern des<span class="dta-marginal dta-marginal-right">232<br/>
+</span><br/>
+atlantischen Beckens eine große Zertrümmerung sichtbar, die<br/>
+sich auf der einen Seite an der <span class="aq ">Hudsonsbaÿ</span> auf der andern an den<br/>
+britischen Inseln offenbart: mehr gegen Süden findet sich auch Ue-<br/>
+bereinstimmung, <span title="Original: inso fern" class="dta-reg">insofern</span> auf der einen Seite das Becken des antil-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0214 : [208]|</span><br/>
+lischen Meeres, auf der andern das Mittelmeer liegt. Betrachtet<br/>
+man das Mittelmeer allein, so sieht man, daß es mit den Wasser-<br/>
+becken des rothen Meeres <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> des persischen Meerbusens im <span title="Schreibfehler: genaue" class="dta-corr">genauen</span><br/>
+Zusammenhange steht <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> daß diese 3 auf Verkehr und Kultur beson-<br/>
+ders in früher Zeit mächtig eingewirkt haben.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left">232<br/>
+</span>Nur ⅙ des Aequatorialkreises geht durch den Continent, die<br/>
+übrigen ⅚ fallen in das Meer, <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> man sieht leicht, daß diese Ver-<br/>
+theilung großen Einfluß auf die Temperatur haben muß. Wenn<br/>
+<span class="dta-marginal dta-marginal-left">W.<br/>
+</span>wir einen Blick auf die Karte werfen, so kann es uns nicht ent-<br/>
+gehen, daß alle Continente gegen Süden eine Pÿramidalform<br/>
+haben. Dies zeigt sich, <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> zwar am auffallendsten, nicht nur in<br/>
+Amerika <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> Afrika, sondern auch in Neuholland, selbst nördlich vom<br/>
+Aequator in <span class="aq ">Hindostan</span> und weniger deutlich bei <span class="aq ">Malacca</span>.<br/>
+Diese Bemerkung gehört nicht dem geistvollen <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118534432">Reinhold Forster</a></span></span>,<br/>
+sondern lange vor ihm machte sie <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118505696">Baco v. Verulam</a></span>.</span> Auch die<br/>
+Erstreckung gegen den Südpol hin ist zwar ungleich, aber doch in<br/>
+einem bestimmten Verhältniße; vom <span class="aq ">Cap Horn</span> nach <span class="aq ">Van<span class="dta-del" title="Streichung (#ow)">d</span><span class="dta-add" title="Hinzufügung (across)">D</span>iemens</span>-Land<br/>
+geht es treppenförmig in die Höhe:<br/>
+<table class="dta-table"><tr><td>Vorgebirge der guten Hoffnung</td><td>34° S. Breite</td></tr><tr><td><span class="aq ">van Diemensland</span> —</td><td>43° 38′ <span title="Original: —" class="dta-reg">〃</span></td></tr><tr><td><span class="aq ">Cap Horn</span> —</td><td>45° 58′ <span title="Original: —" class="dta-reg">〃</span></td></tr></table></p><br/>
+<p class="dta-p">Ferner scheint sich die Regel auszusprechen, daß je weiter die<br/>
+Continente nach <span class="aq ">N<span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[.]</span></span><span class="dta-add" title="Hinzufügung (across)">ord</span></span> hinaufgehen, um desto tiefer erstrecken sie<br/>
+sich nach <span class="aq ">S<span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[.]</span></span><span class="dta-add" title="Hinzufügung (across)">üden.</span></span> Amerika hat nach beiden Polen hin die weiteste Aus-<br/>
+dehnung; d<span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)">a</span>nn folgt Europa mit Afrika von Spitzbergen bis<span class="dta-add" title="Hinzufügung (superlinear)"><span class="dta-metamark" title="metamark">⎡</span> zum</span> Vor-<br/>
+gebirge d<span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[.]</span></span><span class="dta-add" title="Hinzufügung (across)">er</span> guten Hoffnung. Endlich Asien <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> Neuholland von <span class="aq ">Nova-<br/>
+sembla</span> bis <span class="aq ">van Diemensland</span>. Südamerika <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> Afrika haben<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0215 : [209]|</span><br/>
+überdies eine merkwürdige Uebereinstimmung in der <span class="dta-del" title="Streichung (#ow)"><span class="gap">[verlorenes Material]</span></span><span class="dta-add" title="Hinzufügung (across)">Einbiegung</span><br/>
+ihrer Westküsten. Der Golf von <span class="aq ">Guinea</span> entspricht der Bai von<br/>
+Arika und hier muß nicht übersehen werden, daß auch die Andeskette<br/>
+der Biegung der Bai folgt, was sehr merkwürdig ist. Freilich ist in<br/>
+Amerika die Einbiegung unter 14° 20′ südlicher Breite in <span class="aq ">Guinea</span><br/>
+unter 3° nördlicher Breite; allein man könnte sagen, dies hänge mit<br/>
+<span class="dta-marginal dta-marginal-left">W<span class="dta-supplied">[.]</span><br/>
+</span>dem obenerwähnten Factum zusammen, daß Africa sich nicht so<br/>
+weit gegen den Südpol erstrecke als Amerika und daß deshalb<br/>
+auch hier die Einbiegung südlicher sein müsse. Eine ähnliche<br/>
+Erscheinung, wie wohl nicht so deutlich, läßt sich bei <span class="aq ">Malacca</span> und<br/>
+<span class="aq ">Neuholland</span> nachweisen.<span class="dta-marginal dta-marginal-right">233<br/>
+</span></p><br/>
+<p class="dta-p">Ungefähr vor 15 Jahren entdeckte man im südlichen Meere<br/>
+den Archipelagus von <span class="aq ">Neu Shetland</span>, den <span class="aq ">Pawelsinseln</span> und <span class="aq ">Neu-<br/>
+Georgien</span> <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span> es</span><span class="dta-add" title="Hinzufügung (across)">und es</span> wurde dadurch eine Meinung wieder hervorgesucht,<br/>
+welche schon <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118522027">Cook</a></span></span> glaubte bekämpft <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> vernichtet zu haben, nemlich<br/>
+daß diese Inseln Vorboten eines großen <span title="südl:" class="dta-abbr">südlichen</span> Continents seien:<br/>
+allein <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/172444462">Weddel</a></span></span> hat vor 5 Jahren gezeigt, daß es nur ein kleiner<br/>
+Archipelagus<span class="dta-add" title="Hinzufügung (superlinear)"> Archipelagus</span> sei, <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> daß weiter gegen S<span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[.]</span></span><span class="dta-add" title="Hinzufügung (across)">üd</span> sich kein Continent finde.<br/>
+Bis dahin glaubte man, daß <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118522027">Cook</a></span></span> mit 71° 10′ die größte<span class="dta-del" title="Streichung (#erased)">n</span> südliche<br/>
+Breite erreicht habe; allein <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/172444462">Weddel</a></span></span> kam bis 74° 15′ <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> fand <span title="Schreibfehler: in-" class="dta-corr">in</span><br/>
+dieser Gegend, sonderbar genug, ein eisfreies Meer<span class="dta-del" title="Streichung (#ow)">: e</span><span class="dta-add" title="Hinzufügung (across)">. E</span>r be-<br/>
+hauptete daher, es sei leichter nach dem Südpol als nach dem Nord-<br/>
+pol zu kommen. Ein eignes Zusammentreffen ist es, daß das<br/>
+nördlichste Volk, die Russen, das südlichste Land entdeckt haben, nemlich<br/>
+<span class="aq ">Capt</span><span class="dta-del" title="Streichung (#erased)">ain</span><span class="dta-add" title="Hinzufügung (across)">: von</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/133531317">Billinghausen</a></span></span> fand unter 70° S. B. die beiden Inseln<br/>
+<span class="aq ">Peter I</span> <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> <span class="aq ">Alexander I</span>.</p><br/>
+<p class="dta-p">Da man auf dem Archipelagus<span class="dta-add" title="Hinzufügung (superlinear)"> Archipel</span> der <span class="aq ">N<span class="dta-del" title="Streichung (#s)">i</span>eu-Shetland-Island</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0216 : [210]|</span><br/>
+einige sehr große Thiere, wie Elephanten, Rhinozeros, auch reißende<br/>
+aus dem Katzengeschlecht antraf (während auf <span title="Schreibfehler: dem" class="dta-corr">den</span> übrigen Inseln<br/>
+der Südsee sich meist nur kleine Nager befinden) so glaubte man<br/>
+hieraus schließen zu dürfen, daß diese Inseln Reste eines unter-<br/>
+gegangenen Continents seien, wo nur die großen Thiere gleichsam<br/>
+durch Concentrirung zurückgeblieben wären; allein es scheint<br/>
+<span class="dta-marginal dta-marginal-left">W.<br/>
+</span>wahrscheinlich, daß die Inseln durch Hebung entstanden sind: daß,<br/>
+umgekehrt ein großer Continent sich hat bilden wollen, von dem<br/>
+aber nur die Spitzen hervorgehoben sind. Als Beispiel können<br/>
+wir die Centralrepublik <span class="aq ">Guatemala</span> anführen, wo sich Vulkane<br/>
+von 8–9000′ Höhe finden: wäre das Meer so hoch gestiegen als<br/>
+der See <span class="aq ">Nicaragua</span>, so würden alle diese Vulkane wie Inseln,<br/>
+etwa wie die Molucken aus dem Meer hervorsehen. Ueber die<br/>
+Höhe des Sees von <span class="aq ">Nicaragua</span> über dem Meer habe ich mir<br/>
+eine ältere Messung zu verschaffen gewußt: er wurde 1781<br/>
+von dem spanischen Ingenieur <span class="aq "><span title="Personenname">Don Galisteo</span></span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="dta-metamark" title="metamark">(?)</span></span> zu 140′ über dem<br/>
+Meeresspiegel bestimmt: dies würde für die Legung eines<br/>
+Kanals durchaus keine Schwierigkeiten machen, im Gegentheil<br/>
+das Reinigen der Schleusen <span class="aq ">etc</span>: <span class="aq ">etc</span>: erleichtern.</p><br/>
+<p class="dta-p">Der größte Theil aller Inseln auf der Erde befindet sich in den<br/>
+südlichen Meeren <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> zwar entweder sporadisch in selbstständigen<br/>
+Gruppen vertheilt, oder den Continenten parallel laufend. So ist<br/>
+es der Fall zwischen Amerika <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> Asien, <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> da wir in Asien, zumal<br/>
+auf ihrer Ostküste, zum Theil auf <span class="aq ">Japan</span> und den andern dieser<br/>
+Ostküste parallel laufenden Inseln, Spuren einer uralten,<br/>
+ja der ältesten Kultur finden, so ließe es sich wohl denken, daß<br/>
+durch jene Inselreiche, welche hier von <span class="aq ">O</span> nach <span class="aq ">W</span> sich hinzieht, eine Ver-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0217 : [211]|</span><br/>
+bindung von Asien <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> Amerika statt gefunden habe <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> auf diese<br/>
+Weise die Kultur nach Amerika verpflanzt sei: wenigstens ist<br/>
+dies wahrscheinlicher als die Annahme, daß dieser Kulturgang<br/>
+über das feste Land Statt gehabt habe, wo die asiatischen Ein-<br/>
+<span class="dta-marginal dta-marginal-left">W.<br/>
+</span>wanderer bis auf 60° N. B. in ein abscheuliches Klima hätten<br/>
+<span title="Original: hinauf steigen" class="dta-reg">hinaufsteigen</span> müssen. In Asien sehen wir, daß die Kultur<br/>
+von <span class="aq ">O</span> nach <span class="aq ">W</span> fortgeschritten ist, in Amerika von <span class="aq ">N</span> nach <span class="aq ">S</span>. Den<br/>
+größten Contrast den wir für die Gliederung der Continente<br/>
+finden können, bildet in der alten Welt dies vielfach durchschnit-<br/>
+tene südwestliche Asien sammt Europa – gegen die einförmig<br/>
+abgerundete Bildung Africas, worin die Bai von <span class="aq ">Guinea</span><br/>
+beinahe die einzige bedeutende Einbiegung ist.</p></div><br/>
+<div class=""><span class="u ">Von den Bergen</span>.<span class="dta-marginal dta-marginal-right">235<br/>
+</span><br/>
+<p class="dta-p">Die Berge sind Erhöhungen, die auf der Veste emporsteigen;<br/>
+(<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118520814">Cic:</a></span> de nat<span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[:]</span></span><span class="dta-add" title="Hinzufügung (across)">ura</span> <span title="Schreibfehler: deorun" class="dta-corr">deorum</span></span>) wir theilen sie in 2 Sÿsteme:<br/>
+<div class="dta-list"><span class="dta-list-item">1., wo eine elliptische Masse durch die elastischen Dämpfe sich ge-<br/>
+hoben hat: dahin gehört der Gebirgsstock zwischen den beiden un-<br/>
+geheuren Flüssen des neuen Continents (dem <span class="aq ">Orinoco</span> und Ama-<br/>
+zonenstrom) den ich den Gebirgsstock von <span class="aq ">Parime</span> genannt habe;<br/>
+dahin der von <span class="aq ">St. Martha</span> dessen Gipfel sich 4000′ höher als der<br/>
+<span class="aq ">Montblanc</span> also 18000′ erheben.</span>
+<span class="dta-list-item">2., wo man die emporgehobene Masse gleichsam als Kette durch die<br/>
+Länder sich hinstrecken sieht: dahin gehört die Andeskette, welche sich<br/>
+6–700 Meilen von <span class="aq ">N</span> nach <span class="aq ">S</span> hinzieht <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> mehre Knoten bildet.<br/>
+Ich habe diese Knoten genau untersucht <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> gefunden, daß sie nicht<br/>
+im Verhältniß zur Höhe des Gebirges stehn. Man hat dies<br/>
+früher behauptet, gleich wie an einer Stelle, wo 2 Flüße sich ver-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0218 : [212]|</span><br/>
+einigen eine größere Wassermasse zusammenkommt. (Eine<br/>
+Karte der Andeskette von mir, die b<span class="dta-del" title="Streichung (#erased)"><span class="gap">[verlorenes Material]</span></span><span class="dta-add" title="Hinzufügung (across)">ald</span> erscheinen wird, wird<br/>
+dies noch deutlicher zeigen.) Eine der seltenen Ausnahmen, wo<br/>
+2 Knoten zusammenkommen <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> eine größere Höhe bilden,<br/>
+<span class="dta-marginal dta-marginal-left">W.<br/>
+</span>findet sich in Ostindien bei dem <span class="aq ">Nigel-hils</span> oder blauem Berge,<br/>
+die der <span class="aq ">Dr <span title="Personenname"><a href="http://d-nb.info/gnd/128604026">Leÿden</a></span></span> beschrieben hat; ihr Gipfel erhebt sich bis 8000′<br/>
+während die Hochebene von <span class="aq ">Mÿsore</span> 6000′ hat.</span></div></p><br/>
+<p class="dta-p">Eine ältere <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> nicht gegründete Vermuthung ist es, daß<br/>
+alle Ketten zusammenhangen; ungefähr als ob alle Gänge in<br/>
+den Gebirgen, die ein gleiches Streichen haben, im Zusam̃en-<br/>
+hange stehn müsten.</p><br/>
+<p class="dta-p">Eben so wie man auf die Höhe der Knoten, welche wie Strahlen<br/>
+aus einem Mittelpunkt ausgehen, zu viel Wichtigkeit gelegt hat,<br/>
+ebenso unrichtig hat man behauptet, daß die Zentralkette höher<br/>
+sein mü<span class="dta-del" title="Streichung (#ow)">ss</span><span class="dta-add" title="Hinzufügung (across)">st</span>e als die begleitenden Ketten. Dies ist durchaus nicht<br/>
+in der Natur der Erscheinungen begründet <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> läßt sich weder<br/>
+theoretisch noch practisch beweisen. In der Andeskette finden wir<br/>
+grade das Gegentheil: wo der eine von den beiden parallel laufenden<br/>
+Gebirgszügen aufhört in die Gränze des untern Schnees hinauf-<br/>
+zureichen, da ungefähr hebt sich der andere bis in die Schneegränze<br/>
+hinein. Noch ein anderes Vorurtheil ist es, daß die Flüße nie<br/>
+die Gebirgsketten durchbrechen sollen. Davon finden sich un-<br/>
+zählige Beispiele <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> das deutlichste in Amerika, wo der Ama-<br/>
+zonenstrom sogar die Centralkette der Andes durchbricht, die<br/>
+sich ihm quer in den Weg wirft <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> hier schöne Wasserfälle bildet.<br/>
+Ich habe diese Gegend besucht <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> die Erscheinungen genau beschrieben.<br/>
+Ein anderes Beispiel giebt der Indus, welcher nördlich von <span class="aq ">Pendjab</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0219 : [213]|</span><br/>
+aus dem <span class="aq ">Himalaja</span> kommt <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> eine entgegenstehende Gebirgskette<br/>
+durchbricht.</p><br/>
+<p class="dta-p">Eine besondere Aufmerksamkeit habe ich auf die Höhen<span class="dta-marginal dta-marginal-right">236<br/>
+</span><br/>
+der Flächen gerichtet, die man in der Nähe der Gebirgsketten<br/>
+<span class="dta-marginal dta-marginal-left">W.<br/>
+</span>findet, <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> gefunden, daß sie von doppelter Art sind: entweder<br/>
+erstrecken sie sich in gleichem <span class="aq ">niveau</span> bis an den Fuß der Kette,<br/>
+die d<span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)">a</span>nn steil aus der Ebene emporsteigt, oder sie haben ein all-<br/>
+mähliges Anschwellen gegen das Gebirge zu<span class="dta-del" title="Streichung (#ow)">, v</span><span class="dta-add" title="Hinzufügung (across)">. V</span>on beiden haben<br/>
+wir Fälle in Amerika, die sehr auffallend sind. Der Ge-<br/>
+birgsstock von <span class="aq ">Parime</span> gehört zu denen, die steil aus der Ebene<br/>
+emporsteigen. Hier ist es einerlei, ob man sich in größerer<br/>
+oder geringerer Nähe des Gebirges befindet, die Höhe der Ebene<br/>
+bleibt fast ganz dieselbe bis an den Fuß desselben; bei der<br/>
+Andeskette dagegen findet ein Anschwellen Statt <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> die Höhe<br/>
+der Ebene nimmt zu, je mehr man sich den Bergen nähert.</p><br/>
+<p class="dta-p">Eine merkwürdige Erscheinung ist es, daß die größten<span class="dta-marginal dta-marginal-right">237 l<span class="dta-supplied">[.]</span><br/>
+</span><br/>
+Höhen im alten Continent sporadisch zerstreut sind, wogegen sie<br/>
+in dem neuen Continent alle auf eine<span class="dta-add" title="Hinzufügung (intralinear)">r</span> Linie zusammenge-<br/>
+drängt liegen. In Amerika findet man außer der Andeskette<br/>
+keine Höhen weiter, die nur 8000′ erreichten; es ist also an-<br/>
+zunehmen, daß hier die <span class="aq ">Andes</span> wirklich die Zentralkette sind.<br/>
+Setzen wir aber in Europa die Schweiz als einen solchen Zentral-<br/>
+stock, weil sie die größten Höhen unsers Erdtheils hat, so zeigen<br/>
+sich außerdem Höhen von 6000–10000′, sehr weit davon entfernt<br/>
+<span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> hieraus scheint hervorzugehen, daß die elastischen Kräfte<br/>
+ganz anders bei der Bildung der beiden Continente wirkten.</p></div></div></div></div></div></body></html>

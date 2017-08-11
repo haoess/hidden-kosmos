@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session">   <div class="dta-head"><span title="Original: 2 April. 48." class="dta-reg">48. Vorlesung, 02.04.1828</span></div><br/>
+<p class="dta-p">Die geographische Verbreitung der Wärme zerfält in 2 <span title="Hpt" class="dta-abbr">Haupt</span>-<br/>
+momente, in die Temperatur der Land- und Seeluft. Die See-<br/>
+luft hat eine mehr gleichmässige Temperatur: so ist es erwie-<br/>
+sen, dass der atlantische Ozean sich selten unter +7° R. er-<br/>
+kältet, und die Luft darüber nicht unter +5°. Bei der See-<br/>
+luft mus man unterscheiden, ob sie auf dem flüssigen<br/>
+Meere ruht, oder auf dem starren (dem Eise) und hierbei sind<br/>
+wieder einzelne Momente zu unterscheiden, welche die Tem-<br/>
+peratur modifiziren. Die Winde können wir betrachten:</p><br/>
+<p class="dta-p">1, als blosse Bewegungen der Luft, ohne auf ihre Richtung<br/>
+Rüksicht zu nehmen: <span class="dta-del" title="Streichung (#s)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span> in dieser allgemeinen Eigenschaft<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0595 : 296r|</span><br/>
+sind sie bei bedektem Himmel erkältend: denn sie vermehren<br/>
+die Ausdünstungskälte. Captain <span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parry</a></span> hat bei seinem Au-<br/>
+fenthalt am Nordpol bemerkt, dass man die gräsliche Käl-<br/>
+te von −37° R. im Freien <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">mehrere Stunden </span>recht gut ertragen <span class="dta-del" title="Streichung (#s)">ertragen</span> konte:<br/>
+wenn man einigermaassen warm gekleidet war, und kein<br/>
+Wind wehte; beim Winde aber wurde eine Kälte von −25°<br/>
+unerträglich, weil alsdann in jedem Augenblikke die wär-<br/>
+meren Luftschichten von der Haut weggeweht werden. Da-<br/>
+gegen wirkt der Wind erwärmend, insofern er die Ausstra-<br/>
+lung der Wärme schwächt: daher kömt es, dass man bei<br/>
+einem sternenklaren Himmel Frost prophezirt, dass die<br/>
+künstliche Eis-bereitung in Indien je besser von Statten<br/>
+geht, je ruhiger die Luft ist.</p><br/>
+<p class="dta-p">2, nach der Richtung, aus der sie wehen, und da sind die<br/>
+beiden Kardinalpunkte: Land- und Seewinde, wegen der<br/>
+immer verschiedenen Temperatur des Landes und Meeres.<br/>
+Dies ist von gröster Wichtigkeit für die Schiffahrt in den<br/>
+Inselmeeren. Länge Zeit hielten sich die spanischen Gallionen,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0596 : 296v|</span><br/>
+welche von Acapulco nach den Philippinen gehn, entfernt von<br/>
+allen den vielen Inseln, welche dazwischen lieg<span class="dta-del" title="Streichung (#s)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span>en, und suchten<br/>
+eine nördliche Breite von 40–45° um den Wind zu nehmen:<br/>
+daher wurden diese Inseln so spät entdekt: allein seit<br/>
+10 Jahren hat man die Erfahrung gemacht, dass man die<br/>
+Fahrt von Manilla nach Peru machen kann, indem man<br/>
+zwischen den Tropen bleibt, indem man aufmerksam auf die<br/>
+Landwinde bei den Inseln geworden ist. Eben so ist es mit<br/>
+der Fahrt an der Küste von Peru. Von Callas nach Guayaquil<br/>
+gelangte ich in 3 Tagen, während man zu der Rükfahrt oft<br/>
+so viele Monate brauchte: man entfernte sich sehr von der<br/>
+Küste, um den Wind zu finden: allein seit kurzem hat man<br/>
+angefangen, nahe an der Küste zu bleiben, um die Land- und<br/>
+Seewinde zu benuzen, und nun macht man diese Fahrt bei-<br/>
+nahe eben so schnell hinauf als herab.</p><br/>
+<p class="dta-p">Bestimtere Kardinalpunkte, aus denen der Wind bläst sind<br/>
+im Grossen für die beiden Hemisphären die heteronymen<br/>
+Pole: bei uns wird der Himmel durch den <span title="Original: Süd" class="dta-reg">Süd-</span> und <span title="SW." class="dta-abbr">Südwest</span>wind<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0597 : 297r|</span><br/>
+mit Wolken bedekt, in der südlichen Halbkugel durch den Nord-<br/>
+wind. Bei uns ist der Nordwind ein kalter, bei jenen der Südwind.</p><br/>
+<p class="dta-p">Die Schnelligkeit des Windes ist durch <span title="Personenname">Kraft</span> berechnet worden<br/>
+auch <span title="Personenname"><a href="http://d-nb.info/gnd/11743504X">Oltmanns</a></span> in Kuxhaven hat Versuche darüber gemacht.<br/>
+Ein heftiger Wind, (kein Sturm) wie er im Winter häufig weht,<br/>
+legt 25 Fus in einer Sekunde zurük, mithin 4 Meilen in<br/>
+einer Stunde: er braucht von Nova Semla, als dem <span class="dta-del" title="Streichung (#s)">as</span> lezten<br/>
+Eisbolwerk von Asien bis zu uns 4 Tage: daher können die<br/>
+Luftschichten sich doch unterweges etwas erwärmen. Von den<br/>
+Küsten von Afrika bis Berlin braucht er 2 Tage, und wird<br/>
+während dessen bedeutend erkältet.</p><br/>
+<p class="dta-p">Hier wäre der Ort, etwas von den <span class="u ">Moussons</span> zu sagen, die<br/>
+in dem Bassin des alten Kontinentes zwischen Madagaskar<br/>
+und dem vielfach zertrümmerten Archipelagus von Indien<br/>
+wehen, in dem Meere, welches man: das indische nent, in wel-<br/>
+ches sich die Pyramidalform von Indien selbst hineiner-<br/>
+strekt. Sie beruhen auf einer ungleichen Erwärmung des<br/>
+Kontinents und des Meeres und wehen mit grosser Regel-<br/>
+mässigkeit von <span title="NO" class="dta-abbr">Nordost</span> und wieder von <span title="SW" class="dta-abbr">Südwest</span>. Dieser Wechsel ist<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0598 : 297v|</span><br/>
+für die Schiffahrt von der grösten Wichtigkeit. In der indischen<br/>
+Halbinsel trüben die <span title="SW." class="dta-abbr">Südwest</span>winde die Luft, und bringen Regen.<br/>
+Man sagt besser Moussons als Monsoune: man könte glau-<br/>
+ben, es käme aus dem französischen: aber weit entfernt<br/>
+davon stamt es aus dem malayischen, wo <span class="u ">Mousin</span>, Jah-<br/>
+reszeit bedeutet. Die Griechen, unter <span title="Personenname"><a href="http://d-nb.info/gnd/118501828">Alexander</a></span> und seinen<br/>
+Nachfolgern, wurden durch die Regelmässigkeit dieser Winde<br/>
+sehr in Verwunderung gesezt. <span title="Personenname"><a href="http://d-nb.info/gnd/118504436">Arrian</a></span>, der auf alle Naturphä-<br/>
+nomene sehr aufmerksam ist, vergleicht sie mit den etesi-<br/>
+schen Winden in Aegypten, die von <span title="NW." class="dta-abbr">Nordwest</span> her das Nilthal<br/>
+durchziehn.</p><br/>
+<p class="dta-p">Manche Temperatur-veränderung wird auch durch andre<br/>
+Luftbewegungen von oben nach unten herbeigeführt: wir<br/>
+sehn, dass oben oft eine andre Bewegung ist, als unten: Gewölk,<br/>
+das<span class="dta-del" title="Streichung (#s)">s</span> sich in 6000 Fus Höhe bildet, zieht in anderer Richtung<br/>
+als die Wolken näher der Erde. Dies hängt mit dem Strome<br/>
+warmer Luft zusammen, der sich beständig von dem Ae-<br/>
+quator nach den Polen hin ergiest. <span title="Personenname"><a href="http://d-nb.info/gnd/116817569">L. von Buch</a></span> macht es<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0599 : 298r|</span><br/>
+<div class="fw-top fw-sig">75.</div><br/>
+wahrscheinlich, dass diesem Umstande die westlichsten der kana-<br/>
+rischen Inseln ihr sonderbares Klima verdanken. Vielleicht<br/>
+komt eine ähnliche Bewegung von oben nach unten im Innern<br/>
+von Afrika vor; wir haben darüber in der lezten Reise von<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/117632368">Denham</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/119426943">Clapperton</a></span> genaue Nachrichten: in einer Ebne,<br/>
+die höchstens 800 Fus über dem Meere liegt ist der D<span class="sup u ">r</span> <span title="Personenname"><a href="http://d-nb.info/gnd/1032293004">Oudney</a></span><br/>
+in einer Nacht erfroren und Wasserschalen, die neben ihm ge-<br/>
+standen hatten, waren mit Eis bedekt: wenn aber auch diese<br/>
+lezte Beobachtung nicht ganz sicher ist, und auch wohl eine<br/>
+blosse Erkältung dem D<span class="sup u ">r</span> <span title="Personenname"><a href="http://d-nb.info/gnd/1032293004">Oudney</a></span> kann den Tod zugezogen<br/>
+haben: so ist es doch sicher, dass am Morgen die ledernen<br/>
+Wasserschläuche hart gefroren waren. – Eine andre Beobach-<br/>
+tung dieser Art verdanken wir den verdienstvollen Reisenden <span title="Personenname"><a href="http://d-nb.info/gnd/118529250">Ehrenberg</a></span><br/>
+und dem unglüklichen <span title="Personenname"><a href="http://d-nb.info/gnd/117516376">Hemprich</a></span>. Unter 19° <span title="Ndbr." class="dta-abbr">Nordbreite</span> in <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">d</span>en Wüsten<br/>
+von Dongola stand das Thermometer auf +2½° R. beim Nordwinde,<br/>
+eine in diesen Breiten ungewöhnliche Erscheinung. In Westindien<br/>
+habe ich es nie unter +15 bis 16° sinken sehn, und doch liegen<br/>
+diese Gegenden unter derselben Parallele wie Dongola: hier kann<br/>
+diese ausserordentliche Erscheinung nicht blos eine Wirkung des<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0600 : 298v|</span><br/>
+Nordwindes sein, der auch bei gröster Geschwindigkeit sich kalt<br/>
+nicht erhalten könte: vielleicht es eine Folge von der Ausdehnung<br/>
+der Dämpfe, wegen der grossen hygroskopischen Trokkenheit der<br/>
+Wüste: man hat die Beobachtung gemacht, dass wenn nasse<br/>
+Luft sich in trokne ergiest, so wird Kälte erregt: nun könte<br/>
+es sein, dass von obenher nässere Luftschichten in die<br/>
+troknen der Wüste geführt würden, und dass diese Vermi-<br/>
+schung das Thermometer so weit herabdrükte.</p><br/>
+<p class="dta-p"><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">L. v. Buch</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/117560952">Wahlenberg</a></span> haben uns schäzbare Bemer-<br/>
+kungen über das Küsten- und Kontinental-klima der<br/>
+skandinavischen Halbinsel gegeben. Von Alten <span class="dta-metamark" title="metamark">?</span> bis zum<br/>
+Nordkap, welche 1½° auseinanderliegen, verändert sich die<br/>
+Schneegränze um 1<span class="dta-del" title="Streichung (#ow)">2</span><span class="dta-add" title="Hinzufügung (across)">1</span>00 Fus: an dem ersten Ort findet man<br/>
+Schnee in 3300 Fus Höhe, an dem 2<span title="￼" class="dta-abbr"><span class="sup u ">ten</span></span> in 2200 Fus obgleich<br/>
+ihre mittleren Temperaturen nicht ausserordentlich verschie-<br/>
+den sind: allein die Schneegränze hängt nicht von der <span title="mittl." class="dta-abbr">mittleren</span><br/>
+Temperatur des ganzen Jahres, sondern von der des heisse-<br/>
+sten Monats im Jahre ab. Am äussersten Ende der Bretagne<br/>
+fand ich vor einigen Jahren Pflanzen, welche sonst nur in<br/>
+südlicheren Breiten vorkommen: Laurus nobilis im Freien,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0601 : 299r|</span><br/>
+von 60 Fus Höhe, und wie ein Mann im Leibe dik; Arbutus Unedo<br/>
+den wir bei uns in den Treibhäusern ziehn, als ein kleines<br/>
+Gebüsch am Strande des Meeres; dennoch wächst in diesen<br/>
+Gegenden kein Wein, weil der Winter zwar wenig kalt, aber<br/>
+der Sommer auch wenig warm ist: und den Pflanzen, welche<br/>
+im Winter ihr appendikuläres System abwerfen, kann es<br/>
+gleichgültig sein, ob alsdann die Kälte etwas stärker ist<br/>
+oder nicht: allein im Sommer brauchen sie einen bestimten<br/>
+Hizegrad, um zu blühen und Früchte zu tragen. Dazu kömt,<br/>
+dass jene Gegenden Küstenländer sind; das Meer nimt jede Tem-<br/>
+peraturveränderung langsamer an: es gefriert dort, so wenig<br/>
+als bei uns, daher können sich weder Schnee noch Eis darauf<br/>
+lagern, wohl aber auf dem Lande. Überdies hat jede grosse<br/>
+Wassermasse eine Tendenz <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">im Winter </span>warm zu bleiben, weil <span class="dta-del" title="Streichung (#s)">(im Winter)</span><br/>
+die kälteren Theile als die dichteren, zu Boden sinken; im<br/>
+Sommer aber wirkt sie erkältend durch die Verdünstung, bei<br/>
+der jedesmal Kälte entsteht: daher sind die Küsten meist<br/>
+neblig, weil die Dämpfe sich auf dem ungleich-erwärmten<br/>
+Kontinente niederschlagen. Mit einem Worte: die Nähe des<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0602 : 299v|</span><br/>
+Meeres wirkt temperirend auf Sommer und Winter.</p><br/>
+<p class="dta-p">Die entgegengesezte Erscheinung sehn wir an den Kontinental-<br/>
+klimaten, wohin man Ungarn und Rusland rechnen kann:<br/>
+hier sind die Sommer sehr heis, und die Winter sehr kalt.<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118517252">Buffon</a></span> nent sie sehr richtig: climats excessifs. Das Maximum<br/>
+eines solchen Temperatur-unterschiedes findet sich in den ver-<br/>
+einigten Staaten von Nordamerika: hier giebt es Orte, wo<br/>
+der Sommer so heis ist, wie in Palermo und Malta, der<br/>
+Winter so kalt, wie in Upsal. Es ist natürlich, dass dies einen<br/>
+grossen Einflus auf das Wohlbefinden der Menschen, auf<br/>
+ihnen ganzen bürgerlichen Zustand haben mus.</p><br/>
+<p class="dta-p">Wenn man diese Veränderungen durch Zahlen ausdrükt,<br/>
+wenn man das numerische Element in denselben auf-<br/>
+sucht: so ist man oft verwundert über die kleine Verschiedenheit<br/>
+bei anscheinend sehr abweichenden Klimaten, die besonders<br/>
+in den Pflanzen gar nicht über einzustimmen scheinen. Dies<br/>
+brachte <span title="Personenname"><a href="http://d-nb.info/gnd/118970550">Arthur Young</a></span> auf den <span class="dta-del" title="Streichung (#s)">G<span class="gap">[unleserliches Material – 2 Zeichen fehlen]</span>t</span><span class="dta-add" title="Hinzufügung (intralinear)">Gedanken</span>, eine Karte<br/>
+zu entwerfen, wo durch Linien die Kultur des Weines<br/>
+und des Oeles angedeutet war. In England, Dännemark<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0603 : 300r|</span><br/>
+und bei uns mus man <span class="dta-del" title="Streichung (#s)"><span class="gap">[unleserliches Material – 2 Zeichen fehlen]</span></span><span class="dta-add" title="Hinzufügung (superlinear)">den</span> schönen Rasen durch Sonnenmangel<br/>
+erkaufen; in Ländern, wo der Oelbaum und Weinstok fort-<br/>
+kommen, ist der Rasen ausgedört und verbrant. Der numeri-<br/>
+sche Unterschied zwischen der weinlosen Bretagne und den<br/>
+weinreichen Hügeln von Orléans und der Champagne beträgt<br/>
+nur 1 <span title="Schreibfehler: odr" class="dta-corr">oder</span> 1,2° R. in der mittleren Temperatur.</p><br/>
+<p class="dta-p">Wir haben aber auch gar kein Mittel, die grosse Hize<br/>
+zu bestimmen, die in dem Parenchyma der Pflanzen und<br/>
+bei andern Gelegenheiten durch den Kontakt mit den reinen<br/>
+Sonnenstralen erregt wird. Unsere Thermometer können im-<br/>
+mer nur die Temperatur der Luft angeben. <span title="Personenname"><a href="http://d-nb.info/gnd/118716581">Gay Lussac</a></span> hat<br/>
+hierüber viele Versuche angestelt, bei denen ich meist gegen-<br/>
+wärtig war. Ein Gemenge von Wasserstof und Chlor, dem<br/>
+reflektirten oder getrübten Sonnenlichte ausgesezt, explodirt<br/>
+durchaus nicht, <span class="dta-del" title="Streichung (#s)">dem</span><span class="dta-add" title="Hinzufügung (intralinear)">im</span> reinen Sonnenstral aber augenbliklich.<br/>
+Im August ist zwar die Erleuchtung der Athmosphäre weit<br/>
+stärker, als im Januar, aber ein bezogener Himmel re-<br/>
+flektirt das Licht fast wie ein Spiegel, und an dunstigen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0604 : 300v|</span><br/>
+heissen Tagen im August explodirt jenes Gemenge nicht, wäh-<br/>
+rend ein schwacher Stral im kalten Januar es augenblik-<br/>
+lich entzündet. Etwas ähnliches mag wohl im Parenchyma<br/>
+der Pflanzen <span class="dta-del" title="Streichung (#s)"><span class="gap">[unleserliches Material – 3 Zeichen fehlen]</span>ge</span><span class="dta-add" title="Hinzufügung (intralinear)">vorgehn</span>, daher ist es gar nicht einerlei,<br/>
+ob sie <span class="u ">coelo sudo</span> oder <span class="u ">sereno</span> wachsen.</p><br/>
+<p class="dta-p">Die Passatwinde sind Ostwinde, die herschenden Winde in<br/>
+der temperirten Zone sind Westwinde: daher sind alle<br/>
+westlichen Küsten bei uns wärmer als die östlichen. Da<br/>
+man an den beiden Ufern des atlantischen Meeres, in<br/>
+Europa und an der Ostküste von Amerika die meisten<br/>
+Temperatur-beobachtungen gemacht hat: so ist daher der<br/>
+falsche Begrif entstanden, als ob Amerika überhaupt<br/>
+kälter wäre, als Europa: es liegt blos darin, dass das erste<br/>
+eine Ostküste das andre eine Westküste ist. Kalifornien<br/>
+ist eben so warm als die Länder bei uns unter derselben Breite,<br/>
+ja vielleicht noch etwas wärmer. Captain <span title="Personenname"><a href="http://d-nb.info/gnd/118727982">Lewis</a></span> fand am<br/>
+Ausflusse des Rio Columbia, <span title="zw." class="dta-abbr">zwischen</span> 46 und 18° <span title="Nbreite" class="dta-abbr">Nordbreite</span>, dass<br/>
+es nur wenige Tage und sehr leicht im Winter gefroren<br/>
+hatte: unter 37° wachsen in Californien schon die Oelbäume.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0605 : 301r|</span><br/>
+Dieser Breite entspricht in den vereinigten Staaten ungefähr<br/>
+Baltimore, aber weit entfernt, dass dort Oelbäume fortkom̃en<br/>
+solten, findet man sie kaum in Süd-Georgien. Eben so verhält<br/>
+es sich gegen Asien hin: um in Amerika ein Klima zu finden,<br/>
+was dem von Paris gleich sei, müste man bis in die Breite<br/>
+von Neapel heruntergehn; in Asien auch bis 40° <span title="Ndbr." class="dta-abbr">Nordbreite</span> wo Peking<br/>
+ungefähr dasselbe Klima wie Paris hat. Verbindet man diese<br/>
+3 Punkte, so entsteht eine isotherme Linie, die sich nach <span title="O" class="dta-abbr">Osten</span> und<br/>
+<span title="W." class="dta-abbr">Westen</span> hin gegen den Aequator senkt. Berlin, Kamtschatka, der<br/>
+Peter-Paulshafen und Labrador haben dieselbe Breite, und<br/>
+doch ist in Berlin die <span title="mittl." class="dta-abbr">mittlere</span> Sommertemperatur +7° R.<span title="Schreibfehler: " class="dta-corr">,</span> die des<br/>
+Winters −½° <span title="Original: R" class="dta-reg">R.</span>; in Labrador für den Sommer −2° <span title="Original: R" class="dta-reg">R.</span><span title="Schreibfehler: " class="dta-corr">,</span> für den<br/>
+Winter −12° R.</p><br/>
+<p class="dta-p">Hieraus kann man sich schon einen Begrif machen, wie<br/>
+man isotherme Linien zieht. So wie <span title="Personenname"><a href="http://d-nb.info/gnd/118720066">Halley</a></span> zuerst darauf kam,<br/>
+alle Punkte der Erde, die eine gleiche Abweichung der Ma-<br/>
+gnetnadel haben, durch Linien zu verbinden, so hat man in<br/>
+neuer Zeit alle Punkte verbunden, die eine gleiche <span title="mittl." class="dta-abbr">mittlere</span> <span title="Temp." class="dta-abbr">Temperatur</span><br/>
+haben. Es war aber hiebei nöthig, auf eine Idee zu verfallen,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0606 : 301v|</span><br/>
+wie man durch eine einfache Zahl die Temperatur angeben könte.<br/>
+<span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117541613">Maraldi</a></span></span> und <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118653326">Celsius</a></span></span> wolten von 2 Tagen das maximum<br/>
+und minimum <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">d</span>er Wärme und Kälte nehmen, um die mitt-<br/>
+lere Temperatur zu finden: allein diese Data sind nur Zufällig-<br/>
+keiten. So verglich <span title="Personenname"><a href="http://d-nb.info/gnd/117541613">Maraldi</a></span> das heisse Jahr von 1719 mit den<br/>
+sehr kalten von 1709 und 1740. Dann fiel man darauf, <span class="dta-del" title="Streichung (#s)">die 2</span><br/>
+den heissesten und kältesten Monat, Dezember und August<br/>
+zu vergleichen. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118749420">Réaumur</a></span></span> hatte den richtigen Begrif von<br/>
+der Sache; dass in jedem Tage eine arithmetische Progres-<br/>
+sion von Kälte und Wärme statt finde: so bestimte er durch<br/>
+eine Menge von Beobachtungen die mittlere Temperatur von<br/>
+Paris für 1735. Man müste eigentlich von Stunde zu Stunde<br/>
+beobachten: die Beobachtungen summiren und durch die<br/>
+Zahl der <span title="Beob." class="dta-abbr">Beobachtungen</span> dividiren, um ein genaues Resultat zu<br/>
+erhalten. Die gewöhnlichen Beobachtungen um 9 Uhr früh, 12 Uhr<br/>
+Mittags und 11 Uhr Abends geben fehlerhafte Resultate, theils<br/>
+weil hiebei das maximum der Kälte vernachlässigt wird,<br/>
+das gegen Morgen fält, theils wegen der nicht-berüksichtig-<br/>
+ten ungleichen Dauer der Zwischenzeiten. Man addirt auch<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0607 : 302r|</span><br/>
+<span class="ph dta-figure" type="1">
+        [Abbildung]
+           <span class="figdesc">Carte des lignes Isothermes par M. A. de Humboldt</span><br/>
+</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0608 : 302v|</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0609 : 303r|</span><br/>
+<div class="fw-top fw-sig">76.</div><br/>
+wohl die Beobachtungen vo<span class="dta-del" title="Streichung (#ow)">n</span><span class="dta-add" title="Hinzufügung (across)">m</span> Morgen und Nachmittag zusam-<br/>
+men, ohne zu bedenken, dass die Kurve der Wärme in der Nacht<br/>
+sich ändert. Indessen ist dieser Unterschied sehr gering, und be-<br/>
+trägt nach meinen Berechnungen kaum 0,1° R. Am besten ist<br/>
+es man addirt das minimum und maximum des ganzen Tages,<br/>
+und nimt das Mittel daraus. <span title="Personenname"><a href="http://d-nb.info/gnd/117642010">Alström</a></span> hat eine gründliche Ab-<br/>
+handlung dar<span class="dta-del" title="Streichung (#s)">auf</span><span class="dta-add" title="Hinzufügung (intralinear)">über</span> geliefert, nach der Idee von <span title="Personenname"><a href="http://d-nb.info/gnd/117421995">Tralles</a></span>, der<br/>
+die Temperatur eines Tages durch 4 Parabeln darstellen wolte.<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/116277041">Posselt</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/116250836">Poggendorf</a></span> gaben Formeln für die Berechnung, und<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/104234644">Gaus</a></span> eine sehr gute Formel für die Interpolazion. Die Be-<br/>
+rechnungen des D<span class="sup uu ">r</span> <span title="Personenname">Waldek</span> in Koburg passen nur für eine<br/>
+gewisse Breite: denn bei uns ist das maximum der Wärme<br/>
+um 2 Uhr Nachmittags, <span class="dta-del" title="Streichung (#s)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span> an andern Orten um 1 Uhr <span title="Original: ppp" class="dta-reg">pp.</span><br/>
+Auch die mühsamen <span title="Original: 10 jährigen" class="dta-reg">10-jährigen</span> Beobachtungen von <span title="Personenname"><a href="http://d-nb.info/gnd/100055427">Brandes</a></span><br/>
+in Cuxhaven sind nur von relativer Wichtigkeit. <span title="Personenname"><a href="http://d-nb.info/gnd/117553832">Grasmann</a></span><br/>
+kam darauf, die Temperatur nach <span class="dta-del" title="Streichung (#ow)">ei</span><span class="dta-add" title="Hinzufügung (across)">d</span>em falschen Gange einer<br/>
+Uhr ohne Kompensazion zu bestimmen, die durch das Thermo-<br/>
+meter berichtigt werden solte: allein die Sache ist zu unsicher.</p><br/>
+<p class="dta-p">Ein wichtiges Resultat ist dies: dass es eine Stunde des Tages<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0610 : 303v|</span><br/>
+geben mus, die die <span title="mittl." class="dta-abbr">mittlere</span> <span title="Temp." class="dta-abbr">Temperatur</span> des ganzen Tages darstelt, einen<br/>
+Tag, der die des Monats giebt, einen Monat, der das Jahr<br/>
+repräsentirt. Dies erhielt man durch 17500 Beobachtungen auf<br/>
+dem Schlosse Leece bei Edinburgh: wenn man um 9 Uhr 13 Min.<br/>
+Morgens, und 8 Uhr 27 Min. Abends beobachtet, so erhält man<br/>
+die mittlere Temperatur des Tages: oder auch, wenn man die <span title="Temp." class="dta-abbr">Temperatur</span><br/>
+von 8 Uhr Morgens und 8 Uhr Abends addirt, und durch 2 divi-<br/>
+dirt. In Ofen in Ungarn liegt die mittlere Temperatur des Jahres<br/>
+<span class="et ">zwischen dem 15–20 April <span title="od." class="dta-abbr">oder</span> 18–22 Okt.<br/>
+in Mayland: <span title="Original: ––––––– ––––" class="dta-reg">〃 〃</span> 15–20 <span title="Original: –––––––" class="dta-reg">〃 〃</span> 16–20. <span title="Original: ––" class="dta-reg">〃</span><br/>
+in Paris: <span title="Original: ––––––– ––––" class="dta-reg">〃 〃</span> 15–22 <span title="Original: –––––––" class="dta-reg">〃 〃</span> 15–22. <span title="Original: ––" class="dta-reg">〃</span></span><br/>
+nach <span title="Personenname"><a href="http://d-nb.info/gnd/116299762">Bouvard</a></span> 20 <span class="dta-del" title="Streichung (#ow)">J</span><span class="dta-add" title="Hinzufügung (across)">j</span>ährigen Berechnungen: wenn man daher die<br/>
+<span title="mittl." class="dta-abbr">mittlere</span> <span title="Temp." class="dta-abbr">Temperatur</span> des ganzen Jahres haben will: so braucht man nur<br/>
+den ganzen Oktober hindurch zu beobachten: dieser eignet sich noch<br/>
+besser als der unbeständige April. –</p><br/>
+</div></body></html>

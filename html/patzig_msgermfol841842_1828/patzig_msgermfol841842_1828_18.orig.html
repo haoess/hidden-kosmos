@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span title="Original: D. 5. Jan.&#xA;1828." class="dta-reg">18. Vorlesung, 05.01.1828</span></div><br/>
+<p class="dta-p">Jn dieſen etwas <span title="beſchwerlich￼" class="dta-abbr">beſchwerlichen</span> numeriſchen<br/>
+<span title="Beſtim̃ung￼" class="dta-abbr">Beſtim̃ungen</span> <span title="müß￼" class="dta-abbr">müßen</span> wir noch einiges über die<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Dichtigkeit der<br/>
+Planeten</span><br/>
+</span><span class="u ">Dichtigkeit der Planeten</span> anführen, ehe<br/>
+wir zur Betrachtung allgemeinerer <span title="Reſultat￼" class="dta-abbr">Reſultate</span><br/>
+über <span title="dieſelb￼" class="dta-abbr">dieſelben</span> übergehen; <span title="namentl￼." class="dta-abbr">namentlich</span> über<br/>
+den Unterſchied, der <span title="zwiſch￼" class="dta-abbr">zwiſchen</span> den Planeten<br/>
+<span title="zwiſch￼" class="dta-abbr">zwiſchen</span> der Soñe u. den <span title="Aſteroid￼" class="dta-abbr">Aſteroiden</span> u. <span title="den￼" class="dta-abbr">denen</span><br/>
+<span class="dta-del" title="Streichung (#s)"><span title="zwiſch￼" class="dta-abbr">zwiſchen</span></span><span class="dta-add" title="Hinzufügung (superlinear)">jenſeits</span> der <span title="Aſteroid￼" class="dta-abbr">Aſteroiden</span> ſtatt findet. Ferner<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">ihre Atmoſphäre</span><br/>
+</span>werden wir <span class="u ">die <span title="Atmoſphär￼" class="dta-abbr">Atmoſphären</span> der</span> <span title="Planet￼" class="dta-abbr">Planeten</span><br/>
+unterſuchen, u. zugleich die <span title="atmoſphäriſch￼" class="dta-abbr">atmoſphäriſchen</span><br/>
+Veränderungen unſers <span title="eign￼" class="dta-abbr">eignen</span> Erdkörpers<br/>
+<span title="betracht￼" class="dta-abbr">betrachten</span>, in ſo fern dadurch climatiſche<br/>
+<span title="Veränderung￼" class="dta-abbr">Veränderungen</span> hervorgebracht ſind, u. die<br/>
+nach <span title="einig￼" class="dta-abbr">einigen</span> Naturforſchern periodiſch, <span title="od￼" class="dta-abbr">oder</span><br/>
+durch den Stoß eines andern Weltkörpers<br/>
+veranlaßt ſein <span title="köñ￼" class="dta-abbr">köñen</span>; indem jetzt Tropen-<br/>
+gewächſe u. Palmena<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)"><span class="b ">r</span></span>tige Farrenkräuter<br/>
+<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (intralinear)"><span class="b ">da</span> </span><span title="gefund￼" class="dta-abbr">gefunden</span> werden, wo ſie <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="b ">jetzt</span> </span>des Climas <span title="weg￼" class="dta-abbr">wegen</span><br/>
+nicht mehr wachſen köñen.</p><br/>
+<p class="dta-p">Was die Dichtigkeit der Planeten betrifft,<br/>
+ſo keñen wir ſie mit ziemlicher Sicherheit<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Dichtigkeit<br/>
+nim̃t mit dem Ab-<br/>
+ſtande von der<br/>
+Soñe ab.</span><br/>
+</span>bei ſieben derſelben. <span class="u ">Die Dichtigkeit</span> derſel-<br/>
+ben nim̃t mit dem Abſtande von der Soñe ab.<br/>
+Letztere iſt nicht am <span title="dichteſt￼" class="dta-abbr">dichteſten</span>; ſondern weñ<br/>
+Waſſer = 1 gerechnet wird, ſo iſt die ſpeci-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Ueberſicht der<br/>
+Dichtigkeit der<br/>
+Planeten</span><br/>
+</span>fiſche Schwere der Soñe = 1,2 etwa wie<br/>
+Salpeterſäure od. Grobkohle; Merkur<br/>
+= 20–21 wie etwa Platinakörnen; Venus<br/>
+5 bis 5,2 gleich Eiſenglanz; Dichtigkeit der<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Erde</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0118 : 114.|</span><br/>
+Erde 4,8 bis 5,4. wie Magnetſtein,<br/>
+Mars 3,3, ſo ſchwer als Augit. Nach<br/>
+den <span title="klein￼" class="dta-abbr">kleinen</span> <span title="Planet￼" class="dta-abbr">Planeten</span> folgt in der Dichtigkeit der<br/>
+<span title="Planet￼" class="dta-abbr">Planeten</span> eine auffallende Verſchiedenheit. Ju-<br/>
+piter iſt kaum 1,08 dicht, etwa wie Meer-<br/>
+ſchaum; Saturn = 0,44 etwas leichter als<br/>
+Tañenholz; Uranus <span title="hingeg￼" class="dta-abbr">hingegen</span> 0,9 wie etwa<br/>
+Waſſer ſelbſt oder Sodium. Deshalb<br/>
+<span title="brauch￼" class="dta-abbr">brauchen</span> dieſe <span title="Planet￼" class="dta-abbr">Planeten</span> nicht grade aus <span title="Flü-&#xA;ßigkeit￼" class="dta-abbr">Flü-<br/>
+ßigkeiten</span> zu beſtehen; <span class="u ">es köñe ſehr feſte</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Beſchaffenheit<br/>
+de<span class="dta-del" title="Streichung (#ow)">s</span><span class="dta-add" title="Hinzufügung (across)">r</span> <span title="planetariſch￼" class="dta-abbr">planetariſchen</span><br/>
+Körper.</span><br/>
+</span><span class="u ">dichte <span title="Maſſ￼" class="dta-abbr">Maſſen</span> ſein,</span> die nur iñerhalb große<br/>
+Räume <span title="hab￼" class="dta-abbr">haben</span> oder porös ſind, wie Zb.<br/>
+Bim̃ſtein der = 0,7 des Waſſers iſt; ſie<br/>
+<span title="köñ￼" class="dta-abbr">köñen</span> aus <span title="irdiſch￼" class="dta-abbr">irdiſchen</span> Stoffe u. oxiden beſtehen<br/>
+wie Zb. Mandelſtein der im Baſalt <span title="gefund￼" class="dta-abbr">gefunden</span><br/>
+gewiß ſehr ſchwer iſt, aber in <span class="aq ">Mexico</span> ſo ſpon-<br/>
+diös iſt, daß dieſe <span title="dolid￼" class="dta-abbr"><span class="gap">[unleserliches Material]</span><span class="dta-del" title="Streichung (#ow)">d</span><span class="dta-add" title="Hinzufügung (across)"><span class="gap">[unleserliches Material]</span></span>oliden</span> faſt auf dem<br/>
+Waſſer <span title="ſchwim̃￼" class="dta-abbr">ſchwim̃en</span> u. in <span class="gap">[unleserliches Material]</span>ahrheit Kortex mit den<br/>
+<span title="Pferdehuf￼" class="dta-abbr">Pferdehufen</span> die Häuſer <span class="aq ">Mexicos</span> die aus dieſe <span class="dta-supplied">[<span title="Stein￼" class="dta-abbr">Steinen</span>]</span><br/>
+erbaut waren, <span title="zerſtampf￼" class="dta-abbr">zerſtampfen</span> ließ. Will ich<br/>
+eine Keñtniß von der Maſſe <span title="hab￼" class="dta-abbr">haben</span> ſo muß<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Berechnung<br/>
+der Dichtigkeit<br/>
+der Planeten</span><br/>
+</span>mir das Volumen bekañt ſein. <span class="u ">Die Dichtig-<br/>
+keit erhalte ich,</span> weñ ich die Maſſe oder Schw<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">e</span><span class="dta-supplied">[re]</span><br/>
+durchs <span class="aq ">Volumen</span> dividire. Die <span title="Planet￼" class="dta-abbr">Planeten</span><br/>
+ziehen ſich nach der Quantit. ihrer materiel-<br/>
+len <span class="dta-del" title="Streichung (#ow)">T</span><span class="dta-add" title="Hinzufügung (across)">t</span>heile an. Aus der Erfahrung wie ſich<br/>
+die <span title="Planet￼" class="dta-abbr">Planeten</span> gegenſeitig ſtöhren u. einer<br/>
+<span title="geg￼" class="dta-abbr">gegen</span> den andern <span title="angezog￼" class="dta-abbr">angezogen</span> wird, hat <span class="gap">[unleserliches Material – 1 Wort fehlt]</span><br/>
+mit vieler Genauigkeit die Maſſen der<span class="dta-supplied">[ſel-]</span><br/>
+ben berechnet. Um nun die Dichtigkeit der-<br/>
+ſelben zu finden muß man ihre Größe keñen<br/>
+durch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> ſind ziemlich genau ihre Dur<span class="dta-supplied">[ch-]</span><br/>
+meſſer bekañt u. zugleich <span title="geſeh￼" class="dta-abbr">geſehen</span> welche<br/>
+äußerſte Stöhrung Jupiter auf die Pall<span class="dta-supplied">[as]</span><br/>
+ausübt. Die <span title="Comet￼" class="dta-abbr">Cometen</span> <span title="hab￼" class="dta-abbr">haben</span> ſo geringe<br/>
+Maſſen, daß einer <span title="derſelb￼" class="dta-abbr">derſelben</span> nur 0,005<br/>
+<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (intralinear)"><span class="dta-del" title="Streichung (#s)"><span class="b ">Dichtigkeit</span> </span><span class="b ">der</span> </span>Erde geweſen. Jm Durchſchnitt haben <span class="dta-supplied">[die]</span><br/>
+iñern Planeten eine 5 mal größere Dich-<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">tigkeit</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0119 : 115.|</span><br/>
+tigkeit als die äußere. Ballt man<br/>
+alle <span title="Planet￼" class="dta-abbr">Planeten</span> in eine einzige Kugel, ſo<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Wieviel Maſſe<br/>
+hat die<br/>
+Soñe?</span><br/>
+</span>hat deñoch die Soñe noch 560 mal mehr<br/>
+<span class="u ">Maſſe</span> od. wägbarer Theile u. 825 mal<br/>
+mehr Volumen als alle Planeten zuſam̃en<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Jupiter?</span><br/>
+</span>genom̃en. <span class="u ">Jupiter</span> allein hat ¾ v. der<br/>
+Maſſe allen Planeten, u. Jupiter u. Sa-<br/>
+turn zuſam̃en <span class="dta-del" title="Streichung (#s)">iſt</span><span class="dta-add" title="Hinzufügung (superlinear)">habe</span> 20 mal mehr Maſſe,<br/>
+als der Reſt aller anderer Planeten.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Venus</span><br/>
+</span><span class="u ">Venus</span> iſt an Quantität der <span title="materiell￼" class="dta-abbr">materiellen</span><br/>
+Theilen der Erde faſt gleich. Bei den<br/>
+Monden ſollte man glauben, daß ſie als<br/>
+Satelliten düñer ſein müßten, dies iſt aber<br/>
+nicht der Fall. Unſer Trabant verhält<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Mond</span><br/>
+</span>sich zur Erde = 1 : 0,47 u. iſt ſo dicht<br/>
+wie Quarz oder Bergkriſtall. Bei den<br/>
+Jupiters Monden ſind 3 dichter als er ſelbſt<br/>
+u. ſie <span title="verhalt￼" class="dta-abbr">verhalten</span> ſich 1,7 : 1. <span title="Faſſ￼" class="dta-abbr">Faſſen</span> wir<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Ueberſicht<br/>
+der <span title="Dichtigkeit￼" class="dta-abbr">Dichtigkeiten</span><br/>
+u. des Volu-<br/>
+mens.</span><br/>
+</span>dies zuſam̃en, ſo ſind die iñern <span title="Planet￼" class="dta-abbr">Planeten</span><br/>
+von <span class="u ">geringerem Volumen</span>; deñ nehme ich das<br/>
+Volumen der Erde = 1 ſo iſt die Mittel-<br/>
+größe der 4 nächſten Planeten = 0,5.<br/>
+Bei der äußere Planeten iſt hingegen das<br/>
+mittlere Volumen = 780. Jñere Planeten<br/>
+haben im Durchſchnitt eine Dichtigkeit zwiſchen<br/>
+Platina u. Magnet, die äußere <span title="hingeg￼" class="dta-abbr">hingegen</span><br/>
+die von Waſſer, u. iſt ſomit die Dichtig-<br/>
+keit der iñere 5 mal größer, als die<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Aeußere<br/>
+Planeten grö-<br/>
+ßere Durchmeſſer<br/>
+u. ſchnellere Ro-<br/>
+tation</span><br/>
+</span>der äußere. <span class="u ">Die äußere Planeten</span><br/>
+haben ungleich größere Durchmeſſer u.<br/>
+eine ſ<span class="u ">ehr ſchnelle Rotation</span> iñerhalb 10 Stun-<br/>
+den; die iñere <span title="hingeg￼" class="dta-abbr">hingegen</span> faſt alle einen<br/>
+Erdentag, nur Mars rotirt in 24½ <span title="Std.￼" class="dta-abbr">Stunden</span>.<br/>
+Aeußere Planeten ſind mondreicher<br/>
+u. zählen 17 Satelliten u. eine ringförmi-<br/>
+ge Reihe<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (sublinear)"> (oder <span title="ein￼" class="dta-abbr">einen</span> Ring)</span> von Monden. <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">Bei </span>den <span class="dta-del" title="Streichung (#s)">äußere</span><span class="dta-add" title="Hinzufügung (superlinear)">iñere</span> Pla-<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span title="net￼" class="dta-abbr">neten</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0120 : 116.|</span><br/>
+neten hat nur die Erde <span title="ein￼" class="dta-abbr">einen</span> Mond. Bei<br/>
+den äußere Planeten bemerkt man Zonen<br/>
+oder parall. Streifen. Man hat ſie <span title="Verdickun-&#xA;g￼" class="dta-abbr">Verdickun-<br/>
+gen</span> der <span title="Atmoſphär￼" class="dta-abbr">Atmoſphären</span> genañt, es iſt aber nicht<br/>
+wahrſcheinlich, <span title="dß" class="dta-abbr">daß</span> es etwas ähnliches von unſe-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Schiefe der<br/>
+Eccliptik der<br/>
+iñern <span title="Planet￼" class="dta-abbr">Planeten</span></span><br/>
+</span>rer Atmoſphäre iſt. Die Jñere Plane-<br/>
+ten haben ferner mehr <span class="u ">Schiefe der Eccliptik</span><br/>
+die Venus 72°, Merkur, Mars u. Erde<br/>
+zwiſchen 20–28°. Uranus ſteht ſenkrecht<br/>
+auf ſeiner Bahn u. Jupiter iſt kaum<br/>
+3° geneigt. Erſt ſpät entdeckte man<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Jhre Umlaufs-<br/>
+zeit</span><br/>
+</span>die <span class="u ">Umlaufszeit</span> von Allen. Die Um-<br/>
+laufszeit von Jupiter, Venus, Mars, be-<br/>
+ſtim̃te <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Cassini</a></span></span> <span title="zwiſch￼" class="dta-abbr">zwiſchen</span> 1665 u. 71. Rota<span class="dta-supplied">[ti-]</span><br/>
+on von Saturn beſtim̃t <span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span> 1780.<br/>
+Merkur wurde erſt 1800 von <span title="Personenname"><a href="http://d-nb.info/gnd/11876196X">Schrötter</a></span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u "><span title="Schreibfehler: Applattungen" class="dta-corr">Abplattungen</span></span><br/>
+</span>beſtim̃t. Die <span class="u "><span title="Schreibfehler: Applattungen" class="dta-corr">Abplattungen</span></span> der Planeten<br/>
+ſind ſehr verſchieden. Mars <span title="Schreibfehler: Applattung" class="dta-corr">Abplattung</span><br/>
+beträgt trotz der langſamen Umlaufs-<br/>
+zeit <span class="sup ">1</span>/<span class="sub ">15</span>, die der Erde <span class="sup ">1</span>/<span class="sub ">290</span>, die des Jup<span class="dta-supplied">[.]</span><br/>
+<span class="sup ">1</span>/<span class="sub ">14</span>, die des Saturn <span class="sup ">1</span>/<span class="sub ">11</span>, die des <span class="b ">Uranus</span><br/>
+iſt noch unbeſtim̃t, obgleich ebenfalls ſehr be-<br/>
+trächtlich. – Wie kom̃en jetzt zu ein<span class="dta-supplied">[em]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Erklärung<br/>
+des Phänomens<br/>
+der <span title="Verſteinerung￼" class="dta-abbr">Verſteinerungen</span> <span title="Original: pp" class="dta-reg"><span class="aq ">etc</span>. <span class="aq ">etc</span>.</span><br/>
+von org. Dingen an den<br/>
+Orten, wo ſie jetzt<br/>
+nicht exiſtiren.</span><br/>
+</span><span class="u ">Phänomen</span> welches hier auf <span title="Erd￼" class="dta-abbr">Erden</span> mit <span title="orga-&#xA;niſch￼" class="dta-abbr">orga-<br/>
+niſchen</span> <span title="Ding￼" class="dta-abbr">Dingen</span> im <span title="groß￼" class="dta-abbr">großen</span> Zuſam̃enhange ſteh<span class="dta-supplied">[t]</span><br/>
+u. wovon ich hier einiges erwähnen wi<span class="dta-supplied">[ll,]</span><br/>
+obwohl das Nähere die Geognoſie lehren<br/>
+wird. Wir finden nehmlich Thiere, die th<span class="dta-supplied">[eils]</span><br/>
+jetzt noch <span title="leb￼" class="dta-abbr">leben</span>, theils <span title="ihn￼" class="dta-abbr">ihnen</span> ähnlich ſind in<br/>
+<span title="untergegangen￼" class="dta-abbr">untergegangenen</span> Geſchlechtern in Erdſchichten<br/>
+eingefüllt, auf <span title="der￼" class="dta-abbr">deren</span> Oberfläche ſie jetzt<br/>
+nicht leben köñten. Es ſind hierdurch Jd<span class="dta-supplied">[een]</span><br/>
+geweckt worden, daß die jetzige <span class="gap">[unleserliches Material – 1 Wort fehlt]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Veränderung<br/>
+der Erdaxe</span><br/>
+</span><span class="u ">der Erdaxe</span> ſei verändert worden.<br/>
+Die Temperatur kañ auch eine Verände<span class="dta-supplied">[rung]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Soñenfackeln</span><br/>
+</span><span title="erlitt￼" class="dta-abbr">erlitten</span> haben, durch die <span title="ſogenañt￼" class="dta-abbr">ſogenañten</span> <span class="u ">Son<span class="dta-supplied">[nen-]</span></span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">fackel<span class="dta-supplied">[n]</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0121 : 117.|</span><br/>
+fackeln, die jederzeit in hellerm Licht den<br/>
+ſich zeigenden Soñenflecken vorangehen.<br/>
+Eine Veränderung der Lichtſtärke, kañ wohl<br/>
+eine Veränderung der Temperatur nach ſich<br/>
+ziehen, ob aber erſtere nicht ſehr gering<br/>
+wirkt im Verhältniß der eigene iñern<br/>
+Wärme der Erde, ſoll an einem andern<br/>
+Orte unterſucht werden. Eine andere<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Schiefe der Ecclip-<br/>
+tik</span><br/>
+</span>Urſache der erſt gedachten Erſcheinung<span class="dta-del" title="Streichung (#s)"> iſt</span><br/>
+<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (intralinear)">soll </span>die <span class="u ">Schiefe der Ecclyptik</span> ſein. Dieſe iſt<br/>
+ſeit 2900 J. bekañt, u. die Aelteſte Beobach-<br/>
+tung iſt in einem <span title="chineſiſch￼" class="dta-abbr">chineſiſchen</span> Manuscripte<br/>
+enthalten, welches uns der Jeſuit <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117677752">Hobil</a></span></span><br/>
+mittheilt<span class="dta-del" title="Streichung (#ow)">, ſ</span><span class="dta-add" title="Hinzufügung (across)">. <span class="b ">S</span></span>ie iſt hiernach im <span title="Abnehm￼" class="dta-abbr">Abnehmen</span> begrif-<br/>
+fen u. <span class="b ">e</span>s würde, weñ ſie gleich Null<br/>
+wäre dadurch ein ewiger Frühling ent-<br/>
+ſtehen. Durch analÿtiſche <span title="Arbeit￼" class="dta-abbr">Arbeiten</span> des <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span></span><br/>
+iſt aber beſtim̃t, daß die Schiefe nicht im̃er<br/>
+abnehmen wird; ſondern daß ſie perio-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">periodiſch</span><br/>
+</span>diſch iſt. Die <span class="u ">Dauer der</span> <span class="u ">Periode</span> iſt<br/>
+wenige gewiß als die Quantität. Die<br/>
+Maxima ſind hiernach um 1½° <span title="verſchied￼" class="dta-abbr">verſchieden</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">keinen Einfluß<br/>
+auf die Klimate</span><br/>
+</span>was auf die Klimate <span class="u "><span title="kein￼" class="dta-abbr">keinen</span> Einfluß</span> haben<br/>
+kañ. – Eine andere Erklärung iſt auch<br/>
+die, daß eine Veränderung der Klima-<br/>
+te nicht periodiſch, ſondern durch gewal-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Zuſam̃entreffen<br/>
+mit einem<br/>
+Cometen.</span><br/>
+</span>tige Zertrüm̃erung durch ein <span class="u "><span title="Zuſam̃en-&#xA;treff￼" class="dta-abbr">Zuſam̃en-<br/>
+treffen</span></span> mit einem <span title="Comet￼" class="dta-abbr">Cometen</span> entſtanden<br/>
+ſei. Obgleich die <span title="Comet￼" class="dta-abbr">Cometen</span> eine große<br/>
+Düñigkeit haben, ſo köñte deñoch durch<br/>
+die große Schnelligkeit ein feſtiges <span title="Zu-&#xA;ſam̃entreff￼" class="dta-abbr">Zu-<br/>
+ſam̃entreffen</span>, welches dieſe <span title="Revolution￼" class="dta-abbr">Revolutionen</span><br/>
+bemerkte, ſtatt <span title="gefund￼" class="dta-abbr">gefunden</span> haben; u. es<br/>
+bleibt noch zu <span title="unterſuch￼" class="dta-abbr">unterſuchen</span>, ob dadurch<br/>
+die Reſultate <span title="entſteh￼" class="dta-abbr">entſtehen</span> koñten, die<br/>
+wir jetzt erblicken.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Die</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0122 : 118.|</span><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Neigung des<br/>
+Aequators</span><br/>
+</span>Die <span class="u ">Neigung des Aequators</span> beſtim̃t ſtets<br/>
+die Länge des Tages, ſo wie die Höhe d<span class="dta-supplied">[er]</span><br/>
+Soñe davon abhängig iſt, die wieder d<span class="dta-supplied">[ie]</span><br/>
+Verſch. des Tages u. der Nacht beſtim̃t. D<span class="dta-supplied">[ie]</span><br/>
+Umlaufszeit der Planeten um den Centra<span class="dta-supplied">[l-]</span><br/>
+körper beſtim̃t wieder die Länge oder<br/>
+Dauer der verſch. Jahreszeiten. Durch<br/>
+Abſorbtion der Lichtſtrahlen wird die<br/>
+Wärme hervorgebracht. Steht die Soñe<br/>
+unter 45° ſo iſt <span class="dta-del" title="Streichung (#ow)">ſ</span><span class="dta-add" title="Hinzufügung (across)">d</span>ie Wärme das Mittel<br/>
+von dem weñ ſie unter 75°. <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">iſt </span>Fallen die<br/>
+Strahlen niedrig, ſo werden ſie von<br/>
+der Fläche faſt Alle zurückgeworfen<br/>
+während dem, weñ ſie im Zenit<span class="dta-del" title="Streichung (#erased)"><span class="gap">[unleserliches Material – 2 Zeichen fehlen]</span></span> ſteht<span class="dta-supplied">[,]</span><br/>
+die Mehrzahl der <span title="Strahl￼" class="dta-abbr">Strahlen</span> abſorbirt wir<span class="dta-supplied">[d,]</span><br/>
+freie Wärme entſteht. <span title="Zwiſch￼" class="dta-abbr">Zwiſchen</span> 70° u. 9<span class="dta-supplied">[0°]</span><br/>
+iſt in Anſehung der Wärme kein großer<br/>
+Unterſchied; aber bedeutend wird derſel<span class="dta-supplied">[be]</span><br/>
+in dem Verhältniß <span title="zwiſch￼" class="dta-abbr">zwiſchen</span> 20° u. 40°.</p></div></body></html>

@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span title="Original: D. 2 Jan. 1828." class="dta-reg">17. Vorlesung, 02.01.1828</span></div><br/>
+<p class="dta-p">Wir <span title="Original: kom̃en" class="dta-reg">kommen</span> jetzt <span class="u ">3., zur Betrachtung</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Betrachtung <span title="Original: un-&#xA;seres" class="dta-reg">unseres</span> <span title="Original: Soñenſyſtems" class="dta-reg">Sonnensystems</span>.</span><br/>
+</span><span class="u "><span title="Original: unſeres" class="dta-reg">unseres</span> <span title="Original: Soñenſyſtems" class="dta-reg">Sonnensystems</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span></span>, welches von<br/>
+<span title="Original: größerm" class="dta-reg">größerem</span> <span title="Original: Jntereſſe" class="dta-reg">Interesse</span> <span title="Original: ſein" class="dta-reg">sein</span> dürfte. Von der<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u "><span title="Original: Soñe" class="dta-reg">Sonne</span></span><br/>
+</span><span class="u "><span title="Original: Soñe" class="dta-reg">Sonne</span></span> <span title="Original: ſelbſt" class="dta-reg">selbst</span> erhalten wir die Wärme u.<br/>
+das Licht, welches überdies, <span title="Original: beſonders" class="dta-reg">besonders</span> der<br/>
+violette Strahl, <span title="Original: chemiſche" class="dta-reg">chemische</span> <span title="Veränderung￼" class="dta-abbr">Veränderungen</span><br/>
+hervorbringt u. die <span title="Original: magnetiſche" class="dta-reg">magnetische</span> <span title="Original: Spañung" class="dta-reg">Spannung</span> der<br/>
+Erde veranlaßt. Die <span title="Original: Soñe" class="dta-reg">Sonne</span> <span title="Original: iſt" class="dta-reg">ist</span> ähnlich den<br/>
+<span title="Original: Fixſternen" class="dta-reg">Fixsternen</span> u. es <span title="beweg￼" class="dta-abbr">bewegen</span> <span title="Original: ſich" class="dta-reg">sich</span> um <span title="Original: ſie" class="dta-reg">sie</span> die <span title="Original: Pla-&#xA;neten" class="dta-reg">Planeten</span> als dunkle Körper. Es <span title="Original: iſt" class="dta-reg">ist</span> noch nicht <span title="Original: ent-&#xA;ſcheiden" class="dta-reg">entscheiden</span> ob die Haupt u. Nebenplaneten<br/>
+alles Licht von der <span title="Original: Soñe" class="dta-reg">Sonne</span> erhalten, oder<br/>
+eine ihnen <span title="Original: eigenthümliche" class="dta-reg">eigentümliche</span> <span title="Original: Phoſphoreſcenz" class="dta-reg">Phosphoreszenz</span> <span title="Original: ent-" class="dta-reg">entwickeln</span>
+<span class="dta-marginal dta-marginal-left"><span class="b u "><span title="Neben-Planet￼" class="dta-abbr">Neben-Planeten</span><br/>
+doppelte Erleuchtung</span><br/>
+</span><span title="Original: wickeln" class="dta-reg"/>. Es findet bei den <span class="u ">Nebenplaneten</span><br/>
+eine doppelte Erleuchtung <span title="Original: ſtatt" class="dta-reg">statt</span>; <span title="Original: erſtlich" class="dta-reg">erstlich</span><br/>
+von den <span title="Original: Soñenſtrahlen" class="dta-reg">Sonnenstrahlen</span>, u. <span title="Original: dañ" class="dta-reg">dann</span> von dem <span title="Original: Re-&#xA;flex" class="dta-reg">Reflex</span> <span title="Original: derſelben" class="dta-reg">derselben</span> von dem Haupt-Planeten.<br/>
+Beim Monde Zb. <span title="Original: giebt" class="dta-reg">gibt</span> <span class="dta-del" title="Streichung (#s)">dies </span>das <span title="Original: aſchfarbene" class="dta-reg">aschfarbene</span><br/>
+<span class="dta-del" title="Streichung (#s)">Erdl</span><span class="dta-add" title="Hinzufügung (intralinear)"><span title="Original: L" class="dta-reg">Licht</span></span><span title="Original: icht" class="dta-reg"/>, <span title="Original: weñ" class="dta-reg">wenn</span> ein <span title="Original: Theil" class="dta-reg">Teil</span> <span title="deſſelb￼" class="dta-abbr"><span title="Original: deſſelben" class="dta-reg">desselben</span></span> von <span title="dr" class="dta-abbr">der</span><br/>
+<span title="Original: Soñe" class="dta-reg">Sonne</span> erleuchtet <span title="Original: iſt" class="dta-reg">ist</span>, <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">die Erde. </span>beiläufig <span title="Original: ſey" class="dta-reg">sei</span> her<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">noch</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0112 : 108.|</span><br/>
+noch einer andere Färbung der <span title="Original: Mond-&#xA;ſcheibe" class="dta-reg">Mondscheibe</span> erwähnt, indem <span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span> bei<br/>
+einer totalen <span title="Original: Mondfinſterniß" class="dta-reg">Mondfinsternis</span> nicht ganz<br/>
+<span title="Original: verſchwindet" class="dta-reg">verschwindet</span>, welches Licht von der <span title="Original: Atmos-&#xA;phäre" class="dta-reg">Atmosphäre</span> der Erde <span title="Original: re" class="dta-reg">reflektiert</span><span title="Original: flectirt" class="dta-reg"/> wird. Das<br/>
+ganze <span title="Original: Soñenſyſtem" class="dta-reg">Sonnensystem</span> hat jetzt eine größere<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Zahl<br/>
+der Planeten</span><br/>
+</span><span class="u ">Zahl von Planeten</span> als man ehemals glaubte<br/>
+u. <span title="Original: beſteht" class="dta-reg">besteht</span> aus 11 Haupt-Planeten u. 18<br/>
+Neben-Planeten oder Monden; <span class="dta-del" title="Streichung (#s)">u. </span>2 <span title="Original: Cometen" class="dta-reg">Kometen</span><br/>
+<span title="Original: iñenhalb" class="dta-reg">innenhalb</span> der Bahn der Planeten; u. wohl<br/>
+<span title="Original: Tauſenden" class="dta-reg">Tausenden</span> die außerhalb <span title="derſelb￼" class="dta-abbr"><span title="Original: derſelben" class="dta-reg">derselben</span></span> <span title="Original: ſich" class="dta-reg">sich</span> bewegen<br/>
+<span title="Original: Wahrſcheinlich" class="dta-reg">Wahrscheinlich</span> <span title="Original: giebt" class="dta-reg">gibt</span> es <span title="Original: hiebei" class="dta-reg">hierbei</span> noch eine große<br/>
+Zahl kleiner Körper oder Aeroliten, die auf<br/>
+einen oder den <span title="Original: andern" class="dta-reg">anderen</span> Planeten fallen. Zu<br/>
+<span title="Original: unſerm" class="dta-reg">unserem</span> <span title="Original: Syſtem" class="dta-reg">System</span> muß endlich auch die nebelartige<br/>
+leuchtende Materie gerechnet werden, die wir<br/>
+unter dem Namen des <span title="Original: Zodiakal-Lichtes" class="dta-reg">Zodiakallichtes</span> <span title="Original: ſchon" class="dta-reg">schon</span><br/>
+erwähnt haben. Bis jetzt <span title="hab￼" class="dta-abbr">haben</span> die <span title="Planet￼" class="dta-abbr">Planeten</span> den<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u "><span title="Original: falſchen" class="dta-reg">falschen</span><br/>
+Name <span title="Original: Jrrſtern" class="dta-reg">Irrsten</span><br/>
+für Planet.</span><br/>
+</span>Namen <span class="u "><span title="Original: Jrrſterne" class="dta-reg">Irrsterne</span></span> behalten, obwohl <span title="Original: ſie" class="dta-reg">sie</span> dies nicht<br/>
+<span title="Original: ſind" class="dta-reg">sind</span>, wohl aber die <span title="Original: Cometen" class="dta-reg">Kometen</span> <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: genañt" class="dta-reg">genannt</span> werden<br/>
+<span title="Original: köñen" class="dta-reg">können</span>. Das ein <span title="Original: Centralkörper" class="dta-reg">Zentralkörper</span> in der Mitte<br/>
+<span title="Original: ſteht" class="dta-reg">steht</span> <span title="Original: iſt" class="dta-reg">ist</span> jetzt <span title="Original: unumſtößlich" class="dta-reg">unumstößlich</span> <span title="Original: bewieſen" class="dta-reg">bewiesen</span> u. keine <span title="Original: Jdee" class="dta-reg">Idee</span><br/>
+mehr; doch wurde dies <span title="Original: ſchon" class="dta-reg">schon</span> um <span title="Original: Alterthum" class="dta-reg">Altertum</span> <span title="Original: ge-" class="dta-reg">geahnt</span>
+<span class="dta-marginal dta-marginal-left"><span class="u "><span title="Original: Keñtniß" class="dta-reg">Kenntnis</span><br/>
+des <span title="Original: Alterthums" class="dta-reg">Altertums</span><br/>
+von <span title="Original: unſerm" class="dta-reg">unserem</span> <span title="Original: Syſtem" class="dta-reg">System</span></span><br/>
+</span><span title="Original: ahnet" class="dta-reg"/>. <span title="Personenname"><a href="http://d-nb.info/gnd/118645714"><span title="Original: Ariſtarch" class="dta-reg">Aristarch</span> von Samos</a></span> <span title="Original: koñte" class="dta-reg">konnte</span> nicht nur<br/>
+die <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: Rot" class="dta-reg">Rotation</span></span><span title="Original: ation" class="dta-reg"/> der Erde, <span title="Original: ſondern" class="dta-reg">sondern</span> auch <span title="Original: ſelbſt" class="dta-reg">selbst</span><br/>
+deren Translation. Unter den 6 Arten der<br/>
+Körper <span title="Original: unſers" class="dta-reg">unseres</span> <span title="Original: Syſtems" class="dta-reg">Systems</span> <span title="Original: ſind" class="dta-reg">sind</span> zwar die <span title="Original: Planet" class="dta-reg">Planeten</span><span class="dta-supplied">[<span title="Original: en" class="dta-reg"/>]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Planeten<br/>
+dem Raume nach<br/>
+unwichtig</span><br/>
+</span>dem Räume <span class="u ">nach am <span title="Original: unwichtigſten" class="dta-reg">unwichtigsten</span></span>; aber am<br/>
+<span title="Original: wichtigſten" class="dta-reg">wichtigsten</span> für uns durch das materiell <span title="Original: prakti-&#xA;ſche" class="dta-reg">praktische</span>, welches wir <span title="der￼" class="dta-abbr">deren</span> <span title="Original: Keñtniß" class="dta-reg">Kenntnis</span> verdanken.<br/>
+Würden wir die Planeten nicht <span title="Original: keñen" class="dta-reg">kennen</span>, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: w" class="dta-reg">würde</span><span class="dta-supplied">[<span title="Original: ür-" class="dta-reg"/>]</span><span title="Original: &#xA;de" class="dta-reg"/> uns Vieles <span title="Original: unbekañt" class="dta-reg">unbekannt</span> geblieben <span title="Original: ſein" class="dta-reg">sein</span>, was<br/>
+wir von der Dichtigkeit der Erde, des Mondes<br/>
+u. <span title="Original: ſeinen" class="dta-reg">seinen</span> Paralaxe, von der <span title="Original: Soñe" class="dta-reg">Sonne</span> <span title="Original: p" class="dta-reg"><span class="aq "><span title="Original: etc" class="dta-reg">etc.</span></span><span title="Original: ." class="dta-reg"/></span> <span title="Original: wiſſen" class="dta-reg">wissen</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Mehrere<br/>
+ein <span title="Original: eigen" class="dta-reg">eigens</span></span><span class="dta-del" title="Streichung (#s)"><span class="u ">e</span></span><span class="u "><span title="Original: s" class="dta-reg"/><br/>
+Licht</span><br/>
+</span>Einige <span title="Original: derſelben" class="dta-reg">derselben</span> <span title="hab￼" class="dta-abbr">haben</span> <span class="u ">ein eigens <span title="Original: ſchwach" class="dta-reg">schwach</span></span><br/>
+<span title="Original: phosphoriscirendes" class="dta-reg">phosphoreszierendes</span> Licht Zb. Venus. Eben <span class="gap">[verlorenes Material – 1 Wort fehlt]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">glaubt</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0113 : 109.|</span><br/>
+glaubt man auch von Uranus u. <span title="Original: Veſta" class="dta-reg">Vesta</span><br/>
+welche letztere <span title="Original: beſonders" class="dta-reg">besonders</span> ein viel <span title="Original: ſtärke-&#xA;res" class="dta-reg">stärkeres</span> Licht zeigt, als man nach ihrer Größe<br/>
+<span title="vermuth￼" class="dta-abbr"><span title="Original: vermuthen" class="dta-reg">vermuten</span></span> <span title="Original: ſollte" class="dta-reg">sollte</span>. Der Planet Mars<br/>
+zeigt <span title="Original: ſich" class="dta-reg">sich</span> in <span title="Original: rothem" class="dta-reg">rotem</span> Lichte u. die Jupiters<br/>
+Trabanten <span title="Original: ſelbſt" class="dta-reg">selbst</span> in farbigem, Blau u.<br/>
+Orange. <span title="Original: –" class="dta-reg">-</span> Eine <span title="Original: intereſſante" class="dta-reg">interessante</span> <span title="Original: Beobach-&#xA;tung" class="dta-reg">Beobachtung</span> <span title="Original: iſt" class="dta-reg">ist</span> es, zu <span title="Original: ſehen" class="dta-reg">sehen</span>, wie die Erfahrung<br/>
+hierin in der <span title="Original: neuern" class="dta-reg">neueren</span> Zeit auf eine <span title="Original: un-&#xA;begreifliche" class="dta-reg">unbegreifliche</span> <span title="Original: Weiſe" class="dta-reg">Weise</span> <span title="Original: zugenom̃en" class="dta-reg">zugenommen</span>. <span class="u ">Die Alten</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Wie<br/>
+viel Planeten<br/>
+<span title="Original: kañten" class="dta-reg">kannten</span> die Alten.</span><br/>
+</span><span class="u ">zählten nur 5 u.</span> <span title="Original: nim̃t" class="dta-reg">nimmt</span> man <span title="Original: Soñe" class="dta-reg">Sonne</span> u. Mond<br/>
+als Planten dazu, <span title="Original: ſo" class="dta-reg">so</span> halten <span title="Original: ſie" class="dta-reg">sie</span> 7 <span title="Original: Jrr-&#xA;ſterne" class="dta-reg">Irrsterne</span>. Sie zählten <span title="Original: ſie" class="dta-reg">sie</span> in folgender<br/>
+Reihfolge <span title="Original: ſo" class="dta-reg">so</span> wie <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: dieſelben" class="dta-reg">dieselben</span> am <span title="Original: Entfern-&#xA;teſten" class="dta-reg">Entferntesten</span> hielten. <span class="u "><span title="Original: Zuerſt" class="dta-reg">Zuerst</span> Saturn, <span title="Original: dañ" class="dta-reg">dann</span> Jupiter,</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Reihfolge <span title="Original: der-&#xA;selben" class="dta-reg">derselben</span> nach Entfernung<br/>
+<span title="Original: angenom̃en" class="dta-reg">angenommen</span>.</span><br/>
+</span><span class="u ">Mars, <span title="Original: Soñe" class="dta-reg">Sonne</span>, Venus, Merkur, Luna.</span></p><br/>
+<p class="dta-p">Von ihnen allein läßt <span title="Original: ſich" class="dta-reg">sich</span> die Periode<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Grund der <span title="Original: Ordnungs-&#xA;folge" class="dta-reg">Ordnungsfolge</span> <span title="Original: unſerer" class="dta-reg">unserer</span> <span title="Original: Wochen-&#xA;tage" class="dta-reg">Wochentage</span>.</span><br/>
+</span>der Woche ableiten u. <span title="Original: weñ" class="dta-reg">wenn</span> gleich die<br/>
+gewöhnlichen <span class="u ">Wochentage</span> eine andere<br/>
+Stellung als die oben gedachte <span title="Original: añehmen" class="dta-reg">annehmen</span>:<br/>
+<span title="Original: ſo" class="dta-reg">so</span> <span title="Original: entſpringt" class="dta-reg">entspringt</span> dies aus der Sitte jede<br/>
+Stunde mit einem Planetennamen zu <span title="bezeichn￼" class="dta-abbr">bezeichnen</span><br/>
+u. daß <span title="Original: dieſe" class="dta-reg">diese</span> den <span title="einzeln￼" class="dta-abbr">einzelnen</span> Stunden <span title="Original: vorſtan-&#xA;den" class="dta-reg">vorstanden</span>, zählt man nun die <span title="Original: 1" class="dta-reg">1ste</span><span class="sup u "><span title="Original: ſte" class="dta-reg"/></span> Stunde des<br/>
+<span title="Original: Soñtags" class="dta-reg">Sonntags</span> bis zur <span title="Original: 24" class="dta-reg">24sten</span><span title="ſt￼" class="dta-abbr"><span class="sup u "><span title="Original: ſten" class="dta-reg"/></span></span>x)<span class="dta-marginal dta-marginal-left">nach oben erwähnten Reihenfolge<br/>
+</span>. so trifft die <span title="Original: erſte" class="dta-reg">erste</span><br/>
+Stunde des folgenden Tages, auf den <span title="Original: Mond-&#xA;tag" class="dta-reg">Mondtag</span> <span title="Original: pp" class="dta-reg"><span class="aq "><span title="Original: etc" class="dta-reg">etc.</span></span><span title="Original: ." class="dta-reg"/> <span class="aq "><span title="Original: etc" class="dta-reg">etc.</span></span><span title="Original: ." class="dta-reg"/></span> daher der Grund der jetzigen<br/>
+Ordnungsfolge. <span title="Original: –" class="dta-reg">-</span> Die <span title="Original: ſo" class="dta-reg">so</span> häufig <span title="Original: ſich" class="dta-reg">sich</span><br/>
+ereignenden <span title="Original: Mondfinſterniſſe" class="dta-reg">Mondfinsternis</span> <span title="Original: ſchrieb" class="dta-reg">schrieb</span> <span title="Personenname"><a href="http://d-nb.info/gnd/118642421"><span title="Original: Sim-&#xA;plicius" class="dta-reg">Simplicius</span></a></span> u. Andere den Planeten zu, die<br/>
+in größerer Anzahl <span title="Original: ſich" class="dta-reg">sich</span> noch behändenxx)<span class="dta-marginal dta-marginal-left">als damals <span title="Original: bekañt" class="dta-reg">bekannt</span> war.<br/>
+</span>.<br/>
+<span title="Original: Erſt" class="dta-reg">Erst</span> <span title="Original: ſeit" class="dta-reg">seit</span> 1610 <span title="wurd￼" class="dta-abbr">wurden</span> <span class="u ">die <span title="Original: Jupi" class="dta-reg">Jupiters</span></span><span class="u "><span title="Original: t" class="dta-reg"/></span><span class="u "><span title="Original: ers" class="dta-reg"/> <span title="Original: Tra-" class="dta-reg">Trabanten</span></span><span title="Original: " class="dta-reg"/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Entdeckung<br/>
+der <span title="Original: Jupiterſtra-&#xA;banten" class="dta-reg">Jupiterstrabanten</span></span><br/>
+</span><span class="u "><span title="Original: banten" class="dta-reg"/> <span title="Original: bekañt" class="dta-reg">bekannt</span></span>. 1655 wurde der <span title="Original: ſechſte" class="dta-reg">sechste</span><br/>
+Trabant entdeckt., 1671 d. <span title="Original: 7" class="dta-reg">7te</span><span class="sup u "><span title="Original: te" class="dta-reg"/></span>. 1672<br/>
+d. <span title="Original: 5" class="dta-reg">5te</span><span class="sup u "><span title="Original: te" class="dta-reg"/></span> 1673 der 2 u. <span title="Original: 3" class="dta-reg">3te</span><span class="sup u "><span title="Original: te" class="dta-reg"/></span> von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119408007"><span title="Original: Casſini" class="dta-reg">Cassini</span></a></span></span>.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0114 : 110.|</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Entdeckung des<br/>
+Uranus</span><br/>
+</span>1781. wurde <span class="u ">Uranus von <span title="Personenname"><a href="http://d-nb.info/gnd/118841920"><span title="Original: Herſchel" class="dta-reg">Herschel</span></a></span> entdeckt</span>.<br/>
+|: Man hatte ihn zwar <span title="Original: ſchon" class="dta-reg">schon</span> 1690 <span title="geſeh￼" class="dta-abbr"><span title="Original: geſehen" class="dta-reg">gesehen</span></span>, ihn aber<br/>
+für einen <span title="Original: Fixſtern" class="dta-reg">Fixstern</span> gehalten, wie Zb. der <span title="Personenname"><a href="http://d-nb.info/gnd/116471727"><span title="Original: En-&#xA;ke" class="dta-reg">Enkesche</span></a></span><span title="Original: ſche" class="dta-reg"/> <span title="Original: Comet" class="dta-reg">Komet</span> <span title="Original: ſchon" class="dta-reg">schon</span> <span title="Original: längſt" class="dta-reg">längst</span> <span title="geſeh￼" class="dta-abbr"><span title="Original: geſehen" class="dta-reg">gesehen</span></span> worden, <span title="abe" class="dta-abbr">aber</span><br/>
+von <span title="Personenname"><a href="http://d-nb.info/gnd/116471727">Enke</a></span> <span title="Original: zuerſt" class="dta-reg">zuerst</span> in die Bahn der <span title="Planet￼" class="dta-abbr">Planeten</span> gebracht<br/>
+worden <span title="Original: iſt" class="dta-reg">ist</span>, u. daher nach ihm <span title="Original: genañt" class="dta-reg">genannt</span> wird. :|</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Entdeckung<br/>
+der <span title="Original: Cometen" class="dta-reg">Kometen</span> hat jetzt<br/>
+weniger</span> <span class="dta-del" title="Streichung (#ow)"><span class="u ">w</span></span><span class="dta-add" title="Hinzufügung (across)"><span class="u "><span title="Original: W" class="dta-reg">Wert</span></span></span><span class="u "><span title="Original: erth" class="dta-reg"/>.</span><br/>
+</span>Man legt jetzt <span class="u ">auf Entdeckung der <span title="Original: Cometen" class="dta-reg">Kometen</span></span><br/>
+nicht mehr die Wichtigkeit die früher darauf<br/>
+gelegt wurde; indem der <span title="Original: Aſtronom" class="dta-reg">Astronom</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117689505">Pons</a></span></span><br/>
+jetzt oft 4 <span title="Comet￼" class="dta-abbr"><span title="Original: Cometen" class="dta-reg">Kometen</span></span> in einem Jahre entdeckt.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Entdeckung<br/>
+der Trabanten<br/>
+des Uranus</span><br/>
+</span>1787. wurde der <span class="u ">1. u. 2.<span class="sup u ">te</span> Trabant des <span title="Original: Ura-&#xA;nus" class="dta-reg">Uranus</span> entdeckt</span>, 1790 der 3 u. <span title="Original: 4" class="dta-reg">4te</span><span class="sup u "><span title="Original: te" class="dta-reg"/></span>. 1796.<br/>
+der 5 u. <span title="Original: 6" class="dta-reg">6te</span><span class="sup u "><span title="Original: te" class="dta-reg"/></span> <span title="Original: deſſelben" class="dta-reg">desselben</span>. 1801 d. 1 Jan.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">desgl. der<br/>
+kleinen Planeten</span><br/>
+</span><span class="u ">wurde</span> <span class="aq "><span class="u ">Ceres</span> von <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117685798"><span title="Original: Piazzi" class="dta-reg">Piazze</span></a></span></span></span> <span title="gefund￼" class="dta-abbr">gefunden</span>, vom<br/>
+durch <span title="ein￼" class="dta-abbr">einen</span> Schreibfehler; indem er <span title="Original: daſelbſt" class="dta-reg">daselbst</span><br/>
+vergebens <span title="ein￼" class="dta-abbr">einen</span> <span title="Original: Fixſtern" class="dta-reg">Fixstern</span> <span title="Original: aufſuchten" class="dta-reg">aufsuchten</span>. 1802<br/>
+entdeckte <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11858975X">Olbers</a></span></span> die <span class="aq ">Pallas</span>, 1804 Die<br/>
+<span class="aq ">Juno</span>, 1807 die <span title="Original: Veſta" class="dta-reg">Vesta</span>, geleitet nach <span title="Original: rei-" class="dta-reg">reiner</span><span title="Original: &#xA;ner" class="dta-reg"/> Theorie, daß <span title="Original: daſelbſt" class="dta-reg">daselbst</span> <span title="Original: Trüm̃er" class="dta-reg">Trümmer</span> von<br/>
+einem <span title="groß￼" class="dta-abbr">großen</span> <span title="Planet￼" class="dta-abbr">Planeten</span> zu finden <span title="Original: ſein" class="dta-reg">sein</span> <span title="Original: müßt" class="dta-reg">müßten</span><span class="dta-supplied">[<span title="Original: en" class="dta-reg"/>.]</span><br/>
+Wie hierüber <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118568698">Lagrange</a></span></span> die <span title="Original: vortreflichſte" class="dta-reg">vortrefflichste</span><br/>
+Auskunft gegeben. <span title="Original: Jm" class="dta-reg">Im</span> <span class="dta-del" title="Streichung (#ow)">1</span><span class="dta-add" title="Hinzufügung (across)">J</span> <span class="dta-del" title="Streichung (#ow)">8</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: 1" class="dta-reg">1818</span></span><span title="Original: 818" class="dta-reg"/>. wurde die <span title="Original: Ent-" class="dta-reg">Entdeckung</span>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">desgl. der<br/>
+<span title="Original: planetariſchen" class="dta-reg">planetarischen</span><br/>
+<span title="Original: Cometen" class="dta-reg">Kometen</span></span><br/>
+</span><span title="Original: deckung" class="dta-reg"/> <span class="u ">des planetar. <span title="Comet￼" class="dta-abbr"><span title="Original: Cometen" class="dta-reg">Kometen</span></span> gemacht</span><br/>
+<span title="Original: zwiſchen" class="dta-reg">zwischen</span> dem Merkur u. den <span title="Original: Aſteroiden" class="dta-reg">Asteroiden</span><br/>
+1826. <span title="Original: de" class="dta-reg">des</span><span class="dta-del" title="Streichung (#ow)">r</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: s" class="dta-reg"/></span> <span title="Comet￼" class="dta-abbr"><span title="Original: Cometen" class="dta-reg">Kometen</span></span> von <span title="Personenname"><a href="http://d-nb.info/gnd/116164603">Biela</a></span>. So <span title="Original: ſind" class="dta-reg">sind</span> im<br/>
+<span title="kurz￼" class="dta-abbr">kurzen</span> Zeitraum 5 Hauptplaneten, 8 <span title="Original: Sate-&#xA;liten" class="dta-reg">Satelliten</span> u. 2 <span title="Original: Cometen" class="dta-reg">Kometen</span> von <span title="Original: ſechs" class="dta-reg">sechs</span> <span title="deutſch￼" class="dta-abbr"><span title="Original: deutſchen" class="dta-reg">deutschen</span></span> <span title="Original: Aſtro-&#xA;nomen" class="dta-reg">Astronomen</span> gefunden worden. Seit einem <span title="halb￼" class="dta-abbr">halben</span><br/>
+Jahrhundert <span title="Original: iſt" class="dta-reg">ist</span> durch fleißiges beobachten<br/>
+die Zahl <span title="derſelb￼" class="dta-abbr"><span title="Original: derſelben" class="dta-reg">derselben</span></span> verdoppelt worden.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Harmonie<br/>
+des Ganzen <span title="Original: unter-&#xA;suchen" class="dta-reg">untersuchen</span>.</span><br/>
+</span>So wie in der vergleichenden Erdkunde man<br/>
+<span title="Original: ſich" class="dta-reg">sich</span> bemüht zu <span title="Original: ſehen" class="dta-reg">sehen</span>, in <span title="Original: wel" class="dta-reg">welcher</span><span class="u "><span title="Original: cher" class="dta-reg"/> Harmonie</span><br/>
+das Ganze <span title="Original: ſteht" class="dta-reg">steht</span>, <span title="Original: ſo" class="dta-reg">so</span> wollen wir dies auch<br/>
+bei den Planeten <span title="Original: verſuchen" class="dta-reg">versuchen</span> u. die<br/>
+<span title="einzeln￼" class="dta-abbr">einzelnen</span> <span title="Original: Geſetze" class="dta-reg">Gesetze</span> <span title="derſelb￼" class="dta-abbr"><span title="Original: derſelben" class="dta-reg">derselben</span></span> beobachten<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Entfernung<br/>
+d. <span title="Planet￼" class="dta-abbr">Planeten</span>.</span><br/>
+</span>Wir betrachten <span title="Original: zuerſt" class="dta-reg">zuerst</span> <span title="Original: ihr" class="dta-reg">ihre</span><span class="u "><span title="Original: e" class="dta-reg"/> <span title="Entfernung￼" class="dta-abbr">Entfernungen</span></span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Die Erde</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0115 : 111.|</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Entfernung der<br/>
+Erde von d. <span title="Original: Soñe" class="dta-reg">Sonne</span>.</span><br/>
+</span>Die <span title="Original: Er" class="dta-reg">Erde</span><span class="u "><span title="Original: de" class="dta-reg"/> <span title="Original: iſt" class="dta-reg">ist</span> 108 <span title="Original: Soñendurchme" class="dta-reg">Sonnendurchmesser</span></span><span title="Original: ſſer" class="dta-reg"/>, oder<br/>
+<span title="Original: 20½" class="dta-reg">201/2</span> Mill. Meilen von der <span title="Original: Soñe" class="dta-reg">Sonne</span> entfernt;<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">des Saturn</span><br/>
+</span><span class="u ">Saturn</span> 1030 <span title="Original: Soñendurchmeſſer" class="dta-reg">Sonnendurchmesser</span>, <span class="u ">Uranus</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">des Uranus</span><br/>
+</span>doppelt <span title="Original: ſo" class="dta-reg">so</span> weit od. 19 Erdweiten von<br/>
+der <span title="Original: Soñe" class="dta-reg">Sonne</span> od. 400 Mill. Meilen. Welche<br/>
+Entfernung derjenige <span title="Original: Comet" class="dta-reg">Komet</span> hat, der am<br/>
+<span title="weiteſt￼" class="dta-abbr"><span title="Original: weiteſten" class="dta-reg">weitesten</span></span> von der <span title="Original: Soñe" class="dta-reg">Sonne</span> <span title="Original: abſteht" class="dta-reg">absteht</span>, <span title="Original: kañ" class="dta-reg">kann</span> man<br/>
+nur nach Analogie <span title="Original: ſchließen" class="dta-reg">schließen</span>. Zb. <span title="Original: iſt" class="dta-reg">ist</span> der<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Entfernung<br/>
+<span title="Original: de" class="dta-reg">des</span><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span><span title="Original: s" class="dta-reg"/> <span title="Original: Cometen" class="dta-reg">Kometen</span></span><br/>
+</span><span class="u "><span title="Original: Comet" class="dta-reg">Komet</span> von 1680, <span title="Original: 3½" class="dta-reg">31/2</span></span> <span title="Original: mal" class="dta-reg">Mal</span> <span title="Original: ſo" class="dta-reg">so</span> weit als<br/>
+Uranus entfernt, der von 1811. der<br/>
+3300 J. Umlaufszeit braucht, 22 <span title="Original: mal" class="dta-reg">Mal</span><br/>
+<span title="Original: ſo" class="dta-reg">so</span> weit als Uranus. Hieraus <span title="Original: ſehen" class="dta-reg">sehen</span><br/>
+wir, daß das <span title="Original: Planetenſyſtem" class="dta-reg">Planetensystem</span> der <span title="Original: kleinſte" class="dta-reg">kleinste</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Kleiner<br/>
+<span title="Original: Theil" class="dta-reg">Teil</span> des <span title="Original: Soñenſyſtems" class="dta-reg">Sonnensystems</span><br/>
+sind die Planeten</span><br/>
+</span><span title="Original: Theil" class="dta-reg">Teil</span> vom ganzen <span title="Original: Syſtem" class="dta-reg">System</span> <span title="Original: iſt" class="dta-reg">ist</span>, <span title="Original: deñ" class="dta-reg">denn</span> der<br/>
+ganze <span title="Original: Abſtand" class="dta-reg">Abstand</span> des Uranus von der<br/>
+<span title="Original: Soñe" class="dta-reg">Sonne</span> <span title="Original: iſt" class="dta-reg">ist</span> nur <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">der </span>10,000 <span title="Original: Theil" class="dta-reg">Teil</span> der <span title="Original: Syriusweite" class="dta-reg">Siriusweite</span>,<br/>
+u. nehme ich das ganze <span title="Original: Soñenſyſtem" class="dta-reg">Sonnensystem</span> <span title="Original: nebſt" class="dta-reg">nebst</span><br/>
+den <span title="fernſt￼" class="dta-abbr"><span title="Original: fernſten" class="dta-reg">fernsten</span></span> <span title="Original: Cometen" class="dta-reg">Kometen</span>, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: kañ" class="dta-reg">kann</span> ich dies 200<br/>
+<span title="Original: mal" class="dta-reg">Mal</span> in <span title="Original: dieſen" class="dta-reg">diesen</span> Raum noch hinein <span title="Original: ſetzen" class="dta-reg">setzen</span>.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Größe der<br/>
+Planeten hat keinen<br/>
+<span title="Original: Zuſam̃enhang" class="dta-reg">Zusammenhang</span> mit der<br/>
+Entfernung <span title="Original: derſelben" class="dta-reg">derselben</span></span><br/>
+</span><span title="Original: Jn" class="dta-reg">In</span> <span title="Original: Hinſicht" class="dta-reg">Hinsicht</span> der Größe der <span title="Planet￼" class="dta-abbr">Planeten</span> zu ihrem<br/>
+<span title="Original: Abſtande" class="dta-reg">Abstande</span> von der <span title="Original: Soñe" class="dta-reg">Sonne</span> <span title="Original: giebt" class="dta-reg">gibt</span> es keinen<br/>
+<span title="Original: Zuſam̃enhang" class="dta-reg">Zusammenhang</span> u. <span title="Original: fortſchreitende" class="dta-reg">fortschreitende</span> <span title="Original: Progreſſion" class="dta-reg">Progression</span>.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">der <span title="Original: kleinſte" class="dta-reg">kleinste</span><br/>
+u. größte aller<br/>
+Monden.</span><br/>
+</span><span class="u ">Der <span title="Original: kleinſte" class="dta-reg">kleinste</span> aller</span> Monden <span title="Original: iſt" class="dta-reg">ist</span> der <span title="Original: iñerſte" class="dta-reg">innerste</span><br/>
+im Saturnsringe, der <span class="u ">größte <span title="Original: iſt" class="dta-reg">ist</span></span> der <span title="Original: 3" class="dta-reg">3te</span><span class="sup u "><span title="Original: te" class="dta-reg"/></span><br/>
+des Jupiters u. der <span title="Original: 6" class="dta-reg">6te</span><span class="sup u "><span title="Original: te" class="dta-reg"/></span> des Saturns.</p><br/>
+<p class="dta-p"><span title="Original: Jhre" class="dta-reg">Ihre</span> <span title="Original: Abſtände" class="dta-reg">Abstände</span> in Halbmeßern des <span title="Original: Hauptpla-&#xA;neten" class="dta-reg">Hauptplaneten</span> ausgedrückt liefern folgende <span title="Original: Reſul-&#xA;tate" class="dta-reg">Resultate</span>. Saturns Monde <span title="Original: ſind" class="dta-reg">sind</span> in der <span title="Original: Mittel-" class="dta-reg">Mittelzahl</span>
+<span class="dta-marginal dta-marginal-left"><span class="b u "><span title="Original: Jhre" class="dta-reg">Ihre</span> <span title="Ent-&#xA;fernung￼" class="dta-abbr"><span title="Original: Ent-&#xA;fernungen" class="dta-reg">Entfernungen</span></span> vom<br/>
+Haupt-Planeten</span><br/>
+</span><span title="Original: zahl" class="dta-reg"/> drei <span title="Original: Halbmeſſer" class="dta-reg">Halbmesser</span>; die des Jupiter<br/>
+fünf <span title="Original: Halbmeſſer" class="dta-reg">Halbmesser</span> u. die des Uranus 13<br/>
+<span title="Original: Halbmeſſer" class="dta-reg">Halbmesser</span> <span class="u ">entfernt</span>; der Mond der Erde<br/>
+<span title="Original: iſt" class="dta-reg">ist</span> 60 <span title="Original: Halbmeſſer" class="dta-reg">Halbmesser</span> <span title="derſelb￼" class="dta-abbr"><span title="Original: derſelben" class="dta-reg">derselben</span></span> weit, <span title="Original: alſo" class="dta-reg">also</span> ein<br/>
+<span title="Original: ſehr" class="dta-reg">sehr</span> entfernter Trabant. Die <span title="Original: Abſtände" class="dta-reg">Abstände</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">der</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0116 : 112.|</span><br/>
+der Planeten von der <span title="Original: Soñe" class="dta-reg">Sonne</span> erregten<br/>
+<span title="Original: ſchon" class="dta-reg">schon</span> in der <span title="Original: früheſten" class="dta-reg">frühesten</span> Zeit große <span title="Original: Aufmerkſam-&#xA;keit" class="dta-reg">Aufmerksamkeit</span> u. die Pythagoräer bildeten hierüber<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u "><span title="Personenname"><a href="http://d-nb.info/gnd/118561448"><span title="Original: Kepler" class="dta-reg">Keplers</span></a></span><span title="Original: s" class="dta-reg"/><br/>
+<span title="Original: Syſtem" class="dta-reg">System</span> der <span title="Original: Abſtände" class="dta-reg">Abstände</span><br/>
+d. Planeten von<br/>
+der <span title="Original: Soñe" class="dta-reg">Sonne</span>.</span><br/>
+</span>sich Sätze. <span class="u "><span title="Original: Erſt" class="dta-reg">Erst</span> <span title="Personenname"><a href="http://d-nb.info/gnd/118561448">Kepler</a></span> <span title="Original: ab" class="dta-reg">aber</span><span title="Original: er" class="dta-reg"/></span> brachte<br/>
+ihren <span title="Original: Abſtand" class="dta-reg">Abstand</span> in eine regelmäßige Reihe<br/>
+u. behauptete, <span title="dß" class="dta-abbr">daß</span> <span title="Original: darnach" class="dta-reg">danach</span> ein neuer <span title="Original: Pla-&#xA;net" class="dta-reg">Planet</span> noch gefunden werden <span title="Original: müße" class="dta-reg">müsse</span>. Es <span title="Original: iſt" class="dta-reg">ist</span><br/>
+dies der <span title="Original: bekañte" class="dta-reg">bekannte</span> Satz, nach welchem, wie<br/>
+ich den <span title="Original: Abſtand" class="dta-reg">Abstand</span> des Merkur = 4, <span title="Original: añehme" class="dta-reg">annehme</span><br/>
+der <span title="Original: Abſtand" class="dta-reg">Abstand</span> der Venus 4 + 3 <span title="Original: iſt" class="dta-reg">ist</span>, der Erde<br/>
+4 + 2 ∙ 3, <span title="Original: de" class="dta-reg">des</span><span class="dta-del" title="Streichung (#ow)">r</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: s" class="dta-reg"/></span> Mars 4 + 4 ∙ 3, des<br/>
+Jupiter 4 + 16 ∙ 3, des Saturn 4 + 32 ∙ 3,<br/>
+des Uranus 4 + 64 ∙ 3. Es fehlte in <span title="Original: dieſer" class="dta-reg">dieser</span><br/>
+Reihe 4 + 8 ∙ 3. u. in <span title="Original: neuſten" class="dta-reg">neusten</span> Zeit<br/>
+wurden <span title="Original: zwiſchen" class="dta-reg">zwischen</span> Mars u. Jupiter die <span title="Original: Aſte-&#xA;roiden" class="dta-reg">Asteroiden</span> entdeckt, deren Entfernung 4 + 8 ∙ 3<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Richtung<br/>
+der Bewegung.</span><br/>
+</span><span title="Original: iſt" class="dta-reg">ist</span>. Alle Haupt- u. Nebenplaneten <span title="Original: bewe-&#xA;gen" class="dta-reg">bewegen</span> <span title="Original: ſich" class="dta-reg">sich</span> in <span class="u ">einen Richtung um die <span title="Original: Soñe" class="dta-reg">Sonne</span>, <span class="gap">[unleserliches Material]</span>-</span><br/>
+lich von <span title="Original: Weſten" class="dta-reg">Westen</span> nach <span title="Original: Oſten" class="dta-reg">Osten</span>; die <span title="Original: Cometen" class="dta-reg">Kometen</span><br/>
+aber gehen in allen Richtungen. Gegen<br/>
+den <span title="Original: Soñen-Aequator" class="dta-reg">Sonnen-Äquator</span> neigt <span title="Original: ſich" class="dta-reg">sich</span>, am<br/>
+<span title="Original: wenigſten" class="dta-reg">wenigsten</span> Merkur, nur 3°, am <span title="Original: meiſten" class="dta-reg">meisten</span><br/>
+Pallas, 37°8<span title="Original: ′" class="dta-reg">'</span>, Juno 16° <span title="Original: pp" class="dta-reg"><span class="aq "><span title="Original: etc" class="dta-reg">etc.</span></span><span title="Original: ." class="dta-reg"/> <span class="aq "><span title="Original: etc" class="dta-reg">etc.</span></span><span title="Original: ." class="dta-reg"/></span> Die <span title="Original: Mon" class="dta-reg">Mondneigung</span><span class="dta-supplied">[<span title="Original: d-" class="dta-reg"/>]</span><span title="Original: &#xA;neigung" class="dta-reg"/> <span title="Original: iſt" class="dta-reg">ist</span> wenig <span title="Original: verſchieden" class="dta-reg">verschieden</span> von der<br/>
+Neigung der Erdaxe; hingegen die <span title="Original: Ura-" class="dta-reg">Uranusmonde</span><span title="Original: &#xA;nusmonde" class="dta-reg"/> <span title="Original: ſtehen" class="dta-reg">stehen</span> <span title="Original: ſenkrecht" class="dta-reg">senkrecht</span> auf ihrer Bahn<br/>
+bei den Jupiter u. Saturns-Trabanten<br/>
+bemerken wir, daß die <span title="Original: entferntern" class="dta-reg">entfernteren</span> <span title="Original: M" class="dta-reg">Monde</span><span class="dta-supplied">[<span title="Original: onde" class="dta-reg"/>]</span><br/>
+mehr geneigt <span title="Original: ſind" class="dta-reg">sind</span> als die nähern. Etwas<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Gemeinsames<br/>
+der Bewegung aller<br/>
+Monde um ihren<br/>
+Hptplaneten</span><br/>
+</span><span class="u "><span title="Original: gemeinſames" class="dta-reg">gemeinsames</span> haben alle Monde</span>, daß ihr<br/>
+Umlaufszeit um den <span title="Hauptplanet￼" class="dta-abbr">Hauptplaneten</span> gleich<br/>
+<span title="Original: iſt" class="dta-reg">ist</span> der Rotation um ihre <span title="Original: Axe" class="dta-reg">Achse</span>, u. daß<br/>
+Alle, dem <span title="Hauptplanet￼" class="dta-abbr">Hauptplaneten</span> nur eine Seite<br/>
+zeigen. <span title="Original: Jm" class="dta-reg">Im</span> allgemeinen <span title="hab￼" class="dta-abbr">haben</span> die <span title="Original: Bahn" class="dta-reg">Bahnen</span><span class="dta-supplied">[<span title="Original: en" class="dta-reg"/>]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">der</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0117 : 113.|</span><br/>
+der Planeten wenig <span title="Original: Excentricität" class="dta-reg">Exzentrizität</span>.<br/>
+Juno u. Pallas hingegen <span title="Original: ſehr" class="dta-reg">sehr</span> bedeutende<br/>
+u. <span title="Original: faſt" class="dta-reg">fast</span> der <span title="Original: 4" class="dta-reg">4te</span><span class="sup u "><span title="Original: te" class="dta-reg"/></span> <span title="Original: Theil" class="dta-reg">Teil</span> der <span title="Original: mittlern" class="dta-reg">mittleren</span> <span title="Original: Ent-&#xA;fernung" class="dta-reg">Entfernung</span> von der <span title="Original: Soñe" class="dta-reg">Sonne</span> oder 0,25 Mars<br/>
+0,09, Venus 0,006. <span title="Original: Hienach" class="dta-reg">Hiernach</span> <span title="Original: iſt" class="dta-reg">ist</span> die <span title="Original: Quan-&#xA;tität" class="dta-reg">Quantität</span> der Flexticität <span title="Original: ſehr" class="dta-reg">sehr</span> <span title="Original: verſchieden" class="dta-reg">verschieden</span>,<br/>
+u. <span title="Original: beſonders" class="dta-reg">besonders</span> <span title="Original: iſt" class="dta-reg">ist</span> die abnorme Form der<br/>
+Pallas u. Junobahn <span title="Original: ſehr" class="dta-reg">sehr</span> merkwürdig.</p></div></body></html>

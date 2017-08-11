@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session">   <div class="dta-head"><span title="Original: 28. 9 Febr.Februar" class="dta-reg">28. Vorlesung, 09.02.1828</span></div><br/>
+<p class="dta-p">Die verschiedenen Tiefen, in denen man keine Veränderungen mehr <span title="Original: be-&#xA;merkt" class="dta-reg">bemerkt</span>, sind genauer folgende:<br/>
+<div class="dta-list">   <span class="dta-list-item"><span class="dta-metamark" title="metamark">⎡</span><span class="dta-del" title="Streichung (#s)">bei</span><span class="dta-add" title="Hinzufügung (superlinear)">unter</span> <span title="Original: 2½" class="dta-reg">21/2</span> <span title="Original: Fus" class="dta-reg">Fuß</span> keine Veränderung in 24 Stunden</span>
+<span class="dta-list-item"><span title="Original: —" class="dta-reg"><span title="Original: 〃" class="dta-reg">"</span></span> 20 <span title="Original: — — —" class="dta-reg"><span title="Original: 〃" class="dta-reg">"</span> <span title="Original: 〃" class="dta-reg">"</span> <span title="Original: 〃" class="dta-reg">"</span></span> in einem Jahre.</span>
+</div>   daher kann man durch ein Bohrloch von 20 <span title="Original: Fus" class="dta-reg">Fuß</span> Tiefe in einer Stunde<br/>
+die mittlere Temperatur des Ortes finden.</p><br/>
+<p class="dta-p">Die Caves de l'Observatoire sind 80 <span title="Original: Fus" class="dta-reg">Fuß</span> tief.<span class="dta-marginal dta-marginal-right">unter der Seine oder der<br/>
+Schwelle des Observatoire?<br/>
+</span></p><br/>
+<p class="dta-p">Herr <span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span> und ich, wir haben in den Gärten des Observatoriums<br/>
+an einem sehr <span title="Original: heissen" class="dta-reg">heißen</span> Tage Versuche gemacht, indem wir mehrere<br/>
+Thermometer in die Erde einsenkten; es war am 20. Julius 1825, wo das<br/>
+<span title="Therm." class="dta-abbr">Thermometer</span> im Schatten <span title="Original: 26½" class="dta-reg">261/2</span>° R. zeigte, und der Sand sich bis auf 42° <span title="Original: er-&#xA;hizte" class="dta-reg">erhitzte</span>, (unter den Tropen habe ich den Sand bis auf 52° beobachtet.)</p><br/>
+<div class="dta-list">   <div class="dta-list-item"><span title="Schreibfehler: das" class="dta-corr">Das</span> <span title="Therm." class="dta-abbr">Thermometer</span> zeigte in <span title="Original: 1½" class="dta-reg">11/2</span> <span title="Original: Fus" class="dta-reg">Fuß</span> Tiefe <span title="Original: 22½" class="dta-reg">221/2</span>° R.<br/>
+</div>   <div class="dta-list-item"><span title="Original: — &#34; —" class="dta-reg"><span title="Original: 〃" class="dta-reg">"</span> <span title="Original: 〃" class="dta-reg">"</span> <span title="Original: 〃" class="dta-reg">"</span> <span title="Original: 〃" class="dta-reg">"</span></span> 10 <span title="Original: — —" class="dta-reg"><span title="Original: 〃" class="dta-reg">"</span> <span title="Original: 〃" class="dta-reg">"</span></span> <span title="Original: 11½" class="dta-reg">111/2</span>° <span title="Original: —" class="dta-reg"><span title="Original: 〃" class="dta-reg">"</span></span></div>
+<div class="dta-list-item"><span title="Original: — &#34; —" class="dta-reg"><span title="Original: 〃" class="dta-reg">"</span> <span title="Original: 〃" class="dta-reg">"</span> <span title="Original: 〃" class="dta-reg">"</span> <span title="Original: 〃" class="dta-reg">"</span></span> 20 <span title="Original: — —" class="dta-reg"><span title="Original: 〃" class="dta-reg">"</span> <span title="Original: 〃" class="dta-reg">"</span></span> <span title="Original: 9½" class="dta-reg">91/2</span>° <span title="Original: —" class="dta-reg"><span title="Original: 〃" class="dta-reg">"</span></span></div>
+</div>   <p class="dta-p">Wenn die <span title="Original: Rotazion" class="dta-reg">Rotation</span> uns <span title="Original: Translazion" class="dta-reg">Translation</span> der Erde zunähme, so<br/>
+würde der Punkt, wo man keinen Unterschied der Temperaturen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0310 : 153v|</span><br/>
+mehr <span title="Original: wahrnimt" class="dta-reg">wahrnimmt</span>, näher an der Oberfläche der Erde zu liegen <span title="Original: kom-&#xA;men" class="dta-reg">kommen</span>: die Dauer der Veränderungen <span title="Original: bestimt" class="dta-reg">bestimmt</span> die Schnelligkeit<br/>
+dieser Ab- und Zunahme: je kürzer die Tage und Jahreszeiten<br/>
+werden, um desto weniger <span class="dta-del" title="Streichung (#s)">Zeit</span> hat die Oberfläche der Erde<br/>
+Zeit, die Veränderungen welche in der <span title="Original: angränzenden" class="dta-reg">angrenzenden</span> Luft <span title="Original: vor-&#xA;gehn" class="dta-reg">vorgehen</span>, anzunehmen. Die Theorie <span title="Original: giebt" class="dta-reg">gibt</span>, dass die Zeiten der<br/>
+Temperaturveränderungen sich verhalten wie die Quadrate<br/>
+der Entfernungen: die täglichen Veränderungen verhalten sich<br/>
+zu den jährlichen wie 1:19 (welches ungefähr das Quadrat<br/>
+aus 365 ist) oder: ein Ort, wo man die jährlichen <span title="Original: Oszilla-&#xA;zionen" class="dta-reg">Oszillationen</span> nicht mehr bemerken soll, muss 19 <span title="Original: mal" class="dta-reg">Mal</span> tiefer liegen,<br/>
+als einer, wo man die täglichen nicht mehr wahrnimmt. <span title="Original: –" class="dta-reg">-</span><br/>
+Die Empirie <span title="Original: giebt" class="dta-reg">gibt</span> uns zwei Mittel, dies zu erforschen und<br/>
+zu bestätigen:<br/>
+<div class="dta-list">   <span class="dta-list-item">1, die Beobachtungen in der Grubenluft und in den <span title="Original: Gruben-&#xA;quellen" class="dta-reg">Grubenquellen</span>: allein diese sind gefährlich, in dem die Grubenluft<br/>
+immer <span title="Original: komprimirt" class="dta-reg">komprimiert</span> ist, und die Grubenquellen kein gutes<br/>
+Resultat geben, insofern sie meist aus den oberen <span title="Original: Strekken" class="dta-reg">Strecken</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0311 : 154r|</span><br/>
+<div class="fw-top fw-sig">39.</div><br/>
+<span title="Original: herabfliessen" class="dta-reg">herabfließen</span>, also die Temperatur der oberen Schichten, und nicht<br/>
+der unteren angeben. Hieran hat <span title="Hr." class="dta-abbr">Herr</span> <span title="Personenname"><a href="http://d-nb.info/gnd/116817569">v. Buch</a></span> die scharfsinnige<br/>
+Bemerkung geknüpft, dass das Eindringen der Wärme in den<br/>
+Erdkörper durch das Eindringen der Flüssigkeit selbst <span title="Original: ge-&#xA;schieht" class="dta-reg">geschieht</span>, welche ihre obere Temperatur mitbringen, und dass<br/>
+diesem Grunde die <span title="Original: wohlthätige" class="dta-reg">wohltätige</span> Erscheinung zuzuschreiben sei,<br/>
+dass im Ganzen die innere Erdwärme gegen den Nordpol hin<br/>
+<span title="Original: grösser" class="dta-reg">größer</span> ist, als bei uns, und vielleicht selbst unter dem <span title="Original: Ae-&#xA;quator" class="dta-reg">Äquator</span>.</span>
+<span class="dta-list-item">2, die Beobachtungen der Quellen selbst, und dies ist das beste<br/>
+und sicherste Mittel. Je <span title="Original: heisser" class="dta-reg">heißer</span> eine Quelle ist, desto tiefer<br/>
+kämt sie herauf.</span>
+</div></p>   <p class="dta-p">Schon den Alten war die Theorie der Vulkane<span class="dta-add" title="Hinzufügung (superlinear)"> <span title="Original: bekant" class="dta-reg">bekannt</span></span>,<span class="dta-metamark" title="metamark">⎡</span> womit sie<br/>
+eine poetische <span class="dta-del" title="Streichung (#s)">und</span> Idee von der Werkstatt des Hephaistos<br/>
+und dem Pyriphlegeton verbanden. <span title="Personenname"><a href="http://d-nb.info/gnd/118594893">Plato</a></span> hat eine <span title="Original: Kentnis" class="dta-reg">Kenntnis</span><br/>
+von der Zentralwärme. <span title="Personenname"><a href="http://d-nb.info/gnd/118524844">Descartes</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/118571249">Leibnitz</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/118720066">Halley</a></span> haben <span title="Original: Unter-&#xA;suchungen" class="dta-reg">Untersuchungen</span> darüber <span title="Original: angestelt" class="dta-reg">angestellt</span>: am meisten aber beschäftigte sich<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0312 : 154v|</span><br/>
+<span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/11931035X"><span title="Original: Méran" class="dta-reg">Meran</span></a></span></span> damit, von dem 2 <span title="Original: Mémoires" class="dta-reg">Memoires</span> in den Annalen der <span title="Original: Aka-&#xA;démie" class="dta-reg">Akademie</span> <span title="Original: stehn" class="dta-reg">stehen</span>: das erste vom Jahr 1720, das <span title="Original: 2" class="dta-reg">2te</span><span title="￼" class="dta-abbr"><span class="sup u "><span title="Original: te" class="dta-reg"/></span></span> von 1765. (man<br/>
+wird nicht leicht von einem Gelehrten 2 <span title="Original: Mémoires" class="dta-reg">Memoires</span> finden, die so<br/>
+weit auseinander liegen.) Da aber zu seiner Zeit der analytische<br/>
+Kalkul noch sehr unvollkommen war, so hat er viele <span title="Schreibfehler: falschen" class="dta-corr">falsche</span><br/>
+Resultate: so glaubte er berechnet zu haben, dass für Paris<br/>
+die Quantität Wärme, welche aus dem Zentrum strömt für<br/>
+ein Jahr 400 <span title="Original: mal" class="dta-reg">Mal</span> <span title="Original: grösser" class="dta-reg">größer</span> sei, als die Sonnenwärme, die er:<br/>
+été solaire <span title="Original: nante" class="dta-reg">nannte</span>. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118568876">Lambert</a></span></span> hat schöne Versuche hierüber<br/>
+<span title="Original: angestelt" class="dta-reg">angestellt</span>; eben so <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/100141498">Jean Sanac</a></span></span> <span class="dta-metamark" title="metamark">(?)</span> in den Vogesen; <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118804790">Saussure</a></span></span><br/>
+mit viel <span title="Original: grösserer" class="dta-reg">größerer</span> Schärfe in Bex und dann auf seiner<br/>
+Reise; <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117528552">Fox</a></span></span> und <span class="u "><span title="Personenname"><a href="https://viaf.org/viaf/6414856"><span title="Original: Bolt" class="dta-reg">Bohlt</span></a></span></span> <span class="dta-metamark" title="metamark">(?)</span> in den Bergwerken von Devonshire;<br/>
+hier bemerkte man, wie die Luft durch die Wärme der <span title="Original: obern" class="dta-reg">oberen</span><br/>
+<span title="Original: Athmosphäre" class="dta-reg">Atmosphäre</span> <span title="Original: alterirt" class="dta-reg">alteriert</span> wird, weil ein beständiger <span title="Original: Luftwech-&#xA;sel" class="dta-reg">Luftwechsel</span> <span title="Original: stat" class="dta-reg">statt</span> findet: da durch Wärme die Luft <span title="Original: verdünt" class="dta-reg">verdünnt</span> wird und<br/>
+in die Höhe steigt, so <span title="Original: solte" class="dta-reg">sollte</span> man glauben, dass die Kälte<br/>
+(wenn man so sagen darf) weniger leicht in die Tiefen <span title="Original: ein-" class="dta-reg">eindringt</span>
+<span class="dta-pb" style="padding-left:15em">|#f0313 : 155r|</span><br/>
+<span title="Original: dringt" class="dta-reg"/>: allein <span title="Original: hiebei" class="dta-reg">hierbei</span> scheint kein Unterschied zu sein. Das<br/>
+beste Mittel bleiben immer die Bohrlöcher, welche der verdienstvolle<br/>
+<span title="Hr." class="dta-abbr">Herr</span> <span title="Personenname"><a href="http://d-nb.info/gnd/11889448X">v. Trebra</a></span> schon vor langer Zeit in Sachsen angewendet hat: er<br/>
+fand in einer Tiefe von 90 Lachter +9° R.<span class="dta-del" title="Streichung (#s)"> <span class="dta-metamark" title="metamark">?</span></span><br/>
+<span class="et ">in 130 <span title="Original: —" class="dta-reg"><span title="Original: 〃" class="dta-reg">"</span></span> +12° <span title="Original: —" class="dta-reg"><span title="Original: 〃" class="dta-reg">"</span></span></span></p><br/>
+<p class="dta-p"><span title="Personenname"><a href="http://d-nb.info/gnd/117668729">Dubuisson</a></span> trieb ein Bohrloch bis auf 1000 <span title="Original: Fus" class="dta-reg">Fuß</span>, und<span title="Schreibfehler: " class="dta-corr"> in</span> einigen <span title="Original: Schach-&#xA;ten" class="dta-reg">Schachten</span> von England kam man so tief, dass die Temperatur +20° R.<br/>
+betrug, während die mittlere <span title="Temp." class="dta-abbr">Temperatur</span> von Freiberg nur +6° ist. In<br/>
+Peru auf einer Höhe von 11,000 <span title="Original: Fus" class="dta-reg">Fuß</span>, deren mittlere <span title="Temp." class="dta-abbr">Temperatur</span> +5 bis 6° war,<span class="dta-add" title="Hinzufügung (right)"> (ungefähr wie Berlin)</span><br/>
+fuhr ich an, und fand in dem Bergwerke die <span title="Temp." class="dta-abbr">Temperatur</span> von +15°; in<br/>
+Mexiko auf 6000 <span title="Original: Fus" class="dta-reg">Fuß</span> Höhe, <span class="dta-del" title="Streichung (#s)">de</span> wo die mittlere <span title="Temp." class="dta-abbr">Temperatur</span> <span title="Original: +12–" class="dta-reg">+12-</span>13° war,<br/>
+befuhr ich einen Schacht von 1450 <span title="Original: Fus" class="dta-reg">Fuß</span> Tiefe, der zu den tiefsten <span title="Original: bekan-&#xA;ten" class="dta-reg">bekannten</span> gehört, und fand unten eine Quelle von +27° R.</p><br/>
+<p class="dta-p">In ganz neuer Zeit ungefähr vor <span title="Original: 1–2" class="dta-reg">1-2</span> Jahren hat <span title="Hr." class="dta-abbr">Herr</span> <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/102458561"><span title="Original: Cordier" class="dta-reg">Kordier</span></a></span></span> ein<br/>
+<span title="Original: schäzbares" class="dta-reg">schätzbares</span> Mémoire herausgegeben, worin er die relative Tiefe<br/>
+mit dem Zunehmen der Wärme vergleicht: allein die <span title="Original: Bedingun-&#xA;gen" class="dta-reg">Bedingungen</span> sind so mannigfaltig, und veränderlich, dass man man <span title="Original: bis-" class="dta-reg">bis</span><br/>
+<span title="Original: jezt" class="dta-reg">jetzt</span> noch zu keinem Resultate hat kommen können; indes<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0314 : 155v|</span><br/>
+<span title="Original: läst" class="dta-reg">lässt</span> sich vergleichungsweise sagen, dass die Kälte nach dem <span title="Original: Innern" class="dta-reg">Inneren</span><br/>
+der Erde zu weit schneller <span title="Original: abnimt" class="dta-reg">abnimmt</span>, als die Wärme, wenn man sich<br/>
+von der Oberfläche der Erde erhebt: man braucht oft nur 80 <span title="Original: Fus" class="dta-reg">Fuß</span> tief<br/>
+zu steigen, und die Wärme wird um 1° zunehmen; in der Luft dagegen<br/>
+<span title="Original: mus" class="dta-reg">muss</span> man sich 650 <span title="Original: Fus" class="dta-reg">Fuß</span> erheben, wenn die Wärme um 1° abnehmen soll.<br/>
+in Paris hat man in einer Tiefe von 85 <span title="Original: Fus" class="dta-reg">Fuß</span> eine Temperatur, die<br/>
+konstant auf +9°,4 R. <span title="Original: stehn" class="dta-reg">stehen</span> bleibt, während die mittlere <span title="Temp." class="dta-abbr">Temperatur</span> des<br/>
+Ortes +8°,5 R. ist.</p><br/>
+<p class="dta-p">Die ersten Versuche über die Quellen machte <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/15978512X">Roebuck</a></span></span> 1775, ein <span title="Original: engli-&#xA;scher" class="dta-reg">englischer</span> Physiker, dessen Arbeiten in den Philosophical <span title="Original: transactions" class="dta-reg">Transaktion</span><br/>
+<span title="Original: stehn" class="dta-reg">stehen</span>.</p><br/>
+<p class="dta-p">Wir unterscheiden bei den Quellen 2erlei Arten.<br/>
+<div class="dta-list"><span class="dta-list-item">1, solche die ihre Temperatur nicht verändern</span>
+<span class="dta-list-item">2, <span title="Original: ––––––––" class="dta-reg"><span title="Original: 〃" class="dta-reg">"</span></span> bei denen man kleine <span title="Original: Oszillazionen" class="dta-reg">Oszillationen</span> der Monate bemerkt.</span></div><br/>
+In der Reise von <span title="Personenname"><a href="http://d-nb.info/gnd/116817569">Buch</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/117560952">Wahlenberg</a></span> ist es zuerst bemerkt,<br/>
+dass im Norden eine <span title="Original: grössere" class="dta-reg">größere</span> Erdwärme <span title="Original: herscht" class="dta-reg">herrscht</span> als bei uns, und<br/>
+dass dies den Quellen zuzuschreiben sei. Wir <span title="Original: sehn" class="dta-reg">sehen</span>, dass es am <span title="Original: Nord-&#xA;kap" class="dta-reg">Nordkap</span> und an der Hudsonsbay immer <span title="Original: fliessende" class="dta-reg">fließende</span> Quellen <span title="Original: giebt" class="dta-reg">gibt</span>.</p><br/>
+<p class="dta-p">In Schweden vom 56 bis 66° Nordbreite <span title="Original: nimt" class="dta-reg">nimmt</span> die Wärme der Quellen<br/>
+um 3 bis 4° zu. <span title="Hrn." class="dta-abbr">Herrn</span> <span title="Personenname"><a href="http://d-nb.info/gnd/119059452"><span title="Original: Erman" class="dta-reg">Ermans</span></a></span><span title="Original: s" class="dta-reg"/> Untersuchungen am Luisenbrunnen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0315 : 156r|</span><br/>
+haben gezeigt, dass bei uns die <span title="Temp." class="dta-abbr">Temperatur</span> der Quellen noch etwas <span title="Original: grösser" class="dta-reg">größer</span><br/>
+ist als die mittlere <span title="Temp." class="dta-abbr">Temperatur</span> des Orts: in Süddeutschland, unter 50°<br/>
+<span title="Nd." class="dta-abbr"><span title="Original: Nord" class="dta-reg">Nordbreite</span></span><span title="Original: breite" class="dta-reg"/> tritt der Punkt ein, wo die beiden <span title="Temp." class="dta-abbr">Temperaturen</span> ganz gleich sind.<br/>
+Nach Italien zu werden die Quellen kälter als die <span title="mittl." class="dta-abbr">mittlere</span> <span title="Temp." class="dta-abbr">Temperatur</span> und<br/>
+besonders auffallend ist dies auf den kanarischen Inseln, wie wir<br/>
+aus dem <span title="Original: treflichen" class="dta-reg">trefflichen</span> Werke des <span title="Hrn." class="dta-abbr">Herrn</span> <span title="Personenname"><a href="http://d-nb.info/gnd/116817569">v. Buch</a></span> wissen. Ein ähnliches <span title="Original: Phä-&#xA;nomen" class="dta-reg">Phänomen</span> beobachtete ich unter den Tropen, in der <span title="Original: grossen" class="dta-reg">großen</span> Höhle<br/>
+del Guacharo, welche von einer <span title="Original: eignen" class="dta-reg">eigenen</span> species von unterirdischen<br/>
+Vögeln, einer Art von Caprimulgus bewohnt wird: hier hatten<br/>
+Wasser und Luft eine niedrige Temperatur als <span title="Original: aussen" class="dta-reg">außen</span> vor der<br/>
+Höhle.</p><br/>
+<p class="dta-p">Im allgemeinen kann man feststellen, dass die Schichten, welche<br/>
+ungleich vom Zentrum der Erde entfernt sind, nicht immer eine<br/>
+verschiedene Temperatur haben; oder: die isothermen Schichten<br/>
+folgen allen <span title="Original: Undulazionen" class="dta-reg">Undulationen</span> der Erdoberfläche, und die Quellen<br/>
+nehmen nur <span class="dta-del" title="Streichung (#s)">die</span><span class="dta-add" title="Hinzufügung (superlinear)">ihre</span> Temperatur nach der relativen Höhe der Schichten,<br/>
+nicht nach ihrer absoluten über dem Meere, an.</p><br/>
+<p class="dta-p"><span title="Hr." class="dta-abbr">Herr</span> <span title="Personenname"><a href="http://d-nb.info/gnd/116817569">v. Buch</a></span> nahm an, dass zum <span title="Original: Theil" class="dta-reg">Teil</span> der Grund davon in der<br/>
+Periode der Regenzeit liegen könne. In allen Gegenden, wo sie statt<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0316 : 156v|</span><br/>
+findet, <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">nämlich unter den Tropen </span><span title="Original: fält" class="dta-reg">fällt</span> sie in den Winter, und dauert nie über den Mai<br/>
+hinaus: die Wasser haben also eine niedrige Temperatur, indem<br/>
+sie in die Erde eindringen, und erkälten mithin unter den Tropen<br/>
+die von ihnen berührten Erdschichten: dagegen <span title="Original: könte" class="dta-reg">könnte</span> im Norden<br/>
+vielleicht die <span title="Original: Schneedekke" class="dta-reg">Schneedecke</span> dazu beitragen, die Wärme festzuhalten,<br/>
+indem der Schnee einer der schlechtesten Wärmeleiter ist, den wir<br/>
+kennen. Indem wir annehmen, dass die isothermen Schichten<br/>
+nicht in derselben Entfernung vom Zentrum der Erde liegen, so<br/>
+müssen schon deshalb die nördlichen Länder <span class="dta-del" title="Streichung (#s)">im</span> unter der Oberfläche<br/>
+wärmer sein als die Tropen.</p><br/>
+<p class="dta-p">Wir haben noch einiges von den Eismassen zu sagen, welche man<br/>
+nahe an der Oberfläche der Erde gefunden. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/11903705X">Gmelin</a></span></span> hat alles aus<br/>
+den Archiven in <span title="Original: Rusland" class="dta-reg">Rußland</span> gesammelt, aber die <span title="Original: Facta" class="dta-reg">Fakten</span> <span class="dta-del" title="Streichung (#s)">ist</span> sind nicht<br/>
+zuverlässig, genug: so ist einer <span title="Original: Erzälung" class="dta-reg">Erzählung</span> auch nicht zu trauen,<br/>
+nach welcher in der Nähe von Irkutzk von den Kosaken ein<br/>
+Brunnen gegraben wurde, bei dem sie in der Tiefe von 100 <span title="Original: Fus" class="dta-reg">Fuß</span><br/>
+auf Eismassen <span title="Original: gestossen" class="dta-reg">gestoßen</span> sein sollen, die sie verhinderten, in der<br/>
+Arbeit weiter fortzufahren.</p><br/>
+<p class="dta-p">Sicher ist das <span title="Original: Factum" class="dta-reg">Faktum</span>, welches uns <span title="Capt." class="dta-abbr">Captain</span> <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118692844">Franklin</a></span></span> <span title="Original: mittheilt" class="dta-reg">mitteilt</span>: auf<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0317 : 157r|</span><br/>
+seiner Reise nach dem Coppermine- und Mackenzie-flusse traf<br/>
+er in der gar nicht bedeutenden Breite von <span title="Original: 65½" class="dta-reg">651/2</span> Grad in einer Tiefe<br/>
+von 3 <span title="Original: Fus" class="dta-reg">Fuß</span> auf <span title="Original: grosse" class="dta-reg">große</span> Eismassen. Wo diese Massen zu Tage anstehn,<br/>
+und nie wegschmelzen, kann es sogar eine <span title="Original: Vegetazion" class="dta-reg">Vegetation</span> auf ihnen<br/>
+geben, da ihre mittlere <span class="u "><span title="Original: Sommer" class="dta-reg">Sommertemperatur</span></span><span title="Original: temperatur" class="dta-reg"/> +5 bis 6° R. ist. <span title="Hr." class="dta-abbr">Herr</span> v.<br/>
+<span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118520040">Chamisso</a></span></span> hat uns eine schöne Beschreibung davon gegeben. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/119013266">Seguier</a></span></span> <span class="dta-metamark" title="metamark">?</span><br/>
+fand auf den Eismassen Erde, worin Pflanzen sehr gut hätten<br/>
+fortkommen können.</p><br/>
+<p class="dta-p">Noch <span title="Original: mus" class="dta-reg">muss</span> <span class="dta-del" title="Streichung (#s)">bemerkt</span><span class="dta-add" title="Hinzufügung (superlinear)">angeführt</span> werden, dass <span class="u "><span title="Hr." class="dta-abbr">Herr</span> <span title="Personenname"><a href="http://d-nb.info/gnd/116817569">v. Buch</a></span></span> die scharfsinnige<br/>
+Bemerkung machte, dass Quellen, welche Kohlensäure enthalten,<br/>
+3 bis 4° R. wärmer sind, als <span title="Original: andre" class="dta-reg">andere</span>: dies findet sich nicht nur in der<br/>
+Wetterau, zwischen Lahn und Main, sondern an vielen <span title="Original: andern" class="dta-reg">anderen</span> Orten:<br/>
+da man nun wahrgenommen, dass alle vulkanischen Explosionen<br/>
+mit der Entbindung von einer ungeheuren Menge von Kohlensäure<br/>
+verknüpft sind, so führte dies auf den <span title="Original: Schlus" class="dta-reg">Schluß</span>, dass jene Quellen, welche<br/>
+Kohlensäure enthalten, wohl näher an den vulkanischen <span title="Original: Heerden" class="dta-reg">Herden</span><br/>
+im <span title="Original: Innern" class="dta-reg">Inneren</span> der Erde liegen <span title="Original: könten" class="dta-reg">könnten</span>: daher also ihre höhere Temperatur.</p><br/>
+<p class="dta-p">Eng verbunden mit den Erscheinungen der Erdwärme ist der<br/>
+<span class="u ">Erdmagnetismus</span>.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0318 : 157v|</span><br/>
+<p class="dta-p">Wir können uns hier nicht darauf einlassen, seine Natur genauer<br/>
+zu untersuchen, sondern wir wollen nur über die geographische<br/>
+<span title="Original: Vertheilung" class="dta-reg">Verteilung</span> dieser Kräfte etwas beibringen. Indessen müssen einige<br/>
+allgemeinen Notizen über die neusten höchst wichtigen <span title="Original: Entdekkungen" class="dta-reg">Entdeckungen</span><br/>
+<span title="Original: vorausgeschikt" class="dta-reg">vorausgeschickt</span> werden, obgleich die Hauptmomente in das Gebiet<br/>
+der Physik gehören.</p><br/>
+<p class="dta-p">Die älteste Beobachtung war die, dass der Magnetismus dem<br/>
+Eisen und den Eisenerzen <span class="u ">allein</span> angehöre; man glaubte aber, dass<br/>
+die höheren Schichten der Erde nicht so magnetisch wären, als<br/>
+die tieferen: dann kam auf die <span title="Original: Entdekkung" class="dta-reg">Entdeckung</span>, dass das Eisen mit<br/>
+Kohle gemengt (als Stahl) den Magnetismus viel länger behalte,<br/>
+als sonst; man mengte das Eisen mit Schwefel und Phosphor,<br/>
+und brachte eine Mischung hervor, welche den Magnetismus sehr<br/>
+lange Zeit festhält. Bald fand man, dass Nikkel und Kobalt<br/>
+eben so gut zu Magnetnadeln dienen könne, als Eisen. Die <span title="Hrn." class="dta-abbr">Herren</span><br/>
+<span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118745468">Ritter</a></span></span> und <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/11651230X">Richter</a></span></span> <span title="Original: wolten" class="dta-reg">wollten</span> auch Mangan und Chrom <span title="Original: hieher" class="dta-reg">hierher</span> <span title="Original: ziehn" class="dta-reg">ziehen</span>,<br/>
+aber die Sache ist noch <span title="Original: ungewis" class="dta-reg">ungewiß</span>.</p><br/>
+<p class="dta-p">Endlich machte <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> die <span title="Original: grosse" class="dta-reg">große</span> <span title="Original: Entdekkung" class="dta-reg">Entdeckung</span>, dass <span class="u ">alle Körper<br/>
+transitorisch von magnetischen Kräften <span title="Original: sollizitirt" class="dta-reg">sollizitiert</span> werden können</span>:<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0319 : 158r|</span><br/>
+<div class="fw-top fw-sig">40.</div><br/>
+Die Veranlassung war folgende: wir befanden uns zusammen in<br/>
+Greenwich, um <span class="u ">Pendelbeobachtungen</span> zu machen und <span title="Hr." class="dta-abbr">Herr</span> <span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span><br/>
+lies eine Nadel in einem hölzernen Kasten schwingen, welche<br/>
+früher in Paris geschwungen hatte: er bemerkte dass sie stark<br/>
+<span title="Original: retardirte" class="dta-reg">retardierte</span>, und kam sogleich auf den Gedanken, dass der hölzerne<br/>
+Kasten attraktorisch darauf wirken müsse, welches sich <span title="Original: vollkom-&#xA;men" class="dta-reg">vollkommen</span> bestätigte. Er verfolgte nun diese <span title="Original: Entdekkung" class="dta-reg">Entdeckung</span>, und lies <span title="Original: Kup-&#xA;ferringe" class="dta-reg">Kupferringe</span> um den schwingenden Magnet machen, welche ihn alsobald<br/>
+zum Stillstand brachten: es war dasselbe, als ob er ihn im Wasser<br/>
+oder in einer <span title="Original: andern" class="dta-reg">anderen</span> hemmenden Flüssigkeit hätte schwingen<br/>
+lassen: wenn die Nadel ohne die Kupferringe 62 <span title="Original: Oszillazionen" class="dta-reg">Oszillationen</span><br/>
+machte: so <span title="Original: konte" class="dta-reg">konnte</span> sie mit denselben nach 20 <span title="Osz." class="dta-abbr"><span title="Original: Oszillazionen" class="dta-reg">Oszillationen</span></span> zum Stillstand<br/>
+gebracht werden: ja die Nähe von <span class="u ">irgend einem</span> Körper <span title="Original: äussert" class="dta-reg">äußert</span><br/>
+einen hemmenden <span title="Original: Einflus" class="dta-reg">Einfluß</span> auf die Nadel, welches man sich so<br/>
+erklären <span title="Original: mus" class="dta-reg">muss</span>, dass die Nadel in einem jeden Körper transitorisch<br/>
+einen Pot erregt, der <span class="dta-del" title="Streichung (#s)">dann</span> auf sie hemmend <span title="Original: zurükwirkt" class="dta-reg">zurückwirkt</span>, sobald<br/>
+sie in Bewegung ist, und sie in Bewegung <span title="Original: sezt" class="dta-reg">setzt</span>, wenn sie vorher<br/>
+ruhte. Hängt man eine Nadel an einem Faden auf, und bringt<br/>
+darunter eine Scheibe an, die man schnell dreht, so wird in der Scheibe<br/>
+ein Pol erregt: dieser wirkt auf die Nadel <span title="Original: zurük" class="dta-reg">zurück</span>, und nach einiger<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0320 : 158v|</span><br/>
+Zeit sieht man, dass sie zu schwingen anfängt. Um zu zeigen, dass<br/>
+dies nicht etwa von der Erschütterung der Luft herkomme, kann<br/>
+man eine gläserne Tafel über der drehenden Scheibe befestigen, die<br/>
+Erscheinung bleibt dieselbe. Auf diese Weise hat man in Wasser, sogar<br/>
+in Eis Magnetismus erregt.</p><br/>
+<p class="dta-p"><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118670239"><span title="Original: Coulon" class="dta-reg">Kowloon</span></a></span></span> verfertigte schon vor 20 Jahren Nadeln von Holz und <span title="Original: El-&#xA;fenbein" class="dta-reg">Elfenbein</span>, und lies sie neben Magnetnadeln schwingen: allein er<br/>
+kam zu keinem Resultat, und <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> gebührt mit vollem Rechte<br/>
+die <span title="Original: Entdekkung" class="dta-reg">Entdeckung</span> des transitorischen <span title="Mgntsmus" class="dta-abbr">Magnetismus</span>.</p><br/>
+<p class="dta-p"><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/116461357">Hansteen</a></span></span> in Norwegen hat bemerkt, dass Magnetnadeln <span title="Original: verschie-&#xA;den" class="dta-reg">verschieden</span> schwingen, je nachdem er sie an den Nord- oder Südseite<br/>
+der Bäume aufstellte, ja die Richtung der Bäume soll einen <span title="Original: Ein-&#xA;flus" class="dta-reg">Einfluß</span> auf die Nadel gehabt haben.</p><br/>
+<p class="dta-p">Vor allen <span title="Original: mus" class="dta-reg">muss</span> aber <span title="Personenname"><a href="http://d-nb.info/gnd/118786784"><span title="Original: Oerstädt" class="dta-reg">Oerstädt's</span></a></span><span title="Original: 's" class="dta-reg"/> schöne <span title="Original: Entdekkung" class="dta-reg">Entdeckung</span> <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">v. 1820</span> erwähnt <span title="Original: wer-&#xA;den" class="dta-reg">werden</span>, die: Wärme, Elektrizität und Magnetismus in Verbindung<br/>
+brachte: er stellte eine Magnetnadel vor die <span title="Personenname"><a href="http://d-nb.info/gnd/119292556"><span title="Original: Volta" class="dta-reg">Voltaische</span></a></span><span title="Original: ische" class="dta-reg"/> Säule, und<br/>
+fand, wenn er die Kette <span title="Original: schlos" class="dta-reg">Schloß</span>, dass die Nadel <span title="Original: affizirt" class="dta-reg">affiziert</span> wurde:<br/>
+dies war verschieden, je nachdem er sie über oder unter den <span title="Original: galva-&#xA;nischen" class="dta-reg">galvanischen</span> Strom brachte.</p><br/>
+<p class="dta-p"><span title="Personenname"><a href="http://d-nb.info/gnd/118645048"><span title="Original: Ampère" class="dta-reg">Ampere</span></a></span> fand: <span class="dta-del" title="Streichung (#s)">dass</span> wenn 2 elektrische Ströme gegen einander <span title="Original: ge-" class="dta-reg">geleitet</span>
+<span class="dta-pb" style="padding-left:15em">|#f0321 : 159r|</span><br/>
+<span title="Original: leitet" class="dta-reg"/> werden, dass ein kupferner Draht ganz dieselbe Bewegung<br/>
+macht, wie die Magnetnadel. Man machte auf diese Weise<br/>
+Magnete, indem man Metalldrähte in einer Schraubenlinie um<br/>
+einen Kupferdraht wand, wobei nicht zu übersehn ist, dass<br/>
+wenn man rechts herum windet, der Nordpol oben ist, wenn<br/>
+links herum, unten. Durch <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/116250836"><span title="Original: Poggendorf" class="dta-reg">Poggendorf's</span></a></span></span><span title="Original: 's" class="dta-reg"/> und <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118795775"><span title="Original: Schweigger" class="dta-reg">Schweigger's</span></a></span></span><span title="Original: 's" class="dta-reg"/> <span title="Original: Multi-&#xA;plikator" class="dta-reg">Multiplikator</span> ist man dahin gekommen, die Erscheinungen bedeutend<br/>
+zu verstärken, und <span title="Personenname"><a href="http://d-nb.info/gnd/116106875"><span title="Original: Bec" class="dta-reg">Becquerel</span><span class="dta-del" title="Streichung (#s)">k</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Original: qu" class="dta-reg"/></span><span class="dta-metamark" title="metamark">⎡</span><span title="Original: érell" class="dta-reg"/></a></span> sprach es aus, dass bei jeder<br/>
+chemischen Veränderung ein <span title="Original: elektro-magnetischer" class="dta-reg">Elektro-Magnetischer</span> <span title="Original: Prozes" class="dta-reg">Prozeß</span> <span title="Original: statt-&#xA;findet" class="dta-reg">stattfindet</span>: er machte selbst viele Versuche darüber, und <span title="Original: entdekte" class="dta-reg">entdeckte</span> durch<br/>
+die Magnetnadel so kleine Quantitäten von Säuren, <span class="dta-del" title="Streichung (#s)">das</span> als man<br/>
+durch Reagenzien nie würde haben auffinden können.</p><br/>
+<p class="dta-p"><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117654698">Seebeck</a></span></span> machte die glänzende <span title="Original: Entdekkung" class="dta-reg">Entdeckung</span> des <span title="Original: Thermomagne-&#xA;tismus" class="dta-reg">Thermomagnetismus</span>: er fand dass man Elektrizität und Magnetismus durch<br/>
+Wärme erregen kann; und danach <span title="Original: könte" class="dta-reg">könnte</span> man nicht ohne <span title="Original: Wahr-&#xA;scheinlichkeit" class="dta-reg">Wahrscheinlichkeit</span> <span title="Original: schliessen" class="dta-reg">schließen</span>, dass in der verschiedenen Erwärmung<br/>
+der Erdoberfläche der Grund zur <span class="u "><span title="Original: Erd" class="dta-reg">Erdelektrizität</span></span><span title="Original: elektrizität" class="dta-reg"/> zu suchen sei.<br/>
+Das vulkanische Feuer selbst mag die Spannung der <span title="Erdelektr." class="dta-abbr">Erdelektrizität</span><br/>
+<span title="Original: modifiziren" class="dta-reg">modifizieren</span>, und ihm kann es beigemessen werden, dass der <span title="Original: magne-" class="dta-reg">magnetische</span>
+<span class="dta-pb" style="padding-left:15em">|#f0322 : 159v|</span><br/>
+<span title="Original: tische" class="dta-reg"/> <span title="Original: Aequator" class="dta-reg">Äquator</span>, der ohnehin nicht mit dem <span title="Original: Erdaequator" class="dta-reg">Erdäquator</span> <span title="Original: zusam-&#xA;menfält" class="dta-reg">zusammenfällt</span>, sondern sich um ihn schlängelt, im <span title="Original: Vorrükken" class="dta-reg">vorrücken</span> <span title="Original: begrif-&#xA;fen" class="dta-reg">begriffen</span> ist.</p><br/>
+<p class="dta-p">Dass die <span title="Original: Sonnenstralen" class="dta-reg">Sonnenstrahlen</span> in leuchtende <span class="dta-del" title="Streichung (#ow)">i</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: u" class="dta-reg">und</span></span><span title="Original: nd" class="dta-reg"/> wärmeerzeugende <span title="Original: zer-&#xA;fallen" class="dta-reg">zerfallen</span>, hatte<span class="dta-del" title="Streichung (#s)">n</span> man schon früher <span title="Original: ge" class="dta-reg">gewusst</span><span class="dta-del" title="Streichung (#s)">funden</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Original: wust" class="dta-reg"/></span>: allein <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/101697406">Morecchini</a></span></span> in<br/>
+Rom fand: dass das violette Licht auch chemische <span title="Original: Stralen" class="dta-reg">Strahlen</span> enthält,<br/>
+durch deren <span title="Original: Einflus" class="dta-reg">Einfluß</span> unmagnetisches Eisen magnetisch wird. Lady<br/>
+<span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117476560">Sommerville</a></span></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/117433144">Wollaston</a></span> wiederholten diese Versuche in England.<br/>
+Je nachdem das Licht polarisch oder unpolarisch ist erhält man<br/>
+den Nord- oder Südpol: doch scheint ein<span class="dta-del" title="Streichung (#s)">e</span> besonders <span title="Original: glüklicher" class="dta-reg">glücklicher</span><br/>
+<span title="Original: Einflus" class="dta-reg">Einfluß</span> der <span title="Original: Sonnenstralen" class="dta-reg">Sonnenstrahlen</span> dazu zu gehören: denn diese Versuche<br/>
+sind nur selten <span title="Original: geglükt" class="dta-reg">geglückt</span>.</p><br/>
+<p class="dta-p">Man glaubte früher, dass die<span class="dta-del" title="Streichung (#s)">se</span> magnetischen Kräfte, welche<br/>
+in allen eben angeführten Erscheinungen <span title="Original: thätig" class="dta-reg">tätig</span> sind, sich sehr<br/>
+hoch über die Oberfläche der Erde erhöhen. Ich habe auf<br/>
+einer Höhe von 15000 <span title="Original: Fus" class="dta-reg">Fuß</span> über dem Meere magnetische<br/>
+Versuche <span title="Original: angestelt" class="dta-reg">angestellt</span>, aber durchaus keine Veränderung <span title="Original: wahr-&#xA;genommen" class="dta-reg">wahrgenommen</span>. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118716581">Gay Lussac</a></span></span>, der sich bis 21500 <span title="Original: Fus" class="dta-reg">Fuß</span> erhoben hat,<br/>
+lies in dieser Höhe Magnetnadeln schwingen, die ich vorher mit<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0323 : 160r|</span><br/>
+ihm in Paris sehr genau geprüft hatte, und fand ganz<br/>
+dieselbe Zahl von Schwingungen, wie unten: er <span title="Original: schlos" class="dta-reg">Schloß</span> daraus,<br/>
+dass also auch die magnetische Spannung dieselbe sein müsse.<br/>
+Allein <span title="Hr." class="dta-abbr">Herr</span> <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/116615168">Kupfer</a></span></span> in Kasan hat gezeigt, dass die Wärme<br/>
+<span title="Original: Einflus" class="dta-reg">Einfluß</span> auf die Schwingungen habe, und sie <span class="dta-del" title="Streichung (#s)">beschleunige</span><span class="dta-add" title="Hinzufügung (superlinear)">verringere</span>; unten<br/>
+in Paris hatten wir +27° R. <span title="Hr." class="dta-abbr">Herr</span> <span title="Personenname"><a href="http://d-nb.info/gnd/118716581">Gay Lussac</a></span> hatte oben <span title="Original: −9" class="dta-reg">9</span>° R.<br/>
+wenn also wirklich die magnetische Spannung oben und unten<br/>
+dieselbe war, so hätte der <span title="Original: Temperatur-unterschied" class="dta-reg">Temperatur-Unterschied</span> allein,<br/>
+die Nadel <span class="dta-metamark" title="metamark">⎡</span><span class="dta-del" title="Streichung (#s)">affiziren</span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="dta-del" title="Streichung (#s)"> retar </span>beschleunigen</span> müssen: es <span title="Original: läst" class="dta-reg">lässt</span> sich also <span title="Original: grade" class="dta-reg">gerade</span> aus der<br/>
+gleich <span title="Original: grossen" class="dta-reg">großen</span> Zahl der Schwingungen <span title="Original: schliessen" class="dta-reg">schließen</span>, dass die<br/>
+Intensität der magnetischen Kräfte in einer so <span title="Original: grossen" class="dta-reg">großen</span><br/>
+Höhe abgenommen habe.</p><br/>
+</div></body></html>

@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session">   <div class="dta-head"><span title="Original: 23. 23. Jan.Januar" class="dta-reg">23. Vorlesung, 23.01.1828</span></div><br/>
+<p class="dta-p">Die spezielsten und besten Mondkarten sind die von <span title="Personenname"><a href="http://d-nb.info/gnd/118728903">Lohrmann</a></span><br/>
+in Dresden; eine kleine sehr gute Karte lieferte <span title="Personenname"><a href="http://d-nb.info/gnd/118972375">Gruithusen</a></span> in<br/>
+den Bonner Schriften der <span title="Kaysers." class="dta-abbr">Kayserlichen</span> Naturforscher <span class="dta-metamark" title="metamark">(?)</span> es ist diese<br/>
+eigentlich die alte Karte von <span title="Personenname"><a href="http://d-nb.info/gnd/118579576">T. Meyer</a></span>, worin <span title="Personenname"><a href="http://d-nb.info/gnd/118972375">Gruithusen</a></span> alle<br/>
+neuen Beobachtungen, besonders die von <span title="Personenname"><a href="http://d-nb.info/gnd/11876196X">Schröter</a></span> eingetragen hat.</p><br/>
+<p class="dta-p">So wie auf der Erde ein Unterschied zwischen den beiden Hemisphären<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0240 : 118v|</span><br/>
+stattfindet, indem man die nördliche die Kontinental-<span title="Schreibfehler: " class="dta-corr">,</span> die südliche<br/>
+die ozeanische Hemisphäre nennen kann, eben so auf dem Monde;<br/>
+obgleich man keine Flüssigkeiten darauf bemerkt, und kann ein<br/>
+Raum ¼ so gros als Berlin gefunden werden kann, der völlig in<br/>
+demselben Niveau läge: nur in der nördlichen Hemisphäre des<br/>
+Mondes <span class="dta-del" title="Streichung (#s)">sind</span><span class="dta-add" title="Hinzufügung (superlinear)">sehn wir</span> Kettengebirge; von deren die Apenninen das höchste<br/>
+sind nur mit 2 Kratern, grade als ob die elastischen Dämpfe nur<br/>
+an diesen 2 Stellen das Gebirge hätten durchbrechen können. Sie sind<br/>
+unserm Alpengebirge nicht unähnlich, und liegen zwischen dem<br/>
+Mare hybrium <span class="dta-metamark" title="metamark">(?)</span> und dem Mare serenitatis. Daneben ist eine<br/>
+sehr tiefe Spalte; auf der südlichen Hemisphäre sieht man nur<br/>
+Centralgebirge oder Umwallungen. Zwischen dem Ptolemaeus und<br/>
+Orontius <span class="dta-metamark" title="metamark">(?)</span> liegt eine grosse Masse von zusammenhängenden<br/>
+<span class="u ">Essen</span> (wie sich <span title="Personenname"><a href="http://d-nb.info/gnd/116817569">Leop. v. Buch</a></span> in dem treflichen Werke über<br/>
+die Vulkane ausdrükt) welches lauter Krater sind. Bei schwa-<br/>
+chen Vergrösserungen sieht man noch eine andre Erscheinung,<br/>
+für welche wir keine genügende Erklärung haben. Vom Tycho<br/>
+anfangend sieht man eine Menge von weissen Streifen, die wie<br/>
+Lichtfäden über Berg und Thal gehn, als ob grosse Strekken Lan-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0241 : 119r|</span><br/>
+des mit weissen Blüten besezt wären. Bei stärkeren und den<br/>
+stärksten Vergrösserungen nimt das Phänomen an Deutlichkeit ab.</p><br/>
+<p class="dta-p">Von 1790 und 94 an beobachtete man vulkanische Feuererschei-<br/>
+nungen auf dem Monde: man hält aber jezt dafür, dass<br/>
+er Reflexe des Erdenlichtes im aschfarbenen Theile des Mondes<br/>
+sind, die wie röthliche und weisliche Funken erscheinen: sie<br/>
+stehn immer in der Nähe vom Helikon, zweifelhaft beim Platon.<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118568876">Lambert</a></span> hat bemerkt, dass diese Funken nur dann vorkommen,<br/>
+wenn das Innere von Afrika sein Licht auf den Mond wirft.<br/>
+Ich beobachtete mit <span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span> in Paris mehrere solche Flekken,<br/>
+die wie Sterne der 3<span title="￼" class="dta-abbr"><span class="sup uu ">ten</span></span> und 4<span title="￼" class="dta-abbr"><span class="sup u ">ten</span></span> Grösse erschienen, und es scheint<br/>
+mir nicht unmöglich, dass es grosse spiegelnde Glimmer<span class="dta-del" title="Streichung (#s)">mas-</span><span class="dta-add" title="Hinzufügung (superlinear)">flächen</span><br/>
+<span class="dta-del" title="Streichung (#s)">sen</span> sein können.</p><br/>
+<p class="dta-p"><span title="Personenname"><a href="http://d-nb.info/gnd/118808850">Boeckh</a></span> in seinem <span title="Personenname"><a href="http://d-nb.info/gnd/118791974">Philolaos</a></span> führt alle die Meinungen an, welche<br/>
+die Alten von den Bewohnern im Monde und ihren Werken<br/>
+hatten, und eine Stelle im <span title="Personenname"><a href="http://d-nb.info/gnd/118520814">Cicero</a></span> ist sehr merkwürdig für<br/>
+diese Ansicht. Um aber zu bestimmen, auf eine wie grosse Ge-<br/>
+nauigkeit wir bei diesen Untersuchungen rechnen können, müssen<br/>
+wir zuerst die Frage beantworten, wie hoch oder wie gros mus<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0242 : 119v|</span><br/>
+ein Gegenstand sein, damit wir ihn auf dem Monde unterschei-<br/>
+den können? Diese Frage läst sich mit so grosser mathemati-<br/>
+scher Sicherheit beantworten, als nur irgend eine. Man macht<br/>
+sich auf der Erde gewöhnlich zu grosse Vorstellungen von der<br/>
+Ausdehnung der Städte: denn wenn <span title="Schreibfehler: " class="dta-corr">man</span> auch für London 5 englische<br/>
+Meilen in die Länge und 3 in die Breite annimt, so ist der Flä-<br/>
+chenraum noch nicht 1 geogr. <span title="□ meile" class="dta-abbr">Quadratmeile</span>, sondern nur <span class="sup ">7</span>/<span class="sub ">10</span>. Berlin<br/>
+ist fast um die Hälfte kleiner; man würde indessen doch noch<br/>
+auf dem Monde einen Raum von den <span title="Original: Gens d'armes thürmen" class="dta-reg">Gens-d'armes-Thürmen</span><br/>
+bis zur <span title="Königl." class="dta-abbr">Königlichen</span> Bibliothek als einen sichtbaren Punkt unter-<br/>
+scheiden. <span title="Original: Troz dem" class="dta-reg">Trozdem</span> sind manche Astronomen auf wunderliche<br/>
+Phantasien gekommen. <span title="Personenname"><a href="http://d-nb.info/gnd/11876196X">Schröter</a></span> selbst wolte auf dem Monde<br/>
+die Pracht der bebauten Felder wahrgenommen, und im Marius<br/>
+eine Selenitenwohnung von 80 Fus Höhe <span class="dta-metamark" title="metamark">(!!)</span> gesehn haben.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="dta-metamark" title="metamark">(<span title="Personenname"><a href="http://d-nb.info/gnd/118972375">Gruithusen</a></span>?)</span><br/>
+</span>Neuerlich sind diese Träume im südlichen Deutschland noch<br/>
+weiter ausgeführt worden. Man sah Chausseen, auf denen die<br/>
+Mondbewohner sich begegneten, Palmenwälder und baumartige<br/>
+Farrenkräuter, einen im Viereck gebauten Sternentempel, ja<br/>
+es wurde die Frage ventilirt, ob Brunnenkresse im Monde<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0243 : 120r|</span><br/>
+wüchse, und dies alles wolte man durch Fernröhre von <span title="Personenname"><a href="http://d-nb.info/gnd/116746599">Frauenhofer</a></span><br/>
+bemerken, die nicht einmal dem grossen Dorpater Refraktor gleich<br/>
+kamen, sondern nur 5–60 Fus Brennweite hatten. <span class="u ">Messen</span> kann<br/>
+man im Monde nicht mehr als <span class="dta-del" title="Streichung (#s)">eine</span><span class="dta-add" title="Hinzufügung (intralinear)">½</span> Sek. Angulardistanz<span title="Schreibfehler: ." class="dta-corr">,</span><br/>
+d. h. 1800 Fus: nun kann man aber noch manches unterscheiden<br/>
+ohne es zu messen, indem sich noch bis auf ⅓ dieser Distanz<br/>
+durch den Schatten unterscheiden läst; also sind 6–700 Fus<br/>
+die äusserste Gränze des Unterscheidbaren. Bei Perpendikular-<br/>
+höhen kann man 5 ja 300 Fus mit Sicherheit messen. Die Pyramide<br/>
+des Cheops hat 440 Fus, der Münster in Strasburg ungefähr eben-<br/>
+soviel. Bei dem allen wird es aber nicht möglich sein, Kunst-<br/>
+werke von Naturwerken zu unterscheiden: denn die Basalt-<br/>
+kuppen von Vivarais in Auvergne könte man aus der Ferne<br/>
+gesehn sehr gut für Kunstwerke halten. Die Mondstädte,<br/>
+welche man zu sehn geglaubt, haben wenigstens 30–40 Quadrat-<br/>
+meilen im Umfang, sind also eher Länder als Städte zu<br/>
+nennen.</p><br/>
+<p class="dta-p">Die Athmosphäre des Mondes nähert sich dem, was wir<br/>
+unter unsern Pumpen ein vacuum nennen, und ist über 1000<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0244 : 120v|</span><br/>
+mal geringer als die unsrige, wie sich dies aus der Stralenbre-<br/>
+chung sehr genau berechnen läst. Das Queksilber im Barometer<br/>
+würde sich also kaum auf der Höhe von einigen Linien erhalten.<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/11876196X">Schröter</a></span> hat berechnet, dass die <span title="Athm." class="dta-abbr">Athmosphäre</span> kaum 800 Fus Höhe haben<br/>
+kann. Bei Sonnenfinsternissen hat man sie zu sehn geglaubt,<br/>
+wobei man auch Löcher im Monde bemerken wolte. Der Spanier<br/>
+<span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/119052873">Ulloa</a></span></span>, welcher zulezt Gouverneur in Südamerika war, beobachtete<br/>
+auf seiner Rükreise, auf dem Meere eine Sonnenfinsternis am<br/>
+24. <span title="Jan." class="dta-abbr">Januar</span> 1778; und sah vor dem Austritte einen leuchtenden Punkt,<br/>
+den auch mehrere Personen bemerkten, die mit ihm auf dem<br/>
+Schiffe waren. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118878913">Delambre</a></span></span> hat alles genau nachgerechnet, und<br/>
+gefunden, dass diese Feuererscheinung nur wenige <span class="u ">Minuten</span> vor<br/>
+dem Austritte stattfand: es ist daher wahrscheinlich, dass so wie<br/>
+es auf dem Monde hohe Berge giebt, es auch an tiefen<br/>
+Schluchten nicht fehle, und dass ein solcher Ausschnitt am<br/>
+Rande gestanden habe, in welchen die Sonnenstralen einige Zeit<br/>
+früher hineinfielen. Etwas ähnliches beobachtete man 1725<br/>
+in Rom: doch herscht hier noch grosse Unsicherheit. Auch hat<br/>
+man bei Sonnenfinsternissen <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">bunte </span>Ringe von mehreren Minuten Breite<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0245 : 121r|</span><br/>
+um den Mond gesehn: welches vielleicht von der Schwächung des<br/>
+Gesichtes bei anhaltendem Beobachten herzuleiten ist. Anders<br/>
+verhält es sich mit den Blizen, die <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118720066">Halley</a></span></span> und <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117683280">Newville</a></span></span> bei<br/>
+Finsternissen an den Rändern des Mondes zu sehn glaubten, und<br/>
+auch für eine Erscheinung im Auge hielten. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117636169">Lemonnier</a></span></span> beschreibt<br/>
+es ausführlich. Als die Sonne verfinstert war, sah man eine<br/>
+Menge Raketen am Rande des Mondes aufsteigen, und dies<br/>
+war so auffallend und deutlich, dass in einer kleinen Stadt<br/>
+Frankreichs das Volk auf den Strassen zusammenlief. Es müs-<br/>
+sen hierbei in der Mondathmosphäre Prozesse vorgehn, die wir<br/>
+nicht weiter zu erklären im Stande sind.</p><br/>
+<p class="dta-p"><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/119431416">Hevel</a></span></span> war der erste, welcher sich um die Topographie des Mondes<br/>
+verdient gemacht hat, indem <span title="Schreibfehler: " class="dta-corr">er </span>den verschiedenen Ländern Namen<br/>
+gab; <span title="Personenname"><a href="http://d-nb.info/gnd/123408571">Grimaldi</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/124081428">Riccioli</a></span> benanten die Berge nach den<br/>
+Naturforschern, wozu später einige Philosophie kamen. 2 vor-<br/>
+trefliche handschriftliche Karten des Mondes befinden sich auf<br/>
+der Pariser Bibliothek; die eine vom grossen <span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Dom. Cassini</a></span>, die<br/>
+andre von <span title="Personenname"><a href="http://d-nb.info/gnd/117573752">Lahire</a></span>: dann kamen die Arbeiten von <span title="Personenname"><a href="http://d-nb.info/gnd/118579576">Tobias Meyer</a></span> in<br/>
+Göttingen, von <span title="Personenname"><a href="http://d-nb.info/gnd/11876196X">Schröter</a></span>, und endlich von <span title="Personenname"><a href="http://d-nb.info/gnd/118728903">Lohrmann</a></span>.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0246 : 121v|</span><br/>
+<p class="dta-p">Der Einflus, den der Mond auf die Erdbewohner ausübt, ist in jeder<br/>
+Hinsicht sehr gros, wobei auch die Erleuchtung der Nächte in Betracht<br/>
+kommen mus, obgleich dies nur eine teleologische Ansicht ist; und<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/119431416">Hevel</a></span> sagte mit Recht, dass auf eben dieselbe Weise, den Bewohnern<br/>
+der uns zugekehrten Mondhälfte, die Erde, welche ihnen 4–5 mal<br/>
+grösser als uns der Mond erscheint, als nur für die Erhellung<br/>
+ihrer Nächte geschaffen vorkommen möchte. <span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span> in seiner<br/>
+Méchani<span title="q￼" class="dta-abbr">que</span> céleste, bei der Untersuchung, ob der Mond nur zur<br/>
+Erleuchtung unsrer Nächte da sei, kam auf eine Betrachtung,<br/>
+die man scherzweise sein: „Rezept zu einem beständigen Mond-<br/>
+schein” genant hat; er sagte nämlich, wenn nur dies der Zweck<br/>
+des Mondes <span class="dta-del" title="Streichung (#s)">gewesen</span><span class="dta-add" title="Hinzufügung (intralinear)">sei</span>, so habe es bei seiner Erschaffung ein<br/>
+weit besseres Mittel dazu gegeben: wenn nämlich der Mond<br/>
+bei seiner Entstehung in einer <span class="dta-del" title="Streichung (#s)">gewissen</span><span class="dta-add" title="Hinzufügung (superlinear)">bestimten</span> Stellung zur Erde ge-<br/>
+wesen wäre, und beide sich in einer bestimten Zeit um die<br/>
+Sonne gedreht hätten, so würden wir beständig Vollmond haben.<br/>
+Der Mond erregt kleine Bewegungen nicht blos in den Meeren,<br/>
+sondern auch in der Athmosphäre der Erde. Für die Seefahrer<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0247 : 122r|</span><br/>
+<div class="fw-top fw-sig">31.</div><br/>
+ist er zur Bestimmung der Länge von der grösten Wichtigkeit. Die<br/>
+Messung der Monddistanzen verglichen mit der Zeit, giebt dem<br/>
+Schiffer den Punkt auf welchem er sich befindet: ja man hat<br/>
+neuerlich hierauf mehr als auf die Chronometer vertraut, weil<br/>
+die Monddistanzen absolute Beobachtungen sind.</p><br/>
+<p class="dta-p">Die ganze Mechanik des Himmels in ihrer schönsten Ausbil-<br/>
+dung verdanken wir den Beobachtungen am Monde. Die Figur<br/>
+und Abplattung der Erde ist durch ihn <span class="dta-del" title="Streichung (#s)">mit</span><span class="dta-add" title="Hinzufügung (intralinear)">vermittelst</span> blosser<br/>
+Rechnung mit so grosser Genauigkeit bestimt, als <span class="dta-del" title="Streichung (#s)">man</span><span class="dta-add" title="Hinzufügung (intralinear)">es</span> kaum<br/>
+durch weite Reisen, langwierige geodätische Messungen und schwie-<br/>
+rige Pendelbeobachtungen geschehen konte. Durch ihn beweisen<br/>
+wir die Unveränderlichkeit der Tageslänge seit <span title="Personenname"><a href="http://d-nb.info/gnd/100499651">Hipparch</a></span>, sie<br/>
+hat in diesen 2000 Jahren nicht um ½ Sekunde ab- oder zuge-<br/>
+nommen: daraus schliessen wir, dass auch die mittlere Tempe-<br/>
+ratur der Erde immer dieselbe geblieben sei.</p><br/>
+<p class="dta-p">Wir bleiben noch in dem Raume, der uns zunächst liegt, und<br/>
+sprechen zuvörderst<br/>
+<span class="u ">Von den Erscheinungen des Zodiakallichtes.</span></p><br/>
+<p class="dta-p">Man bemerkt in südlichen Klimaten nach Sonnenuntergang<br/>
+und vor Sonnenaufgang einen pyramidalen Lichtstreifen,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0248 : 122v|</span><br/>
+der in der Richtung der Sonne sich schief vom Horizonte in die<br/>
+Höhe erstrekt. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Cassini</a></span></span> entdekte ihn für uns <span class="dta-del" title="Streichung (#s)">Abend</span><span class="dta-add" title="Hinzufügung (superlinear)">Nord</span>länder zuerst<br/>
+1683, und war so verwundert über diese neue Erscheinung, dass<br/>
+er die Frage aufwarf, ob das Thierkreislicht nicht damals überhaupt<br/>
+zuerst erschienen sei, so wie er auch in der Überzeugung gestorben<br/>
+ist, dass es sich in seinen lezten Lebensjahren verstärkt habe. Bald<br/>
+fand man aber, dass <span class="dta-del" title="Streichung (#s)">a<span class="dta-del" title="Streichung (#s)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">n</span>dre</span><span class="dta-add" title="Hinzufügung (superlinear)">andre</span> Völker es schon kanten. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/119384086">Chardin</a></span></span><br/>
+beobachtete es in Persien, und erfuhr, dass es längst bekant sei,<br/>
+und einen eignen Namen <span class="u ">Miasadsch</span> habe. Unter den Tropen,<br/>
+wo fast keine Woche vergeht, ohne dass man bei völlig klarem<br/>
+Himmel einen schönen Sonnenuntergang sieht, mus es von<br/>
+jedermann bemerkt werden. Dennoch habe ich auf der Pariser<br/>
+Bibliothek einen mexikanischen codex gefunden, wo unter den Wun-<br/>
+dern, die der Ankunft des <span title="Personenname"><a href="http://d-nb.info/gnd/118522280">Fernand Cortez</a></span> (1503–1520) vorangingen,<br/>
+diese pyramidale Lichterscheinung erwähnt wird. <span title="Personenname"><a href="http://d-nb.info/gnd/11931035X">Méran</a></span> und<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Cassini</a></span> hielten es im Zusammenhange mit den Nordlichtern und<br/>
+den Sonnenflekken, welches sich nicht bestätigt hat. Ich habe es<br/>
+unter den Tropen sehr häufig beobachtet, und nicht immer von<br/>
+gleicher Stärke gefunden: ein gewisses Zukken darin war sehr deutlich,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0249 : 123r|</span><br/>
+welches <span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Cassini</a></span> auch bemerkte, aber für Ermüdung der Augen hielt.<br/>
+In Carracás fand ich, dass es von 2 zu 2 Minuten abwechselnd schwä-<br/>
+cher und stärker wurde, welches ich nicht blos auf Rechnung von<br/>
+Verdikkungen in unsrer Athmosphäre schreiben kann: denn wenn ich<br/>
+während des schwächeren Scheines eine<span class="dta-del" title="Streichung (#ow)">s</span><span class="dta-add" title="Hinzufügung (across)">n</span> kleinen Nebelflekken <span class="dta-del" title="Streichung (#s)">im Schiffe</span><br/>
+im Schiffe Argo beobachtete, so konte ich in der Lichtstärke desselben<br/>
+keinen Unterschied wahrnehmen. Man hielt es früher für die abge-<br/>
+plattete Athmosphäre der Sonne, allein <span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span> hat gezeigt, dass<br/>
+diese höchstens bis zum Merkur gehen kann, er glaubt, dass es<br/>
+die Reste einer früheren Sonnenathmosphäre sind, die sich zu-<br/>
+sammengezogen hat.</p><br/>
+<p class="dta-p"><span class="u ">Vom Mars.</span></p><br/>
+<p class="dta-p">Durchmesser 936 Meilen, also <span class="sup ">55</span>/<span class="sub ">100</span> von dem der Erde: er ist der<br/>
+lezte Planet, an dem man Phasen sieht. <span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herschel</a></span> bestimte<br/>
+seine Abplattung sehr gros auf <span class="sup ">1</span>/<span class="sub ">12</span> <span title="Personenname"><a href="http://d-nb.info/gnd/11876196X">Schröter</a></span> dagegen auf <span class="sup ">1</span>/<span class="sub ">80</span>, und<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/116474580">Harding</a></span> hat sie wieder auf <span class="sup ">1</span>/<span class="sub ">12</span> zurükgebracht: er bemerkte gewal-<br/>
+tige Undulazionen, die er Flüssigkeiten zuschrieb, und 2erlei<br/>
+Arten von Flekken darauf; die eine Art ist den beweglichen Wolken<br/>
+ähnlich, das andre sind 2 helle Flekken an den Polen, die <span class="u ">weisser</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0250 : 123v|</span><br/>
+werden, wenn der Pol in der Nachtseite steht: man kam daher auf<br/>
+den Gedanken, dass es Eisfelder sein könten. <span title="Personenname"><a href="http://d-nb.info/gnd/117541613">Maraldi</a></span> hat ihn<br/>
+viel beobachtet, auch <span title="H￼." class="dta-abbr">Herr</span> <span title="Personenname"><a href="http://d-nb.info/gnd/136214908">Kunowski</a></span> in Berlin. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/119174596">Lacaille</a></span></span> machte<br/>
+durch ihn, während <span title="Personenname"><a href="http://d-nb.info/gnd/104234059">Lalande</a></span> in Berlin war, schöne Beobachtungen<br/>
+für die Sonnenparallaxe; für <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118561448">Kepler</a></span></span> wurde er wichtig durch<br/>
+die <span class="dta-del" title="Streichung (#ow)">G</span><span class="dta-add" title="Hinzufügung (across)">g</span>rosse Exzentrizität der Bahn, wodurch er auf sein 2<span title="￼" class="dta-abbr"><span class="sup u ">tes</span></span> Gesez<br/>
+kam, dass alle Planeten sich in Ellipsen um die Sonne bewegen.</p><br/>
+<p class="dta-p"><span class="u ">Von den 4 kleinen Planeten oder Asteroïden.</span></p><br/>
+<p class="dta-p">Schon die Alten vermutheten, dass zwischen Mars und Jupiter<br/>
+ein Planet kreisen müsse: <span title="Personenname"><a href="http://d-nb.info/gnd/11852464X">Demokritus</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/11865053X">Artemidorus</a></span>, auch<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118650130">Aristoteles</a></span> beim <span title="Personenname"><a href="http://d-nb.info/gnd/118642421">Simplicius</a></span>.</p><br/>
+<p class="dta-p">Alle 4 zusammen sind nicht viel grösser als der Mond: der<br/>
+Durchmesser der <span class="u ">Vesta</span>, als des kleinsten, beträgt 40–50 Meilen.<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herschel</a></span> hat den verächtlichen Namen <span class="u ">Asteroïden</span> eingeführt;<br/>
+(so wie man in der Chemie die Metalloïde aus den Alkalien nicht<br/>
+zu den wahren Metallen zälen will) <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span></span> nante sie <span class="u ">teleskopische<br/>
+Planeten</span>. Sie sind in der umgekehrten Ordnung entdekt, wie sie<br/>
+uns am nächsten stehn:<br/>
+<div class="dta-list">   <span class="dta-list-item">Sonne: Mars: Vesta</span>
+<span class="dta-list-item"><span class="et3 ">Juno</span></span>
+<span class="dta-list-item"><span class="et3 ">Pallas</span></span>
+<span class="dta-list-item"><span class="et3 ">Ceres.</span></span>
+</div></p>
+<span class="dta-pb" style="padding-left:15em">|#f0251 : 124r|</span><br/>
+<p class="dta-p"><span title="Schreibfehler: die" class="dta-corr">Die</span> <span class="u ">Vesta</span> wurde 1807 von <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/11858975X">Olbers</a></span></span> entdekt: <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/104234644">Gaus</a></span></span> gab ihr den Namen,<br/>
+der überhaupt durch seine genauen Berechnungen der Aberrazionen<br/>
+viel <span class="dta-del" title="Streichung (#s)">Ehre</span> Verdienst um die Asteroïden hat. <span class="u ">Juno</span> von <span title="Personenname"><a href="http://d-nb.info/gnd/116474580">Harding</a></span><br/>
+in Lilienthal 1804. <span class="u ">Pallas</span> von <span title="Personenname"><a href="http://d-nb.info/gnd/11858975X">Olbers</a></span> 1802. <span class="u ">Ceres</span> von <span title="Personenname"><a href="http://d-nb.info/gnd/117685798">Piazzi</a></span>. 1801.</p><br/>
+<p class="dta-p">Die Entdekkung der <span class="u ">Ceres</span> ist zufällig durch einen Schreibfehler<br/>
+im <span title="Personenname"><a href="http://d-nb.info/gnd/1055408878">Wollaston</a></span>schen Kataloge herbeigeführt: ein kleiner Stern stand<br/>
+nicht an seiner Stelle: statt dessen bemerkte <span title="Personenname"><a href="http://d-nb.info/gnd/117685798">Piazzi</a></span> einen neuen,<br/>
+und fand, dass es ein Planet sei. Die <span class="u ">Vesta</span> aber wurde von <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/11858975X">Olbers</a></span></span><br/>
+recht mit Absicht aufgesucht und entdekt; er fand durch Rechnung,<br/>
+dass am Flügel den Jungfrau die Stelle sei, wohin die Knoten<br/>
+der Bahnen aller kleinen Planeten fallen müssen, welche zwischen<br/>
+Mars und Jupiter kreisen, welcher seinem Scharfsinne die<br/>
+gröste Ehre macht. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/116471727">Encke</a></span></span> hat berechnet, ob wohl eine Zeit ein-<br/>
+treten könne, wo sie alle 4 sich wieder so sehr nähern könten,<br/>
+dass sei, so zu sagen, sich zusammenballen müsten, und hat ge-<br/>
+funden, dass dies in 3400 Jahren der Fall sein wird. Die Umlauf-<br/>
+zeit der Vesta ist von 3 Jahr 7 Monaten, von Ceres und Pallas<br/>
+4 Jahr 7 Monate, bis auf wenige Tage Unterschied. Die Exzentri-<br/>
+zität ist bei allen sehr gros, bei der Juno und Pallas am<br/>
+stärksten, wodurch sie etwas kometenähnliches erhalten. Die<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0252 : 124v|</span><br/>
+Neigung der Bahn bei allen sehr stark. <span class="dta-del" title="Streichung (#s)">F</span> Troz des kleinen<br/>
+Durchmessers sind sie sehr leuchtend, vielleicht durch eine eigne<br/>
+Phosphoreszenz; die Bahnen sind so verschlungen, dass man bei<br/>
+einem Modelle davon nicht eine herausnehmen könte, ohne die<br/>
+andern zu berühren; in den Knoten kom̃en sie sich sehr nahe. –</p><br/>
+</div></body></html>

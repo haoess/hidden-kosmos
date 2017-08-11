@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[45. Vorlesung, 29.03.1828]</span></div><br/>
+<div class=""><div class=""><div class=""><div class=""><div class=""><div class="dta-head"><span class="u ">Allgemeine Bemerkungen und Zusätze zu dem<br/>
+Frühern.</span></div><br/>
+<p class="dta-p"><span class="u ">Die Meteorologie</span> hat ihre numeriſchen Elemente<br/>
+wie die physiſche Aſtronomie. Die Fortſchritte<br/>
+die man in neueren Zeiten gemacht hat, hängen<br/>
+hauptsächlich davon ob, daß man die Analogie<br/>
+der Wiſsenſchaften, die numeriſchen Verhältniße<br/>
+zu beſtimmen geſucht hat. Für Hygrometrie<br/>
+und Druck der Luft iſt bereits viel geſchehen,<br/>
+für die electriſche Spannung noch nicht, es iſt hier<br/>
+eine bei weitem ſchwierigere Aufgabe.</p><br/>
+<p class="dta-p">Wir erwähren hier nicht die chemiſche Beſchaffen-<br/>
+heit der Luft ſelbſt, da ſie ſo gemiſcht iſt, daß<br/>
+in den höhern Gegenden eben ſo viel Sauer-<br/>
+ſtoff vorhanden iſt, als in den niedrigern.<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span></span> hat zuerſt darauf aufmerksam gemacht,<br/>
+daß man mit <span class="u ">numeriſchen</span> Inſtrumenten die<br/>
+Höhe der Orte beſtim̃en kann, durch den Druck<br/>
+der Luft und der Temperatur. Derselbe hat vor-<br/>
+geſchlagen überall Inſtitute zu errichten,<br/>
+um fortwährend ſich mit dem Luftdruck der<br/>
+Temperatur <span title="nd" class="dta-abbr">und</span> dem hygrometriſchen Zuſtand zu<br/>
+beſchäftigen.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Beim</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0433 : 427|</span><br/>
+<p class="dta-p"><span class="u ">Beim Druck der Luft</span> hat man neuerdings<br/>
+Beobachtungen gemacht, um den Unterſchied<br/>
+zu beſtimmen zwiſchen dem mittlern Druck<br/>
+unter dem Aequator <span title="nd" class="dta-abbr">und</span> in der temperirten<br/>
+Zone. Es iſt dieſe Beſtim̃ung merkwürdig<br/>
+für alle Meſsungen. Anfangs gab man den<br/>
+Druck in der Ebene zu 28″ an ſpäter<br/>
+28″4,‴ 5. – Unter den Tropen iſt der Druck<br/>
+geringer, weil der aufſteigende Luftſtrom<br/>
+weit ſtärker iſt, wenn er auf einmal her-<br/>
+aus ſtrömen könnte, würde der Druck=Asien.<br/>
+Verſuche die <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/101165250">Bonſsingau</a></span></span> in Caracas angeſtellt<br/>
+hat, verglichen mit andern, gaben für die<br/>
+Temperatur 0° R. den Barometerſtand für<br/>
+die temperirte Zone 337‴ 25 = 28″ 1,‴ 2<br/>
+für die Tropen: 336, 94 = 28″ 0,‴ 9 alſo<br/>
+die Differenz etwa 0,‴ 3.</p><br/>
+<p class="dta-p"><span class="u ">Die Frequenz der Winde</span> macht auch einen<br/>
+Unterſchied auf den Luftdruck doch iſt<br/>
+dies nur als eine Ausnahme anzuſehen.<br/>
+Nach 21 jährigen Beobachtungen die in Paris<br/>
+angeſtellt worden ſind, hat man gefunden,<br/>
+daß das Barometer um, 3,‴5 bei den<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Südw</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0434|</span><br/>
+Südwinden niedriger ſtand als bei den Nordſtür-<br/>
+men, eben ſo in der Havannah. Als Ausnahme<br/>
+iſt noch anzuführen <span class="u ">daß</span><span class="dta-add" title="Hinzufügung (superlinear)">(?)</span> die Stürme eine feuchte<br/>
+Luft hervorbringen. <span class="b "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">Buch</a></span></span> hat ſchon darauf<br/>
+aufmerksam gemacht, daß an der Nordweſt-<br/>
+küſte von Skandinavien der Luftdruck bei<br/>
+weitem geringer iſt, als bei uns dagegen<br/>
+auf den canariſchen Inſeln durch ein ſonderbares<br/>
+Herabſteigen der Luftſchichten der Druck weit<br/>
+ſtärker iſt.</p><br/>
+<p class="dta-p">Durch die Paſsatwinde <span title="nd" class="dta-abbr">und</span> weil der physiſche Aequa-<br/>
+tor mit dem Erdäquator<span class="dta-add" title="Hinzufügung (intralinear)"> (nicht?)</span> zuſam̃en fällt, wird<br/>
+die Temperatur gleicher Zonen in den verſchie-<br/>
+denen Hemisphären etwas verſchieden.</p><br/>
+<p class="dta-p">Die mittlere Temperatur der nördlichen Hemis-<br/>
+phäre verhält ſich zu der mittlern Temperatur<br/>
+der ſüdlichen Hemisphäre wie 9 : 10 <span class="dta-metamark" title="metamark">⎡</span> nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118855093">Prevoſt</a></span></span> <span class="dta-metamark" title="metamark">:|</span><br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/1069800295">John Beel</a></span></span> in den <span class="aq ">philosophical transactions</span> hat<br/>
+zuerſt auf die tägl. Aenderungen des Barometer<br/>
+ſtandes aufmerksam gemacht. Wenn auf der einen<br/>
+Seite der Barometer Druck in den nördlichen<br/>
+Zonen größer iſt als in den ſüdlichern ſo ſind<br/>
+dieſe Oscillationen in ihrer Quantitaet geringer<br/>
+nach dem Pol zu.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Unter</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0435 : 429|</span><br/>
+<p class="dta-p">Unter dem Aequator iſt die <span class="u ">Quantitaet <span class="b ">der Ba-<br/>
+rometer Veränderungen</span></span> in den täglichen<br/>
+Oscillationen 1,‴5. in Montpellier 0‴5., in<br/>
+Paris 0,‴3, in Königsberg 0‴<span class="dta-add" title="Hinzufügung (intralinear)">,</span>1 wo <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118510215">Besſel</a></span></span><br/>
+die Beobachtungen von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/122209575">Sommer</a></span></span> berechnet hat.<br/>
+Ebenfalls iſt in <span class="aq ">Santa Fe de Bogota</span> und durch<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/116299762">Houward</a></span> in Paris berechnet worden, daß der<br/>
+Mond auf die Luft keinen Einfluß hat. Aus<br/>
+5900 Beobachtungen folgt nur eine Verſchieden-<br/>
+heit von 0,‴1.</p><br/>
+<p class="dta-p">Man hat lange geglaubt, daß die Barometer auf<br/>
+den Bergen ſtiegen, während ſie in der Ebene<br/>
+ſinken. Es wäre dies auch leicht nach der Theorie<br/>
+der Luftſtrömungen zu glauben. Es iſt dies<br/>
+aber keinesweges der Fall. Das Barometer ſteigt<br/>
+und ſinkt zu gleicher Zeit auf der Höhe und in der<br/>
+Ebene; zugleich am Meereſstrande in <span class="aq ">Quito</span><br/>
+und in der Hochebene von Antisana. Aber<br/>
+auf kleinen Bergen findet es ſtatt.</p><br/>
+<p class="dta-p"><span title="Personenname"><a href="http://d-nb.info/gnd/11948496X">Piktetz</a></span> hat auf dem <span class="aq ">St. Bernhardt</span> durch Mit-<br/>
+telzahlen gefolgert daß das Barometer<br/>
+dort ſteigt, wenn es in der Ebene ſinkt.<br/>
+Eine große Barometer-Veränderung iſt<br/>
+fast gleichzeitig in großen Erſtreckungen.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Der</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0436|</span><br/>
+<p class="dta-p">Der Profeſsor <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100055427">Brandes</a></span></span> hat die Schnelligkeit der<br/>
+Fortpflanzung beobachtet.</p><br/>
+<p class="dta-p">Bei den <span class="u ">Stürmen</span> iſt das Sonderbare daß ſie ge-<br/>
+wöhnlich dort entſtehen, wo ſie hinwehen.</p><br/>
+<p class="dta-p">Die Nordwinde werden zuerſt in Georgien, und<br/>
+in Virginien, darauf in Maryland, Pensylvanien<br/>
+und endlich zuletzt in Neuengland geſpürt.</p><br/>
+<p class="dta-p">Ähnlich iſt von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">Buch</a></span></span> beobachtet worden, wenn<br/>
+die Nordoſt Winde ſich verändern in S.W. ſie<br/>
+werden zuerſt an der Küſte zu Portugal und<br/>
+<span class="dta-marginal dta-marginal-left">in<br/>
+</span>den nördlichen Gegenden <span title="nd" class="dta-abbr">und</span> dann erſt in ſüdlichern<br/>
+gefühlt. – Auf der Inſel <span class="aq ">Gran Canaria</span> iſt<br/>
+das Maximum der Wärme nicht im <span class="aq ">Auguſt</span> ſondern<br/>
+im <span class="aq ">October</span>, eine Erſcheinung die ebenfalls mit<br/>
+dem Entſehen der Winde zuſam̃en hängt.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left">?<br/>
+</span>Alle Seefahrer haben ſchon bemerkt, daß auf dem<br/>
+Pik von Teneriffa ſchon Weſtwinde <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 2 Zeichen fehlen]</span></span><span class="dta-add" title="Hinzufügung (across)">he</span>rrſchen.<br/>
+Bei dem Ausbruch des <span class="aq ">St Vincent</span> iſt die Aſche nach<br/>
+<span class="aq ">Barbadoz</span> geflogen; wenn die Paſsatwinde ge-<br/>
+gangen wären, ſo hätte dies nicht ſein könne.<br/>
+Auf dieſelbe Weise wie der Oſtwind entſteht,<br/>
+muß ein Weſtwind entſtehn, wenn in den obern<br/>
+Schichten die Luft vom Aequator nach dem Pol hinſtrömt.<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Für</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0437 : 431|</span><br/>
+Für Weſtküſten ſind alle Oſtwinde erkaltend.<br/>
+Da ſie über das Land gehen, die Weſtwinde<br/>
+dagegen erwärmend; für Oſtküſten iſt es<br/>
+umgekehrt. Die Oſtwinde ſind in der gemäs-<br/>
+ſigten Zone weit geringer an Zahl gegen<br/>
+die Weſtwinde. Nach 21. jährigen Beobach-<br/>
+tungen die in Paris angeſtellt wurden, iſt<br/>
+das Verhältniß der Oſtwinde gegen die Weſt-<br/>
+winde wie 23 : 70 oder wie 1 zu 3. Wenn<br/>
+dieſes Verhältniß ſich änderte <span title="nd" class="dta-abbr">und</span> z. B. wie<br/>
+1 : 7 würde, ſo würde die Tempera-<br/>
+tur in Europa um einige Grade höher<br/>
+werden, <span title="nd" class="dta-abbr">und</span> ſo auch umgekehrt, niedriger wenn<br/>
+die Zahl der Oſtwinde zu nähme; es wurde<br/>
+dies einen großen Einfluß auf die Cultur<br/>
+den Zuſtand des Ackerbaues u.ſ.w. hervor<br/>
+bringen können. – Doch iſt nicht wahrſcheinlich<br/>
+daß durch die Cultur eine große Aenderung in<br/>
+den Winden hervorgebracht werden kann, es<br/>
+können dadurch nur kleine Lokalitaets Ver-<br/>
+änderungen entſtehn. Man ſieht dies bei<br/>
+Amerika, obgleich viele Wälder dort <span title="Original: ausgerot&#xA;tet" class="dta-reg">ausgerot-<br/>
+tet</span> ſind, <span title="nd" class="dta-abbr">und</span> eine weit größere Gegend als<br/>
+früher angebaut iſt, hat ſich doch das Klima<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">nicht</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0438|</span><br/>
+nicht geändert. Das Clima eines Landes hängt<br/>
+von weit größeren Phänomenen ab.</p><br/>
+<p class="dta-p">Sehr auffallend ſind die ſonderbaren Perioden<br/>
+von großen ſtarken Luftbewegungen, <span class="u ">die Aequinoc-<br/>
+tial-Stürme.</span> Man ſieht nicht ein, wie eine<br/>
+Abweichung der Sonne ſolche Luftveränderungen<br/>
+hervor bringen könne. <span title="Schreibfehler: Mat" class="dta-corr">Man</span> hat bisher noch keine<br/>
+Ursache dieſer Stürme einſehen können. <span title="Schreibfehler: Mat" class="dta-corr">Man</span> hat<br/>
+geglaubt, <span title="nd" class="dta-abbr">und</span> die magnetiſchen Erſcheinungen durch<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118786784">Örſtädt</a></span>s Verſuche haben darauf geführt, daß eine<br/>
+Gegend im Weltraum wo die Erde ſich um dieſe<br/>
+Zeit befinde ſein könne, in der 2 sehr magnetiſche<br/>
+Pole ſich befinden. Viel wahrſcheinlicher er-<br/>
+ſcheint es, daß ſie ein Effect des Gleichgewichts<br/>
+ſind, doch iſt es freilich auffallend, daß die<br/>
+Unterbrechung des Gleichgewicht in ſo wenigen<br/>
+Tagen wieder hergeſtellt werden kann.</p><br/>
+<p class="dta-p">Eine merkwürdige Erſcheinung iſt, daß die <span class="u ">leichtere<br/>
+Fortpflanzung der Schallwellen</span> mit der leichtern Fortpflanzung<br/>
+der Lichtwellen zuſam̃en hängt. W<span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)">eñ</span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="dta-metamark" title="metamark">⎡</span> in</span> d<span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)">en</span> Tropengegenden die<br/>
+Intenſität des Lichts <span title="nd" class="dta-abbr">und</span> die des Schalls zunim̃t, ſo glaubt man<br/>
+daß die Regenzeit herannaht. Wie dies zuſam̃enhängt kann<br/>
+man nicht erklären, vielleicht mit der aufſteigenden Luft<br/>
+wodurch auch der Regen zugleich entſteht.</p></div></div></div><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Feuchtigkeits</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0439 : 433|</span><br/>
+<div class=""><div class="dta-head">Feuchtigkeits-Producte. – Meteorologie.<br/>
+Wolken.</div><br/>
+<p class="dta-p">Wenn das Waſser<span class="u ">gas</span><span class="dta-add" title="Hinzufügung (superlinear)">(dampf?) </span> in die höhern Regionen der<br/>
+Luft ſteigt, gerinnt es zu kleinen Bläſchen<br/>
+zuſammen deren Agregation die Wolken bil-<br/>
+den. – Sie müſsen als hohl betrachtet werden<br/>
+und nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118716581">Gay Lusſac</a></span>s</span> Meinung mit feuchter<br/>
+Luft gefüllt.</p><br/>
+<p class="dta-p">Das Steigen der Wolken geſchieht nicht blos<br/>
+dadurch daß die feuchte Luft in einer jeden<br/>
+ſolchen Montgolfiern verdünnt wird, ſon-<br/>
+dern auch daß die atmosphäriſche Luft die da-<br/>
+rinn enthalten ſpecifiſch leichter iſt. Durch<br/>
+optiſche Verſuche hat man die farbige Po-<br/>
+larisation und Refraction der Dünnigkeit<br/>
+der Hülle der Bläſchen beobachtet, um von<br/>
+der Natur derſelben und ihrer Dicke einen<br/>
+Begriff zu bekommen.</p><br/>
+<p class="dta-p"><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119032902">Fraisnel</a></span></span> hat die Beobachtung gemacht, daß die<br/>
+Wolken in der Nacht ſinken und bei Tage ſteigen,<br/>
+eben deshalb weil ſie ſich danach richten wie<br/>
+die zwiſchen den Bläſchen ſich befindende atmos-<br/>
+phäriſche Luft erkaltet oder erwärmt wird.<br/>
+<span class="aq ">Doc</span> hat bei der Andeskette gefunden, daß<br/>
+die Abnahme der Wärme an Schnelligkeit ver-<br/>
+liert, ſobald man ſich in der Wolkenregion<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">befindet</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0440|</span><br/>
+<span class="dta-marginal dta-marginal-left">?<span class="dta-metamark" title="metamark">⎡</span><br/>
+</span>befindet, 2000 Toiſen Höhe. <span class="dta-metamark" title="metamark">⎡</span> ſie ſehr<br/>
+ſchnell iſt vom Meere bis zu dieſer Region.<br/>
+Es iſt hiervon wohl die Ursache weil die Wol-<br/>
+ken auf der Lichtseite erwärmt werden und das<br/>
+Durchdringen verhindern.</p><br/>
+<p class="dta-p">Wenn man einen Berg betrachtet, als in der<br/>
+Luf<span class="dta-add" title="Hinzufügung (intralinear)">t</span> eingesenkt mit ſeinem Gipfel, ſo wird er<br/>
+als feſter Körper anders ausſtralen, als die ihn<br/>
+umgebende Luft, der Gipfel muß ſich mehr erkäl-<br/>
+ten, daher bildet ſich dort eine kleine Wolke.<br/>
+Eine Mollecular Anziehung üben jedoch die Berge<br/>
+nicht gegen die Waſserbläſchen aus, ſondern durch<br/>
+Aufſteigen und Fallen derſelben entſteht die<br/>
+Umhüllung der Berge.</p><br/>
+<p class="dta-p">Die Wolken ziehen dagegen über die Ebenen<br/>
+hin, weil die aufſteigenden Luftſtröme ſie an<br/>
+ein Verweilen hindern. Überhaupt ſind die<br/>
+aufſteigenden Luftſtröme eine der wichtigſten<br/>
+Ursachen in der Meteorologie.</p><br/>
+<p class="dta-p">Die Geſtalt der Wolken iſts ſehr verſchieden,<br/>
+und richtet ſich ſehr nach der Geſtalt und Art des<br/>
+Erbodens <span class="dta-metamark" title="metamark">|:</span> S. <span title="Personenname"><a href="http://d-nb.info/gnd/116817569">Buch</a></span>'s Abhandlung über den Hagel <span class="dta-metamark" title="metamark">:|</span><br/>
+Mann hat den Wolken Namen beigelegt um<br/>
+ſie unterſcheiden zu können. <span class="dta-metamark" title="metamark">|:</span> <span title="Personenname"><a href="http://d-nb.info/gnd/116006161">Houart</a></span> <span class="dta-metamark" title="metamark">:|</span> die<br/>
+höchſten ſind diejenigen welche man in Deutſch-<br/>
+land gewöhnlich Schäfchen nennt. <span class="aq ">Doc</span>. hat ſie<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">auf</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0441 : 435|</span><br/>
+auf den höchſten Höhen immer noch ſehr hoch über<br/>
+ſich gefunden, man glaubt daß ſie unter den<br/>
+Tropen 27000′ hoch gehen. Es ſind dies die-<br/>
+ſelben die man in Island leuchten geſehen hat,<br/>
+und denen man eine Verbindung mit den<br/>
+Nordlichtern zuſchreibt.</p><br/>
+<p class="dta-p">Die Wolken die die nächſte Schicht über uns<br/>
+bilden ſind Hinsichts ihrer Höhe auf zwei-<br/>
+erlei Art gemeſsen worden: einmal<br/>
+von der Höhe der Gebirge, wie <span title="Personenname"><a href="http://d-nb.info/gnd/118678671">Dalton</a></span><br/>
+gethan hat; es iſt dies wegen der Luft-<br/>
+Strömungen <span class="dta-metamark" title="metamark">|:</span> <span class="aq ">courant ascendant</span> <span class="dta-metamark" title="metamark">:|</span> an den<br/>
+Berg Abhängen nicht ſehr zuverläſsig,<br/>
+und 2, durch aeroſtatiſche Reiſen.</p><br/>
+<p class="dta-p">Man hat nach dieſen Beobachtungen die<br/>
+Wolkenſchicht im Sommer in einer Höhe von<br/>
+2800 bis 3000′ gefunden. <span class="aq ">Doc</span> fand ſie in<br/>
+den Tropen bis 4000′ Höhe. – In der Andes-<br/>
+kette, wenn man zu dem Punkt kommt,<br/>
+wo die China-Rinde aufhört bis zur Ebene<br/>
+von Antisana, und zum Chimboraſso, fin-<br/>
+det man mehre Wolkenſchichten über einan-<br/>
+der. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117622974">Bouguer</a></span></span> hat der Probabilitäts Rech-<br/>
+nung unterworfen, von wie viel Luftſchich-<br/>
+ten, die ſich vorſetzen, es abhänge, um ein<br/>
+Signal zu ſehen daß in der Tiefe bemerkt<br/>
+iſt.<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Die</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0442|</span><br/>
+Die Wolken liegen auf dem Meere überall<br/>
+da, wo ſelbſt nur ganz flache Inſeln ſich befinden,<br/>
+wahrſcheinlich herrührend aus der electriſchen Span-<br/>
+nung der Luft. Für die Seefahrer iſt dies von<br/>
+großer Wichtigkeit, indem ſie ſo in Stand geſetzt<br/>
+ſind, durch die Wolken die Lage der Inſeln zu<br/>
+erkennen, eben ſo als wenn ſich ein Berg von<br/>
+5000′ Höhe dort befände.</p><br/>
+<p class="dta-p">Daſselbe findet ſelbſt bei Sandbänken ſtatt.<br/>
+Da wie wir oben geſehen, das Waſser bei Untiefen<br/>
+kälter iſt, ſo bilden ſich Wolken über dieſelben<br/>
+Die Wolken wirken zwiefach auf die Atmosphäre:<br/>
+1, erkältend, da ſie die Intenſität des Lichts<br/>
+vermindern <span class="dta-metamark" title="metamark">|:</span> Es iſt eine merkwürdig Er-<br/>
+ſcheinung in <span class="aq ">Peru</span>, wo die Temperatur ſo kalt iſt<br/>
+daß das Thermometer bis auf 12° R. herabsinkt,<br/>
+während in den übrigen Gegenden gleicher Breite,<br/>
+es nie bis unter 17° R. ſteht. <span class="dta-metamark" title="metamark">:|</span></p><br/>
+<p class="dta-p">2, Wirken die Wolken weit mehr nach Wärme<br/>
+erregend indem ſie das Ausſtralen des Erdkör-<br/>
+pers verhinder<span class="dta-del" title="Streichung (#ow)">t</span><span class="dta-add" title="Hinzufügung (across)">n</span>. Es wird nun dies Ausſtra-<br/>
+len verhindert, wenn ein anderer Körper ſich<br/>
+da befindet, die dann gegenseitig ausſtralen,<br/>
+bis ſie hinsichts der Wärme ſich im Gleichgewicht<br/>
+geſetzt haben; das Thermometer ſteigt dann, bei dem<br/>
+Körper, der vorher we<span class="dta-add" title="Hinzufügung (superlinear)"><span class="dta-metamark" title="metamark">⎡</span>ni</span>ge<span class="dta-del" title="Streichung (#ow)">n</span><span class="dta-add" title="Hinzufügung (across)">r</span> Wärme hatte.<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/124462286">Wels</a></span></span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0443 : 437|</span><br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/124462286">Wels</a></span></span> über die Theorie des Thaus und der Erkältung<br/>
+giebt 2 Bedingungen an, die eintreten müſsen,<br/>
+um eine Erkältung hervorzubringen. 1, ein wol-<br/>
+kenleerer dunſtfreier Himmel <span title="nd" class="dta-abbr">und</span> 2 völliger Man-<br/>
+gel von Bewegung der Luft. Es iſt dies zwar<br/>
+anders als bei der Kälte die durch Verdunſtung<br/>
+entſteht; hier iſt eine nothwendige Bedingung, daß<br/>
+durch den Wind die ſich bildenden Dunſtſchichten<br/>
+weggejagt werden, damit immer wieder neue Ver-<br/>
+dunſtungen entſtehen können, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/124462286">Wels</a></span></span> hat gefunden,<br/>
+daß Körper die eine größe Dünnigkeit haben wie<br/>
+Gras, Blätter, Wolle, Papierſtreifen u.ſ.w. gegen<br/>
+einen wolkenlosen Himmel bis auf 6 und 7°<br/>
+erkältet werden können durchbloße Ausſtralung;<br/>
+Metalflächen nur auf 2°. Hierauf beruht die<br/>
+kalte erregende Eigenſchaft der Wälder: nicht<br/>
+dadurch daß durch ſie ein Theil der Umgegend<br/>
+in Schatten geſetzt wird, ſondern weil bei<br/>
+unſere Dicotyledonen, die Blätterorgane, das<br/>
+Apendicular Sÿſtem, ſich mehr erkälten <span class="dta-metamark" title="metamark">|:</span> als<br/>
+dünne <span class="dta-del" title="Streichung (#s)"><span class="dta-del" title="Streichung (#ow)">Blä</span><span class="dta-add" title="Hinzufügung (across)"><span class="gap">[unleserliches Material]</span></span>tter</span> Körper<span class="dta-add" title="Hinzufügung (across)"><span class="dta-metamark" title="metamark">⎡</span></span><span class="dta-del" title="Streichung (#ow)">n</span>.</p><br/>
+<p class="dta-p">Die Winde hindern die Erkältung<br/>
+weil ſie wärmere Luft<span class="u ">winde</span><span class="dta-add" title="Hinzufügung (superlinear)">(ſchichten?) </span> herbei<br/>
+führen, daher iſt Windſtille eine Bedin-<br/>
+gung bei dieſer Erkältung durch Ausſtralung.<br/>
+<span class="dta-metamark" title="metamark">|:</span> Das Eismachen in Indien beruht hierauf <span class="dta-metamark" title="metamark">:|</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Je</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0444|</span><br/>
+Je ruhiger die Atmosphäre iſt, um ſo ſchneller iſt<br/>
+dieſe Erkältung, immer iſt dann auch mehr Thau ge-<br/>
+fallen. Es hängt hiermit auch die <span class="u ">Theorie der<br/>
+Andeskette</span> zuſammen, daß der rothe Mond-<br/>
+ſchein im Anfang des Monats Mai ſehr ſchäd-<br/>
+lich iſt, ebenso daß es friere wenn der Him-<br/>
+mel ſternklar iſt.</p></div></div></div></div></body></html>

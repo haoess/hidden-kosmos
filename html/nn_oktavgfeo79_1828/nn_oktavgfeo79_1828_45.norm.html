@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><span class="dta-supplied">[45. Vorlesung, 29.03.1828]</span><div class=""><div class=""><div class=""><div class=""><p class="dta-p">Neuere <span title="Original: Verſuche" class="dta-reg">Versuche</span> haben den <span title="Original: Unterſchied" class="dta-reg">Unterschied</span> des Drucks der<br/>
+Luft unter dem <span title="Original: Aequator" class="dta-reg">Äquator</span> und in der <span title="Original: temperirten" class="dta-reg">temperierten</span> Zone <span title="Original: be-&#xA;ſtimmt" class="dta-reg">bestimmt</span>. Der <span title="Original: Höhenſtand" class="dta-reg">Höhenstand</span> des Barometers <span title="Original: iſt" class="dta-reg">ist</span> in <span title="Original: unſerer" class="dta-reg">unserer</span><br/>
+Atmosphäre dadurch wichtig, daß durch ihn die Höhen <span title="Original: beſtimmt" class="dta-reg">bestimmt</span><br/>
+werden können, indem die mittlere Barometerhöhe am Meere<br/>
+28<span title="Original: ″" class="dta-reg">"</span> beträgt. In <span title="Original: phyſiſcher" class="dta-reg">physischer</span> <span title="Original: Rückſicht" class="dta-reg">Rücksicht</span> <span title="Original: iſt" class="dta-reg">ist</span> er noch wichtiger.<br/>
+Unter den Tropen <span title="Original: iſt" class="dta-reg">ist</span> er geringer, weil die Wärme das<br/>
+<span title="Original: Aufſteigen" class="dta-reg">Aufsteigen</span> der Luft veranlaßt. In <span title="Original: neuern" class="dta-reg">neueren</span> Zeiten hat<br/>
+<span title="H￼" class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/101165250"><span title="Original: Bousſignolt" class="dta-reg">Boussignolt</span></a></span></span> bei Carracas folgenden <span title="Original: Unterſchied" class="dta-reg">Unterschied</span> <span title="Original: ge-&#xA;funden" class="dta-reg">gefunden</span>: wenn der mittlere <span title="Original: Barometerſtand" class="dta-reg">Barometerstand</span> und die Temperatur<br/>
+auf 0 <span title="Original: reducirt" class="dta-reg">reduziert</span> wird, <span title="Original: ſo" class="dta-reg">so</span> beträgt der <span title="Original: Höhenſtand" class="dta-reg">Höhenstand</span> in der <span title="Original: temperirte" class="dta-reg">temperierte</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0380 : 374.|</span><br/>
+Zone 337,25 Linien oder 28<span title="Original: ″" class="dta-reg">"</span>1,2<span title="Original: ‴" class="dta-reg">'''</span>, und in den Tropen<br/>
+336,94 Linien oder 28<span title="Original: ″" class="dta-reg">"</span>0,3<span title="Original: ‴" class="dta-reg">'''</span> am <span title="Original: Meeresſtrande" class="dta-reg">Meeresstrande</span>, mithin<br/>
+<span title="Original: iſt" class="dta-reg">ist</span> der Barometerdruck in den Tropen etwas geringer.<br/>
+Doch macht auch die Frequenz der Winde eine große <span title="Original: Ver-&#xA;ſchiedenheit" class="dta-reg">Verschiedenheit</span> in dem Drucke der Luft <span title="Original: ſelbſt" class="dta-reg">selbst</span>. 21 tägige <span title="Original: Be-&#xA;obachtungen" class="dta-reg">Beobachtungen</span> zu Paris, haben ergeben, daß der <span title="Original: Barometerſtrand" class="dta-reg">Barometerstrand</span><br/>
+beim Südwinde <span title="Original: 3½" class="dta-reg">31/2</span> Linie niedriger <span title="Original: iſt" class="dta-reg">ist</span> als beim Nordwinde.<br/>
+So hören auch zu <span title="Original: Havanah" class="dta-reg">Havanna</span> die regelmäßigen <span title="Original: Oscillationen" class="dta-reg">Oszillationen</span><br/>
+auf, <span title="Original: ſobald" class="dta-reg">sobald</span> die <span title="Original: Nordſtürme" class="dta-reg">Nordstürme</span> anfangen, kehren aber beim <span title="Original: Oſt-&#xA;winde" class="dta-reg">Ostwinde</span> wieder zurück. Andere Ausnahmen <span title="Original: ſind" class="dta-reg">sind</span>, daß die<br/>
+Stürme große Anhäufungen der Luft <span title="Original: veranlaſſen" class="dta-reg">veranlassen</span>, oder<br/>
+feuchte Luft bringen. So bemerkte <span title="H￼" class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">v. Buch</a></span></span> an der<br/>
+<span title="Original: Küſte" class="dta-reg">Küste</span> Norwegens, daß dort der Druck geringer als bei uns<br/>
+<span title="Original: iſt" class="dta-reg">ist</span>, weil da eine häufigere Frequenz <span title="Original: ſüdlicher" class="dta-reg">südlicher</span> Winde <span title="Original: ſtatt" class="dta-reg">statt</span><br/>
+findet. Dagegen beobachtete <span title="Original: derſelben" class="dta-reg">derselben</span> bei den <span title="Original: Canariſchen" class="dta-reg">Kanarischen</span><br/>
+<span title="Original: Inſeln" class="dta-reg">Inseln</span>, daß durch das <span title="Original: Herabſinken" class="dta-reg">Herabsinken</span> der <span title="Original: obern" class="dta-reg">oberen</span> <span title="Original: Luftſchichten" class="dta-reg">Luftschichten</span>,<br/>
+eine Anhäufung von Luft <span title="Original: eintrit" class="dta-reg">eintritt</span>, <span title="Original: ſo" class="dta-reg">so</span> daß das Barometer auf<br/>
+28<span title="Original: ″3" class="dta-reg">"3</span><span title="Original: ‴" class="dta-reg">'''</span> <span title="Original: ſtand" class="dta-reg">stand</span>. Die <span title="Original: erſte" class="dta-reg">erste</span> Idee vom <span title="Original: Ueberſtrömen" class="dta-reg">Überströmen</span> der <span title="Original: Aequi-&#xA;noctialluft" class="dta-reg">Aequinoctialluft</span> nach den Polen, <span title="Original: ſprach" class="dta-reg">sprach</span> <span title="Original: ſchon" class="dta-reg">schon</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118774883">Hook</a></span></span> im Jahre 1668<br/>
+aus. Die <span title="Original: Paſſatwinde" class="dta-reg">Passatwinde</span> ziehen <span title="Original: ſich" class="dta-reg">sich</span> aber am <span title="Original: amerikaniſchen" class="dta-reg">amerikanischen</span><br/>
+<span title="Original: Continente" class="dta-reg">Kontinente</span> um viele Grade nördlicher als an dem <span title="Original: afrikaniſchen" class="dta-reg">afrikanischen</span>.<br/>
+Die Grenze der <span title="Original: Paſſatwinde" class="dta-reg">Passatwinde</span> hängt von den <span title="Original: Wärmeſtrahlen" class="dta-reg">Wärmestrahlen</span> der<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0381 : 375.|</span><br/>
+<span title="Original: Continente" class="dta-reg">Kontinente</span> ab, und <span title="Original: iſt" class="dta-reg">ist</span> von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118855093"><span title="Original: Prevoſt" class="dta-reg">Prevost</span></a></span></span> berechnet werden, wonach <span title="Original: ſah" class="dta-reg">sah</span><br/>
+die mittlere Wärme der <span title="Original: ſüdlichen" class="dta-reg">südlichen</span> zur nördlichen Hemisphäre<br/>
+wie 9:10 verhält.</p><br/>
+<p class="dta-p">Von den <span title="Original: periodiſchen" class="dta-reg">periodischen</span> Veränderungen, welche der Druck<br/>
+der Atmosphäre erleidet, hatte 1665 <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/1069800295">James By</a></span></span> in London<br/>
+die <span title="Original: erſte" class="dta-reg">erste</span> Idee; und in den Tropen fanden <span class="aq "><span title="Personenname"><span title="Original: Varrin" class="dta-reg">Farin</span></span> &amp; <span title="Personenname"><a href="http://viaf.org/viaf/27369279">Claude</a></span></span><br/>
+<span title="Original: zuerſt" class="dta-reg">zuerst</span> <span title="Original: dieſe" class="dta-reg">diese</span> Variationen durch den <span title="Original: Höhenſtand" class="dta-reg">Höhenstand</span> des Barometers<br/>
+1682. Unter dem <span title="Original: Aequator" class="dta-reg">Äquator</span> wo <span title="Original: ſie" class="dta-reg">sie</span> am <span title="Original: ſtärkſten" class="dta-reg">stärksten</span> <span title="Original: ſind" class="dta-reg">sind</span>, <span title="Original: be-&#xA;tragen" class="dta-reg">betragen</span> <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: 1½" class="dta-reg">11/2</span><span title="Original: ‴" class="dta-reg">'''</span>, Paris <span class="sup "><span title="Original: 3" class="dta-reg">3/10</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 10" class="dta-reg"/></span><span title="Original: ‴" class="dta-reg">'''</span>, Königsberg <span title="Original: ⅒" class="dta-reg"/><span title="Original: ‴" class="dta-reg">'''</span> und in Montpellier <span title="Original: ¾‴" class="dta-reg">3/4'''</span><br/>
+nach den <span title="Original: Unterſuchungen" class="dta-reg">Untersuchungen</span> der Herren <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118510215"><span title="Original: Besſel" class="dta-reg">Bessel</span></a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/122209575">Sommer</a></span>.</span></p><br/>
+<p class="dta-p"><span title="Original: Dieſes" class="dta-reg">Dieses</span> große <span title="Original: cosmiſche" class="dta-reg">kosmische</span> Phänomen, welches die Atmosphäre nur<br/>
+im <span title="Original: Wechſel" class="dta-reg">Wechsel</span> von 2 Stunden hat, <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: beſtimmten" class="dta-reg">bestimmten</span> <span title="Original: Geſetzen" class="dta-reg">Gesetzen</span> <span title="Original: unter-&#xA;worfen" class="dta-reg">unterworfen</span>. Viele <span title="Original: Unterſuchungen" class="dta-reg">Untersuchungen</span> von <span title="H￼" class="dta-abbr">Herrn</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116299762"><span title="Original: Bouvier" class="dta-reg">Bauvier</span></a></span></span> in Bogota<br/>
+haben gezeigt, daß der Mond keinen bemerkbaren Einfluß<br/>
+hierauf hat, denn von 9000 Beobachtungen folgt kaum ein<br/>
+<span title="Original: Unterſchied" class="dta-reg">Unterschied</span> von <span class="sup "><span title="Original: 1" class="dta-reg">1/100</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 100" class="dta-reg"/></span> Linie. Man hat lange geglaubt, daß<br/>
+<span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: Oscillationen" class="dta-reg">Oszillationen</span> auf Bergen unterbrochen würden, allein<br/>
+<span title="Original: ſie" class="dta-reg">sie</span> bleiben <span title="Original: ſich" class="dta-reg">sich</span> immer gleich wenn man <span title="Original: ſowohl" class="dta-reg">sowohl</span> in die Höhebene<br/>
+von Quito <span title="Original: 8–9000" class="dta-reg">8-9000</span><span title="Original: ′" class="dta-reg">'</span> oder in die von <span title="Original: Artiſane" class="dta-reg">Artisane</span> <span title="Original: 12000′" class="dta-reg">12000'</span> hoch <span title="Original: ſteigt" class="dta-reg">steigt</span>.<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11948496X"><span title="Original: Pictett" class="dta-reg">Piktet</span></a></span></span> <span title="Original: ſtellte" class="dta-reg">stellte</span> <span title="Original: dieſerhalb" class="dta-reg">dieserhalb</span> Beobachtungen im <span title="Original: Kloſter" class="dta-reg">Kloster</span> des <span class="aq ">St.</span><br/>
+Bernhard an, und es ergab <span title="Original: ſich" class="dta-reg">sich</span>, daß des Barometer in <span title="Original: der-&#xA;ſelben" class="dta-reg">derselben</span> Stunde wo es in Genf <span title="Original: ſenk" class="dta-reg">senk</span>, auf der <span class="aq ">St.</span> Bernhard <span title="Original: ſtieg" class="dta-reg">stieg</span>.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0382 : 376.|</span><br/>
+<span title="Original: Barometerverſuche" class="dta-reg">Barometerversuche</span> in der nördlichen Zone vom <span class="aq ">Prof. <span title="Personenname"><a href="http://d-nb.info/gnd/100055427">Brandes</a></span></span><br/>
+<span title="Original: angeſtellt" class="dta-reg">angestellt</span>, geben eine <span title="Original: Verſchiedenheit" class="dta-reg">Verschiedenheit</span> von <span title="Original: 6–8" class="dta-reg">6-8</span><span title="Original: ‴" class="dta-reg">'''</span> die <span title="Original: gleich-&#xA;zeitig" class="dta-reg">gleichzeitig</span> in großen Strecken beobachtet wurden. Hiervon waren<br/>
+aber die Einwirkungen der Stürme die <span title="Original: Urſache" class="dta-reg">Ursache</span>.</p><br/>
+<p class="dta-p">Die Stürme <span title="Original: entſtehen" class="dta-reg">entstehen</span> da wohin <span title="Original: ſie" class="dta-reg">sie</span> wehen, und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118534912">Fränklin</a></span></span><br/>
+fand daß die <span title="Original: Nordſtürme" class="dta-reg">Nordstürme</span> in der <span title="Original: ſüdlichen" class="dta-reg">südlichen</span> Hemisphäre <span title="Original: an-&#xA;fangen" class="dta-reg">anfangen</span>, indem eine <span title="Original: Luftſchicht" class="dta-reg">Luftschicht</span> in der <span title="Original: ſüdlichen" class="dta-reg">südlichen</span> Gegend <span title="Original: aufſteigt" class="dta-reg">aufsteigt</span><br/>
+und durch das <span title="Original: Sollicitiren" class="dta-reg">Sollizitieren</span> der <span title="Original: andern" class="dta-reg">anderen</span> <span title="Original: Luftſchichten" class="dta-reg">Luftschichten</span> der Stürm <span title="Original: be-&#xA;ginnt" class="dta-reg">beginnt</span>. Etwas <span title="Original: Aehnliches" class="dta-reg">Ähnliches</span> wurde von <span title="H￼" class="dta-abbr">Herrn</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">von Buch</a></span></span> bei Portugal<br/>
+beobachtet, wo die Veränderung des Windes da anfing wohin<br/>
+er ging. Die Veränderungen der <span title="Original: Südoſtwinde" class="dta-reg">Südostwinde</span> in die <span title="Schreibfehler: Norſt-&#xA;oſtwinde" class="dta-corr"><span title="Original: Nord-&#xA;oſtwinde" class="dta-reg">Nordostwinde</span></span> <span title="Original: verurſachen" class="dta-reg">verursachen</span> bei den <span title="Original: Canariſchen" class="dta-reg">Kanarischen</span> <span title="Original: Inſeln" class="dta-reg">Inseln</span> auf Grande<br/>
+Canaria die <span title="Original: Erſcheinung" class="dta-reg">Erscheinung</span>, daß das Maximum der Wärme<br/>
+dort <span title="Original: erſt" class="dta-reg">erst</span> in <span title="Original: October" class="dta-reg">Oktober</span> eintritt. Schon <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/1013254422">Georg <span title="Original: Glaſs" class="dta-reg">Glas</span></a></span></span> machte die<br/>
+Bemerkung, daß auf dem Pic <span title="Original: ſtets" class="dta-reg">stets</span> <span title="Original: Weſtwinde" class="dta-reg">Westwinde</span> <span title="Original: herrſchen" class="dta-reg">herrschen</span>.<br/>
+Daß die <span title="Original: obern" class="dta-reg">oberen</span> <span title="Original: Luftſchichten" class="dta-reg">Luftschichten</span> <span title="Original: ſich" class="dta-reg">sich</span> oft den <span title="Original: untern" class="dta-reg">unteren</span> <span title="Original: entgegengeſetzt" class="dta-reg">entgegengesetzt</span><br/>
+bewegen, <span title="Original: beweiſt" class="dta-reg">beweist</span> der <span title="Original: Vulcan" class="dta-reg">Vulkan</span> von St. Vincent, der nach <span title="Original: Bar-&#xA;bados" class="dta-reg">Barbados</span> die <span title="Original: Aſche" class="dta-reg">Asche</span> wirft, was nur durch <span title="Original: obern" class="dta-reg">oberen</span> <span title="Original: entgegengeſetzten" class="dta-reg">entgegengesetzten</span><br/>
+<span title="Original: Luftſtrömungen" class="dta-reg">Luftströmungen</span> möglich <span title="Original: iſt" class="dta-reg">ist</span>.</p><br/>
+<p class="dta-p">Wenn die <span title="Original: Cultur" class="dta-reg">Kultur</span> Einfluß auf die Winde hätte, <span title="Original: ſo" class="dta-reg">so</span><br/>
+müßte <span title="Original: ſie" class="dta-reg">sie</span> auch auf das ganze <span class="u "><span title="Original: Clima" class="dta-reg">Klima</span></span> einzelner Länder wirken,<br/>
+dies <span title="Original: iſt" class="dta-reg">ist</span> aber <span title="Original: wenigſtens" class="dta-reg">wenigstens</span> <span title="Original: ſo" class="dta-reg">so</span> gering, daß es unbemerkbar <span title="Original: iſt" class="dta-reg">ist</span>.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0383 : 377.|</span><br/>
+<p class="dta-p">Der <span title="Original: Unterſchied" class="dta-reg">Unterschied</span> der <span title="Original: Oſt-" class="dta-reg">Ost-</span> und <span title="Original: Weſtwinde" class="dta-reg">Westwinde</span> auf das <span title="Original: Clima" class="dta-reg">Klima</span><br/>
+<span title="Original: iſt" class="dta-reg">ist</span>, daß <span title="Original: erſtere" class="dta-reg">erstere</span> kälter, <span title="Original: letztern" class="dta-reg">letzteren</span> wärmer wehen. Nach 21<br/>
+jährigen Beobachtungen zu Paris verhält <span title="Original: ſich" class="dta-reg">sich</span> dort die <span title="Original: Quanti-&#xA;tät" class="dta-reg">Quantität</span> der <span title="Original: Oſtwinde" class="dta-reg">Ostwinde</span> zu der der <span title="Original: Weſtwinde" class="dta-reg">Westwinde</span> wie 23:70, <span title="Original: alſo" class="dta-reg">also</span><br/>
+<span title="Original: faſt" class="dta-reg">fast</span> wie 1:3. Hieraus <span title="Original: ergiebt" class="dta-reg">ergibt</span> <span title="Original: ſich" class="dta-reg">sich</span>, daß durch das <span title="Original: Verherr-&#xA;ſchen" class="dta-reg">Herrschen</span> der <span title="Original: Weſtwinde" class="dta-reg">Westwinde</span> die Temperatur <span title="Original: begünſtigt" class="dta-reg">begünstigt</span> wird,<br/>
+und wäre das <span title="Original: Verhältniß" class="dta-reg">Verhältnis</span> 1:7 <span title="Original: ſo" class="dta-reg">so</span> würde das <span title="Original: Clima" class="dta-reg">Klima</span> um<br/>
+2° wärmer <span title="Original: ſein" class="dta-reg">sein</span>; dagegen würde die Zunahme das <span title="Original: Oſtwindes" class="dta-reg">Ostwindes</span><br/>
+natürlich einen <span title="Original: entgegengeſetzten" class="dta-reg">entgegengesetzten</span> <span title="Original: Effect" class="dta-reg">Effekt</span> hervorbringen. Es<br/>
+<span title="Original: iſt" class="dta-reg">ist</span> auch nicht <span title="Original: wahrſcheinlich" class="dta-reg">wahrscheinlich</span>, daß die Veränderungen der <span title="Original: Cultur" class="dta-reg">Kultur</span><br/>
+einen Einfluß auf die <span title="Original: Temperaturverhältniſſe" class="dta-reg">Temperaturverhältnisse</span> <span title="Original: äußern" class="dta-reg">äußeren</span> <span title="Original: ſollten" class="dta-reg">sollten</span>,<br/>
+<span title="Original: beſonders" class="dta-reg">besonders</span> <span title="Original: ſehen" class="dta-reg">sehen</span> wir im Norden von Amerika, wo durch das<br/>
+Abhauen der Wälder und <span title="Original: andern" class="dta-reg">anderen</span> Veränderungen der <span title="Original: Cultur" class="dta-reg">Kultur</span><br/>
+durch <span title="Original: größern" class="dta-reg">größeren</span> Bevölkerung, <span title="Original: ſich" class="dta-reg">sich</span> kein <span title="Original: Unterſchied" class="dta-reg">Unterschied</span> gezeigt hat.</p><br/>
+<p class="dta-p">Es <span title="Original: giebt" class="dta-reg">gibt</span> Perioden wo <span title="Original: ſich" class="dta-reg">sich</span> plötzlich <span title="Original: ſtarke" class="dta-reg">starke</span> <span title="Original: Luftbe-&#xA;wegungen" class="dta-reg">Luftbewegungen</span> <span title="Original: einſtellen" class="dta-reg">einstellen</span>, wie die <span class="u "><span title="Original: Aequinoctialſtürme" class="dta-reg">Aequinoctialstürme</span></span>. <span title="Original: Dieſe" class="dta-reg">Diese</span><br/>
+Veränderungen der Luft <span title="Original: ſtellen" class="dta-reg">stellen</span> <span title="Original: ſich" class="dta-reg">sich</span> beim Steigen der Sonne<br/>
+<span title="Original: ſehr" class="dta-reg">sehr</span> regelmäßig ein, verbreiten <span title="Original: ſich" class="dta-reg">sich</span> über die ganze Erde,<br/>
+und dauern gegen 3 Wochen, 12 bis 15 Tage nach dem<br/>
+Aequinoctium nehmen <span title="Original: ſie" class="dta-reg">sie</span> ihre Anfang. Man hat bisher noch<br/>
+keine <span title="Original: Urſache" class="dta-reg">Ursache</span> darüber angeben können. Man hat geglaubt<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0384 : 378.|</span><br/>
+daß <span title="Original: ſie" class="dta-reg">sie</span> in dem Weltraume <span title="Original: ſelbſt" class="dta-reg">selbst</span> <span title="Original: ſein" class="dta-reg">sein</span> könne, indem <span title="Original: gewiſſe" class="dta-reg">gewisse</span><br/>
+große Linien da <span title="Original: entſtänden" class="dta-reg">entständen</span> wenn 2 mächtige <span title="Original: magnetiſche" class="dta-reg">magnetische</span><br/>
+Pole <span title="Original: ſich" class="dta-reg">sich</span> einander gegenüber <span title="Original: ſtehen" class="dta-reg">stehen</span>. Wir <span title="Original: ſind" class="dta-reg">sind</span> jetzt bald<br/>
+in der Zeit <span title="Original: /" class="dta-reg">(</span>März<span title="Original: /" class="dta-reg">)</span> wo es mit einer <span title="Original: ſolchen" class="dta-reg">solchen</span> Stellung.</p><br/>
+<p class="dta-p">Es <span title="Original: iſt" class="dta-reg">ist</span> viel <span title="Original: wahrſcheinlicher" class="dta-reg">wahrscheinlicher</span>, daß es ein <span title="Original: Effect" class="dta-reg">Effekt</span> des <span title="Original: Auf-&#xA;ſteigens" class="dta-reg">Aufsteigens</span> der Luft <span title="Original: iſt" class="dta-reg">ist</span>.</p><br/>
+<p class="dta-p">Bei der Schnelligkeit und <span title="Original: Intenſität" class="dta-reg">Intensität</span> des Schalles habe<br/>
+ich noch <span title="Original: vergeſſen" class="dta-reg">vergessen</span> zu erwähnen, daß die Licht- und Schallwellen<br/>
+in einem nahen <span title="Original: Verhältniſſe" class="dta-reg">Verhältnisse</span> <span title="Original: ſtehen" class="dta-reg">stehen</span>. So <span title="Original: iſt" class="dta-reg">ist</span> man in der<br/>
+Schweiz <span title="Original: beſorgt" class="dta-reg">besorgt</span> für Lawinen, wenn man des Nachts<br/>
+den Schall gut hört. <span title="Original: Ebenſo" class="dta-reg">Ebenso</span> erfolgt in der Regel Regen,<br/>
+wenn die <span title="Original: Intenſität" class="dta-reg">Intensität</span> des Lichts und Schall's eintritt.<br/>
+Vielleicht hängt es mit dem <span title="Original: aufſteigenden" class="dta-reg">aufsteigenden</span> <span title="Original: Luftſtrom" class="dta-reg">Luftstrom</span><br/>
+<span title="Original: zuſammen" class="dta-reg">zusammen</span>, da die Lichtwelle leichter zu uns gelangt.</p><br/>
+</div>
+<span class="dta-pb" style="padding-left:15em">|#f0385 : 379.|</span><br/>
+<div class="">   <div class="dta-head">4. <span title="Original: Hydroſtatiſche" class="dta-reg">Hydrostatische</span> <span title="Original: Beſchaffenheit" class="dta-reg">Beschaffenheit</span> der Luft,<br/>
+<span title="Original: Entwickelung" class="dta-reg">Entwicklung</span> <span class="u ">das <span title="Original: Thaues" class="dta-reg">Taues</span></span> und Regens <span class="aq ">etc</span>.</div><br/>
+<hr/><br/>
+<p class="dta-p">Der <span title="Original: Waſſergehalt" class="dta-reg">Wassergehalt</span> der Luft <span title="Original: iſt" class="dta-reg">ist</span> unaufhörlichen<br/>
+Veränderungen unterworfen, die <span title="Original: theils" class="dta-reg">teils</span> von der <span title="Original: beſtändigen" class="dta-reg">beständigen</span><br/>
+Bewegung, welche die ungleiche <span title="Original: Vertheilung" class="dta-reg">Verteilung</span> des <span title="Original: Wärme-&#xA;ſtoffs" class="dta-reg">Wärmestoffs</span> in ihr <span title="Original: verurſacht" class="dta-reg">verursacht</span>, <span title="Original: theils" class="dta-reg">teils</span> von dem geringere <span title="Original: ſpecifiſchen" class="dta-reg">spezifischen</span><br/>
+Gewichte der <span title="Original: waſſergashaltigern" class="dta-reg">wassergashaltigeren</span> Luft, und <span title="Original: theils" class="dta-reg">teils</span> von der<br/>
+ungleichen Temperatur der <span title="Original: verſchiedenen" class="dta-reg">verschiedenen</span> Stellen des <span title="Original: Erd-&#xA;bodens" class="dta-reg">Erdbodens</span> und der <span title="Original: Luftſchichten" class="dta-reg">Luftschichten</span>, herrühren.</p><br/>
+<p class="dta-p">Hörte die Sonne auf zu <span title="Original: ſcheinen" class="dta-reg">scheinen</span>, <span title="Original: ſo" class="dta-reg">so</span> würde der <span title="Original: tropfbar-&#xA;flüſſige" class="dta-reg">tropfbarflüssige</span> <span title="Original: Theil" class="dta-reg">Teil</span> der <span title="Original: Erdmaſſe" class="dta-reg">Erdmasse</span> in der <span title="Original: vollkommenſten" class="dta-reg">vollkommensten</span> Ruhe bleiben,<br/>
+und die Luft <span title="Original: ſtets" class="dta-reg">stets</span> eine unveränderliche Menge von <span title="Original: Waſſer-&#xA;gas" class="dta-reg">Wassergas</span> enthalten, welche der <span title="Original: Expanſionskraft" class="dta-reg">Expansionskraft</span> des <span title="Original: Waſſers" class="dta-reg">Wassers</span><br/>
+bei der <span title="Original: beſtehenden" class="dta-reg">bestehenden</span> Erdtemperatur <span title="Original: entſpräche" class="dta-reg">entspräche</span>, wenn <span title="Original: dieſe" class="dta-reg">diese</span><br/>
+nicht etwa <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: abſolut" class="dta-reg">absolut</span> kalt wäre, daß die <span title="Original: Expanſionskraft" class="dta-reg">Expansionskraft</span><br/>
+0 würde. <span title="Original: –" class="dta-reg">-</span> So aber treffen die <span title="Original: Sonnenſtrahlen" class="dta-reg">Sonnenstrahlen</span> <span title="Original: unſere" class="dta-reg">unsere</span><br/>
+Erde, werden von der <span title="Original: feſten" class="dta-reg">festen</span> <span title="Original: Maſſe" class="dta-reg">Maße</span> <span title="Original: derſelben" class="dta-reg">derselben</span> <span title="Original: zerſetzt" class="dta-reg">zersetzt</span>,<br/>
+und <span title="Original: laſſen" class="dta-reg">lassen</span> dabei ihren <span title="Original: Wärmeſtoff" class="dta-reg">Wärmestoff</span> fahren; dadurch wird die<br/>
+<span title="Original: untern" class="dta-reg">unteren</span> Schicht der Atmosphäre <span title="Original: ſtark" class="dta-reg">stark</span> ausgedehnt und muß in<br/>
+die Höhe <span title="Original: ſteigen" class="dta-reg">steigen</span>, um einer kälteren Luft Platz zu machen,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0386 : 380.|</span><br/>
+welche überall in ihn <span title="Original: niederſinkt" class="dta-reg">niedersinkt</span> und eine Art Bewegung<br/>
+in der Luft <span title="Original: verurſacht" class="dta-reg">verursacht</span>. Dabei erwärmen die <span title="Original: Sonnenſtrahlen" class="dta-reg">Sonnenstrahlen</span><br/>
+die <span title="Original: verſchiedenen" class="dta-reg">verschiedenen</span> <span title="Original: Theile" class="dta-reg">Teile</span> der Erdoberfläche ungleich <span title="Original: ſtark" class="dta-reg">stark</span>, das<br/>
+Land mehr, als das <span title="Original: Waſſer" class="dta-reg">Wasser</span>, welches den größten <span title="Original: Theil" class="dta-reg">Teil</span><br/>
+der <span title="Original: Sonnenſtrahlen" class="dta-reg">Sonnenstrahlen</span> zurückwirft, wodurch <span title="Original: alſo" class="dta-reg">also</span> eine <span class="u ">zweite,</span><br/>
+<span title="Original: ſtärkere" class="dta-reg">stärkere</span> Bewegung der Luft <span title="Original: verurſacht" class="dta-reg">verursacht</span> wird. Endlich wird<br/>
+auch der mittlere <span title="Original: Theil" class="dta-reg">Teil</span> der Erde <span title="Original: ſtark" class="dta-reg">stark</span> erwärmt, während<br/>
+um die Pole herum eine <span title="Original: ſtrenge" class="dta-reg">strenge</span> Kälte <span title="Original: herrſcht" class="dta-reg">herrscht</span>, und hieraus<br/>
+muß mithin die <span title="Original: ſtärkſte" class="dta-reg">stärkste</span> Bewegung in der Atmosphäre<br/>
+<span title="Original: entſtehen" class="dta-reg">entstehen</span>. Denn über den erwärmten <span title="Original: Erdſtrichen" class="dta-reg">Erdstrichen</span> muß<br/>
+die warme Luft <span title="Original: ſtets" class="dta-reg">stets</span> <span title="Original: emporſteigen" class="dta-reg">emporsteigen</span> und <span title="Original: allmählig" class="dta-reg">allmählich</span> von<br/>
+der Luft aus den kälteren Gegenden wieder <span title="Original: erſetzt" class="dta-reg">ersetzt</span> werden,<br/>
+die <span title="Original: höhern" class="dta-reg">höheren</span>, <span title="Original: wärmern" class="dta-reg">wärmeren</span> und leichtere <span title="Original: Luftſäule" class="dta-reg">Luftsäule</span> welche <span title="Original: empor-&#xA;ſtieg" class="dta-reg">emporstieg</span>, muß <span title="Original: ſich" class="dta-reg">sich</span> aber <span title="Original: ſeitwärts" class="dta-reg">seitwärts</span> wieder herabziehen und den<br/>
+Gegenden <span title="Original: zuſtrömen" class="dta-reg">zuströmen</span>, wo die kältere Luft herkam.</p><br/>
+<p class="dta-p">Die Luft bleibt über der Oberfläche des Erdbodens<br/>
+und der Seen niemals <span title="Original: ſo" class="dta-reg">so</span> lange <span title="Original: ſtehen" class="dta-reg">stehen</span>, daß <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſich" class="dta-reg">sich</span> dem<br/>
+<span title="Original: höhſten" class="dta-reg">höchsten</span> Grade der Feuchtigkeit nähern könnte. Die <span title="Original: Quan-&#xA;tität" class="dta-reg">Quantität</span> <span title="Original: iſt" class="dta-reg">ist</span> in der <span title="Original: temperirte" class="dta-reg">temperierte</span> Zone natürlich geringer, da <span title="Original: ſie" class="dta-reg">sie</span> hier<br/>
+0,78, in den Tropen dagegen 0,88 beträgt. <span title="Original: –" class="dta-reg">-</span> <span title="Original: Dieſe" class="dta-reg">Diese</span><br/>
+Feuchtigkeit wird, durch <span title="Original: Verdunſtungen" class="dta-reg">Verdunstungen</span> bis zu einem <span title="Original: gewiſſen" class="dta-reg">gewissen</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0387 : 381.|</span><br/>
+Grade feuchten Luft durch die mehr oder minder <span title="Original: ſtarken" class="dta-reg">starken</span><br/>
+Bewegungen der Atmosphäre in Regionen des <span title="Original: Luftkreiſes" class="dta-reg">Luftkreises</span><br/>
+oder nach Gegenden der Erde geführt, wo <span title="Original: ſie" class="dta-reg">sie</span> abgekühlt<br/>
+wird und den <span title="Original: /" class="dta-reg">(</span><span title="Original: dieſer" class="dta-reg">dieser</span> Abkühlung<span title="Original: /" class="dta-reg">)</span> <span title="Original: entſprechenden" class="dta-reg">entsprechenden</span> <span title="Original: Theil" class="dta-reg">Teil</span> ihres<br/>
+<span title="Original: Waſſers" class="dta-reg">Wassers</span> <span title="Original: abſetzt" class="dta-reg">absetzt</span>, welcher dann Wolken, Regen, Nebel<br/>
+und dergl. m. bildet. Strömt nun <span title="Original: dieſe" class="dta-reg">diese</span>, durch Erkältung von<br/>
+ihrer vorigen Feuchtigkeit <span title="Original: befreiete" class="dta-reg">befreite</span> Luft wiederum nach<br/>
+wärmeren Ländern oder den unteren Regionen der <span title="Original: At-&#xA;mosphäre" class="dta-reg">Atmosphäre</span> wieder zu, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: ſie" class="dta-reg">sie</span>, im <span title="Original: Verhältniß" class="dta-reg">Verhältnis</span> der Temperatur<br/>
+der letzteren, im hohen Grade trocken und kann <span title="Original: ſich" class="dta-reg">sich</span> von neuem<br/>
+wieder mit <span title="Original: Waſſergas" class="dta-reg">Wassergas</span> mengen. Wegen <span title="Original: dieſer" class="dta-reg">dieser</span> <span title="Original: unauf-&#xA;hörlichen" class="dta-reg">unaufhörlichen</span> Veränderungen kann der Gehalt den Luft an<br/>
+<span title="Original: Waſſergas" class="dta-reg">Wassergas</span> niemals <span title="Original: ſo" class="dta-reg">so</span> gleichförmig <span title="Original: ſein" class="dta-reg">sein</span>, wie ihr Gehalt<br/>
+an <span title="Original: beſtändigen" class="dta-reg">beständigen</span> gasförmigen <span title="Original: Gemengtheilen" class="dta-reg">Gemengeteilen</span> <span title="Original: iſt" class="dta-reg">ist</span>, und durch<br/>
+<span title="Original: dieſen" class="dta-reg">diesen</span> <span title="Original: Umſtand" class="dta-reg">Umstand</span> werden Quellen, <span title="Original: Flüße" class="dta-reg">Flüsse</span>, Seen und <span title="Original: zu-&#xA;gleich" class="dta-reg">zugleich</span> die ganze lebende Natur erhalten.</p><br/>
+<p class="dta-p">Um die Bildung der Wolken und die <span title="Original: Entſtehung" class="dta-reg">Entstehung</span><br/>
+des Regens richtig zu begreifen, muß man <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: vor-&#xA;ſtellen" class="dta-reg">vorstellen</span>, daß beides über einem großen, gleichförmig<br/>
+erwärmten <span title="Original: Landſtriche" class="dta-reg">Landstriche</span> und bei einer vollkommenen Ruhe<br/>
+in den oberen und unteren Regionen der Atmosphäre vor <span title="Original: ſich" class="dta-reg">sich</span> gehe.  <span title="Original: –" class="dta-reg">-</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0388 : 382.|</span><br/>
+Das <span title="Original: Waſſer" class="dta-reg">Wasser</span> der Seen, <span title="Original: Flüße" class="dta-reg">Flüsse</span> und das feuchten <span title="Original: Erd-&#xA;reichs" class="dta-reg">Erdreichs</span> <span title="Original: verdunſtet" class="dta-reg">verdunstet</span> mit der, <span title="Original: ſeiner" class="dta-reg">seiner</span> Temperatur <span title="Original: ange-&#xA;meſſenen" class="dta-reg">angemessenen</span> <span title="Original: Expanſionskraft" class="dta-reg">Expansionskraft</span>; die Luft aber, welche das<br/>
+hierbei <span title="Original: entſtehende" class="dta-reg">entstehende</span> <span title="Original: Waſſergas" class="dta-reg">Wassergas</span> aufnimmt, wird <span title="Original: theils" class="dta-reg">teils</span><br/>
+durch <span title="Original: deſſen" class="dta-reg">dessen</span> Beimengung, <span title="Original: theils" class="dta-reg">teils</span> durch die Erwärmung vom<br/>
+Sonnenlichte, leichter, und muß hierdurch <span title="Original: aufſteigen" class="dta-reg">aufsteigen</span> und<br/>
+einer weniger feuchten Luft Platz machen. Sie zieht<br/>
+<span title="Original: ſich" class="dta-reg">sich</span> auf <span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: Weiſe" class="dta-reg">Weise</span> nach und nach bis zu <span title="Original: Luftſchichten" class="dta-reg">Luftschichten</span><br/>
+empor, wo <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ſehr" class="dta-reg">sehr</span> abgekühlt wird, daß das <span title="Original: Waſſer" class="dta-reg">Wasser</span>,<br/>
+welches <span title="Original: ſie" class="dta-reg">sie</span> mit <span title="Original: ſich" class="dta-reg">sich</span> führt, <span title="Original: ſeine" class="dta-reg">seine</span> <span title="Original: Gasgeſtalt" class="dta-reg">Gasgestalt</span> nicht mehr <span title="Original: be-&#xA;halten" class="dta-reg">behalten</span> kann und in <span title="Original: Geſtalt" class="dta-reg">Gestalt</span> eines Dampfes <span title="Original: niedergeſchla-&#xA;gen" class="dta-reg">niedergeschlagen</span> wird. Je wärmer die Luft und je weniger <span title="Original: ſie" class="dta-reg">sie</span><br/>
+mit <span title="Original: Waſſer" class="dta-reg">Wasser</span> <span title="Original: geſättigt" class="dta-reg">gesättigt</span> <span title="Original: iſt" class="dta-reg">ist</span>, in <span title="Original: deſto" class="dta-reg">desto</span> größerer Höhe geht<br/>
+<span title="Original: dieſer" class="dta-reg">dieser</span> <span title="Original: Niederſchlag" class="dta-reg">Niederschlag</span> vor <span title="Original: ſich" class="dta-reg">sich</span>, welcher nur dadurch <span title="Original: ſichtbar" class="dta-reg">sichtbar</span> wird<br/>
+und Wolken bildet, daß die <span title="Original: Maſſe" class="dta-reg">Maße</span> der Dämpfe <span title="Original: theils" class="dta-reg">teils</span><br/>
+von der Sonne erleuchtet wird, <span title="Original: theils" class="dta-reg">teils</span> <span title="Original: dieſe" class="dta-reg">diese</span> verdeckt.<br/>
+Je dichter die Dämpfe <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: zuſammenhäufen" class="dta-reg">zusammenhäufen</span>, <span title="Original: deſto" class="dta-reg">desto</span> weniger<br/>
+<span title="Original: durchſichtiger" class="dta-reg">durchsichtiger</span> werden <span title="Original: ſie" class="dta-reg">sie</span>, und <span title="Original: deſto" class="dta-reg">desto</span> dunkler <span title="Original: erſcheinen" class="dta-reg">erscheinen</span><br/>
+<span title="Original: ſie" class="dta-reg">sie</span> aus.</p><br/>
+<p class="dta-p">Die Wolken <span title="Original: wachſen" class="dta-reg">wachsen</span> nach und nach, und erhalten <span title="Original: ſich" class="dta-reg">sich</span>,<br/>
+weil die kleinen <span title="Original: Bläſchen" class="dta-reg">Bläschen</span> mit der Luft ziemlich gleiches<br/>
+<span title="Original: ſpecif" class="dta-reg">specif</span>. Gewicht haben, einige Zeit in den höheren Regionen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0389 : 383.|</span><br/>
+der Luft <span title="Original: ſchwebend" class="dta-reg">schwebend</span>. Haben <span title="Original: ſie" class="dta-reg">sie</span> endlich einen <span title="Original: gewiſſen" class="dta-reg">gewissen</span><br/>
+Grad von Dichtigkeit erlangt, <span title="Original: ſo" class="dta-reg">so</span> fangen <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: allmählig" class="dta-reg">allmählich</span> an,<br/>
+<span title="Original: ſich" class="dta-reg">sich</span> zu <span title="Original: ſenken" class="dta-reg">senken</span>, und wenn die Dämpfe nun wieder in eine<br/>
+niedrigere, wärmere <span title="Original: Luftſchicht" class="dta-reg">Luftschicht</span> kommen, werden <span title="Original: ſie" class="dta-reg">sie</span> nach<br/>
+und nach wieder <span title="Original: aufgelöſt" class="dta-reg">aufgelöst</span>, bis die Luft ihr Maximum<br/>
+von Feuchtigkeit erreicht hat. Man <span title="Original: ſieht" class="dta-reg">sieht</span> dabei deutlich,<br/>
+wie ganze Wolken <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: ſenken" class="dta-reg">senken</span>, ohne daß noch ein Tropfen<br/>
+Regen gefallen <span title="Original: iſt" class="dta-reg">ist</span>. Die Luft <span title="Original: zwiſchen" class="dta-reg">zwischen</span> der unteren<br/>
+Fläche der Wolken und der Erde wird dadurch ihrem <span title="Original: höch-&#xA;ſten" class="dta-reg">höchsten</span> Grade von Feuchtigkeit nahe gebracht, daß die Wolken<br/>
+die Sonne verdecken, <span title="Original: dieſe" class="dta-reg">diese</span> Luft dadurch abgekühlt und die<br/>
+<span title="Original: Expanſionskraft" class="dta-reg">Expansionskraft</span> des <span title="Original: Waſſers" class="dta-reg">Wassers</span> vermindert wird. Hat die<br/>
+Luft endlich dies Maximum erreicht, <span title="Original: ſo" class="dta-reg">so</span> fängt es an zu<br/>
+regnen. Beobachtet man dabei es Hygrometer, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ſieht" class="dta-reg">sieht</span><br/>
+man, wie die Feuchtigkeit der Luft <span title="Original: ſich" class="dta-reg">sich</span> nach und nach <span title="Original: ver-&#xA;mehrt" class="dta-reg">vermehrt</span>, bis <span title="Original: ſie" class="dta-reg">sie</span> aufs <span title="Original: Aeußerſte" class="dta-reg">Äußerste</span> gebracht wird, wo dann einige<br/>
+Augenblicke vorher oder nachher die <span title="Original: erſten" class="dta-reg">ersten</span> Regentropfen fallen.</p><br/>
+<p class="dta-p">Die Regentropfen werden durch die kleinen <span title="Original: Luftbläſchen" class="dta-reg">Luftbläschen</span><br/>
+gebildet, die, wenn <span title="Original: ſie" class="dta-reg">sie</span> bei ihrem Falle von der feuchten<br/>
+Luft nicht mehr <span title="Original: aufgelöſt" class="dta-reg">aufgelöst</span> werden, einander immer mehr<br/>
+und mehr berühren und kleine <span title="Original: Waſſerkugeln" class="dta-reg">Wasserkugeln</span> bilden.<br/>
+<span title="Original: Dieſe" class="dta-reg">Diese</span> nahmen beim Niederfallen an Größe zu, <span title="Original: theils" class="dta-reg">teils</span> durch<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0390 : 384.|</span><br/>
+die Vereinigung mit <span title="Original: andern" class="dta-reg">anderen</span> <span title="Original: Bläſchen" class="dta-reg">Bläschen</span> und Tropfen, <span title="Original: theils" class="dta-reg">teils</span><br/>
+dadurch, daß <span title="Original: ſie" class="dta-reg">sie</span> gewöhnlich aus einer kälteren in eine wärmer<br/>
+Luftregion fallen, und <span title="Original: ſo" class="dta-reg">so</span> wie jeder andere kalte Körper in<br/>
+warmer und feuchter Luft, während des Fallens, <span title="Original: Waſſer" class="dta-reg">Wasser</span><br/>
+an ihrer Oberfläche <span title="Original: niederſchlagen" class="dta-reg">niederschlagen</span>. Deshalb <span title="Original: ſind" class="dta-reg">sind</span> in Sommer<br/>
+die Tropfen beim Anfange eines Regens größer, und<br/>
+werden nachher <span title="Original: allmählig" class="dta-reg">allmählich</span> kleiner. Im Winter hingegen<br/>
+und in den kälteren Jahreszeiten, wo der <span title="Original: Unterſchied" class="dta-reg">Unterschied</span> <span title="Original: zwiſchen" class="dta-reg">zwischen</span><br/>
+der Temperatur der oberen und unteren <span title="Original: Luftſchichten" class="dta-reg">Luftschichten</span> geringer<br/>
+<span title="Original: iſt" class="dta-reg">ist</span>, oder wenn, wie zuweilen <span title="Original: geſchieht" class="dta-reg">geschieht</span>, die in der Höhe<br/>
+<span title="Original: niedergeſchlagenen" class="dta-reg">niedergeschlagenen</span> <span title="Original: Waſſerdünſte" class="dta-reg">Wasserdünste</span> zum <span title="Original: Theil" class="dta-reg">Teil</span> die Temperatur<br/>
+des <span title="Original: Landſtrichs" class="dta-reg">Landstrichs</span>, aus welchem <span title="Original: ſie" class="dta-reg">sie</span> hergeführt worden <span title="Original: ſind" class="dta-reg">sind</span>, noch<br/>
+beibehalten, und daher wärmer als die <span title="Original: untern" class="dta-reg">unteren</span> Luft <span title="Original: ſind" class="dta-reg">sind</span>,<br/>
+<span title="Original: iſt" class="dta-reg">ist</span> der <span title="Original: Unterſchied" class="dta-reg">Unterschied</span> weniger merklich. Bei Stürmen, <span title="Original: Ge-&#xA;witter" class="dta-reg">Gewitter</span> und Regenwetter kommen ebenfalls vielfältige <span title="Original: Ver-&#xA;änderungen" class="dta-reg">Veränderungen</span> vor. <span title="Original: –" class="dta-reg">-</span> Ganz <span title="Original: allmählig" class="dta-reg">allmählich</span> <span title="Original: ſchlägt" class="dta-reg">schlägt</span> <span title="Original: ſich" class="dta-reg">sich</span> auf <span title="Original: dieſe" class="dta-reg">diese</span><br/>
+<span title="Original: Weiſe" class="dta-reg">Weise</span> die Wolke gänzlich nieder, der Himmel heitert<br/>
+<span title="Original: ſich" class="dta-reg">sich</span> auf, die Sonne kommt wieder zum <span title="Original: Vorſchein" class="dta-reg">Vorschein</span>, und die<br/>
+vom Regen abgekühlte Luft wird wieder erwärmt. Das<br/>
+Hygrometer zeigt nun ein <span title="Original: ſchnelles" class="dta-reg">schnelles</span> Zunehmen der <span title="Original: Trocken-&#xA;heit" class="dta-reg">Trockenheit</span>, weil das <span title="Original: Waſſer" class="dta-reg">Wasser</span>, womit die Luft während des<br/>
+Regens <span title="Original: geſättigt" class="dta-reg">gesättigt</span> war, durch die kalten Regentropfen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0391 : 385.|</span><br/>
+gefällt wurde, und je kälter der Regen war, <span title="Original: deſto" class="dta-reg">desto</span> <span title="Original: trockner" class="dta-reg">trockener</span><br/>
+wird die Luft nachher, aus leicht begreiflichem Grund.</p><br/>
+<p class="dta-p">Dies <span title="Original: ſind" class="dta-reg">sind</span> die Grundregeln für den Regen überhaupt, und<br/>
+<span title="Original: faſt" class="dta-reg">fast</span> ganz <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: beſchaffen" class="dta-reg">beschaffen</span> <span title="Original: iſt" class="dta-reg">ist</span> der Regen, welcher nach einem<br/>
+<span title="Original: aufgeſtiegenen" class="dta-reg">aufgestiegenen</span> <span title="Original: Morgenthaue" class="dta-reg">Morgentaue</span> fällt. Allein <span title="Original: höchſt" class="dta-reg">höchst</span> <span title="Original: ſelten" class="dta-reg">selten</span> trägt<br/>
+<span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: dieſes" class="dta-reg">dieses</span> Phänomen bei vollkommener <span title="Original: Windſtille" class="dta-reg">Windstille</span> und <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ein-&#xA;fach" class="dta-reg">einfach</span> zu, als ich es erwähnt habe. Die <span title="Original: beſtändigen" class="dta-reg">beständigen</span> <span title="Original: Be-&#xA;wegungen" class="dta-reg">Bewegungen</span> der Atmosphäre und die <span title="Original: Elektricitäten" class="dta-reg">Elektrizitäten</span> bringen<br/>
+Veränderungen darin hervor, die zwar zum <span title="Original: Theil" class="dta-reg">Teil</span> leicht <span title="Original: be-&#xA;greiflich" class="dta-reg">begreiflich</span> <span title="Original: ſind" class="dta-reg">sind</span>, zum <span title="Original: Theil" class="dta-reg">Teil</span> aber bei dem jetzigen Stande <span title="Original: un-&#xA;ſerer" class="dta-reg">unserer</span> <span title="Original: Kenntniße" class="dta-reg">Kenntnisse</span> unerklärlich bleiben.</p><br/>
+<p class="dta-p"><span title="Original: Gewiſſe" class="dta-reg">Gewisse</span> Wolken bringen eine <span title="Original: eigenthümliche" class="dta-reg">eigentümliche</span> <span title="Original: Erſcheinung" class="dta-reg">Erscheinung</span><br/>
+hervor, welche wir Donner nennen. <span title="Original: Dieſe" class="dta-reg">Diese</span> Wolken zeigen<br/>
+von ihrer <span title="Original: Entſtehung" class="dta-reg">Entstehung</span> an Merkmals von freier <span title="Original: Elektricität" class="dta-reg">Elektrizität</span>;<br/>
+<span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: wächſt" class="dta-reg">wächst</span> aber zuweilen augenblicklich zu einem <span title="Original: außer-&#xA;ordentliche" class="dta-reg">außerordentliche</span> Grade <span title="Original: elektriſcher" class="dta-reg">elektrischer</span> Ladung, entweder <span title="Original: zwiſchen" class="dta-reg">zwischen</span><br/>
+<span title="Original: verſchiedenen" class="dta-reg">verschiedenen</span> <span title="Original: Wolkentheilen" class="dta-reg">Wolkenteilen</span>, oder <span title="Original: zwiſchen" class="dta-reg">zwischen</span> ihnen und dem<br/>
+Erdboden, an, und entladet <span title="Original: ſich" class="dta-reg">sich</span> durch einen <span title="Original: ſtarken" class="dta-reg">starken</span> Funken,<br/>
+welcher zuweilen ungemein große Sprünge macht und das<br/>
+eigentliche Phänomen des Donners oder <span title="Original: Donnerſchlages" class="dta-reg">Donnerschlages</span> <span title="Original: aus-&#xA;macht" class="dta-reg">ausmacht</span>. Der Regen der gewöhnlich <span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: Erſcheinungen" class="dta-reg">Erscheinungen</span> der <span title="Original: Elek-&#xA;tricität" class="dta-reg">Elektrizität</span> begleitet, nennen wir Gewitterregen. Die <span title="Original: Gewitter-" class="dta-reg">Gewitterwolken</span>
+<span class="dta-pb" style="padding-left:15em">|#f0392 : 386.|</span><br/>
+<span title="Original: wolken" class="dta-reg"/> kommen oft <span title="Original: ſehr" class="dta-reg">sehr</span> <span title="Original: ſchnell" class="dta-reg">schnell</span> heran, ziehen gegen den <span title="Original: herr-&#xA;ſchenden" class="dta-reg">herrschenden</span> Wind, und haben oft heftige Sturmwinde zu <span title="Original: Vor-&#xA;läufern" class="dta-reg">Vorläufern</span>, welche ganz <span title="Original: ſchmale" class="dta-reg">schmale</span> <span title="Original: Erdſtreifen" class="dta-reg">Erdstreifen</span> einnehmen. Ihre <span title="Original: Ent-&#xA;ſtehung" class="dta-reg">Entstehung</span>, ihr <span title="Original: Zuſammenhang" class="dta-reg">Zusammenhäng</span> mit der <span title="Original: Elektricität" class="dta-reg">Elektrizität</span>, ob <span title="Original: ſie" class="dta-reg">sie</span> durch<br/>
+<span title="Original: dieſe" class="dta-reg">diese</span> allein oder <span title="Schreibfehler: durch2 nur1" class="dta-corr">nur durch</span> Mitwirkung <span title="Original: derſelben" class="dta-reg">derselben</span> gebildet<br/>
+werden u. <span title="Original: ſ." class="dta-reg">s.</span> w. <span title="Original: iſt" class="dta-reg">ist</span> uns gänzlich unbekannt. Manche haben<br/>
+die ungereimte <span title="Original: Vermuthung" class="dta-reg">Vermutung</span> <span title="Original: aufgeſtellt" class="dta-reg">aufgestellt</span>, der Knall des Donners<br/>
+werde in den höheren <span title="Original: Luftſchichten" class="dta-reg">Luftschichten</span> durch die Entzündung eines<br/>
+Gemenges von <span title="Original: Waſſerſtoffgas" class="dta-reg">Wasserstoffgas</span> und <span title="Original: atmosphäriſcher" class="dta-reg">atmosphärischer</span> Luft,<br/>
+<span title="Original: mittelſt" class="dta-reg">mittels</span> des <span title="Original: elektriſchen" class="dta-reg">elektrischen</span> Funkens, hervorgebracht, und der<br/>
+herabfallende Regen werde dadurch erzeugt. Allein es <span title="Original: laſſen" class="dta-reg">lassen</span><br/>
+<span title="Original: ſich" class="dta-reg">sich</span> die <span title="Original: augenſcheinlichſten" class="dta-reg">augenscheinlichsten</span> <span title="Original: Beweiſe" class="dta-reg">Beweise</span> gegen <span title="Original: dieſe" class="dta-reg">diese</span> Behauptung<br/>
+<span title="Original: aufſtellen" class="dta-reg">aufstellen</span>, die <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: blos" class="dta-reg">bloß</span> auf die <span title="Original: Aehnlichkeit" class="dta-reg">Ähnlichkeit</span> des Schalles<br/>
+und auf den <span title="Original: Umſtand" class="dta-reg">Umstand</span> gründet, daß die Gewitterwolken<br/>
+Regen gaben. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">Ein Regen wird gewöhnlich durch das Fallen eines <span title="Original: Baro-&#xA;meters" class="dta-reg">Barometers</span> <span title="Original: angekundigt" class="dta-reg">angekündigt</span>. Dies rührt <span title="Original: wahrſcheinlich" class="dta-reg">wahrscheinlich</span> daher,<br/>
+daß die Luft in dem <span title="Original: Maaße" class="dta-reg">Maße</span>, als ihre Feuchtigkeit <span title="Original: zu-&#xA;nimmt" class="dta-reg">zunimmt</span>, leichter, folglich die Atmosphäre höher, als bei<br/>
+<span title="Original: trockner" class="dta-reg">trockener</span> Luft, wird, wodurch der obere <span title="Original: Theil" class="dta-reg">Teil</span> der feuchten<br/>
+<span title="Original: Luftſäule" class="dta-reg">Luftsäule</span> <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: ſeitwärts" class="dta-reg">seitwärts</span> <span title="Original: niederſenkt" class="dta-reg">niedersenkt</span> und folglich keiner<br/>
+<span title="Original: ſo" class="dta-reg">so</span> hohen <span title="Original: Queckſilberſäule" class="dta-reg">Quecksilbersäule</span>, als vorher, das Gegengewicht halten<br/>
+kann. Man hat auch, wiewohl vielleicht weniger richtig,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0393 : 387.|</span><br/>
+den Regen für eine Folge von der Verdünnung der Luft<br/>
+erklärt, welche das Fallen des Barometers zu erkennen<br/>
+<span title="Original: giebt" class="dta-reg">gibt</span>. <span title="Original: –" class="dta-reg">-</span> <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">Auf der <span title="Original: Andeskette" class="dta-reg">Andenkette</span> nimmt die Wärme merklich ab, <span title="Original: ſo" class="dta-reg">so</span><br/>
+bald man in die Wolken <span title="Original: ſteigt" class="dta-reg">steigt</span>, und von 7200<span title="Original: ′" class="dta-reg">'</span> an <span title="Original: iſt" class="dta-reg">ist</span> man<br/>
+<span title="Original: faſt" class="dta-reg">fast</span> <span title="Original: beſtändig" class="dta-reg">beständig</span> in Nebel gefüllt. Von der Meeresfläche<br/>
+bis zu <span title="Original: dieſen" class="dta-reg">diesen</span> Regionen <span title="Original: iſt" class="dta-reg">ist</span> die Abnahme der Wärme aus gering<br/>
+oberhalb aber fangen die Wolken das Licht und die Wärme<br/>
+der Sonne auf. Die Gipfel hohen Berge <span title="Original: müſſen" class="dta-reg">müssen</span> <span title="Original: ſich" class="dta-reg">sich</span> mehr<br/>
+abkühlen, <span title="Original: ſie" class="dta-reg">sie</span> entziehen der von unten <span title="Original: aufſtrömenden" class="dta-reg">ausströmenden</span> wärmere<br/>
+Luft einen <span title="Original: Theil" class="dta-reg">Teil</span> Wärme, wodurch ein Nebel <span title="Original: entſteht" class="dta-reg">entsteht</span>,<br/>
+der <span title="Original: ſie" class="dta-reg">sie</span> gleich einem Hute bedeckt, was man <span title="Original: ſo" class="dta-reg">so</span> häufig <span title="Original: be-&#xA;merkt" class="dta-reg">bemerkt</span>, und lange deren hängen bleibt. Wenn <span title="Original: zwiſchen" class="dta-reg">zwischen</span><br/>
+einer Bergkette und der <span title="Original: Küſte" class="dta-reg">Küste</span> eine große Ebene <span title="Original: iſt" class="dta-reg">ist</span>, <span title="Original: ſo" class="dta-reg">so</span><br/>
+regnet es in <span title="Original: dieſer" class="dta-reg">dieser</span> <span title="Original: ſelten" class="dta-reg">selten</span>, weil das Gebirge die Wolken<br/>
+anzieht, wie es in Peru <span title="Original: beſonders" class="dta-reg">besonders</span> und in Afrika der<br/>
+Fall <span title="Original: iſt" class="dta-reg">ist</span>. Durch die <span title="Original: Aufſtrömungen" class="dta-reg">Ausströmungen</span> der <span title="Original: Luftſchichte" class="dta-reg">Luftschichte</span> auf <span title="Original: ſolchen" class="dta-reg">solchen</span><br/>
+Ebenen kommt es nicht leicht zum regnen, die Wolken werden<br/>
+<span title="Original: gleichſam" class="dta-reg">gleichsam</span> <span title="Original: weggeſchoben" class="dta-reg">weggeschoben</span>, bis <span title="Original: ſie" class="dta-reg">sie</span> an Berge kommen, wo <span title="Original: ſie" class="dta-reg">sie</span><br/>
+<span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: niederſchlagen" class="dta-reg">niederschlagen</span>.</p><br/>
+<p class="dta-p">Die Form der Wolken <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: verſchieden" class="dta-reg">verschieden</span> und richtet<br/>
+<span title="Original: ſich" class="dta-reg">sich</span> häufig<span class="dta-metamark" title="metamark">?</span> nach der Form der Erde. Die <span title="Original: höchſten" class="dta-reg">höchsten</span> Wolken<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0394 : 388.|</span><br/>
+<span title="Original: ſind" class="dta-reg">sind</span> die, die man Schäfchen nennt, <span title="Original: ſtill" class="dta-reg">still</span> <span title="Original: ſtehen" class="dta-reg">stehen</span>, und in<br/>
+den Tropen <span title="Original: wahrſcheinlich" class="dta-reg">wahrscheinlich</span> an <span title="Original: 27,000′" class="dta-reg">27,000'</span> hoch <span title="Original: ſtehen" class="dta-reg">stehen</span>. Es <span title="Original: ſind" class="dta-reg">sind</span><br/>
+dies <span title="Original: dieſelben" class="dta-reg">dieselben</span> Wolken welche <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118692844">Fränklin</a></span></span> in Island<br/>
+leuchten <span title="Original: ſah" class="dta-reg">sah</span>. Bei uns <span title="Original: ſind" class="dta-reg">sind</span> die Wolken in der <span title="Original: Sommer-&#xA;wärme" class="dta-reg">Sommerwärme</span> <span title="Original: 2800–3000′" class="dta-reg">2800-3000'</span> hoch, in den Tropen dagegen <span title="Original: 4–5000" class="dta-reg">4-5000</span><span title="Original: ′" class="dta-reg">'</span>.</p><br/>
+<p class="dta-p">Wenn man von Carracas oder der <span title="Original: Andeskette" class="dta-reg">Andenkette</span> aus,<br/>
+da wo die Wälder der <span class="aq ">Cinchonen</span> anfangen, bis zur Höhe<br/>
+von <span title="Original: A" class="dta-reg">Amtisane</span><span title="Original: mtiſane" class="dta-reg"/> die <span title="Original: 12000′" class="dta-reg">12000'</span> hoch <span title="Original: iſt" class="dta-reg">ist</span>, <span title="Original: hinanſteigt" class="dta-reg">hinansteigt</span>, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ſieht" class="dta-reg">sieht</span> man<br/>
+mehrere Schichten der Wolken aufeinander folgen, <span title="Original: ſo" class="dta-reg">so</span> daß die<br/>
+<span title="Original: verſchiedenen" class="dta-reg">verschiedenen</span> Hochebenen auch <span title="Original: verſchiedene" class="dta-reg">verschiedene</span> <span title="Original: Wolkenſchichten" class="dta-reg">Wolkenschichten</span> haben.</p><br/>
+<p class="dta-p">Auf dem Meere finden <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span> da Wolken wo kleine<br/>
+<span title="Original: Inſeln" class="dta-reg">Inseln</span> <span title="Original: ſind" class="dta-reg">sind</span>, weil die Temperatur <span title="Original: dieſer" class="dta-reg">dieser</span> kleinen Eilande,<br/>
+<span title="Original: ſchon" class="dta-reg">schon</span> eine <span title="Original: elektriſche" class="dta-reg">elektrische</span> Spannung äußert. Für die <span title="Original: Schiffarth" class="dta-reg">Schifffahrt</span><br/>
+<span title="Original: iſt" class="dta-reg">ist</span> dies wichtig, indem man <span title="Original: ſogar" class="dta-reg">sogar</span> flaches Land in der<br/>
+Ferne dadurch erkennen kann, die Wolken <span title="Original: ſtehen" class="dta-reg">stehen</span> oft wie<br/>
+auf Bergen <span title="Original: 5–6000′" class="dta-reg">5-6000'</span> hoch, und dies Phänomen zeigt <span title="Original: ſich" class="dta-reg">sich</span><br/>
+oft <span title="Original: ſelbſt" class="dta-reg">selbst</span> bei Sandbänken.</p><br/>
+<p class="dta-p">Die Wolken wirken auf die Atmosphäre <span title="Original: ſowohl" class="dta-reg">sowohl</span> Kälte<br/>
+als Wärme erregend. Kälte erregend, weil <span title="Original: ſie" class="dta-reg">sie</span> die<br/>
+<span title="Original: Intenſität" class="dta-reg">Intensität</span> des Lichts vermindern, und <span title="Original: ſo" class="dta-reg">so</span> der Sonne die<br/>
+Wirkung benehmen, wie es in Linie auffallend <span title="Original: iſt" class="dta-reg">ist</span>, wo das<br/>
+Thermometer auf 12° <span title="Original: ſteht" class="dta-reg">steht</span>, und doch in den angrenzenden Ländern<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0395 : 389.|</span><br/>
+nie unter <span title="Original: 17–18" class="dta-reg">17-18</span>° <span title="Original: ſinkt" class="dta-reg">sinkt</span>. Ihre Wärme erregende Kraft<br/>
+<span title="Original: iſt" class="dta-reg">ist</span> aber weit größer, weil <span title="Original: ſie" class="dta-reg">sie</span> die <span title="Original: Ausſtrahlung" class="dta-reg">Ausstrahlung</span> der<br/>
+Erdwärme hindern, damit <span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: ſich" class="dta-reg">sich</span> nicht <span title="Original: ſo" class="dta-reg">so</span> bald in das<br/>
+Weltall ausbreitet. Daher <span title="Original: ſieht" class="dta-reg">sieht</span> man auf das <span title="Original: Thermo-&#xA;meter" class="dta-reg">Thermometer</span> <span title="Original: ſteigen" class="dta-reg">steigen</span>, wenn eine Wolke am klaren Himmel<br/>
+vorüber zieht.</p><br/>
+<p class="dta-p"><span class="u "><span title="Original: Thau" class="dta-reg">Tau</span>.</span> Der <span title="Original: Unterſchied" class="dta-reg">Unterschied</span> <span title="Original: zwiſchen" class="dta-reg">zwischen</span> der Temperatur des<br/>
+Tages und der Nacht verändert den <span title="Original: Waſſergehalt" class="dta-reg">Wassergehalt</span> der<br/>
+Luft; aber <span title="Original: ſtatt" class="dta-reg">statt</span> daß das <span title="Original: Waſſergas" class="dta-reg">Wassergas</span> <span title="Original: ſich" class="dta-reg">sich</span> in <span title="Original: Geſtalt" class="dta-reg">Gestalt</span><br/>
+eines Dampfes in der Luft <span title="Original: niederſchlagen" class="dta-reg">niederschlagen</span> <span title="Original: ſollte" class="dta-reg">sollte</span>, <span title="Original: ſetzt" class="dta-reg">setzt</span> es<br/>
+<span title="Original: ſich" class="dta-reg">sich</span> auf dem Erdboden ab und die Luft behält ihre <span title="Original: Durchſich-&#xA;tigkeit" class="dta-reg">Durchsichtigkeit</span>. Es <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: ſchwierig" class="dta-reg">schwierig</span>, alle beim Niederfallen des <span title="Original: Thaues" class="dta-reg">Taues</span><br/>
+wirkenden Kräfte zu <span title="Original: beſtimmen" class="dta-reg">bestimmen</span>; <span title="Original: ſeine" class="dta-reg">seine</span> <span title="Original: Grundurſache" class="dta-reg">Grundursache</span> aber <span title="Original: iſt" class="dta-reg">ist</span><br/>
+die Abkühlung, und daß er <span title="Original: ſich" class="dta-reg">sich</span> <span class="u ">nicht in der</span> Luft, <span title="Original: ſondern" class="dta-reg">sondern</span><br/>
+auf dem Erdboden <span title="Original: niederſchlägt" class="dta-reg">niederschlägt</span>, kommt von der Anziehung<br/>
+der <span title="Original: feſten" class="dta-reg">festen</span> Körper zur <span title="Original: Waſſer" class="dta-reg">Wasser</span>, und von dem <span title="Original: Umſtande" class="dta-reg">Umstande</span><br/>
+her, daß der <span title="Original: Niederſchlag" class="dta-reg">Niederschlag</span> in der, dem Erdboden am <span title="Original: näch-&#xA;ſten" class="dta-reg">nächsten</span> gelegene <span title="Original: Luftſchicht" class="dta-reg">Luftschicht</span>, als der <span title="Original: wärmſten" class="dta-reg">wärmsten</span> und <span title="Original: waſſer-&#xA;reichſten" class="dta-reg">wasserreichsten</span>, <span title="Original: ſeinen" class="dta-reg">seinen</span> Anfang nimmt. Das <span title="Original: Waſſergas" class="dta-reg">Wassergas</span> der<br/>
+oberen <span title="Original: Luftſchichten" class="dta-reg">Luftschichten</span> breitet <span title="Original: ſich" class="dta-reg">sich</span> dann <span title="Original: allmählig" class="dta-reg">allmählich</span> nach<br/>
+der <span title="Original: untern" class="dta-reg">unteren</span>, als nach einer von <span title="Original: Waſſergas" class="dta-reg">Wassergas</span> freieren Luft,<br/>
+aus, und daher kommt es, daß der <span title="Original: Niederſchlag" class="dta-reg">Niederschlag</span> nach<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0396 : 390.|</span><br/>
+unten <span title="Original: ſeinen" class="dta-reg">seinen</span> Fortgang hat. Die Anziehung der <span title="Original: feſten" class="dta-reg">festen</span><br/>
+Körper zum <span title="Original: Waſſer" class="dta-reg">Wasser</span> wird übrigens dadurch <span title="Original: bewieſen" class="dta-reg">bewiesen</span>,<br/>
+daß <span title="Original: ſich" class="dta-reg">sich</span> der <span title="Original: Thau" class="dta-reg">Tau</span> nicht auf alle Körper gleichförmig <span title="Original: an-&#xA;legt" class="dta-reg">anlegt</span>. Nichtleiter für den <span title="Original: Wärmeſtoff" class="dta-reg">Wärmestoff</span> werden <span title="Original: meiſt" class="dta-reg">meist</span> davon<br/>
+befeuchtet, Leiter hingegen weniger, und Metalle werden<br/>
+<span title="Original: ſehr" class="dta-reg">sehr</span> <span title="Original: ſelten" class="dta-reg">selten</span> davon feucht, wenn es nicht ungewöhnlich <span title="Original: ſtark" class="dta-reg">stark</span><br/>
+<span title="Original: gethaut" class="dta-reg">getaut</span> hat. Man hat <span title="Original: ſich" class="dta-reg">sich</span> die Erklärung <span title="Original: dieſes" class="dta-reg">dieses</span> <span title="Original: Phäno-&#xA;mens" class="dta-reg">Phänomens</span> durch die Beobachtung <span title="Original: erſchwert" class="dta-reg">erschwert</span>, daß der Erdboden<br/>
+beim Fallen des <span title="Original: Thaues" class="dta-reg">Taues</span> immer um einen oder einige<br/>
+Grade wärmer als die Luft <span title="Original: ſei" class="dta-reg">sei</span>; dies verhält <span title="Original: ſich" class="dta-reg">sich</span> auch<br/>
+für eine Tiefe des Erdbodens von einem oder ein<br/>
+Paar Zollen wirklich <span title="Original: ſo" class="dta-reg">so</span>, allein die <span title="Original: oberſte" class="dta-reg">oberste</span> <span title="Original: Kruſte" class="dta-reg">Kruste</span> des<br/>
+Bodens und die darauf <span title="Original: ſtehenden" class="dta-reg">stehenden</span> <span title="Original: Gewächſe" class="dta-reg">Gewächse</span> erkalten<br/>
+durch <span title="Original: Ausſtrahlen" class="dta-reg">Ausstrahlen</span> des <span title="Original: Wärmeſtoffs" class="dta-reg">Wärmestoffs</span>, und folglich mit<br/>
+weit größerer Schnelligkeit, als die Luft. Herr<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/124462286">Wells</a></span></span> hat durch eine Reihe <span title="Original: ſehr" class="dta-reg">sehr</span> <span title="Original: intereſſanter" class="dta-reg">interessanter</span> <span title="Original: Verſuche" class="dta-reg">Versuche</span><br/>
+<span title="Original: bewieſen" class="dta-reg">bewiesen</span>, daß das <span title="Original: Niederſchlagen" class="dta-reg">Niederschlagen</span> des <span title="Original: Thaues" class="dta-reg">Taues</span> durchaus eine<br/>
+Wirkung der, durch <span title="Original: Ausſtrahlung" class="dta-reg">Ausstrahlung</span> von <span title="Original: Wärmeſtoff" class="dta-reg">Wärmestoff</span> <span title="Original: ent-&#xA;ſtehenden" class="dta-reg">entstehenden</span> Abkühlung <span title="Original: ſei" class="dta-reg">sei</span>. Er legte z. B. des Abends<br/>
+eine abgewogene Menge Wolle unter freien Himmel,<br/>
+und neben <span title="Original: dieſe" class="dta-reg">diese</span> eine andere gleich große und zu einer<br/>
+gleich großen Oberfläche ausgebreitete Menge, <span title="Original: ſtellte" class="dta-reg">stellte</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0397 : 391.|</span><br/>
+aber über die letztere einen <span title="Original: Tiſch" class="dta-reg">Tisch</span>. Die unbedeckte<br/>
+Wolle hatte weit mehr an Gewicht gewonnen, als die<br/>
+unter dem <span title="Original: Tiſche" class="dta-reg">Tische</span> liegende, weil <span title="Original: zwiſchen" class="dta-reg">zwischen</span> der <span title="Original: letztern" class="dta-reg">letzteren</span><br/>
+und dem <span title="Original: Tiſche" class="dta-reg">Tische</span> eine <span title="Original: gegenſeitigen" class="dta-reg">gegenseitigen</span> <span title="Original: Ausſtrahlung" class="dta-reg">Ausstrahlung</span> von <span title="Original: Wärme-&#xA;ſtrahlen" class="dta-reg">Wärmestrahlen</span> <span title="Original: ſtattgefunden" class="dta-reg">stattgefunden</span> hatte, wodurch <span title="Original: dieſe" class="dta-reg">diese</span> Wolle weniger<br/>
+<span title="Original: ſchnell" class="dta-reg">schnell</span> abgekühlt worden war, als die offen unter freiem<br/>
+Himmel <span title="Original: ſtehende" class="dta-reg">stehende</span>, deren <span title="Original: Wärmeſtrahlen" class="dta-reg">Wärmestrahlen</span>, ohne <span title="Original: erſetzt" class="dta-reg">ersetzt</span> zu<br/>
+werden, geradezu fort gegangen waren. Daher fällt der<br/>
+<span title="Original: Thau" class="dta-reg">Tau</span> <span title="Original: ſehr" class="dta-reg">sehr</span> oft bei klaren Abenden in größter Menge, <span title="Original: ſeltener" class="dta-reg">seltener</span><br/>
+aber und nur in geringer Menge bei wolkigem Himmel,<br/>
+weil in <span title="Original: dieſem" class="dta-reg">diesem</span> Falle die <span title="Original: Wärmeſtrahlen" class="dta-reg">Wärmestrahlen</span> des Erdbodens<br/>
+durch die <span title="Original: Wärmeſtrahlen" class="dta-reg">Wärmestrahlen</span> der über ihm befindlichen <span title="Original: Wolken-&#xA;ſchichten" class="dta-reg">Wolkenschichten</span> <span title="Original: erſetzt" class="dta-reg">ersetzt</span> werden. Metalle und wärmeleitende<br/>
+Körper bedecken <span title="Original: ſich" class="dta-reg">sich</span> nicht mit <span title="Original: Thau" class="dta-reg">Tau</span>, <span title="Original: ſo" class="dta-reg">so</span> lange <span title="Original: ſie" class="dta-reg">sie</span> von der<br/>
+Luft oder ihrer Unterlage die Wärme <span title="Original: erſetzen" class="dta-reg">ersetzen</span>, welche <span title="Original: ſie" class="dta-reg">sie</span><br/>
+durch Radiation verlieren.</p><br/>
+<p class="dta-p">Wenn die Luft am Tage <span title="Original: ſo" class="dta-reg">so</span> wenig <span title="Original: Waſſer" class="dta-reg">Wasser</span> enthält,<br/>
+daß es durch <span title="Original: ſeine" class="dta-reg">seine</span> <span title="Original: Expanſionskraft" class="dta-reg">Expansionskraft</span> bei der Temperatur<br/>
+der Nachtluft <span title="Original: ſich" class="dta-reg">sich</span> in <span title="Original: derſelben" class="dta-reg">derselben</span> erhalten kann, <span title="Original: ſo" class="dta-reg">so</span> fällt kein<br/>
+<span title="Original: Thau" class="dta-reg">Tau</span>. Man behauptet auch ferner, daß ein großer <span title="Original: Theil" class="dta-reg">Teil</span><br/>
+des <span title="Original: Thaues" class="dta-reg">Taues</span> von den <span title="Original: Ausdünſtungen" class="dta-reg">Ausdünstungen</span> der <span title="Original: Gewächſe" class="dta-reg">Gewächse</span> herrühre,<br/>
+welche von der Luft nun nicht aufgenommen werden könnten.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0398 : 392.|</span><br/>
+Dies <span title="Original: iſt" class="dta-reg">ist</span> aber wenig glaublich, denn <span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: Ausdünſtungen" class="dta-reg">Ausdünstungen</span><br/>
+müßten denn in <span title="Original: flüſſiger" class="dta-reg">flüssiger</span> <span title="Original: Geſtalt" class="dta-reg">Gestalt</span> <span title="Original: abgeſondert" class="dta-reg">abgesondert</span> werden,<br/>
+und der <span title="Original: Thau" class="dta-reg">Tau</span> würde <span title="Original: ſich" class="dta-reg">sich</span> in <span title="Original: ſolchen" class="dta-reg">solchen</span> Fällen, wo die Luft<br/>
+ihr Maximum von Feuchtigkeit aufgenommen hat, auch um<br/>
+Mittag <span title="Original: einſtellen" class="dta-reg">einstellen</span>. Man hat <span title="Original: Thau" class="dta-reg">Tau</span> auf Pflanzen unter<br/>
+Glasglocken gefunden, die man über Nacht im Freien<br/>
+<span title="Original: gelaſſen" class="dta-reg">gelassen</span> hatte. <span title="Original: Dieſer" class="dta-reg">Dieser</span> <span title="Original: Thau" class="dta-reg">Tau</span> <span title="Original: entſteht" class="dta-reg">entsteht</span> auf <span title="Original: dieſelbe" class="dta-reg">dieselbe</span> <span title="Original: Weiſe" class="dta-reg">Weise</span>,<br/>
+wie in freier Luft, und kann eben <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ſtark" class="dta-reg">stark</span> fallen, weil die<br/>
+wärmere Luft unter der Glasglocke mehr Feuchtigkeit<br/>
+enthält. Daß er nicht von den <span title="Original: Ausdünſtungen" class="dta-reg">Ausdünstungen</span> der Pflanzen<br/>
+herrühre, <span title="Original: ſieht" class="dta-reg">sieht</span> man deutlich daraus, daß die Luft unter<br/>
+der Glocke allemal ihr Maximum von Feuchtigkeit erreicht<br/>
+haben muß, weil <span title="Original: ſie" class="dta-reg">sie</span> wenig <span title="Original: gewechſelt" class="dta-reg">gewechselt</span> werden kann, und<br/>
+die <span title="Original: Ausſonderungen" class="dta-reg">Aussonderungen</span> der Pflanzen <span title="Original: ſie" class="dta-reg">sie</span> in <span title="Original: dieſem" class="dta-reg">diesem</span> Falle<br/>
+mit einem <span title="Original: beſtändigen" class="dta-reg">beständigen</span> <span title="Original: Thaue" class="dta-reg">Taue</span> überziehen würden. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">Herr <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/124462286">Wells</a></span></span> fand ferner, daß Körper welche eine<br/>
+große Dünnigkeit haben, als Wolle, <span title="Original: Papierſtreifen" class="dta-reg">Papierstreifen</span>, Blätter<br/>
+<span class="aq ">etc.</span> über einander gelegt, bei einen wolkenfreien Himmel<br/>
+<span title="Original: ſich" class="dta-reg">sich</span> bei + <span title="Original: 6–7" class="dta-reg">6-7</span>° auf 0 erkälteten. Metalle nur <span title="Schreibfehler: nur" class="dta-corr">[…]</span> dagegen<br/>
+bei 2°. Hierauf beruht auch die Kälte erregende Kraft<br/>
+der Waldungen, weil die horizontale Lage der Blätter<br/>
+das <span title="Original: Ausſtrahlen" class="dta-reg">Ausstrahlen</span> der Wärme befördert, und die Feuchtigkeit<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0399 : 393.|</span><br/>
+der Luft <span title="Original: ſich" class="dta-reg">sich</span> an der Oberfläche als <span title="Original: kältern" class="dta-reg">kälteren</span> Körper <span title="Original: nieder-&#xA;ſchlägt" class="dta-reg">niederschlägt</span>. Auch die Theorie des Eismachens in Indien<br/>
+gehört hierher, in dem <span title="Original: ſie" class="dta-reg">sie</span> bei einer Temperatur unter<br/>
++6°, des Nachts <span title="Original: Waſſer" class="dta-reg">Wasser</span> in <span title="Original: poröſen" class="dta-reg">porösen</span> Steinkrügen dem<br/>
+wolkenfreien Himmel <span title="Original: ausſetzen" class="dta-reg">aussetzen</span>, wodurch das <span title="Original: Waſſer" class="dta-reg">Wasser</span><br/>
+nach <span title="Original: auſſen" class="dta-reg">außen</span> fortwährend <span title="Original: verdunſtet" class="dta-reg">verdunstet</span>, wobei der umgebende<br/>
+<span title="Original: Wärmeſtoff" class="dta-reg">Wärmestoff</span> gebunden und gegen den <span title="Original: wolkenfrein" class="dta-reg">Wolkenfreien</span> Himmel<br/>
+<span title="Original: ausſtrahlt" class="dta-reg">ausstrahlt</span>, innerlich aber <span title="Original: ſo" class="dta-reg">so</span> abgekühlt wird, daß es<br/>
+zum <span title="Original: Theil" class="dta-reg">Teil</span> friert. <span title="Original: –" class="dta-reg">-</span> Hiermit <span title="Original: ſteht" class="dta-reg">steht</span> auch die <span title="Original: Mei-&#xA;nung" class="dta-reg">Meinung</span> der Landleute in Verbindung, daß nämlich der<br/>
+<span title="Original: rothe" class="dta-reg">rote</span> Mond im Anfange Mai Kälte bringt.</p></div></div></div></div></div></body></html>

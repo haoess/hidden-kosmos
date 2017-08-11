@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session">   <div class="dta-head"><span title="Original: 11 April. 51." class="dta-reg">51. Vorlesung, 11.04.1828</span></div><br/>
+<p class="dta-p">Der Mythos vom Phaeton erwekte bei den Alten die falschen<br/>
+Begriffe, als ob es nach den obern Luftschichten zu wärmer<br/>
+wäre: doch haben wir eine Stelle vom <span title="Personenname"><a href="http://d-nb.info/gnd/118613200">Seneca</a></span> über die rela-<br/>
+tive Kleinheit der Berge in Verhältnis zur ganzen Erde,<br/>
+worin er deutlich ausspricht, dass die obere Luft kälter sei.<br/>
+<span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118595237">Plutarch</a></span></span> in der kleinen Schrift über die Ursachen der Kälte,<br/>
+und <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118621793">Theophrast</a></span></span> über die Winde: sahen sehr wohl die Wirkung<br/>
+des Luftkreises auf die Temperatur ein. <span title="Personenname"><a href="http://d-nb.info/gnd/118618806">Strabo</a></span> erkante den<br/>
+Einflus, den die Höhe des Bodens auf die Kultur hat: er<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0635 : 316r|</span><br/>
+bemerkt, dass auf der Hochebene zwischen dem Taunus und Ar-<br/>
+gäus in Kleinasien kein Oel wächst, obgleich es 4° nördlicher<br/>
+bei Sinope wieder gedeiht.</p><br/>
+<p class="dta-p">Das Licht geht durch Glas, aber nicht die stralende Wärme,<br/>
+oder doch, nach <span title="Personenname">Laroche</span>'s Versuchen erst bei sehr <span title="Schreibfehler: höher" class="dta-corr">hoher</span> Temperatur.</p><br/>
+<p class="dta-p"><span title="Personenname"><a href="http://d-nb.info/gnd/118750372">Rumford</a></span> war der irrigen Meinung, dass die Wärme im Was-<br/>
+ser durch Bewegung seiner Theile <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">von unten </span>entstehe: dagegen sprechen<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/11948496X">Pictet</a></span>'s und <span title="Personenname"><a href="http://d-nb.info/gnd/117669849">Leslie</a></span>'s Versuche: sie erwärmten Wasser, indem sie<br/>
+eine heisse Metalplatte &nbsp;&nbsp;&nbsp; darüber hielten: hier fand also<br/>
+eine Bewegung von oben nach unten statt.</p><br/>
+<p class="dta-p">Die <span title="Temp." class="dta-abbr">Temperatur</span> der obern Schichten hängt von der der darunterlie-<br/>
+genden Erdoberfläche ab: daher wird man in einer Höhe von<br/>
+7000 Fus eine andere <span title="Temp." class="dta-abbr">Temperatur</span> finden, je nachdem man sich über dem<br/>
+Meere, über einem <span class="dta-del" title="Streichung (#ow)">K</span><span class="dta-add" title="Hinzufügung (across)">h</span>ohen Gebirge, oder dem Innern von Afrika<br/>
+befindet.</p><br/>
+<p class="dta-p">Wenn das Meer plözlich um 4000 Fus sänke, so würden<br/>
+alle Länder an demselben kälter werden, weil sie nun zu Bergen<br/>
+oder Hochebnen geworden wären: doch würde sich dies mehr an<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0636 : 316v|</span><br/>
+den Küsten als im Innern äussern.</p><br/>
+<p class="dta-p">Bei den Bergen müssen wir 2 Umstände beachten 1, sie<br/>
+sind die Ursach von Wärme, weil sie bei Tage mehr Wärme-<br/>
+stralen absorbiren: 2, auch von Kälte, indem sie bei Nacht<br/>
+mehr Wärme ausstralen: daher sind sie bei Tage wärmer, und bei<br/>
+Nacht kälter, und haben auf ihrer Spize oft hängende Wolken von<br/>
+niedergeschlagenen Wasserdünsten.</p><br/>
+<p class="dta-p">Die Wärmeabnahme von der Erdoberfläche nach oben ist nicht<br/>
+allein wichtig für die Astronomie, sondern auch für die<br/>
+Barometerformeln: selbst die besten und neusten sezen bei die-<br/>
+ser Abnahme eine arithmetische Progression voraus, die eigent-<br/>
+lich nicht statt findet: um diese Abnahme zu prüfen, hat man:</p><br/>
+<div class="dta-list">   <div class="dta-list-item"><p class="dta-p">1, die Reisen auf hohe Berge, welche aber allein keine grosse<br/>
+Sicherheit geben würden.</p></div>
+<div class="dta-list-item"><p class="dta-p">2, die mittlere Temperatur von Orten, die am Gebirge liegen,<br/>
+welches bei uns meist nur elende Dörfer sind, unter den<br/>
+Tropen aber liegen Städte von 50–60000 Einwohnern auf 10000 Fus<br/>
+Höhe. Ich habe zuerst am westlichen Abhange der Anden die<br/>
+Temperatur aufsteigend von 500 zu 500 Toisen eruirt.</p></div>
+<span class="dta-pb" style="padding-left:15em">|#f0637 : 317r|</span><br/>
+<div class="dta-list-item"><p class="dta-p">3, die aërostatischen Reisen: die von <span title="Personenname"><a href="http://d-nb.info/gnd/11618860X">Biot</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/118716581">Gay Lussac</a></span> gaben<br/>
+ein Resultat, das mit dem meinigen übereinstimte, doch ist<br/>
+man auch hier nicht ganz sicher, weil zufällige Winde in diesen<br/>
+Höhen die Temperatur verändern können. Sehr gut wäre es,<br/>
+wenn man Stazionen in der Luft haben könte, und wirklich<br/>
+hat <span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parry</a></span> am Pole durch kleine Drachen die Temperatur erforscht:<br/>
+auch könte man kleine Luftbälle an Schnüren bis 3000 Fus<br/>
+in die Höhe gehn lassen, welche grade ein Maximum- und mi-<br/>
+nimum-Thermometer tragen könten.</p></div>
+<div class="dta-list-item"><p class="dta-p">4, durch die Wärme der Quellen auf hohen Bergen: doch ist<br/>
+hier nicht sicher, die <span title="Temp." class="dta-abbr">Temperatur</span> zu hoch anzugeben, da die Quellen<br/>
+sehr tief heraufkommen können.</p></div>
+<div class="dta-list-item"><p class="dta-p">5, man hat auch die Temperatur der Höhlen auf Bergen<br/>
+vorgeschlagen: dies ist aber trüglich und gänzlich falsch,<br/>
+weil aus dem Innern eine kalte Luft herausströmt. <span title="Personenname"><a href="http://d-nb.info/gnd/118684310">Fourier</a></span><br/>
+zeigte überdies, dass die isothermen Schichten nach dem<br/>
+Innern der Erde zu nicht in Bezug auf das Niveau des Mee-<br/>
+res stehn, sondern auf den Bergen höher, in den Flächen<br/>
+tiefer liegen, nach ihrem Abstande von der Erdoberfläche; ich<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0638 : 317v|</span><br/>
+habe in Mexiko Bergwerke untersucht, welche auf 12000 Fus<br/>
+Höhe lagen, und fand in ihnen eine eben so hohe Temperatur<br/>
+als in andern Bergwerken auf der Ebne.</p></div>   </div><br/>
+<p class="dta-p">Die Beobachtungen an den Abhängen der Berge sind sicherer,<br/>
+als man glauben solte. Trotz der lokalen Perturbazionen wird<br/>
+der ganze Abhang des Gebirges von dem ganzen Luftmeere ge-<br/>
+badet. Wenn man 700 Fus für 1° R. annimt: so fand ich 32<br/>
+Punkte am Abhange der Andes, deren mittlere Temperatur<br/>
+der der entsprechenden Ebnen bis auf 1° R. gleich ist; nur<br/>
+bei 6 Punkten war der Unterschied 1,5° R. Die Städte in<span class="dta-add" title="Hinzufügung (right)"> den</span><br/>
+<span class="dta-del" title="Streichung (#s)">Amerika</span><span class="dta-add" title="Hinzufügung (superlinear)">Andes</span> welche auf 8000 Fus Höhe liegen, sind gewöhnlich<br/>
+der Bequemlichkeit wegen, auf kleinen Hochebnen von einigen<br/>
+Meilen Durchmesser gebaut, und haben deshalb eine etwas hö-<br/>
+here Temperatur als Städte, die in gleichen Höhen am Ab-<br/>
+hange des Gebirges liegen, weil die Ebnen mehr Wärme<br/>
+absorbiren: doch ist der Unterschied äusserst gering. Wenn<br/>
+die Ebnen sich zu weiten Thälern ausdehnen, so wird auch<br/>
+ihr Einflus <span class="u ">als Ebne</span> auf die <span title="Temp." class="dta-abbr">Temperatur</span> grösser. – Die Wärme-ab-<br/>
+nahme an den Kordilleren ist nicht gleich; zwischen 3000 <span title="u" class="dta-abbr">und</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0639 : 318r|</span><br/>
+7000 Fus ist sie sehr gering: denn hier liegt grade die erste<br/>
+Wolkenschicht, welche vom Meere aufsteigt, am Gebirge, und<br/>
+bringt, da sie wie ein Aërostat sich hebt, eine wärmere Luft-<br/>
+schicht von unten mit.</p><br/>
+<p class="dta-p">Spricht man die Resultate in Zahlen aus: so mus man<br/>
+unter den Tropen 700 Fus steigen, damit das Thermometer<br/>
+um 1° R. falle; nach meinen Untersuchungen. <span title="Personenname"><a href="http://d-nb.info/gnd/118804790">Saussure</a></span>,<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118787802">Ramond</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/117668729">Daubuisson</a></span> bestimmen diese Höhe zwischen dem<br/>
+45 und 47° <span title="Nd" class="dta-abbr">Nord</span>breite im Sommer auf 5<span class="dta-del" title="Streichung (#s)">0</span><span class="dta-add" title="Hinzufügung (superlinear)">2</span>0 Fus, im Winter auf<br/>
+700. <span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span> fand es sonderbar, dass die Wärmeabnahme<br/>
+unter den Tropen geringer sei, als bei uns: weil man bis<br/>
+dahin annahm, auch die Refrakzion sei unter den Tropen<br/>
+geringer. Nach meinen Beobachtungen und denen von <span title="Personenname"><a href="http://d-nb.info/gnd/118903217">Mas-<br/>
+keline</a></span> auf Jamaika <span class="dta-metamark" title="metamark">?</span> (die <span title="Personenname"><a href="http://d-nb.info/gnd/117123544">Oltmans</a></span> in Rechnung brachte)<br/>
+fand ich, dass die Refrakzion unter 10° ganz gleich sei unter<br/>
+der Tropen und in der gemässigten Zone, und <span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span> gab<br/>
+nun eine Formel, um aus der Strahlenbrechung die Wär-<br/>
+meabnahme zu berechnen. Hienach konte man bestim-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0640 : 318v|</span><br/>
+men, dass bei der Gradmessung von <span title="Personenname"><a href="http://d-nb.info/gnd/117679100">Schwanenberg</a></span>, die in einer<br/>
+Kälte von −24° <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">R</span> angestelt wurde, im Winter die Wärme-<br/>
+abnahme für einen Grad Réaumur nicht 700 sondern<br/>
+900 Fus betragen habe. Bei den Barometerformeln mus<br/>
+man zur Berechnung der Höhe die Temperatur der überein-<br/>
+anderliegenden Schichten haben, und hier komt die Hypo-<br/>
+these, dass sie in einer arithmetischen Reihe fortschrei-<br/>
+te, der Wahrheit noch am <span class="dta-del" title="Streichung (#s)">nächten</span> nächsten, obgleich es<br/>
+sicherer wäre, durch sehr genaue astronomische Beobach-<br/>
+tungen und Berechnungen der Refrakzion die Temperatur<br/>
+zu bestimmen.</p><br/>
+<p class="dta-p">Unter den Tropen, wo von Jahreszeiten fast gar nicht<br/>
+die Rede ist, <span class="dta-del" title="Streichung (#s)"><span class="gap">[unleserliches Material – 3 Zeichen fehlen]</span></span> scheint es am besten die Temperatur<br/>
+des ganzen Jahres mit der von einzelnen Monaten an<br/>
+andern Orten zu vergleichen; so ist es volkommen an-<br/>
+schaulich, wenn man sagt: am Orinoco ist die mittlere<br/>
+Temperatur gleich der des Monats August in Rom; in<br/>
+dem schönen Klima der Chinarinde, bei Loxa, Popayan <span title="Original: pp" class="dta-reg">pp.</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0641 : 319r|</span><br/>
+<div class="fw-top fw-sig">80.</div><br/>
+auf 6000 Fus über dem Meere ist die <span title="mittl." class="dta-abbr">mittlere</span> <span title="Temp." class="dta-abbr">Temperatur</span> gleich<br/>
+der des Monats August in Berlin, was uns zwar hier sehr<br/>
+heis scheinen würde, was aber dort, wo man an so viel hö-<br/>
+here Wärmegrade gewöhnt ist, eine angenehme Kühlung<br/>
+heissen kann<span class="dta-del" title="Streichung (#ow)">,</span><span class="dta-add" title="Hinzufügung (across)">:</span> in Quito, was 8000 Fus hoch liegt, ist die <span title="mittl." class="dta-abbr">mittlere</span><br/>
+<span title="Temp." class="dta-abbr">Temperatur</span> gleich der des Anfang's Mai in Berlin; auf den Pa-<br/>
+ramos (wovon die Etymologie nicht recht klar ist) oder Hoch-<br/>
+ebnen, wo die Bäume nicht mehr fortkommen, sondern nur<br/>
+niedriges myrthen-artiges Gestrüp von 3–4 Fus Höhe, wo<br/>
+die <span title="Temp." class="dta-abbr">Temperatur</span> in der Nacht oft bis −2° R. herabsinkt, und<br/>
+die Mönche den Leuten erzählen, sie müsten sich geisseln,<br/>
+um nicht zu erfrieren; auf dieser Höhe von 11000 Fus<br/>
+über dem Meere ist die <span title="mittl." class="dta-abbr">mittlere</span> <span title="Temp." class="dta-abbr">Temperatur</span> gleich der von Ber-<br/>
+lin +7° <span title="Original: R" class="dta-reg">R.</span>, oder wie das Ende des April in Berlin. – In<br/>
+der Tropenzone ist auf 6000 Fus Höhe die <span title="mittl." class="dta-abbr">mittlere</span> <span title="Temp." class="dta-abbr">Temperatur</span><br/>
+von Kalabrien, unter 46° <span title="NBr." class="dta-abbr">Nordbreite</span> die von Lapland.</p><br/>
+<p class="dta-p">Es entsteht nun die Frage, wie hoch mus man<br/>
+unter einer <span class="dta-del" title="Streichung (#s)">beli</span> gegebenen Breite senkrecht aufsteigen,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0642 : 319v|</span><br/>
+um eine beliebige Temperatur zu finden. Hier mus zuerst<br/>
+die <span title="Temp." class="dta-abbr">Temperatur</span> der untern Schneegränze bestimt werden, und diese<br/>
+ist nicht = 0°, wie <span title="Personenname"><a href="http://d-nb.info/gnd/117669849">Leslie</a></span> meinte, sondern unter dem Ae-<br/>
+quator +1,5° R. unter 48° <span title="NB." class="dta-abbr">Nordbreite</span> −3; unter 69° <span title="NB" class="dta-abbr">Nordbreite</span> (nach<br/>
+den Beobachtungen von <span title="Personenname"><a href="http://d-nb.info/gnd/116817569">L. v. Buch</a></span>) −6° R.</p><br/>
+<p class="dta-p">Die Höhe der Berge ist schon früh mit den Breiten-<br/>
+graden verglichen worden, und ich müste hier zuerst<br/>
+den Kardinal <span title="Personenname"><a href="http://d-nb.info/gnd/118658115">Bembo</a></span> in seiner Ätnareise nennen; auch<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/117628905">Tournefort</a></span> bemerkte, als er den Ararat bestieg, dass die<br/>
+Vegetazion sich nach der Höhe über der Meeresfläche än-<br/>
+dere, dass am Fusse die Pflanzen Kleinasiens, auf der mitt-<br/>
+leren Höhe die von Frankreich, auf der Spize die lapp-<br/>
+ländische Flora sich zeigten; obgleich ihn hier die Ähn-<br/>
+licheit der Formen täuschte. In neuer Zeit hat man<br/>
+diese Vergleichung sehr genau nach den <span title="Temp." class="dta-abbr">Temperaturen</span> durch-<br/>
+geführt, besonders an den ersten 3000 Fus der Alpen. –<br/>
+Im Winter entsprechen 300 Fus Höhe einem Breitengra-<br/>
+de oder 15 Meilen nach Norden. Wenn man daher die<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0643 : 320r|</span><br/>
+Schneekoppe besteigt, so ist dies soviel, als ob man 17° oder<br/>
+250 Meilen nach Norden fortgerükt wäre, also von de<span class="dta-del" title="Streichung (#ow)">r</span><span class="dta-add" title="Hinzufügung (across)">m</span><span class="dta-add" title="Hinzufügung (right)"> Fusse der</span><br/>
+Schneekoppe bis Lapland unter 68° <span title="NBr" class="dta-abbr">Nordbreite</span>. Nimt man die<br/>
+<span title="mittl." class="dta-abbr">mittlere</span> <span title="Temp." class="dta-abbr">Temperatur</span> von Schlesien auf +7° <span title="Original: R" class="dta-reg">R.</span> an, so ist ein Grad<br/>
+gleich 600 Fus: mithin wird die <span title="Temp." class="dta-abbr">Temperatur</span> auf der Schneekop-<br/>
+pe um 8° geringer sein, also −1° R. und dies ist grade<br/>
+dieselbe Temperatur, welche <span title="Personenname"><a href="http://d-nb.info/gnd/116817569">L. v. Buch</a></span> zu Enondekies <span class="dta-metamark" title="metamark">?</span><br/>
+im nördlichen Skandinavien beobachtete. Im Sommer<br/>
+verändert sich das Verhältnis, und es gehn auf 300 Fus<br/>
+senkrechte Höhe nur 10 Meilen nach Norden. Durch diese<br/>
+Wahrnehmung wurde <span title="Personenname"><a href="http://d-nb.info/gnd/116442921">Decandolle</a></span> in seiner schönen Schrift<br/>
+über die Verbreitung der Pflanzen irre geleitet: denn die<br/>
+Kultur der Pflanzen steigt höher <span title="Schreibfehler: hinauf2 an den Bergen1" class="dta-corr">an den Bergen hinauf</span><br/>
+als sie sich nach Norden in den Ebnen ausbreitet, weil<br/>
+auf den Bergen die Luft reiner, und die Intensität der<br/>
+<span class="dta-del" title="Streichung (#s)">Luft</span> Wärme grösser ist. Die reinen Sonnenstralen können<span class="dta-add" title="Hinzufügung (right)"> dort</span><br/>
+mehr Hize im Parenchyma der Pflanzen erregen, als<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0644 : 320v|</span><br/>
+in einer niedrigen mehr mit Dünsten gefülten Region. –<br/>
+In 2400 Fus Höhe wächst im südlichen Frankreich noch<br/>
+Wein, während er 4° nördlicher nicht mehr vorkomt: hier<br/>
+entsprächen also, nach der Kultur des Weines 300 Fus<br/>
+Höhe nur 7 Meilen nördlicher Fortrükkung.</p><br/>
+<p class="dta-p"><span class="u ">Von der Schneegränze.</span></p><br/>
+<p class="dta-p">Die Schneegränze hat schon früh die Einbildungskraft<br/>
+der Menschen beschäftigt, indem sie ein sinnlicher Be-<br/>
+weis der kalten Zone über unsern Köpfen ist. Der<br/>
+Hagel war kein so schlagender Beweis, da man nicht<br/>
+wissen konte, wodurch die plözliche Kälte entstanden<br/>
+sein mochte. – Einen schönen Kontrast der Landschaft<br/>
+findet man an der Westseite der Andes, wo Palmen-<br/>
+und Pisang-blätter sich gegen die Schneemassen pro-<br/>
+jiciren. Auch erkante man früh an der Schneegränze<br/>
+die höheren und höchsten Berge, indem sie ein Ni-<br/>
+veau macht, das sehr wenig abweicht. Schon vorher, ehe<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118778390">La Condamine</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/117622974">Bouguer</a></span> den Chimboraço trigonome-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0645 : 321r|</span><br/>
+trisch gemessen, und seine Höhe bestimt hatten, wusten die<br/>
+Umwohner, dass er der höchste Berg sei, weil er seinen<br/>
+Gipfel am tiefsten in die Region des ewigen Schnees<br/>
+eintaucht: allein solch' ein Schlus wäre nur unter den<br/>
+Tropen<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"> richtig</span>, <span class="dta-del" title="Streichung (#ow)">s</span><span class="dta-add" title="Hinzufügung (across)">w</span>o eine so grosse Einförmigkeit und Übereinstim-<br/>
+mung in allen Naturphänomenen sichtbar sind. Die<br/>
+Schneegränze ist hier so beständig, dass der Schnee an dem<br/>
+einen Berge nicht um 80 Toisen höher liegt, als an dem<br/>
+andern. Wenn man daher Zeichnungen, wo dies dargestelt<br/>
+ist, nach unsern Ländern bringt, so finden es die meisten<br/>
+Beschauer unnatürlich, und glauben, es sei ein Versehn<br/>
+gemacht worden. Schon in den Pyrenäen würde ein Schlus<br/>
+nach der Schneegränze nicht richtig sein: denn hier gehn<br/>
+tiefe Schluchten und Thäler hinab, und bringen den Schnee<br/>
+in tiefere Regionen, als wo er eigentlich anfangen sollte<span class="dta-del" title="Streichung (#ow)">–</span><span class="dta-add" title="Hinzufügung (across)">;</span><br/>
+denn hier sind zu viel Lokalperturbazionen vorhanden. –</p><br/>
+<p class="dta-p">Die Alpen, der Paropamisus, der Kaukasus haben<br/>
+meist nur an ihren<span class="dta-del" title="Streichung (#ow)">m</span><span class="dta-add" title="Hinzufügung (across)">n</span> Westa<span class="dta-del" title="Streichung (#s)">̈</span>bhängen Schnee: daher konten<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0646 : 321v|</span><br/>
+die Alten nichts über die Schneegränze wissen: auch findet<br/>
+sich keine einzige Stelle, welche deutlich darüber Auskunft<br/>
+gäbe. In dieser Hinsicht ist die Entdekkung von Amerika<br/>
+so sehr wichtig, wovon die gleichzeitigen Schriftsteller,<br/>
+besonders <span title="Personenname"><a href="http://d-nb.info/gnd/12116117X">Acosta</a></span>, Zeugnis ablegen. Man sah hier zuerst in<br/>
+dem neuen Kontinent eine Bergkette, welche sich vom 52° Süd-<br/>
+breite bis zum 60° <span title="Ndbr" class="dta-abbr">Nordbreite</span>, dem Eliasberge in Kamtschatka,<br/>
+gegenüber, erstrekte, und überal dieselbe Schneegränze hatte;<br/>
+die man in den verschiedenen Breiten zu bestimmen bemüht<br/>
+war. Es ist ein Irthum, der durch den Pater <span title="Personenname"><a href="http://d-nb.info/gnd/100378803">Bartolomeo</a></span> <span class="dta-metamark" title="metamark">?</span> in <br/>
+viele Geographien gekommen ist, dass der Descabe<span class="dta-del" title="Streichung (#ow)">z</span><span class="dta-add" title="Hinzufügung (across)">ç</span>ado höher<br/>
+sei als der Chimboraço: man schlos dies an der Wahrneh-<br/>
+mung, dass der Descabeçado höher in die Schneegränze hinauf-<br/>
+reiche: bedachte aber nicht, dass er unter 35° <span title="Südbr." class="dta-abbr">Südbreite</span> in Chili<br/>
+liegt, wo die Schneegränze weit tiefer hinabgeht: er ist nicht<br/>
+über 9000 Fus hoch.</p><br/>
+<p class="dta-p"><span class="u ">Von den Gletschern und Eisgrotten.</span></p><br/>
+<p class="dta-p">Die Gletscher sind Schnee-eis in grossen Massen, welche sich<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0647 : 322r|</span><br/>
+in die <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Schreibfehler: Queer " class="dta-corr">Queer-</span></span>Thäler hinab geschoben haben. Wenn man sie genau un-<br/>
+tersucht: so findet man, dass es Schnee ist, in welchen Wasser ein-<br/>
+drang, und darin gefror. Ihr Anblik ist der eines bewegten<br/>
+Meeres, das plözlich erstarte: auf der Oberfläche finden sich<br/>
+Unebenheiten von der grösten Verschiedenheit. An ihrem obern<br/>
+Anfange hängen die Gletscher allerdings mit der untern Schnee-<br/>
+gränze zusammen, aber <span class="dta-del" title="Streichung (#s)">an</span><span class="dta-add" title="Hinzufügung (superlinear)">mit</span> ihrer untern Seite erstrekken sie<br/>
+sich oft weit tiefer: in Chamounix findet sich d<span class="dta-del" title="Streichung (#ow)">er</span><span class="dta-add" title="Hinzufügung (across)">ie</span> untere Grän-<br/>
+ze der Gletscher schon auf 3000 Fus Höhe. Man hat bemerkt,<br/>
+dass sie nicht an derselben Stelle bleiben, sondern, wenn auch<br/>
+nur langsam, vor und zurük gehn. Man glaubte früher, d<span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)">a</span>s <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">Vorrükken </span>gesche-<br/>
+he, indem das Schnee-eis gefriere, und sich dabei ausdehne: al-<br/>
+lein <span title="Personenname"><a href="http://d-nb.info/gnd/118531093">Escher</a></span> zeigte, dass das Vorrükken grade im Sommer Statt<br/>
+finde, wo es nicht friert. <span title="Personenname"><a href="http://d-nb.info/gnd/118804790">Saussure</a></span> gab davon die richtige Er-<br/>
+klärung. Im Sommer, wo die Erde sich mehr erwärmt, schmilzt<br/>
+der untere Theil des Gletschers, der auf dem Bo<span class="dta-del" title="Streichung (#s)">g</span><span class="dta-add" title="Hinzufügung (superlinear)">d</span>en aufliegt,<br/>
+und fliest ab: dadurch bilden sich grosse Bogen von Eis,<br/>
+die zusammenstürzen, und dadurch einen Theil des Gletschers<br/>
+vorschieben.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0648 : 322v|</span><br/>
+<p class="dta-p">Auf der Oberfläche der Gletscher bildet sich eine sonderbare<br/>
+Erscheinung: runde Löcher gehn wie kleine Brunnen tief in<br/>
+das Eis hinab. Diese rühren von einem eignen Spiele des Was-<br/>
+sers her, das grade wie im Bohrer wirkt. Denken wir uns, dass<br/>
+auf der Oberfläche des Eises sich eine kleine Lache befindet: so<br/>
+erreicht das Wasser bei +4° <span title="Original: R" class="dta-reg">R.</span> das maximum seiner Dichtigkeit,<br/>
+sinkt zu Boden und wird etwas von dem Eise wegschmelzen: da-<br/>
+bei erkaltet es aber wieder, vielleicht bis −2°, wird dann leichter,<br/>
+und steigt in die Höhe: erwärmt sich an der Luft und Sonne<br/>
+bis +4° und sinkt zu Boden; so bildet sich durch dieses<br/>
+Spiel ein konisches Loch von bedeutender Tiefe.</p><br/>
+<p class="dta-p">Die Eisgrotten hängen noch viel weniger mit der Schnee-<br/>
+gränze zusammen, als die Gletscher, am Ural findet<br/>
+man sie viel tiefer. Sie bilden Luftquellen, aus denen eine<br/>
+sehr kalte Luft strömt, die <span title="Personenname"><a href="http://d-nb.info/gnd/118804790">Saussure</a></span> im Sommer von +3°<br/>
+R. fand. Das Eis entsteht durch senkrechte Öfnungen, wo<br/>
+hinein die kalte Winterluft dringt, und nicht wieder zu-<br/>
+rük kann. Man findet <span class="u ">Gletscher</span> vom Himalaya bis Grön-<br/>
+land: aber in Peru und Chili habe ich sie nirgends entdekken<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0649 : 323r|</span><br/>
+<div class="fw-top fw-sig">81.</div><br/>
+können; es ist wahrscheinlich, dass die gleichmässige Tropen-<br/>
+temperatur ihr Entstehn hindert. Nur am westlichen Abhange<br/>
+des Chimboraço findet sich eine analoge Erscheinung, ein unter-<br/>
+irdisches Eis: wenn man in einer <span title="Original: Bimstein" class="dta-reg">Bimsstein</span>- oder Sand-lage 3–4<br/>
+Fus tief gräbt: so findet man eine grosse Masse gefrorner<br/>
+Hagelkörner, 80 Toisen unter der Schneegränze.</p><br/>
+<p class="dta-p">Die <span class="u ">untere</span> Schneegränze ist eine sehr verwikkelte Erschei-<br/>
+nung: sie ist keiner isothermen Linie von 0° R. parallel, son-<br/>
+dern weicht ganz davon ab; sie hängt auch nicht von der mitt-<br/>
+leren <span title="Temp." class="dta-abbr">Temperatur</span> des Jahres ab: sondern von der Krümmung der <span class="u ">iso-<br/>
+theren</span> Linie, der Linie gleicher Sommerwärme; ist also durch<br/>
+die Jahreszeiten bedingt: die isotheren Linien entfernen sich<br/>
+noch mehr von den Parallelkreisen, als die isothermen; dies<br/>
+wird durch ein Beispiel sehr deutlich, wenn man bedenkt, dass<br/>
+Moskau und der Ausflus der Loire dieselbe Sommerwärme<br/>
+haben, obgleich sie 11 Breitengrade aus einanderliegen.</p><br/>
+</div></body></html>

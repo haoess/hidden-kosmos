@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session">   <div class="dta-head"><span title="Original: 25. März. 42." class="dta-reg">42. Vorlesung, 25.03.1828</span></div><br/>
+<p class="dta-p">Von den leuchtenden Insekten fand ich mehrere neue genera nicht<br/>
+weit von den kanarischen Inseln. Es kommen darunter Medusen<br/>
+von 1 <span title="Original: Fus" class="dta-reg">Fuß</span> Länge vor, die man in <span title="Original: 10–12" class="dta-reg">10-12</span> <span title="Original: Fus" class="dta-reg">Fuß</span> Tiefe unter der <span title="Original: Oberflä-&#xA;che" class="dta-reg">Oberfläche</span> des Meeres leuchten sieht: es ist also deutlich, dass das Oxygen<br/>
+der Atmosphäre nicht zu diesem Leuchten <span title="Original: nothwendig" class="dta-reg">notwendig</span> ist; noch weniger rührt<br/>
+es von gebundenem <span title="Original: Schwefelwasserstofgas" class="dta-reg">Schwefelwasserstoffgas</span> her, der im Kontakt mit der<br/>
+Luft frei wird. Meine Beobachtungen stimmen darin völlig mit denen<br/>
+des <span title="Original: D" class="dta-reg">Dr</span><span class="sup u "><span title="Original: r" class="dta-reg"/></span> <span class="dta-del" title="Streichung (#s)">D</span> <span title="Personenname"><a href="http://d-nb.info/gnd/118529250">Ehrenberg</a></span> und Prof. <span title="Personenname"><a href="http://d-nb.info/gnd/100190014">Lichtenstein</a></span> überein. Unter den Tropen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0507 : 252r|</span><br/>
+findet das Leuchten des Meeres nicht <span title="Original: blos" class="dta-reg">bloß</span> bei schnellsegelnden Schiffen<br/>
+<span title="Original: Statt" class="dta-reg">Stadt</span>, die mit dem Kiel völlig in Flammen zu <span title="Original: stehn" class="dta-reg">stehen</span> scheinen: sondern<br/>
+auch bei der Brandung an einem entfernten Ufer.</p><br/>
+<p class="dta-p"><span class="u ">Von der Farbe des Meeres.</span></p><br/>
+<p class="dta-p">Dies ist einer der schwierigsten Gegenstände für die Optik: denn man hat<br/>
+noch keine genügende Erklärung, warum z. B. die Rhone eine so schöne<br/>
+grüne Farbe habe <span title="Original: pp" class="dta-reg">pp.</span> man kann nur sagen, dass für <span title="Original: süsses" class="dta-reg">süßes</span> und für<br/>
+Meerwasser sich ein Unterschied in der <span title="Original: Polarisazion" class="dta-reg">Polarisation</span> des Lichtes zeigt.<br/>
+Das Meer ist unter den Tropen tiefer <span title="Schreibfehler: indigblau" class="dta-corr">indigoblau</span> als bei uns: dies ist aber<br/>
+kein Reflex der Luftbläue: denn auch bei <span class="dta-del" title="Streichung (#ow)">d</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: b" class="dta-reg">bedecktem</span></span><span title="Original: edektem" class="dta-reg"/> Himmel findet <span title="Original: das-&#xA;selbe" class="dta-reg">dasselbe</span> statt. <span title="Personenname"><a href="http://d-nb.info/gnd/117654167">Scoresby</a></span>, der Wallfischfänger fand das Meer am Nordpol<br/>
+grasgrün, mitunter blau: er machte die Bemerkung, dass die <span title="Original: Wall-&#xA;fische" class="dta-reg">Walfische</span> sich immer im grünen, nie im blauen Wasser finden; und glaubte<br/>
+den Grund darin zu finden, dass im grasgrünen sich eine <span title="Original: grosse" class="dta-reg">große</span><br/>
+Menge kleiner Mollusken, gleichsam schwimmende Bänke finden,<br/>
+von denen die <span title="Original: Wallfische" class="dta-reg">Walfische</span> leben.</p><br/>
+<p class="dta-p">Wie tief das Licht in das Meer eindringen könne, ist <span title="Original: ebenfals" class="dta-reg">ebenfalls</span><br/>
+<span title="Original: ungewis" class="dta-reg">ungewiß</span>: die Versuche mit den <span title="Original: Taucherglokken" class="dta-reg">Taucherglocken</span> geben kein gutes <span title="Original: Re-&#xA;sultat" class="dta-reg">Resultat</span>, weil man hier, wie ich mich selbst überzeugt habe, schon<br/>
+in 40 <span title="Original: Fus" class="dta-reg">Fuß</span> Tiefe nichts mehr sieht: es ist natürlich, dass wenn die<br/>
+Wasser sich kräuseln: so kann das vielfach gebrochene Licht nicht<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0508 : 252v|</span><br/>
+so tief eindringen. Schon die Alten <span title="Original: wusten" class="dta-reg">wussten</span>, dass wenn man <span title="Original: Oel" class="dta-reg">Öl</span> auf<br/>
+die Oberfläche des Meeres <span title="Original: giest" class="dta-reg">gießt</span>, die Wellen momentan beruhigt<br/>
+werden. <span title="Personenname"><a href="http://d-nb.info/gnd/118534912">Franklin</a></span> und besonders neuerdings <span title="Personenname"><a href="http://d-nb.info/gnd/118765817">Weber</a></span> haben die <span title="Original: theore-&#xA;tischen" class="dta-reg">theoretischen</span> Gründe davon angegeben. Unter den Tropen, wo die <span title="Original: Regen-&#xA;tropfen" class="dta-reg">Regentropfen</span> besonders <span title="Original: gros" class="dta-reg">groß</span> sind, und weit von einander fallen, ist es<br/>
+nicht selten, dass ein <span title="Original: plözlicher" class="dta-reg">plötzlicher</span> Regenschauer die Wellen beruhigt,<br/>
+daher haben sich die Taucher seit 1000 Jahren des Mittels bedient,<br/>
+<span title="Original: Oel" class="dta-reg">Öl</span> auf das Wasser zu <span title="Original: giessen" class="dta-reg">gießen</span>, ehe sie untertauchen, weil sie <span title="Original: wis-&#xA;sens" class="dta-reg">Wissens</span> dass man alsdann besser sieht: in Gibraltar bedienen sich die<br/>
+Schiffer dieses Mittels noch immer.</p><br/>
+<p class="dta-p">Über das <span title="Original: Sehn" class="dta-reg">Sehen</span> unter dem Wasser und in das Wasser hinein hat<br/>
+man neuerlich Beobachtungen gemacht: es war schon früher <span title="Original: be-&#xA;kant" class="dta-reg">bekannt</span>, dass man den Grund des Meeres deutlicher sieht, wenn man<br/>
+sich auf einem hohen Punkte über der Oberfläche befindet: daher<br/>
+<span title="Original: schikken" class="dta-reg">schicken</span> die Schiffer, wenn sie fürchten, auf Untiefen zu <span title="Original: kom-&#xA;men" class="dta-reg">kommen</span>, einen Matrosen auf den Mast, von wo aus er den Grund<br/>
+des Meeres wie eine Landkarte übersehn kann. Als <span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span> wegen<br/>
+der Gradmessung nach Minorka ging sah er von einer Höhe von<br/>
+beinahe 500 <span title="Original: Fus" class="dta-reg">Fuß</span> auf das Meer herab, und <span title="Original: konte" class="dta-reg">konnte</span> den Grund sehr<br/>
+deutlich unterscheiden: er gab auch zugleich die <span title="Original: Ursach" class="dta-reg">Ursache</span> davon an:<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0509 : 253r|</span><br/>
+das vom Meere unmittelbar in das Auge <span title="Original: reflektirte" class="dta-reg">reflektierte</span> Licht trübt den<br/>
+<span title="Original: Blik" class="dta-reg">Blick</span>: je <span title="Original: grösser" class="dta-reg">größer</span> also der Unterschied oder der Abstand von der<br/>
+Oberfläche des Meeres ist, desto ungehinderter kann das Licht, welches<br/>
+<span class="dta-del" title="Streichung (#s)">auf</span><span class="dta-add" title="Hinzufügung (superlinear)">von</span> dem Boden des Meeres <span title="Original: reflektirt" class="dta-reg">reflektiert</span> wird, <span title="Original: in's" class="dta-reg">ins</span> Auge gelangen, und<br/>
+deshalb sieht man ihn von <span title="Original: grossen" class="dta-reg">großen</span> Höhen aus deutlicher.</p><br/>
+<p class="dta-p"><span class="u ">Von der Temperatur des Meeres</span>, auf der Oberfläche, in der<br/>
+Tiefe und auf den Sandbänken.</p><br/>
+<p class="dta-p">Für diesen Zweig ist in neueren Zeiten sehr viel <span title="Original: geschehn" class="dta-reg">geschehen</span>: früher<br/>
+hatte man nur lauter <span title="Original: isolirte" class="dta-reg">isolierte</span> Phänomene <span title="Original: aufgestelt" class="dta-reg">aufgestellt</span>, ohne sie zu<br/>
+einem Ganzen zu vereinigen, <span title="Original: jezt" class="dta-reg">jetzt</span> ist man aber durch <span title="Original: fortgesezte" class="dta-reg">fortgesetzte</span><br/>
+Beobachtungen auf manches allgemeine <span title="Original: Gesez" class="dta-reg">Gesetz</span> gekommen, und daher<br/>
+<span title="Original: komt" class="dta-reg">kommt</span> die <span title="Original: grosse" class="dta-reg">große</span> Einfachheit in den Resultaten, welche ich hier<br/>
+vorlegen kann.</p><br/>
+<p class="dta-p">Dass die Temperatur der <span title="Original: Meeres-oberfläche" class="dta-reg">Meers-Oberfläche</span> den <span title="Original: grösten" class="dta-reg">größten</span> <span title="Original: Einflus" class="dta-reg">Einfluß</span><br/>
+auf die Klimatologie hat, braucht kaum bemerkt zu werden,<br/>
+da wir oben <span title="Original: gesehn" class="dta-reg">gesehen</span> haben, dass in jedem Lande das Klima von<br/>
+dem gegenseitigen Verhältnis der <span class="dta-del" title="Streichung (#s)">troknen</span><span class="dta-add" title="Hinzufügung (intralinear)">festen</span> und flüssigen<br/>
+<span title="Original: Theile" class="dta-reg">Teile</span> gegeneinander abhängt.</p><br/>
+<p class="dta-p">Wir müssen die Oberfläche 1, in Ruhe und 2, in den <span title="Original: Strö-&#xA;mungen" class="dta-reg">Strömungen</span> betrachten:</p><br/>
+<p class="dta-p">1, die Oberfläche in Ruhe erleidet bedeutende <span class="dta-del" title="Streichung (#s)">Te</span> Veränderung durch<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0510 : 253v|</span><br/>
+den Unterschied in der Erwärmung und Erkältung der Luft: daher<br/>
+ist es ganz <span title="Original: gewis" class="dta-reg">gewiß</span>, dass die Begründung der Meteorologie als <span title="Original: Wis-&#xA;senschaft" class="dta-reg">Wissenschaft</span> von den Tropen <span title="Original: ausgehn" class="dta-reg">ausgehen</span> <span title="Original: solte" class="dta-reg">sollte</span>, weil hier die wenigsten<br/>
+<span title="Original: Perturbazionen" class="dta-reg">Perturbationen</span> statt finden; man mithin leichter auf die <span title="Original: Geseze" class="dta-reg">Gesetze</span><br/>
+wird kommen können. So lange man versucht, aus dem nördlichen<br/>
+<span title="Original: Theile" class="dta-reg">Teile</span> der gemässigten Zone die <span title="Original: Geseze" class="dta-reg">Gesetze</span> der Meteorologie zu finden:<br/>
+so wird man schwerlich zu einem erwünschten Resultat kommen:<br/>
+dabei <span title="Original: mus" class="dta-reg">muss</span> man noch bedenken, dass unter den Tropen nur ein<br/>
+ganz <span title="Original: u" class="dta-reg">unbedeutender</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 2 Zeichen fehlen]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: nb" class="dta-reg"/></span><span title="Original: edeutender" class="dta-reg"/> Wechsel der Jahreszeiten <span title="Original: Statt" class="dta-reg">Stadt</span> findet.</p><br/>
+<p class="dta-p">Für die Tropen <span title="Original: läst" class="dta-reg">lässt</span> sich als Resultat aussprechen, dass zwischen<br/>
+Tag <span class="dta-del" title="Streichung (#s)">d</span> und Nacht der <span class="dta-metamark" title="metamark">⎡</span><span title="Original: Temperatur Unterschied" class="dta-reg"><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Original: Temperatur-" class="dta-reg">Temperatur-Unterschied</span></span><span title="Original: Unterschied" class="dta-reg"/></span> in der Luft <span title="Original: 6–7" class="dta-reg">6-7</span> <span title="Original: mal" class="dta-reg">Mal</span> <span title="Original: grösser" class="dta-reg">größer</span><br/>
+als im Meere, und dies ist selbst für das Palmenklima der Fall.<br/>
+Früher glaubte man, dass die Temperatur des Meeres <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">an der Oberfläche </span>sich gar nicht<br/>
+verändere, und ich selbst fiel mit vielen <span title="Original: andern" class="dta-reg">anderen</span> Reisenden in<br/>
+diesen <span title="Original: Irthum" class="dta-reg">Irrtum</span>, obgleich ich Beobachtungen darüber <span title="Original: anstelte" class="dta-reg">anstellte</span>. <span title="Original: Neuer-&#xA;dings" class="dta-reg">Neuerdings</span> hat aber <span title="Personenname"><a href="http://d-nb.info/gnd/117626708">John Davy</a></span> von Ceylon <span title="Original: zurükkommend" class="dta-reg">zurückkommend</span>, sich viel<br/>
+damit beschäftigt: auch <span title="Personenname"><a href="http://d-nb.info/gnd/117663476">Duperrey</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/124760295">Freycinet</a></span> bei der <span title="Original: Erdum-&#xA;seglung" class="dta-reg">Erdumseglung</span>. Sie fanden, dass der Unterschied vom Tage zur Nacht<br/>
+höchstens <span title="Original: ½–¾°" class="dta-reg">1/2-3/4°</span> R. an der Oberfläche beträgt. <span title="Original: –" class="dta-reg">-</span> Mein Freund,<br/>
+der <span title="Original: Capitän" class="dta-reg">Kapitän</span> <span class="dta-del" title="Streichung (#s)"><span title="Personenname">Welford</span></span><span class="dta-add" title="Hinzufügung (intralinear)"><span title="Personenname">Wilson</span></span>, <span title="Schreibfehler: welche" class="dta-corr">welcher</span> die erste Reise mit dem<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0511 : 254r|</span><br/>
+<div class="fw-top fw-sig">64.</div><br/>
+Dampfboote von London nach Kalkutta machte, nahm Instrumente<br/>
+mit, welche ich vorher sorgfältig verglichen hatte, und fand <span title="Original: ebenfals" class="dta-reg">ebenfalls</span><br/>
+den Unterschied nicht über <span title="Original: ¾°" class="dta-reg">3/4°</span> R.</p><br/>
+<p class="dta-p">Das Meer hat an sich eine Tendenz zur Erwärmung: denn da<br/>
+das Wasser immer dichter wird, je mehr es erkaltet, so <span title="Original: mus" class="dta-reg">muss</span> also<br/>
+das kältere Wasser zu Boden sinken, und das wärmere <span title="Original: oben auf" class="dta-reg">obenauf</span><br/>
+schwimmen. Ein Resultat ist: dass vom <span title="Original: Aequator" class="dta-reg">Äquator</span> bis zu <span title="Original: 48–50" class="dta-reg">48-50</span>°<br/>
+<span title="Nd" class="dta-abbr"><span title="Original: Nord" class="dta-reg">Nordbreite</span></span><span title="Original: breite" class="dta-reg"/> das Meer immer etwas wärmer ist, als die Luft. Man<br/>
+sieht leicht ein, welchen mächtigen <span title="Original: Einflus" class="dta-reg">Einfluß</span> dies auf die <span title="Original: Meer-&#xA;winde" class="dta-reg">Meerwinde</span>, und mithin auf die Temperatur aller der Länder haben<br/>
+<span title="Original: mus" class="dta-reg">muss</span>, welche von ihnen erreicht werden. Ich lege um desto mehr<br/>
+Gewicht auf dieses völlig <span title="Original: konstatirte" class="dta-reg">konstatierte</span> factum, da <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/11922139X">Kirwan</a></span></span>, ein<br/>
+achtbarer Gelehrter, das <span title="Original: Gegentheil" class="dta-reg">Gegenteil</span> behauptet hat.</p><br/>
+<p class="dta-p">Die monatlichen Veränderungen sind unter den Tropen 6 <span title="Original: mal" class="dta-reg">Mal</span> kleiner<br/>
+im Meere als in der Luft, bei uns 7 <span title="Original: mal" class="dta-reg">Mal</span> kleiner. Erst vor <span title="Original: unge-&#xA;fähr" class="dta-reg">ungefähr</span> einem Jahre habe ich Gelegenheit gehabt, die <span title="Original: gröste" class="dta-reg">größte</span> Kälte<br/>
+genau zu bestimmen, zu welcher der atlantische Ozean <span title="Original: herab-&#xA;sinken" class="dta-reg">herabsinken</span> kann. Ich habe viele genau <span title="Schreibfehler: verglichenen" class="dta-corr">verglichene</span> Instrumente<br/>
+Reisenden mitgegeben, und erhielt noch handschriftliche <span title="Original: Mit-&#xA;theilungen" class="dta-reg">Mitteilungen</span> von dem würdigen <span title="Personenname"><a href="http://d-nb.info/gnd/118788353">Rennell</a></span>, dem <span title="Original: 80 jährigen" class="dta-reg">80-jährigen</span> Geographen<br/>
+von Indien, der seit einer Reihe von Jahren ein <span title="Original: grosses" class="dta-reg">großes</span> Werk über<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0512 : 254v|</span><br/>
+die Strömungen im atlantischen Ozean vorbereitet. Es ist fast<br/>
+zu fürchten, dass dies <span title="Original: vortrefliche" class="dta-reg">vortreffliche</span> Werk bei dem hohen Alter des<br/>
+Verfassers nicht mehr heraus kommen wird, obgleich die englische<br/>
+Regierung sich <span title="Original: jezt" class="dta-reg">jetzt</span> lebhafter dafür zu <span title="Original: interessiren" class="dta-reg">interessieren</span> scheint. Als<br/>
+Resultat <span title="Original: läst" class="dta-reg">lässt</span> sich geben, dass im atlantischen Ozean zwischen<br/>
+50 und 52° <span title="NB." class="dta-abbr">Nordbreite</span> die Oberfläche nie weniger als <span title="Original: +6–7" class="dta-reg">+6-7</span>° R. hat,<br/>
+während bei uns −8–10° sein können; <span title="Original: +6–7" class="dta-reg">+6-7</span>° sind die mittlere<br/>
+Temperatur von Berlin im Anfang Mai; es müssen uns also<br/>
+Westwinde im Winter ein viel milderes Klima bringen, zwar<br/>
+kein <span title="Original: Mai-klima" class="dta-reg">Mai-Klima</span>, da die Luftschichten sich schon mit anderen<br/>
+kälteren gemischt haben. Unter <span title="Original: 65–70" class="dta-reg">65-70</span>° <span title="NB." class="dta-abbr">Nordbreite</span> ist die mittlere<br/>
+Temperatur nach <span title="Personenname"><a href="http://d-nb.info/gnd/118788353">Rennell</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/11671350X">Sabine</a></span> (der sich, um <span title="Original: Pendelver-&#xA;suche" class="dta-reg">Pendelversuche</span> anzustellen, lange auf <span title="Original: Spizbergen" class="dta-reg">Spitzbergen</span> aufhielt) <span title="Original: +4½" class="dta-reg">+41/2</span>° R. <span title="Original: wäh-&#xA;rend" class="dta-reg">während</span> die <span title="mittl." class="dta-abbr">mittlere</span> Temperatur jener Kontinente <span title="Original: −2" class="dta-reg">2</span>° R. ist.</p><br/>
+<p class="dta-p">Unter den Tropen hat das Meer eine mittlere <span title="Temp." class="dta-abbr">Temperatur</span> von<br/>
+<span title="Original: +21–" class="dta-reg">+21-</span>22° R. (Leider ist dies auch die Temperatur des Wassers<br/>
+im Orinoco und Amazonenstrom, daher <span title="Original: bekömt" class="dta-reg">bekommt</span> man hier nichts<br/>
+als lauwarmes Wasser zu trinken.)</p><br/>
+<p class="dta-p">So oft Seefahrer den <span title="Original: Aequator" class="dta-reg">Äquator</span> durchschneiden, so bemerken sie,<br/>
+dass gegen den <span title="Original: Aequator" class="dta-reg">Äquator</span> hin die Temperatur <span title="Original: zunimt" class="dta-reg">zunimmt</span>: das <span title="Original: maxi-" class="dta-reg">maximum</span>
+<span class="dta-pb" style="padding-left:15em">|#f0513 : 255r|</span><br/>
+<span title="Original: mum" class="dta-reg"/> aber ist nicht immer unter dem <span title="Original: Aequator" class="dta-reg">Äquator</span>, sondern oft<br/>
+höher oder tiefer; eine Kurve, welche man durch alle diese <span title="Original: maxi-&#xA;ma" class="dta-reg">maxima</span> der Wärme legt, <span title="Original: heist" class="dta-reg">heisst</span> die Kurve der <span title="Original: grösten" class="dta-reg">größten</span> Wärmen: die<br/>
+maxima entfernen sich vom <span title="Original: Aequator" class="dta-reg">Äquator</span> nicht eigentlich nach den<br/>
+Jahreszeiten, sondern nach dem Stande der Sonne. Alle <span title="Original: Schif-&#xA;fer" class="dta-reg">Schiffer</span>, welche seit <span title="Original: 20–30" class="dta-reg">20-30</span> Jahren sich mit diesem Gegenstande<br/>
+abgaben, fanden dieselbe mittlere Temperatur: für das maximum der<br/>
+Wärme <span title="Original: 24–24½" class="dta-reg">24-241/2</span> Grad R. und dies ist so beständig und <span title="Original: gleich-&#xA;mässig" class="dta-reg">gleichmäßig</span>, dass man die Thermometer danach berichtigen <span title="Original: könte" class="dta-reg">könnte</span>:<br/>
+wenn man nämlich bei einer Reise die den <span title="Original: Aequator" class="dta-reg">Äquator</span> <span title="Original: durch-&#xA;schneidet" class="dta-reg">durchschneidet</span>, das Thermometer <span title="Original: regelmässig" class="dta-reg">regelmäßig</span> beobachtet, so <span class="dta-del" title="Streichung (#s)">m</span> wird<br/>
+man ein Zunehmen und Abnehmen bemerken: das maximum<br/>
+<span title="Original: mus" class="dta-reg">muss</span> immer <span title="Original: 24–24½" class="dta-reg">24-241/2</span> Grad sein, die Skala mag nun zeigen,<br/>
+was sie will. Der dänische Offizier, <span title="Hr." class="dta-abbr">Herr</span> <span title="Personenname"><a href="http://d-nb.info/gnd/100837654">Dirking</a></span>, ein <span title="Original: trefli-&#xA;cher" class="dta-reg">trefflicher</span> Beobachter, der sich 3 Jahr in der Südsee aufgehalten<br/>
+hat, <span title="Original: entdekte" class="dta-reg">entdeckte</span> das Maximum der Wärme beim <span title="Original: Cap" class="dta-reg">Kap</span> <span title="Original: Boi" class="dta-reg">Boissacamo</span><span title="Original: ss" class="dta-reg"/><span title="Original: acamo" class="dta-reg"/> <span class="dta-metamark" title="metamark">?</span><br/>
+bei Panama mit <span title="Original: 24¾" class="dta-reg">243/4</span>° R.<span title="Schreibfehler: " class="dta-corr">;</span> es versteht sich, dass die <span title="Original: Beo-&#xA;bachtungen" class="dta-reg">Beobachtungen</span> nicht bei Windstelle <span title="Original: angestelt" class="dta-reg">angestellt</span> werden dürfen, <span title="Original: son-&#xA;dern" class="dta-reg">sondern</span> wenn das Meer durch einen leichten Wind <span title="Original: gekräu-" class="dta-reg">gekräuselt</span>
+<span class="dta-pb" style="padding-left:15em">|#f0514 : 255v|</span><br/>
+<span title="Original: selt" class="dta-reg"/> wird. Auch die Nähe von Untiefen <span title="Original: mus" class="dta-reg">muss</span> in Betracht <span title="Original: ge-&#xA;zogen" class="dta-reg">gezogen</span> werden: denn sie haben auf die Temperatur <span title="Original: grossen" class="dta-reg">großen</span><br/>
+<span title="Original: Einflus" class="dta-reg">Einfluß</span>.</p><br/>
+<p class="dta-p">2, die Oberfläche in Bewegung. Wir können die Strömungen<br/>
+wie pelagische Flüsse betrachten, nicht anders, wie in den<br/>
+Ländern sich Ströme <span title="Original: süssen" class="dta-reg">süßen</span> Wassers bilden. Sie sind in der<br/>
+Breite verschieden, je nachdem sie im <span title="Original: ofnen" class="dta-reg">offenen</span> Meer sich bilden,<br/>
+oder aus einer Meerenge kommen; zu den <span title="Original: lezten" class="dta-reg">letzten</span> gehört der<br/>
+Gulphstream zwischen Kuba und Florida, der anfangs nur die<br/>
+Breite der Meerenge hat, dann aber sich ausdehnt, wobei<br/>
+gleichsam die Ufer <span title="Original: zurüktreten" class="dta-reg">zurücktreten</span>, und seine Richtung nach<br/>
+<span title="NW." class="dta-abbr"><span title="Original: Nordwest" class="dta-reg">Nordwesten</span></span> <span title="Original: nimt" class="dta-reg">nimmt</span>. Wir müssen die Strömungen besonders nach ihrer<br/>
+Richtung unterscheiden, ob sie nämlich vom <span title="Original: Aequator" class="dta-reg">Äquator</span> ab<br/>
+oder nach dem <span title="Original: Aequator" class="dta-reg">Äquator</span> zu <span title="Original: fliessen" class="dta-reg">fließen</span>, d. h. ob sie kaltes <span title="Original: Was-&#xA;ser" class="dta-reg">Wasser</span> nach warmen Gegenden oder umgekehrt führen. Der<br/>
+Gulphstream ist nicht ohne <span title="Original: Einflus" class="dta-reg">Einfluß</span> auf das Klima von<br/>
+Europa, insofern er die warmen Wasser des <span title="Original: Aequators" class="dta-reg">Äquators</span><br/>
+an <span title="Original: unsre" class="dta-reg">unsere</span> Küsten führt. Unmittelbar ist er als eine Folge<br/>
+zu betrachten von der <span title="Original: grossen" class="dta-reg">großen</span> <span title="Original: Rotazion" class="dta-reg">Rotation</span> des Meeres von<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0515 : 256r|</span><br/>
+<span title="O." class="dta-abbr">Ost</span> nach <span title="W" class="dta-abbr">West</span>. Er würde nicht <span title="Original: existiren" class="dta-reg">existieren</span>, wenn der Isthmus von <span title="Original: Pa-&#xA;nama" class="dta-reg">Panama</span> <span title="Original: geöfnet" class="dta-reg">geöffnet</span> würde, der sich ihm entgegenwirft. Aber diese<br/>
+<span title="Original: Öfnung" class="dta-reg">Öffnung</span>, von der kürzlich bei dem <span title="Original: projektirten" class="dta-reg">projektierten</span> Kanal von<br/>
+Nicaragua die Rede gewesen, würde nicht allein auf den <span title="Original: Gulph-&#xA;stream" class="dta-reg">Gulphstream</span> <span title="Original: Einflus" class="dta-reg">Einfluß</span> haben, sondern auch den Handelsweg nach<br/>
+Asien sehr abkürzen, ja selbst die Angriffe von Europa auf<br/>
+China und Japan, wenn solche <span title="Original: Statt" class="dta-reg">Stadt</span> finden sollten, erleichtern.<br/>
+Dieser Gulphstream wendet sich, durch den Isthmus <span class="dta-del" title="Streichung (#s)">in</span><span class="dta-add" title="Hinzufügung (superlinear)">von</span> seiner<br/>
+Richtung abgelenkt, von dem <span title="Original: Cap" class="dta-reg">Kap</span> S. Antonio und der südlichen<br/>
+<span title="Original: Spize" class="dta-reg">Spitze</span> von Yucatan in den Golf von Mexiko, wo er bei Vera-Cruz<br/>
+<span title="Original: vorbeifliessend" class="dta-reg">vorbeifließend</span>, einen <span title="Original: grossen" class="dta-reg">großen</span> Wirbel beschreibt, die Mündung<br/>
+des Mississippi berührt, und durch die Meerenge zwischen <span title="Original: Ha-&#xA;vannah" class="dta-reg">Havanna</span> und Florida durchgeht; dann wendet er sich als ein<br/>
+Strom warmen Wassers, das die <span title="Original: Tropen-temperatur" class="dta-reg">Tropen-Temperatur</span> mitbringt,<br/>
+auf die Bank von Terre-neuve gegen Europa, und <span title="Original: theilt" class="dta-reg">teilt</span><br/>
+sich in 2 Arme, wovon der eine gegen die Azoren und vielleicht<br/>
+Gibraltar sich wendet, der andere stärkere gegen Irland,<br/>
+Schottland und das nördliche Skandinavien. So ist es <span title="Original: mög-&#xA;lich" class="dta-reg">möglich</span> geworden, dass als ein Schiff an dem <span title="Original: Capo" class="dta-reg">Kapo</span> Lopez an der<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0516 : 256v|</span><br/>
+Küste von Guinea in Afrika scheiterte, die Fässer mit Palmenöl<br/>
+(auf denen man noch ganz deutlich die Signatur des Kaufmans<br/>
+aus Hull <span title="Original: erkante" class="dta-reg">erkannte</span>) nach <span title="Original: 1½" class="dta-reg">11/2</span> Jahren unversehrt in Schottland<br/>
+ankommen <span title="Original: konten" class="dta-reg">konnten</span>; nachdem<span title="Schreibfehler: " class="dta-corr"> sie</span> jenen langen Weg nach Amerika<br/>
+hinüber und herüber <span title="Original: zurükgelegt" class="dta-reg">zurückgelegt</span>. So geschieht es, dass die<br/>
+Samen verschiedener Pflanzen, wie von Mimosa scandens, Dolichos<br/>
+urens <span title="Original: pp" class="dta-reg">pp.</span> alle Jahre an die hebridischen Inseln geworfen werden.<br/>
+So wird ein <span title="Original: Factum" class="dta-reg">Faktum</span> glaublich welches in <span title="Personenname"><a href="http://d-nb.info/gnd/104364440"><span title="Original: Nekkers" class="dta-reg">Neckers</span></a></span> Reisen <span title="Original: er-&#xA;zält" class="dta-reg">erzählt</span> ist, dass ein <span title="Original: Eigenthümer" class="dta-reg">Eigentümer</span> in <span class="dta-del" title="Streichung (#ow)">d</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: e" class="dta-reg">einer</span></span><span title="Original: iner" class="dta-reg"/> der Hebriden 2 Jahre<br/>
+hintereinander Fässer mit gutem französischen Wein an<br/>
+seinem Gartenhause schwimmend ankommen sah; ohne<br/>
+Zweifel von gescheiterten französischen Schiffen, die den Wein<br/>
+nach Amerika bringen <span title="Original: solten" class="dta-reg">sollten</span>. So erklärt es sich endlich,<br/>
+dass lebendige Eskimaux mit ihren Kähnen aus Fellen, in<br/>
+welchen sie wie eingenäht <span title="Original: sizen" class="dta-reg">sitzen</span> 2 <span title="Original: mal" class="dta-reg">Mal</span>: 1682 und 1684 nach<br/>
+den beiden Hebriden Edda und Westra kommen <span title="Original: konten" class="dta-reg">konnten</span>, wie<br/>
+dies auch schon einmal ein <span title="Original: Alterthum" class="dta-reg">Altertum</span> der Fall war, nach<br/>
+dem Zeugnis des <span title="Personenname"><a href="http://d-nb.info/gnd/118783025">Pomp. Mela</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/118747681"><span title="Original: Corn" class="dta-reg">Korn</span>. Nepos</a></span>: (denn Inder<br/>
+<span title="Original: hiessen" class="dta-reg">hießen</span> bei den Alten alle Menschen von bräunlicher Hautfarbe.<span title="Schreibfehler: " class="dta-corr">)</span></p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0517 : 257r|</span><br/>
+<p class="dta-p">Einen <span title="Original: andern" class="dta-reg">anderen</span> <span title="Original: grossen" class="dta-reg">großen</span> Strom fand ich an den Küsten von<br/>
+Peru. Man leitete lange Zeit das sonderbare Klima von Lima aus der<br/>
+Nähe der Schneeberge her: die Luft ist nämlich Monatelang mit<br/>
+Dünsten <span title="Original: überfült" class="dta-reg">überfüllt</span>, die man <span title="Original: garūa" class="dta-reg">garua</span> <span title="Original: nent" class="dta-reg">nennt</span>, und als sich senkende<br/>
+Wolkenschichten ansah. Allein der Grund liegt wo anders. Bei<br/>
+meiner Reise vom <span title="Original: obern" class="dta-reg">oberen</span> Amazonenstrom nach Peru, wo ich die<br/>
+Südsee zum <span title="Original: erstenmale" class="dta-reg">erstenmal</span> sah, war ich sehr begierig, die <span title="Original: Tempe-&#xA;ratur" class="dta-reg">Temperatur</span> der Meeresoberfläche zu prüfen, und glaubte sie nicht<br/>
+unter <span title="Original: +22–" class="dta-reg">+22-</span>23° R. zu finden: ich war daher sehr überrascht, als<br/>
+ich bei Truxillo mit dem Thermometer <span title="Original: in's" class="dta-reg">ins</span> Meer ging, nur<br/>
+<span title="Original: 12½" class="dta-reg">121/2</span>° zu finden: eine sehr <span title="Original: a" class="dta-reg">auffallende</span><span class="dta-add" title="Hinzufügung (intralinear)"><span title="Original: u" class="dta-reg"/></span><span title="Original: ffallende" class="dta-reg"/> Erscheinung. Es findet hier,<br/>
+wie sich bald ergab, eine Strömung kalten Wassers nach dem<br/>
+<span title="Original: Aequator" class="dta-reg">Äquator</span> statt, welche von <span title="Original: Chili" class="dta-reg">Chile</span> und aus der magellanischen<br/>
+Meerenge <span title="Original: heraufkömt" class="dta-reg">heraufkämt</span>. Auf meiner Reise von Lima nach Guagaquil<br/>
+und weiter hinauf nahm die Temperatur wieder zu, und an den<br/>
+Küsten von Mexiko war sie wieder 22° R. Offenbar hängt das <span title="Original: son-&#xA;derbare" class="dta-reg">sonderbare</span> Klima von Peru mit der Temperatur des Meeres an<br/>
+diesen Stellen zusammen: die Westwinde <span title="Original: gehn" class="dta-reg">gehen</span> <span class="dta-del" title="Streichung (#s)">durch</span><span class="dta-add" title="Hinzufügung (superlinear)">über</span> eine <span title="Original: Wasser-&#xA;schicht" class="dta-reg">Wasserschicht</span> von <span title="Original: 12½" class="dta-reg">121/2</span> Grad, müssen sich also bedeutend erkälten. <span title="H￼." class="dta-abbr">Herr</span> <span title="Personenname"><a href="http://d-nb.info/gnd/100837654"><span title="Original: Dir-&#xA;king" class="dta-reg">Dirking</span></a></span> hat über dasselbe Phänomen viele Beobachtungen <span title="Original: angestelt" class="dta-reg">angestellt</span>,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0518 : 257v|</span><br/>
+und fand <span title="Original: ebenfals" class="dta-reg">ebenfalls</span> die Temperatur der Oberfläche an den Küsten von<br/>
+Peru nur <span title="Original: 12½" class="dta-reg">121/2</span> R.</p><br/>
+<p class="dta-p">Dass die Strömungen sehr tief <span title="Original: gehn" class="dta-reg">gehen</span> müssen, sahen wir schon<br/>
+oben bei der Bank de Agulias an der Westküste von Afrika, <span title="Original: wel-&#xA;che" class="dta-reg">welche</span> die Richtung der Strömung von Amerika <span class="dta-metamark" title="metamark">(?)</span> verändert. Diese<br/>
+Bank ist deshalb merkwürdig, weil man auf ihr die <span title="Original: Inklinazion" class="dta-reg">Inklination</span><br/>
+der Magnetnadel = 0 fand. Sie hat 500 <span title="Original: Fus" class="dta-reg">Fuß</span> Tiefes und doch werden<br/>
+die hohen Wellen auf derselben gemindert. <span title="Original: Bemerkenswerth" class="dta-reg">Bemerkenswert</span> ist<br/>
+es, dass in den atlantischen Ozean von beiden Seiten Strömungen<br/>
+<span title="Original: einfliessen" class="dta-reg">einfließen</span>, die eine um <span class="dta-del" title="Streichung (#ow)">di</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: A" class="dta-reg">Amerika</span></span><span title="Original: merika" class="dta-reg"/> herum, nach den Antillen herauf,<br/>
+die <span title="Original: andre" class="dta-reg">andere</span> um die <span title="Original: Spize" class="dta-reg">Spitze</span> von Afrika her.</p><br/>
+<p class="dta-p">Eine Abnahme der Temperatur findet nach oben und unten; von<br/>
+der Oberfläche des Meeres an gerechnet, statt. In einer Höhe<br/>
+von <span title="Original: 6–8000" class="dta-reg">6-8000</span> <span title="Original: Fus" class="dta-reg">Fuß</span> über dem Meere ist sie beinahe = 0 <span class="dta-metamark" title="metamark">(?)</span> eben so nach<br/>
+der Tiefe des Meeres zu: nur dass hier die Abnahme 7 <span title="Original: mal" class="dta-reg">Mal</span> <span title="Original: schnel-&#xA;ler" class="dta-reg">schneller</span> erfolgt, als in der Luft: daher ist es nicht zu wundern, dass man<br/>
+in demselben Meere die verschiedenartigsten Fische findet: diese<br/>
+<span title="Original: Thiere" class="dta-reg">Tiere</span> können nämlich sehr schnell das Klima wechseln durch<br/>
+Auf- und Absteigen, und so wie unter den Tropen an den Gebirgen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0519 : 258r|</span><br/>
+<div class="fw-top fw-sig">65.</div><br/>
+aufwärts alle <span title="Original: Klimate" class="dta-reg">Klimata</span> übereinandergelagert sind, so dass man<br/>
+unter denselben Breitengraden die abweichendsten Erzeugnisse<br/>
+der Thier- und Pflanzenwelt finden kann, so sind im Meere<br/>
+alle <span title="Original: Klimate" class="dta-reg">Klimata</span> für die Fische abwärts untereinander gelagert.</p><br/>
+<p class="dta-p">Die besten Beobachtungen über die Temperatur in der Tiefe<br/>
+hat Captain <span title="Personenname"><a href="http://d-nb.info/gnd/11671350X">Sabine</a></span> gemacht. In den antillischen Meeren fand<br/>
+er an der Oberfläche <span title="Original: +22½" class="dta-reg">+221/2</span> R. in einer Tiefe von 7000 <span title="Original: Fus" class="dta-reg">Fuß</span> 4,4° R.<br/>
+wobei er sehr genau das Schwimmen des Seiles <span title="Original: pp" class="dta-reg">pp.</span> in Anschlag<br/>
+gebracht hatte. (Er machte seine Beobachtungen meist beim <span title="Original: Cap" class="dta-reg">Kap</span><br/>
+S. Antonio.) Hieraus <span title="Original: ergiebt" class="dta-reg">ergibt</span> sich also 70 <span title="Original: Fus" class="dta-reg">Fuß</span> für 1° R. In der<br/>
+Luft <span title="Original: mus" class="dta-reg">muss</span> man 600 <span title="Original: Fus" class="dta-reg">Fuß</span> aufsteigen, ehe das Thermometer um 1°<br/>
+sinkt. Aus dem Abnehmen der Temperatur im Meere <span title="Original: wolte" class="dta-reg">wollte</span> <span title="Personenname"><a href="http://d-nb.info/gnd/118936530">Perron</a></span><br/>
+<span title="Original: schliessen" class="dta-reg">schließen</span>, dass im Grunde des Meeres sich Eis befinden müsse: <span title="Original: al-&#xA;lein" class="dta-reg">allein</span> dagegen spricht die höchst merkwürdige Eigenschaft des<br/>
+Wassers, dass es bei <span title="Original: +4½" class="dta-reg">+41/2</span>° seine <span title="Original: gröste" class="dta-reg">größte</span> Dichtigkeit erlangt:<br/>
+also ist klar, dass kein Eis, sondern Wasser von <span title="Original: 4½" class="dta-reg">41/2</span>° R. <span title="Original: Dichtig-&#xA;keit" class="dta-reg">Dichtigkeit</span> die unterste Stelle im Meere einnehmen <span title="Original: mus" class="dta-reg">muss</span>. Ich weis<br/>
+sehr wohl, dass Graf <span title="Personenname"><a href="http://d-nb.info/gnd/118750372">Rumford</a></span> gegen diese Meinung Versuche mit<br/>
+einer gesättigten Salzauflösung angeführt hat: allein ohne damit<br/>
+etwas zu beweisen: denn noch neuerlich ist die Sache durch die<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0520 : 258v|</span><br/>
+Versuche von <span title="Personenname"><a href="http://d-nb.info/gnd/117654167">Scoresby</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/11671350X">Sabine</a></span><span class="dta-add" title="Hinzufügung (superlinear)"> <span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parry</a></span></span> in das <span title="Original: helste" class="dta-reg">hellste</span> Licht <span title="Original: gesezt" class="dta-reg">gesetzt</span> <span title="Original: wor-&#xA;den" class="dta-reg">worden</span>, welche in sehr hohen nördlichen Breiten die Temperatur<br/>
+des Meeres prüften. Sie fanden, nicht weit von <span title="Original: Spizbergen" class="dta-reg">Spitzbergen</span> die<br/>
+Temperatur <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">der Oberfläche </span> <span title="Original: −1½" class="dta-reg">11/2</span>° R. dagegen in <span class="dta-metamark" title="metamark">⎡</span><span class="dta-del" title="Streichung (#s)">4000</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Original: 1200–2000" class="dta-reg">1200-2000</span></span> <span title="Original: Fus" class="dta-reg">Fuß</span> Tiefe +2° <span title="Original: R" class="dta-reg">R.</span>, zum<br/>
+deutlichsten Beweise, dass das wärmere Wasser hier das <span title="Original: spe-&#xA;zifisch-schwerere" class="dta-reg">spezifisch-schwerere</span> sei. Die Strömung von Nova Semlia her, die<br/>
+man auch erst in <span title="Original: neuern" class="dta-reg">neueren</span> Zeiten <span title="Original: entdekt" class="dta-reg">entdeckt</span> hat, <span title="Original: giebt" class="dta-reg">gibt</span> den <span title="Original: Gewäs-&#xA;sern" class="dta-reg">Gewässern</span> um <span title="Original: Spizbergen" class="dta-reg">Spitzbergen</span> eine eigene <span title="Original: Diagonal-richtung" class="dta-reg">Diagonal-Richtung</span>. Schon<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118804790">Saussure</a></span> fand vor langer Zeit in allen Alpenseeen, die er <span title="Original: unter-&#xA;suchte" class="dta-reg">untersuchte</span>, das Wasser in der Tiefe von <span title="Original: +4½" class="dta-reg">+41/2</span>° R. aber es ist wahrscheinlich,<br/>
+dass unter den Tropen die Temperatur nicht einmal so tief <span title="Original: herab-&#xA;sinkt" class="dta-reg">herabsinkt</span>: denn die Gewässer haben selbst im Winter immer mehr<br/>
+als <span title="Original: 4½" class="dta-reg">41/2</span>° R. Wir müssen eine submarine Strömung vom Pol<br/>
+gegen den <span title="Original: Aequator" class="dta-reg">Äquator</span> annehmen, da wir <span title="Original: sehn" class="dta-reg">sehen</span>, dass an der<br/>
+Oberfläche eine in umgekehrter Richtung statt findet: denn<br/>
+eine Strömung <span title="Original: sezt" class="dta-reg">setzt</span> die andere voraus. Unter den Tropen<br/>
+erkältet sich das Wasser bei Nacht nie mehr, als bis<br/>
+auf +15 <span title="od." class="dta-abbr">oder</span> 16° R.</p><br/>
+</div></body></html>

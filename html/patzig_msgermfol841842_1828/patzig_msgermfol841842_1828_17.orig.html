@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span title="Original: D. 2 Jan. 1828." class="dta-reg">17. Vorlesung, 02.01.1828</span></div><br/>
+<p class="dta-p">Wir kom̃en jetzt <span class="u ">3., zur Betrachtung</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Betrachtung un-<br/>
+seres Soñenſyſtems.</span><br/>
+</span><span class="u ">unſeres Soñenſyſtems ſelbſt</span>, welches von<br/>
+größerm Jntereſſe ſein dürfte. Von der<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Soñe</span><br/>
+</span><span class="u ">Soñe</span> ſelbſt erhalten wir die Wärme u.<br/>
+das Licht, welches überdies, beſonders der<br/>
+violette Strahl, chemiſche <span title="Veränderung￼" class="dta-abbr">Veränderungen</span><br/>
+hervorbringt u. die magnetiſche Spañung der<br/>
+Erde veranlaßt. Die Soñe iſt ähnlich den<br/>
+Fixſternen u. es <span title="beweg￼" class="dta-abbr">bewegen</span> ſich um ſie die Pla-<br/>
+neten als dunkle Körper. Es iſt noch nicht ent-<br/>
+ſcheiden ob die Haupt u. Nebenplaneten<br/>
+alles Licht von der Soñe erhalten, oder<br/>
+eine ihnen eigenthümliche Phoſphoreſcenz ent-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u "><span title="Neben-Planet￼" class="dta-abbr">Neben-Planeten</span><br/>
+doppelte Erleuchtung</span><br/>
+</span>wickeln. Es findet bei den <span class="u ">Nebenplaneten</span><br/>
+eine doppelte Erleuchtung ſtatt; erſtlich<br/>
+von den Soñenſtrahlen, u. dañ von dem Re-<br/>
+flex derſelben von dem Haupt-Planeten.<br/>
+Beim Monde Zb. giebt <span class="dta-del" title="Streichung (#s)">dies </span>das aſchfarbene<br/>
+<span class="dta-del" title="Streichung (#s)">Erdl</span><span class="dta-add" title="Hinzufügung (intralinear)">L</span>icht, weñ ein Theil <span title="deſſelb￼" class="dta-abbr">deſſelben</span> von <span title="dr" class="dta-abbr">der</span><br/>
+Soñe erleuchtet iſt, <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">die Erde. </span>beiläufig ſey her<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">noch</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0112 : 108.|</span><br/>
+noch einer andere Färbung der Mond-<br/>
+ſcheibe erwähnt, indem dieſe ſelbſt bei<br/>
+einer totalen Mondfinſterniß nicht ganz<br/>
+verſchwindet, welches Licht von der Atmos-<br/>
+phäre der Erde reflectirt wird. Das<br/>
+ganze Soñenſyſtem hat jetzt eine größere<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Zahl<br/>
+der Planeten</span><br/>
+</span><span class="u ">Zahl von Planeten</span> als man ehemals glaubte<br/>
+u. beſteht aus 11 Haupt-Planeten u. 18<br/>
+Neben-Planeten oder Monden; <span class="dta-del" title="Streichung (#s)">u. </span>2 Cometen<br/>
+iñenhalb der Bahn der Planeten; u. wohl<br/>
+Tauſenden die außerhalb <span title="derſelb￼" class="dta-abbr">derſelben</span> ſich bewegen<br/>
+Wahrſcheinlich giebt es hiebei noch eine große<br/>
+Zahl kleiner Körper oder Aeroliten, die auf<br/>
+einen oder den andern Planeten fallen. Zu<br/>
+unſerm Syſtem muß endlich auch die nebelartige<br/>
+leuchtende Materie gerechnet werden, die wir<br/>
+unter dem Namen des Zodiakal-Lichtes ſchon<br/>
+erwähnt haben. Bis jetzt <span title="hab￼" class="dta-abbr">haben</span> die <span title="Planet￼" class="dta-abbr">Planeten</span> den<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">falſchen<br/>
+Name Jrrſtern<br/>
+für Planet.</span><br/>
+</span>Namen <span class="u ">Jrrſterne</span> behalten, obwohl ſie dies nicht<br/>
+ſind, wohl aber die Cometen ſo genañt werden<br/>
+köñen. Das ein Centralkörper in der Mitte<br/>
+ſteht iſt jetzt unumſtößlich bewieſen u. keine Jdee<br/>
+mehr; doch wurde dies ſchon um Alterthum ge-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Keñtniß<br/>
+des Alterthums<br/>
+von unſerm Syſtem</span><br/>
+</span>ahnet. <span title="Personenname"><a href="http://d-nb.info/gnd/118645714">Ariſtarch von Samos</a></span> koñte nicht nur<br/>
+die <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">Rot</span>ation der Erde, ſondern auch ſelbſt<br/>
+deren Translation. Unter den 6 Arten der<br/>
+Körper unſers Syſtems ſind zwar die Planet<span class="dta-supplied">[en]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Planeten<br/>
+dem Raume nach<br/>
+unwichtig</span><br/>
+</span>dem Räume <span class="u ">nach am unwichtigſten</span>; aber am<br/>
+wichtigſten für uns durch das materiell prakti-<br/>
+ſche, welches wir <span title="der￼" class="dta-abbr">deren</span> Keñtniß verdanken.<br/>
+Würden wir die Planeten nicht keñen, ſo w<span class="dta-supplied">[ür-]</span><br/>
+de uns Vieles unbekañt geblieben ſein, was<br/>
+wir von der Dichtigkeit der Erde, des Mondes<br/>
+u. ſeinen Paralaxe, von der Soñe <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span> wiſſen<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Mehrere<br/>
+ein eigen</span><span class="dta-del" title="Streichung (#s)"><span class="u ">e</span></span><span class="u ">s<br/>
+Licht</span><br/>
+</span>Einige derſelben <span title="hab￼" class="dta-abbr">haben</span> <span class="u ">ein eigens ſchwach</span><br/>
+phosphoriscirendes Licht Zb. Venus. Eben <span class="gap">[verlorenes Material – 1 Wort fehlt]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">glaubt</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0113 : 109.|</span><br/>
+glaubt man auch von Uranus u. Veſta<br/>
+welche letztere beſonders ein viel ſtärke-<br/>
+res Licht zeigt, als man nach ihrer Größe<br/>
+<span title="vermuth￼" class="dta-abbr">vermuthen</span> ſollte. Der Planet Mars<br/>
+zeigt ſich in rothem Lichte u. die Jupiters<br/>
+Trabanten ſelbſt in farbigem, Blau u.<br/>
+Orange. – Eine intereſſante Beobach-<br/>
+tung iſt es, zu ſehen, wie die Erfahrung<br/>
+hierin in der neuern Zeit auf eine un-<br/>
+begreifliche Weiſe zugenom̃en. <span class="u ">Die Alten</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Wie<br/>
+viel Planeten<br/>
+kañten die Alten.</span><br/>
+</span><span class="u ">zählten nur 5 u.</span> nim̃t man Soñe u. Mond<br/>
+als Planten dazu, ſo halten ſie 7 Jrr-<br/>
+ſterne. Sie zählten ſie in folgender<br/>
+Reihfolge ſo wie ſie dieſelben am Entfern-<br/>
+teſten hielten. <span class="u ">Zuerſt Saturn, dañ Jupiter,</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Reihfolge der-<br/>
+selben nach Entfernung<br/>
+angenom̃en.</span><br/>
+</span><span class="u ">Mars, Soñe, Venus, Merkur, Luna.</span></p><br/>
+<p class="dta-p">Von ihnen allein läßt ſich die Periode<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Grund der Ordnungs-<br/>
+folge unſerer Wochen-<br/>
+tage.</span><br/>
+</span>der Woche ableiten u. weñ gleich die<br/>
+gewöhnlichen <span class="u ">Wochentage</span> eine andere<br/>
+Stellung als die oben gedachte añehmen:<br/>
+ſo entſpringt dies aus der Sitte jede<br/>
+Stunde mit einem Planetennamen zu <span title="bezeichn￼" class="dta-abbr">bezeichnen</span><br/>
+u. daß dieſe den <span title="einzeln￼" class="dta-abbr">einzelnen</span> Stunden vorſtan-<br/>
+den, zählt man nun die 1<span class="sup u ">ſte</span> Stunde des<br/>
+Soñtags bis zur 24<span title="ſt￼" class="dta-abbr"><span class="sup u ">ſten</span></span>x)<span class="dta-marginal dta-marginal-left">nach oben erwähnten Reihenfolge<br/>
+</span>. so trifft die erſte<br/>
+Stunde des folgenden Tages, auf den Mond-<br/>
+tag <span title="Original: pp" class="dta-reg"><span class="aq ">etc</span>. <span class="aq ">etc</span>.</span> daher der Grund der jetzigen<br/>
+Ordnungsfolge. – Die ſo häufig ſich<br/>
+ereignenden Mondfinſterniſſe ſchrieb <span title="Personenname"><a href="http://d-nb.info/gnd/118642421">Sim-<br/>
+plicius</a></span> u. Andere den Planeten zu, die<br/>
+in größerer Anzahl ſich noch behändenxx)<span class="dta-marginal dta-marginal-left">als damals bekañt war.<br/>
+</span>.<br/>
+Erſt ſeit 1610 <span title="wurd￼" class="dta-abbr">wurden</span> <span class="u ">die Jupi</span><span class="u ">t</span><span class="u ">ers Tra-</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Entdeckung<br/>
+der Jupiterſtra-<br/>
+banten</span><br/>
+</span><span class="u ">banten bekañt</span>. 1655 wurde der ſechſte<br/>
+Trabant entdeckt., 1671 d. 7<span class="sup u ">te</span>. 1672<br/>
+d. 5<span class="sup u ">te</span> 1673 der 2 u. 3<span class="sup u ">te</span> von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Casſini</a></span></span>.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0114 : 110.|</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Entdeckung des<br/>
+Uranus</span><br/>
+</span>1781. wurde <span class="u ">Uranus von <span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span> entdeckt</span>.<br/>
+|: Man hatte ihn zwar ſchon 1690 <span title="geſeh￼" class="dta-abbr">geſehen</span>, ihn aber<br/>
+für einen Fixſtern gehalten, wie Zb. der <span title="Personenname"><a href="http://d-nb.info/gnd/116471727">En-<br/>
+ke</a></span>ſche Comet ſchon längſt <span title="geſeh￼" class="dta-abbr">geſehen</span> worden, <span title="abe" class="dta-abbr">aber</span><br/>
+von <span title="Personenname"><a href="http://d-nb.info/gnd/116471727">Enke</a></span> zuerſt in die Bahn der <span title="Planet￼" class="dta-abbr">Planeten</span> gebracht<br/>
+worden iſt, u. daher nach ihm genañt wird. :|</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Entdeckung<br/>
+der Cometen hat jetzt<br/>
+weniger</span> <span class="dta-del" title="Streichung (#ow)"><span class="u ">w</span></span><span class="dta-add" title="Hinzufügung (across)"><span class="u ">W</span></span><span class="u ">erth.</span><br/>
+</span>Man legt jetzt <span class="u ">auf Entdeckung der Cometen</span><br/>
+nicht mehr die Wichtigkeit die früher darauf<br/>
+gelegt wurde; indem der Aſtronom <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117689505">Pons</a></span></span><br/>
+jetzt oft 4 <span title="Comet￼" class="dta-abbr">Cometen</span> in einem Jahre entdeckt.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Entdeckung<br/>
+der Trabanten<br/>
+des Uranus</span><br/>
+</span>1787. wurde der <span class="u ">1. u. 2.<span class="sup u ">te</span> Trabant des Ura-<br/>
+nus entdeckt</span>, 1790 der 3 u. 4<span class="sup u ">te</span>. 1796.<br/>
+der 5 u. 6<span class="sup u ">te</span> deſſelben. 1801 d. 1 Jan.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">desgl. der<br/>
+kleinen Planeten</span><br/>
+</span><span class="u ">wurde</span> <span class="aq "><span class="u ">Ceres</span> von <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117685798">Piazzi</a></span></span></span> <span title="gefund￼" class="dta-abbr">gefunden</span>, vom<br/>
+durch <span title="ein￼" class="dta-abbr">einen</span> Schreibfehler; indem er daſelbſt<br/>
+vergebens <span title="ein￼" class="dta-abbr">einen</span> Fixſtern aufſuchten. 1802<br/>
+entdeckte <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11858975X">Olbers</a></span></span> die <span class="aq ">Pallas</span>, 1804 Die<br/>
+<span class="aq ">Juno</span>, 1807 die Veſta, geleitet nach rei-<br/>
+ner Theorie, daß daſelbſt Trüm̃er von<br/>
+einem <span title="groß￼" class="dta-abbr">großen</span> <span title="Planet￼" class="dta-abbr">Planeten</span> zu finden ſein müßt<span class="dta-supplied">[en.]</span><br/>
+Wie hierüber <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118568698">Lagrange</a></span></span> die vortreflichſte<br/>
+Auskunft gegeben. Jm <span class="dta-del" title="Streichung (#ow)">1</span><span class="dta-add" title="Hinzufügung (across)">J</span> <span class="dta-del" title="Streichung (#ow)">8</span><span class="dta-add" title="Hinzufügung (across)">1</span>818. wurde die Ent-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">desgl. der<br/>
+planetariſchen<br/>
+Cometen</span><br/>
+</span>deckung <span class="u ">des planetar. <span title="Comet￼" class="dta-abbr">Cometen</span> gemacht</span><br/>
+zwiſchen dem Merkur u. den Aſteroiden<br/>
+1826. de<span class="dta-del" title="Streichung (#ow)">r</span><span class="dta-add" title="Hinzufügung (across)">s</span> <span title="Comet￼" class="dta-abbr">Cometen</span> von <span title="Personenname"><a href="http://d-nb.info/gnd/116164603">Biela</a></span>. So ſind im<br/>
+<span title="kurz￼" class="dta-abbr">kurzen</span> Zeitraum 5 Hauptplaneten, 8 Sate-<br/>
+liten u. 2 Cometen von ſechs <span title="deutſch￼" class="dta-abbr">deutſchen</span> Aſtro-<br/>
+nomen gefunden worden. Seit einem <span title="halb￼" class="dta-abbr">halben</span><br/>
+Jahrhundert iſt durch fleißiges beobachten<br/>
+die Zahl <span title="derſelb￼" class="dta-abbr">derſelben</span> verdoppelt worden.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Harmonie<br/>
+des Ganzen unter-<br/>
+suchen.</span><br/>
+</span>So wie in der vergleichenden Erdkunde man<br/>
+ſich bemüht zu ſehen, in wel<span class="u ">cher Harmonie</span><br/>
+das Ganze ſteht, ſo wollen wir dies auch<br/>
+bei den Planeten verſuchen u. die<br/>
+<span title="einzeln￼" class="dta-abbr">einzelnen</span> Geſetze <span title="derſelb￼" class="dta-abbr">derſelben</span> beobachten<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Entfernung<br/>
+d. <span title="Planet￼" class="dta-abbr">Planeten</span>.</span><br/>
+</span>Wir betrachten zuerſt ihr<span class="u ">e <span title="Entfernung￼" class="dta-abbr">Entfernungen</span></span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Die Erde</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0115 : 111.|</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Entfernung der<br/>
+Erde von d. Soñe.</span><br/>
+</span>Die Er<span class="u ">de iſt 108 Soñendurchme</span>ſſer, oder<br/>
+20½ Mill. Meilen von der Soñe entfernt;<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">des Saturn</span><br/>
+</span><span class="u ">Saturn</span> 1030 Soñendurchmeſſer, <span class="u ">Uranus</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">des Uranus</span><br/>
+</span>doppelt ſo weit od. 19 Erdweiten von<br/>
+der Soñe od. 400 Mill. Meilen. Welche<br/>
+Entfernung derjenige Comet hat, der am<br/>
+<span title="weiteſt￼" class="dta-abbr">weiteſten</span> von der Soñe abſteht, kañ man<br/>
+nur nach Analogie ſchließen. Zb. iſt der<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Entfernung<br/>
+de<span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span>s Cometen</span><br/>
+</span><span class="u ">Comet von 1680, 3½</span> mal ſo weit als<br/>
+Uranus entfernt, der von 1811. der<br/>
+3300 J. Umlaufszeit braucht, 22 mal<br/>
+ſo weit als Uranus. Hieraus ſehen<br/>
+wir, daß das Planetenſyſtem der kleinſte<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Kleiner<br/>
+Theil des Soñenſyſtems<br/>
+sind die Planeten</span><br/>
+</span>Theil vom ganzen Syſtem iſt, deñ der<br/>
+ganze Abſtand des Uranus von der<br/>
+Soñe iſt nur <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">der </span>10,000 Theil der Syriusweite,<br/>
+u. nehme ich das ganze Soñenſyſtem nebſt<br/>
+den <span title="fernſt￼" class="dta-abbr">fernſten</span> Cometen, ſo kañ ich dies 200<br/>
+mal in dieſen Raum noch hinein ſetzen.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Größe der<br/>
+Planeten hat keinen<br/>
+Zuſam̃enhang mit der<br/>
+Entfernung derſelben</span><br/>
+</span>Jn Hinſicht der Größe der <span title="Planet￼" class="dta-abbr">Planeten</span> zu ihrem<br/>
+Abſtande von der Soñe giebt es keinen<br/>
+Zuſam̃enhang u. fortſchreitende Progreſſion.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">der kleinſte<br/>
+u. größte aller<br/>
+Monden.</span><br/>
+</span><span class="u ">Der kleinſte aller</span> Monden iſt der iñerſte<br/>
+im Saturnsringe, der <span class="u ">größte iſt</span> der 3<span class="sup u ">te</span><br/>
+des Jupiters u. der 6<span class="sup u ">te</span> des Saturns.</p><br/>
+<p class="dta-p">Jhre Abſtände in Halbmeßern des Hauptpla-<br/>
+neten ausgedrückt liefern folgende Reſul-<br/>
+tate. Saturns Monde ſind in der Mittel-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Jhre <span title="Ent-&#xA;fernung￼" class="dta-abbr">Ent-<br/>
+fernungen</span> vom<br/>
+Haupt-Planeten</span><br/>
+</span>zahl drei Halbmeſſer; die des Jupiter<br/>
+fünf Halbmeſſer u. die des Uranus 13<br/>
+Halbmeſſer <span class="u ">entfernt</span>; der Mond der Erde<br/>
+iſt 60 Halbmeſſer <span title="derſelb￼" class="dta-abbr">derſelben</span> weit, alſo ein<br/>
+ſehr entfernter Trabant. Die Abſtände<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">der</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0116 : 112.|</span><br/>
+der Planeten von der Soñe erregten<br/>
+ſchon in der früheſten Zeit große Aufmerkſam-<br/>
+keit u. die Pythagoräer bildeten hierüber<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u "><span title="Personenname"><a href="http://d-nb.info/gnd/118561448">Kepler</a></span>s<br/>
+Syſtem der Abſtände<br/>
+d. Planeten von<br/>
+der Soñe.</span><br/>
+</span>sich Sätze. <span class="u ">Erſt <span title="Personenname"><a href="http://d-nb.info/gnd/118561448">Kepler</a></span> aber</span> brachte<br/>
+ihren Abſtand in eine regelmäßige Reihe<br/>
+u. behauptete, <span title="dß" class="dta-abbr">daß</span> darnach ein neuer Pla-<br/>
+net noch gefunden werden müße. Es iſt<br/>
+dies der bekañte Satz, nach welchem, wie<br/>
+ich den Abſtand des Merkur = 4, añehme<br/>
+der Abſtand der Venus 4 + 3 iſt, der Erde<br/>
+4 + 2 ∙ 3, de<span class="dta-del" title="Streichung (#ow)">r</span><span class="dta-add" title="Hinzufügung (across)">s</span> Mars 4 + 4 ∙ 3, des<br/>
+Jupiter 4 + 16 ∙ 3, des Saturn 4 + 32 ∙ 3,<br/>
+des Uranus 4 + 64 ∙ 3. Es fehlte in dieſer<br/>
+Reihe 4 + 8 ∙ 3. u. in neuſten Zeit<br/>
+wurden zwiſchen Mars u. Jupiter die Aſte-<br/>
+roiden entdeckt, deren Entfernung 4 + 8 ∙ 3<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Richtung<br/>
+der Bewegung.</span><br/>
+</span>iſt. Alle Haupt- u. Nebenplaneten bewe-<br/>
+gen ſich in <span class="u ">einen Richtung um die Soñe, <span class="gap">[unleserliches Material]</span>-</span><br/>
+lich von Weſten nach Oſten; die Cometen<br/>
+aber gehen in allen Richtungen. Gegen<br/>
+den Soñen-Aequator neigt ſich, am<br/>
+wenigſten Merkur, nur 3°, am meiſten<br/>
+Pallas, 37°8′, Juno 16° <span title="Original: pp" class="dta-reg"><span class="aq ">etc</span>. <span class="aq ">etc</span>.</span> Die Mon<span class="dta-supplied">[d-]</span><br/>
+neigung iſt wenig verſchieden von der<br/>
+Neigung der Erdaxe; hingegen die Ura-<br/>
+nusmonde ſtehen ſenkrecht auf ihrer Bahn<br/>
+bei den Jupiter u. Saturns-Trabanten<br/>
+bemerken wir, daß die entferntern M<span class="dta-supplied">[onde]</span><br/>
+mehr geneigt ſind als die nähern. Etwas<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Gemeinsames<br/>
+der Bewegung aller<br/>
+Monde um ihren<br/>
+Hptplaneten</span><br/>
+</span><span class="u ">gemeinſames haben alle Monde</span>, daß ihr<br/>
+Umlaufszeit um den <span title="Hauptplanet￼" class="dta-abbr">Hauptplaneten</span> gleich<br/>
+iſt der Rotation um ihre Axe, u. daß<br/>
+Alle, dem <span title="Hauptplanet￼" class="dta-abbr">Hauptplaneten</span> nur eine Seite<br/>
+zeigen. Jm allgemeinen <span title="hab￼" class="dta-abbr">haben</span> die Bahn<span class="dta-supplied">[en]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">der</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0117 : 113.|</span><br/>
+der Planeten wenig Excentricität.<br/>
+Juno u. Pallas hingegen ſehr bedeutende<br/>
+u. faſt der 4<span class="sup u ">te</span> Theil der mittlern Ent-<br/>
+fernung von der Soñe oder 0,25 Mars<br/>
+0,09, Venus 0,006. Hienach iſt die Quan-<br/>
+tität der Flexticität ſehr verſchieden,<br/>
+u. beſonders iſt die abnorme Form der<br/>
+Pallas u. Junobahn ſehr merkwürdig.</p></div></body></html>

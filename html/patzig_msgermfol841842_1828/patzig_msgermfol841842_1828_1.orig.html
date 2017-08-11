@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span title="Original: v. 12–1 Uhr. d. 3 Novbr." class="dta-reg">1. Vorlesung, 03.11.1827</span></div><br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u ">Prolegomena</span>.<br/>
+</span><p class="dta-p">Hochzuehrende HErrn.<br/>
+Die Wiſſenſchaftx)<span class="dta-marginal dta-marginal-left">Jm Eingange der letzten Vorleſung verſuchte ich die<br/>
+<span class="dta-supplied">[Wi]</span>ſſenſchaft zu characteriſiren. Sie iſt die Betrachtung<br/>
+<span class="dta-supplied">[des]</span> Geſchaffenen, der körperl. Dinge als eines Naturganzen<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118803948"><span class="dta-supplied">[V]</span>arenius</a></span></span> u. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118587544">Neuton</a></span></span> haben dies verſucht. – Haben<br/>
+<span class="dta-supplied">[w]</span>ir die Züge des Naturbildes richtig aufgefaßt, ſo<br/>
+<span class="dta-supplied">[dü]</span>rfte dies beſſer ſein als viele Definitionen. <span class="dta-del" title="Streichung (#s)">So</span><br/>
+</span> über die ich mich mit Jhnen zu<br/>
+<span title="unterhalt￼" class="dta-abbr">unterhalten</span> vorgenom̃en habe wird ſich mit<br/>
+dem Geſchaffenen, mit den Naturgegenſtänden<br/>
+beſchäftigen. Jch will nicht bloß über die telluri-<br/>
+ſchen Erſcheinungen u. deren Verhältniſſe ſpre-<br/>
+chen, ſondern auch einen Abriß der Aſtrono-<br/>
+mie geben. Es ſoll dabei unſere Erde, als<br/>
+ein Theil im Weltraume, näher betrachtet<br/>
+u. der Gedanke verfolgt werden, alles im<br/>
+Raume ſichtbare als ein Naturganzes anzu-<br/>
+ſehen u. erſt ſpäterhin wird dañ dieſe<br/>
+Wiſſenſchaft ſelbſt in engere Grenzen ein-<br/>
+geſchloſſen werden. Dies deshalb, weil<br/>
+alle phyſikaliſchen Erſcheinungen auf der<br/>
+Erde zweifach bedingt ſind, u. dies.<br/>
+theils von den eigenthüml. Kräften derſelben,<br/>
+theils von der Einwirkung anderer Him̃els-<br/>
+körper abhängen.</p><br/>
+<p class="dta-p">Doch vor Allem muß der, den lange<br/>
+Abweſenheit vom heimiſchen Boden ent-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="ph dta-figure" type="1">
+        [Abbildung]
+        </span><br/>
+</span>fernt hielt, der ſich viel mit einem Volke<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">befreun-</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0006 : 2.|</span><br/>
+befreundete, welches durch den <span class="gap">[unleserliches Material – 2 Wörter fehlen]</span><span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">natur </span>u.<br/>
+Entdeckungen im Gebiete derſelben ſich auszeich-<br/>
+net<span class="dta-del" title="Streichung (#erased)">e</span>, der nicht gewöhnt iſt an öffentliche<br/>
+Vorträge, große Nachſicht ſich erbitten; be-<br/>
+ſonders da in dieſem Hauſe derſelbe Gegen-<br/>
+ſtand unlängſt von einem Gelehrten, dem wür-<br/>
+digen <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/104268190">Link</a></span></span> behandelt worden iſt, u. dies mit<br/>
+einer Umſicht u. einer Beredſamkeit, daß<br/>
+deſſen Vortrag ſelbſt auf den, der mit<br/>
+den Grundſätzen nicht übereinſtim̃end ſich<br/>
+erklären kañ, deñoch den bleibenſten Eindruck<br/>
+machte. Noch mehr Nachſicht erbitte ich mir,<br/>
+weñ ich bedenke, <span title="dß" class="dta-abbr">daß</span> mir die Sprache nicht<br/>
+folgſam genug ſein wird, daß ich bei<br/>
+der Schwierigkeit der Sache ſelbſt befürchten<br/>
+muß undeutlich zu werden, u. andern-<br/>
+falls bei der Behandlung des <span title="vielſeitg￼" class="dta-abbr">vielſeitgen</span><br/>
+mañigfaltigen Stoffes nur encÿklopä-<br/>
+diſche Abriſſe liefern <span class="dta-del" title="Streichung (#ow)">wü</span><span class="dta-add" title="Hinzufügung (across)">dü</span>r<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">fte</span>, welches<br/>
+beides ich doch ſo gern zu umgehen u. zu<br/>
+vermeiden wünſche. <span class="u ">Erlauben Sie mir</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Erſter Gegenſtand der<br/>
+Prolegomenen: Entwerfung<br/>
+eines Natur-Gemäldes.</span><br/>
+</span><span class="u ">das große Bild der Natur im Ganzen<br/>
+in einzelnen großen Zügen zu ent-<br/>
+werfen</span>.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Nachdem</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0007 : 3.|</span><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Neueſte Aſtronomiſche Ent-<br/>
+deckungen.</span><br/>
+</span><span class="u ">Nachdem <span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span> u. <span title="Personenname"><a href="http://d-nb.info/gnd/116746599">Frauenhofer</a></span> mit ihren Fern-<br/>
+röhren u. optiſchen Hilfsmitteln</span> die großen<br/>
+Entdeckungen machten, wiſſen wir, daß<br/>
+in den fernſten Räumen noch Welten<br/>
+vorhanden ſind die noch im Lichtprozeſſe<br/>
+begriffen*)<span class="dta-marginal dta-marginal-left">So wie die Geſchichte der Völker mit mythiſchen<br/>
+Geſtalten anfängt, ſo wollen auch wir das Bild der<br/>
+Natur betrachten u. zuerſt mit den nebelartigen Körpern<br/>
+anfangen u. wie bei der Geſchichte e<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">in</span> Geſamtüberblick<br/>
+des Ganzen vorhergeht, ſo werden wir es auch hier<br/>
+in dieſer Art darſtellen. – Die Materie iſt im<br/>
+Univerſum zerſtreut, theils geballt, theils<br/>
+dunſtförmig verbreitet. Die Weltkörper ſind<br/>
+nicht unordentlich zerſtreut, ſondern Schichtenweiſe<br/>
+im Raume enthalten.<br/>
+</span>. Es ſind über <span class="u ">3000 ſolcher</span><br/>
+Nebelflecke ſchon gezählt die im un<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">end-</span><br/>
+lichen Raume inſelförmig zerſtreut liegen<br/>
+wie die Archipele im Ozean. Man hat<br/>
+Bewegungen entdeckt die dieſen Nebel zer-<br/>
+theilen u. wiederum ihn in einander ſch<span class="gap">[unleserliches Material]</span>.<br/>
+Wie bekañt iſt die Geſchwindigkeit des Lichts<br/>
+bei den Monden des Jupiters entdeckt<br/>
+u. genau berechnet worden; wir wiſſ<span class="dta-del" title="Streichung (#ow)"><span class="gap">[]</span></span><span class="dta-add" title="Hinzufügung (across)">en</span><br/>
+<span title="dß" class="dta-abbr">daß</span> das Licht von der Soñe in 8 Minuten<br/>
+13 Sec. bis auf unſere Erde fällt, u.<br/>
+aus dieſen ſichern Daten iſt die Rechnung<br/>
+ſicher, <span class="u ">daß mehr als 24000 J. der Erde,</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Dauer der Erſcheinung des Lichts auf<br/>
+unſrer Erde</span>.<br/>
+</span><span class="u ">gehörten, um <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="dß " class="dta-abbr">daß </span></span>das Licht auf unſere <span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)">E</span>rde<br/>
+von dieſen fernen Lichtnebeln gelangen<br/>
+koñte</span>. Wir erhalten dadurch einen Blick<br/>
+in die fernſten Zeiten, der aller Geſchichte<br/>
+entbehrt, wir erhalten dadurch eine<br/>
+poſitive Keñtniß von der Länge der<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Zeit</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0008 : 4.|</span><br/>
+Zeit u. von der Dauer der Welt. Ob<br/>
+unſer Planetenſyſtem in wirkl. Verbindung<br/>
+mit dieſen unen<span class="dta-del" title="Streichung (#ow)">t</span><span class="dta-add" title="Hinzufügung (across)">d</span>lichen Räumen ſteht, von<br/>
+den Cometen will ich hier nicht reden die<br/>
+uns viel näher angehen; ob wir in<br/>
+Com̃unication u. Wechſelwirkung ſtehen<br/>
+ſoll ſpäter unterſucht werden. Von<br/>
+dieſem unendlichem Archipel der im Licht-<br/>
+prozeſſe befindlichen Welten gehe ich zu-<br/>
+rück zu den Lichtſtufen der Milchſtraße.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Von den Doppelſternen.</span><br/>
+</span><span class="u ">Hier ſind 700 Doppelſterne entdeckt<br/>
+worden</span>. Wunderbar iſt es, daß ſich<br/>
+hier die farb<span class="dta-del" title="Streichung (#ow)">l</span><span class="dta-add" title="Hinzufügung (across)">igen</span> oder Farben ſpie-<br/>
+lenden Sterne um die ungefärbten<br/>
+drehenx)<span class="dta-marginal dta-marginal-left">Die Bewegung derſelbe geht von Oſten nach<br/>
+Weſten<br/>
+</span>. Der große Aſtronom <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118510215">Bessel</a></span></span><br/>
+hat hier merkwürdige Entdeckungen ge-<br/>
+macht. Eine ſolche Translationsbewegung<br/>
+haben die Doppelſterne im Schwan, u.<br/>
+ſehr deutlich iſt dies beobachtet worden.<br/>
+Von Planeten kañ hiebei keine Rede<br/>
+ſein; ſie ſind gleichfalls im Lichtprozeſſe<br/>
+begriffen<span class="dta-add" title="Hinzufügung (intralinear)">e</span><span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">Welten</span>. Jndem ich der Farbe erwähnte:<br/>
+ſo dachte ich an die Sterne die man erſcheinen<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">und</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0009 : 5.|</span><br/>
+und wieder verſchwinden ſah, u. <span class="dta-add" title="Hinzufügung (superlinear)">die </span>kurz<br/>
+vor ihrem Verlöſchen ein farbiges<br/>
+Licht añehmen, wie ein Licht beim Ver-<br/>
+löſchen anfängt Farben zu ſpielen.<br/>
+Ein einziges Beiſpiel in dieſer Art haben<br/>
+wir in unſerm Planetenſyſtem bei<br/>
+einem <span title="Satellit￼" class="dta-abbr">Satelliten</span> des Jupiters. <span class="u ">Jn</span> <span class="dta-del" title="Streichung (#s)"><span class="u ">unſe-</span></span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Sternenſchichten</span><br/>
+</span><span class="u ">der Sternſchicht in welcher auch unſer<br/>
+Planetenſyſtem liegt</span> u. die linſenför-<br/>
+mig geſtaltet iſt giebt es mehrere<br/>
+dergleichen Doppelſterne. – <span class="u ">Weñ es</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Schwächung der Lichtſtrahlen</span><br/>
+</span><span class="u ">keine Schwächung der Lichtſtrahlen gäbe</span><br/>
+ſo würden nirgends Räume am Him̃el<br/>
+erſcheinen, ſondern der ganze Horizont<br/>
+würde im gleichmäßigen Lichtglanze ſich<br/>
+befinden. Das iſt aber nicht der Fall. Der<br/>
+ungeheure Raume iſt mit lichtſchwächender<br/>
+Materie angefüllt, neñen Sie es im̃er-<br/>
+hin Aether oder wie ſie es wollen,<br/>
+dieſe feine lichtſchwächende Materie erfüllt<br/>
+das Ganze. Da, wo dieſer Teppich, weñ<br/>
+ich mich ſo <span title="ausdrück￼" class="dta-abbr">ausdrücken</span> darf, dichter oder<br/>
+düñer gewebt iſt, da wird es am<br/>
+Him̃el dunkler oder lichter. Es geht<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">soweit</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0010 : 6.|</span><br/>
+soweit daß <span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span> u. <span title="Personenname"><a href="http://d-nb.info/gnd/116746599">Frauenhofer</a></span> mit<br/>
+ihren Jnſtrumenten nicht mehr durchdringen; u.<br/>
+im <span title="Süd￼" class="dta-abbr"><span class="aq ">Süden</span></span> des Erdballs, wie ich es ſelbſt beo-<br/>
+bachtet ganz dunkelſchwarze <span title="Fleck￼" class="dta-abbr">Flecken</span> am<br/>
+Him̃el ſichtbar werden. An andere<br/>
+Orten iſt dieſe Materie ſo duñ, daß<br/>
+ſie erlaubt in andere höher gelegene<br/>
+Sternenſchichten zu blicken u. hier zeigen<br/>
+ſich deñ im <span class="aq ">Spectrum</span> Verſchiedenheiten,<br/>
+<span title="allenthalb￼" class="dta-abbr">allenthalben</span>, wo der Lichtprozeß noch<br/>
+unvollkom̃en iſt. – <span class="u ">Wie geſagt iſt</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Sternſchicht linſenförmig<br/>
+geſtaltet u. Standpunkt unſeres Syſtems.</span><br/>
+</span><span class="u ">unſere Sternſchicht linſenförmig</span>; ſie iſt<br/>
+dabei abgeplattet. Mitten in derſelben<br/>
+ſtehend ſcheint uns dieſelbe durch Projection<br/>
+ſo dicht mit Sternen beſäet<span class="dta-del" title="Streichung (#erased)">,</span> daher die<br/>
+anſcheinend große Unregelmäßigkeit in<br/>
+der Stellung derſelben. – <span class="u ">Unſer Plane-<br/>
+tenſyſtem hat in unſerer Sternſchicht<br/>
+ſeinen Standpunkt am Sternbilde des<br/>
+Adlers</span>x)<span class="dta-marginal dta-marginal-left">wo die Milchſtraße ſich theilt. 11 Hpt<br/>
+Planeten u. 18 Nebenplaneten bewegen ſich<br/>
+um den Centralkörper, die Soñe.<br/>
+</span>u. bewegt ſich gegen das<br/>
+Sternbild des Herkules; es iſt ſelbſt<br/>
+in einer fortſchreitenden Bewegung.<br/>
+Jn unſerm Syſtem keñen wir Haupt- u.<br/>
+Neben-Planeten u. <span title="Schreibfehler: Com̃eten" class="dta-corr">Cometen</span>. Hier<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span title="erblick￼" class="dta-abbr">erblicken</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0011 : 7.|</span><br/>
+erblicken wir einen großen Unterſchied zwi-<br/>
+ſchen den entferntern u. nähern Planeten<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Zwei beſondere Planeten-Syſteme</span><br/>
+</span>von der Soñe. <span class="u ">Dies giebt zwei beſondre<br/>
+Sÿſteme</span>. Die Scheide machen die kleinern<br/>
+Körper die ſich zwiſchen Mars u. Jupiter<br/>
+bewegen, die ein ganz eignes Syſtem<br/>
+bilden, von denen die Veſta als die<br/>
+<span class="u ">größte</span> <span title="Schreibfehler: ungefahr" class="dta-corr">ungefähr</span> die <span title="Oberfl." class="dta-abbr">Oberfläche</span> von Deutſch-<br/>
+land hat. Sie haben eine translative Be-<br/>
+wegung von Weſten nach Oſten, ſind ihrer<br/>
+Stellung nach ähnlich den <span title="Schreibfehler: Com̃eten" class="dta-corr">Cometen</span>; obgleich<br/>
+doch keine A<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">e</span>hnlichkeit anderweit zwiſchen<br/>
+ihnen u. den <span title="Com̃et￼Comet￼" class="dta-abbr"><span title="Schreibfehler: Com̃eten" class="dta-corr">Cometen</span></span> iſt, wie überhaupt<br/>
+kein Uebergang zwiſchen Planeten u. Co-<br/>
+meten gefunden wird u. keine poſitive<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Erſtes Syſtem<br/>
+characteriſt. Merkmale</span><br/>
+</span>Aehnlichkeit. <span class="u ">Jn dieſem doppelten Syſtem<br/>
+der Planeten gehören zuſam̃en: Merkur,<br/>
+Venus, Erde, Mars.</span> Sie haben das<br/>
+gemeinſame der beſondern Dichtigkeit,<br/>
+wie <span class="aq ">Platina</span>, Magnetſtein u. dgl.; ſie<br/>
+<span class="dta-del" title="Streichung (#s)">rotiren</span><span class="dta-add" title="Hinzufügung (superlinear)">bewegen ſich</span> viel geſchwinder <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">um die Soñe</span>, ſind mond-<br/>
+armer |: bloß die Erde hat einen <span title="Trabant￼" class="dta-abbr">Trabanten</span> :|,<br/>
+an den Polen abgeplattet. Anders<br/>
+verhält es ſich mit den Planeten auf der<br/>
+Bahn jenſeits der kleinen Planeten.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0012 : 8.|</span><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Zweites Syſtem</span><br/>
+</span><span class="u ">Sie zeichnen ſich durch Mangel an Dichtigkeit<br/>
+aus</span>, die ungefähr nur wie Tañenholz oder<br/>
+Naphta beſchaffen iſt; ſie rotiren in 9–10<br/>
+Stunden; ſind <span class="dta-del" title="Streichung (#s)">zwar </span>abgeplattet<span class="dta-add" title="Hinzufügung (intralinear)">er,</span> haben<br/>
+<span class="dta-del" title="Streichung (#s)">aber </span>eine größere Zahl von Monden, <span title="ein￼" class="dta-abbr">einer</span><br/>
+ſogar einen Ring, der nur betrachtet<br/>
+werden kañ als <span title="Satellit￼" class="dta-abbr">Satelliten</span> die in Kno-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Die Cometen</span><br/>
+</span>ten zuſam̃enhängend noch ſind. <span class="u ">Außer<br/>
+dieſen Planeten gehören noch zu unſrem<br/>
+Soñenſyſtem die</span> <span class="dta-del" title="Streichung (#ow)"><span class="u ">Plan</span></span><span class="dta-add" title="Hinzufügung (across)"><span class="u ">Com</span></span><span class="u ">eten</span>, deren man<br/>
+ſchon 400 keñt. Zählt man hingegen<br/>
+auch die, die durch Berechnung der <span class="aq ">Pery-<br/>
+helien</span> näher uns gekom̃en, ſo gehören<br/>
+viele 100000 zu unſerm Syſtem. Die<br/>
+ſehr glänzende Entdeckung des Aſtronomen<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116471727">Enke</a></span></span> hat bewieſen, daß ein Comet in<br/>
+3½ J. wieder zurückkehrt; er iſt ſeitdem<br/>
+ſchon 5 mal beobachtet u. er entfernt<br/>
+ſich nicht weiter wie etwa der Merkurx)<span class="dta-marginal dta-marginal-left">Hauptmañ <span title="Personenname"><a href="http://d-nb.info/gnd/116164603">Biela</a></span> in Böhmen hat den<br/>
+zweiten Cometen entdeckt der in ſechs Jahren<br/>
+wiederkehrt. Sie <span title="mach￼" class="dta-abbr">machen</span> u. veranlaſſen<br/>
+keine Stöhrung in den ewigen Weltuhr, wie<br/>
+beim <span title="Comet￼" class="dta-abbr">Cometen</span> beobachtet wurde der durch die<br/>
+Monde des Jupiter ging ohne Röhrung zu<br/>
+veranlaſſen<br/>
+</span>. Von den größern Cometen ſind nur<br/>
+zwei bekañt, deren Bahn rückgängig<br/>
+wird, obgleich auch ſie im <span title="ungeheur￼" class="dta-abbr">ungeheuren</span><br/>
+Raume retardirt werden; die übrigen<br/>
+halten ihre Bahn im <span title="unermeslich￼" class="dta-abbr">unermeslichen</span> Raume<br/>
+ohne nach beobachtete Wiederkehrxx)<span class="dta-marginal dta-marginal-left">Um ſich eine Vorſtellung von <span class="gap">[unleserliches Material – 1 Wort fehlt]</span> Raume zu<br/>
+machen, iſt es weniger <span class="dta-del" title="Streichung (#s)">ſie </span>nothwendig ihn abſolut<br/>
+zu beſtim̃en, <span class="dta-del" title="Streichung (#s)">beſ<span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (superlinear)">als</span> ſeine relation Größe zu<br/>
+betrachten. Es iſt beſſer zu wiſſen, <span title="dß" class="dta-abbr">daß</span> die<br/>
+Schneekoppe ½ mal ſo groß als die <span class="aq ">Pynäen</span><br/>
+<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0013 : 9.|</span><br/>
+u. der <span title="Brock￼" class="dta-abbr">Brocken</span> <span class="sup ">1</span>/<span class="dta-del" title="Streichung (#ow)"><span class="sub ">2</span></span><span class="dta-add" title="Hinzufügung (across)"><span class="sub ">6</span></span> mal ſo groß als der <span class="aq ">Chim-<br/>
+borasso</span> ſind, als die Höhe beider Geb. zu <span title="keñ￼" class="dta-abbr">keñen</span>.<br/>
+Nehmen wir das ganze Soñenſyſtem in<span class="dta-add" title="Hinzufügung (intralinear)">c</span>l. aber<br/>
+Cometen gleich 1 Linie an, ſo iſt die größte<br/>
+Axe unſerer Sternſchicht 260 Fuß. Die Entfer-<br/>
+nung der Soñe bis zum Nebelfleck 4⅓ geogr.<br/>
+Meilen u. die Entfern. des Uranus <span class="sup ">1</span>/<span class="sub ">100</span> dieſe<br/>
+Linie. Weñ <span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span> durch ſeine <span class="gap">[unleserliches Material – 1 Wort fehlt]</span> <span title="optiſch￼" class="dta-abbr">optiſchen</span><br/>
+Verſuche Sicherheit od. Wahrſcheinlichkeit zu geben<br/>
+im Stande iſt, ſo hat er gefunden, daß ſich das<br/>
+Teleskopiſche Sehen zum natürl. Sehen verhält<br/>
+wie 4⅓ geogr. Meil. zu 3 Zoll. Jm ganzen<br/>
+habe ich dieſe Vergleiche nicht, ſie ſind rela-<br/>
+tiv u. beziehen ſich auf unſere Kurzſichtigkeit. <span title="Wol￼Woll￼" class="dta-abbr"><span title="Schreibfehler: Wolen" class="dta-corr">Wollen</span></span><br/>
+wir noch ein Maaß añehmen, ſo finden wir unge-<br/>
+fähr, <span title="dß" class="dta-abbr">daß</span> ſich die Größe der Soñe zu den <span title="Original: Nebelfleck" class="dta-reg">Nebelflecken</span><br/>
+<span title="verhalte" class="dta-abbr">verhalten</span> wie ein <span title="Jnfuſionsthierch￼" class="dta-abbr">Jnfuſionsthierchen</span> zum Wallfiſche.<br/>
+Dieſe Ungewißheit iſt im̃er in gewiße Grenzen<br/>
+eingeſchloſſen; indem es <span class="aq ">Maxima</span> u. <span class="aq ">Minima</span><br/>
+giebt die ſich beſtim̃en laſſen. Von der Entfer-<br/>
+nung des Syrius deſſen Paralaxe gleich 1 <span class="aq ">Secunde</span> zu<br/>
+iſt, iſt es beſtim̃t, <span title="dß" class="dta-abbr">daß</span> er 10000 × <span title="weite" class="dta-abbr">weiter</span> als Ura-<br/>
+nus entfernt ſein muß. – <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">Bei </span>dem Monde der 51000<br/>
+geogr. Ml. von uns entfernt iſt, kañ den <span class="gap">[unleserliches Material – 1 Wort fehlt]</span><br/>
+höchſtens 15 Ml. betragen = <span class="sup ">1</span>/<span class="sub ">3350</span> des g<span class="gap">[unleserliches Material]</span> Abſtandes<br/>
+ſo wie weñ man bei der Größe des Brockens<br/>
+um 1 Fuß irren würde – Aerolithen<br/>
+ſind ſehr wahrſcheinl. Gebirgsarten anderen<br/>
+Welten.<br/>
+</span>So wie die Geognoſie durch die Auf-<br/>
+findung u. nähere Beachtung der thieriſchen Ver-<br/>
+ſteinerungen aufgeklärt wurde: ſo hat<br/>
+der phyſiſche Theil der Aſtronomie durch<br/>
+die Entdeckungen im Gebiet der Optik gewoñ<span class="dta-supplied">[en;]</span><br/>
+u. die Cometen ſind beſonders näher<br/>
+beobachtet werden. Jn beſtändiger<br/>
+Bewegung kañ man dieſe eine perio-<br/>
+diſch oſcilirende neñen. Dieſe kañ<br/>
+gehem̃t, geſtöhrt werden auf viele Weiſe;<br/>
+dẽ welch ein geringer Stoß von <span class="gap">[unleserliches Material – 1 Wort fehlt]</span><br/>
+dürfte dazu gehören ſie in Bewegung<br/>
+zu ſetzen, da die Düñigkeit derſelben<br/>
+Alles überſteigt was wie ſelbſt von<br/>
+Gas-Arten auf der Erde keñen. Dieſe<br/>
+Düñigkeit iſt 5000 mal geringer als die<br/>
+Dichtigkeit der Erde. – Kom̃en wir jetzt<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Telluriſche Verhältniſſe</span><br/>
+</span><span class="u ">zu den telluriſchen Verhältniſſe, <span class="dta-del" title="Streichung (#erased)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">ſo werd</span>en<br/>
+wir die Form, Größe u. Dichtigkeit des<br/>
+Planeten betrachten –</span> Die Form deſſelben<br/>
+iſt theils durch Meſſung beſtim̃t, theils g<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">e</span>ſchloſſen<br/>
+aus der Bewegung des Mondesx)<span class="dta-marginal dta-marginal-left">Die Geſtalt iſt ellyptiſch ſchhäroidiſch. Dies<br/>
+fand ſchon <span title="Personenname"><a href="http://d-nb.info/gnd/118650130">Ariſtoteles</a></span> in ſeinem Buch <span class="aq ">de caelo</span>:<br/>
+aus dem Erdſchatt. im Monde.<br/>
+</span>. Nach der<br/>
+gewöhnlichen Mondtheorie hatte man <span class="sup ">1</span>/<span class="sub ">315</span><br/>
+des Erddurchmeſſers für die <span title="Schreibfehler: Applattung" class="dta-corr">Abplattung</span><br/>
+angenom̃enxx)<span class="dta-marginal dta-marginal-left">es iſt falſche Theorie <span title="dß" class="dta-abbr">daß</span> die Südliche Halb-<br/>
+kugel mehr abgeplattet iſt<br/>
+</span>; wir wiſſen jetzt <span title="dß" class="dta-abbr">daß</span> die <span title="Schreibfehler: Applat-&#xA;tung" class="dta-corr">Abplat-<br/>
+tung</span> größer iſt u. <span class="sup ">1</span>/<span class="sub ">289</span> deſſelben beträgt.<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Dabei</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0014 : 10.|</span><br/>
+Dabei iſt bei der Oberfläche die größte<br/>
+Unregelmäßigkeit, namentlich in Hinſicht der<br/>
+Jnſeln. Die Dichtigkeit iſt conform mit<br/>
+der Dichtigkeit der <span title="Planet￼" class="dta-abbr">Planeten</span> zwiſch. den<br/>
+<span title="klein￼" class="dta-abbr">kleinen</span> <span title="Planet￼" class="dta-abbr">Planeten</span> u. der Soñe. Durch neuen<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Gewiß u. Dichtigkeit der<br/>
+Erde.</span><br/>
+</span><span title="Entdeckung￼" class="dta-abbr">Entdeckungen</span> kañ man <span title="ſag￼" class="dta-abbr">ſagen</span>, <span class="u "><span title="dß" class="dta-abbr">daß</span> die Erde</span><br/>
+<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="u ">gewogen</span> </span><span class="dta-del" title="Streichung (#s)"><span class="u ">ge</span></span><span class="u ">worden</span>x)<span class="dta-marginal dta-marginal-left"><span title="Personenname"><a href="http://d-nb.info/gnd/118668889">Kewendish</a></span> hat dieſe <span title="Unterſuchung￼" class="dta-abbr">Unterſuchungen</span> an-<br/>
+geſtellt<br/>
+</span> u. man hat gefunden daß<br/>
+ihre Dichtigkeit <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">4½ bis </span>5 mal größer iſt als<br/>
+<span class="dta-del" title="Streichung (#s)"><span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[Baſalteiſenſtein]</span></span><span class="dta-add" title="Hinzufügung (across)">Waſſer</span></span><span class="dta-add" title="Hinzufügung (superlinear)">Waſſer</span>xx)<span class="dta-marginal dta-marginal-left"><span class="aq ">Baſalt</span> iſt nur 3½ dichter als Waſſer<br/>
+</span>. Dieſe Dichtigkeit iſt<br/>
+auch nothwendig wegen der Stabilität<br/>
+der Flüßigkeit auf der Erdoberfläche.<br/>
+<span class="u ">Man kañ ſicher añehmen <span title="dß" class="dta-abbr">daß</span> in der Tiefe</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Jn der Tiefe Alles flüßig</span><br/>
+</span><span class="u ">alles flüßig iſt</span>. Dieſe Theorie iſt die<br/>
+Añahme der Dichtigkeit nicht entgegen, deñ<br/>
+ſo wie bei den Cometen die gasförmige<br/>
+Hütte der einzelnen Schichten den Kern<br/>
+zuſam̃endrängen: ſo kañ da<span class="dta-del" title="Streichung (#ow)">ñ</span><span class="dta-add" title="Hinzufügung (across)">s</span> Jnnere<br/>
+der Erde wohl flüßig u. zugleich ſehr<br/>
+gedrückt ſein bei aller Tenuität.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Wärme der Erde</span><br/>
+</span><span class="u ">Je weiter man</span> <span class="dta-del" title="Streichung (#ow)"><span class="u ">die</span></span><span class="dta-add" title="Hinzufügung (across)"><span class="u ">in</span></span> <span class="u ">die Erde dringt<br/>
+je wärmer wird es</span>. Wie ſich dieſe<br/>
+<span title="Schreibfehler: Erwärmug" class="dta-corr">Erwärmung</span> mit der magnetiſch <span title="elektriſch￼" class="dta-abbr">elektriſchen</span><br/>
+Kraft entwickelt, kañ hier uns an-<br/>
+gedeutet werden. Bloß durch die<br/>
+<span class="dta-add" title="Hinzufügung (intralinear)">magnetiſche </span>Spañung der einzelnen Schichten kañ<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0015 : 11.|</span><br/>
+eine große Erwärmung beſtehen u. die<br/>
+magnetiſch-elektriſche Kraft in Bewegung<br/>
+geſetzt werdenx)<span class="dta-marginal dta-marginal-left"><span class="dta-del" title="Streichung (#s)"><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/101697406">Moritini</a></span></span></span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/101697406">Morrichini</a></span></span></span> entdeckte daß unmag-<br/>
+netiſches <span title="Eiſe" class="dta-abbr">Eiſen</span> durch <span title="Soñenſtrahl￼" class="dta-abbr">Soñenſtrahlen</span> mag-<br/>
+netiſch werde.<br/>
+</span>. Hievon ſind unabhängig<br/>
+die Verſuche die angeſtellt ſind, <span title="dß" class="dta-abbr">daß</span> auch<br/>
+die Soñenſtrahlen die magnetiſche Spañung<br/>
+der Erde verändern köñen. – <span class="u ">Wäre</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Subſtanz des Erdkörpers</span><br/>
+</span><span class="u ">unſer Erdkörper nur eine Subſtanz, ſo gäbe<br/>
+es wenig Stoff für <span title="Unterſuchung￼" class="dta-abbr">Unterſuchungen</span></span>. Aber<br/>
+alle Materie iſt durch Aſſociation gebildet<br/>
+u. alle Gebirgsarten ſind <span title="Aſſociation￼" class="dta-abbr">Aſſociationen</span> von<br/>
+Subſtanzen die mañigfaltig ſind. Die oxidir-<br/>
+te Erdrinde hat ſich vielfach verändert<br/>
+in ſich ſelbſt, ehe noch climatiſche Einflüs-<br/>
+ſe ſtatt fanden. Dies eigentliche Feld<br/>
+der Geognoſie ſoll Gegenſtand der Unter-<br/>
+haltung in künftiger Stunde werden, <span title="wen" class="dta-abbr">wenn</span><br/>
+wir <span class="dta-del" title="Streichung (#s)">uns </span>auch <span class="dta-del" title="Streichung (#s)">mit </span>die Thiere, Pflanzen<br/>
+u. die verſch. Menſchenracen |: <span class="dta-del" title="Streichung (#s)">der </span><span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">wobei, ob ſie</span> nach<br/>
+ihrer körperl. Beſchaffenheit <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Wort fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">oder</span> nach<br/>
+ihrer Jntelligenz abgetheilt werden müſſen,<br/>
+zu unterſuchen iſt :|, näher zu betrachten<br/>
+haben.</p></div></body></html>

@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span title="Original: D. 21 Novbr. 27." class="dta-reg">6. Vorlesung, 21.11.1827</span></div><br/>
+<p class="dta-p"><span class="u ">Jch habe es verſucht mich zu einer höhern</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Höhern Anſicht der<br/>
+Natur</span><br/>
+</span><span class="u ">Anſicht der Natur zu erheben, zu ihrer Ein-<br/>
+heit.</span> So wie die Weltgeſchichte ein Ag-<br/>
+gregat von Keñtniſſen iſt, ſo die Geſchichte<br/>
+der Naturwiſſenſchaften. <span class="u ">Seit 1786 wur-<br/>
+den die erſten Verſuche von <span title="Personenname"><a href="http://d-nb.info/gnd/118559796">Kant</a></span> ange-</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">me</span><span class="dta-del" title="Streichung (#erased)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)"><span class="u ">t</span></span><span class="u ">aphyſiſche Anfangs-<br/>
+gründe der Naturwiſſenſch.<br/>
+durch <span title="Personenname"><a href="http://d-nb.info/gnd/118559796">Kant</a></span></span><br/>
+</span><span class="u ">ſtellt, die metaphyſiſchen Anfangsgründe<br/>
+der <span title="Naturwiſſenſchaft￼" class="dta-abbr">Naturwiſſenſchaften</span> zuſam̃enzuſtellen.</span><br/>
+Dies muß ſtets auf chemiſches u. mathe-<br/>
+matiſches Wiſſen gegründet ſein; weil<br/>
+durch letzteres allein u. durch deſſen Jdeen<br/>
+die wichtige Lehre der Atomiſtik er-<br/>
+hellt werden kañ; ſo wie alles Quan-<br/>
+titative demſelben unterworfen iſt.<br/>
+<span class="u ">So werden wir heute näher über die</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Umfang der Geſchichte<br/>
+dieſer <span title="Wiſſenſchaft￼" class="dta-abbr">Wiſſenſchaften</span></span><br/>
+</span><span class="u ">Geſchichte der Wiſſenſchaft ſprechen</span>, nicht<br/>
+über die allmählig gemachten phyſikal. Ent-<br/>
+deckungen: ſondern die Begriffe dabei<br/>
+entwickeln, wie die Völker nach u. nach<br/>
+<span class="dta-marginal dta-marginal-left">den Schatz von Naturkeñtniſſen <span class="u ">sich geſam̃elt u.</span><br/>
+endlich von dum̃fer Ahnung<br/>
+</span>zur klaren Anſicht der Einheit in der Natur ge-<br/>
+kom̃en ſind. Bin ich ſo glücklich dies<br/>
+mir vorgeſteckte Ziel zu erreichen; ſo<br/>
+dürfte ich vielleicht einigen Reiz der<br/>
+Neuheit dem <span title="Ganz￼" class="dta-abbr">Ganzen</span> geben. Vorzüg-<br/>
+lich will ich dabei heraus heben, was<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0041 : 37.|</span><br/>
+mit untern Keñtniſſen näher zuſam̃en<br/>
+hängt. <span class="u ">Jch habe ſchon früher erwähnt,</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Hellenen<br/>
+ſchreiben andern Völ-<br/>
+kern große Natur-<br/>
+Weisheit zu</span><br/>
+</span><span class="u ">daß die Hellenen große Natur Einheit dem<br/>
+Volke der Hyperboräer, der Aethioper</span><br/>
+zuſchrieben u. von ihrem glücklichen Zuſtande<br/>
+eingenom̃en waren. <span class="u ">Dies beruhte auch mehr<br/>
+auf der moraliſchen Achtung u. lag in</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Urſache.</span><br/>
+</span><span class="u ">den Wünſchen einer idealen Geſtaltung<br/>
+der bürgerl. Verhältniſſe</span>, die man <span title="jen￼" class="dta-abbr">jenen</span><br/>
+Völkern zuſchrieb. Die höhere Einſicht<br/>
+in die Natur iſt gewiß bei vielen<br/>
+Völkern gleichzeitig entſtanden u. es<br/>
+iſt ſchwer zu beſtim̃en was früher oder ſpä-<br/>
+ter da war; <span class="dta-del" title="Streichung (#s)">wie</span><span class="dta-add" title="Hinzufügung (superlinear)">so</span> ſchwer es iſt zu be-<br/>
+ſtim̃en, welcher helle Stern näher oder<br/>
+entfernter von uns iſt. Man kañ<br/>
+fünf große Epochen añehmen, oder große<br/>
+<span title="Erſcheinung￼" class="dta-abbr">Erſcheinungen</span>, die Einfluß auf die Welt-<br/>
+ereigniſſe u. auf die <span title="Anſicht￼" class="dta-abbr">Anſichten</span> der Natur<br/>
+bei den Völkern gehabt haben.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Epochen dieſer<br/>
+Geſchiche</span><br/>
+</span>  <div class="dta-list"><span class="dta-list-item">1., <span class="u ">die Epoche der Joniſchen Naturphiloſophie<br/>
+u. die Schule der Pÿthagoräer</span></span>
+<span class="dta-list-item">2. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118501828">Alexander</a></span>s Zug nach Jndien</span></span>
+<span class="dta-list-item">3. <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="u ">Einfall der</span> </span><span class="u ">Araber u. ihre Cultur chemiſcher<br/>
+Keñtniſſe</span></span>
+<span class="dta-list-item">4. <span title="Schreibfehler: Endeckung" class="dta-corr"><span class="u ">Entdeckung</span></span> <span class="u ">von Amerika</span></span>
+<span class="dta-list-item">5. <span class="u ">die phyſikaliſchen Entdeckungen der<br/>
+neuern Zeit</span>, u.￼<span class="dta-marginal dta-marginal-left">6. <span class="u ">Kooks große Weltreiſe in phyſikali-<br/>
+ſche Hinſicht</span>. Wie man von manchem Werk ſagen<br/>
+kañ, es iſt nicht Alles wichtig was es enthält, ſondern<br/>
+was es veranlaßt, ſo auch von der Reiſe Kooks.<br/>
+</span></span>
+</div></p>  <p class="dta-p"><span class="u ">Die Epoche der Joniſchen Naturphiloſophen</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Erſte Epoche<br/>
+der Joniſchen Natur-<br/>
+Philoſophie.</span><br/>
+</span><span class="u ">zeichnet ſich durch die Einheit der Naturan-<br/>
+ſchauung aus.</span> Weñ die erſte Schule des<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span title="Personenname"><a href="http://d-nb.info/gnd/118801732">Thales</a></span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0042 : 38.|</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Unterſchied zwiſchen<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118801732">Thales</a></span> u. <span title="Personenname"><a href="http://d-nb.info/gnd/118597248">Pythagoras</a></span></span><br/>
+</span><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118801732">Thales</a></span> mehr auf ſiñliche Anſchauungen</span><br/>
+ſich bezog, ſ<span class="u ">o war die Schule des <span title="Personenname"><a href="http://d-nb.info/gnd/118597248">Pythagoras</a></span><br/>
+mehr doriſch-jtaliſch u. zeichnete ſich durch<br/>
+ernſte großartige Anſichten aus. <span title="Personenname"><a href="http://d-nb.info/gnd/118801732">Thales</a></span></span><br/>
+leitete Alles aus dem Urfeuchten ab,<br/>
+andern von der Luft, <span title="Personenname"><a href="http://d-nb.info/gnd/118645102">Anaximander</a></span><br/>
+verband beide Stoffe. Es waren die<br/>
+Jdeen des Verd<span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)">i</span>ckens u. Verdüñens,<br/>
+was wir jetzt <span class="aq ">attraction</span> u. <span class="aq ">repulſion</span><br/>
+neñen￼<span class="dta-marginal dta-marginal-left">Eine Tendenz der Analyſe <span class="aq ">a priori</span><br/>
+</span>. Unſer Planet wurde noch nicht<br/>
+als ein abgeſchloſſenes, als ein Ganzes<br/>
+betrachtet, ſondern Alles ſichtbar unter<br/>
+einem Gegenſtande nur ins Auge gefaßtx)<span class="dta-marginal dta-marginal-left">Es iſt dies eine Abläugung der <span class="aq ">heteroge-<br/>
+nita<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (intralinear)">e</span>t</span> der Körper u. eine Añahme ver-<br/>
+ſchiedener Kraftäußerungen einer u.<br/>
+derſelben Materie.<br/>
+</span>.<br/>
+Empedockles unterſuchte die nicht einfa-<br/>
+chen Stoffe u. endet von tropfbaren,<br/>
+<span title="luftartig￼" class="dta-abbr">luftartigen</span> feurigen <span title="Element￼" class="dta-abbr">Elementen</span>, mit welchen<br/>
+letztern er ſich vorzüglich beſchäftigt<br/>
+u. mit den vulkaniſchen Erſcheinungen<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Pythagoräiſcher<br/>
+Bund</span><br/>
+</span><span class="u ">der Pythagor. Bund iſt großartig in ſein<span class="dta-supplied">[er]</span><br/>
+Erſcheinung</span>. Auch Frauen waren Theilnehmer<br/>
+von an demſelben. Erſt in ſeinem Unter-<br/>
+gange finden die Mitglieder deſſelben<br/>
+an ihre Keñtniſſe mitzutheilen. Da<br/>
+alles hier ſymboliſch geheimnißvoll er-<br/>
+ſcheint, ſ<span class="u ">o kañ man</span> <span class="dta-del" title="Streichung (#s)"><span class="u ">sie</span></span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="u ">in ihn</span></span> <span class="u ">die Philoſophie</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Philoſophie<br/>
+des Maßes u. der<br/>
+Harmonie – Mathem.<br/>
+Symbolik</span><br/>
+</span><span class="u ">des Maßes u. der Harmonie ſuchen.</span><br/>
+Es iſt gleichſam <span class="u ">eine Mathematiſche<br/>
+Symbolik</span>, wo im Hintergrunde alle<br/>
+Natur Erſcheinungen von Maß u. Ziel abhängig<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0043 : 39.|</span><br/>
+sind. Erſt in ſpätern chriſtl. Zeiten<br/>
+hat dies Alles eine mehr mythiſche Form<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118791974">Philolaus</a></span></span><br/>
+</span>erhalten. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118791974">Philolaues</a></span></span> iſt der, der<br/>
+am meiſte von <span title="Personenname"><a href="http://d-nb.info/gnd/118597248">Pythagoras</a></span> erzählt u.<br/>
+aus welchem ſelbſt <span title="Personenname"><a href="http://d-nb.info/gnd/118565273">Copernicus</a></span> ſchöpfte.<br/>
+Nach ihm iſt die Soñe ein großer Spiegel<br/>
+der das Feuer des Weltheerdes reflec-<br/>
+tirt. Die Erde hat keine Rotation.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118594893">Platon</a></span></span><br/>
+</span>Anklänge finden ſich hievon <span class="u ">bei <span title="Personenname"><a href="http://d-nb.info/gnd/118594893">Platon</a></span><br/>
+in ſeinem Timäus u. Chritias</span>. Deſſen<br/>
+empiriſche Beobachtung unſer <span title="heutig￼" class="dta-abbr">heutiger</span><br/>
+Geognoſie iſt merkwürdig. Er kañte<br/>
+das unterirdiſche Waſſer u. das unter-<br/>
+irdiſche Feuer u. ſein Land, Griechenland<br/>
+war ganz dazu geeignet ſich hierüber<br/>
+wichtige Jdeen zu bilden. Jm Jñern der<br/>
+Erde iſt nach ihm das <span class="aq ">πύριφλεγετον</span><br/>
+u. die Vulkane ſind die Schornſteine<br/>
+oder Com̃unication mit der äußern<br/>
+Luft. Vom Phaſis bis zu Herkules<br/>
+Säulen bildet das Mittelmeer die<br/>
+Niederung <span title="￼￼" class="dta-abbr">etc. etc</span>. Der Horizont der Grie-<br/>
+chiſche Philoſophen würde</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Zweite Epoche<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118501828">Alexander</a></span>s Zug nach<br/>
+Jndien</span><br/>
+</span>2. <span class="u ">Durch <span title="Personenname"><a href="http://d-nb.info/gnd/118501828">Alexander</a></span>s Zug nach Jndien<br/>
+ſehr erweitert</span>. Die Muße von Cyrene,<br/>
+Nubien <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span> war ihnen unbekañt, u. <span class="gap">[unleserliches Material – 1 Wort fehlt]</span><br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118501828">Alexander</a></span> gleich nicht die <span title="Trop￼-Gegend" class="dta-abbr">Tro<span class="dta-del" title="Streichung (#ow)">p</span><span class="dta-add" title="Hinzufügung (across)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span>en-Gegend</span><br/>
+ſo würde ihm doch Tropiſche Pflanzen-<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">formen</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0044 : 40.|</span><br/>
+formen u. Thiere bekañt, weil nach den<br/>
+Continenten die mit den Tropengegenden zuſam-<br/>
+menhangen ſich dieſe weit nach Norden<br/>
+hinauf verbreiten, wie Zb. noch jetzt<br/>
+Colibris in Nordamerika ſich aufhalten.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Ktehias</span><br/>
+</span><span class="u ">Ktehias, Arzt bei dem Könige von Perſien<br/>
+ſchrieb zuerſt über dieſe Länder, der</span><br/>
+freilich das Privilegi<span class="dta-add" title="Hinzufügung (intralinear)">um</span> d<span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)">e</span>r Reiſenden<br/>
+öfter gebraucht hat, die Unwahrheit zu<br/>
+erzählen. Es iſt möglich daß deſſen Lectüre<br/>
+zuerſt Einfluß auf den Jüngling <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118501828">Alexander</a></span></span><br/>
+hatte. Nur mit dem Eindruck den die<br/>
+<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (intralinear)">ſpäter </span>Entdeckung Amerikas auf die gebildete<br/>
+Welt machte kañ man dieſen Zug nach<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Entdeckungen die<br/>
+hier die Griechen<br/>
+machten</span><br/>
+</span>Jndien vergleichen. <span class="u ">Man erzählte ſich<br/>
+von <span title="Bäum￼" class="dta-abbr">Bäumen</span>,</span> ſo hoch <span title="dß" class="dta-abbr">daß</span> kein Pfeil die<br/>
+Spitze erreichen kañ. <span class="u ">Beſondere Thierfor-<br/>
+men lernte man keñen. Elephanten kamen<br/>
+zuerſt nach Europa.</span> Regelmäßige<br/>
+Winde, das Steigen u. Fallen der<br/>
+Flüſſe, Einfluß des Klimas <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">a</span>uf die<br/>
+Geſtaltung der Menſchen, beobachte man<br/>
+hier. <span class="u ">Jn letzter Hinſicht ſtellte man</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Añahme<br/>
+wegen der Farbe<br/>
+der Menſchen</span><br/>
+</span><span class="u ">feſt, daß feuchte Hitze gelbe Menſchen<br/>
+trockene Hitze ſchwarze Menſchen hervor<br/>
+bringe</span>. Obwohl <span title="Personenname"><a href="http://d-nb.info/gnd/118501828">Alexander</a></span>s Zug<br/>
+die Erzeugniſſe des Erdbodens mehr ke<span class="dta-supplied">[ñen-]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118501828">Alexander</a></span><br/>
+nicht im eigentlichen<br/>
+cultivirten Jndien</span><br/>
+</span>lernte, ſ<span class="u ">o ging es doch nicht in die Ge-<br/>
+genden Jndiens wo ſchon größere Cultur<br/>
+herrſchte.</span> Er fand keine Spur von<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0045 : 41.|</span><br/>
+Algebra u. dergl. indiſcher Weisheit.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118966669">Seleucus Nicator</a></span></span><br/>
+ging weiter vor.<br/>
+</span><span class="u ">Dies fand erſt</span> <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118966669">Seleucus Nicator</a></span></span> auf,<br/>
+der ſpäter bis zum Gange vordrang,</span><br/>
+u. ſelbſt 500 <span title="Elephant￼" class="dta-abbr">Elephanten</span> mitbrachte. Nur<br/>
+Keñtniß der Naturprodukte zeichnet <span title="Personenname"><a href="http://d-nb.info/gnd/118501828">Alex-<br/>
+ander</a></span>s Zug aus. Nur eine Nachricht erzählt<br/>
+daß von der Prieſter-Caſte der Chal-<br/>
+däer <span title="Nachricht￼" class="dta-abbr">Nachrichten</span> von den Him̃elserſcheinun-<br/>
+gen gegeben u. dieſe 1900 Eclipſen<br/>
+beobachtet u. dieſe <span title="Beobachtung￼" class="dta-abbr">Beobachtungen</span> dem<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118650130">Ariſtoteles</a></span></span><br/>
+</span><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118650130">Ariſtoteles</a></span> zugeſchickt hätten. Des<br/>
+letztern Gelehrſamkeit war größtentheils<br/>
+die Frucht dieſer Expedition.</span> Er ſelbſt<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">deſſen Sam̃lungen</span><br/>
+</span>hat auf ſeinem <span class="u ">Landſitz eine Sam̃lung</span> von<br/>
+<span title="Naturproduct￼" class="dta-abbr">Naturproducten</span>, gleich unſern Naturalien-<br/>
+kabinetten u. ihm wurde von <span title="Personenname"><a href="http://d-nb.info/gnd/118501828">Alexander</a></span><br/>
+Alles zugeſendet. <span class="u ">Er ſuchte nicht wie<br/>
+wir die Einheit des Ganges auf, ſon-</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">deſſen Verdienſt.</span><br/>
+</span>dern er beſchrieb das Mañigfaltige.<br/>
+Der <span class="u ">Geiſt des Sam̃elns</span> pflanzte ſich<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Erfahrungen unter<br/>
+den Ptolomäern</span><br/>
+</span>fort in Egypten unter den Ptolomäern,<br/>
+doch ſagt man, <span class="u ">daß die Naturforſcher<br/>
+dort gut bezahlt u. daher etwas nach-<br/>
+läßig in dem Sam̃eln wurden.</span> Hier <span title="blühet￼" class="dta-abbr">blüheten</span><br/>
+die <span title="Wiſſenſchaft￼" class="dta-abbr">Wiſſenſchaften</span> ſo, <span title="dß" class="dta-abbr">daß</span> ſelbſt die Ausfuhr<br/>
+des Papÿrus verbot werden mußte, was<br/>
+jetzt ſonderbar genug gar nicht mehr in<br/>
+<span title="Egypt￼" class="dta-abbr">Egypten</span> zu finden iſt, wohl aber auf Sicilien<br/>
+ſich verwildert hat. Von hier aus<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">ging</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0046 : 42.|</span><br/>
+ging die Tendenz des Sam̃elns nach<br/>
+<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">R</span>om. Wir beſitzen von den Römern<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118618806">Strabo</a></span></span><br/>
+</span>darüber zwei Werke. <span class="u "><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118618806">Strabo</a></span></span> unter<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118505122">Auguſt</a></span></span> ſchrieb eine phyſiſche Erdbeſchreibung</span><br/>
+u. machte aufmerkſam wie man aus der<br/>
+Geſtalt der Pflanzen u. Thiere das<br/>
+Clima errathen köñte u. ſich ohngefähr<br/>
+die Breite beſtim̃en laſſe. So wurde<br/>
+der Tanais zu Europa gerechnet, weil<br/>
+an demſelben Tañen wachſen, die man in<br/>
+Aſien noch nicht gefunden hatte. <span class="u ">Das an-</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118595083">Plinius</a></span></span><br/>
+</span><span class="u ">dere Buch ſind die 37 Bücher des <span title="Personenname"><a href="http://d-nb.info/gnd/118595083">Plinius</a></span></span><br/>
+in deſſen großartigſten Unternehmung<br/>
+die Welt zu beſchreiben. Der Plan iſt<br/>
+hier herrlicher als die Ausführung. Es<br/>
+war ein großer Gedanke; die Welt-<br/>
+körper, Gewächſe <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span>, die Menſchen, die<br/>
+Blüthen der Kunſt <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span> mit einander zu ver-<br/>
+binden. Es fehlt dem Ganzen an Anord-<br/>
+nung. Er war Statthalter in Spanien<br/>
+Anführer der Flotte, Staatsmañ u.<br/>
+ließ für ſich <span title="arbeit￼" class="dta-abbr">arbeiten</span>, da er es ſelbſt<br/>
+nicht koñte <span title="bewirk￼" class="dta-abbr">bewirken</span>. Er ſelbſt hatte<br/>
+eine ſolche Maſſe von Materien ſich ge-<br/>
+ſam̃elt, daß er es nicht bezähmen koñ<span class="dta-supplied">[te]</span><br/>
+dieſer Weg wurde nicht lange verfo<span class="dta-supplied">[lgt]</span>x<span class="dta-marginal dta-marginal-left">Jn Egÿpten entſtand der <span class="aq ">Neu-Platonismus</span><br/>
+</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Hadrian</span><br/>
+</span><span class="u ">Hadrian bebte alles Morgenländiſche<br/>
+u. deſſen Cultus</span> u. mit ihm drangen<br/>
+die Schwärmereien der Neu-Platoni-<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">ker</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0047 : 43.|</span><br/>
+ker u. Gnoſtiker einx)<span class="dta-marginal dta-marginal-left"><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118518410">Caligula</a></span> ſuchte aus Schwefel-Kies Gold<br/>
+zu machen u. <span title="Personenname"><a href="http://d-nb.info/gnd/118679651">Diocletian</a></span> mußte im eigens<br/>
+Edict gegen die Chemiker erlaſſen</span> dh. gegen<br/>
+das Gold u. Silber machen. Der Name<br/>
+Chemie muß abgeleitet werden aus<br/>
+dem Chaldäiſchen; von dem Lande Chania<br/>
+u. es heißt die Kunſt aus dem Lande Chania.<br/>
+Sie führte ab vom Geiſte des Sam̃elns<br/>
+u. führte zur Betrachtung der Einheit<br/>
+der Natur.<br/>
+</span>. Schwärmeriſche<br/>
+Jdeen führten zum Gefühl der Einheit<br/>
+zurück u. das Studium der geheimen<br/>
+Kräfte, führte zum Studium der<br/>
+Chemie. Dies war wichtig für die Ent-<br/>
+wickelung chemiſcher Keñtniſſe, deren<br/>
+Hauptſitz von Alters her Aegypten<br/>
+war, von deren ſ<span class="dta-del" title="Streichung (#ow)">es</span><span class="dta-add" title="Hinzufügung (across)">ie</span> die Araber auf<br/>
+ihren <span title="Eroberungszüg￼" class="dta-abbr">Eroberungszügen</span> <span title="erhalt￼" class="dta-abbr">erhalten</span>. –</p></div></body></html>

@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session">   <div class="dta-head"><span title="Original: 8 Dez.Dezember 11." class="dta-reg">11. Vorlesung, 08.12.1827</span></div><br/>
+<p class="dta-p">Wir kommen nun zum astronomischen Theile unsrer<br/>
+Wissenschaft, der sich <span class="dta-del" title="Streichung (#s)">mit</span> in Betrachtungen über die<br/>
+tellurischen und nichttellurischen Körper abtheilen läst.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0117 : 57r|</span><br/>
+<p class="dta-p">Wir beginnen mit den <span class="u ">nicht-tellurischen</span>, und sehn im al-<br/>
+gemeinen auf das, <span class="u ">was</span> entdekt ist, nicht <span class="u ">wann</span> und <span class="u ">wie</span><br/>
+es entdekt ist. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span></span> Système du Monde ist hierfür vor-<br/>
+treflich, und löset die Fragen der höhern, <span title="Schreibfehler: himlichen" class="dta-corr">himlischen</span> Mechanik<br/>
+auf eine überraschende, oft unerwartete Weise. Ganz<br/>
+speziel könte man diesen Theil unserer Wissenschaft die<br/>
+<span class="u ">physische Astronomie</span> nennen, nämlich die Lehre von der<br/>
+natürlichen Beschaffenheit der Weltkörper, wobei das<br/>
+wenige zur Sprache kommen wird, was wir von den phy-<br/>
+sischen Eigenschaften, der Oberfläche <span title="Original: pp" class="dta-reg">pp.</span> derselben wissen.</p><br/>
+<p class="dta-p">Es darf nicht übersehn werden, dass unsre Lage auf<br/>
+der Erde die allergünstigste für die Kentnis des Welt-<br/>
+gebäudes ist, insofern wir auf einem nichtleuchtenden<br/>
+Weltkörper wohnen. Wohnten wir in der Photosphäre<br/>
+der Sonne, so würden wir von der Existenz der Gestir-<br/>
+ne gar nichts wissen: eine Annäherung an <span title="Schreibfehler: eine" class="dta-corr">einen</span> solchen<br/>
+Zustand finden wir auf der Erde selbst: und zwar nicht<br/>
+etwa unter den Polen, sondern in dem schönen Tropenklima von<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0118 : 57v|</span><br/>
+Peru, wo der Himmel mehrere Monate des Jahres hindurch <span class="dta-del" title="Streichung (#s)">mit</span><br/>
+von wässrigen Dünsten so verhüllt ist, dass man die Sonne nur<br/>
+als eine rothe Scheibe, wie im denkwürdigen Jahre 1783 bei uns,<br/>
+aufgehn <span class="dta-del" title="Streichung (#s)">sind</span><span class="dta-add" title="Hinzufügung (superlinear)">sieht</span>, und die Stelle, wo der Mond steht, oft gar nicht<br/>
+unterscheiden kann. Dieser Mangel würde aber auf die Ausbil-<br/>
+dung des Menschengeschlechtes den wesentlichsten Einflus haben.<br/>
+Der Ideenkreis würde sich in einem eingeschränkten Raume<br/>
+bewegen, während er jezt die entferntesten Weiten mit Schnel-<br/>
+ligkeit durchfliegt: es würde dies zugleich grossen Einflus<br/>
+auf die religiösen Gesinnungen haben: denn es ist nicht zu<br/>
+leugnen, dass die religiöse Begeisterung durch das Gesezmässige<br/>
+in der Bewegung der Himmelkörper hervorgerufen werden<br/>
+mus. Alle tellurischen Messungen würden sich nur höchst<br/>
+unvollkommen und unbequem ausführen lassen: denn sie<br/>
+gründen sich eines Theiles zwar auf die trigonometrischen<br/>
+Messungen an der Oberfläche selbst, anderes <span title="Schreibfehler: Theil" class="dta-corr">Theiles</span> aber, und<br/>
+zwar hauptsächlich, auf die Vergleichung der Erdpunkte die-<br/>
+ser Messungen mit entsprechenden Messungen der Mondbahn.<br/>
+Es würden nur allerdings noch die Pendelversuche übrig bleiben,<br/>
+um die Gestalt der Erdkugel zu bestimmen, aber wer weis,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0119 : 58r|</span><br/>
+<div class="fw-top fw-sig">15.</div><br/>
+ob man ohne vorhergegangene allgemeine Kentnis auf diese<br/>
+Versuche verfallen wäre. Die Lage der Länder gegeneinander würde<br/>
+durch die Magnetnadel bestimt werden können, aber die Abwei-<br/>
+chungen derselben würden sich nicht so leicht als jezt auffinden<br/>
+lassen, weil man nichts hätte, um sie damit zu vergleichen.<br/>
+Die Schiffahrt würde ihrer sichersten Stüze, der Sternbeobach-<br/>
+tung beraubt sein, und die höhere Mathematik, insofern sie auf<br/>
+die Berechnung der Bahnen jener entfernten Weltkörper ange-<br/>
+wendet wird, würde ganz fehlen. Wir sehn also, dass die Kentnis<br/>
+der Gestirne nicht allein vom grösten Einflus auf die Gefühle,<br/>
+sondern auch auf die Kultur der Menschen ist.</p><br/>
+<p class="dta-p">Wenn im allgemeinen unsre Erde als ein <span class="u "><span title="Original: mittler" class="dta-reg">mittlerer</span></span> Planet die gün-<br/>
+stigste Lage für Sternbeobachtungen hat, so wird dies unter dem<br/>
+Aequator ganz besonders der Fall sein, indem man hier die Sterne<br/>
+der nördlichen und südlichen Hemisphäre sehn kann, und zu-<br/>
+gleich, bei den übereinanderliegenden Klimaten die Freiheit<br/>
+hat, auf einem hohen Berge die Sterne durch eine dünnere<br/>
+Luftschicht genauer zu beobachten. Der Gang, welchen die Kultur<br/>
+bisher auf unserm Erdboden genommen, hat es noch nicht<br/>
+möglich gemacht, Beobachtungen unter dem Aequator anzu-<br/>
+stellen, indem hat neuerdings der junge <span title="Personenname"><a href="http://d-nb.info/gnd/118703897">Herschel</a></span> den Ent-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0120 : 58v|</span><br/>
+schlus gefast, mit den Instrumenten, welche er von seinem un-<br/>
+sterblichen Vater geerbt, nach dem schönen Tropenklima zu<br/>
+gehn, um daselbst die Sterne zu beobachten.</p><br/>
+<p class="dta-p">Trotz aller Sorgfalt können wir den <span class="u ">Täuschungen</span> bei den Beo-<br/>
+bachtungen nicht entgehn. So erscheinen unserm Auge nur<br/>
+die Sonne und der Mond als Scheiben, alle andern Himmels-<br/>
+körper als strahlende Punkte: selbst die Planeten werden erst<br/>
+vor dem Fernrohr zu kleinen Flächen: dagegen verlieren die<br/>
+Fixsterne ihre Stralen, und der Anblick der Himmels ist des-<br/>
+halb durch ein Fernrohr trauriger, als der mit blossen Au-<br/>
+gen, wie man sich denn schon durch Kartenblatt, worin man ein<br/>
+kleines Loch macht, überzeugen kann, dass die Fixsterne in<br/>
+einen kleinen leuchtenden Punkt zusammenschrumpfen.<br/>
+Unter den Tropen ist der Anblick des Himmels nach den<br/>
+Jahreszeiten ein sehr verschiedner; zu der Zeit, wo lange eine<br/>
+gleichmässige Wärme in der Athmosphäre geherscht hat,<br/>
+ist der Anblick des Himmels ein planetarischer, (die Sterne<br/>
+leuchten mit milderem Lichte) ohne deshalb trauriger zu<br/>
+sein, wenn aber die Regenzeit eintreten soll, und die wässri-<br/>
+gen Dünste, welche die Athmosphäre vorher aufgelöst ent-<br/>
+hielt, anfangen sich zusammenzuballen, dann funkeln die<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0121 : 59r|</span><br/>
+Sterne mit einem weit stärkeren Lichte.</p><br/>
+<p class="dta-p">Eine andre Täuschung entsteht aus der <span class="u ">Dilatazion</span> und den<br/>
+<span class="u ">Polygonalfiguren</span> der Sterne. Es giebt nämlich für jedes<br/>
+Auge eine Entfernung des deutlichen Sehens, die nach den Indi-<br/>
+viduen verschieden ist. Steht nun ein Gegenstand vor oder hinter<br/>
+dieser Entfernung, so ist es natürlich, dass der Stralenkegel vor<br/>
+oder hinter die Netzhaut falle, also zu früh oder zu spät von<br/>
+derselben durchschnitten werde: <span class="dta-del" title="Streichung (#s)">hierauf</span><span class="dta-add" title="Hinzufügung (superlinear)">auf diesem undeutlichen Sehen</span> beruht die scheinbare<br/>
+Vergrösserung der Sterne: hierauf beruht es, dass beim An-<br/>
+blik des dreitägigen Mondes, der helle Theil desselben grösser<br/>
+zu sein scheint, als die dunkle Scheibe. Man nent <span class="dta-del" title="Streichung (#ow)">b</span><span class="dta-add" title="Hinzufügung (across)">d</span>ies beiden<br/>
+Sternen den Zerstreuungskreis. So hat <span class="u ">Jupiter</span> 40 Sek. <span title="Durchm." class="dta-abbr">Durchmesser</span><br/>
+<span class="u ">Mars</span> 6 Sek, durch den Zerstreuungskreis wachsen sie bis zu 4<br/>
+Minuten an. Eben so bei den Fixsternen. <span class="u ">Veja</span> hat nach <span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Her-<br/>
+schel</a></span> ⅓ Sek. Durchmesser, und erscheint uns in einer Grösse von<br/>
+4 Min. <span class="u ">Uranus</span> dagegen, bei dessen Grösse die Gränze des Ma-<br/>
+ximum 4 Sek. beträgt, erscheint so klein, dass es wenige Men-<br/>
+schen giebt, welche das Glück hatten, ihn mit blossen Augen<br/>
+zu sehn. Wir sehn <span title="Original: hier aus" class="dta-reg">hieraus</span>, dass <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">auf </span>die Intensität des Lichtes<br/>
+hauptsächlich Rüksicht genommen werden mus. Alkol, das<br/>
+Reuterlein, über Miza im Schwanz des grossen Bären bildet<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0122 : 59v|</span><br/>
+einen Doppelstern, den junge Leute mit blossen Augen sehn<br/>
+können. Viele andre erblikken ihn aber nicht, obgleich er ein<br/>
+Stern fünfter Grösse ist, und sie andre<span class="dta-del" title="Streichung (#s)">r</span> Sterne 5<span title="￼" class="dta-abbr"><span class="sup u ">ter</span></span> ja 6<span title="￼" class="dta-abbr"><span class="sup u ">ter</span></span><br/>
+Grösse sehr deutlich erkennen. Alkol ist nämlich nur 3 Min.<br/>
+von Miza entfernt, und kömt daher in dessen Zerstreu-<br/>
+ungskreis, der beinahe <span class="dta-del" title="Streichung (#s)">4</span><span class="dta-add" title="Hinzufügung (superlinear)">3</span> Min. beträgt.</p><br/>
+<p class="dta-p">Wenn der Mond bei einem Fixsterne vorüber geht, und ihn<br/>
+bedekt, so nent man dies eine Sternbedekkung oder Okkul-<br/>
+tazion. Bei diesen für die Bestimmung der Länge äusserst<br/>
+wichtigen Beobachtungen zeigt sich ein eignes Phänomen,<br/>
+dass nämlich der Stern einige Sekunden lang am Monde zu<br/>
+kleben scheint, während er doch, nach der Kugelgestalt des<br/>
+Mondes, in einem Augenblikke an ihn treten und verschwin-<br/>
+den solte: es ist aber falsch, wenn man glaubt, dass dies von<br/>
+einer Dilatazion des Mondrandes herrühre, weil diese ja<br/>
+im Fernrohre aufhört: vielmehr ist es eine Beugung der<br/>
+Lichtstrahlen, von der unten die Rede sein wird.</p><br/>
+<p class="dta-p">Die <span class="u ">Polygonalfiguren</span> der Sterne, welche einen andern Grund<br/>
+der Täuschung abgeben, findet man bei Fixsternen und Pla-<br/>
+neten. Venus, mit einem Durchmesser von 1 Min. zeigt sie uns<br/>
+no<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">c</span>h sehr deutlich, und von ihr, bis zum Monde, der ½ Grad<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0123 : 60r|</span><br/>
+im <span title="Durchm." class="dta-abbr">Durchmesser</span> hat, haben wir leider keinen Übergang. Es mus also<br/>
+die interessante Frage unentschieden bleiben: wie gros müste ein<br/>
+Stern nach seinem scheinbaren <span title="Durchm." class="dta-abbr">Durchmesser</span> sein, um ihn mit blossen<br/>
+Augen als Kreis zu sehn? Eine Nachricht aus dem Mittelalter sagt<br/>
+uns, dass ein auflodernder Stern im Skorpion erschienen sei, der<br/>
+¼ des Monddurchmessers gehabt habe, und nach wenigen Monaten<br/>
+wieder verschwunden sei. Sein scheinbarer <span title="Durchm." class="dta-abbr">Durchmesser</span> müste also<br/>
+7–8 Min. gewesen sein. Von den Polygonalfiguren wird aber nichts<br/>
+erwähnt. In eben solcher Ungewisheit lassen uns die Araber, welche<br/>
+1006 einen Kometen beobachteten, der 4 mal grösser als Venus war.<br/>
+Auf andern Planeten müste die Frage entschieden werden können:<br/>
+die Sonne erscheint auf den kleinen Planeten mit einem Durchmesser<br/>
+von 10 Min, auf dem Jupiter von 6 Min.</p><br/>
+<p class="dta-p">Das Zukken der Strahlen ist nach Beschaffenheit der Augen<br/>
+verschieden, und Versuche damit macht man besser an Lichtern,<br/>
+die in bedeutender Entfernung aufgestellt sind, als an Sternen<br/>
+selbst. Deshalb hat man den Leuchtthürmen eine rotirende Be-<br/>
+wegung gegeben, nicht blos weil ein verschwindendes und wieder-<br/>
+auftauchendes Licht sich dem Gesichte leichter darbietet, son-<br/>
+dern auch um die Flamme des Leuchtthurms von den aufgehenden<br/>
+Sternen zu unterscheiden.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0124 : 60v|</span><br/>
+<p class="dta-p">Um hier meine Erfahrungen zum Vergleiche anzuführen, so<br/>
+sehe ich bei Sternen 1<span title="￼" class="dta-abbr"><span class="sup u ">ter</span></span> Grösse nur 7 Stralen, von denen die oberen<br/>
+in einem Winkel von 60°, die unteren nur von 45° geneigt sind.<br/>
+Die meisten Menschen sehn 8 Stralen, je nach der Konstrukzion<br/>
+des Auges: denn dass blos hievon die Zahl und Neigung der Stralen<br/>
+abhängt, läst sich beweisen; wenn man nämlich das Auge dreht,<br/>
+d. h. rechts oder links den Kopf neigt, so dreht sich der Stern mit:<br/>
+eben so, wenn man das Auge zudrükt, so fahren die Stralen sehr<br/>
+weit auseinander, und erreichen von 4, eine Länge v. 40 Minuten.<br/>
+<span title="Schreibfehler: ja" class="dta-corr">Ja</span> wenn man den Finger vor das Auge hält, so gehn sie bis<br/>
+an denselben, und werden von ihm unterbrochen.</p><br/>
+<p class="dta-p">Eine ähnliche Bewandnis hat es mit der <span class="u ">Suppression</span> der<br/>
+Stralen: wenn man nämlich den Kopf senkt, in vertikaler<br/>
+Richtung, so verschwinden die obern, und umgekehrt, wenn man<br/>
+ihn hebt, verschwinden die untern.</p><br/>
+<p class="dta-p">Es läst sich hieran eine Bemerkung über die Hieroglyphik<br/>
+der Aegypter knüpfen: man hat nämlich bei ihnen ge-<br/>
+funden, dass die Zahl 5 durch einen Stern ausgedrückt<br/>
+<span class="dta-marginal dta-marginal-left"><span class="dta-metamark" title="metamark">⎡</span>nach <span title="Personenname"><a href="http://d-nb.info/gnd/1056361115">Horapollon</a></span><br/>
+</span>wird<span class="dta-metamark" title="metamark">⎡</span>, und dass alle Sterne, die man abgebildet sieht,<br/>
+in 5 Stralen ausgehn, man kann also voraussezen, dass die<br/>
+Konstrukzion der Augen bei dem grösseren Theil der Nazion<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0125 : 61r|</span><br/>
+von der Art war, ihnen 5 Stralen bei den Sternen zu zeigen.</p><br/>
+<p class="dta-p">Das Funkeln der Sterne ist nicht, wie man früher glaubte,<br/>
+eine Folge der Dünste in der Athmosphäre oder der Translazion<br/>
+der Stralen (woher man die Undulazion des Sonnenrandes<br/>
+leiten könte<span title="Schreibfehler: " class="dta-corr">)</span>, sondern es beruht auf andern optischen Erschei-<br/>
+nungen, für die man in dem neusten System der Optik einen<br/>
+sehr befriedigenden Grund gefunden hat. Schon der verdienst-<br/>
+volle englische Astronom <span title="Personenname"><a href="http://d-nb.info/gnd/1022525581">Mitschell</a></span> beobachtete, dass die schein-<br/>
+bare Grösse des Sterns sich <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">beim Funkeln </span>vermindert, und das dies Inter-<br/>
+mittiren bis zu 5 mal in einer Sekunde vorkomme, allein er<br/>
+fand nicht die rechte Er<span class="dta-supplied">[klär]</span>ung davon, indem er ein intermit-<br/>
+tirendes Licht annahm: nach den neusten Entdekkungen glaubt<br/>
+man, dass dies Phänomen mit der <span class="u ">Interferenz</span> des Lichtes<br/>
+zusammenhange, nach der 2 Lichtstralen, wenn sie in entge-<br/>
+gengesezter Richtung auffallen, sich zerstören können. <span title="Personenname"><a href="http://d-nb.info/gnd/116746599">Frau-</a></span><span class="dta-marginal dta-marginal-right"><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/123408571">Grimaldi</a></span></span> in Bologna<br/>
+</span><br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/116746599">enhofer</a></span> fand im Spectrum seiner Gläser Banden von weis<br/>
+und schwarz, welche regelmässig auf einander folgen, und man<br/>
+kann nun den Saz aussprechen, dass Licht zu Licht – Dun-<br/>
+kelheit giebt: denn die schwarzen Banden zeigten sich nur<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0126 : 61v|</span><br/>
+da, wo 2 Lichtstralen auf einander trafen, und sich mithin<br/>
+zerstörten: durch die Beugung der Lichtstralen, indem sie<br/>
+durch einen engen Raum gehn, entstehn farbige Franzen,<br/>
+die man <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">am </span>besten erhalten kann, wenn man einen Lichtstral<br/>
+durch das Fenster bei einem dünnen Faden vorbei in ein dun-<br/>
+kles Zimmer auf eine helle Wand leitet: es entsteht<br/>
+alsdann auf der hellen Wand ein dünner Schatten des Fadens,<br/>
+dessen Schattenränder, was sehr merkwürdig ist, nicht<br/>
+blos äussere, sondern auch innere farbige Franzen haben.<br/>
+Der D<span class="sup u ">r</span>. <span title="Personenname"><a href="http://d-nb.info/gnd/118808184">Thom. <span class="u ">Young</span></a></span> (der schon vor <span title="Personenname"><a href="http://d-nb.info/gnd/118746219">Champollion</a></span> die Entziffe-<br/>
+rung der Hieroglyphen fand) entdekte, <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">1803</span> dass man durch einen<br/>
+vorgesezten Schirm die schwarzen Streifen auf der einen<br/>
+Seite fortschaffen kann. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> machte eine andre schöne<br/>
+<span class="dta-marginal dta-marginal-left"><span class="dta-metamark" title="metamark">welche?</span><br/>
+</span>Entdekkung, wobei er sich dikker Gläser bediente. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/119032902">Fresnel</a></span></span><br/>
+endlich, der den Wissenschaften zu früh entrissen wurde,<br/>
+hat in diesem Felde viel geleistet. Er stelte 2 Spiegel<br/>
+in einem bestimten Winkel untereinander, und fand, dass<br/>
+das reflektirte Licht auch schwarze oder weisse Banden<br/>
+bildet, je nachdem die Lichtstralen einzeln auffallen, oder<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0127 : 62r|</span><br/>
+<div class="fw-top fw-sig">16.</div><br/>
+2 zusammengenommen sich zerstören, und dass Papier, welches<br/>
+man mit Chlorsilber bestrichen <span class="dta-del" title="Streichung (#s)">hat</span> hat, an denen Stellen,<br/>
+wo die schwarzen Banden sich zeigen, (also 2 Lichtstralen auf-<br/>
+fallen) <span class="u ">nicht</span> violett gefärbt wurde, sondern dass dies nur durch<br/>
+die Wirkung einfacher Stralen geschah, welche mit gleicher<br/>
+Geschwindigkeit ihren Weg zurüklegen.</p><br/>
+<p class="dta-p">Man ist also jezt zu dem alten Undulazionsystem, von<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118639749">Huygens</a></span> (das erst später von <span title="Personenname"><a href="http://d-nb.info/gnd/118531379">Euler</a></span> aufgestelt <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">wurde</span>, und mit<br/>
+Unrecht von ihm den Namen bekommen hat) zurükgekehrt,<br/>
+wonach das Weltall mit einem Lichtäther angefült ist, der<br/>
+durch <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">die </span>leuchtenden Körper in Bewegung gesezt wird. Das<br/>
+Emanazionsystem von <span title="Personenname"><a href="http://d-nb.info/gnd/118587544">Newton</a></span> kann auf die neueren Entdek-<br/>
+kungen nicht angewendet werden.</p><br/>
+<p class="dta-p">Dies führt uns nun wieder auf das Funkeln der Sterne<br/>
+zurük, wobei man annehmen mus, dass durch die verschie-<br/>
+dene Geschwindigkeit der Stralen Finsternis <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">&amp; mithin Intermittiren </span>hervorgebracht wird.</p><br/>
+</div></body></html>

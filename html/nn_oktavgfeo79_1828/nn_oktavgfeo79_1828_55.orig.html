@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><span class="dta-supplied">[55. Vorlesung, 17.04.1828]</span><div class=""><div class="">   <div class="dta-head"><span class="u ">Die Geographie der Pflanzen</span>.</div><br/>
+<p class="dta-p">Sie lehrt ihrer Definition nach der Verbreitung<br/>
+der Gewächſe auf unſerer Erde. <span title="H￼" class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117345822">Strohmeyer</a></span></span> war der<br/>
+Erſte, der ſie als eine beſondere Wiſſenſchaft behandelte,<br/>
+und ihre Begründung iſt neuer wie die der Geognoſie.<br/>
+Viel Gutes darüber ſagte auch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117387436">Willdenom</a></span></span> in dem hierher<br/>
+gehörigen Theile ſeines Grundriſſes der Pflanzenkunde, er hat<br/>
+aber Geſchichte mit Geographie verbunden. Die Geſchichte<br/>
+der Pflanzen darf nur auf die Veränderungen aufmerkſam<br/>
+machen, welche die natürliche Verbreitung durch Pflanzen-<br/>
+wanderungen erlitt. Sie läßt ſich zum Theil nur auf<br/>
+Hypotheſen gründen, da nur Meeresſtröme, vorherrſchende<br/>
+Winde, und die Völkergeſchichte ſelbſt für die cultivirte<br/>
+Pflanzen durch Analogien auf die früheren Epochen<br/>
+zurückführen laſſen.</p><br/>
+<p class="dta-p">Mit der Sprache der Völker unterſcheiden wir<br/>
+<span title="Original: Waſſer-" class="dta-reg">Waſſer-,</span> <span title="Original: Wieſen-" class="dta-reg">Wieſen-,</span> Wald<span title="Schreibfehler: " class="dta-corr">-</span> und Alpenpflanzen. Dieſe<br/>
+Eintheilung drückt aber nur ihren Standpunct, oder die<br/>
+Localität in der ſie gefunden werden, nicht aber ihre<br/>
+Habitation aus.</p><br/>
+<p class="dta-p">Man hat auch ganze Himmelsſtriche nach den vorherr-<br/>
+ſchenden Arten ihrer Gewächſe mit Namen belegt, ſo z. B.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0506 : 500.|</span><br/>
+die Tropenländer des Palmenklima genannt, dabei<br/>
+aber überſehen, daß auch außerhalb der Wendekreiſe<br/>
+bis zum 34° Palmen vorkommen.</p><br/>
+<p class="dta-p">Die erſte Idee für eine Geographie der Pflanzen<br/>
+ſpricht der Cardinal <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118658115">Bembo</a></span></span> ſchon im 16<span title="Original: t￼" class="dta-reg"><span class="sup uu ">ten</span></span> Jahrhundert, in<br/>
+einem Werke <span class="aq ">Aetna Diabolos</span> aus, worin er einer ver-<br/>
+ſchiedenen Vertheilung der Pflanzen am Aetna gedenkt.<br/>
+Weit ſpäter aber war es erſt <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117628905">Tournefort</a></span></span> vorbehalten,<br/>
+eine beſondere geographiſche Vertheilung der Pflanzen zu<br/>
+erkennen; er wurde hierauf aufmerkſam, als er in<br/>
+Geſellſchaft von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/122985575">Gundelsheimer</a></span></span> <span title="Original: /" class="dta-reg">(</span>der Stifter des hieſigen<br/>
+botaniſchen Gartens<span title="Original: /" class="dta-reg">)</span> den Ararat beſtieg, wo er die ver-<br/>
+ſchiedenen Floren der Länder die er geſehen hatte, mit<br/>
+der zunehmnenden Höhe wieder fand. So machte auch<br/>
+er zuerſt die wichtige Entdeckung, daß die Höhengrade<br/>
+mit denen der Breite in einem Zuſammenhange ſtehen.<br/>
+Darauf machte <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118573349">Linnee</a></span></span> in zwei merkwürdigen Diſſerta-<br/>
+tionen darauf aufmerkſam, verfolgte dieſe Idee noch<br/>
+weiter und ſtellte die Hypotheſe auf, daß die Pflan-<br/>
+zen von den höchſten Gebirgen ausgegangen, immer<br/>
+dem ſich an engern Grenzen zurückziehende Meere gefolgt<br/>
+wären. Nach ihm haben <span title="verſch." class="dta-abbr">verſchiedene</span> Reiſende, wie <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11903705X">Gmelin</a></span>,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0507 : 501.|</span><br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118591371">Pallas</a></span></span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118522027">Cook</a></span></span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118534432">Forſter</a></span></span> und andere viel zur Erweite-<br/>
+rung dieſer Kenntniſſe beigetragen, und beſonders<br/>
+letzterer fand zuerſt die nördlichen Pflanzenformen<br/>
+im ſüdlichſten Amerika wieder. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116244186">Adanſon</a></span></span> ging einen<br/>
+Schritt weiter, indem er auf ſeinen Reiſen am Senegal<br/>
+bemerkte, daß ſelbſt die verſch. Pflanzenfamilien nicht<br/>
+allen Zonen angehören. So machte er die Beobachtung<br/>
+daß die Umbelliferen und Cruciferen der Tropenländern<br/>
+gänzlich fehlen. Hemmend aber war die Annahme des<br/>
+Sexualſyſtems, indem es die natürliche Verwandtſchaft<br/>
+der Gewächſe trennte, und zu geringen Werth auf die genau-<br/>
+ere Kenntniß der innern Organe legte, die d<span class="dta-supplied">[och]</span> nur<br/>
+allein auf die richtige Bahn zur Kenntniß <span class="dta-supplied">[der]</span> Geogra-<br/>
+phie der Gewächſe führen kann.</p><br/>
+<p class="dta-p">Der Name Pflanzengeographie hat lange ſchon vorher,<br/>
+wie der der Meteorologie, ohne Wiſſenſchaft exiſtirt. Zu-<br/>
+erſt wurde er im 17<span title="Original: t￼" class="dta-reg"><span class="sup uu ">ten</span></span> Jahrhundert vom <span class="aq ">Dr. <span title="Personenname"><a href="http://d-nb.info/gnd/116885890">Menzel</a></span></span> in<br/>
+Fürſtenwalde ausgeſprochen, in einer nicht gedruckten<br/>
+<span title="Schreibfehler: Flor" class="dta-corr">Flora</span> der Umgegend. Später gebrauchte Hr. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118604945">Bernardin<br/>
+de St. Pierre</a></span></span> in dem Werke: Studien der Natur.<br/>
+Ihm folgte <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118947443">Girot Hilain</a></span></span> in ſeiner <span class="aq ">Geographie phyſique de<br/>
+France,</span> der an einen Zuſammenhang des Organiſchen und<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0508 : 502.|</span><br/>
+Unorganiſchen glaubte, und die Gebirge beſonders ein-<br/>
+flußreich auf die Thätigkeit der Menſchen hielt. Den<br/>
+flachen Sandgegenden ſchrieb er nachtheilige <span title="Schreibfehler: Einwir-&#xA;wirkungen" class="dta-corr">Einwir-<br/>
+kungen</span> auf die geiſtige und körperliche Entwickelung<br/>
+der Menſchen zu, Gebirge dagegen und Trachit ſollten<br/>
+dieſe begünſtigen. In ſeinem Werke gedenkt er nur<br/>
+der kultivirten Pflanzen, deren Regionen er durch 2<br/>
+Linien, die des Weinſtocks und des Kaſtanienbaums<br/>
+näher bezeichnet. Er war der Erſte, der Betrachtungen<br/>
+über die Meſſungen der Höhe, des Standortes und der<br/>
+Temperatur anſtellte.</p><br/>
+<p class="dta-p">Durch das vereinigte Werken mehrerer Botaniker und<br/>
+Phyſiker in neuern Zeiten haben bei verſchiedenen Reiſen<br/>
+die Sammlungen Anlaß gegeben, die Pflanzengeographie<br/>
+zu fördern. Mit meinem unglücklichen Freunde <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118661604">Bonpland</a></span></span><br/>
+habe ich in Amerika 6000 Pflanzenarten geſammelt, und<br/>
+die Höhe ihres Vorkommens gemeſſen; unter dieſen<br/>
+waren 3600 neue Arten. Zwei Schriften von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118661604">Bonpland</a></span></span><br/>
+und mir, die eine über die Natur der Pflanzen, und eine<br/>
+andere kleine botaniſche, geben hierüber genauere Kunde.<br/>
+Durch ſpätere Meſſungen anderer Reiſenden iſt doch nur<br/>
+die Geſammtzahl aller Pflanzen von denen die Höhe ihres<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0509 : 503.|</span><br/>
+Standpunktes bekannt iſt auf 11–12,000 geſtiegen, während<br/>
+doch gegenwärtig ſchon gegen 60,000 Pflanzenarten be-<br/>
+kannt ſind. So verdanken wir <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118787802">Ramond</a></span></span> die Höhenangabe<br/>
+der Gewächſe auf den Pyrenäen, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">v. Buch</a></span>,</span> die in Scandi-<br/>
+navien und den Canariſchen-Inſeln, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117560952">Wahlenberg</a></span></span> die Höhen-<br/>
+angaben von denen die in der Schweiz und auf den Karpathen<br/>
+wachſen; <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100240445">Parrot</a></span></span> maaß viele Höhen am Kaukaſus und<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116442921">Decandolle</a></span></span> in Frankreich. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118867148">Schomo</a></span></span> eine Däne, giebt<br/>
+in ſeiner Pflanzengeographie viele genaue Angaben von Baro-<br/>
+meter und Thermometer-Meſſungen, doch enthält ſie zu viel<br/>
+Beimiſchungen, was uns verbreitend die phyſikaliſche Beſchaffen-<br/>
+heit der verſchiedenen Gegenden ergiebt.</p><br/>
+<p class="dta-p">Es wäre nur lieb geweſen die Geographie der Pflanzen<br/>
+und Thiere unter einem Geſichtspunkte gemeinſchaftlich zu be-<br/>
+handeln, da ſie eigentlich nicht voneinander getrennt werden könne,<br/>
+und ihre Uebereinſtimmung mannigfaltige Zuſammenſtellungen<br/>
+erlauben; allein die Neuheit beider Wiſſenſchaften und<br/>
+die ungleiche Stuffe ihrer Entwickelung erlauben dies nicht,<br/>
+da für die Geographie der Thiere weit weniger Facta ge-<br/>
+ſammelt ſind als für die der Pflanzen, obgleich erſtere<br/>
+weit älter als ihre Schweſter iſt. Das tropiſche Amerika<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0510 : 504.|</span><br/>
+hat urſprünglich keine Säugethiere die ſich auch in der alten<br/>
+Welt finden, ein Geſetz, das auch für die Pflanzen,<br/>
+einige Grasarten ausgenommen, gültig iſt. Ebenſo wie die<br/>
+Pflanzen faſt überall gleichmäßig in den verſch. Zonen ver-<br/>
+theilt ſind, finden wir es auch ein Thierreiche, in den heiſſen<br/>
+bis zu den temperirten Zonen; je denſelben Einflüßen ſind<br/>
+ſelbſt die Menſchen, als in Verbindung damit ſtehend, unterworfen.<br/>
+Dem ungeachtet fehlen aber hinlängliche Thatſachen über die<br/>
+Geographie der Thiere, da über dieſe nur wenige Temperatur<br/>
+und Barometermeſſungen angeſtellt wurden, und die um ſo<br/>
+wichtiger ſind, da ⅚ derſelben die Inſecten einnehmen, welche<br/>
+größtentheils in der Höhe leben.</p><br/>
+<p class="dta-p">Das Weſentliche der Pflanzen-Geographie wollen<br/>
+wir nun durch die Erörterung folgender Fragen in 6 Ab-<br/>
+theilungen betrachten:</p><br/>
+<div class="dta-list">   <div class="dta-list-item">1. Wo ſind die Grenzen der Pflanzen, und wie weit<br/>
+erſtreckt ſich die Decke derſelben über den Erdboden?</div>   
+<div class="dta-list-item">2. Wieviel Pflanzenarten giebt es auf der Erde?</div>   
+<div class="dta-list-item">3. Geographiſche Verſchiedenheit im geſelligen Leben<br/>
+der Pflanzen zu einander. Dieſe hängt vom Verhältniſſe<br/>
+der Zahlen zu einander, ihrer Größe oder Höhe, der Aus-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0511 : 505.|</span><br/>
+bildung des Stammes, ob er zum Baume oder Strauche ſtrebt,<br/>
+u. ſ. w. ab.</div>   
+<div class="dta-list-item">4. Verbreitung der Pflanzenarten in beiden Hemis-<br/>
+phären nach ihrer Identität.</div>   
+<div class="dta-list-item">5. Ihre Verbreitung nach Zahl der Arten, welche ge-<br/>
+wiſſen Familien angehören. Hier giebt es beſtimmte<br/>
+Zahlenverhältniſſe, die ſich nicht auf die Maſſe ſondern, auf<br/>
+die Form beziehen.</div>   
+<div class="dta-list-item">6. Störungen, welche noch gegenwärtig die Verbreitung<br/>
+der Pflanzen ändern, als Reiſen, menſchliche Kultur u. ſ. w.</div>   
+</div>   <div class="">   <div class="dta-head">1. <span class="u ">Die Verbreitung der Pflanzen auf der Erde.</span></div>   <br/>
+<p class="dta-p">Wir wollen dieſe von 2 Geſichtspunkten aus betrachten:</p><br/>
+<div class="dta-list">   <div class="dta-list-item"><span class="aq ">a,</span> Nach ihrem phyſiſchen Standorte, und</div>   
+<div class="dta-list-item"><span class="aq ">b,</span> Nach ihrer geographiſchen Verbreitung.</div>   
+</div>   <p class="dta-p">Schon früher haben wir geſehen, daß des Lichts für<br/>
+die Vegetation unbedingt nöthig iſt, denn mehrere Pflanzen<br/>
+finden ſich in verſchloſſenen Höhlen, Gruben und Baumſtämmen,<br/>
+oder auch im Innern der Früchte. Bei den unterirdiſchen<br/>
+Pflanzen finden zwei verſchiedene Verhältniſſe ſtatt, da<br/>
+ſie entweder, in der Luft ſich entwickeln und darin leben,<br/>
+wie es die Exiſtenz ſo vieler cryptoganiſchen Gewächſe bedingt,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0512 : 506.|</span><br/>
+die nicht ſelten in Bäumen von 15–16′ Durchmeſſer wie die<br/>
+Tropen ſie auszeigen, ſich verfinden. Eine andere Art ihres<br/>
+Daſeins iſt von der Umgebung derſelben mit Erde bedingt,<br/>
+wie es z. B. bei den Trüffeln der Fall iſt. Eine dieſen<br/>
+verwandte Schwammart findet ſich in Miſſuri oft 5–6′ tief<br/>
+in der Erde, hat eine Größe von ½ Fuß und darüber im<br/>
+Durchmeſſer und wird getrocknet von den Indianern ver-<br/>
+kauft und wie Brod genoſſen. Ebenſo kann man die Wur-<br/>
+zeln der höhern Gewächſe als unterirdiſche Pflanzen betrachten,<br/>
+wonach der Baum in ſeinen ſichtbaren Theilen als der Kopf<br/>
+derſelben angeſehen wird. So wie das Leben der Wurzeln<br/>
+unterirdiſch viele Jahre oft fort dauert, hat auch manche<br/>
+<span class="dta-supplied">[Samenart]</span> das Vermögen ſich in der Tiefe der Erde eine<br/>
+lange Reihe von Jahren lebend oder, was daſſelbe iſt, keim-<br/>
+fähig zu erhalten. So haben ſich zufällig durch tiefes Graben<br/>
+oder beim tiefere Aufrühren der Erde durch andere Veran-<br/>
+laſſungen, in manchen Gegenden Pflanzen gezeigt, die ſeit<br/>
+langer Zeit verſchwunden waren, oder ſelbſt ſolche die man<br/>
+früher nie dort geſehen hatte. So ſah <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11739713X">Viborg</a></span></span> auf dieſe<br/>
+Weiſe <span class="aq ">Carex cyperoides</span> auf Seeland emporwachſen, den<br/>
+er früher nie dort geſehen hatte. Auch ſollen unter dem<br/>
+Druidentempel in Schottland neue Pflanzen hervorgewachſen ſein.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0513 : 507.|</span><br/>
+<p class="dta-p">Die Zahl der Seepflanzen iſt verhältnißmäßig nur<br/>
+geringe, da man nur 3–400 Arten hat auffinden können.<br/>
+Manche derſelben haben dafür aber eine um ſo weitern<br/>
+Verbreitung, andern zeichnen ſich durch eine beträchtliche Länge<br/>
+aus. So erreicht der <span class="aq ">Fucus giganteus</span> nicht ſelten eine<br/>
+Länge von 3–400′. er ſteigt aber nicht ſenkrecht ſondern<br/>
+ſchräg in einem Winkel von 50°, aus dem Meeresboden herauf.</p><br/>
+<p class="dta-p">Man hat früher allgemein die Möglichkeit bezweifelt,<br/>
+daß es in der kalten Zone über den 74° hinaus, noch Ge-<br/>
+wächſe geben könne. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parry</a></span></span> hat jedoch von der Mellville<span class="dta-supplied">['s]</span><br/>
+Inſel noch 50–60 Phanerogamen mit gebracht, die theils zu<br/>
+den <span class="aq ">Ranunculaceen</span>, <span class="aq ">Papaveraceen,</span> und andren Familien gehören.<br/>
+Die <span class="aq ">Salix arctica,</span> dieſen nordiſchen Baum von 3–4″ Höhe,<br/>
+fand er noch unter dem 75°. Aus Spitzbergen ſind<br/>
+nur 14–15 Arten von <span title="Pfl￼." class="dta-abbr">Pflanzen</span> bekannt. Von der ſüdlichen<br/>
+Hemisphäre glaubte ſelbſt <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118534432">Forſter</a></span></span>, daß es unter dem<br/>
+60° S. Br. auf den Sandwichsinſeln, keine Pflanzen mehr<br/>
+gebe, aber <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/172444462">Hueddo</a></span></span> hat noch ſogar auf der Schottlands-<br/>
+inſel welche gefunden, und der Kapit. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/133531317">Billinghauſen</a></span></span><br/>
+noch ebenfalls auf den Inſeln Peter <span title="Original: /" class="dta-reg">(</span>und Alexander<span title="Original: /" class="dta-reg">)</span><span class="dta-metamark" title="metamark">?</span>,<br/>
+wenn gleich auch nur cryptoganiſche Gewächſe.</p><br/>
+<p class="dta-p">Was das Hinaufſteigen der Pflanzendecken betrifft<br/>
+ſo hat <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118804790">Sausſure</a></span></span> am Abhange des Montblanc die <span class="aq ">Silene acaulis</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0514 : 508.|</span><br/>
+und <span class="aq ">Ranunculus parnasſifolius</span> noch in einer Höhe von<br/>
+10400′ gefunden. Auf den Anden und am Chimboraſſo<br/>
+habe ich den <span class="aq ">Lichen geographicus</span> noch 17,100′ hoch an ſolchen<br/>
+Felſen geſehen, die durch innere vulkaniſche Wärme nie<br/>
+lange mit Schnee bedeckt waren. Die <span class="aq ">Eudema rupeſtici</span><br/>
+und ſchöne <span class="aq ">Gentianea</span> kommen mit andern Gewächſen noch auf<br/>
+15,000′ Höhe vor. Es iſt wahrſcheinlich daß der Schnee und<br/>
+nicht die Kälte die Pflanzen hindert, ſowohl am Nord- wie<br/>
+am Südpol noch höher zu vegetiren, und es geht hieraus die<br/>
+Wahrſcheinlichkeit hervor, daß am äußerſten Erde der<br/>
+Baffinsbai noch Pflanzen wachſen.</p><br/>
+<p class="dta-p">Zu dieſen Bedingniſſen, die ſich auf die Temperatur<br/>
+gründen, läßt ſich auch der ungleiche Barometerdruck<br/>
+und die Durchſichtigkeit der Luft zählen, und man iſt<br/>
+hierzu um ſo mehr berechtigt, da die Pflanzen weit mehr<br/>
+von äußern Bedingungen abhängig ſind als die Thiere, da<br/>
+dieſe von den innern Organismen ſelbſt, die Pflanzen<br/>
+dagegen von der Wirkung auf der Oberfläche bedingt werden<br/>
+und die Einwirkungen der Respiration den wichtigſten<br/>
+Einfluß haben; von gleicher Wichtigkeit iſt auch noch<br/>
+der Grad der Feuchtigkeit, welcher in einer gewiſſen<br/>
+Höhe abnimmt. —</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0515 : 509.|</span><br/>
+<p class="dta-p">Die Alpenpflanzen wachſen niedrig, gedrängt, und würden<br/>
+das Bild einer entkräfteten Natur geben, wenn nicht da-<br/>
+gegen die ſchönen großen, hoch gefärbten Blumen aus eine<br/>
+ſchönere Zone zu verkündigen ſcheinen. Beſonders ſind<br/>
+ſie auch wegen ihres herzigen Saftes und der <span title="Schreibfehler: hercigen" class="dta-corr">herzigen</span> Be-<br/>
+kleidung ein Gegenſtand der Forſchung geworden, was<br/>
+wahrſcheinlich von dem geringen Druck der Luft herrührt<br/>
+von dem auch die Respiration mit abhängig iſt. Die<br/>
+Alpenpflanzen werden durch das Licht mehr zur Respira-<br/>
+tion gereizt, die Ausdünſtung iſt, ſtärker. Daher auch<br/>
+ihr Saft rafinöſer, und die dabei thätigen Organe daher<br/>
+ſich mehr zur haarigen Hülle aus. Auch der elektriſche<br/>
+Reiz iſt hierbei wirkſam, den ſie in den Wolkenſchichten<br/>
+bis zu 13,000′ in einem weit ſtärkern Grade ausgeſetzt<br/>
+ſind, aber bei 14–16,000′ Höhe hören die Gewitterwolken<br/>
+ganz auf. Die Elektricität ſteht mit der Erde in Ver-<br/>
+bindung, denn bei dem zu dieſen Meſſungen angewendte<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117020079">Sausſur</a></span>ſche</span> Elektrometer entfernten ſich die Kügelchen<br/>
+von Holländermark faſt gleichförmig immer zu 5–6°.<br/>
+Das ſo eigenthümliche Vegitiren der Alpenpflanzen<br/>
+iſt alſo wahrſcheinlich abhängig, von höhern Lichtreiz,<br/>
+geringern Luftdruck und der elektriſchen Spañung, weshalb<br/>
+dann auch nicht die Alpenpflanzen auf den Ebenen gediehen.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0516 : 510.|</span><br/>
+Deshalb ſind auch alle Verſuche, die hohen Gebirgspflanzen<br/>
+in unſern Gärten zu kultiviren geſcheitert, und nament-<br/>
+lich ſind in Wien auf Veranlaſſung des Kupfers darüber<br/>
+wichtige und koſtſpielige Verſuche vergebens angeſtellt.</p><br/>
+<p class="dta-p">Die Meinung, daß die Pflanzen einen beſtimmten<br/>
+Boden, oder eine gewiſſe chemiſche Beſchaffenheit deſſelben zu<br/>
+ihrem Gedeihen verlangen, ſind durch die Verſuche von<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117020079">Sausſure</a></span></span> widerlegt, und ebenſo ungegründet iſt es, daß<br/>
+dieſer oder jener Untergrund für ihr Gedeihen nothwendig<br/>
+ſei. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117020079">Sausſure</a></span>'</span>s treffliche Unterſuchungen haben dies hin-<br/>
+länglich wiederlegt, was auch neuerlich <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116442921">Decandolle</a></span></span> beſtätigt<br/>
+hat. So wurde vom Buxbaum behauptet, daß er nur<br/>
+auf erdigen kalkhaltigen Boden wachſe, doch hat man ihn<br/>
+auch auf Granit <span title="Schreibfehler: und /(Marmor" class="dta-corr"><span title="Original: /" class="dta-reg">(</span>und Marmor</span> <span class="dta-metamark" title="metamark"><span title="Original: /" class="dta-reg">(</span>?<span title="Original: /" class="dta-reg">)</span></span> gefunden. Ebenſo glaubte<br/>
+man daß die ächten Kaſtanien den kalkhaltige Boden<br/>
+fliehen, doch ſind weite Flächen dieſes Untergrundes<br/>
+im ſüdlichen Frankreich mit Kaſtanienwälder bedeckt.<br/>
+Auch die beiden Arten der Alpenroſen, ſollten nur auf<br/>
+Kalkgebirge vorkommen, aber auch dies iſt widerlegt<br/>
+<span title="Original: /" class="dta-reg">(</span>daß aber manche Pflanzen den einen oder den andern<br/>
+Boden lieben, iſt doch wohl auch nicht zu bezweifeln ?<span title="Original: /" class="dta-reg">)</span></p><br/>
+</div>   <div class="">   <div class="dta-head">2. <span class="u ">Zahl der Pflanzenarten.</span></div>   <br/>
+<p class="dta-p">Es kommt nun noch darauf an zu beſtimmen, wie<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0517 : 511.|</span><br/>
+verſchiedenartig die Pflanzendecke iſt. Die Natur be-<br/>
+ſteht aus Individuen, und der Saame derſelben erfült dieſe<br/>
+nicht immer unverändert, ſondern bringt in verſchiedene Ab-<br/>
+änderungen Varietäten hervor, auf ähnliche Weiſe, wie<br/>
+unter denſelben Arten der Vögel, bei nahe gelegenen<br/>
+Inſeln, ſich die größte Verſchiedenheit zeigt. In dieſer<br/>
+Rückſicht iſt es eine ſchwierige Aufgabe, ein Zahlenverhältniß<br/>
+der Arten genau anzugeben. Der engliſche Botaniker<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118674455">Robert Brown</a></span></span> hat eine große Menge von Pflanzen die<br/>
+beſchrieben ſind verglichen, um die Menge der Pflanzen-<br/>
+namen zu verringern, die durch einige leichtſinnige oder gedankenloſe<br/>
+Botaniker zuviel entſtanden waren, und ſo die Botanik<br/>
+von 1200 Pflanzennamen gereinigt. Rückſichtlich den Quanti-<br/>
+tät der Arten läßt ſich nicht die Frage beantworten,<br/>
+wieviel es giebt, ſondern nur die, wieviel bekannt <span class="dta-supplied">[ſind]</span>.<br/>
+Bei den letztern muß man wieder unterſcheiden wie viel<br/>
+beſchrieben, und wie viel ſich in den Herbarien befinden.<br/>
+Der ſo eben genannte <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118674455">R. Brown</a></span></span> hat im Jahre 1817 eine<br/>
+ſolche Unterſuchung angeſtellt, und gefunden daß die<br/>
+Zahl der bekannten Phanerogamen 38,000, und die der<br/>
+Cryptogamen 6000, alſo im Ganzen 44,000 Arten betrug.</p><br/>
+<p class="dta-p">Hierzu gab des Aequinoctial-Amerika 13000 Species<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0518 : 512.|</span><br/>
+die Tropenländer der alten Welt <span title="Original: /" class="dta-reg">(</span>Aſien<span title="Original: /" class="dta-reg">)</span> aber nur<br/>
+4500 Species. In der <span class="aq ">Synopſis</span> von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116091509">Perſoon</a></span></span> ſind nur<br/>
+21,000 Arten beſchrieben. Sehr beträchtlich iſt aber der<br/>
+Zuwachs von neuentdeckten <span title="Pfl￼." class="dta-abbr">Pflanzen</span> aus der neuen Welt ge-<br/>
+weſen, ſo daß man jetzt im Ganzen 60,000 Species<br/>
+als bekannt annehmen kann. In Neuholland ſind bis jetzt<br/>
+von allen Botanikern 3700 Arten gefunden. Nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116442921">Decandolle</a></span>'s</span><br/>
+Unterſuchungen kannte man im Jahre 1800 nur 500 <span title="Pfl￼." class="dta-abbr">Pflanzen</span><br/>
+aus Braſilien, aber durch die Bemühungen von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116759933">St. Hillaire</a></span><br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118731416">Martius</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/104208899">Pohl</a></span></span> und Andern, ſind nun 14,000 Phanerogamen<br/>
+daſelbſt entdeckt, von denen kaum der 3<span title="Original: t" class="dta-reg"><span class="sup uu ">te</span></span> Theil beſchrie-<br/>
+ben iſt. Alle Reiſende haben ſelten über 6000 Arten<br/>
+geſammelt; nur <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117641049">Burſchel</a></span></span> hat vom ſüdlichen Afrika<br/>
+7000 und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/104208899">Pohl</a></span></span> 8000 aus Braſilien mitgebracht.<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118731416">Martius</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116759933">St. Hillaire</a></span></span> haben dagegen in jenem Lande<br/>
+jeder etwa 6000 Arten geſammelt.</p></div></div></div></div></body></html>

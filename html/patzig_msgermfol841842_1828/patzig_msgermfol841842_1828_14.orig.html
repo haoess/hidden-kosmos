@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span title="Original: D. 20 Dcbr." class="dta-reg">14. Vorlesung, 19.12.1827</span></div><br/>
+<p class="dta-p">Jch ſelbſt <span class="u ">hab die Methode, die Stärke</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Eigne <span title="Schreibfehler: Erfindug" class="dta-corr">Erfindung</span><br/>
+Stärke des Lichts<br/>
+zu <span title="meſſ￼" class="dta-abbr">meſſen</span>.</span><br/>
+</span>des Licht durch Spiegelſextanten zu meſſen<br/>
+erfunden; wobei ich nur fürchte mich undeutlich<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">auszudr.</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0094 : 90.|</span><br/>
+<span title="auszudrück￼" class="dta-abbr">auszudrücken</span>, wie es überhaupt ſchwer hielt<br/>
+ſeine <span title="eign￼" class="dta-abbr">eignen</span> Erfahr. <span class="dta-del" title="Streichung (#ow)">a</span><span class="dta-add" title="Hinzufügung (across)">A</span>ndern recht deutlich zu ma-<br/>
+chen. Durch <span title="dieſ￼" class="dta-abbr">dieſen</span> Sextanten kañ ich die zu<br/>
+<span title="vergleichend￼" class="dta-abbr">vergleichenden</span> Sterne, neben einander ſtellen<br/>
+u. da der durch Reflexion geſehene, ſchwä-<br/>
+cher erſcheint als der unmittelbar geſeh<span class="dta-supplied">[ne,]</span><br/>
+ſo kañ ich hier <span title="Beobachtung￼" class="dta-abbr">Beobachtungen</span> anſtellen;<br/>
+u. finde ich, daß ſich die <span title="Strahl￼" class="dta-abbr">Strahlen</span> <span class="dta-del" title="Streichung (#ow)">z</span><span class="dta-add" title="Hinzufügung (across)">d</span>es <span class="aq ">Sÿrius</span><br/>
+zu <span class="aq ">Canopus</span> <span title="verhalt￼" class="dta-abbr">verhalten</span> wie 100 : 98.<br/>
+ſo iſt Syrius von größerer Lichtſtärke<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Sterne der<br/>
+Tropenwelt.</span><br/>
+</span><span class="u ">Jn der Tropenwelt</span> giebt es 4 Sterne<br/>
+die ſchöner ſind als Orion, wie über-<br/>
+haupt der ſüdl. Him̃el, von Madeira an, un-<br/>
+gefähr, betrachtet, mehr helle Sterne<br/>
+zählt. Doch der Theil des ſüdl. Him̃els<br/>
+vom Aequator an, hat eine gleiche Ver-<br/>
+theilung der Geſtirne mit dem nördlich<span class="dta-supplied">[en,]</span><br/>
+es iſt ein geringer Unterſchied zwiſchen<br/>
+der Zahl der Geſtirne 1, 2 u. 3<span title="t￼" class="dta-abbr"><span class="sup u ">ter</span></span> Gr.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Vergleichung der<br/>
+Zahl der Sterne der<br/>
+südl. Hemiſph. mit der<br/>
+nördlichen.</span><br/>
+</span>So zählt <span class="u ">der ſüdl. Him̃el Sterne</span> 1<span title="ſt￼" class="dta-abbr"><span class="u ">ſter</span></span><br/>
+Gr. 9 u. der nördl. ebenfalls 9.<br/>
+Sterne 2<span title="t￼" class="dta-abbr"><span class="sup u ">ter</span></span> Größe d. ſüdl. Him̃el 29.<br/>
+der nördl. 26, Sterne 3<span title="t￼" class="dta-abbr"><span class="sup u ">ter</span></span> Gr. d. ſüdl.<br/>
+Him̃el 101., der nördl. 76. Sterne<br/>
+4<span title="t￼" class="dta-abbr"><span class="sup u ">ter</span></span> Gr. der ſüdl. 181 der nördl. 195.<br/>
+Jm <span title="Allgemein￼" class="dta-abbr">Allgemeinen</span> <span title="bemerk￼" class="dta-abbr">bemerken</span> wir eine gro<span class="dta-supplied">[ße]</span><br/>
+Verſch. des Lichts bei den Geſtirnen. <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/116746599">Frauen-</a></span></span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u "><span title="Beobachtung￼" class="dta-abbr">Beobachtungen</span><br/>
+von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116746599">Frauenhofer</a></span></span></span><br/>
+</span><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/116746599">hofer</a></span></span> hat hier die ſchönſten <span title="Beobachtung￼" class="dta-abbr">Beobachtungen</span><br/>
+gemacht; indem er die <span title="Strahl￼" class="dta-abbr">Strahlen</span> des Stern<span class="dta-supplied">[s]</span><br/>
+auf das Spectrum des Prismas fallen<br/>
+ließ, wodurch die <span title="farbig￼" class="dta-abbr">farbigen</span> <span title="Zon￼" class="dta-abbr">Zonen</span> her-<br/>
+vortreten. Die Spektra <span title="bleib￼" class="dta-abbr">bleiben</span> ſich<br/>
+hier gleich ob ich Soñen- od. Mondlicht<br/>
+erblicke, weil es ein u. daſſelbe Licht<br/>
+iſt, u. daher der Mond über Phoſpho-<br/>
+reſcenz ermangelt. Ganz verſchied<span class="dta-supplied">[en]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">iſt</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0095 : 91.|</span><br/>
+iſt hiernach elektr. Licht, Sternenlicht,<br/>
+Ofenlicht <span title="Original: p" class="dta-reg"><span class="aq ">etc</span></span>. So haben <span class="aq ">Caſtor</span> u. <span class="aq ">Pollux</span> ganz<br/>
+ungleiches Licht, während der erſtern u. <span class="aq ">Syrius</span><br/>
+übereinſtim̃en u. <span class="aq ">Pollux</span> ein gleiches Licht<br/>
+mit unſrer Soñe enthält. Aus dieſer Verſchie-<br/>
+denheit des Lichts kam es, daß die Perſer<br/>
+in ihrem <span class="aq ">Zentaaeſte</span> den <span title="ganz￼" class="dta-abbr">ganzen</span> Him̃el in<br/>
+zwei weiße u. 2 rothe Sterne <span title="theilt￼" class="dta-abbr">theilten</span><br/>
+die <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">v</span>on den <span title="Alt￼" class="dta-abbr">Alten</span> <span class="aq ">ſtellae regiae</span> genañt<br/>
+wurden, <span class="aq ">Regulus</span> <span class="dta-metamark" title="metamark">⎡</span>, <span class="aq ">A<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">n</span>teres</span><br/>
+u. <span class="aq ">Aldebaran</span>. Der Syrius bezeich-<br/>
+nete das alte egyptiſche Jahr, indem<br/>
+er zur Zeit der Morgendäm̃erung erſchien<br/>
+u. 1461 dieſen Jahre, <span title="bildet￼" class="dta-abbr">bildeten</span> 1460 –<br/>
+juliäniſche Jahre; es war dies die<br/>
+Sotiſche Periode. So <span title="beobachtet￼" class="dta-abbr">beobachteten</span> die<br/>
+Alter ſehr ſorgfältig die Fixſterne.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Zahl der<br/>
+sämtlichen Geſtirne</span><br/>
+</span>Jch kom̃e auf <span class="u ">die Zahl der Geſtirne,</span><br/>
+u. man muß hiebei den Unterſchied mach<span title="mach￼" class="dta-abbr">machen</span>,<br/>
+die man auf einmal <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">an jedem Orte </span>ſehen kañ, u. die,<br/>
+weñ man unter dem Aequator ſteht.<br/>
+Nach der <span class="aq ">U<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">rano</span>graphie</span> von <span title="Personenname"><a href="http://d-nb.info/gnd/116215372">Bode</a></span> ſind<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Sterne 1–6<span title="t￼" class="dta-abbr"><span class="sup ">ter</span></span> Gr. <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span></span><br/>
+</span>Sterne <span class="u ">1–6<span class="sup u ">ter</span> Größe</span> 8000, von 6–7<span title="t￼" class="dta-abbr"><span class="sup ">ter</span></span><br/>
+Größe 12000., ſo daß man mit <span title="bloß￼" class="dta-abbr">bloßen</span><br/>
+<span title="Aug￼" class="dta-abbr">Augen</span> ſ<span class="u ">ehr gut</span> 14,200 Sterne <span title="wahrneh￼" class="dta-abbr">wahrnehmen</span><br/>
+kañ. Jm Verhältniß des ganzen Him̃els-<br/>
+gewölbes würde daher auf d<span class="dta-supplied">[en]</span> Raum<br/>
+von zwölf Mondflächen noch nicht ein<br/>
+Stern von 1–7 Größe kom̃en; daher<br/>
+es nicht ſo leicht ſich ereignet daß bei<br/>
+der Bewegung der Mondſcheibe dieſe einen<br/>
+Stern bedeckt. Die Alten <span title="hatt￼" class="dta-abbr">hatten</span> die Sterne<br/>
+ebenfalls gezählt u. <span title="Personenname"><a href="http://d-nb.info/gnd/118641786">Ptolomäus</a></span> giebt<br/>
+dieſelbe Anzahl der Sterne von 1–5 Größe<br/>
+an, wie wir; doch von denen der<br/>
+6 u. 7<span title="t￼" class="dta-abbr"><span class="sup u ">ten</span></span> Größe kaum den <span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span><span title="t￼" class="dta-abbr"><span class="sup u ">ten</span></span> Theil.<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Jn</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0096 : 92.|</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">120000 Sterne<br/>
+sind ſchon ver-<br/>
+zeichnet.</span><br/>
+</span>Jn den neuern Sternkarten von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116474580">Ha<span class="dta-supplied">[r-]</span><br/>
+ding</a></span></span> ſind ſchon <span class="u ">120,000 Sterne verzeich-</span><br/>
+net, von denen aber nur 8–9000 gut<br/>
+beſtim̃t ſind. Es iſt ein Verdienſt der<br/>
+<span title="hieſig￼" class="dta-abbr">hieſigen</span> Akademie, Sternencataloge<br/>
+beſtim̃t <span class="dta-del" title="Streichung (#s)">zu <span title="hab￼" class="dta-abbr">haben</span> </span>u. mit <span title="all￼" class="dta-abbr">allen</span> <span title="Aſtronom￼" class="dta-abbr">Aſtronomen</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Eintheilung des<br/>
+Him̃els in Zonen.</span><br/>
+</span>Europas in Gemeinſchaft, den <span class="u ">Him̃el in<br/>
+Zonen</span>, eingetheilt zu haben. Dies iſt wichtig<br/>
+um noch neue Planeten zu finden, Kometen<br/>
+zu ſuchen <span title="Original: p" class="dta-reg"><span class="aq ">etc</span></span>.; weniger wichtig wäre es,<br/>
+um bloß die Zahl zu haben. <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span></span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Beobachtung<br/>
+v. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span></span></span><br/>
+</span><span class="u ">beobachtete</span> d. 22 Aug. 1792, während<br/>
+40 <span title="Minut￼" class="dta-abbr">Minuten</span>, daß 258000 Sterne durch<br/>
+ſein Fernrohr gingen. Er dürfte <span class="gap">[unleserliches Material – 1 Wort fehlt]</span><br/>
+die Sterne die durch ein Fadenkreuz<br/>
+des Sternrohrs durchgingen beſtim̃en<br/>
+u. dieſe mit dem Raume od. der Zeit mit<br/>
+<span title="￼" class="dta-abbr"><span class="gap">[unleserliches Material]</span>en</span>, um dieſe Zahl zu finden. Hier<br/>
+nach läſſ<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">et</span> <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">es </span>sich <span title="berechn￼" class="dta-abbr">berechnen</span>, daß man d<span class="dta-supplied">[urch]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">148 Mil. Sterne<br/>
+sind durch Fernröhre<br/>
+zu ſehen.</span><br/>
+</span>Fernröhre <span class="u ">148 Mill. Sterne</span> ſehen kañ<br/>
+u. ungefähr 200 Sterne auf die Größe<br/>
+einer Vollmondsfläche gehen. Alle Ster<span class="dta-supplied">[ne]</span><br/>
+die man hier nicht ſieht, gehören dem<br/>
+<span title="ſüdlich￼" class="dta-abbr">ſüdlichen</span> Him̃el an, den ich ſelbſt <span class="dta-del" title="Streichung (#s)">bis</span><span class="dta-add" title="Hinzufügung (superlinear)">an</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Anblick des<br/>
+südl. Him̃els</span><br/>
+</span>37½° Breite beobachtet – Nähert<br/>
+man ſich dem Aequator; ſo erblickt<br/>
+man neue Erdräume, neuen Him̃el<span class="dta-supplied">[.]</span><br/>
+Die <span title="Alt￼" class="dta-abbr">Alten</span> <span title="beobachtet￼" class="dta-abbr">beobachteten</span> <span title="denſelb￼" class="dta-abbr">denſelben</span> nur bis<br/>
+zum <span class="aq ">tropicus cancri</span>; bis <span class="aq ">Siene</span><br/>
+Egyptiſche Prieſter <span title="hatt￼" class="dta-abbr">hatten</span> <span title="Coloni￼" class="dta-abbr">Colonien</span> in<br/>
+<span class="aq ">Meroë</span>. <span title="Personenname">Hanno</span> beſchiffte zwar die<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Keñtniß<br/>
+deſſelben in alten<br/>
+Zeit.</span><br/>
+</span><span title="Küſt￼" class="dta-abbr">Küſten</span> von Vorderindien, jedoch war<br/>
+dabei keine Sternkundigen. Es wird<br/>
+erzählt daß <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118595946">Poſidonius</a></span></span> nach <span class="aq ">Cadix</span><br/>
+reiſete, um den <span class="aq ">Canopus</span> zu ſehen<br/>
+die wir jetzt in Europa nicht <span title="erblick￼" class="dta-abbr">erblicken</span><br/>
+dies rührt davon her, daß ſich die<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Axe</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0097 : 93.|</span><br/>
+Axe der Erde nicht parallel bleibt, ſon-<br/>
+dern in 25,000 <span title="Jahr￼" class="dta-abbr">Jahren</span> die ganze Axe dreht.<br/>
+Die Entdeckung Amerikas wurde auch<br/>
+hiebei ſehr wichtig. Die beſten Beobachtun-<br/>
+gen machte <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119174596">la Caille</a></span></span> auf dem <span class="aq ">Cap</span> der gute<br/>
+Hoffnung u. der Engländer <span class="aq "><span title="Personenname"><a href="http://viaf.org/viaf/197242413">Fellow</a></span></span> der<br/>
+noch gegenwärtig daſelbſt beſchäftigt iſt.</p><br/>
+<p class="dta-p">Manche <span title="Naturbegebenheit￼" class="dta-abbr">Naturbegebenheiten</span> zeichnen den<br/>
+ſüdlichen Him̃el aus. <span class="u ">Jn dem Theile des</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Schönheit<br/>
+des ſüdl. Him̃els</span><br/>
+</span>Him̃els, der von Pol zu Pol den 5<span title="t￼" class="dta-abbr"><span class="sup u ">ten</span></span><br/>
+Theil des Ganzen beträgt, ungefähr ſüd-<br/>
+lich von Madeira, erblickt man 6 Sterne<br/>
+1 Größe u. 12 Sterne, 2<span class="sup u ">ter</span> Größe.<br/>
+Die Schönheit des Him̃els rührt hier<br/>
+nicht von der Jlluminationskraft<br/>
+ſondern von der Gruppirung her.<br/>
+Die ſchöne Landshaft des Him̃el er-<br/>
+weckt hier lebhaft die Einbildungskraft.<br/>
+Prachtvoll bildet ſich der Schütze mit<br/>
+der Krone, das Vordertheil des Schiffs<br/>
+mit Canopus. Hiemit <span title="ſteh￼" class="dta-abbr">ſtehen</span> im Zuſam-<br/>
+menhange die dunſtartige Materie<br/>
+der <span title="magellaniſch￼" class="dta-abbr">magellaniſchen</span> Wolken, die ſchwar-<br/>
+zen Flecke <span title="Original: pp" class="dta-reg"><span class="aq ">etc</span>. <span class="aq ">etc</span>.</span> kom̃t man von Norden<br/>
+nach Süden, ſo <span title="tauch￼" class="dta-abbr">tauchen</span> zuerſt bei <span class="aq ">Madera</span><br/>
+auf der <span class="aq ">Canopus</span>; dañ <span title="kom̃￼" class="dta-abbr">kom̃en</span> die Füße<br/>
+des Centauern; dañ das ſüdl. Kreutz,<br/>
+dañ wieder die Kohlenſäcke, u. dañ die<br/>
+<span title="magellaniſch￼" class="dta-abbr">magellaniſchen</span> Wolken. Dieſe Stellung<br/>
+iſt nicht im̃er ſo <span title="geweſ￼" class="dta-abbr">geweſen</span>, deñ die Verän-<br/>
+derung der Erdaxe hat hier die Stellung<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Veränderung<br/>
+der Stellung der<br/>
+Geſtirne</span><br/>
+</span>der Geſtirne <span class="u ">verändert</span>; indem in <span class="aq ">Alex-<br/>
+andries</span> Canopus 6° über dem Horizonte<br/>
+ſtand, der jetzt 3° unter <span title="demſelb￼" class="dta-abbr">demſelben</span> ſich be-<br/>
+findet. Außer der <span title="ſchön￼" class="dta-abbr">ſchönen</span> Gruppirung<br/>
+iſt auch das milde Licht von wunder-<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">barer</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0098 : 94.|</span><br/>
+barer Wirkung. Wie Oaſen liegen h<span class="dta-supplied">[ier]</span><br/>
+mit mattem Glanze die lichten Wolken<span class="dta-supplied">[.]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Eintheilung<br/>
+des <span title="ſüdlich￼" class="dta-abbr">ſüdlichen</span><br/>
+Him̃els</span><br/>
+</span><span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/119174596">La Caille</a></span></span> theilte</span> zuerſt den ſüdlichen<br/>
+Him̃el in Provinzen u. wie der nör<span class="dta-supplied">[dli-]</span><br/>
+che Theil mit ſeinen Beneñungen der my-<br/>
+thiſche genañt werden kañ: ſo darf<br/>
+der ſüdliche der induſtrielle heißen.<br/>
+Auch bei uns war es Sitte die <span title="&#xA;lichſt￼" class="dta-abbr"><span class="gap">[unleserliches Material]</span><br/>
+lichſten</span> Namen de<span class="dta-del" title="Streichung (#ow)">n</span><span class="dta-add" title="Hinzufügung (across)">r</span> <span title="Schreibfehler: Geſtirn￼Geſtirnen" class="dta-corr">Geſtirne</span> zu geben. <span class="dta-supplied">[So]</span><br/>
+<span title="ſollt￼" class="dta-abbr">ſollten</span> die <span title="Plejad￼" class="dta-abbr">Plejaden</span>, das Ein mal E<span class="dta-supplied">[ins]</span><br/>
+heißen. Ein Salzburger Aſtronom ſetzt<br/>
+ſogar das <span title="Wapp￼" class="dta-abbr">Wappen</span> des Biſchofs <span title="Personenname"><a href="http://d-nb.info/gnd/118727656">Firmi<span class="dta-supplied">[an]</span></a></span><br/>
+an den Him̃el, der ſeine Unterthane<span class="dta-supplied">[n]</span><br/>
+aus dem Lande trieb. – Früher erwä<span class="dta-supplied">[hn-]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Schwarze Flecken des<br/>
+<span title="ſüdlich￼" class="dta-abbr">ſüdlichen</span> Him̃els</span><br/>
+</span>te ich der <span class="u "><span title="ſchwarz￼" class="dta-abbr">ſchwarzen</span> Flecke</span> des ſüdl.<br/>
+Him̃els. Einer befindet ſich im ſüdlich<span class="dta-supplied">[en]</span><br/>
+Kreutze, der andere in der Eich<span class="dta-supplied">[e]</span>x<span class="dta-marginal dta-marginal-left">Karls-Eiche, zur Eriñerung an die Eiche in<br/>
+welcher ſich <span title="Personenname"><a href="http://d-nb.info/gnd/118560042">Carl. <span class="aq ">II</span>.</a></span> verſteckt hatte.<br/>
+</span>.<br/>
+Da ich nur 15° ſüdl. Breite geweſ<span class="dta-supplied">[en]</span><br/>
+ſo habe ich nur einen <span class="dta-del" title="Streichung (#s)">Stern </span>derſelb<span class="dta-supplied">[en]</span><br/>
+geſehen. Er muß 28° Höhe <span title="Schreibfehler: errreichen" class="dta-corr">erreich<span class="dta-supplied">[en]</span></span><br/>
+um ihn deutlich wahrzunehmen u. in<br/>
+den <span title="Eben￼" class="dta-abbr">Ebenen</span> von <span class="aq ">Caraccas</span> u. <span class="aq ">Orinoc<span class="dta-supplied">[o]</span></span><br/>
+erblickte ich ihn nie, ſondern nur <span class="gap">[unleserliches Material – 1 Wort fehlt]</span><br/>
+bei den <span title="Katarakt￼" class="dta-abbr">Katarakten</span> des letztern<br/>
+unter 3–4° ſüdl. Breite. Von eine<span class="dta-supplied">[r]</span><br/>
+Seite erſcheint dieſer Flecke ſcharf b<span class="dta-supplied">[e-]</span><br/>
+grenzt, in 3° Breite, wie ungefäh<span class="dta-supplied">[r]</span><br/>
+6 Mondflächen. Weñ <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119174596">la Caille</a></span></span> beha<span class="dta-supplied">[up-]</span><br/>
+tet, daß das Ganze eine Wirkung des <span class="dta-supplied">[Licht-]</span><br/>
+contraſtes ſey, ſo kañ ich mit <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118534432">Reinh<span class="dta-supplied">[old]</span><br/>
+Forſter</a></span></span> ihm nicht beiſtim̃en. Die Erfahr<span class="dta-supplied">[ung]</span><br/>
+lehrt, daß weñ ich durch ein langes Ro<span class="dta-supplied">[hr]</span><br/>
+ſehe, wenige oder keine Sterne ich erblick<span class="dta-supplied">[en]</span><br/>
+werde, <span title="hingeg￼" class="dta-abbr">hingegen</span> durch ein kürzeres <span class="gap">[verlorenes Material – 1 Wort fehlt]</span><br/>
+viele zu Geſicht kom̃en werden; ſo ha<span class="gap">[unleserliches Material]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">auch</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0099 : 95.|</span><br/>
+auch dieſe dunkeln Flecke von der <span title="tief￼" class="dta-abbr">tiefen</span><br/>
+Oeffnung des Him̃els ab, durch welche keine<br/>
+Sterne mehr ſchim̃ern. Solcher <span title="Oeffnung￼" class="dta-abbr">Oeffnungen</span><br/>
+hat <span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span> im Scorpion entdeckt, die<br/>
+aber dabei nicht ſchwarz erſcheinen;<br/>
+es iſt gleichſam ein Loch in de<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">m</span> Stern-<br/>
+bilde u. nicht unrecht iſt die Behaup-<br/>
+tung, daß ein Sternhaufen durch At-<br/>
+traction Alles an ſich gezogen u.<br/>
+daher oft ein <span title="Fleck￼" class="dta-abbr">Flecken</span> in dieſem <span title="Hauf￼" class="dta-abbr">Haufen</span><br/>
+zu finden.</p></div></body></html>

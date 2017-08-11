@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session">   <div class="dta-head"><span title="Original: 22. Dez.Dezember 15." class="dta-reg">15. Vorlesung, 22.12.1827</span></div><br/>
+<p class="dta-p">Wenn ich mich bei der Beschreibung unserer linsenförmigen Stern-<br/>
+schicht länger aufhalte, so geschieht dies blos darum, weil <span class="dta-del" title="Streichung (#s)">eine</span><br/>
+man nicht alles da<span class="dta-del" title="Streichung (#s)">ran</span><span class="dta-add" title="Hinzufügung (superlinear)">von</span> in den Lehrbüchern zusammenfindet,<br/>
+sondern weil viel in einer Menge von einzelnen kleinen Schriften<br/>
+zerstreut ist: es gehört zu den Aufgaben der Weltbeschreibung,<br/>
+alles dies mehr zusammenzufassen, als es in der messenden und<br/>
+beobachtenden Astronomie geschehn kann.</p><br/>
+<p class="dta-p">Die magellanischen Wolken standen zu <span title="Personenname"><a href="http://d-nb.info/gnd/11853131X">Eudoxus</a></span>' Zeit im<br/>
+Südpole selbst, sind aber jezt wegen der Vorrükkung der Nacht-<br/>
+gleichen daraus gewichen: sie kreisen um den Südpol, wie<br/>
+der grosse Bär um den Nordpol: ihr Glanz komt dem der<br/>
+Milchstrasse gleich: ich habe sie sehr häufig beobachtet, da ich<br/>
+aber auf meiner Reise keine sehr stark vergrössernden Fernröhre<br/>
+mit mir <span class="dta-del" title="Streichung (#s)">f</span> führen konte, so habe ich nicht entscheiden können,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0157 : 77r|</span><br/>
+ob sie sich auflösen lassen, oder nicht, obgleich ich wohl einzelne<br/>
+Sterne darin bemerken konte; eben so mus noch ausgemacht werden,<br/>
+ob sie innerhalb oder ausserhalb unserer linsenförmigen Sternschicht<br/>
+liegen. Die gröste hat in der längeren Axe 3–4° Ausdehnung. Die<br/>
+Griechen kanten sie nicht, wohl aber die Araber: <span title="Hr" class="dta-abbr">Herr</span> <span title="Personenname"><a href="http://d-nb.info/gnd/100351212">Ideler</a></span> hat<br/>
+gezeigt, dass man sie bei ihnen <span class="u ">die weissen Ochsen</span> nante. 1515<br/>
+wurden sie von <span title="Personenname"><a href="http://d-nb.info/gnd/117518530">Magellan</a></span> zuerst gesehn. <span title="Personenname"><a href="http://d-nb.info/gnd/116994193">Horner</a></span>, ein ausgezeich-<br/>
+neter Astronom, der <span title="Hrn." class="dta-abbr">Herrn</span> <span title="Personenname"><a href="http://d-nb.info/gnd/119021285">v. Krusenstern</a></span> auf seiner Reise um die<br/>
+Welt begleitete, meint, dass diese weissen Wolken früher da ge-<br/>
+standen haben möchten, wo jezt die beiden sternleeren Flekke<br/>
+sind, da sie ungefähr dieselbe Grösse haben: ich kann aber diese<br/>
+Meinung nicht theilen, und glaube, dass sie ohne alle Beziehung<br/>
+auf einander sind. Das südliche Kreuz war schon den Griechen<br/>
+bekant, da es aber auf ihre Phantasie nicht den Eindruk machte,<br/>
+wie bei den <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">c</span>hristlichen Völkern, so ha<span class="dta-del" title="Streichung (#ow)">b</span><span class="dta-add" title="Hinzufügung (across)">tt</span>en sie es nicht von den<br/>
+Füssen des Zentauren abgesondert. Seit der Entdekkung von<br/>
+Amerika wurde es wieder bei den nördlichen Völkern bekant;<br/>
+und wie gros der Eindruk war den<span class="dta-del" title="Streichung (#s)">n</span> es auf die Phantasie der<br/>
+ersten Entdekker von Amerika machte, sieht man daraus, dass<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118982745">Orviedo</a></span> es in sein Wappen sezte. Schon <span title="Personenname"><a href="http://d-nb.info/gnd/12116117X">Acosta</a></span> führt den Nuzen an,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0158 : 77v|</span><br/>
+den man auf Reisen davon ziehn kann, um in der Nacht die Zeit<br/>
+zu bestimmen. Die beiden grossen Sterne der längeren Axe<br/>
+haben nämlich ungefähr dieselbe Rektaszen<span class="dta-del" title="Streichung (#ow)">z</span><span class="dta-add" title="Hinzufügung (across)">s</span>ion, daher steht<br/>
+das Kreuz um Mitternacht senkrecht, und hierauf beziehn sich<br/>
+die Worte, welche man so oft von den Reisenden in diesen Ge-<br/>
+genden hört: „es ist schon spät: das Kreuz neigt sich”. Hier<br/>
+mus auch der vielbesprochenen und bestrittenen Stelle des <span title="Personenname"><a href="http://d-nb.info/gnd/118523708">Dante</a></span><br/>
+im Purgatorio erwähnt werden, welche man immer auf das<br/>
+südliche Kreuz gezogen hat:<br/>
+<span class=" "><q class="quote">   <div class="dta-lg">   <span>Io mi volsi a man destra, e posi mente</span><br/>
+<span>All' altro polo, e vidi quattro stelle</span><br/>
+<span>Non viste mai fuor ch' alla prima gente.</span><br/>
+<span>Goder parea lo ciel di lor fiammelle;</span><br/>
+<span>O settentrional vedovo sito</span><br/>
+<span>Poiche privato sei di mirar quelle!</span><br/>
+</div>   </q></span>   denn obgleich <span title="Personenname"><a href="http://d-nb.info/gnd/118523708">Dante</a></span> 1321 starb, so konte er doch auf seinen<br/>
+langen Reisen Nachrichten darüber von Venezianischen und<br/>
+Genuesischen Schiffern bekommen haben, die im arabischen<br/>
+Meerbusen <span class="dta-del" title="Streichung (#ow)">h</span><span class="dta-add" title="Hinzufügung (across)">H</span>andel trieben. Schwerlich hat er die Notiz<br/>
+in arabischen Schriftstellern gefunden, wie einige behaupten<span class="dta-del" title="Streichung (#s)">,</span><span class="dta-add" title="Hinzufügung (intralinear)">.</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0159 : 78r|</span><br/>
+<div class="fw-top fw-sig">20.</div><br/>
+Schon der Pater <span title="Personenname"><a href="http://d-nb.info/gnd/119646188">Corsali</a></span> zog diese Stelle auf das südliche Kreuz; andre<br/>
+Erklärer auf die mystische Idee der 4 weltlichen Tugenden.</p><br/>
+<hr/><br/>
+<p class="dta-p">Wir kommen nun zu einem wichtigen Theile unsrer Wissenschaft, zu<br/>
+der <span class="u ">Winkelmessenden Astronomie für die entferntesten Fixsterne<br/>
+und Doppelsterne</span>.</p><br/>
+<p class="dta-p">Schon <span title="Personenname"><a href="http://d-nb.info/gnd/118537229">Galilei</a></span> warf die Fragen auf: was wir eigentlich Doppel-<br/>
+sterne nennen? ob beide Sterne zu einander gehören? ob sie physi-<br/>
+sche oder optische Doppelsterne sind? und hatte die ganz richtige<br/>
+Meinung, dass sie zur Findung der Parallaxe dienen könten durch<br/>
+die Veränderung ihres optischen Ortes. <span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herschel</a></span> nahm diese Un-<br/>
+tersuchung wieder auf und leistete sehr viel darin: er zeigte, zuerst<br/>
+1782, dass sie in einer innern Beziehung zu einander stehn: neuerlich<br/>
+hat <span title="Personenname"><a href="http://d-nb.info/gnd/118510215">Bessel</a></span> dies mit noch grösserer Bestimtheit erkant: er beschäf-<br/>
+tigte sich besonders mit dem 61<span title="￼" class="dta-abbr"><span class="sup ">ten</span></span> Sterne des Schwans, welcher ein<br/>
+Doppelstern ist, und fand, dass beide Sterne auf gleiche Weise von<br/>
+einer eignen Bewegung affizirt werden.</p><br/>
+<p class="dta-p">Wir betrachten bei den Doppelsternen ihre <span class="u ">Zahl</span>, <span class="u ">Natur</span>, <span class="u ">Farbe</span>,<br/>
+<span class="u ">Bewegung</span> und <span class="u ">Schnelligkeit</span>.</p><br/>
+<p class="dta-p">Die Zahl derselben hat sich seit 2 Jahren ungemein vermehrt: <span title="Personenname"><a href="http://d-nb.info/gnd/118703897">Her-<br/>
+schel</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/117485101">South</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/118510215">Bessel</a></span> zusammen haben 800–1000, von denen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0160 : 78v|</span><br/>
+nur 675 genauer untersucht und beschrieben sind. Aber in dem schönen<br/>
+Katalog von <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118988255">Struve</a></span></span>, der erst vor einigen Wochen erschienen ist, finden<br/>
+wir 3112 Doppelsterne verzeichnet, welche er, bis auf 74, alle selbst<br/>
+beobachtet hat, und 2300 sind ganz neu von ihm entdekt. Die<br/>
+Resultate, welche sich aus seinem Werke ziehn lassen, sind von der<br/>
+äussersten Wichtigkeit:<br/>
+er hat gefunden, dass unter den Sternen 1<span title="￼" class="dta-abbr"><span class="sup ">ter</span></span> bis 3<span title="￼" class="dta-abbr"><span class="sup ">ter</span></span> <span title="Gr." class="dta-abbr">Grösse</span> auf 5½ <span title="Schreibfehler: Stern" class="dta-corr">Sterne</span><br/>
+ein Doppelstern kömt; dagegen unter denen 6 und 7<span title="￼" class="dta-abbr"><span class="sup ">ter</span></span> <span title="Gr." class="dta-abbr">Grösse</span> kaum auf<br/>
+12 Sterne 1 <span title="Dpp." class="dta-abbr">Doppel</span>stern: aus der natürlichen Ursach, dass die entfern-<br/>
+teren Sterne nicht so leicht für uns zu finden sind, als die näher-<br/>
+stehenden grösseren. Nimt man aber alle Sterne 1<span title="￼" class="dta-abbr"><span class="sup ">ter</span></span>–7 <span title="Gr." class="dta-abbr">Grösse</span> zu-<br/>
+sammen, so kömt auf 11 <span class="u ">ein</span> <span title="Dpp." class="dta-abbr">Doppel</span>stern. Da <span title="Personenname"><a href="http://d-nb.info/gnd/118988255">Struve</a></span> nur 3000<br/>
+<span title="Dpp." class="dta-abbr">Doppel</span>sterne fand, so gäbe dies im Ganzen 33,000 Sterne, welches<br/>
+mit unseren früheren Resultaten recht gut übereinstimmt. Aus<br/>
+dieser Berechnung läst sich also der Schlus ziehn, dass wenn die<br/>
+Doppelsterne blos Zufall, d. h. optische <span title="Dpp." class="dta-abbr">Doppel</span>sterne wären, sie<br/>
+unter kleinen und grossen gleich vertheilt sein müsten: da<br/>
+dies aber nicht der Fall ist, so sind wir zu der Annahme be-<br/>
+rechtigt, dass sie alle, oder doch die meisten, wirkliche, d. h.<br/>
+physische Doppelsterne sind.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0161 : 79r|</span><br/>
+<p class="dta-p">Ihre <span class="u ">Natur</span> können wir bis jezt nur <span class="dta-del" title="Streichung (#s)">nach ihrer Farbe</span><span class="dta-add" title="Hinzufügung (superlinear)">wenig</span> beurtheilen,<br/>
+<span class="dta-del" title="Streichung (#s)">worin sie grosse Verschiedenheiten zeigen</span>. Kastor ist ein <span title="Dpp.stern" class="dta-abbr">Doppelstern</span> 2<span title="￼" class="dta-abbr"><span class="sup uu ">ter</span></span><br/>
+und 4<span title="￼" class="dta-abbr"><span class="sup u ">ter</span></span> <span title="Gr." class="dta-abbr">Grösse</span> wovon der kleinere schön indigoblau ist: auch der Polar-<br/>
+stern ist ein <span title="Dppst." class="dta-abbr">Doppelstern</span><span title="Schreibfehler: " class="dta-corr">:</span> der kleinere ist ein Stern 11<span title="￼" class="dta-abbr"><span class="sup ">ter</span></span> Grösse, und es kann schon<br/>
+für ein Fernrohr als Probe gelten, ob man dadurch diesen kleinen<br/>
+Stern unterscheiden kann. β in der Leyer ist 4 fach; ja ς (sigma)<br/>
+im Orion ist 16 fach: die ersten Beobachtungen über die <span title="Dppst." class="dta-abbr">Doppelsterne</span> haben<br/>
+wir von 1736 von <span title="Personenname"><a href="http://d-nb.info/gnd/117623687">Bradley</a></span>, und 1759 von <span title="Personenname"><a href="http://d-nb.info/gnd/118903217">Maskeline</a></span>: so dass man<br/>
+über den 61<span title="￼" class="dta-abbr"><span class="sup ">ten</span></span> Stern im Schwane nun schon genaue <span title="Beob." class="dta-abbr">Beobachtungen</span> von 71 Jahren<br/>
+hat.</p><br/>
+<p class="dta-p">Ihre <span class="u ">Farbe</span> zeigt grosse Verschiedenheiten, und läst sich durch den<br/>
+Kontrast sehr deutlich unterscheiden: man kann mit Sicherheit<br/>
+aussprechen, dass der grössere Stern <span class="u ">nie</span> bunt, sondern immer <span class="u ">weis</span><br/>
+ist: es finden sich allerdings manchmal 2 Sterne verschiedener<br/>
+Grösse, die bunt sind: alsdann dreht sich aber nicht der eine um den<br/>
+andern, sondern beide <span class="u ">umeinander</span>: man findet sie blau, gelb, indigo<br/>
+grün pp. und könte dadurch auf die Komplementarfarben geleitet<br/>
+werden. Die schönen Versuche <span title="Personenname"><a href="http://d-nb.info/gnd/118540238">Göthe</a></span>'s über die subjektiven Farben<span class="dta-marginal dta-marginal-right">Diese Versuche vindizirt<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/117654698">Seebeck</a></span>.<br/>
+</span><br/>
+sind bekant, wonach eine Farbe die andre <span class="u ">fordern</span> würde, und also<br/>
+die Verschiedenheit nur in unserm subjektiven Sehen liegt: diese<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0162 : 79v|</span><br/>
+lassen sich aber auf die Doppelsterne nicht anwenden: denn die grösseren<br/>
+Sterne sind manchmal roth, blau auch weis, wobei diese Theorie<br/>
+der Komplementarfarben nicht past. Die Farben der Doppelsterne<br/>
+zeigen sich ganz gleichmässig bei allen Beobachtern und in den ver-<br/>
+schiedensten <span class="dta-del" title="Streichung (#s)">F</span><span class="dta-add" title="Hinzufügung (intralinear)">T</span>eleskopen, wodurch wir natürlich zu einer grossen<br/>
+Sicherheit in den Bestimmungen gelangen. Sehr merkwürdig ist<br/>
+es, dass auch unauflösliche Nebel farbig sind: der in der Andro-<br/>
+meda ist unzweideutig von röthlicher Farbe: vielleicht wird der<br/>
+Verdichtungsprozes durch dieses Farbenspiel angedeutet. Am selten-<br/>
+sten scheint die blaue und grüne Farbe zu sein: denn man hat<br/>
+sie <span class="u ">nie</span> bei isolirten Sternen gefunden, nach den Untersuchungen<br/>
+des jüngern <span title="Personenname"><a href="http://d-nb.info/gnd/118703897">Herschel</a></span>.</p><br/>
+<p class="dta-p">Ihre <span class="u ">Bewegung</span> geht oft um einen gemeinschaftlichen Schwerpunkt,<br/>
+im Gegensaze zu unserm Planetensystem, wo der Schwerpunkt<br/>
+aller Planeten in der Sonne <span class="dta-del" title="Streichung (#s)">liegt</span> als dem leuchtenden Körper liegt.<br/>
+Bei manchen <span title="Dpp." class="dta-abbr">Doppel</span>sternen ist der Unterschied beträchtlich, obgleich<br/>
+sie gewis beide leuchtend sind: bei 2 oder 3 liegt er ausserhalb der<br/>
+Sterne selbst. Es geht also eine Veränderung der Distanz und<br/>
+des Positionswinkels vor, und daher komt die wunderbare Er-<br/>
+scheinung, dass es auch Okkultazionen 2er Fixsterne giebt:<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0163 : 80r|</span><br/>
+welches bei ζ Herculis vorkömt: dies war früher ein <span title="Dpp" class="dta-abbr">Doppel</span>stern, seit<br/>
+1795 aber ist der kleinere hinter den grösseren getreten, und man<br/>
+sieht nur noch <span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)">E</span>inen: nach 12 Jahren ungefähr müste er auf der an-<br/>
+dern Seite wieder hervortreten.</p><br/>
+<p class="dta-p">Ihre <span class="u ">Schnelligkeit</span> ist ausserordentlich gros, und kann bis auf 10–12°<br/>
+in einem Jahre gehn: bei Kastor beträgt sie alle Jahre 1°: oft ist<br/>
+sie auch abwechselnd z. B. bei Ψ im grossen Bären, wo sie sich von<br/>
+6–12° in einem Jahre verändert, je nachdem einer der grossen Sterne<br/>
+<span class="dta-del" title="Streichung (#s)">uns</span> näher oder entfernter steht: in der Nähe des Zentralkörpers geht<br/>
+alle Bewegung schneller, wie wir an den Kometen sehn; Ψ im grossen<br/>
+Bären wird in 58 Jahren seinen Kreislauf vollendet haben. In<br/>
+unserm Planetensystem ist alle Bewegung von Westen nach Osten,<br/>
+doch finden sich manche Kometen, welche eine Ausnahme machen:<br/>
+auch die <span title="Dpp" class="dta-abbr">Doppel</span>sterne gehn nach allen Richtungen und oft von Osten<br/>
+gegen Westen.</p><br/>
+<p class="dta-p"><span class="u ">Von der Entstehung neuer Sterne.</span></p><br/>
+<p class="dta-p">Es ist auffallend, dass gewisse Gegenden des Himmels gleichsam<br/>
+ein vulkanisirender Weltraum genant werden können, weil in<br/>
+ihnen noch jezt bedeutende Veränderungen vorfallen: fast alle neuen<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Sterne</div>
+<span class="dta-pb" style="padding-left:15em">|#f0164 : 80v|</span><br/>
+Sterne zeigen sich in der Gegend zwischen der Kassiopeia, dem Schwan,<br/>
+Adler, Ophiuchus und Skorpion. Die meisten neuen Sterne sind<br/>
+nur von kurzer Dauer, sie leuchten heller als Sterne 1<span title="￼" class="dta-abbr"><span class="sup ">ter</span></span> Grösse,<br/>
+verschwinden aber nach wenigen Monaten oder höchstens einem<br/>
+Jahre. Ihr Farbenwechsel ist sehr merkwürdig. Zuerst sind sie <span class="u ">weis</span>,<br/>
+und gehn dann durch mehrere Farben, bis sie verschwinden, als ob<br/>
+hier das verlöschende Licht durch Farbenwechsel angedeutet würde.<br/>
+So viel wir nachweisen können, haben sie nie Ortsveränderungen<br/>
+erlitten. Bei allen, welche von <span title="Personenname"><a href="http://d-nb.info/gnd/118514237">Tycho de Brahe</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/118561448">Kepler</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Kassini</a></span> <span title="Original: pp" class="dta-reg">pp.</span><br/>
+beobachtet sind, hat man durchaus keine Parallaxe gefunden.<br/>
+Das älteste Beispiel davon ist im Adler: hier loderte ein Stern<br/>
+auf 389 nach Chr. so stark als Venus, aber nur 3 Monat sicht-<br/>
+bar; ein andrer im Skorpion wurde von den Arabern beobachtet:<br/>
+er war ¼ so gros als der Mond, und leuchtete 4 Monate. –<br/>
+ein andrer in der Kassiopeia, 1572 entdekt: er war so stark<br/>
+als Venus; erst <span class="u ">weis</span> dann gelb, roth, zulezt bleifarbig; er war<br/>
+auch bei Tage sichtbar, und leuchtete 16 Monate; er war an<br/>
+demselben Orte schon 2 mal vorher beobachtet worden, nämlich<br/>
+945 und 1264: dann 1572. seine Periode liegt also zwischen 319<span title="Schreibfehler:  –" class="dta-corr">[…]</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0165 : 81r|</span><br/>
+und 308 Jahren, und er <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">m</span>üste um 1880 wiederkommen; – der grosse<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Cassini</a></span> fand 1670 in der Kassiopeia 5 neue Sterne, von denen 2 ver-<br/>
+schwanden, 3 aber blieben und noch zu sehn sind; – 1604 beobach-<br/>
+tete <span title="Personenname"><a href="http://d-nb.info/gnd/118561448">Kepler</a></span> einen andern im Ophiuchus, und bemerkte dabei, dass<br/>
+alle solche Sterne mit dem stärksten Lichte anfangen: dann werden<br/>
+sie gelb, safran, purpur, und blasroth: grade im Jahre 1604 waren<br/>
+Mars, Jupiter und Saturn in Konjunkzion, dies führte <span title="Personenname"><a href="http://d-nb.info/gnd/118561448">Kepler</a></span> auf<br/>
+manche mystische Ideen, und er hielt diesen neuen für den Stern<br/>
+der Weisen. <span title="Personenname">Münter</span> hat neuerlichst die Aufmerksamkeit der Astro-<br/>
+nomen auf diesen Gegenstand gelenkt. <span title="Personenname"><a href="http://d-nb.info/gnd/100351212">Ideler</a></span> hat bewiesen, dass 747<br/>
+nach Rom eine Konjunkzion von <span title="Jup." class="dta-abbr">Jupiter</span> und Saturn in den Fischen<br/>
+Statt fand: <span title="Personenname"><a href="http://d-nb.info/gnd/118679724">Dionysius</a></span> sezt den Anfang unserer Zeitrechnung in <span title="d." class="dta-abbr">das</span><br/>
+Jahr 754. daher zälen wir immer 6 Jahr zu wenig; – 1670 er-<br/>
+schien ein neuer Stern im Fuchse, der vom Pater <span title="Personenname"><a href="http://viaf.org/viaf/299934989">Antelm</a></span> zuerst<br/>
+gesehn wurde, er war 3<span title="￼" class="dta-abbr"><span class="sup ">ter</span></span> <span title="Gr." class="dta-abbr">Grösse</span> und leuchtete 3 Monate; 1671 loderte<br/>
+er wieder auf, und verschwand auf immer. Um kleines mit<br/>
+grossem zu vergleichen, so ist es hier, als ob der Meeresboden sich<br/>
+periodisch erhöbe. In den Plejaden hielt man lange einen Stern<br/>
+für verloren, weil man mit blossen Augen nur 6 von gleicher Grösse,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0166 : 81v|</span><br/>
+oder aber 8 und 9 sieht: davon ist Alcyone 3<span title="￼" class="dta-abbr"><span class="sup u ">ter</span></span> <span title="Gr" class="dta-abbr">Grösse</span>. <span title="Personenname"><a href="http://d-nb.info/gnd/118590995">Ovid</a></span> in den Fasten<br/>
+meint, dass der eine davon komme und gehe. Die Griechen hatten<br/>
+hierüber den Mythus, dass der <span class="dta-del" title="Streichung (#s)">eine</span><span class="dta-add" title="Hinzufügung (superlinear)">7<span class="sup uu ">te</span></span> Stern, Elektra, die Tochter des<br/>
+Atlas, bei der Zerstörung von Troja sich vom Himmel weggeschli-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="dta-metamark" title="metamark">⎡</span>heist bei d. Griechen<br/>
+Alopex.<br/>
+</span>chen habe, und nachher als <span class="dta-metamark" title="metamark">⎡</span>Reuterlein im grossen Bären wieder<br/>
+zum Vorschein gekommen sei.</p><br/>
+<p class="dta-p">Es giebt auch Sterne, welche zwar nicht verschwinden, aber doch<br/>
+<span class="dta-marginal dta-marginal-left"><span class="dta-metamark" title="metamark">?</span><br/>
+</span>ihre Lichtstärke verändern. Algot in der Medusa geht in 3 Stunden<br/>
+von der 1<span title="￼" class="dta-abbr"><span class="sup ">ten</span></span>–4<span title="￼" class="dta-abbr"><span class="sup ">ten</span></span> Grösse über, <span class="dta-del" title="Streichung (#s)">ihre</span> die ganze Periode ist von 2 Tagen<br/>
+20 Stunden, 40 Sekunden; – 1783 fand <span title="Personenname">Goudry</span> dass η im Antinous<br/>
+<span class="dta-del" title="Streichung (#s)">eine Stern</span> in 7 <span title="Schreibfehler: Tage" class="dta-corr">Tagen</span> von der 3<span title="￼" class="dta-abbr"><span class="sup ">ten</span></span> zur 4<span title="￼" class="dta-abbr"><span class="sup u ">ten</span></span> Grösse übergehe<span class="dta-del" title="Streichung (#s)">;</span><span class="dta-add" title="Hinzufügung (intralinear)">.</span> Andre<br/>
+Bewegungen sind unregelmässiger also auch gewaltsamer. <span title="Personenname"><a href="http://d-nb.info/gnd/118685708">Fabrizius</a></span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="dta-metamark" title="metamark">?</span><br/>
+</span>entdeckte 1596 <span class="u ">Misa</span> im Wallfisch als einen veränderlichen<br/>
+Stern, dessen Periode <span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Cassini</a></span> auf fast 1 Jahr (334 Tage) be-<br/>
+stimte, während welcher er von der 2<span title="￼" class="dta-abbr"><span class="sup ">ten</span></span> zur 3<span title="￼" class="dta-abbr"><span class="sup u ">ten</span></span> Grösse übergeht, und<br/>
+dann ganz verschwindet<span title="Schreibfehler: .;" class="dta-corr">;</span> – der im Schwan 1600 von P. <span title="Personenname"><a href="http://viaf.org/viaf/299934989">Antelm</a></span><br/>
+und <span title="Personenname"><a href="http://d-nb.info/gnd/118561448">Kepler</a></span> beobachtete hat 19 Jahr geschienen, dann kam er<br/>
+1655 wieder als ein Stern 3<span title="￼" class="dta-abbr"><span class="sup ">ter</span></span> Grösse, und blieb dann unverän-<br/>
+dert als ein Stern 6<span title="￼" class="dta-abbr"><span class="sup ">ter</span></span> <span title="Gr." class="dta-abbr">Grösse</span> am Himmel; – 1686 entdekte<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0167 : 82r|</span><br/>
+<div class="fw-top fw-sig">21.</div><br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/116181567">Kirch</a></span> einen veränderlichen Stern, welcher seitdem auch geblieben ist. –<br/>
+Kastor war sonst heller als Pollux, jezt ist es umgekehrt, eben so mit<br/>
+einem Sterne im Adler; – im Viereck des grossen Bären ist δ<br/>
+jezt der schwächste Stern, zu <span title="Personenname"><a href="http://d-nb.info/gnd/118514237">Tycho</a></span>'s Zeiten war er 2<span title="￼" class="dta-abbr"><span class="sup u ">ter</span></span> Grösse:<br/>
+ja man kann annehmen, dass alle 7 Sterne ihr Licht verändert<br/>
+haben. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/11931035X">Méran</a></span></span> erklärte diese Erscheinung durch die Linsengestalt<br/>
+der Sterne, welche im Rotiren grösser und kleiner erscheinen:<br/>
+andre wollen, dass es auch dunkle Sterne gebe, in denen ein sehr<br/>
+schwacher oder gar kein Lichtprozes vorgehe; dies führt uns auf<br/>
+die alte Idee der Gegenerde, aus dem <span title="Personenname"><a href="http://d-nb.info/gnd/118791974">Philolaos</a></span>.</p><br/>
+</div></body></html>

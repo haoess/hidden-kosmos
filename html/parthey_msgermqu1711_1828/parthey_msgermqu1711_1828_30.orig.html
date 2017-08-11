@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session">   <div class="dta-head"><span title="Original: 30. 16 Febr.Februar" class="dta-reg">30. Vorlesung, 16.02.1828</span></div><br/>
+<p class="dta-p">Die <span class="u ">Angular-quantität</span>, um welche die Nadel vom wahren<span class="dta-marginal dta-marginal-right">[Diese ganze trefliche Stelle müste<br/>
+am Ende der Betrachtungen über den<br/>
+Magnetismus stehn: denn die Inkli-<br/>
+nazion wird darin erwähnt, welche<br/>
+erst viel weiter unten erklärt wird,<br/>
+eben so der <span title="magn." class="dta-abbr">magnetische</span> Aequator.]<br/>
+</span><br/>
+Norden abweicht, heist die Abweichung, und läst sich am<br/>
+besten durch ein magnetisches Fernrohr bestimmen. –</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0336 : 166v|</span><br/>
+<p class="dta-p">Die magnetische Kraft, als ein Substrat der magnetischen<br/>
+Spannung, zeigt sich am deutlichsten in dem Erdlicht, welches<br/>
+an den Polen ausgestralt wird, und das jedesmal die Magnet-<br/>
+nadel auffallend affizirt.</p><br/>
+<p class="dta-p">Dass die magnetische und elektrische Kraft ein und dieselbe<br/>
+seien, haben <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118786784">Oerstädt</a></span></span>'s glänzende Entdekkungen deutlich be-<br/>
+wiesen: da aber immer Heterogenität in den respektiven<br/>
+Erscheinungen statt findet, so bedient man sich 2er Instru-<br/>
+mente, um sie wahrzunehmen, der Magnetoskope und der<br/>
+Elektroskope.</p><br/>
+<p class="dta-p">Einen ruhigen Gang zeigt die elektro-magnetische Kraft in<br/>
+den stündlichen oder vielmehr täglichen Abweichungen der<br/>
+Nadel, die beim Aufgange der Sonne nach Osten hin inkli-<br/>
+nirt, <span class="dta-del" title="Streichung (#s)">dann</span><span class="dta-add" title="Hinzufügung (superlinear)">zu Mittag</span> durch den Meridian geht, und am Abend nach<br/>
+Westen sich wendet. Unperiodische Strömungen aber<br/>
+zeigen sich bei Gewittern, wo die Elektroskope häufig vom<br/>
+positiven auf den negativen Pol, und umgekehrt, überspringen.<br/>
+Ausserdem giebt es aber noch bei nächtlichen Versuchen<br/>
+wunderbare Zukkungen, die ein Schwanken um <span class="dta-del" title="Streichung (#s)">d.</span><span class="dta-add" title="Hinzufügung (across)">einen</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0337 : 167r|</span><br/>
+Mittelzustand der magnetischen Spannung anzudeuten<br/>
+scheinen.</p><br/>
+<p class="dta-p">In England haben sich um die Lehre vom Magnetismus<br/>
+besonders verdient gemacht: <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118531921">Faraday</a></span></span>, <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118524089">Davy</a></span></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/118703897"><span class="u ">Herschel</span> jun.</a></span><br/>
+indessen ist noch kein allgemeines Resultat zu Stande<br/>
+gekommen; und wenn wir gleich sagen können, dass seit<br/>
+1820 grosse Schritte geschehn sind im Begreifen des na-<br/>
+turgemässen Ganges der magnetischen Erscheinungen: so<br/>
+dürfen wir uns doch nicht verhehlen, dass diese Lehre noch<br/>
+weit davon entfernt ist, mit so grosser <span class="dta-del" title="Streichung (#ow)">g</span><span class="dta-add" title="Hinzufügung (across)">G</span>enauigkeit bestim̃t<br/>
+durchgeführt zu sein: als etwa die von <span title="Personenname"><a href="http://d-nb.info/gnd/118587544">Newton</a></span><span class="dta-del" title="Streichung (#s)">s</span> entdekten<br/>
+Gravitazionsgeseze in der ausgeführten Mechanik des<br/>
+Himmels. Die beiden Probleme sind aber ganz verschie-<br/>
+dener Natur. Bei den Gesezen der Schwere haben wir es<br/>
+nur mit der Masse der Körper und mit ihrer Dichtigkeit<br/>
+zu thun: wenn aber von den physikalischen Eigenschaften<br/>
+der Körper die Rede ist: dann leg<span class="dta-del" title="Streichung (#s)">t</span><span class="dta-add" title="Hinzufügung (superlinear)">en</span> <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">d</span>ie Heterogeineität<br/>
+ihrer <span class="dta-del" title="Streichung (#s)">Mischun</span><span class="dta-add" title="Hinzufügung (intralinear)">Stoffe</span>, ihre chemische Mischung, und das<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0338 : 167v|</span><br/>
+Verhalten der einzelnen Theile zu einander, dem Forscher<br/>
+solche Schwierigkeiten in den Weg, dass es immer schwe-<br/>
+rer und schwerer wird, ihre Geseze zu erkennen.</p><br/>
+<p class="dta-p">Obgleich uns der magnetische Aequator <span title="Schreibfehler: züganglicher" class="dta-corr">zugänglicher</span> ist<br/>
+als die magnetischen Pole, welche man fast gar nicht<br/>
+kennt: so wissen wir doch auch davon sehr wenig. <span title="Hr." class="dta-abbr">Herr</span><br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/116461357">Hansteen</a></span> nimt 2 Nord- und 2 Südpole an. Von den beiden<br/>
+Nordpolen liegt der eine in Nordamerika <span title="zw." class="dta-abbr">zwischen</span> 60–70° Breite,<br/>
+der andre nördlich vom Ausflusse des Jenisei. Die beiden<br/>
+Südpole beruhen fast ganz auf Hypothesen, da man jene<br/>
+Länder so wenig untersucht hat: nach <span title="Personenname"><a href="http://d-nb.info/gnd/116461357">Hansteen</a></span>'s<br/>
+Meinung liegen sie näher beim Südpole, als die magne-<br/>
+tischen Nordpole beim Nordpol der Erde<span class="dta-del" title="Streichung (#ow)">,</span><span class="dta-add" title="Hinzufügung (across)">:</span> der erste südlich<br/>
+im Meridian von Van Diemensland, der 2<span title="t￼" class="dta-abbr"><span class="sup u ">te</span></span> im Meridian<br/>
+des erst seit kurzem entdekten Neu-Shetland und Neu-<br/>
+Georgien. Der eine nördliche Pol in Kanada ist auf<br/>
+der lezten Expedizion von <span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parry</a></span> nördlich umgangen wor-<br/>
+den, so dass ihnen die Nadel nicht mehr die Richtung<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0339 : 168r|</span><br/>
+nach Norden, sondern eine ganz abweichende nach Südwest<br/>
+zeigte.</p><br/>
+<p class="dta-p">Der magnetische Aequator liegt da, wo die Inklinazion<br/>
+<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">[</span>wovon weiter unten die Rede sein wird] gleich Null ist,<br/>
+sehr bemerkenswerth ist es aber, dass er nicht nur nicht<br/>
+mit dem Erdäquator zusammenfält (was sich freilich schon<br/>
+aus der abweichenden Stellung seiner Pole schliessen liesse)<br/>
+sondern dass er nicht einmal ein gröster Kreis ist: er<br/>
+windet sich sehr unregelmässig um die Erde, <span title="Schreibfehler: um" class="dta-corr">und</span> durch-<br/>
+schneidet den Aequator der Erde an verschiedenen Stellen:<br/>
+darum eben ist jede mathematische Anwendung sowohl<br/>
+auf die Linien, als auch auf die Erscheinungen der magne-<br/>
+tischen Kraft so überaus schwierig. Man hat sich bis jezt<br/>
+darauf einschränken müssen, nur die empirischen Geseze,<br/>
+denen die <span title="magn." class="dta-abbr">magnetische</span> Kraft auf der Erde folgt, aufzusuchen, und<br/>
+die isodynamischen Linien zu bestimmen: man hat sie<br/>
+erklärt durch einen im Innern der Erde befindlichen Magnet,<br/>
+mit 1 oder 2 Polen (<span title="Original: jenachdem" class="dta-reg">je nachdem</span> man 2 oder 4 Axen annahm)<br/>
+der in einer gewissen Bewegung begriffen ist. Dies ist aber<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0340 : 168v|</span><br/>
+keine physische Erklärung: die Schwierigkeit wird dadurch<br/>
+nicht gehoben, sondern gleichsam nur von der Oberfläche der<br/>
+Erde in ihre Tiefe gebracht.</p><br/>
+<p class="dta-p">Bedenkt man aber wiederum, dass die Linien ohne Abwei-<br/>
+chung, wenn sie vom Meere auf den Kontinent übergehn,<br/>
+länger auf dem<span class="dta-del" title="Streichung (#s)">selben</span> Kontinente verweilen, so möchte dies<br/>
+zu der Vermuthung Anlas geben, dass die Dichtigkeit selbst<br/>
+der Massen, einen Einflus auf das schnelle<span class="dta-del" title="Streichung (#s)">s</span> oder lang-<br/>
+same Vorrükken derselben habe.</p><br/>
+<p class="dta-p">Wir müssen uns gestehn, dass wir bis jezt keine Einsicht<br/>
+in den physischen Kausalzusammenhang der magnetischen<br/>
+Erscheinungen haben, weil wir die Grundursach derselben<br/>
+noch nicht haben auffinden können. Wo von etwas quan-<br/>
+titativ-veränderlichen die Rede ist, da kann die Mathe-<br/>
+matik angewendet werden, bei allem andern aber ist sie<br/>
+von keinem Nuzen. So wäre es z. B. sehr leicht, eine Projek-<br/>
+zion des Amazonenstromes nach Abszissen und Ordinaten<br/>
+zu machen, die man einer ganz genauen Berechnung<br/>
+unterwerfen könte: man würde aber durchaus keinen Schlus<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0341 : 169r|</span><br/>
+von dem oberen Laufe auf den unteren machen können.</p><br/>
+<p class="dta-p">Man kann auch durch mathematisches Interpoliren man-<br/>
+ches finden, wenn man eine Reihe von Erscheinungen in grossen<br/>
+Entfernungen vor sich hat: allein der bestimte Zustand<br/>
+der magnetischen Erscheinungen hat <span title="Schreibfehler: er" class="dta-corr">erst</span> seit ganz kurzem<br/>
+die genauere <span class="dta-del" title="Streichung (#s)">Beo</span><span class="dta-add" title="Hinzufügung (intralinear)">Aufmerksamkeit</span> der Forscher auf sich<br/>
+gezogen: alle guten Beobachtungen datiren erst von 30–35<br/>
+Jahren her, und danach will man Schlüsse auf Perioden<br/>
+von 3–4000 Jahren machen? So hat <span title="Hr." class="dta-abbr">Herr</span> <span title="Personenname"><a href="http://d-nb.info/gnd/116461357">Hansteen</a></span> mehrere<br/>
+Perioden angenommen, von denen die eine 860, die andre<br/>
+1400 Jahr dauern, aber noch sehr weit von der mathematischen <br/>
+Schärfe entfernt sind, die wir in andern Wissenschaften er-<br/>
+reichen konten.</p><br/>
+<p class="dta-p">Man ist noch weiter gegangen, und hat – fast spielend –<br/>
+diese neu gefundenen Perioden, in denen der Umlauf der<br/>
+magnetischen Pole um den Weltpol enthalten sein soll, mit<br/>
+den indischen Perioden des Kadari <span class="dta-metamark" title="metamark">(?)</span> verglichen, welche alle<br/>
+Multipla der geheimnisvollen Zahl 234 oder 430 sind. Der<br/>
+deutsche Astronom <span title="Personenname"><a href="http://d-nb.info/gnd/117161357">Burkhardt</a></span> in Paris berechnete auf diese<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0342 : 169v|</span><br/>
+Art eine Periode, (indem er <span class="dta-del" title="Streichung (#ow)">d</span><span class="dta-add" title="Hinzufügung (across)">a</span>lle Umläufe des magnetischen<br/>
+Poles um den Weltpol addirte <span class="dta-metamark" title="metamark">(?)</span>) welche auch ein Multiplum<br/>
+von 430 ist, und ungefähr 25000 Jahre beträgt. Nun ist<br/>
+dies auch die Periode für die Präzession der Aequinokzien,<br/>
+und hierin glaubte man ein neues Geheimnis zu finden.</p><br/>
+<p class="dta-p">Aber dies führte zu keinem Resultat, und bis jezt giebt<br/>
+es noch keine mathematische Theorie, welche auf genügende<br/>
+Weise, die Abweichung, Inklinazion und die dynamischen<br/>
+Linien mit einander verbindet. Für die Empirie ist sehr viel<br/>
+geschehn, und man kann sagen, dass, so kurz auch die Zeit<br/>
+ist, seitdem man sich mit den magnetischen Erscheinungen<br/>
+genauer beschäftigt, doch die Fortschritte in der Erkentnis we-<br/>
+nigstens der empirischen Geseze sehr gros gewesen sind. Vor<br/>
+allen mus hier <span title="Hr." class="dta-abbr">Herr</span> <span title="Personenname"><a href="http://d-nb.info/gnd/116461357">Hansteen</a></span> in Norwegen genant werden,<br/>
+der sehr schöne Beobachtungen mit anhaltendem Fleisse<br/>
+gemacht, und zuerst einen Zusammenhang der magnetischen<br/>
+Oszillazionen mit den Nordlichtern nachgewiesen hat: er wird<br/>
+noch in diesem Jahre eine Reise nach Ostasien machen, um<br/>
+dort die Linien ohne Abweichung zu bestimmen, und man kann<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0343 : 170r|</span><br/>
+<div class="fw-top fw-sig">43.</div><br/>
+sich sehr viel von dieser Expedizion versprechen.</p><br/>
+<p class="dta-p">Wir fahren fort, von der <span class="u ">Deklinazion</span> oder Abweichung der Magnet-<br/>
+nadel einiges anzuführen. Bei den 4 Linien ohne Abweichung<br/>
+ist nachzutragen, dass die erste, welche in den atlantischen Ozean<br/>
+fält, sich am wenigsten scheint geändert zu haben, und dass die<br/>
+3<span title="￼" class="dta-abbr"><span class="sup u ">te</span></span> Neuholland und die Molukken durchschneidet, und sich in 2<br/>
+Zweigen nach Asien hinauf wendet.</p><br/>
+<p class="dta-p">Die <span class="dta-del" title="Streichung (#s)">Deklinazion</span><span class="dta-add" title="Hinzufügung (superlinear)">stündliche Abweichung</span> wurde nicht von <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117553239">Graham</a></span></span> zuerst gefunden, wie<br/>
+man gewöhnlich annimt, sondern schon 1682 von den Jesuiten in<br/>
+Siam beobachtet. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/124162878">Prony</a></span></span> fand das Mittel, sie vermöge eines magne-<span class="dta-marginal dta-marginal-right">[oben hies es <span title="Hr" class="dta-abbr">Herr</span> <span title="Personenname"><a href="http://d-nb.info/gnd/119151456">v. Zach</a></span>.]<br/>
+</span><br/>
+tischen Fernrohres zu messen.</p><br/>
+<p class="dta-p">Schon <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Cassini</a></span></span> bemerkte ein Wiederkehren der magnetischen Dekli-<br/>
+nazion, und <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/12233020X">Guilpert</a></span></span>'s <span class="dta-metamark" title="metamark">(?)</span> <span title="Original: 12 jährige" class="dta-reg">12-jährige</span> Versuche haben es bestätigt, dass<br/>
+es nicht blos eine tägliche Ebbe und Flut giebt, sondern auch<br/>
+<span title="Original: 2 jährliche" class="dta-reg">2-jährliche</span>. Die beiden maxima fallen in den Juny und Dezember, die<span class="dta-marginal dta-marginal-right"><span class="dta-metamark" title="metamark">?</span><br/>
+</span><br/>
+beiden minima in den März und September, <span class="dta-del" title="Streichung (#s)">also</span> <span class="dta-del" title="Streichung (#s)">si</span> richten sich also<br/>
+nach den beiden Solstizien und Aequinokzien, man darf daher einen<br/>
+Zusammenhang mit der Rotazion sowohl, als auch mit der Trans-<br/>
+lazion der Erde voraussezen. Die tägliche Deklinazion könte man zu<br/>
+einer Uhr benuzen, die fast bis auf ¼ Stunde <span title="Schreibfehler: die Tageszeit2 genau1" class="dta-corr">genau die Tageszeit</span> gäbe.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0344 : 170v|</span><br/>
+Die Quantität der Abweichung ist bei uns in manchen Winter-<br/>
+monaten nur 6–7 Minuten: sie wächst aber auf 8–10 <span title="u" class="dta-abbr">und</span> 12 Min.<br/>
+<span title="Schreibfehler: im" class="dta-corr">Im</span> July kann der Unterschied vom Morgen bis Nachmittag 19<br/>
+Minuten, also fast ⅓° betragen: bei Nordlichtern steigt die Ab-<br/>
+weichung auf 20–22 Minuten.</p><br/>
+<p class="dta-p">Schon früher fand <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118653326">Celsius</a></span></span> in Schweden, was auch nachher durch<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/116461357">Hansteen</a></span> bestätigt wurde, dass die Nordlichter einen starken<br/>
+Einflus auf die Oszillazion der Nadel ausüben, auch <span class="dta-del" title="Streichung (#s)">von</span><span class="dta-add" title="Hinzufügung (intralinear)">wenn</span><br/>
+man sie nicht über dem Horizonte sieht. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> in Paris hat<br/>
+sehr genau die Stunden angemerkt, wo, während der Expedizion von<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parry</a></span> die Nadel unruhig wurde, und es hat sich nachher ausge-<br/>
+wiesen, dass jedesmal zu derselben Zeit ein Nordlicht am Him-<br/>
+mel gewesen war.</p><br/>
+<p class="dta-p">Die tägliche Abweichung der Nadel geht bei uns von Osten nach<br/>
+Westen, welches man mit der verschiedenen Erwärmung des Erd-<br/>
+körpers hat erklären wollen. <span title="Personenname"><a href="http://d-nb.info/gnd/124760295">Freycinet</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/117663476">Duperrey</a></span> fanden<br/>
+grade das entgegengesezte in der südlichen Hemisphäre. Man<br/>
+nent dies: <span class="u ">affollement</span> oder Beunruhigung der Nadel.</p><br/>
+<p class="dta-p">Im Jahre 1806 beobachtete ich hier in Berlin die Nadel,<br/>
+während eines Nordlichtes, <span title="Schreibfehler: dass" class="dta-corr">das</span> man auch hier wahrnehmen<br/>
+konte: ich bemerkte eine grosse Deklinazionsveränderung, aber<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0345 : 171r|</span><br/>
+keine Zukkungen oder Oszillazionen. Bei ganz heiterm Himmel<br/>
+giebt es auch Stunden in der Nacht, wo die Nadel äusserst un-<br/>
+ruhig wird, und von 20–25 Minuten oszillirt. Mit <span title="Hrn." class="dta-abbr">Herrn</span> <span title="Personenname"><a href="http://d-nb.info/gnd/11858975X">Olbers</a></span><br/>
+(oder <span title="Personenname"><a href="http://d-nb.info/gnd/117123544">Oltmans</a></span>) habe ich über 1 Jahr lang die <span title="Magn." class="dta-abbr">Magnet</span>nadel beobach-<br/>
+tet, und wir haben es oft bei unsern nächtlichen Versuchen bemerkt,<br/>
+dass mehrere Nächte hintereinander die Nadel zu denselben Stun-<br/>
+den unruhig wurde, es fand eine plözliche Veränderung des magne-<br/>
+tischen Meridians Statt.</p><br/>
+<p class="dta-p"><span class="u ">Von der Inklinazion</span>.</p><br/>
+<p class="dta-p">Wenn man eine Nadel, deren beide Hälften von ganz gleicher<br/>
+Schwere sind, magnetisirt, und horizontal aufhängt, so wird sie sich<span class="dta-add" title="Hinzufügung (right)"> (bei uns)</span><br/>
+gegen den Nordpol hinneigen: den Winkel, um welchen sie in<br/>
+den verschiedenen Breiten von der Horizontallinie abweicht, nent<br/>
+man die Inklinazion. Die Beobachtungen, welche man auf <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118522027">Cook</a></span></span>'s<br/>
+ersten beiden Reisen dar<span class="dta-del" title="Streichung (#s)">auf</span><span class="dta-add" title="Hinzufügung (superlinear)">über</span> gemacht, sind so unvolkommen, dass<br/>
+man sie kaum brauchen kann. Erst auf der dritten Reise hatte<br/>
+man bessere Instrumente, und nun wurden auch die Beobach-<br/>
+tungen genauer. Der magnetische Aequator heist diejenige Linie,<br/>
+in welcher die Inklinazion Null ist, also wo die Nadel völlig hori-<br/>
+zontal steht. In Amerika bestimte ich diese Linie unter 4–5 Grad<br/>
+Südbreite, wo sie die Andeskette durchschneidet. <span title="Personenname"><a href="http://d-nb.info/gnd/124760295">Freycinet</a></span> durchschnitt<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0346 : 171v|</span><br/>
+den <span title="magn." class="dta-abbr">magnetischen</span> Aequator 6 mal in der Südsee. So weit man ihn jezt<br/>
+kent, tritt er ein beim Kap Guardafui, südlich von der Strasse<br/>
+Bab-el-Mandeb, und geht in das Innere von Afrika, wo man<br/>
+ihn nicht weiter verfolgen kann: bei seinem Austritte auf der<br/>
+andern Seite bleibt er immer südlich vom Erdäquator, auch in<br/>
+Amerika bleibt er südlich vom Amazonenstrom, bei dem Gallapa-<br/>
+gos-Inseln schneidet er den <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Original: Erd" class="dta-reg">Erd-</span></span>Aequator wieder, und schlängelt sich<br/>
+dann nördlich. Er ist aber auch nicht als stillstehend zu betrach-<br/>
+ten: sondern sein Durchschnittspunkte mit dem Erdäquator<br/>
+rükken von Osten nach Westen vor. Magnetische Breite nent<br/>
+man den Abstand der Orte vom <span title="magn." class="dta-abbr">magnetischen</span> Aequator, dessen Fort-<br/>
+schieben eine Ursach der vermehrten oder verminderten Inklina-<br/>
+zion ist. Für Berlin bestimte ich 1805 mit <span title="Personenname"><a href="http://d-nb.info/gnd/118716581">Gay-Lussac</a></span> die Inklina-<br/>
+zion auf 69°50′, und 1827 mit <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">den </span><span title="Hrn." class="dta-abbr">Herren</span> <span title="Personenname"><a href="http://d-nb.info/gnd/119059452">Erman</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/116471727">Encke</a></span>, im Thiergar-<br/>
+ten auf 68°39′. Man sieht, dass sie in 22 Jahren um mehr als<br/>
+einen Grad abgenommen hat: mithin mus der magnetische<br/>
+Aequator uns näher gerükt sein. Captain <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parry</a></span></span> fand unter 73° <span title="Nbreite" class="dta-abbr">Nordbreite</span><br/>
+im Port Bon in der Prince Regentstrasse die Inklinazion: 88° also<br/>
+fehlten nur noch 2°, dass sie Nadel perpendikulär gestanden hätte.</p><br/>
+<p class="dta-p">Ähnliche Veränderungen wie in Berlin hat man auch in Paris<br/>
+beobachtet, und zufällig bin ich auch da der erste gewesen, der die<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0347 : 172r|</span><br/>
+älteste genaue Bestimmung im Jahre 1798 mit <span title="Hrn." class="dta-abbr">Herrn</span> <span title="Personenname"><a href="http://d-nb.info/gnd/11762084X">Borda</a></span> gemacht<br/>
+hat. Dieser beobachtete mit seinem vortreflichen Inklinatorium, und<br/>
+man fand, dass bis 1827 die Inklinazion jährlich um 4 Minuten<br/>
+abgenommen habe. Auch in der Havannah machte ich die ersten ge-<br/>
+nauen Beobachtungen, dann wiederum der <span title="Capt." class="dta-abbr">Captain</span> <span title="Personenname"><a href="http://d-nb.info/gnd/11671350X">Sabine</a></span> vor 2 Jahren,<br/>
+und auch hier war die Mittelzahl der jährlichen Vorrükkung 4 Min.</p><br/>
+<p class="dta-p">Eben wie die Deklinazion, so hat auch die Inklinazion eine stünd-<br/>
+liche oder tägliche Variazion. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> hat in einem Mémoire aus-<br/>
+einandergesezt, dass sie von 9 Uhr früh bis 6 Uhr Abends wächst,<br/>
+und die Nacht hindurch bis um 9 Uhr früh abnimt.</p><br/>
+<p class="dta-p"><span class="u ">Von der Intensität der magnetischen Kraft</span>.</p><br/>
+<p class="dta-p"><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/11762084X">Borda</a></span></span>, dem wir die schönen, nach <span title="Personenname"><a href="http://d-nb.info/gnd/118579576">T. Mayer</a></span>'s Idee angefertigten<br/>
+Repetizionskreise verdanken, kam zuerst auf den Gedanken, ob die<br/>
+magnetische Kraft unter den verschiedenen Breiten nicht eine Ver-<br/>
+schiedenheit der Intensität zeige, und gab die dazu nöthigen In-<br/>
+strumente an. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117594989">Lapeyrouse</a></span></span> bekam demzufolge Instrukzionen, eine<br/>
+freihängende Nadel schwingen zu lassen, und die Schwingungen<br/>
+zu zählen. Von seinen Beobachtungen ist nichts bekant ge-<br/>
+worden, weil die Expedizion unterging. Ich habe auf meiner gan-<br/>
+zen Reise eine solche Nadel oszilliren lassen, und aus vielen<br/>
+1000 Beobachtungen das Resultat ziehn können<span class="dta-del" title="Streichung (#ow)">,</span><span class="dta-add" title="Hinzufügung (across)">:</span> dass die<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0348 : 172v|</span><br/>
+Intensität der <span title="magn." class="dta-abbr">magnetischen</span> Kräfte vom Aequator nach dem Pole<br/>
+<span class="u ">zunimt</span>: auch auf meiner Reise mit <span title="Personenname"><a href="http://d-nb.info/gnd/118716581">Gay Lussac</a></span> habe<span class="dta-del" title="Streichung (#s)">n</span> <span class="dta-del" title="Streichung (#s)">wir</span><span class="dta-add" title="Hinzufügung (superlinear)">ich</span> in<br/>
+Deutschland beständig verglichene Nadeln schwingen lassen; ich<br/>
+beobachtete die Oszillazion vom 16° <span title="Südl." class="dta-abbr">Südlicher</span> bis zum 52° <span title="Nördl." class="dta-abbr">Nördlicher</span> Breite,<br/>
+und fand das Verhältnis von 258 Schwingungen, zu 211 unter dem<br/>
+Aequator: die Temperatur ist nicht ohne Einflus darauf. Sezt man<br/>
+die Intensität unter dem Aequator = 1,00, so ist<br/>
+<div class="dta-list">   <span class="dta-list-item"><span class="u ">Neapel = 1,20</span></span>
+<span class="dta-list-item"><span class="u ">Paris = 1,34</span></span>
+<span class="dta-list-item"><span class="u ">Berlin<span title="Schreibfehler: ," class="dta-corr">[…]</span> = 1,37</span></span>
+<span class="dta-list-item"><span class="u ">Polargegenden = 1,70</span></span>
+</div>   denn auch der <span title="Kapt." class="dta-abbr">Kapitän</span> <span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parry</a></span> hat auf seiner Expedizion von mei-<br/>
+nen Nadeln einige mitgenommen, die ich zuvor in Paris hatte<br/>
+schwingen lassen. Er bemerkte, dass während des Nordlichtes<br/>
+die Stärke abnimt.</p><br/>
+<p class="dta-p">Indessen ist bei diesen Versuchen es sehr schlimm, dass man für<br/>
+längere Zeiträume kein sicheres Maas des Magnetismus hat:<br/>
+wir können den Nadeln nicht wilkürlich eine bestimte Stärke<br/>
+mittheilen, und sie verlieren auch nach und nach ihre Kraft: man<br/>
+wird also nach 1000 Jahren durchaus nicht wissen können, wie<br/>
+stark oder wie schwach unsre heutigen Nadeln gewesen sind: das<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0349 : 173r|</span><br/>
+beste Mittel wäre, Nadeln von ganz ungleicher Länge und ungleicher<br/>
+magnetischer Kraft anzuwenden: dann könte man nach einer Reihe von<br/>
+Jahren, wenn nicht ein grosser Zufall obwaltete, aus dem Unterschiede<br/>
+ihrer relativen Stärke auf die Ab- oder Zunahme der Intensität schliessen.</p><br/>
+</div></body></html>

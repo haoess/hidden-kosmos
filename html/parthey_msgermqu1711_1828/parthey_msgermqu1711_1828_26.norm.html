@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session">   <div class="fw-top fw-sig">35.</div><br/>
+<div class="dta-head"><span title="Original: 26. 2. Febr.Februar" class="dta-reg">26. Vorlesung, 02.02.1828</span></div><br/>
+<p class="dta-p">Wir kommen nun zum <span class="u ">zweiten <span title="Original: Theile" class="dta-reg">Teile</span></span> unserer Wissenschaft,<br/>
+der die tellurischen Verhältnisse umfassen wird, und den man<br/>
+sonst gewöhnlich mit dem Namen: physikalische Geographie<br/>
+bezeichnet, welche hier nach der von <span title="Personenname"><a href="http://d-nb.info/gnd/118618806">Strabo</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/118803948">Varenius</a></span> <span title="Original: ge-&#xA;gebenen" class="dta-reg">gegebenen</span> Erklärung: <span title="Original: „" class="dta-reg">"</span>affectiones telluris generales<span title="Original: ”" class="dta-reg">"</span> umfast.</p><br/>
+<p class="dta-p">Im allgemeinen können wir 3 Hauptmomente <span title="Original: feststel-&#xA;len" class="dta-reg">feststellen</span>, auf die wir <span title="Original: unsre" class="dta-reg">unsere</span> Betrachtung werden zu richten haben:<br/>
+<div class="dta-list">   <span class="dta-list-item">1, das starre.</span>
+<span class="dta-list-item">2, die Hüllen<br/>
+<div class="dta-list">   <span class="dta-list-item">a, die elastische</span>
+<span class="dta-list-item">b, die tropfbarflüssige</span>
+</div></span>   <span class="dta-list-item">3, das Organische<span class="dta-del" title="Streichung (#ow)">, </span><span class="dta-add" title="Hinzufügung (across)"> (</span>die Pflanzen und <span title="Original: Thiere" class="dta-reg">Tiere</span>, welche in ihren<br/>
+Uranfängen so nahe zusammenlaufen, dass man sie nicht<br/>
+wohl trennen kann: sie machen der <span title="Original: Masse" class="dta-reg">Maße</span> nach den kleinsten<br/>
+der 3 <span title="Original: Theile" class="dta-reg">Teile</span> aus, sind uns aber deswegen wichtig, weil in ihnen<br/>
+die <span title="Original: Masse" class="dta-reg">Maße</span> durch die Form besiegt, und in Gestalten ausgebildet<br/>
+erscheint.)</span>
+</div></p>   <p class="dta-p">Die Betrachtung des starren <span title="Original: Theiles" class="dta-reg">Teiles</span> <span title="Original: nent" class="dta-reg">nennt</span> man nicht ganz<br/>
+richtig: <span class="u ">Geognosie</span>, als wenn es <span title="Original: blos" class="dta-reg">bloß</span> auf die <span title="Original: Kentnis" class="dta-reg">Kenntnis</span> der <span title="Original: Bestand-" class="dta-reg">Bestandteile</span>
+<span class="dta-pb" style="padding-left:15em">|#f0280 : 138v|</span><br/>
+<span title="Original: theile" class="dta-reg"/> des Erdkörpers ankäme, und man nicht auf ihre <span title="Original: Ent-&#xA;stehung" class="dta-reg">Entstehung</span>, ihr Verhalten zu einander, und auf die vielen <span title="Original: Ver-&#xA;änderungen" class="dta-reg">Veränderungen</span> <span title="Original: sehn" class="dta-reg">sehen</span> <span title="Original: müste" class="dta-reg">müsste</span>, welche nach und nach mit ihnen <span title="Original: vor-&#xA;gegangen" class="dta-reg">vorgegangen</span> sind. Indessen würde es nicht <span title="Schreibfehler: röthlich" class="dta-corr"><span title="Original: nöthig" class="dta-reg">nötig</span></span> sein, diesen<br/>
+Namen zu ändern, da er einmal eingeführt, und ein <span title="Original: andrer" class="dta-reg">anderer</span><br/>
+nicht so leicht an <span title="Original: sein" class="dta-reg">seine</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: e" class="dta-reg"/></span> Stelle <span title="Original: gesezt" class="dta-reg">gesetzt</span> ist: die <span title="Original: beschriebende" class="dta-reg">Beschriebende</span><br/>
+Mineralogie bezeichnet man sehr gut durch: Oryktognosie.</p><br/>
+<p class="dta-p">Die Geognosie <span title="Original: theilen" class="dta-reg">teilen</span> wir in 5 Abschnitte:<br/>
+<div class="dta-list">   <span class="dta-list-item">1, Gestalt und Dichte der Erde.</span>
+<span class="dta-list-item">2, innere Wärme, Lichterscheinungen.</span>
+<span class="dta-list-item">3, Elektrizität und Magnetismus, welches dieselbe Kraft ist.</span>
+<span class="dta-list-item">4, Veränderungen an der Oberfläche als Folgen der Verbindung<br/>
+des <span title="Original: Innern" class="dta-reg">Inneren</span> der Erde mit dem Äusseren: Vulkane, <span title="Original: heisse" class="dta-reg">heiße</span><br/>
+Quellen. Erdbeben.</span>
+<span class="dta-list-item">5, das Gegliederte der Kontinente, die Bergketten.</span>
+</div></p>   <hr/><br/>
+<p class="dta-p"><span class="u ">Von der Gestalt und Dichte der Erde.</span></p><br/>
+<p class="dta-p">Dieser Gegenstand, mit dem sich schon das <span title="Original: Alterthum" class="dta-reg">Altertum</span> <span title="Original: ange-&#xA;legentlich" class="dta-reg">angelegentlich</span> beschäftigte, ist in neueren Zeiten mit ganz <span title="Original: be-&#xA;sonderer" class="dta-reg">besonderer</span> Aufmerksamkeit behandelt worden, da er so sehr<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0281 : 139r|</span><br/>
+wichtig für die Schiffahrt, die Zeichnung der Landkarten, und<br/>
+überhaupt für alles graphische ist, was sich auf die Erde<br/>
+bezieht; ja es ist noch vor kurzem der Fall vorgekommen, dass<span class="dta-marginal dta-marginal-right"><span class="dta-metamark" title="metamark">wo?</span><br/>
+</span><br/>
+man sehr <span title="Original: theure" class="dta-reg">teure</span> geodätische <span title="Original: Operazionen" class="dta-reg">Operationen</span> hat machen lassen,<br/>
+um einen Kataster anzufertigen; als man die einzelnen Blätter<br/>
+<span title="Original: zusammensezen" class="dta-reg">zusammensetzen</span> wollte, war dies ganz unmöglich und nichts <span title="Original: pas-&#xA;te" class="dta-reg">paste</span> aufeinander, weil man auf die Krümmung der Erde keine<br/>
+<span title="Original: Rüksicht" class="dta-reg">Rücksicht</span> genommen. Die Messungen <span class="dta-del" title="Streichung (#ow)">f</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: d" class="dta-reg">der</span></span><span title="Original: er" class="dta-reg"/> Abstände am Himmel<br/>
+und auf der Erde sind eben so unentbehrlich für das graphische<br/>
+in der Geographie, als für die Bestimmung der <span title="Original: Maasse" class="dta-reg">Maße</span> im <span title="Original: allge-&#xA;meinen" class="dta-reg">allgemeinen</span>.</p><br/>
+<p class="dta-p"><span class="u ">Geschichte der Gradmessungen.</span></p><br/>
+<p class="dta-p">Eine flache Erdscheibe vom Okeanos umflutet war die älteste<br/>
+Vorstellung, welche wir bei den Griechen von der Gestalt der<br/>
+Erde finden, namentlich bei <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118801732"><span title="Original: Thales" class="dta-reg">Tales</span></a></span></span>, dem Stifter der ionischen<br/>
+Schule. <span title="Personenname"><a href="http://d-nb.info/gnd/118595083">Plinius</a></span> <span title="Original: giebt" class="dta-reg">gibt</span> sehr unkritisch an, dass <span title="Personenname"><a href="http://d-nb.info/gnd/118801732"><span title="Original: Thales" class="dta-reg">Tales</span></a></span> schon<br/>
+die Kugelgestalt der Erde angenommen habe, obgleich wir <span title="Original: be-&#xA;stimt" class="dta-reg">bestimmt</span> wissen, dass dieser Gedanke erst beim <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118597248">Pythagoras</a></span></span> und<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0282 : 139v|</span><br/>
+seiner Schule aufgekommen ist. Das <span title="Original: unverwerflichte" class="dta-reg">unverwerfliche</span> Zeugnis<br/>
+dafür <span title="Original: giebt" class="dta-reg">gibt</span> <span title="Personenname"><a href="http://d-nb.info/gnd/118791974">Philolaos</a></span>. Für die Annahme der Kugelgestalt<br/>
+hatte man fast alle Gründe gefunden, die wir <span title="Original: jezt" class="dta-reg">jetzt</span> haben; man<br/>
+sah bei Mondfinsternissen den Schatten der Erde rund in den<br/>
+Mond eintreten; man machte die Bemerkung, dass wenn man<br/>
+von <span title="Original: Cypern" class="dta-reg">Zypern</span> nach <span title="Original: Alexand" class="dta-reg">Alexandria</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 2 Zeichen fehlen]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: ri" class="dta-reg"/></span><span title="Original: a" class="dta-reg"/> segelte, das Gestirn des Canopus<br/>
+am Horizonte höher zu <span title="Original: stehn" class="dta-reg">stehen</span> kam. Die merkwürdigste<br/>
+Stelle ist beim <span title="Personenname"><a href="http://d-nb.info/gnd/118650130">Aristoteles</a></span> de coelo, wo er sagt: dass die Erde<br/>
+rund sein müsse, weil alle <span title="Original: Theile" class="dta-reg">Teile</span> gegen den Mittelpunkt eine<br/>
+gleiche Schwerkraft haben, und dass wenn einige <span title="Original: Theile" class="dta-reg">Teile</span> aus <span title="Original: die-&#xA;ser" class="dta-reg">dieser</span> Lage <span title="Original: k" class="dta-reg">kämen</span><span class="dta-del" title="Streichung (#ow)">o</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: a" class="dta-reg"/></span><span title="Original: ̈m" class="dta-reg"/><span class="dta-del" title="Streichung (#s)">m</span><span title="Original: en" class="dta-reg"/>, sie sich dahin <span title="Original: zurük" class="dta-reg">zurück</span> begeben würden, um das<br/>
+Gleichgewicht herzustellen. Man sieht, dass diese Ansicht eine<br/>
+<span title="Original: grosse" class="dta-reg">große</span> Ähnlichkeit mit dem <span title="Personenname"><a href="http://d-nb.info/gnd/118587544"><span title="Original: Newton" class="dta-reg">Newtonschen</span></a></span><span title="Original: schen" class="dta-reg"/> Systeme von den<br/>
+<span title="Original: Gesezen" class="dta-reg">Gesetzen</span> der <span title="Original: Gravitazion" class="dta-reg">Gravitation</span> hat. Auch <span title="Original: kömt" class="dta-reg">kommt</span> eine Stelle beim <span title="Personenname"><a href="http://d-nb.info/gnd/118525859"><span title="Original: Dioge-&#xA;nes" class="dta-reg">Diogenes</span> Laertius</a></span> vor, wo er sehr richtig über die <span title="Original: Gegenfüsler" class="dta-reg">Gegenfüssler</span> spricht,<br/>
+welche im <span title="Original: Alterthum" class="dta-reg">Altertum</span> fast allgemein angenommen wurden. <span title="Original: –" class="dta-reg">-</span><br/>
+Dies änderte sich freilich später so sehr, dass es förmlich <span title="Original: verbo-&#xA;ten" class="dta-reg">verboten</span> wurde, die Idee der Antipoden auszusprechen, und in den<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0283 : 140r|</span><br/>
+Zeiten der Barbarei hat der Papst <span title="Personenname"><a href="http://d-nb.info/gnd/100964397">Zacharias</a></span> den Bischof <span title="Personenname"><a href="http://d-nb.info/gnd/118804723"><span title="Original: Vir-&#xA;gilius" class="dta-reg">Virgilius</span> von Salzburg</a></span> seiner Würden <span title="Original: entsezt" class="dta-reg">entsetzt</span>, weil er behauptet<br/>
+hatte, es gebe Antipoden. <span title="Personenname"><a href="http://d-nb.info/gnd/118564994">Columbus</a></span> selbst fand in dieser Hinsicht<br/>
+Schwierigkeiten, und <span title="Original: konte" class="dta-reg">konnte</span> seine Gegner nicht überzeugen, obgleich<br/>
+er sich der Freundschaft des bedeutenden Physikers <span title="Personenname"><a href="http://d-nb.info/gnd/119163586">Toscanelli</a></span><br/>
+rühmte. Bei der Gradmessung, welche der Khalif <span title="Personenname"><a href="http://d-nb.info/gnd/118847686">Almahmun</a></span><br/>
+in Mesopotamien anstellen <span class="dta-del" title="Streichung (#s)">sah</span><span class="dta-add" title="Hinzufügung (superlinear)">lies</span>, sah man wohl ein, dass man<br/>
+nicht die ganze Erde messen könne, sondern nur einen sehr<br/>
+kleinen <span title="Original: Theil" class="dta-reg">Teil</span> ihres Umfangs: man vergleicht dabei einen <span title="Original: Him-&#xA;melsbogen" class="dta-reg">Himmelsbogen</span> mit einem Erdbogen: es sind also 2 <span title="Original: Operazionen" class="dta-reg">Operationen</span><br/>
+zu machen, eine geodätische und eine astronomische, welche<br/>
+sich aufeinander <span title="Original: beziehn" class="dta-reg">beziehen</span>. Ein <span title="Original: Theil" class="dta-reg">Teil</span> der Astronomen ging nach<br/>
+Norden, der <span title="Original: andre" class="dta-reg">andere</span> nach Süden, und sie standen still, als <span class="dta-del" title="Streichung (#ow)">s</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: e" class="dta-reg">ein</span></span><span title="Original: in" class="dta-reg"/><br/>
+Gestirn in ihrem <span title="Original: Zenith" class="dta-reg">Zenit</span> um <span class="u ">einen</span> Grad gesunken war. Ihren<br/>
+Weg <span title="Original: maassen" class="dta-reg">Maßen</span> sie nun, freilich sehr <span title="Original: unvolkommen" class="dta-reg">unvollkommen</span>, nach <span title="Original: Tage-&#xA;reisen" class="dta-reg">Tagereisen</span>, und diese Entfernung 360 <span title="Original: mal" class="dta-reg">Mal</span> genommen, gab den <span title="Original: Um-&#xA;fang" class="dta-reg">Umfang</span> der Erde. Auch in Nordamerika hat man beinahe <span title="Original: 1½" class="dta-reg">11/2</span><br/>
+Grade mit einer Kette gemessen, allein <span title="Personenname"><a href="http://d-nb.info/gnd/118878913">Delambre</a></span> hat gezeigt,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0284 : 140v|</span><br/>
+dass diese Messungen höchst <span title="Original: unvolkommen" class="dta-reg">unvollkommen</span> und eines geringen<br/>
+Vertrauens <span title="Original: werth" class="dta-reg">wert</span> sind. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118797794">Snellius</a></span></span>, nicht <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/11900643X">Pica</a></span></span> fiel zuerst darauf, dass<br/>
+es bequemer sei, die ganze <span title="Original: Strekke" class="dta-reg">Strecke</span> nicht hintereinander zu messen,<br/>
+sondern über die ganze Gegend ein <span title="Original: Nez" class="dta-reg">Netz</span> von trigonometrisch <span title="Original: bestim-&#xA;ten" class="dta-reg">bestimmten</span> <span title="Original: Dreiekken" class="dta-reg">Dreiecken</span> zu werfen, und dieses mit einer genau zu messenden<br/>
+Basis zu verbinden, wie es zwischen <span title="Original: Leyden" class="dta-reg">Leiden</span> und Alcmar geschah.<br/>
+<span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/11900643X">Pica</a></span></span> machte eine noch schönere <span title="Original: Operazion" class="dta-reg">Operation</span>, indem er zugleich viel<br/>
+für die <span title="Original: Vervolkomnung" class="dta-reg">Vervollkommnung</span> der messenden Instrumente <span title="Original: that" class="dta-reg">tat</span>. <span title="Original: Hiezu" class="dta-reg">Hierzu</span><br/>
+bediente man sich anfangs bei der Messung in Peru, genauer<br/>
+Holzstäbe: dann nahm man sogar Platina, in England machte<br/>
+man sie aus Glas, und führte die genauste Rechnung über<br/>
+ihre Ausdehnung. Die Temperatur wurde jedesmal angegeben,<br/>
+und die etwaigen Veränderungen bei der Berechnung der<br/>
+Länge in Anschlag gebracht. Anfangs <span title="Original: sezte" class="dta-reg">setzte</span> man die Lineale<br/>
+an einander, da dies aber einen <span title="Original: Stos" class="dta-reg">Stoß</span>, und mithin <span title="Original: Verrükkung" class="dta-reg">Verrückung</span><br/>
+des Instrumentes hervorbrachte, <span class="dta-supplied">[so]</span> kam man bald darauf,<br/>
+rechts und links ein Lineal hinzulegen, und sie <span title="Original: aneinander-&#xA;zuschieben" class="dta-reg">aneinanderzuschieben</span>: allein auch dieses gab noch keine <span title="Original: hinläng-&#xA;liche" class="dta-reg">hinlängliche</span> Genauigkeit, und man dachte darauf, den unmittelbaren<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0285 : 141r|</span><br/>
+Kontakt der Regeln ganz zu vermeiden. <span title="Original: Hiezu" class="dta-reg">Hierzu</span> hat der <span title="Original: ausge-&#xA;zeichnete" class="dta-reg">ausgezeichnete</span> Mathematiker <span title="Personenname"><a href="http://d-nb.info/gnd/117421995">Tralles</a></span>, der in der <span title="Original: lezten" class="dta-reg">letzten</span> Zeit hier<br/>
+gelebt hat, <span class="dta-supplied">[<span title="Original: d" class="dta-reg">das</span>]</span><span title="Original: as" class="dta-reg"/> beste Mittel angegeben, indem er vorschlug die<br/>
+Regeln nebeneinander zu <span title="Original: sezen" class="dta-reg">setzen</span>, und an dem einen Ende ein<br/>
+rechtwinklich gegen die Regel stehendes Fernrohr <span title="Original: anzubrin-&#xA;gen" class="dta-reg">anzubringen</span>; dann schraubt man <span title="Original: d" class="dta-reg">die</span><span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: ie" class="dta-reg"/></span> <span title="Original: zulezt" class="dta-reg">zuletzt</span> <span class="dta-add" title="Hinzufügung (intralinear)"><span title="Original: g" class="dta-reg">gelegte</span></span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: e" class="dta-reg"/></span><span title="Original: legte" class="dta-reg"/> Regel so langes bis<br/>
+das Ende der vorhergehenden an das Fadenkreuz im Fernrohr<br/>
+anschlägt: auf diese sinnreiche Art ist der körperliche Kontakt<br/>
+in einen <span title="Original: blos" class="dta-reg">bloß</span> optischen verwandelt, und die höchste <span title="Original: Genauig-&#xA;keit" class="dta-reg">Genauigkeit</span> kann erreicht werden.</p><br/>
+<p class="dta-p">Die <span title="Original: andre" class="dta-reg">andere</span> eben so wichtige <span title="Original: Operazion" class="dta-reg">Operation</span> ist die astronomische.<br/>
+Die Winkel an den beiden Enden des Grades werden durch den<br/>
+Unterschied der Meridianhöhe eines Sterns gemessen. Wenn<br/>
+man <span title="Original: annimt" class="dta-reg">annimmt</span>, dass über jedem der beiden Enden ein <span title="Original: Zenital-&#xA;stern" class="dta-reg">Zenitalstern</span> stände, so würde der Abstand dieser beiden Sterne am<br/>
+Himmel gleich sein dem Abstande der Punkte auf der Erde.<br/>
+Wenn man also auch nur einen Stern hat, der in einem Punkte<br/>
+der Basis im <span title="Original: Zenith" class="dta-reg">Zenit</span> steht, so <span title="Original: giebt" class="dta-reg">gibt</span> der Unterschied in der Höhe<br/>
+des Sterns die Bestimmung für die Länge der Basis. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0286 : 141v|</span><br/>
+<p class="dta-p"><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118530674">Eratosthenes</a></span></span> war der erste, welcher eine Gradmessung <span title="Original: anstelte" class="dta-reg">anstellte</span>,<br/>
+die aber mehr eine <span title="Original: Schäzung" class="dta-reg">Schätzung</span> zu nennen ist. Er war <span title="Original: Bibliothe-&#xA;kar" class="dta-reg">Bibliothekar</span> am Museum in <span title="Original: Alexandrien" class="dta-reg">Alexandria</span>, und gründete seine Arbeit<br/>
+auf die Betrachtung, dass in Syene ein Brunnen sei, <span class="dta-del" title="Streichung (#s)">auf</span><span class="dta-add" title="Hinzufügung (superlinear)">in</span> dessen<br/>
+Grunde man am längsten Tage das Sonnenbild im Wasser sehe;<br/>
+so wie es auch <span title="Original: bekant" class="dta-reg">bekannt</span> war, dass an dieser Zeit alle <span title="Schreibfehler: Gebäude3 und2&#xA;Tempel1" class="dta-corr">Tempel und<br/>
+Gebäude</span> in Syene und auf der Insel <span title="Original: Philae" class="dta-reg">viele</span> keinen Schatten<br/>
+werfen. Er mas nun an diesem Tage die Höhe der Sonne, wie<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118777343">Cleomedes</a></span> sagt, mit einer kupfernen Schüssel, σκάφη, in deren<br/>
+Mitte ein Stift von vielen konzentrischen Ringen umgeben stand,<br/>
+also mit einem sehr rohen Instrument, und fand den Unterschied<br/>
+gegen <span title="Original: Alexandrien" class="dta-reg">Alexandria</span> 7° 12<span title="Original: ′" class="dta-reg">'</span><span title="Schreibfehler: " class="dta-corr">.</span> Die <span title="Original: Karavanenstrasse" class="dta-reg">Karavanestrasse</span> (also wieder eine<br/>
+sehr ungenaue Messung) gab ihm für die Entfernung von<br/>
+Syene bis <span title="Original: Alexandrien" class="dta-reg">Alexandria</span> 5000 Stadien, und <span title="Original: hienach" class="dta-reg">hiernach</span> berechnete<br/>
+er den Umfang der ganzen Erde auf 252,000 Stadien. Wie<br/>
+wenig Genauigkeit die ganze Sache hatte, sieht man schon aus<br/>
+der Vernachlässigung 2er Punkte<span title="Schreibfehler: " class="dta-corr">:</span> 1, dass er auf den <span title="Original: Durch-&#xA;messer" class="dta-reg">Durchmesser</span> des Sonnenbildes im Brunnen keine <span title="Original: Rüksicht" class="dta-reg">Rücksicht</span> nahm,<br/>
+2, dass Alexandria und Syene nicht genau in demselben Meridian<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0287 : 142r|</span><br/>
+<div class="fw-top fw-sig">36.</div><br/>
+liegen. Es ist daher nur <span class="u ">Zufall</span> zu nennen, dass diese <span title="Original: Schäzung" class="dta-reg">Schätzung</span><br/>
+<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: o" class="dta-reg">ungefähr</span></span><span title="Original: hngefähr" class="dta-reg"/> mit der Wahrheit übereinstimmt. Er fand 5800 <span title="Original: geogra-&#xA;phische" class="dta-reg">geographische</span> Meilen statt 5400, also immer noch ein Unterschied von<br/>
+400 Meilen.</p><br/>
+<p class="dta-p">Die <span title="Original: 2" class="dta-reg">2te</span><span title="￼" class="dta-abbr"><span class="sup uu "><span title="Original: te" class="dta-reg"/></span></span> Gradmessung machte <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118595946">Posidonius</a></span></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/118520814"><span title="Original: Cicero" class="dta-reg">Ciceros</span></a></span><span title="Original: s" class="dta-reg"/> Lehrer, worüber man<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/100351212"><span title="Original: Ideler" class="dta-reg">Ideler's</span></a></span><span title="Original: 's" class="dta-reg"/> <span title="Original: trefliche" class="dta-reg">treffliche</span> Untersuchungen zur Hand nehmen <span title="Original: mus" class="dta-reg">muss</span>: er mas die<br/>
+Höhe des Canopus in <span title="Original: Rhodus" class="dta-reg">Rhodos</span> und <span title="Original: Alexandrien" class="dta-reg">Alexandria</span>, und berechnete die <span title="Original: Ent-&#xA;fernung" class="dta-reg">Entfernung</span> nach Schiffahrten, also sehr <span title="Original: unvolkommen" class="dta-reg">unvollkommen</span>.</p><br/>
+<p class="dta-p">Die dritte machte <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118641786">Ptolemaeus</a></span></span>; da er aber nicht der Richtung des<br/>
+Meridians folgte, sondern in einem Winkel mit demselben <span title="Original: fort-&#xA;ging" class="dta-reg">fortging</span>: so ist sie sehr <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: u" class="dta-reg">ungenau</span></span><span title="Original: ngenau" class="dta-reg"/>, und kaum zu brauchen.</p><br/>
+<p class="dta-p">Im <span title="Original: 9" class="dta-reg">9ten</span><span title="￼" class="dta-abbr"><span class="sup uu "><span title="Original: ten" class="dta-reg"/></span></span> <span title="Jahrhund." class="dta-abbr">Jahrhundert</span> wurde eine Gradmessung unternommen vom<br/>
+Khalifen <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118847686">Almahmun</a></span></span>, aus dem <span title="Original: Geschlechte" class="dta-reg">Geschlecht</span> der Abassiden. Er hatte<br/>
+eine solche Vorliebe für die Astronomie gefast, dass, als er den<br/>
+Kaiser <span title="Personenname"><a href="http://viaf.org/viaf/89203027">Michael III</a></span> gefangen genommen, es zur <span title="Original: ausdrüklichen" class="dta-reg">ausdrücklichen</span> <span title="Original: Frie-&#xA;densbedingung" class="dta-reg">Friedensbedingung</span> gemacht wurde, dass <span title="Personenname"><a href="http://viaf.org/viaf/89203027">Michael</a></span> ihm ein Manuskript<br/>
+des Almagest überliefern <span title="Original: solte" class="dta-reg">sollte</span>, damit er <span title="Original: sehn" class="dta-reg">sehen</span> könne, ob seine <span title="Original: Grad-&#xA;messung" class="dta-reg">Gradmessung</span> mit dem <span title="Personenname"><a href="http://d-nb.info/gnd/118641786">Ptolemaeus</a></span> übereinstimme. Die Messung<br/>
+wurde in der <span title="Original: Ebne" class="dta-reg">Ebene</span> bei Sindia gemacht, zwischen Basra <span class="dta-metamark" title="metamark">(?)</span> und<br/>
+Tadmor. Man sehe darüber <span title="Personenname"><a href="http://d-nb.info/gnd/128448962"><span title="Original: Seguillot" class="dta-reg">Seguillots</span></a></span><span title="Original: " class="dta-reg"><span title="Original: s" class="dta-reg"/></span> scharfsinnige Untersuchungen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0288 : 142v|</span><br/>
+über den besten orientalischen Mathematiker <span title="Personenname"><a href="http://d-nb.info/gnd/102535973">Ebn Younes</a></span>; 2 Banden<br/>
+Astronomen gingen nach Norden und Süden, <span title="Original: ma" class="dta-reg">Maßen</span><span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Original: a" class="dta-reg"/></span><span title="Original: ssen" class="dta-reg"/> den <span class="dta-del" title="Streichung (#s)">Abst</span><br/>
+Unterschied der Zenitalsterne, und fanden dasselbe, was der Khalif<br/>
+wünschte, und was im Almagest stand, weniger durch Zufall, als<br/>
+indem sie durch eine <span title="Original: vorgefaste" class="dta-reg">vorgefasste</span> Meinung geleitet wurden. Wie sehr<br/>
+dadurch Täuschungen herbeigeführt werden können, sieht man noch<br/>
+aus einer neueren Messung. 1525 mas <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/119220903">Fernel</a></span></span> <span class="dta-metamark" title="metamark">(?)</span> die Entfernung von<br/>
+Paris nach Amiens, indem er eine Vorrichtung an seinen Wagen<br/>
+machte, dass er die Umdrehungen des Rades zählen <span title="Original: konte" class="dta-reg">konnte</span>, und<br/>
+diese mit der Länge des <span title="Original: zurükgelegten" class="dta-reg">zurückgelegten</span> Weges <span title="Original: multiplizirte" class="dta-reg">multiplizierte</span>: dies<br/>
+gab ihm für einen Grad 57070 Toisen; <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/119174596">Lacaille</a></span></span>, welcher später <span title="Original: die-&#xA;selbe" class="dta-reg">dieselbe</span> Entfernung von Paris nach Amiens mas, fand, sonderbar<br/>
+genug, 57074 Toisen, also beinahe ganz dasselbe.</p><br/>
+<p class="dta-p"><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118797794">Snellius</a></span></span> machte 1615 eine schöne Gradmessung, indem er sich<br/>
+zuerst eines <span title="Original: Nezes" class="dta-reg">Netzes</span> von <span title="Original: Dreiekken" class="dta-reg">Dreiecken</span> und einer Basis bediente:<br/>
+<span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/121219666">Norden</a></span></span> in England eine <span title="Original: andre" class="dta-reg">andere</span>, die aber sehr falsch war, und <span title="Original: wo-&#xA;durch" class="dta-reg">wodurch</span> <span title="Personenname"><a href="http://d-nb.info/gnd/118587544">Newton</a></span> lange Zeit irregeleitet wurde, indem er schon<br/>
+damals die allgemeinen <span title="Original: Gravitazionsgeseze" class="dta-reg">Gravitationsgesetze</span> gefunden hatte, und<br/>
+diese mit der durch Norden <span title="Original: bestimten" class="dta-reg">bestimmten</span> Gestalt der Erde nicht<br/>
+<span title="Original: übereinstimten" class="dta-reg">übereinstimmten</span>.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0289 : 143r|</span><br/>
+<p class="dta-p"><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/11900643X">Pica</a></span></span> machte 1669 die erste genau Messung, welche <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">sich </span>durch <span title="Original: grosse" class="dta-reg">große</span><br/>
+Sorgfalt und eine genaue Kontrolle über die Fehler auszeichnet;<br/>
+<span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117541613">Maraldi</a></span></span>, 1683, und die beiden <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Cassini</a></span></span> 1718 machten Gradmessungen,<br/>
+nach denen die Erde an den Polen nicht abgeplattet, sondern <span title="Original: zu-&#xA;gespizt" class="dta-reg">zugespitzt</span> erschien: allein <span title="Personenname"><a href="http://d-nb.info/gnd/118587544">Newton</a></span> hatte schon bewiesen, dass dies nach<br/>
+den <span title="Original: Gesezen" class="dta-reg">Gesetzen</span> der Wurfkraft und des Schwunges gar nicht möglich<br/>
+sei; auch hatte schon der Captain <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117531936"><span title="Original: Riché" class="dta-reg">Rieche</span></a></span></span> 1671 eine Reise nach Cayenne<br/>
+gemacht, wo er fand, dass eine <span title="Original: Pendel" class="dta-reg">Pendeluhr</span><span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (sublinear)"><span title="Original: uhr" class="dta-reg"/> </span>welche<span class="dta-del" title="Streichung (#s)">s</span> er aus Frankreich<br/>
+mitgebracht, und die Sekunden schlug, in Cayenne alle Tage um 2 Min.<br/>
+18 Sek. zu langsam ging. Dies <span title="Original: stimte" class="dta-reg">stimmte</span> <span title="Original: volkommen" class="dta-reg">vollkommen</span> mit <span title="Personenname"><a href="http://d-nb.info/gnd/118587544"><span title="Original: Newton" class="dta-reg">Newton's</span></a></span><span title="Original: 's" class="dta-reg"/> <span title="Original: Theo-&#xA;rie" class="dta-reg">Theorie</span>: denn die <span title="Original: grössere" class="dta-reg">größere</span> Wurfkraft, welche die Erde in Cayenne (gegen<br/>
+Frankreich) hat, <span title="Original: mus" class="dta-reg">muss</span> die Schwere der Körper vermindern, den Fall<br/>
+derselben langsamer machen, mithin <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">auch </span>das Pendel, welches auf <span title="Original: de" class="dta-reg">den</span><span class="dta-del" title="Streichung (#ow)">m</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: n" class="dta-reg"/></span><br/>
+<span class="u "><span title="Original: Gesezen" class="dta-reg">Gesetzen</span> des Falles</span> beruht, <span title="Original: retardiren" class="dta-reg">retardieren</span>; ja wir haben <span title="Original: gesehn" class="dta-reg">gesehen</span>, dass<br/>
+wenn die <span title="Original: Rotazion" class="dta-reg">Rotation</span> der Erde sich beschleunigte, ein Punkt <span title="Original: eintre-&#xA;ten" class="dta-reg">eintreten</span> würde, wo <span class="dta-del" title="Streichung (#s)">d</span> unter dem <span title="Original: Aequator" class="dta-reg">Äquator</span> alle Steine und Berge, und<br/>
+überhaupt alles bewegliche weggeschleudert werden würden.</p><br/>
+<p class="dta-p">Die verschiedenen Meinungen, welche immer noch über diesen <span title="Original: Gegen-&#xA;stand" class="dta-reg">Gegenstand</span> <span title="Original: herschten" class="dta-reg">herrschten</span>, und die <span title="Original: Ungewisheit" class="dta-reg">Ungewißheit</span>, in der man über die <span title="Original: eigent-&#xA;liche" class="dta-reg">eigentliche</span> Gestalt der Erde schwebte, <span title="Original: veranlasten" class="dta-reg">anlasten</span> endlich unter <span title="Personenname"><a href="http://d-nb.info/gnd/118729438">Ludwig XV</a></span>,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0290 : 143v|</span><br/>
+1735 die <span title="Original: grosse" class="dta-reg">große</span> <span title="Original: Expedizion" class="dta-reg">Expedition</span> nach Amerika, woran <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117547786">Godet</a></span></span>, <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118778390">La <span title="Original: Conda-&#xA;mine" class="dta-reg">Condamine</span></a></span></span> <span title="Original: pp" class="dta-reg">pp.</span> <span title="Original: Theil" class="dta-reg">Teil</span> nahmen. Sie hatten aber mit <span title="Original: grossen" class="dta-reg">großen</span> <span title="Original: Schwierigkei-&#xA;ten" class="dta-reg">Schwierigkeiten</span> zu kämpfen, und daher dauerte die Sache von <span title="Original: 1735–46" class="dta-reg">1735-46</span>. Sie<br/>
+machten ihre Messungen bei Quito, welches damals noch nicht<br/>
+<span class="dta-marginal dta-marginal-left"><span class="dta-metamark" title="metamark">?</span><br/>
+</span>zu Nueva-Grenada, sondern zu Peru gehörte. <span class="dta-metamark" title="metamark">⎡</span>(Die Fläche), in<br/>
+<span class="dta-marginal dta-marginal-left"><span class="dta-supplied">[<span title="Original: D" class="dta-reg">Das</span>]</span><span title="Original: as" class="dta-reg"/> <span title="Original: Bergthal" class="dta-reg">Bergtal</span>, Plateau<br/>
+</span><span title="Original: de" class="dta-reg">dem</span><span class="dta-del" title="Streichung (#ow)">r</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: m" class="dta-reg"/></span> sie <span title="Original: operirten" class="dta-reg">operierten</span>, liegt <span title="Original: 6–7000" class="dta-reg">6-7000</span> <span title="Original: Fus" class="dta-reg">Fuß</span> über dem Meere, und ist von<br/>
+2 Ketten der <span title="Original: Cordilleren" class="dta-reg">Kordilleren</span> eingeschlossen, welche sich beinahe von<br/>
+Norden nach Süden <span title="Original: erstrekken" class="dta-reg">erstrecken</span>. Man <span title="Original: muste" class="dta-reg">musste</span> daher die <span title="Original: Signalpunk-&#xA;te" class="dta-reg">Signalpunkte</span> auf hohe Bergspizen verlegen, und die Gelehrten <span title="Original: musten" class="dta-reg">mussten</span> oft<br/>
+lange Zeit nahe an der <span title="Original: Schneegränze" class="dta-reg">Schneegrenze</span> sich aufhalten, <span title="Original: zB." class="dta-reg">z. B.</span> in dem<br/>
+Hause des Pichincha, wo das Thermometer bei Nacht bis auf <span title="Original: −4" class="dta-reg">4</span>°<br/>
+Reaum. herabsank, und bei Tage sich selten über +8° bis 10° erhob,<br/>
+eine für den <span title="Original: Aequator" class="dta-reg">Äquator</span> sehr bedeutende Kälte. Man bediente sich<br/>
+damals der pyramidalen Signale aus Balken aufgebaut, <span title="Original: wel-&#xA;che" class="dta-reg">welche</span> aber den <span title="Original: Nachtheil" class="dta-reg">Nachteil</span> haben, dass sie verschieden von der Sonne<br/>
+erleuchtet werden, also keinen deutlichen Punkt des <span title="Original: Visirens" class="dta-reg">Visierens</span><br/>
+geben: eben so unsicher sind die <span title="Original: Kirchthürme" class="dta-reg">Kirchtürme</span>, die man auch<br/>
+wohl dazu angewendet hat. Später zog man die Nachtsignale vor,<br/>
+und nahm dazu Lampen mit parabolischen Spiegeln, welche <span title="Original: unge-" class="dta-reg">ungemein</span>
+<span class="dta-pb" style="padding-left:15em">|#f0291 : 144r|</span><br/>
+<span title="Original: mein" class="dta-reg"/> weit <span title="Original: gesehn" class="dta-reg">gesehen</span> werden können; als bei der französischen Messung<br/>
+in Spanien die Inseln Mentera und Cabrera mit Valencia <span title="Original: ver-&#xA;bunden" class="dta-reg">verbunden</span> wurden, hat man eine solche Lampe, welche freilich mehrere<br/>
+100 Toisen über dem Meere erhaben war, in einer Entfernung von<br/>
+80,000 Toisen, (<span title="Original: 25–26" class="dta-reg">25-26</span> deutsche Meilen) <span title="Original: gesehn" class="dta-reg">gesehen</span>. Die <span title="Original: 3" class="dta-reg">3te</span><span title="￼" class="dta-abbr"><span class="sup uu "><span title="Original: te" class="dta-reg"/></span></span> und beste<br/>
+Methode hat <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118510215">Bessel</a></span></span> angegeben, und <span title="Personenname"><a href="http://d-nb.info/gnd/104234644"><span class="u "><span class="dta-del" title="Streichung (#ow)">g</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: G" class="dta-reg">Gaus</span></span><span title="Original: aus" class="dta-reg"/></span></a></span> hat den Apparat dazu<br/>
+erfunden, und sie bei seiner Messung angewandt. Man bedient sich<br/>
+des Sonnenbildes selbst, welches durch einen kleinen Spiegel <span title="Original: reflek-&#xA;tirt" class="dta-reg">reflektiert</span> wird, und <span title="Original: könte" class="dta-reg">könnte</span> sie also Tagsignale ab nennen: sie erscheinen wie<br/>
+ein Stern am Tage.</p><br/>
+<p class="dta-p">Gleichzeitig mit den Astronomen in Quito gingen 1736 <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/11852092X">Clairault</a></span></span>,<br/>
+<span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117672025">Camus</a></span></span>, de <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117636169"><span title="Original: Monnier" class="dta-reg">Monier</span></a></span></span> und <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118731998">Maupertuis</a></span></span> (welcher einige Zeit <span title="Original: Präsi-&#xA;dent" class="dta-reg">Präsident</span> der hiesigen Akademie war) nach Schweden und <span title="Original: Lapland" class="dta-reg">Lappland</span>:<br/>
+sie <span title="Original: maassen" class="dta-reg">Maßen</span> einen Grad zwischen Torneo und dem Berge Kittel <span class="dta-metamark" title="metamark">(?)</span><br/>
+allein die Resultate sind unsicher, weil die Gelehrten sich auf der<br/>
+langen Reise durchaus nicht vertragen <span title="Original: konten" class="dta-reg">konnten</span>, und sehr gereizt nach<br/>
+Hause <span title="Original: zurükkamen" class="dta-reg">zurückkamen</span>. Durch Vergleichung der beiden Messungen in<br/>
+Peru und <span title="Original: Lapland" class="dta-reg">Lappland</span> ergab sich die Abplattung aus <span class="sup "><span title="Original: 1" class="dta-reg">1/305-1/310</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 305" class="dta-reg"/></span><span title="Original: –" class="dta-reg"/><span class="sup "><span title="Original: 1" class="dta-reg"/></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 310" class="dta-reg"/></span>.<br/>
+Der Doktor <span title="Personenname"><a href="http://d-nb.info/gnd/117679100"><span title="Original: Schwaneberg" class="dta-reg">Schwanberg</span></a></span>, welcher diese Messungen wiederholte,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0292 : 144v|</span><br/>
+glaubte den Gelehrten den ungeheuren Fehler von 1200 <span title="Original: Fus" class="dta-reg">Fuß</span> auf den<br/>
+Grad nachweisen zu können: neuerlich hat aber der <span title="Original: D" class="dta-reg">Dr</span><span class="sup u "><span title="Original: r" class="dta-reg"/></span> <span title="Personenname"><a href="http://d-nb.info/gnd/116622784">Rosenberger</a></span><br/>
+<span class="dta-add" title="Hinzufügung (left)">in Halle </span>wieder ihre <span title="Original: Vertheidigung" class="dta-reg">Verteidigung</span> übernommen, indem er die sämtlichen <span title="Original: Ver-&#xA;handlungen" class="dta-reg">Verhandlungen</span> <span title="Original: revidirte" class="dta-reg">revidierte</span>, und so die Ehre der französischen <span title="Original: Astrono-&#xA;men" class="dta-reg">Astronomen</span> wiederherstellte: denn jener Fehler von 1200<span title="Original: ′" class="dta-reg">'</span> würde namentlich<br/>
+für den astronomischen <span title="Original: Theil" class="dta-reg">Teil</span> der Messung, den man <span title="Personenname"><a href="http://d-nb.info/gnd/118731998">Maupertuis</a></span><br/>
+anvertraut hatte, ein <span title="Original: grosse" class="dta-reg">große</span> Nachlässigkeit <span title="Original: voraussezen" class="dta-reg">voraussetzen</span>.</p><br/>
+<p class="dta-p">Wir haben also:<br/>
+<div class="dta-list">   <span class="dta-list-item">1, die alte <span class="u ">peruanische</span> Messung, welche nach <span title="Personenname"><a href="http://d-nb.info/gnd/118878913"><span title="Original: Delambre" class="dta-reg">Delambre's</span></a></span><span title="Original: 's" class="dta-reg"/> <span title="Original: Berech-&#xA;nungen" class="dta-reg">Berechnungen</span> sehr <span title="Original: unvolkommen" class="dta-reg">unvollkommen</span> ist.</span>   
+<span class="dta-list-item">2, die <span title="Original: grosse" class="dta-reg">große</span> <span class="u ">französische</span> Messung zur Bestimmung des <span class="u "><span title="Original: mêtre" class="dta-reg">metre</span></span><br/>
+man hatte nämlich <span title="Original: festgesezt" class="dta-reg">festgesetzt</span>, dass der 10 <span title="Original: Million" class="dta-reg">Millionste</span><span class="sup u "><span title="Original: ste" class="dta-reg"/></span> <span title="Original: Theil" class="dta-reg">Teil</span> des<br/>
+Erdquadranten ein <span class="u "><span title="Original: mêtre" class="dta-reg">metre</span></span>, als <span title="Original: Grund" class="dta-reg">Grundlängenmaas</span><span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Original: längen" class="dta-reg"/></span><span title="Original: maas" class="dta-reg"/> sein solle, und man<br/>
+<span title="Original: konte" class="dta-reg">konnte</span> <span title="Original: hiemit" class="dta-reg">hiermit</span> sehr <span title="Original: glüklich" class="dta-reg">glücklich</span> das Körpermaas verbinden, indem<br/>
+man <span title="Original: bestimte" class="dta-reg">bestimmte</span>, dass 1 <span class="u ">Kilogramm</span> gleich sein <span title="Original: solte" class="dta-reg">sollte</span> = <span class="sup "><span title="Original: 1" class="dta-reg">1/1000</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 1000" class="dta-reg"/></span><br/>
+<span title="Original: Kubikmêtre" class="dta-reg">Kubikmeter</span> <span title="Original: distillirtes" class="dta-reg">destilliertes</span> Wasser bei seiner <span title="Original: grösten" class="dta-reg">größten</span> Dichtigkeit, d. h.<br/>
+bei <span title="Original: +3½" class="dta-reg">+31/2</span> Grad <span title="Original: Reaumur" class="dta-reg">Réaumur</span>. Bei dieser Messung wurden zuerst<br/>
+<span title="Original: Repetizionskreise" class="dta-reg">Repetitionskreise</span> von <span title="Personenname"><a href="http://d-nb.info/gnd/11762084X"><span title="Original: Borda" class="dta-reg">Boorda</span></a></span> angewendet, wo<span class="dta-del" title="Streichung (#s)">d</span> sich, durch eine<br/>
+(zwar nicht <span title="Original: in's" class="dta-reg">ins</span> Unendliche) <span title="Original: fortgesezte" class="dta-reg">fortgesetzte</span> Wiederholung der <span title="Original: Winkel-" class="dta-reg">Winkelmessungen</span>
+<span class="dta-pb" style="padding-left:15em">|#f0293 : 145r|</span><br/>
+<span title="Original: messungen" class="dta-reg"/> der Beobachtungsfehler wohl nicht ganz <span title="Original: eliminiren" class="dta-reg">eliminieren</span>, aber<br/>
+doch sehr <span title="Original: verklein" class="dta-reg">verkleinern</span><span class="dta-supplied">[<span title="Original: ern" class="dta-reg"/>]</span> <span title="Original: läst" class="dta-reg">lässt</span>. Die Angabe dazu machte der <span title="Original: grosse" class="dta-reg">große</span> <span title="Personenname"><a href="http://d-nb.info/gnd/118579576"><span title="Original: To-&#xA;bias" class="dta-reg">Tobias</span> <span class="u "><span title="Original: M" class="dta-reg">Mayer</span><span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: a" class="dta-reg"/></span><span title="Original: yer" class="dta-reg"/></span></a></span> in Göttingen, dem wir auch die Verbesserungen der <span title="Original: Mond-&#xA;tafeln" class="dta-reg">Mondtafeln</span> verdanken.</span>
+<span class="dta-list-item">3, die <span class="u ">englischen</span> Messungen unter dem General <span title="Personenname"><a href="http://d-nb.info/gnd/130800600">R.<span class="dta-metamark" title="metamark">⎡</span></a></span> <span class="dta-metamark" title="metamark">(?)</span> und <span title="Personenname"><a href="http://d-nb.info/gnd/1055317457">M<span class="dta-metamark" title="metamark">....</span></a></span><span class="dta-add" title="Hinzufügung (right)"> <span class="dta-metamark" title="metamark">?</span></span><br/>
+Herr <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> hat, in Verbindung mit mir diese Messungen an die<br/>
+französischen angeknüpft.</span>
+<span class="dta-list-item">4, Drei <span title="Original: grosse" class="dta-reg">große</span> Messungen in <span class="u ">Ostindien</span> von dem General <span title="Personenname"><a href="http://d-nb.info/gnd/117574406">L<span class="dta-metamark" title="metamark">⎡</span></a></span> <span class="dta-metamark" title="metamark">?</span><br/>
+und <span title="Personenname">T<span class="dta-metamark" title="metamark">⎡</span></span> <span class="dta-metamark" title="metamark">?</span></span>
+<span class="dta-list-item">5, in <span class="u "><span title="Original: Rusland" class="dta-reg">Rußland</span>,</span> von <span title="Personenname"><a href="http://d-nb.info/gnd/118988255">Struve</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/119228432">Argeland</a></span>.</span>
+<span class="dta-list-item">6, endlich die Messung von <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/104234644">Gaus</a></span></span> in Göttingen, von der man sich<br/>
+sehr viel versprechen kann; sie <span title="Original: i" class="dta-reg">ist</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: s" class="dta-reg"/></span><span title="Original: t" class="dta-reg"/> aber noch nicht ganz beendigt,<br/>
+und die Resultate daher noch nicht <span title="Original: bekant" class="dta-reg">bekannt</span>.</span>
+</div></p>   <p class="dta-p"><span title="Original: Ziehn" class="dta-reg">Ziehen</span> wir nun das Resultat aus allen Messungen: so <span title="Original: ergiebt" class="dta-reg">ergibt</span><br/>
+sich, dass die Grade gegen Norden <span class="dta-del" title="Streichung (#s)"><span class="u ">kleiner</span></span><span class="dta-add" title="Hinzufügung (superlinear)">hin <span title="Original: grösser" class="dta-reg">größer</span></span> werden:<br/>
+<div class="dta-list">   <span class="dta-list-item">unter dem <span title="Original: Aequator" class="dta-reg">Äquator</span> <span class="dta-del" title="Streichung (#s)">57731 Toisen</span><span class="dta-add" title="Hinzufügung (intralinear)">56731 Toisen</span></span>
+<span class="dta-list-item"><span class="et ">in Frankreich <span class="dta-del" title="Streichung (#s)">57006 <span title="Original: —" class="dta-reg">〃</span></span><span class="dta-add" title="Hinzufügung (intralinear)">57006 <span title="Original: —" class="dta-reg"><span title="Original: 〃" class="dta-reg">"</span></span></span></span></span>
+<span class="dta-list-item"><span class="et ">in <span title="Original: Lapland" class="dta-reg">Lappland</span> <span class="dta-del" title="Streichung (#s)">56209 <span title="Original: —" class="dta-reg">〃</span></span><span class="dta-add" title="Hinzufügung (intralinear)">57209 <span title="Original: —" class="dta-reg"><span title="Original: 〃" class="dta-reg">"</span></span></span></span></span>
+</div></p>   <p class="dta-p">Ein <span title="Original: andres" class="dta-reg">anderes</span> gutes Mittel, um die Gestalt der Erde zu bestimmen,<br/>
+sind die <span class="u ">Pendelbeobachtungen</span>, bei denen es 2 Methoden <span title="Original: giebt" class="dta-reg">gibt</span>:<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0294 : 145v|</span><br/>
+<div class="dta-list">   <span class="dta-list-item">1, entweder man macht sich an einem <span title="Original: bestimten" class="dta-reg">bestimmten</span> Ort ein Pendel,<br/>
+welches Sekunden schlägt, und <span title="Original: mist" class="dta-reg">Mist</span> dessen Länge: dies gab <span title="Personenname"><a href="http://d-nb.info/gnd/117622974">Bouguer</a></span><br/>
+an, und <span title="Personenname"><a href="http://d-nb.info/gnd/11762084X"><span title="Original: Borda" class="dta-reg">Boorda</span></a></span> verbesserte die Einrichtung für das Messen.</span>
+<span class="dta-list-item">2, oder man macht sich ein unveränderliches Pendel, und sieht nach, <span title="Original: wie-&#xA;viel" class="dta-reg">wieviel</span> es an jedem Orte <span title="Original: differirt" class="dta-reg">differiert</span>; (wurde auch von <span title="Personenname"><a href="http://d-nb.info/gnd/117622974">Bouguer</a></span> angegeben.)</span>
+<span class="dta-list-item">Eine <span title="Original: 3" class="dta-reg">3te</span><span title="￼" class="dta-abbr"><span class="sup uu "><span title="Original: te" class="dta-reg"/></span></span> Methode, welche sehr <span title="Original: vortheilhaft" class="dta-reg">vorteilhaft</span> sein soll, hat <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118510215">Bessel</a></span></span> in<br/>
+Königsberg angegeben: wir erwarten aber noch die <span title="Original: Bekantmachung" class="dta-reg">Bekanntmachung</span>.<br/>
+Der Engländer <span title="Personenname"><a href="http://d-nb.info/gnd/11671350X">Satch</a></span> <span class="dta-metamark" title="metamark">(?)</span> welcher auch mit <span title="Personenname"><a href="http://d-nb.info/gnd/118692844">Franklin</a></span> einer <span title="Original: Nord-&#xA;polexpedizion" class="dta-reg">Nordpolexpedition</span> beigewohnt, hat Pendelbeobachtungen gemacht unter<br/>
+dem <span title="Original: Aequator" class="dta-reg">Äquator</span>, in Westindien, <span title="Original: Spizbergen" class="dta-reg">Spitzbergen</span> und Grönland, und <span title="Original: zu-&#xA;lezt" class="dta-reg">zuletzt</span> ist dieser Zweig der Wissenschaft auf das gründlichste <span title="Original: be-&#xA;handelt" class="dta-reg">behandelt</span> worden auf der Erdumseglung von <span title="Personenname"><a href="http://d-nb.info/gnd/124760295">Freycinet</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/117663476">Duperrey</a></span>.</span>
+</div></p>   <p class="dta-p">Als <span class="u ">Resultat</span> kann man aussprechen, dass die Abplattung<br/>
+zwischen <span class="sup "><span title="Original: 1" class="dta-reg">1/305</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 305" class="dta-reg"/></span> und <span class="sup "><span title="Original: 1" class="dta-reg">1/280</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 280" class="dta-reg"/></span> schwankt, und zwar ist sie neuerdings<br/>
+<span title="Original: grösser" class="dta-reg">größer</span> geworden; <span title="Original: ungewis" class="dta-reg">ungewiß</span> ist man um 3600 <span title="Original: Fus" class="dta-reg">Fuß</span><span class="dta-metamark" title="metamark">⎡</span> oder <span class="sup "><span title="Original: 1" class="dta-reg">1/18</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 18" class="dta-reg"/></span> der <span title="Original: Ab-" class="dta-reg">Abplattung</span>
+<span class="dta-marginal dta-marginal-left"><span class="dta-metamark" title="metamark">⎡</span>[d. h. <span class="sup "><span title="Original: 1" class="dta-reg">1/5000</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 5000" class="dta-reg"/></span> des <span title="Original: Erdhalbmes-" class="dta-reg">Erdhalbmessers</span>
+<span class="dta-del" title="Streichung (#s)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span title="Original: sers" class="dta-reg"/>] als ob man bei der<br/>
+Messung der Schneekoppe<br/>
+um 1 <span title="Original: Fus" class="dta-reg">Fuß</span> <span title="Original: ungewis" class="dta-reg">ungewiß</span> wäre.<br/>
+</span><span title="Original: plattung" class="dta-reg"/> selbst. Die Figur der Erde entfernt sich also um soviel<br/>
+von der Kugelgestalt, als wenn man den <span title="Original: Himalaya" class="dta-reg">Himalaja</span> <span title="Original: 2½" class="dta-reg">21/2</span> <span title="Original: mal" class="dta-reg">Mal</span><br/>
+unter dem <span title="Original: Aequator" class="dta-reg">Äquator</span> übereinandersezte, oder: der <span title="Original: Aequator" class="dta-reg">Äquator</span> ist<br/>
+64200 <span title="Original: Fus" class="dta-reg">Fuß</span> weiter vom Zentrum entfernt als die Pole; indem also<br/>
+eine geographische Meile 3800 Toisen oder 22800 <span title="Original: Fus" class="dta-reg">Fuß</span> enthält, so<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0295 : 146r|</span><br/>
+<div class="fw-top fw-sig">37.</div><br/>
+würde der Meeresspiegel unter dem <span title="Original: Aequator" class="dta-reg">Äquator</span> ungefähr 3 Meilen <span title="Original: wei-&#xA;ter" class="dta-reg">weiter</span> vom Mittelpunkte entfernt sein, als an den Polen. Da der <span title="Original: Halb-&#xA;messer" class="dta-reg">Halbmesser</span> der Erde 860 Meilen beträgt, so bleibt die Abplattung zwischen<br/>
+<span class="sup "><span title="Original: 1" class="dta-reg">1/305</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 305" class="dta-reg"/></span> und <span class="sup "><span title="Original: 1" class="dta-reg">1/290</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 290" class="dta-reg"/></span>. des Ganzen.</p><br/>
+<p class="dta-p">Man hat zu die Abplattung noch auf eine <span title="Original: andre" class="dta-reg">andere</span> Art <span title="Original: berech-&#xA;nen" class="dta-reg">berechnen</span> können, nämlich nach der <span class="u ">Mondtheorie</span>, und diese <span title="Original: giebt" class="dta-reg">gibt</span><br/>
+das <span title="Original: gröste" class="dta-reg">größte</span> Resultat; <span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span> fand <span title="Original: hienach" class="dta-reg">hiernach</span> <span class="sup "><span title="Original: 1" class="dta-reg">1/305</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 305" class="dta-reg"/></span>. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/116299762">Bouvard</a></span></span> und<br/>
+<span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117161357">Burkhardt</a></span></span>, welche alle Gradmessungen durchgerechnet hatten:<br/>
+<span class="sup "><span title="Original: 1" class="dta-reg">1/299</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 299" class="dta-reg"/></span>; die <span class="u ">Pendelbeobachtungen</span> <span class="sup "><span title="Original: 1" class="dta-reg">1/280</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 280" class="dta-reg"/></span> bis <span class="sup "><span title="Original: 1" class="dta-reg">1/290</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 290" class="dta-reg"/></span>.</p><br/>
+<p class="dta-p">Die südliche Hemisphäre hielt man länger für abgeplatteter,<br/>
+als die nördliche, weil sie in Vergleich mit dieser eine <span title="Original: Wasser-&#xA;hemisphäre" class="dta-reg">Wasserhemisphäre</span> zu nennen ist. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/119174596">Lacaille</a></span></span> <span class="dta-del" title="Streichung (#s)">hat darüber Messungen am</span><span class="dta-add" title="Hinzufügung (superlinear)">fand die südliche Hemisphäre abgeplatteter als die nördliche</span><br/>
+<span class="dta-del" title="Streichung (#s)">Kap der guten Hofnung angestelt</span>, aber <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/124760295"><span title="Original: Freycinet" class="dta-reg">Freycinets</span></a></span><span title="Original: s" class="dta-reg"/></span> und <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117663476"><span title="Original: Duper-&#xA;rey" class="dta-reg">Duperrey's</span></a></span></span><span title="Original: 's" class="dta-reg"/> Untersuchungen haben bewiesen, dass nicht der geringste<br/>
+Unterschied gegen die nördliche Hälfte da ist, wodurch die<br/>
+Gestalt der Erde um so regelmässiger wird. Auch <span title="Personenname"><a href="http://d-nb.info/gnd/119228521">A. <span class="u ">Malaspina</span></a></span><br/>
+<span title="Original: stelte" class="dta-reg">stellte</span> auf seiner Reise Untersuchungen darüber an, so wie früher<br/>
+der General <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/116522305">Brisbane</a></span></span> in <span title="Original: Paramatta" class="dta-reg">Paramatte</span>, welche dasselbe <span title="Original: Resul-" class="dta-reg">Resultat</span>
+<span class="dta-pb" style="padding-left:15em">|#f0296 : 146v|</span><br/>
+<span title="Original: tat" class="dta-reg"/> gaben. Wenn aber in dieser Hinsicht die Gestalt der Erde<br/>
+sehr <span title="Original: regelmässig" class="dta-reg">regelmäßig</span> ist, so zeigen sich doch <span title="Original: grosse" class="dta-reg">große</span> <span title="Original: Verschie-&#xA;denheiten" class="dta-reg">Verschiedenheiten</span> unter den <span title="Original: verschiednen" class="dta-reg">verschiedenen</span> Meridianen. Die englischen<br/>
+Messungen geben ein Resultat, wonach die Erde an den Polen<br/>
+<span title="Original: zugespizt" class="dta-reg">zugespitzt</span> wäre: dies liegt aber <span title="Original: blos" class="dta-reg">bloß</span> daran, dass die Lage der<br/>
+<span title="Original: brittischen" class="dta-reg">britischen</span> Inseln etwas abgeplattet ist. Die französischen<br/>
+<span class="dta-marginal dta-marginal-left"><span class="sup ">1</span>/<span class="sub ">55</span><br/>
+</span>Messungen allein geben <span class="sup "><span title="Original: 1" class="dta-reg">1/139</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 139" class="dta-reg"/></span> für die Abplattung, welches <span title="Original: wieder-&#xA;um" class="dta-reg">wiederum</span> viel zu viel ist.</p><br/>
+<p class="dta-p">Noch ist zu bemerken, dass bei und auf kleinen vulkanischen<br/>
+Inseln <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">Isle de France <span title="Original: etc" class="dta-reg">etc.</span></span> das Pendel schneller <span title="Original: s" class="dta-reg">schlägt</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: c" class="dta-reg"/></span><span title="Original: hlägt" class="dta-reg"/>, und manchmal an einem<br/>
+Tage <span title="Original: 12–13" class="dta-reg">12-13</span> Sekunden voreilt: da man nun gewöhnlich unter<br/>
+diesen Inseln eine Höhlung <span title="Original: vorauszusezen" class="dta-reg">vorauszusetzen</span> pflegt, welche durch<br/>
+die Gewalt des unterirdischen Feuers hervorgebracht sein soll:<br/>
+so <span title="Original: müste" class="dta-reg">müsste</span> nach dieser Ansicht das Pendel langsamer <span title="Original: gehn" class="dta-reg">gehen</span>, weil<br/>
+es weniger <span title="Original: Masse" class="dta-reg">Maße</span> unter sich hat: es scheint aber, dass die<br/>
+basaltischen Laven <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">so wie der Augitporphyr </span>an dieser Beschleunigung Schuld sind, weil<br/>
+sie eine <span title="Original: grössere" class="dta-reg">größere</span> Substanz haben, als <span title="Original: andre" class="dta-reg">andere</span> Gebirgsarten.</p><br/>
+<p class="dta-p">Man hat auch angefangen, Längengrade zu messen, und<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0297 : 147r|</span><br/>
+gleichfalls in dieser Richtung eine Abplattung gefunden. <span title="Personenname"><span title="Original: Hen-&#xA;ry" class="dta-reg">Henry</span></span>, <span title="Personenname"><a href="http://viaf.org/viaf/17524078/"><span title="Original: Bou" class="dta-reg">Boussault</span><span class="dta-del" title="Streichung (#s)"><span class="gap">[unleserliches Material – 2 Zeichen fehlen]</span></span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Original: ss" class="dta-reg"/></span><span title="Original: ault" class="dta-reg"/></a></span> <span title="Original: (?)" class="dta-reg"><span class="dta-del" title="Streichung (#s)"><span class="dta-metamark" title="metamark">(?)</span></span></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/117673072"><span title="Original: Carlini" class="dta-reg">Karline</span></a></span> haben sich Verdienste darum <span title="Original: er-&#xA;worben" class="dta-reg">erworben</span>, und der Längengrad ist gemessen von Bordeaux bis<br/>
+Fiume: die <span title="Original: östreichische" class="dta-reg">österreichische</span> Regierung wird ihn <span title="Original: fortsezen" class="dta-reg">fortsetzen</span> bis<br/>
+Orzora in Siebenbürgen: <span class="dta-del" title="Streichung (#s)">man wird als dann 15 Längengrade<br/>
+gemessen haben.</span> <span class="u ">Nachträglich.</span></p><br/>
+</div></body></html>

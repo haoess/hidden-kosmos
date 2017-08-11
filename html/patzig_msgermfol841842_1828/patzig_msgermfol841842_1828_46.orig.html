@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span title="Original: D. 31 Maerz." class="dta-reg">46. Vorlesung, 31.03.1828</span></div><br/>
+<p class="dta-p">Von der Feuchtigkeit der Luft bin ich z<span class="dta-supplied">[u]</span><br/>
+den Proceſſen der Waſſermeteore überg<span class="dta-supplied">[e-]</span><br/>
+gangen. Jhr Character kañ hier nur ſo<br/>
+aufgeſtellt werden, wie er ſich für eine<br/>
+phyſiſche Weltbeſchreibung eignet. Jedes<br/>
+Phänomen muß nach ſeiner Beſchaffenhei<span class="dta-supplied">[t]</span><br/>
+in den verſchiedenen Zonen, mehr geogr<span class="dta-supplied">[a-]</span><br/>
+phiſch hier behandelt werden. Bisher ha<span class="dta-supplied">[t]</span><br/>
+man die Wärme unter den verſchieden<span class="dta-supplied">[en]</span><br/>
+Zonen erſt unterſucht u. der Druck der<br/>
+Atmoſphäre, die Feuchtigkeit derſelben iſt<br/>
+nur erſt kürzlich geographiſch eruirt. Au<span class="dta-supplied">[f]</span><br/>
+dem Meere thaut es weniger als auf d<span class="dta-supplied">[em]</span><br/>
+Continent u. in den Tropen mehr als in d<span class="dta-supplied">[er]</span><br/>
+temperirten Zone. Hier ſind eine gerau<span class="dta-supplied">[me]</span><br/>
+Zeit des Jahres keine Wolken am Him̃el<br/>
+daher iſt hier die Ausſtrahlung häufige<span class="dta-supplied">[r]</span><br/>
+mehr Kälte erregend u. daher der Ta<span class="dta-supplied">[u]</span><br/>
+ſtärker. Jn ähnlicher Art werden<br/>
+wir den Regen, Schnee u. Hagel nach<br/>
+den geographiſchen Zonen betrachten.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="b ">Regen</span><br/>
+</span>Was die Bildung des Regens anbetriff<span class="dta-supplied">[t,]</span><br/>
+ſo iſt hierbei der Umſtand, daß die auf<span class="dta-supplied">[lö-]</span><br/>
+ſende oder vielmehr <span class="aq ">expanſive</span> Kraft<br/>
+der Dämpfe in Zahlen ausgedrückt, nich<span class="dta-supplied">[t]</span><br/>
+in derſelben Reihe ſteigt, wie die Zahl<span class="dta-supplied">[en]</span><br/>
+bei den verſchiedenen Temperaturen; ſon-<br/>
+dern weñ letztere in arithmet. Reihe<br/>
+ſteigt, erſtere in geometr. Reihe zunim̃t<br/>
+kom̃t nun eine gleiche Quantität Luf<span class="dta-supplied">[t]</span><br/>
+von verſchiedenen Temperaturen zuſam̃e<span class="dta-supplied">[n]</span><br/>
+ſo entſteht eine mittlere Wärme von bei<span class="dta-supplied">[den]</span><br/>
+aber alsdañ entwickelt ſich die Präc<span class="dta-supplied">[i-]</span><br/>
+pitation des Waſſergases, da die<br/>
+obern Luftſchicht es nicht mehr zu halten<br/>
+in Stande iſt. Das reinſte Waſſer, ent-<br/>
+fernt von allen Gegenſtänden auf<span class="gap">[unleserliches Material]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">zeig<span class="dta-supplied">[t]</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0302 : 285.|</span><br/>
+zeigt einige chemiſche Beſtandtheile Zb. Sal-<br/>
+peterſäure. Unter den Tropen iſt die<br/>
+Zeit wo Regen u. Dürre wechſelt merk-<br/>
+würdig. Es iſt dies der dortige Som̃er<br/>
+u. Winter, u. fällt grade umgekehrt in<br/>
+die Zeit wo bei uns Som̃er u. Winter iſt.<br/>
+Mit dem Aufhören der Paſſatwinde<br/>
+fängt die Regenzeit an. Weñ es 6–8<br/>
+Monate nicht geregnet hat, u. in dieſer<br/>
+Zeit die vermilderten Thiere von der ve-<br/>
+getabiliſchen Waſſerquellen nur leben<br/>
+müſſen, von den <span class="aq ">Cactus</span>arten, die ſie<br/>
+mit den Füßen nicht ohne <span title="Verletzung￼" class="dta-abbr">Verletzungen</span> öffnen,<br/>
+deñ verändert ſich <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">endlich </span>die dunkle Bläue<br/>
+des Him̃els u. wird heller, der Hygrome-<br/>
+ter zeigt mehr Feuchtigkeit, die Sterne<br/>
+funkeln lebhafter, die Brieſe oder<br/>
+Paſſatwind hört <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">allmählig </span>auf u. die Electri-<br/>
+cität iſt oft 0 u. dañ wieder ſehr<br/>
+ſtark ſowohl + als −. Es iſt dies ein<br/>
+Gewitterzuſtand ohne Gewölk, wo alle<br/>
+Abend ſich Wetterleuchten einſtellt. Endlich<br/>
+erheben ſich am Horizont Wolken. Die<br/>
+im̃er näher kom̃en, endlich den Him̃el be-<br/>
+decken u. regnen. Dies geſchieht im <span class="aq ">April</span><br/>
+u. <span class="aq ">Mai</span>. Eine ſehr deutliche Erklärung über<br/>
+die Paſſatwinde iſt dieſe Erſcheinung,<br/>
+warum dieſe aufhören, weñ die Regen-<br/>
+zeit anfängt, u. alsdañ Weſtwinde<br/>
+wehen. Die große aufſteigende Maſſe<br/>
+Waſſergas, wird durch die Polarluft<br/>
+verjagt, die den Paſſatwind bildet.<br/>
+Erwärmt im Monat Mai die Soñe die<br/>
+nördlichen Zonen, ſo wird <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">es </span>dorten ſo<br/>
+warm wie unter dem Aequator, u.<br/>
+ſo hören die Luftſtröme dahin auf. Jetzt<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">häuft</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0303 : 286.|</span><br/>
+häuft ſich dorten eine Maſſe Waſſerg<span class="dta-supplied">[as]</span><br/>
+an u. es entſtehen Regengüſſe in der Epoc<span class="dta-supplied">[he]</span><br/>
+weñ die Soñe den Aequator durchſchn<span class="dta-supplied">[ei-]</span><br/>
+det. Die Quantität des herabfallenden R<span class="dta-supplied">[e-]</span><br/>
+gens iſt nach den Zonen verſchieden. Jn<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Höhe des<br/>
+herabfallenden<br/>
+Regens.</span><br/>
+</span>der gemäßigten Zone beträgt die Höhe d<span class="dta-supplied">[es]</span><br/>
+herabfallenden Regens, weñ keine Verdu<span class="dta-supplied">[n-]</span><br/>
+ſtung dabei ſtatt fände 18–24″, unter <span class="dta-supplied">[den]</span><br/>
+Tropen 108–120″<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"> jährlich</span>. Hiebei giebt es Ausna<span class="dta-supplied">[h-]</span><br/>
+men Zb. die Weſtküſte Englands, wo 4<span class="dta-supplied">[5″]</span><br/>
+u. die Oſtküſte daſelbſt, wo nur 20–22″ <span class="dta-supplied">[Re-]</span><br/>
+gen herabfallen. Ganz etwas ähnliche<span class="dta-supplied">[s]</span><br/>
+findet man in Scandinavien. Zu Berg<span class="dta-supplied">[en]</span><br/>
+an der Küſte, beträgt die Maſſe des hera<span class="dta-supplied">[b-]</span><br/>
+fallenden Regens 70–92″ u. im Jñern de<span class="dta-supplied">[s]</span><br/>
+Landes 14–15″ jährlich. Der Unterſchied<br/>
+der Quantität des Regens der an einem Ta<span class="dta-supplied">[g]</span><br/>
+herabſtürzt, iſt unter den Tropen 4–<span class="dta-supplied">[5]</span><br/>
+mal größer. Je höher die Wolken zieh<span class="dta-supplied">[en]</span><br/>
+je größer ſind die Tropfen, die im hera<span class="dta-supplied">[b-]</span><br/>
+fallen durch mehrere Luftſchichten die Fe<span class="dta-supplied">[uch-]</span><br/>
+tigkeit anziehen u. ſich ſomit vergrößer<span class="dta-supplied">[n.]</span><br/>
+Die Temperatur der Regentropfen iſt ſte<span class="dta-supplied">[ts]</span><br/>
+1½° R. kälter als die Luft, welches thei<span class="dta-supplied">[ls]</span><br/>
+von der Verdünſtungskälte beim Fallen<br/>
+theils von der primitiven Kälte <span class="dta-del" title="Streichung (#ow)">b</span><span class="dta-add" title="Hinzufügung (across)">d</span>es Waſſ<span class="dta-supplied">[ers]</span><br/>
+in der Höhe herrührt. Seltene Ausnahm<span class="dta-supplied">[en]</span><br/>
+ſind es, daß auf Hochgebirgen die hera<span class="dta-supplied">[b-]</span><br/>
+fallenden Tropfen etwas wärmer als <span class="dta-supplied">[die]</span><br/>
+umgebende Luft ſind. Uebrigens kañ es<br/>
+auch an einigen Orten der temperirten<br/>
+Zone der Fall ſein, daß dorten ſo vi<span class="dta-supplied">[el]</span><br/>
+Waſſer als in den Tropen fällt. Jm<br/>
+mittlern Frankreich, wo gewöhnlich kaum <span class="gap">[verlorenes Material]</span><br/>
+Regen fällt, fielen nach genauer Beob<span class="dta-supplied">[ach-]</span><br/>
+tung des <span class="aq ">de la Braſſe</span> 2′5″ in ei<span class="dta-supplied">[ner]</span><br/>
+Zeit von 22 Stunden. Etwas ähnlich<span class="dta-supplied">[es]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">i<span class="dta-supplied">[ſt]</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0304 : 287.|</span><br/>
+iſt in <span class="aq ">Cayenne</span> bemerkt worden, wo man<br/>
+in 24 Tagen 12′7″ Waſſer fallen hoch.<br/>
+Jn neueren Zeiten iſt die Phyſik beſchäftigt<br/>
+geweſen durch genaue Maſſe zu beobachten,<br/>
+ob mehr Regen in der Höhe, als in der<br/>
+Ebene fällt. Jn Paris hat man gefunden,<br/>
+daß während zehn Jahren, auf einer Höhe<br/>
+von 90 Fuß, ein viertel weniger Regen<br/>
+gefallen iſt als in der Ebene.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="b ">Schnee</span><br/>
+</span>Auch der Schnee kañ nach den verſchie-<br/>
+denen Zonen unterſucht werden. Die Criſtal-<br/>
+liſation des Waſſers u. Eiſes iſt noch nicht<br/>
+genau genug bekañt. Man glaubte das<br/>
+Eis geſtalte ſich in hexaedriſchen Prismen,<br/>
+genauere Betrachtungen zeigen aber, daß<br/>
+es Rhomboiden von 60 u. 120° ſind.<br/>
+Unter verſchiedener Kälte bilden ſich auch<br/>
+verſchiedene Kriſtalformen. Eine andere<br/>
+Erſcheinung iſt die verſchiedene Quanti-<br/>
+tät Luft die im Jñere des Eiſes u. des<br/>
+Schnees enthalten iſt, nicht in den Zwiſchen-<br/>
+räumen des letztern, ſondern in ihm<br/>
+ſelbſt. Sobald wie Waſſer friert<br/>
+wird Luft herausgetrieben u. doch be-<br/>
+findet ſich noch zwei mal ſo viel Luft<br/>
+im Eiſe des Waſſers, als im Eiſe der<br/>
+Luft. Die Kriſtalle des Schnees am Nord-<br/>
+Pol ſind von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117654167">Scoresby</a></span></span> unterſucht wor-<br/>
+den. Unter den Tropen iſt deren Bildung<br/>
+u. Geſtaltung ſehr merkwürdig, auf<br/>
+den Höhen von 15–18000 Fuß; ſo daß<br/>
+die <span title="Sprach￼" class="dta-abbr">Sprachen</span> der Europäer u. der Wilden<br/>
+bereichert worden iſt, alle dieſe Geſtal-<br/>
+ten aus zu drücken, der <span title="Original: Mittel dinge" class="dta-reg">Mitteldinge</span> zwi-<br/>
+ſchen Schnee u. Hagel. Unter den Tropen<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">ſchneit</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0305 : 288.|</span><br/>
+ſchneit es häufiger bei einer Temper<span class="dta-supplied">[a-]</span><br/>
+tur über als unter dem Gefrierpunkte, ge<span class="dta-supplied">[-]</span><br/>
+wöhnlich bei + 2–4,5° R. Unter dem Aeq<span class="dta-supplied">[ua-]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Schnee unter<br/>
+dem Aequator</span><br/>
+</span>tor ſchneit es in einer Höhe von 12000<br/>
+u. darüber, unter dem <span class="aq ">Tropicus Cancri</span><br/>
+bei 9300′. Hier liegt <span class="aq ">Mexico</span>, u. es iſt d<span class="dta-supplied">[er]</span><br/>
+Schnee dort etwas ſeltenes. Merkwürd<span class="dta-supplied">[ig]</span><br/>
+iſt es, daß vor 40 Jahren an dem Tage w<span class="dta-supplied">[o]</span><br/>
+die Jeſuiten Vertrieben wurden u. dorte<span class="dta-supplied">[n]</span><br/>
+weggingen es ſchneiete, u. dañ wieder, a<span class="dta-supplied">[ls]</span><br/>
+ſie vor einiger Zeit dort ankamen. D<span class="dta-supplied">[ie]</span><br/>
+Quantität Waſſermaſſe die man au<span class="dta-supplied">[s]</span><br/>
+Schnee erhalten kañ, iſt beobachtet. Gepre<span class="dta-supplied">[ß-]</span><br/>
+ter Schnee giebt ⅓ ſeiner Quantität Waſſe<span class="dta-supplied">[r]</span><br/>
+nicht zuſam̃engepreßter nur <span class="sup ">1</span>/<span class="sub ">12</span>. Jn Schottl<span class="dta-supplied">[and]</span><br/>
+will man leuchtenden Schnee geſehen haben, <span class="dta-supplied">[es]</span><br/>
+kañ dies ein elektriſches Phänomen ſein. Ste<span class="dta-supplied">[ht]</span><br/>
+dieſe Erſch. aber im Zuſam̃enhange mit de<span class="dta-supplied">[m]</span><br/>
+rothen Schnee, ſo gehört es zur Geographie<br/>
+der Pflanzen u. nicht hieher. Die Bildung<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Hagel</span><br/>
+</span>des ſtarren Waſſers als Hagel iſt et<span class="dta-supplied">[-]</span><br/>
+was anderes. Jm̃er räthſelhafter wird<br/>
+die Erſcheinung dieſes Phänomens, da in<br/>
+den verſchiedenen Zonen keine Uebereinſt<span class="dta-supplied">[im-]</span><br/>
+mung herrſcht. Am Pol hagelt es gar nic<span class="dta-supplied">[ht]</span><br/>
+eben ſo wenig unter den Tropen, u. blo<span class="dta-supplied">[ß]</span><br/>
+unter den Mittelzonen. Soll Electricitä<span class="dta-supplied">[t]</span><br/>
+den Hagel veranlaſſen, ſo findet dieſe zw<span class="dta-supplied">[ar]</span><br/>
+nicht ſo häufig am Pol, aber ſehr häufig un<span class="dta-supplied">[ter]</span><br/>
+den Tropen ſtatt. Der Hagel iſt aber <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">h</span>ie<span class="dta-supplied">[r]</span><br/>
+ſo ſelten, daß weñ es in 50 Jahren Hagel<br/>
+die Menſchen verwundrungsvoll zuſam̃enk<span class="dta-supplied">[om-]</span><br/>
+men, als weñ bei uns Aerolithen herau<span class="dta-supplied">[s-]</span><br/>
+fallen möchten. Auf Höhen von 3000 Fu<span class="dta-supplied">[ß]</span><br/>
+<span class="dta-add" title="Hinzufügung (left)">u. darüber </span>hagelt es hier noch am öfterſten. Jm<br/>
+ſüdlichen Europa iſt dieſe <span title="Schreibfehler: Erſchenug" class="dta-corr">Erſcheinung</span> am häuf<span class="dta-supplied">[igſten.]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">in</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0306 : 289.|</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Wo es am öfterſten<br/>
+hagelt.</span><br/>
+</span>Jn der Gegend hagelt es am meiſten wo die<br/>
+Alpen in den Thälern u. Ebenen ſich allmäh-<br/>
+lig verlieren. Jn der eingrenzenden Lombar-<br/>
+die, in Aoſta, Lugano <span title="Original: p." class="dta-reg"><span class="aq ">etc</span>.</span> richtet der Hagel<br/>
+große Verheerungen an; in den Alpen ſelbſt<br/>
+hagelt es dagegen ſelten. Bei Tage hagelt<br/>
+es öfter als bei Nacht, u. es iſt möglich daß<br/>
+dies mit der Soñe im Zuſam̃enhange ſteht,<br/>
+nicht als leuchtender, ſondern erwärmender<br/>
+Körper. Die Größe des Hagels iſt <span class="dta-del" title="Streichung (#s)">iſt</span><span class="dta-add" title="Hinzufügung (superlinear)">in</span> ſüdliche<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Größe<br/>
+der Hagelkörner</span><br/>
+</span>Gegenden beträchtlicher als in nördlichen; man<br/>
+kañ dort nicht ſelten Körner von ½ ℔ Ge-<br/>
+wicht ſam̃eln. Jn <span class="aq ">Myrore</span> ſoll nach Verſi-<br/>
+cherung eines ſonſt glaubwürdigen Reiſenden,<br/>
+bei dem Tode <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11902327X">Tippo Saibs</a></span></span>, ein Hagelkorn<br/>
+von der Größe eines Elephanten herunter-<br/>
+gefallen ſein, d<span class="dta-del" title="Streichung (#ow)">er</span><span class="dta-add" title="Hinzufügung (across)">as</span> beim Zerſchmolzen einen<br/>
+Schwefelgeruch verbreitete. Es iſt eine höchſt<br/>
+unſichere Beobachtung ob wirklich ein Mete-<br/>
+orſtein eingeſchloſſen geweſen, u. höchſt un-<br/>
+wahrſcheinlich iſt es, daß glühendes Schwefel-<br/>
+kies mit Eis im Zuſam̃hange ſich befunden<br/>
+haben ſoll. Die Form des Hagels iſt ſehr<br/>
+verſchieden. Während des Fallens rotiren<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Rotirung</span><br/>
+</span>die Körner u. die Lagen ſetzen ſich um<br/>
+dieſelben concentriſch an. Jm Kleinen findet<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Aehnlichkeit des<br/>
+Hagel<span class="dta-del" title="Streichung (#ow)">s</span><span class="dta-add" title="Hinzufügung (across)">korns</span> mit den<br/>
+Weltkörpern</span><br/>
+</span>man für Aehnlichkeit mit den Weltkörpern,<br/>
+u. mehr als einmal fand ich ſelbſt, daß<br/>
+förmliche Ringe, wie Saturnsringe, ſich um<br/>
+die Hagelkörner gebild<span class="dta-del" title="Streichung (#ow)">t</span><span class="dta-add" title="Hinzufügung (across)"/>et hatten, die ich<br/>
+ablöſen koñte. Einiger Hagel iſt wie<br/>
+Keulen geſtaltet, die Spitzen haben.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="b ">rother Hagel</span><br/>
+</span>Man hat auch rothen Hagel geſehen, in den<br/>
+kleine vegetabiliſche Kör<span class="dta-del" title="Streichung (#s)">p</span><span class="dta-add" title="Hinzufügung (superlinear)">n</span>er eingeſchloſſen<br/>
+waren. Der rothe Schnee bietet die Er-<br/>
+ſcheinung dieſer rothen Körner dar, die ſich<br/>
+ſelbſt in Paris 2–3 Jahre lang <span title="fortpflanzt￼" class="dta-abbr">fortpflanzten</span>,<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">dadurch</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0307 : 290.|</span><br/>
+dadurch, daß ein Korn platzte u. 6–7 Kö<span class="dta-supplied">[r-]</span><br/>
+ner ſich <span title="bildet￼" class="dta-abbr">bildeten</span> u. fortvegetirten. Wären a<span class="dta-supplied">[uf]</span><br/>
+dieſe Art <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">die </span>erſte<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (intralinear)">n</span> organ. Stoffe in der Atmoſph<span class="dta-supplied">[äre]</span><br/>
+ſelbſt; ſo wäre dies allerdings merkwü<span class="dta-supplied">[r-]</span><br/>
+dig. Jch ſelbſt habe dergl. Beobachtungen nic<span class="dta-supplied">[ht]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b "><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119292556">Volta</a></span>'s</span><br/>
+Anſicht über den<br/>
+Hagel</span><br/>
+</span>gemacht. Der größte Phyſiker <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119292556">Volta</a></span></span> gla<span class="dta-supplied">[ub-]</span><br/>
+te, daß gehem̃te, geringere Ausdünſtung de<span class="dta-supplied">[n]</span><br/>
+Hagel veranlaßte; u. dañ, welches wahr-<br/>
+ſcheinlicher iſt, daß die Hagelkörner von<br/>
+zwei Wolkenſchichten mit entgegengeſetzte<br/>
+Electricität angezogen, u. abgeſtoßen<br/>
+würden, welches das Raſſeln in den Wo<span class="dta-supplied">[lken]</span><br/>
+veranlaßte. Uebrigens ſcheint ſich der<br/>
+Hagel in den höhern <span title="Region￼" class="dta-abbr">Regionen</span> zu bilden, u.<br/>
+iſt ein Phänomen der temperirten Zonen</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="b ">Luftwärme</span><br/>
+</span>Wir kom̃en zur Luftwärme ſelbſt <span class="dta-supplied">[u.]</span><br/>
+zur Vertheilung der Klimate, wovon d<span class="dta-supplied">[er]</span><br/>
+größte Theil der Erſcheinungen abhängig i<span class="dta-supplied">[ſt.]</span><br/>
+Es kom̃t hier auf die geographiſche Lag<span class="dta-supplied">[e,]</span><br/>
+Beſchaffenheit des Bodens, Nähe des Meer<span class="dta-supplied">[es,]</span><br/>
+nachtheilige Ausſtrahlung der Wärme <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span><br/>
+an. Die Hauptbedingung iſt aber der ve<span class="dta-supplied">[r-]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Standpunkt<br/>
+der Soñe</span><br/>
+</span>ſchiedene Standpunkt der Soñe zum Horizo<span class="dta-supplied">[nt.]</span><br/>
+Von der ſenkrechten Jncidenz der Soñen<span class="dta-supplied">[-]</span><br/>
+ſtrahlen bis zur Neigung von 20° iſt d<span class="dta-supplied">[ie]</span><br/>
+Wärme ſtets gleich, oder die mittlere Te<span class="dta-supplied">[m-]</span><br/>
+peratur. Eben ſo iſt auch die photometriſch<span class="dta-supplied">[e]</span><br/>
+Wirkung des Lichts von 12 Uhr – 3 Uhr im Mo<span class="dta-supplied">[nat]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Quantität<br/>
+der Wärme</span><br/>
+</span><span class="aq ">Aug</span>. ganz gleich. Die Quantität der W<span class="dta-supplied">[ärme]</span><br/>
+hängt daher von der Quant. des zurückg<span class="dta-supplied">[e-]</span><br/>
+worfenen Lichts ab, u. dieſe iſt verſchiede<span class="dta-supplied">[n]</span><br/>
+nach dem Einfallswinkel des Lichtſtrahls. D<span class="dta-supplied">[ie]</span><br/>
+Soñe kañ hiebei ihre Höhe, oder die Fläc<span class="dta-supplied">[he]</span><br/>
+ihre Stellung verändern. Hieraus entſteh<span class="dta-supplied">[en]</span><br/>
+die größten Unterſchiede in der Witteru<span class="dta-supplied">[ng]</span><br/>
+Zb. kom̃t der Oelbaum in der Ebene der Lo<span class="dta-supplied">[m-]</span><br/>
+bardei nicht fort, wohl aber an den Abhäng<span class="dta-supplied">[en]</span><br/>
+der Berge, die Polygonalflächen bilden u.<br/>
+die Wärme verſtärken.</p></div></body></html>

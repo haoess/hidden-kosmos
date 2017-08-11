@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[24. Vorlesung, 26.01.1828]</span></div><br/>
+<div class=""><div class=""><div class=""><div class="dta-head">Äußere Planeten</div><br/>
+<hr/><br/>
+<p class="dta-p">Wir gehen jetzt zu dem Planeten über die zu dem<br/>
+Syſtem der dünnere, größere und mondreichere<br/>
+gehören. – An der Grenze befinden ſich die beiden<br/>
+mächtigſten Planeten, die wegen ihrer großen<br/>
+Maſse vielen Einfluß auf die Bewegung der an-<br/>
+dern haben; es ſind dieß Jupiter und Saturn.</p><br/>
+<div class=""><p class="dta-p"><span class="u ">Jupiter</span> <span class="dta-metamark" title="metamark">|:</span> ♃ <span class="dta-metamark" title="metamark">:|</span> iſt merkwürdig durch ſeine große<br/>
+Lichtſtärke, er iſt von großer <span title="Schreibfehler: h" class="dta-corr">H</span>elligkeit und hat<br/>
+eine gelbe Farbe. – Sein Durchmesser beträgt<br/>
+11 Erdmesser. Sein kubiſcher Inhalt iſt um ⅓ größer<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">als</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0205 : 197|</span><br/>
+als alle übrigen Planeten zuſammen wenn<br/>
+man ſie ſich in einer Kugel vereinigt denkt. – Ge-<br/>
+erachtet er nur die Dichtigkeit der concentrirten<br/>
+Salpeterſäure hat, ſo iſt es doch wegen ſeiner gro-<br/>
+ßen Maſse leicht erklärlich daß er viele Störun-<br/>
+gen hervor bringen kann theils im Lauf der Pla-<br/>
+neten theils in dem der Cometen. – Man be-<br/>
+merkt am Jupiter viele Streifen und Flecken;<br/>
+ausſchlieſsen muß aber hiervon die Erſcheinung<br/>
+wenn die Jupiter Monde ihren Schatten auf den<br/>
+Planeten werfen, und ſie bei ihm vorüberziehen.<br/>
+<span class="dta-metamark" title="metamark">|:</span> Man hat die Monde früher geſehen als dieſe Streifen <span class="dta-metamark" title="metamark">:|</span><br/>
+Gewöhnlich ſieht man 5 große Streifen in der<br/>
+Nähe des Aequators, woran der mittlere ſehr hell<br/>
+iſt. – Ihre Zahl iſt aber ſehr unbeſtimmt, man<br/>
+hat ſelbſt geglaubt 10 geſehen zu haben; zwiſchen<br/>
+dieſen Streifen befinden ſich kleine Flecke die mit<br/>
+ihnen paralell fortgehen. Aber auch in den Strei-<br/>
+fen ſelbſt ſieht man eine Bewegung die mit<br/>
+der Rotation ſelbſt zuſammenhängt.</p><br/>
+<p class="dta-p">Es iſt durch einen ſolchen Fleck der wie <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Dom Caſsini</a></span></span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">sagt</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0206|</span><br/>
+ſagt auf einem ſüdlichen Theil <span class="dta-add" title="Hinzufügung (intralinear)">(</span>eines ſüdlichen<span class="dta-add" title="Hinzufügung (intralinear)">)</span><br/>
+in der ſüdl. Hemisphäre am Jupiter ſtand und<br/>
+in den Jahren von 1665 bis 1666 immer ununter-<br/>
+brochen wieder kam, die Rotation des Jupiters<br/>
+auf 9 Stunden 56 Stunden beſtimmt werden.<br/>
+Im Jahre 1690 wurde er wieder mehrere Monate<br/>
+hindurch beobachtet. – <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11876196X">Schröder</a></span></span> hat bei ſeinen Beob-<br/>
+achtungen dieſelbe Zeit heraus gebracht. – Der-<br/>
+ſelbe <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Cassini</a></span></span> beſtimmte zuerſt die Abplattung<br/>
+auf <span class="sup ">1</span>/<span class="sub ">14</span>. – <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11876196X">Schröder</a></span></span> glaubt ſogar eine Unregel-<br/>
+mäßigkeit in ſeiner Form, um noch eine Ab-<br/>
+plattung von <span class="dta-del" title="Streichung (#s)">W</span><span class="dta-add" title="Hinzufügung (superlinear)">N</span>.O nach S.W. gefunden zu haben;<br/>
+doch iſt dieſe Angabe nicht ſehr ſicher.</p><br/>
+<p class="dta-p">Von allen Planeten iſt ♃ der <span title="Schreibfehler: wichtigstr" class="dta-corr">wichtigste</span> für die<br/>
+Schifffarth wegen den Verfinſterungen ſeiner<br/>
+Trabanten.</p><br/>
+<p class="dta-p">Der erſte Jupiters Mond wurde von <span title="Personenname"><a href="http://d-nb.info/gnd/11885979X">Simon<br/>
+<span class="aq ">Meier</span></a></span> in Anſpach 1609 geſehen; und von ihm das<br/>
+Brandenburgiſchen Geſtirn genannt. – Man ent-<br/>
+deckte bei ihnen Flecke, und fand daſselbe Geſetz<br/>
+wie bei unſerm Mond, daß die Rotation derſelben<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">gleich</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0207 : 199|</span><br/>
+gleich iſt der Umlaufszeit um den Hauptplaneten.<br/>
+Alle Jupiters Trabanten ſind größer als unſer<br/>
+Mond; der erſte iſt der größte. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span></span> hat viel<br/>
+dafür gethan und die Tabellen über die Jupiters<br/>
+Monde ſehr verbeſsert. – Die drei erſten Ju-<br/>
+piters Trabanten werden nie zugleich verfinſtert.<br/>
+Wenn die Verfinſterung eintritt ſieht man<br/>
+ſie als helle Punkte vor dem Jupiter ſich fort-<br/>
+bewegen; von der Oppoſition entfernt folgt<span class="dta-marginal dta-marginal-right">?<br/>
+</span><br/>
+dann der Schatten ſelbſt. Der große franzöſiſche<br/>
+Aſtronom <span title="H￼." class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> hat ſich viel mit dieſen<br/>
+Verfinſterungen beſchäftigt.</p></div><br/>
+<div class=""><div class="dta-head"><span class="u ">Saturn</span> <span class="dta-metamark" title="metamark">|:</span> ♄ <span class="dta-metamark" title="metamark">:|</span></div><br/>
+<p class="dta-p">Obgleich entfernter als ♃ hat ♄ doch ein kleineres<br/>
+Volumen als jener. Sein Durchmeſser beträgt 9,<br/>
+4 Erddurchmeſser. Seine Rotation iſt ähnlich der des<br/>
+Jupiters, 10 Stunden 16 Minuten. – Dieſe ſowohl<br/>
+wie die Abplattung wurden 1789 von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span></span><br/>
+entdeckt. Er glaubt daß ſie doppelt ſei, nur<span class="dta-marginal dta-marginal-right"><span class="dta-metamark" title="metamark">?</span><br/>
+</span><br/>
+ſchreibt dieß als Folge der flüſsigen Hülle zu<br/>
+ſowohl an den Polen als am Aequator. – Die größte<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Ab-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0208|</span><br/>
+Abplattung macht einen Winkel von 45° mit dem<br/>
+Aequator. – Auch hier finden ſich wie bei Jupiter,<br/>
+Streifen, die bräunlich ſind <span class="dta-metamark" title="metamark">|:</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span></span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11876196X">Schröder</a></span></span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/136214908">Ku-<br/>
+rowskÿ</a></span></span> <span class="dta-metamark" title="metamark">:|</span>. – Die Trabanten des Saturn ſind nur<br/>
+bei ſtarker Vergrößerung zu ſehen; es ſind de-<br/>
+ren 7, 5 davon <span class="dta-del" title="Streichung (#s)">ſicht</span><span class="dta-add" title="Hinzufügung (superlinear)">ſind</span> leicht zu erkennen, die bei-<br/>
+den innern aber weitſchwieriger, ſie ſind kleiner<br/>
+als Vesta. Merkwürdig iſt es das Saturn die<br/>
+größten und kleinſten Trabanten hat, von denen<br/>
+die kleinern grade die innere ſind <span class="dta-metamark" title="metamark">|:</span> Sie wurden<br/>
+mit dem 40 füßigen Fernrohr entdeckt <span class="dta-metamark" title="metamark">:|</span> Nach<br/>
+den Flecken die man bei einigen beſonders am<br/>
+7ten ſieht folgen auch dieſe Trabanten demſelben<br/>
+Geſetz wie unſer Mond und die Trabanten des<br/>
+Jupiters <span class="dta-metamark" title="metamark">|:</span> bisweilen werden in Büchern ſtatt 1te u. 2te<br/>
+der 6te und 7te genannt, es iſt dieß unrecht; man<br/>
+zählt die Monde immer nach der Entfernung von<br/>
+Innen heraus.<span class="dta-metamark" title="metamark">⎡</span></p><br/>
+<p class="dta-p">Eine höchſt ſonderbare Erſcheinung iſt der Ring des<br/>
+Saturn. Er iſt nicht eigentlich von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118537229">Galliläi</a></span></span> ſondern<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">von</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0209 : 201|</span><br/>
+von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118639749">Huygens</a></span></span> entdeckt, indem die Entdeckung im̃er<br/>
+den gehört der erkennt was er eigentlich iſt.<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118639749">Huygens</a></span></span> hat 1650 zuerſt angegeben warum der Ring<br/>
+uns nicht immer auf dieſelbe Weiſe erſcheine.<br/>
+Er verſchwindet für gewöhnliche Fernröhre wenn<br/>
+die Sonne durchſcheint, da er ſehr dünne iſt, und<br/>
+nur 113 Meilen dicke hat. – Durch größere Fern-<br/>
+röhre wie das von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span></span> iſt er aber <span class="dta-add" title="Hinzufügung (superlinear)"><span class="dta-metamark" title="metamark">⎡</span>(nicht?) </span>wieder<br/>
+verſchwunden. Er iſt nicht einfach gewöhnlich ſieht<br/>
+man nur 2 Ringe, doch iſt es zweifelhaft ob er<br/>
+nicht durch eine dünne Materie mit dem Planet<br/>
+ſelbſt zuſammen hänge; es ſcheint dieß wahr-<br/>
+ſcheinlich zu ſein, daran noch nie einen Stern<br/>
+zwiſchen dem Ring und dem Planeten hat durch-<br/>
+ſcheinen geſehen. <span class="dta-metamark" title="metamark">|:</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118793357">Pristley</a></span></span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117689343">Clarke</a></span></span> <span class="dta-metamark" title="metamark">:|</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span></span> hat<br/>
+glaubthaft gemacht daß er unbeweglich ſei; es<br/>
+iſt dieß nicht ganz wahrſcheinlich; doch will er<br/>
+mit <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116474580">Harly</a></span></span> einen Knoten im Ringe beobachtet<br/>
+haben, der 36 Stunden lang unbeweglich erſchien.<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span></span> hat dagegen die Idee aufgeſtellt daß die<br/>
+verſchiedenen Ringe nicht in einer Ebene liegen,<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">doch</span></div><br/>
+<div class="&#xA;            fw-bottom-sig&#xA;          "><span class="aq ">a</span>. 2</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0210|</span><br/>
+doch wird man immer einen ſolchen Knoten auf<br/>
+demſelben Fleck ſehen. Auch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11858975X">Olbers</a></span></span> hat eine Erklärung<br/>
+darüber gegeben, wie die Sonne Einfluß auf dieſe<br/>
+Erſcheinung hat.</p><br/>
+<p class="dta-p">Die Nächte auf dem Saturn müſsen die maler<br/>
+iſchten von allen ſein; von den vielen Monden<br/>
+ſieht man immer mehrere zugleich, und zwar<br/>
+in der Art, daß man Vollmond, erſtes und letz-<br/>
+tes <span title="Schreibfehler: Virtel" class="dta-corr">Viertel</span> zugleich haben kann.</p></div><br/>
+<div class=""><div class="dta-head"><span class="u ">Uranus</span> (⛢)</div><br/>
+<p class="dta-p">Durch die Entdeckung des Uranus wurde unſer<br/>
+Sonnenſyſtem um die Hälfte vergrößert. –</p><br/>
+<p class="dta-p">Der Durchmeſser des Uranus beträgt 4 Erddurch-<br/>
+meſser; ſein optiſcher Durchmeſser eine Winkel-<br/>
+weite, von 4″ da man ihn trotz dieſes kleinen<br/>
+Schwinkels mit bloßen Augen ſehen kann, hat man<br/>
+geglaubt daß er eine eigne Phosphoreszens habe.<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span></span> hat geglaubt zwei Ringe zu ſehen, aber<br/>
+bei ſpätern Beobachtungen, die er ſelbſt anſtellte<br/>
+fand ſich dieß nicht beſtätigt. – Von den 6 Trabanten<br/>
+die <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span></span> mit ſeinen ſchönen Telescopen geſehen<br/>
+hat, haben andere Aſtronomen nur zwei ſehen können,<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">den</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0211 : 203|</span><br/>
+den 2<span class="sup "><span class="u ">ten</span></span> und 4<span class="sup "><span class="u ">ten</span></span>.</p><br/>
+<p class="dta-p">Bis jetzt hat man auf dem Uranus noch keine Flecke<br/>
+unterſcheiden können, daher weiß man noch nichts<br/>
+von ſeiner Rotation; nach den Monden zuurtheilen<br/>
+geſchieht ſie von Norden nach Süden, nicht von W.<br/>
+nach O. <span class="dta-metamark" title="metamark">|:</span> Es läge demnach die Rotations Axe in<br/>
+der Bahn des Planeten. <span class="dta-metamark" title="metamark">:|</span></p></div></div><br/>
+<hr/><br/>
+<div class=""><div class="dta-head">Von den Kometen</div><br/>
+<hr/><br/>
+<p class="dta-p">Schon das Alterthum hat ſich viel mit den Kometen<br/>
+beſchäftigt. Die Pythagoräiſche Schule behandelte<br/>
+ſie als Planeten; die Chaldäer rühmten ſich daß<br/>
+ſie ihre Wiederkunft vorher ſagen könnten; es machte<br/>
+ſich dieß jedoch wohl nur auf die Ähnlichkeit des Schweifs<br/>
+nur Kerns gründen, und man glaubte das dieß<br/>
+dieſelben wären. Man findet manche Stellen<br/>
+über dieſen Gegenſtand in den Werken der<br/>
+alten Philoſophen, doch iſt nichts ſo verſtändlich<br/>
+als eine Stelle bei <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118613200">Seneca</a></span></span>, wo er berichtet daß<br/>
+ein großer Comet erſchienen ſei und <span class="u ">dissertirt</span><br/>
+ob es derſelbe ſein könne der bei dem Tode <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118518275">Julius</a></span></span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Cäſars</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0212|</span><br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118518275">Cäſar</a></span>s</span> erſchienen wäre. Auch hier ſind alle ſeine Be-<br/>
+hauptungen auf Ähnlichkeiten gegründet. Noch im Ende<br/>
+des 15ten und zu Anfang des 16ten Jahrhunderts glaub-<br/>
+te man daß die Cometen bloße Meteore ſeien,<br/>
+nur <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/12116117X">Acosta</a></span></span> erklärte daraus die Höhe der Paſsat-<br/>
+winde.</p><br/>
+<p class="dta-p">Die Bewegung der Kometen geſchieht in ſehr<br/>
+excentriſchen Ellipſen. Gewöhnlich ſchreibt man dem<br/>
+Prediger <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11948689X">Dörfel</a></span></span> in Plauen im Voigtland die<br/>
+Entdeckung zu daß ſie paraboliſch ſei <span class="dta-metamark" title="metamark">|:</span> 1680 <span class="dta-metamark" title="metamark">:|</span><br/>
+zu Ende des 17ten Jahrh. erkannte ſie <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/133338592">Henrÿ Percy</a></span></span><br/>
+Herzog von Northumberland all elliptiſch. –<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118587544">Newton</a></span></span> bildet dieſe Theorie weiter aus nur <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118720066">Ha-<br/>
+lay</a></span></span> wandte ſie auf einzelne äußere Kometen<br/>
+an, die wieder gekommen ſind <span class="dta-metamark" title="metamark">|:</span> <span class="aq ">Doc</span> fand in ei-<br/>
+nem Manuſcript von 1490 ſchon einige Cometen<br/>
+beſonders abgehandelt <span class="dta-metamark" title="metamark">:|</span></p><br/>
+<p class="dta-p">Bei dem Erſcheinen der Cometen von 1811 und<br/>
+1819 war in Paris großer Unwille gegen den Aſtro-<br/>
+nomen daß man die Erſcheinung derſelben nicht vor-<br/>
+her geſagt hatte. Gewöhnlich werden die Cometen<br/>
+allerdings von den Aſtronomen zuerſt geſehen,<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">da</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0213 : 205|</span><br/>
+da ſie weiter ſehen können; tritt aber der Fall<br/>
+ein daß ſie hinter der Sonne ſich bef<span class="dta-del" title="Streichung (#ow)">a</span><span class="dta-add" title="Hinzufügung (across)">i</span>nden und<br/>
+dann auf einmal hervortreten, ſo iſt es natürlich<br/>
+daß man ſie auch mit den beſten Fernröhren<br/>
+nicht früher ſehen konnte, als mit bloßen Augen,<br/>
+da ſie erſt ſichtbar wurden, wenn ſie ſich in<br/>
+unſrer Nähe befinden.</p><br/>
+<p class="dta-p">Man hat ehedem geglaubt von den kleinen Pla-<br/>
+neten einen Uebergang zu den Cometen zu fin-<br/>
+den; die Meinung wurde unterſtützt durch die<br/>
+ſehr excentriſchen Bahnen. Allein alle kleinen<br/>
+Planeten bewegen ſich von Weſten nach Oſten, da-<br/>
+gegen die Cometen ſich in allen Richtungen bewegen<br/>
+können. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span></span> hat bewieſen, daß überhaupt<br/>
+Planeten, ein Cometen geweſen noch werden<br/>
+können.</p><br/>
+<p class="dta-p">Man hat bei den Cometen zu unterſcheiden,<br/>
+den <span class="u ">Kern</span>, die <span class="u ">Hülle,</span> und den <span class="u ">Schweif.</span></p><br/>
+<p class="dta-p">Der Kern iſt nicht ſo abgeſondert als man<br/>
+früher geglaubt hat. – Zwiſchen dem Kern und der<br/>
+Kugelförmigen Dunſthülle, iſt kein ſcharfer Abſchnitt,<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">sonde</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0214|</span><br/>
+ſondern eine allmählige Verdickung. – Der Kern der<br/>
+dichteſten Theil iſt jedoch noch ſo wenig dicht, daß<br/>
+ein einziges mal von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span></span> am 9ten <span class="aq ">Nvbr</span>. 1795<br/>
+ein Doppelſtern 12ten und 13te Größe durch den<br/>
+Kern ſelbſt Geſehen worden iſt. – <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117573752">Lahire</a></span></span> hat ge-<br/>
+glaubt <span title="Original: Facen" class="dta-reg">Phasen</span> bei den Cometen geſehen zu haben,<br/>
+und daraus geſchloſsen, daß ſie kein eignes Licht<br/>
+hätten; aber nie iſt wieder ſeit der Zeit etwas<br/>
+Ähnliches geſehen worden; man glaubte in der<br/>
+Dia<span class="u ">pha</span>nität des Kerns einen Beweis zu finden.<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11858975X">Olbers</a></span></span> hat berechnet daß der Comet von 1819, 3 Stun-<br/>
+den lang vor der Scheibe der der Sonne ſein würde;<br/>
+höchſt richtig wäre es geweſen ihn dañ zu beobach-<br/>
+ten, und zu ſehen ob er dunkel geweſen wäre. –<br/>
+Man hat in den Catalogen der Sonnenflecke nachge-<br/>
+ſchlagen, und gefunden daß an dem beſtimmten Tage<br/>
+den 26te Juny Sonnenflecke am Rande, und bei andere<br/>
+Sternwarten auch im Centrum der Sonne geſehen<br/>
+worden ſind. <span title="Personenname"><a href="http://d-nb.info/gnd/11858975X">Olbers</a></span> hält dieß alles für ſehr ungewiß,<br/>
+ſo daß er wohl nicht wieder geſehen worden ſein.<br/>
+Die Dunſthülle hangt mit dem Schweife nicht immer<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">zu</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0215 : 207|</span><br/>
+zuſammen. Merkwürdig iſt es, daß <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118537229">Galliläi</a></span></span> ſchon<br/>
+den Schweif mit einer Flamme verglichen und<br/>
+dabei bemerkt hat, daß alle Flammen tranſpa-<br/>
+rant wären. – Wenn ſich die Kometen der Sonne<br/>
+nähern, ſo wird ihr Schweif auf Koſten der Dunſt-<br/>
+hülle immer größer. – Die Schweife ſind ſehr<br/>
+verſchiedenartig: man hat Cometen mit 2 Schweifen<br/>
+ja einen mit 6 Schweifen geſehen; andere da-<br/>
+gegen haben gar keine Schweife. Der Schweif des Co-<br/>
+meten von 1618 ſoll eine ſolche Länge gehabt haben,<br/>
+daß als der Comet ſchon im Zenith ſtand der<br/>
+Schweif noch nicht ganz auf gegangen war. – Ge-<br/>
+wöhnlich liegen die Schweife nicht ganz in der Richtung,<br/>
+die die Cometen gegen die Sonne haben. Bei dem<br/>
+Kometen von 1823 war der Schweif getheilt und<br/>
+zwar ſo daß beide convexe Seiten gegen ein-<br/>
+ander zugekehrt waren. – Man hat früher<br/>
+geglaubt daß der Schweif immer der Sonne<br/>
+abgekehrt wäre. Allein der Comet von 1823 der<br/>
+von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116430583">Wilde Briolair</a></span></span>, <span class="aq "><span title="Personenname">Galban</span></span> und hernach von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/136214908">Ku-<br/>
+rowsky</a></span></span> beobachtet wurde hatte 2 Schweife von denen<br/>
+der eine der Sonne abgekehrt, der andere aber<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">hier</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0216|</span><br/>
+<span class="dta-add" title="Hinzufügung (superlinear)">ihr </span><span class="u ">hier</span> zugewandt war; beide bildeten einen Winkel<br/>
+von 160° gegeneinander. Es ſchien dieß alle frühern<br/>
+Theorien umzuwerfen.</p><br/>
+<p class="dta-p">Als der <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116471727">Enke</a></span></span>ſche Comet in <span class="u ">Paramala</span> wieder er-<br/>
+ſchien will <span title="H￼" class="dta-abbr">Herr</span> <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/102456828">Dummler</a></span></span></span> eine Rotation des Schweifes von<br/>
+19 Stunden und 38″ bemerkt haben; man hat dieß je-<br/>
+doch noch bei keinem andere Cometen geſehen.<br/>
+Gewiß iſt es daß die Cometen, wenn ſie wird er er-<br/>
+ſcheinen nicht immer gleich ſind. Der Schweif des<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118720066">Halay</a></span></span>ſchen Cometen iſt immer kleiner und kleiner<br/>
+geworden.</p><br/>
+<div class=""><p class="dta-p"><span class="u ">Durchmeſser</span>. Bei den Cometen v. 1811 fand <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Her-<br/>
+ſchel</a></span></span> den Durchmeſser des Kerns, wo das meiſte<br/>
+Licht reflectirt wurde 93 Meilen; die Dunſthülle<br/>
+hatte ſchon 27000 Meilen und der Schweif eine Länge<br/>
+von 22 Mill. Meilen.</p></div><br/>
+<div class=""><p class="dta-p"><span class="u ">Licht der Cometen.</span> Die <span title="Original: Facen" class="dta-reg">Phasen</span> die <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117573752">Lahire</a></span></span> geſehen<br/>
+haben will wären ein Beweis geweſen, daß das<br/>
+Licht der Cometen ein reflectirtes ſei. – Am 3<span title="￼" class="dta-abbr"><span class="sup ">ten</span></span><br/>
+July 1819 unterſuchte <span title="H￼." class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> ob der Schweif<br/>
+eine eigne Phosphoreszenz habe oder ob ſein Licht<br/>
+auch reflectirt ſei. Er ſtellte ſeine Beobachtungen mit dem<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Dop</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0217 : 209|</span><br/>
+Doppelſpath an, und fand eine colorirte Polari-<br/>
+ſation, ein Zeichen des reflectirten Lichtes.</p><br/>
+<p class="dta-p"><span class="aq ">Doc</span> war ſelbſt gegenwartig und beobachtete zu<br/>
+gleichen Zeit Capella, wo ſich dieſe Polariſation<br/>
+nicht fand.</p></div><br/>
+<div class=""><p class="dta-p">Die <span class="u ">Zahl</span> der Cometen iſt ſchwer zu beſtimmen;<br/>
+man kann nur von denen reden die wirklich <span class="dta-del" title="Streichung (#erased)"><span class="dta-add" title="Hinzufügung (superlinear)"><span class="dta-metamark" title="metamark">⎡</span>128</span></span>beob-<br/>
+achtet worden ſind. Hiſtoriſch kennt man an 400,<br/>
+von denen 128 wirklich beobachtet ſind, und<br/>
+zwar davon im 17<span class="sup u ">ten</span> Jahrhundert 10, im 18<span title="te" class="dta-abbr"><span class="sup ">ten</span></span> 65;<br/>
+in den 28 Jahren unſers Jahrhunderts ſind ſchon<br/>
+mehr als im ganzen vorigen Jahrhundert beob-<br/>
+achtet worden. – Nach einer Probabilitäts Rech-<br/>
+nung würde das Minimum der Anzahl von Co-<br/>
+meten 400,000 ſein<span title="Schreibfehler: " class="dta-corr">.</span></p></div></div></div></div></div></body></html>

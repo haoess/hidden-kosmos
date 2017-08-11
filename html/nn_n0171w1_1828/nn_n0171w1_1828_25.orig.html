@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[25. Vorlesung, 30.01.1828]</span></div><br/>
+<div class=""><div class=""><div class=""><div class=""><p class="dta-p"><span class="dta-metamark" title="metamark">|:</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118733133">Leslie</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> Paris, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117689505">Pons</a></span></span><br/>
+ehemals in Marſeille, jetzt in Italien <span class="dta-metamark" title="metamark">:|</span></p><br/>
+<p class="dta-p">Auffallend iſt die größere Zahl von großen Co-<br/>
+meten in neurer Zeit. – In der Zeit von 1769 bis<br/>
+1807 iſt kein Comet von beträchtlicher Größe<br/>
+geſehen worden. In den Jahren von 1807, 11 und 19<br/>
+erſchienen ſo große Cometen, daß man ſie mit<br/>
+bloßen Augen ſehen konnte.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Die</span></div><br/>
+<div class="&#xA;            fw-bottom-sig&#xA;          "><span class="aq ">b</span> 2</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0218|</span><br/>
+<p class="dta-p">Die Wiederkehr der Cometen iſt faktiſch be<span class="dta-del" title="Streichung (#ow)">grenz</span><span class="dta-add" title="Hinzufügung (across)"><span class="gap">[unleserliches Material – 5 Zeichen fehlen]</span></span>t<br/>
+vor 8 Jahren noch kannte man nur die Wieder-<br/>
+kehr von einem Cometen des <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118720066">Halay</a></span></span>ſchen, der 1835<br/>
+wieder erwartet wird. Der zweite war der<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116471727">Enke</a></span></span>ſche, deſsen Wiederkehr <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116471727">Enke</a></span></span> im Jahr 1819 er-<br/>
+kannte; ſeit der Zeit iſt er ſchon mehrere male<br/>
+erſchienen. Der dritte iſt der von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116164603">Biela</a></span></span> deſsen<br/>
+Wiederkehr 1826 erkannt wurde. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11858975X">Olbers</a></span></span> hat die ellip-<br/>
+tiſche Bahn eines Cometen im Jahre 1815 berechnet<br/>
+deſsen Wiederkehr in 70 Jahren erwartet wird;<br/>
+ſonderbar iſt es jedoch daß in der Geſchichte der<br/>
+<span class="dta-marginal dta-marginal-left">?<br/>
+</span>Cometen ſich kein einziger findet den man hieran<br/>
+knüpfen könnte.</p><br/>
+<p class="dta-p">Die Aſtronomen waren es die dem Publikum<br/>
+zuerſt eine Furcht von den Cometen beibrachten<br/>
+<span class="dta-metamark" title="metamark">|:</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/104234059">Lalandes</a></span></span> that dieß ſelbſt <span class="dta-metamark" title="metamark">:|</span>, aber auch ſie ſind es<br/>
+die dieſe Furcht durch ihre Beobachtungen wieder<br/>
+vermindert haben.</p><br/>
+<p class="dta-p">Der Comet von 1780 iſt der Sonne am nächſten<br/>
+gekommen bis auf 34000 Meilen; von der Erde blieb<br/>
+er aber 10 Mill. Meilen ab. – Der von 1770 kam der<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">E</span><span class="u ">rde</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0219 : 211|</span><br/>
+Erde am nächsten; doch war er noch 6 Mond weiten<br/>
+von ihr entfernt. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118572628">Lichtenberg</a></span></span> glaubte mit Unrecht<br/>
+daß er zwiſchen der Erde und dem Monde durch-<br/>
+gegangen wäre. Kein Komet hat ſich bis jetzt<br/>
+auf dieſe Weiſe der Erde genähert. –</p><br/>
+<p class="dta-p">Der <span title="Personenname"><a href="http://d-nb.info/gnd/116164603">Biela</a></span>ſche Komet iſt der Erd<span class="u ">bahn</span> am nächſten<br/>
+gekommen; er war 1826 nur 2 Mondweiten<br/>
+von derſelben entfernt.</p><br/>
+<p class="dta-p">Die Gefahr die ein Comet der Erde bringen<br/>
+könnte wenn ſie zuſammen flieſsen, wird<br/>
+durch die geringe Dichtigkeit derſelben ſehr<br/>
+vermindert. Doch würde ein ſolcher vermöge<br/>
+ſeiner großen Geſchwindigkeit immer noch einen<br/>
+beträchtlichen Stoß bringen können.</p><br/>
+<p class="dta-p">Man weiß jedoch von einem Comet daß es ſehr<br/>
+wahrſcheinlich iſt, er ſei durch die Jupiters Monde<br/>
+durchgegangen ohne jedoch eine ſichtbare <span class="dta-add" title="Hinzufügung (superlinear)"><span class="dta-metamark" title="metamark">⎡</span>Veränderung </span>hervor-<br/>
+gebracht zu haben; es ſcheint demnach daß ſeine<br/>
+Attraction nicht ſehr ſtark iſt. – Wenn der Co-<br/>
+met von 1770 und <span class="sup ">1</span>/<span class="sub ">5000</span> der Maſse der Erde ge-<br/>
+habt hätte, ſo würde er unſer Jahr um 3 Stunden<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">ver-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0220|</span><br/>
+vermehrt haben, welches aber nicht der Fall war. –<br/>
+Der <span title="Personenname"><a href="http://d-nb.info/gnd/116164603">Biela</a></span>ſche Comet iſt der Erde am gefährlichſten<br/>
+indem er die Erdbahn durchſchneidet.</p></div><br/>
+<div class=""><div class="dta-head">Innere Cometen</div><br/>
+<p class="dta-p">1, Der <span class="u "><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116471727">Enke</a></span></span>ſche Komet</span> geht in ſeiner Sonnennähe<br/>
+bis ☿, in ſeiner Sonnenferne bis ♃. Im Jahre<br/>
+1786 wurde er zuerſt von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119063123">Mechin</a></span></span> beobachtet, bei<br/>
+ſeinem 2ten Erſcheinen von Miß <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119506610">Herſchel</a></span></span>; 1805<br/>
+von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117689505">Pons</a></span></span>; 1819 ebenfalls von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117689505">Pons</a></span></span>, 1822 erſchien<br/>
+er genau nach der Vorherſagung von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116471727">Enke</a></span></span>, und<br/>
+wurde in Paramata geſehen; 1826 beobachtete<br/>
+ihn <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116474580">Harding</a></span></span>; er iſt ſeit der Beſtimmung von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116471727">Enke</a></span></span><br/>
+6mal erſchienen, und bewegt ſich von Weſten<br/>
+nach Oſten. Er kann der Erde nie ſehr nahe<br/>
+kommen, und ſchneidet auch nicht die Erdbahn.<br/>
+Seine Umlaufszeiten ſind in den letzten Jahren<br/>
+verſchieden geweſen, ſo daß es ſcheint er ſei<br/>
+von der dunſtförmigen Ma<span class="dta-del" title="Streichung (#ow)">l</span><span class="dta-add" title="Hinzufügung (across)">t</span>erie <span class="dta-del" title="Streichung (#s)">und</span><span class="dta-add" title="Hinzufügung (superlinear)">im</span> Weltraum<br/>
+in ſeinem Lauf retardirt werden; das erſtemal<br/>
+betrug ſeine Umlaufszeit 1208,2 Tage; ſpäter 1207,7<br/>
+und zuletzt 1207,2. –</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Es</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0221 : 213|</span><br/>
+<p class="dta-p">Es iſt zu erwarten daß er das meiſten Licht ver-<br/>
+breiten wird, nicht nur über die Natur der Kometen<br/>
+ſelbſt, ſondern auch über die Störungen welche<br/>
+die kleinere Planeten erleiden. – Vermuthlich<br/>
+übt auch Jupiter manche Störung in ſeiner<br/>
+Bahn.</p><br/>
+<p class="dta-p">2, Der <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/116164603">Biela</a></span>ſche Komet</span> erſchien in den Jah- (?)<br/>
+ren 1783, 1805, 1826. Seine Umlaufzeit beträgt<br/>
+6 Jahr und 9 Monat. In der Sonnennähe kömmt<br/>
+er der Erdbahn ſehr nahe, in der Sonnenferne<br/>
+geht er über Jupiter hinaus. 1826 wurde von<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116164603">Biela</a></span></span> erkannt daß er die Erdbahn durch-<br/>
+ſchneide; er befand ſich in dieſem Jahre nur<br/>
+114000 Meilen von der Erdbahn entfernt. – Sein<br/>
+Schweif kann ſich demnach mit unſerer Atmos-<br/>
+phäre vermiſchen. – <span class="dta-metamark" title="metamark">|:</span> Schon früher iſt erwöhnt<br/>
+worden, daß man glaubte der Höhenrauch<br/>
+von 1783 ſei eine Folge eines Cometen<br/>
+geweſen, nun auf die Unwahrſcheinlichkeit<br/>
+dieſer Behauptung aufmerkſam gemacht<br/>
+worden.<span class="dta-metamark" title="metamark">⎡</span></p></div><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Äußere</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0222|</span><br/>
+<div class=""><p class="dta-p"><span class="u ">Äußere Cometen</span> Man kennt von dieſen bis jetzt<br/>
+nur einen, den <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118720066">Hal<span class="dta-del" title="Streichung (#s)">a</span><span class="dta-add" title="Hinzufügung (superlinear)">le</span>y</a></span></span>ſchen, deſsen Rückkehr bekañt<br/>
+iſt. Zuerſt wurde er geſehen 1495 dann 1531, 1607,<br/>
+1682, nach der <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118720066">Hal<span class="dta-del" title="Streichung (#s)">a</span><span class="dta-add" title="Hinzufügung (superlinear)">le</span>y</a></span></span>ſchen Vorausſagung 1759; er<br/>
+wird wieder erwartet 1835, den 16te Nvb. in der<br/>
+Sonnennähe. Seine Umlaufsperiode beträgt 76 Jahre;<br/>
+er hat geſchwankt zwiſchen 75 und 76½.</p><br/>
+<p class="dta-p">Ein andrer erſchien 1770, deſsen Erſcheinen <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/100189180">Leccie</a></span></span></span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Personenname"><a href="http://d-nb.info/gnd/100189180">Lexel</a></span> </span> /?/<br/>
+vorher ſagte; es iſt derſelbe der durch dem Jupiters<br/>
+Monde wahrſcheinlich durchgegangen iſt; 1779 er-<br/>
+ſchien er abermals und kam dem Jupiter ſo<br/>
+nahe daß er durch deſsen große Maſse ver-<br/>
+muthlich abgelenkt wurde, und ſeit der Zeit nicht<br/>
+wieder erſchien, und wohl auch nie wieder er-<br/>
+ſcheinen wird.</p><br/>
+<p class="dta-p">Ein andrer wurde 1815 von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11858975X">Olbers</a></span></span> beobachtet und<br/>
+nach 70 Jahren wieder erwartet wo er in ſeiner<br/>
+Sonnennähe 37 Halbmeſser der Erde von dieſer ent-<br/>
+fernt ſein ſoll.</p></div><br/>
+<div class=""><div class="dta-head">Bahn der Cometen</div><br/>
+<p class="dta-p">Eine einzige <span class="u ">beſtimmte</span> anfängliche Geſchwindigkeit<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">kann</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0223 : 215|</span><br/>
+kann es nur noch machen daß ein Körper ſich<br/>
+in einer Kreislinie oder Paralel bewege. Viele<br/>
+verſchiedene Geſchwindigkeiten aber können<br/>
+eine Ellipſe oder Hyporabel hervorbringen. –<br/>
+Da nur ein geringer Stoß eine Ellipſe hervor<br/>
+bringen kann, ſo iſt doch mehr Wahrſcheinlichkeit<br/>
+vorhanden, daß die Cometen ſich in Ellipſen be-<br/>
+wegen. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span></span> hat zuerſt darauf aufmerkſam<br/>
+gemacht daß die Cometen vollkommen von<br/>
+den Planeten verſchieden ſind, er hat ſelbſt ge-<br/>
+meint, daß ſie irrende Nebelflecke ſind, die<br/>
+von einem Syſtem zum andern übergehen köñen.<br/>
+Ueberhaupt hat er die Idee aufgeſtellt, daß<br/>
+alle Weltkörper in dieſem nebelartigen Zu-<br/>
+ſtande geweſen, und daß ſo weit als das Soñen-<br/>
+ſyſtem weicht eine nebelartige Materie gewe-<br/>
+ſen ſei; nach und nach habe ſich dieſe Materie<br/>
+zuſammen gezogen und angefangen lang-<br/>
+ſam zu rotiren.</p><br/>
+<p class="dta-p">Wenn Körper ſich dem Kern mehr nähern ſo iſt<br/>
+ihre Rotation geſchwinder, wenn die Rotation zu<br/>
+nahm ſo mußte die Atmosphäre nach und nach<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">ver-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0224|</span><br/>
+verſchwinden. – Durch dieſe Zuſammenziehung<br/>
+der Atmosphäre mußte ſie ganze Zonen trennen;<br/>
+daher die kleinen Planeten, Ringe uſw. – Bei den<br/>
+allmähligen Zuſammenballung bildete ſich ent-<br/>
+weder alle Materie um einen Kern zuſam̃en,<br/>
+ſo entſtanden die Planeten, oder dieſe dien-<br/>
+ten als Centrum um die ſich andere Theile der<br/>
+Materie in Kugeln zuſammen ballten; ſo ent-<br/>
+ſtanden die Monde; der Ring des Saturn bildet<br/>
+eine Kette von ſolchen Monden die ſich noch nicht<br/>
+getrennt haben. – <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118517252">Buffon</a></span></span> hatte früher ange-<br/>
+nommen daß ein Comet gegen die Sonne ge-<br/>
+ſtoßen und dadurch dieſe kreiſende Bewegung<br/>
+hervorgebracht habe; man würde aber dieß<br/>
+nicht erklären können, warum die Planeten<br/>
+wieder für ſich rotirten.</p><br/>
+<p class="dta-p">Die Sicherheit für die Dauer unſeres Plane-<br/>
+tenſyſtems beruht <span class="u ">noch</span><span class="dta-add" title="Hinzufügung (superlinear)">auf </span> die Kenntniß der Mecha-<br/>
+nik des Himmels. – Es liegt in der Schwäche<br/>
+unſrer Einbildungskraft, daß man manches<br/>
+für zufällig hatten kann, was nicht nach leicht zu<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">er-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0225 : 217|</span><br/>
+erkennenden Geſetzen beſteht; und geſetzlich neñen<br/>
+wir nur dies was durch kurze Perioden als<br/>
+wiederkehrend erkannt wurde; aber vielleicht<br/>
+haben dieſe ſogenannten zufälligen Erſcheinungen<br/>
+Perioden, die über alle Erfahrung hinausreichen,<br/>
+ſo das Auflodern der Sterne uſw.</p><br/>
+<p class="dta-p">Aber auch ſelbſt bei dem was wir periodiſch er-<br/>
+kennen iſt nicht alles geſetzlich was aus einer<br/>
+Urſache hergeleitet werden kann; ſo kann eine<br/>
+Ordnung der Dinge auf eine andere folgen,<br/>
+weil ſie in einer größern Weltordnung be-<br/>
+griffen iſt, die wir nicht einſehen. – So viel iſt<br/>
+jedoch erkannt daß im Planetenſyſtem ſelbſt<br/>
+kein Grund zur Deſtruction vorhanden iſt, ſo daß<br/>
+eine Urſache von Außen kommen müßte<br/>
+um die Zerſtörung herbeizuführen. Es gibt<br/>
+allerdings viele Störungen, aber alle dieſe<br/>
+ſind nur Oscillationen. Es ſind dieſe Störun-<br/>
+gen zweierlei Art, entweder ſolche die die Rich-<br/>
+tung der Planeten in ihren Bahnen ändern<br/>
+können, kleine periodiſche Störungen, oder 2,<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">solche</span></div><br/>
+<div class="&#xA;            fw-bottom-sig&#xA;          "><span class="aq ">c</span> 2</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0226|</span><br/>
+ſolche die ſich anhäufen ſäkuläre Störungen; aber<br/>
+auch dieſe ſind nur Oscillationen um ein mitt-<br/>
+leres Verhältniß. –</p><br/>
+<p class="dta-p">Die Excentrizität der Erde war am größten<br/>
+8400 Jahre vor unſerer Zeitrechnung, und wird<br/>
+<span class="dta-del" title="Streichung (#erased)"/> am geringsten werden 23000 Jahre nach der-<br/>
+ſelben. Jupiter und Saturn haben ſehr verſchie-<br/>
+dene Excentrizitäten; die des erſtern wächſt,<br/>
+und die des Saturn iſt im Abnehmen nach Jahr-<br/>
+tauſenden gleicht ſich dieß wieder aus. – Ein<br/>
+Grund der Sicherheit daß keine <span class="u ">Störungen</span><span class="dta-add" title="Hinzufügung (superlinear)">Zerstörungen </span> da-<br/>
+durch hervorgebracht werden können, liegt da-<br/>
+rin, daß das Verhältniß der Umlaufszeiten von<br/>
+♃ und ♁ nicht durch ganze Zahlen ausgedrückt<br/>
+werden kann, ſondern irrational iſt. Wenn<br/>
+das Verhältniß wie 12 : 30 wäre, ſo würden<br/>
+ſie nicht allein ſich ſelbſt gegen einander zer-<br/>
+ſtören, ſondern auch das ganze Planetenſyſtem.<br/>
+Das Wichtigſte für die Stabilität des Syſtems<br/>
+ſind die großen Axen der Bahnen, die in ihrer ab-<br/>
+ſoluten Größe immer dieſelben bleiben das<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Schwan-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0227 : 219|</span><br/>
+Schwanken der Exentrizität uſw. verändert ſie nicht.<span class="dta-marginal dta-marginal-right">?<br/>
+</span><br/>
+Je mehr die Planeten ſich von der Kreisbahn ent-<br/>
+fernen, und je näher ſie an einander kom̃en<br/>
+deſto größer werden die Störungen; und es<br/>
+würde im Planetenſyſtem<span class="dta-add" title="Hinzufügung (superlinear)"><span class="gap">[unleserliches Material – 1 Wort fehlt]</span></span> ſelbſt ein Grund<br/>
+zur eignen Zerſtörung liegen. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span></span> ſieht<br/>
+nur 2 Gefahren: durch eine Abnahme des wider-<br/>
+ſtehenden Mittels, würde die Attraction zu-<br/>
+nehmen; und durch die Abnahme der Maſse der<br/>
+Sonne ſelbſt könnte die Attraction ver<span class="dta-del" title="Streichung (#s)">än</span><span class="dta-add" title="Hinzufügung (superlinear)">min</span>dert<br/>
+werden.</p><br/>
+<p class="dta-p">Alle Störungen ſind periodiſch, und die Richtung<span class="dta-marginal dta-marginal-right">?<br/>
+</span><br/>
+der großen Axe ändert ſich immerwährend, und man<br/>
+hat darin noch keine Periodicität bemerkt, doch bringt<br/>
+dieß keine Gefahr hervor, ſondern nur die Aenderung<br/>
+daß die Abſciſsen Linie bald gegen einen andern<br/>
+Fixſtern gerichtet iſt.</p></div></div></div></div></div></body></html>

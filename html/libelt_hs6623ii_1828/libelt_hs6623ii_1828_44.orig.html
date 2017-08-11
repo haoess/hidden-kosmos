@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[44. Vorlesung, 28.03.1828]</span></div><br/>
+<div class=""><div class=""><p class="dta-p">In einer größeren<br/>
+Höhe könnte es gefährlich ſein. In <span class="aq ">America</span><br/>
+finden ſich viele Stiere auf der Höhe. Die<br/>
+Jagd iſt von der Art, <span title="dß" class="dta-abbr">daß</span> man ſie durch<br/>
+Hunde folgt, und nach dem ſie einige<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0173 : 308|</span><br/>
+Zeit herumgejagt wurden, ſo fangen ſie<br/>
+an Blut zu speien, und fallen. Die Urſache<br/>
+liegt darin daß der Druck der Luft, der im<br/>
+Blute ſich vorfindet, keinen verhältnißmä-<br/>
+ßigen Gegendruck hat, und auf dieſe Art<br/>
+die zarteren Gefäße des <span class="aq "><span title="Schreibfehler: organismus" class="dta-corr">Organismus</span></span> zer-<br/>
+sprengt. Das Hauptübel auf den Höhen iſt<br/>
+die Luſt zu Speien. Die Frauen der <span class="aq ">Kreolen</span><br/>
+welche noch <span class="aq ">Guamanea</span>, gewöhnlich zu Pferde<br/>
+die hohen Küſte der <span class="aq ">Cordilleren</span> überſteigen,<br/>
+welche auf einer Höhe liegen, die die von<br/>
+<span class="aq ">Montblanc</span> noch um 600 <span title="F." class="dta-abbr">Fuss</span> überſteigt, empfin-<br/>
+den alle dieſe Wirkungen die große Mattig-<br/>
+keit, welche man auf dieſen Höhen empfin-<br/>
+det, hat ihren Grund darin, daß das Blut eine<br/>
+geringere <span class="aq ">Quantitaet</span> des Sauerſtoffes auf-<br/>
+nehmen kañ. Man fühlt auch oft Uebelkeiten<br/>
+die das Brechen erregen. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/12116117X">Akoſta</a></span></span> der spaniſche<br/>
+Reisende des 16<span class="sup u ">ten</span> <span title="Jahrhndrts" class="dta-abbr">Jahrhunderts</span>, der die erſte <span class="aq ">phy-<br/>
+sikali</span>ſche <span class="aq ">Geographie</span> geſchrieben hat, ſagt<br/>
+<span class="dta-del" title="Streichung (#ow)">d</span><span class="dta-add" title="Hinzufügung (across)">ſ</span>chon daß man auf <span class="aq ">Cordilleren</span> von Bluten<br/>
+und Uebelkeiten angefallen werde<br/>
+daſſelbe ſagte <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100720463">Zumstein</a></span></span> der den <span class="aq "><span title="Mt" class="dta-abbr">Mont</span> Roſe</span> be-<br/>
+stiegen hat. Neuerdings hat ſich die Mei-<br/>
+nung verbreitet als weñ auf hohen Bergen<br/>
+die Luft giftig wäre. Die Engländer<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0174 : 309|</span><br/>
+behaupten, daß man es auf dem <span class="aq ">Hima-<br/>
+laja</span> Gebürge ſchon in einer Höhe von<br/>
+15000 <span class="aq ">Fuss</span> ſpüren könne. Indeſſen iſt die<br/>
+Sache noch nicht durch <span class="aq ">Physiker</span> bewährt, am<br/>
+wenigſten hängt ſie vom Drucke der Luft<br/>
+ab. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">La Place</a></span></span> hat der <span class="aq ">Academie</span> zu <span class="aq ">Paris</span> vorge-<br/>
+ſchlagen auf die <span class="aq "><span title="Tmprtr" class="dta-abbr">Temperatur</span></span> <span title="ud" class="dta-abbr">und</span> den Druck der<br/>
+Luft an verſchiedenen Orten Rückſicht,<br/>
+zu nehmen um zu beſtim̃en ob ſich der Druck<br/>
+nicht verändere. Bis jetzt ergab es ſich nur<br/>
+daß, wo man es geglaubt hat, es nur Täuſchung<br/>
+war. Dazu gehört eine Umzahl von Beobachtun-<br/>
+gen, die von Jahr zu Jahr gemacht werden<br/>
+müſſen, um ein festes Resultat daraus<br/>
+zu ziehen, und nicht ſo wie es die neue<br/>
+<span class="aq ">Linei</span>ſche Geſellſchaft in <span class="aq ">Paris</span> thut die nur<br/>
+einmal im Jahre am Geburtstage des<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118573349">Linée</a></span></span> den <span class="aq ">Barometer</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Termometer</span> ſtand<br/>
+beobachtet <span title="ud" class="dta-abbr">und</span> verzeichnet<span class="dta-marginal dta-marginal-right">Die Urſachen der <span class="aq "><span title="period." class="dta-abbr">periodiſchen</span><br/>
+Oscillationen</span> der Luft wer-<br/>
+den noch unbekañter, weñ<br/>
+man bedenkt, daß morgens <span title="ds" class="dta-abbr">das</span><br/>
+<span class="aq ">Barometer</span> höher ſteht als zu<br/>
+Mittag, daß nach <span class="aq "><span title="Personenname">Marin</span></span>,<br/>
+weñ der <span class="aq ">Barometer</span>druck<br/>
+größer iſt, die <span class="aq ">Oscillation</span><br/>
+ſich vermindert. Sie iſt<br/>
+ſtärker unter dem <span class="aq ">Equator</span><br/>
+als in den <span class="aq ">temperirten Zonen</span><span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Unter dem <span class="aq ">Equator</span> beträgt die<br/>
+<span class="aq ">Extension</span> der <span class="aq ">Barometer</span><span title="verändrg" class="dta-abbr">veränderung</span><br/>
+1½ Linie in <span class="aq ">Piemont</span> ½ <span title="L." class="dta-abbr">Linie</span> in<br/>
+<span class="aq ">Paris</span> 0,3 <span title="L." class="dta-abbr">Linie</span> in <span class="aq ">Koenigsberg</span><br/>
+0,1 nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118510215">Besſelt</a></span></span>. Bei 8100<br/>
+Verſuchen welche in <span class="aq ">Bogota</span><br/>
+und in <span class="aq "><span title="Frnkrch" class="dta-abbr">Frankreich</span></span>. gemacht wurden<br/>
+und nach <span class="aq "/><span title="Personenname"><a href="http://d-nb.info/gnd/116299762">Bouvar</a></span>'s Berechnung<br/>
+macht der Einfluß des Mon-<br/>
+des <span class="sup ">1</span>/<span class="sub ">220</span> Linie <span title="mittl." class="dta-abbr">mittleren</span> Unter-<br/>
+ſchiedes. Daß auf den<br/>
+Höhen die <span class="aq ">Barometer</span> stei-<br/>
+gen und in Ebenen sinken<br/>
+iſt nicht wichtig, weñ von<br/>
+den Hochebenen die Rede<br/>
+iſt. Auf dem <span class="aq ">Plateau</span><br/>
+<span title="v" class="dta-abbr">von</span> <span class="aq ">Quitto</span> 8000 <span title="F." class="dta-abbr">Fuss</span> Höhe und<br/>
+</span>– Da das Bluten<br/>
+und die Uebelkeiten eine Folge <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">iſt </span>des<br/>
+Austritts aus einer dickeren Luftſchicht<br/>
+in eine düñere, ſo zeigen <span class="dta-del" title="Streichung (#ow)">d</span><span class="dta-add" title="Hinzufügung (across)">s</span>ich dieſelben<br/>
+<span class="aq ">Symptome</span>, weñ man mit einer <span class="aq ">Taucher-</span><br/>
+glocke plötzlich aus der Tiefe des Meeres<br/>
+herausgezogen wird der Druck der Luft<br/>
+in einer Tiefe von 40 <span class="aq ">Fuss</span> im Meere<br/>
+gleicht dem Drucke einer doppelten.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0175 : 310|</span><br/>
+<span class="dta-marginal dta-marginal-left">und auf dem <span class="aq ">Plateau</span> <span title="v" class="dta-abbr">von</span> <span class="aq ">Man-<br/>
+tisana</span> 14000 <span title="F." class="dta-abbr">Fuss</span> Höhe hat <span title="d" class="dta-abbr">das</span><br/>
+<span class="aq ">Barometer</span> einen gleichen<br/>
+Stand bei allen <span class="aq ">horeni-</span><br/>
+ſchen <span class="aq ">Oscillationen.</span> Auf<br/>
+Bergen <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">vor</span>hält es ſich an-<br/>
+ders. Weñ man von Genf<br/>
+mit einem <span class="aq ">Barometer</span> den<br/>
+<span class="aq ">St. Bernard</span> Berg beſteigt,<br/>
+ſo ſteigt das <span class="aq ">Barometer</span><br/>
+bedeutend. Allein ſobald<br/>
+die Höhe eine ausgebreitete<br/>
+Ebene iſt, ſo iſt <span title="ds" class="dta-abbr">das</span> Gleich-<br/>
+gewicht des Luftdruckes<br/>
+zu Stande gebracht. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100055427">Bran-<br/>
+des</a></span>,</span> der früher <span class="aq ">Professor</span> in<br/>
+<span class="aq ">Breslau</span> war, hat die Schnel-<br/>
+ligkeit der Fortpflanzun-<br/>
+gen der Veränderungen<br/>
+des Druckes, berechnet.<br/>
+</span>   <span class="aq ">Atmosphere</span>. Die Vögel allein ſind mit der<br/>
+vollſtändigſten <span class="aq ">respiration</span> begabt, <span title="ud" class="dta-abbr">und</span> köñen<br/>
+ſich ohne Schaden in große Höhen erheben<br/>
+die Geier der <span class="aq ">Andes</span>kette, erheben ſich noch<br/>
+bis 3000 <span class="aq ">Fuss</span> über die höchſten Gipfel <span title="dr" class="dta-abbr">der</span> <span class="aq ">Andes</span><br/>
+und legen pfeilſchnell in wenig <span class="aq ">Minuten</span> eine<br/>
+Strecke von 20000 Fuss ab, in die Provinz Quito<br/>
+herunter, ohne zu bluten. Nach den Verſuchen von<br/>
+mehreren Jahren iſt der mittlere Unterſchied<br/>
+des Druckes <span title="dr" class="dta-abbr">der</span> Luft an der Meeresküſte, und einer<br/>
+Stad die auf der oberen Anhöhe liegt, 2½ Linie<br/>
+1 Linie macht dañ 70 <span class="aq ">Fuss</span> Höhe aus. Unter den <span class="aq ">Tropen</span><br/>
+iſt der Unterſchied groß. In <span class="aq ">temprirten Zonen</span>, bei<br/>
+<span class="aq "><span title="Tmprt" class="dta-abbr">Temperatur</span></span>, die auf 0 reducirt iſt, iſt der <span title="Original: mittl bar: druck" class="dta-reg">mittlere Barometerdruck</span><br/>
+337 + <span class="sup ">25</span>/<span class="sub ">100</span> Linie (über 28 Zoll), in den <span class="aq ">Tropen</span> iſt er 336 + <span class="sup ">94</span>/<span class="sub ">200</span><span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Bei Südwinden ſteht <span title="ds" class="dta-abbr">das</span> <span class="aq "><span title="Barom." class="dta-abbr">Barometer</span></span> 3½ Linie niedriger<br/>
+als bei den Nordstürmen, wie bei <span class="aq ">Ravanna</span> <span title="ud" class="dta-abbr">und</span><br/>
+an den <span class="aq ">Tropen</span>grenzen. Ausnahmen hievon machen<br/>
+die Stürme weñ ſie feuchte Luft mit ſich bringen<br/>
+daher ſteht <span title="ds" class="dta-abbr">das</span> <span class="aq "><span title="Barom." class="dta-abbr">Barometer</span></span> in <span class="aq ">Scandinavien</span> viel nie-<br/>
+driger als bei uns. Weñ <span title="dr" class="dta-abbr">der</span> <span title="Untrſchd" class="dta-abbr">Unterſchied</span> zwiſchen<br/>
+337 + <span class="sup ">25</span>/<span class="sub ">100</span> <span title="u" class="dta-abbr">und</span> 336 + <span class="sup ">94</span>/<span class="sub ">200</span> nur 0,3 Linie beträgt, ſo<br/>
+beträgt er in der Gegend <span title="dr" class="dta-abbr">der</span> <span class="aq ">Canari</span>ſchen<br/>
+Inſeln bis 2 Linien, welches durch das Herab-<br/>
+ſteigen der Luftſchichten vom <span class="aq ">Equator</span> nach<br/>
+dem <span class="aq ">Pole</span> zu, bewirkt wird. –<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0176 : 311|</span><br/>
+<span class="dta-del" title="Streichung (#s)">behaupten <span title="dß" class="dta-abbr">daß</span> man es auf den <span class="aq ">Himalaja</span><br/>
+Gebürge ſchon in der Hohe von 15000 Fuß spüren<br/>
+könne.</span> Das Feueranmachen auf hohen<br/>
+Bergen iſt ſehr ſchwer. Die Flam̃e hängt<br/>
+nicht zuſam̃en, wegen Mangel des äußeren<br/>
+druckes, ſondern läuft auſeinander. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118595563">Marco<br/>
+Polo</a></span></span> bemerkte dieſes zuerſt auf dem <span class="aq ">Bogdo-</span><br/>
+gebürge, das die kleine <span title="ud" class="dta-abbr">und</span> große <span class="aq ">Bucharay</span><br/>
+von einander trennt.</p><br/>
+<p class="dta-p">Die Strömungen oder <span class="aq ">Oscillationen</span> der Luft,<span class="dta-marginal dta-marginal-right">Die Strömungen der Luft.<br/>
+</span><br/>
+ſind ihre tägliche Ebbe <span title="ud" class="dta-abbr">und</span> Fluth. In <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">den </span><span class="aq ">Tropen</span><br/>
+gegenden ſind dieſe ſo <span class="aq ">periodiſch</span>, <span title="dß" class="dta-abbr">daß</span> man<br/>
+nach ihnen die Uhr bis auf ¼ Stunde be-<br/>
+ſtim̃en kann. Das <span class="aq ">Barometer</span> ſteigt am höchſten<br/>
+von 9 bis 9¼ Uhr des Mittags sinkt im̃er mehr<br/>
+<span title="ud" class="dta-abbr">und</span> ſteht 4–4¼ Uhr abends am nidrigſten,<br/>
+ſteigt wieder bis zum <span class="aq "><span title="Schreibfehler: maximum" class="dta-corr">Maximum</span></span> um 11¼ Uhr<br/>
+und ſinkt von da bis 4¼ Uhr des Morgens. So steht<br/>
+<span title="ds" class="dta-abbr">das</span> <span class="aq ">Barometer</span> alſo 2 mal <span title="Original: amhöchſten" class="dta-reg">am höchsten</span> <span title="ud" class="dta-abbr">und</span> zwei-<br/>
+mal am niedrigſten. Die größten Stürme,<br/>
+Doñer <span title="ud" class="dta-abbr">und</span> Erdbeben haben <span class="dta-del" title="Streichung (#s)">darauf </span>kei-<br/>
+nen Einfluß auf dieſen <span class="aq ">horeren</span> Gang des<br/>
+<span class="aq ">Barometers</span>. Dieſe Beobachtungen hat zu erſt<br/>
+<span class="aq "><span title="Personenname">Varrin</span></span> 1682 in <span class="aq ">Boren</span> in <span class="aq ">Africa</span> gemacht, dañ<br/>
+in <span class="aq ">Cayenne</span> <span title="ud" class="dta-abbr">und</span> in den <span class="aq ">Antillen,</span> jetzt haben<br/>
+ſich die Beobachtungen überall bestätigt<br/>
+<span title="dſe" class="dta-abbr">dieſe</span> <span class="aq ">Periodicitaet</span> geht bis zu einer Höhe von 14000 <span class="aq "><span title="Fus" class="dta-abbr">Fuss</span><span title="Schreibfehler: " class="dta-corr">.</span></span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0177 : 312|</span><br/>
+Ob ſie auch in <span class="aq ">Europa</span> dieſelbe iſt, iſt nicht<br/>
+ausgemacht. Unter<span class="aq ">equator</span> wo die größte<br/>
+Luftſtille herrſcht ergiebt ſich dieſe <span class="aq "><span title="period." class="dta-abbr">periodiſche</span><br/>
+Oscillation</span> durch Beobachtungen eines Tages<br/>
+und einer Nacht. In <span class="aq ">Spanien</span> ſind die Beobachtungen<br/>
+von 10 Tagen wenigſtens nöthig um die<br/>
+Mittelzahl zu finden. Weiter gegen <span class="aq ">Norden</span><br/>
+iſt es viel ſchwieriger dieſelbe zu beneihnen<br/>
+da wo die <span class="aq ">Tropenzone</span> aufhört, wird durch die<br/>
+<span class="aq ">Nord</span>winde <span title="ds" class="dta-abbr">das</span> Spiel der <span class="aq "><span title="Schreibfehler: oscillation" class="dta-corr">Oscillation</span></span> unterbrochen<br/>
+in <span title="ſnr" class="dta-abbr">ſeiner</span> Regelmäßigkeit. Kein Schiff läuft<br/>
+eher aus dem Haven bis die gewöhnliche <span class="aq ">horen</span>iſche<br/>
+<span class="aq ">Periodicitaet</span> wieder eintritt. Der Name Ebbe<br/>
+<span title="ud" class="dta-abbr">und</span> Fluth für dieſe <span class="aq ">Oscillation</span> iſt insofern<br/>
+unpaſſend, als dieſes <span class="aq "><span title="Schreibfehler: phaenomen" class="dta-corr">Phaenomen</span></span> nicht von<br/>
+dem <span class="aq ">periodi</span>ſchen Anziehen <span title="dr" class="dta-abbr">der</span> Weltkörper<br/>
+abhängt. Deñ man ſieht nicht ein warum<br/>
+<span title="ds" class="dta-abbr">das</span> <span class="aq ">Barometer</span> grade um 4¼ Uhr morgens<br/>
+wo es am kälteſten iſt <span title="ud" class="dta-abbr">und</span> 4¼ Uhr abends<br/>
+wo es am wärmſten iſt, grade am nie-<br/>
+drigſten ſteht. Die Soñe wirkt hier mehr<br/>
+durch Erwärmung als durch Maſſe. Ueber-<br/>
+haupt iſt die Theorie der Luftſtröme<br/>
+noch gar nicht erklärt. Weñ <span title="ds" class="dta-abbr">das</span> <span class="aq "><span title="Bar:" class="dta-abbr">Barometer</span></span> in<br/>
+den <span class="aq ">Tropen</span> ſteigt ſo sinkt es am <span class="aq ">Nordpol<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0178 : 313|</span><br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/101165250">Boussingeau</a></span></span> <span title="ud" class="dta-abbr">und</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118554700">Humboldt</a></span></span> haben keinen<br/>
+Einfluß des Mondes auf die Luft-<br/>
+ſtrömungen finden können. Nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">La<br/>
+Place</a></span></span> könnte der Einfluß nur <span class="sup ">1</span>/<span class="sub ">10000</span> <span title="Thl" class="dta-abbr">Theil</span> des<br/>
+<span class="aq ">Kilometers</span> ſein. –</p><br/>
+<p class="dta-p">Die regelmäßigen jährlichen Bewegungen<span class="dta-marginal dta-marginal-right">Winde<br/>
+</span><br/>
+der Luft ſind Winde. Sie haben verſchiedene<br/>
+Namen, die bekañteſten ſind die <span class="aq ">Paſſat</span>winde<br/>
+in den <span class="aq ">Tropenzonen</span>, ſie wehen von Oſten nach<br/>
+Weſten. Man hat früher ihre Urſache in<br/>
+der ſcheinbaren Bewegung der Soñe geſucht<br/>
+Allein <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118720066">Halle</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/11850178X">Dilambert</a></span></span> <span title="ud" class="dta-abbr">und</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">La Place</a></span></span> haben die<br/>
+Urſache anſchaulich entwickelt. Weñ man<br/>
+<span title="ds" class="dta-abbr">das</span> Fenster einer geheitzten Stube öffnet<br/>
+und das Licht im obern <span title="Thle" class="dta-abbr">Theile</span> <span title="dsslben" class="dta-abbr">desselben</span> hält, ſo<br/>
+geht die Flam̃e nach außen, im untern Theile<br/>
+geht ſie nach iñen, deñ oberhalb dringt<br/>
+die warme Luft heraus <span title="ud" class="dta-abbr">und</span> unten ſtrömt<br/>
+die kalte herein. Daſſelbe geſchieht mit den<br/>
+Winden, weñ unter <span class="aq ">Equator</span> nach der Regen-<br/>
+zeit die Luft erwärmt wird ſo ergießen<br/>
+ſich oberhalb Luftſtröme nach beiden <span class="aq ">Polen</span><br/>
+(Urſache der mäßigen <span class="aq "><span title="Tmprt" class="dta-abbr">Temperatur</span></span> der kalten<br/>
+<span class="aq ">Zonen</span>) unterhalb ſtröm <span title="vo" class="dta-abbr">von</span> <span class="aq ">Nord</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Süd</span> nach<br/>
+dem <span class="aq ">Equator</span> die kalte Luft. Da nun die<br/>
+<span class="aq ">Rotation</span> <span title="dr" class="dta-abbr">der</span> Erde <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">von <span title="W" class="dta-abbr">Weſt</span>-Oſten </span>kleiner iſt bei den <span class="aq ">Polen</span><br/>
+als bei dem <span class="aq ">Equator</span>, ſo kañ die kalte<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0179 : 314|</span><br/>
+Luft nicht so ſchnell nachfolgen, ſie bleibt<br/>
+zurück, <span title="ud" class="dta-abbr">und</span> muß daher eine <span title="Richtug" class="dta-abbr">Richtung</span> von <span class="aq ">Nord</span><br/>
+Oſt <span title="ud" class="dta-abbr">und</span> von Süd Oſt annehmen. Die <span class="aq ">Passat</span>winde<br/>
+hängen alſo ab von den <span title="ſüdl." class="dta-abbr">ſüdlichen</span> Strahlungen<br/>
+beyder <span class="aq ">Hemispheren</span>. Die Idee von dem <span title="Schreibfehler: Ueber" class="dta-corr">Ueber-</span><br/>
+fließen der <span class="aq ">Equatorial</span>luft gegen die <span class="aq ">Pole</span><br/>
+hin, iſt ſchon bei <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118774883">Huk</a></span></span>. 1686. Weñ beyde<br/>
+<span class="aq ">Hemispheren</span> gleichmäßig mit Waſſer <span title="ud" class="dta-abbr">und</span><br/>
+Erde vertheilt wären, oder weñ ſie aus<br/>
+lautem <span class="aq ">Continente</span>, oder lautem Waſſer<br/>
+beſtänden, ſo würde die Grenze <span title="dr" class="dta-abbr">der</span> NNOſt<br/>
+winde die im <span title="N." class="dta-abbr">Norden</span> <span title="ds" class="dta-abbr">des</span> <span class="aq "><span title="Equ." class="dta-abbr">Equators</span></span> und der SSOſtwinde<br/>
+die im Süden <span title="ds" class="dta-abbr">des</span> <span class="aq ">Equators</span> wehen, gerade<br/>
+in den <span class="aq ">Equator</span> fallen. Allein da es viel mehr<br/>
+<span class="aq ">Continent</span> <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">giebt </span>in <span title="nördl" class="dta-abbr">nördlicher</span> ½ Kugel als in der ſüdlichen<br/>
+und die Größe der Wärme ſich nach der<br/>
+Menge der feſten Theile richtet, ſo fällt die<br/>
+Größte Wärme, und alſo die Scheide Grenze<br/>
+der beiden Winde etwas nördlicher von dem<br/>
+<span class="aq ">Equator.</span> Dieſer künstliche <span class="aq "><span title="Schreibfehler: Climati" class="dta-corr">climati</span></span>ſche <span class="aq ">Equator,</span><br/>
+bildet nicht einen <span class="aq ">paralell</span> Kreis, ſondern geht<br/>
+in verſchiedenen Krüm̃ungen. In <span class="aq ">America</span> liegt<br/>
+er viele Grade nördlicher als in <span class="aq ">Africa</span> eben<br/>
+ſo im <span class="aq "><span title="atlant." class="dta-abbr">atlantischen</span></span> Ocean, als in der Südsee. <span class="aq ">Cf.</span><br/>
+die <span class="aq ">isotermen</span> Linien <span title="v" class="dta-abbr">von</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118554700">Humboldt</a></span>.</span> Ueber die<br/>
+<span class="aq ">Passat</span> winde ſind ſchon Beobachtungen im <span title="J." class="dta-abbr">Jahr</span> 1666<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0180 : 315|</span><br/>
+gemacht. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118720066">Hallé</a></span></span> hat 30 Jahre ſpäter eine<br/>
+<span title="Abhandlug" class="dta-abbr">Abhandlung</span> darüber geſchrieben. Nach ihm<br/>
+erhält ſich die <span title="mittl." class="dta-abbr">mittlere</span> <span class="aq "><span title="Tmprtr" class="dta-abbr">Temperatur</span></span> der <span title="ſüdl." class="dta-abbr">ſüdlichen</span><br/>
+<span class="aq ">Hemisphere</span> zu der der <span title="nördl." class="dta-abbr">nördlichen</span> wie 9 : 10. Es<br/>
+giebt auch gewiſſe <span class="aq ">Zonen</span> wo auf kleinen<br/>
+Strecken förmliche Windſtille herrſcht<br/>
+daher die Schiffe die nach <span class="aq ">Boenos Aires</span> segeln<br/>
+ſich in dem <span class="aq ">Meridian</span> des <span class="aq ">Pique</span> <span title="v" class="dta-abbr">von</span> <span class="aq ">Teneriffa</span><br/>
+halten müſſen, ſonſt gerathen ſie entweder<br/>
+in d<span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)">en</span> Golf<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">ſtrom</span> <span title="v" class="dta-abbr">von</span> <span class="aq ">Guinea</span> oder in die Region der<br/>
+Windſtille. Die Winde tragen ſehr viel<br/>
+zur Schiffahrt bei. Seit 12 Jahren iſt man erſt<br/>
+darauf aufmerksam geworden die Richtung<br/>
+<span title="ud" class="dta-abbr">und</span> den Wechſel der Land <span title="ud" class="dta-abbr">und</span> Seewinde in Inſelre-<br/>
+gionen kennen zu lernen. Man kom̃t in<br/>
+<span class="aq ">directer</span> Fahrt von <span class="aq ">Manilia</span> nach <span class="aq ">Peru</span>, ohne in<br/>
+hohe Breiten große Umſchweife nehmen zu müſſen,<br/>
+hin und zurück weñ man nur den Wechſel<br/>
+des Windes abwartet. Von <span class="aq ">Peru</span> nach <span class="aq ">Guaiagiul</span><br/>
+kom̃t man in 3 Tagen, während man von <span class="aq ">Guaja-<br/>
+guil</span> nach <span class="aq ">Peru</span> 2 Monate weisen muß, und<br/>
+einen Unweg bis zum 22° <span title="ſ. B." class="dta-abbr">ſüdlicher Breite</span> herab, nehmen<br/>
+muß, um der Richtung der Winde und dem Golf-<br/>
+ſtrom auszuweichen.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0181 : 314|</span><br/>
+<p class="dta-p">Die Dichtigkeit des Windes iſt beſonders<br/>
+von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11743504X">Woltman</a></span></span> in <span class="aq ">Kuxhafen</span> berechnet. Er<br/>
+durchläuft 25 auf 1" im Durchſchnitt, alſo 4<br/>
+<span class="aq "><span title="geogr." class="dta-abbr">geographiſche</span></span> <span title="Mlen" class="dta-abbr">Meilen</span> (23000 parlſ: <span title="F." class="dta-abbr">Fuss</span> = 1 <span title="geogr" class="dta-abbr">geographiſche</span> <span title="M." class="dta-abbr">Meile</span>) in 1 Stunde<span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Darnach kom̃t der Wind von <span class="aq ">Nova Zemla</span> bis<br/>
+in unſern Gegend in 4 vollen Tagen, und<br/>
+von den Küſten <span class="aq ">Africa</span>'s in 2 Tagen. Außer<br/>
+den <span class="aq ">periodi</span>ſchen <span class="aq ">Pasſat</span>winden ſind noch die<br/>
+<span class="aq ">Monsons</span> oder <span class="aq ">Monsune</span> zu erwähnen.<br/>
+Sie wehen in der Richtung von SüdWest<span title="Schreibfehler: " class="dta-corr">.</span><br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118504436">Arian</a></span></span> vergleicht ſie mit den <span class="aq ">Etheſiſchen</span><br/>
+Winden welche in <span class="aq ">Aegypten</span> in der<br/>
+Richtung von <span class="aq ">NordWest</span> wehen. Der Name<br/>
+<span class="aq ">Monson</span> iſt kein französiſcher ſondern<br/>
+ein verdorbener <span class="aq ">malai</span>ſcher, <span class="aq ">mussin</span><br/>
+heißt in der <span class="aq ">malai</span>ſchen Sprache die Jahres-<br/>
+zeit, weil dieſe Winde die Jahreszeiten<br/>
+in jenen Gegenden der <span class="aq ">Malajen</span> beſtim̃en.<br/>
+Die Winde <span class="aq ">compliciren</span> ſich oft ſehr miteinander.<br/>
+Sie ſtoßen von verſchiedenen Richtungen zuſam̃en<br/>
+oder ſie wechſeln in der obern und der<br/>
+untern Schicht <span title="dr" class="dta-abbr">der</span> <span class="aq ">Atmosphere</span> wie die <span class="aq ">Pasſat</span>winde, deñ<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0182 : 315|</span><br/>
+<span class="dta-del" title="Streichung (#ow)">d</span><span class="dta-add" title="Hinzufügung (across)">d</span>a die Bewegung der <span class="aq ">Pasſat</span>winde von Oſten<br/>
+nach Weſten, daher entſtanden iſt, <span title="dß" class="dta-abbr">daß</span> der<br/>
+kältere Luftſtrom die unterſte Region<br/>
+einnahm, ſo muß in einer Höhe, gewöhnlich<br/>
+ſchon von 14000 <span title="F." class="dta-abbr">Fuss</span> die Strömung der <span class="aq ">Equatorial</span><br/>
+luft, eine entgegengeſetzte Richtung haben<br/>
+und dort Westwinde bilden. Daher bemerkt<br/>
+man in den <span class="aq ">Antillen</span> <span title="dß" class="dta-abbr">daß</span> der Aſchenfall<br/>
+östlich von den <span class="aq ">Vulcanen</span> liegt, eben ſo fin-<br/>
+det man auf der <span class="aq "><span title="canar:" class="dta-abbr">canariſchen</span></span> Inſel <span class="aq ">Barbados</span><br/>
+östlich von <span class="aq ">Cap St. Vincent, Vulcan</span>aſche, was<br/>
+nicht möglich wäre weñ nicht oben West-<br/>
+wind, unten Oſtwind herrſchte<span class="dta-marginal dta-marginal-right">Der Seefahrer <span class="aq "><span title="Personenname">Glas</span></span><br/>
+berichtet daß auf der<br/>
+Spitze des <span class="aq ">Piqus</span> <span title="v" class="dta-abbr">von</span> <span class="aq ">Teneriffa</span><br/>
+Westwinde herrſchen<br/>
+</span>. Man hat<br/>
+früher geglaubt als weñ die <span class="aq ">Cultur</span> Ein-<br/>
+fluß auf die Winde haben könnte. Die<br/>
+ungeheueren Waldungen <span class="aq ">Americas</span> existi-<br/>
+ren in einigen Staaten nicht mehr, die<br/>
+wüstliegenden Felder ſind in fruchtbare<br/>
+Aecker verwandelt, bevölkerte Staaten<br/>
+entſtanden, und doch iſt bei aller dieſer<br/>
+<span class="aq ">Cultur,</span> kein <span class="aq ">klimati</span>ſcher Unterſchied in<br/>
+<span class="aq ">America</span> bemerkt worden. Es ſind hier<br/>
+große <span class="aq ">cosmi</span><span title="Original: ſchen" class="dta-reg">ſche</span> Verhältniſſe deren Wirk-<br/>
+samkeit zuſam̃en, die menſchliche Kraft<br/>
+nicht vermag. Wohl aber haben die<br/>
+Winde Einfluß auf <span title="ds" class="dta-abbr">das</span> <span class="aq ">Clima.</span> Nach<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0183 : 316|</span><br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">L. Buch</a></span></span> iſt auf der <span class="aq "><span title="canar" class="dta-abbr">canariſchen</span></span> <span title="Schreibfehler: Inſen" class="dta-corr">Inſel</span> <span class="aq ">Grandcanaria</span><br/>
+das <span class="aq ">Maximum</span> der Wärme nicht im <span class="aq ">Juli</span><br/>
+und <span class="aq ">August</span> ſondern im <span class="aq ">October.</span> In den <span class="aq ">tempe-<br/>
+rirten</span> Gegenden vermindern die Winde den<br/>
+<span class="aq ">Barometer</span>ſtand. Die Oſtwinde ſind kalt, die<br/>
+Westwinde erwärmen. Das Verhältniß<br/>
+beyder muß in <span class="aq ">Europa</span> großen <span class="aq "><span title="climat:" class="dta-abbr">climatiſchen</span></span> Ein-<br/>
+fluß haben. Aus 23 jährigen Beobachtun-<br/>
+gen, die man in <span class="aq ">Paris</span> gemacht hat, ergab<br/>
+ſich als Mittelzahl, <span title="dß" class="dta-abbr">daß</span> die Tagesanzahl in<br/>
+welchen die Oſtwinde wehen, zu der in welchen<br/>
+die Westwinde wehen ſich verhält wie 23 : 70<br/>
+oder wie 1 : 3. Wie anders würde <span title="ds" class="dta-abbr">das</span> <span class="aq ">Clima</span><br/>
+von <span class="aq ">Europa</span> geſtaltet ſein weñ <span title="ds" class="dta-abbr">das</span> <span title="Schreibfehler: verhältnß" class="dta-corr">Verhältniß</span><br/>
+wie 1 : 7 wäre. So ſind die verſchiedenen<br/>
+zufällig ſcheinenden Bewegungen der<br/>
+Luft, vom weſentlichen Einfluß auf den<br/>
+Ackerbauzuſtand.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left">Die Stürme.<br/>
+</span>Die heftigen unregelmäßigen Winde hei-<br/>
+ßen Stürme. Die Kraft ihrer Schnellig-<br/>
+keit iſt groß, die gewöhnliche 60 <span class="aq ">Fuss</span> in 1″<br/>
+oft aber bis 132 <span class="aq ">Fuss</span> in 1″. Das berühmte<br/>
+Pferd <span class="aq ">Clips</span> in England legte 58 <span class="aq ">Fuss</span> in<br/>
+einer <span class="aq ">Secunde</span> ab. Der Schall 1038 <span class="aq ">Fuss.</span> Die<br/>
+Kanonenkugel 1500 in derſelben Zeit. Die<br/>
+Stürme entſtehen dort, wo ſie wehen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0184 : 317|</span><br/>
+doh. Der Wind fängt da an wo er <span title="ſne" class="dta-abbr">ſeine</span><br/>
+Richtung bek<span class="dta-del" title="Streichung (#ow)">ä</span><span class="dta-add" title="Hinzufügung (across)">o</span>m̃t; weñ zwiſchen dem<br/>
+<span class="aq ">Oligali</span>- und <span class="aq ">Georgien</span>- Gebürge die Luft-<br/>
+ſchicht in der Südsee aufſteigt ſo ſollizi-<br/>
+tirt ſie von da aus die anderen Schichten.<br/>
+Weñ der <span title="N" class="dta-abbr">Nord</span>Oſtwind in <span title="S" class="dta-abbr">Süd</span><span title="W" class="dta-abbr">West</span>wind ſich umän-<br/>
+dert, ſo geſchieht <span title="dr" class="dta-abbr">der</span> Anfang an den Küſten<br/>
+von <span class="aq ">Portugal,</span> von wo aus der Wind ſich<br/>
+weiter verbreitet. Als Perioden ge-<br/>
+wisser ſtarken Bewegungen ſind die <span class="aq ">Aequi-<br/>
+noctial</span>stürme anzuſehen die 15 Tage vor<br/>
+und nach dem <span class="dta-del" title="Streichung (#s)">Ueber</span><span class="dta-add" title="Hinzufügung (superlinear)">Durch</span>gange der Soñe durch<br/>
+den <span class="aq ">Equator</span> ſtatt finden, früher geht<br/>
+kein Schiff aus dem Haven. Man kañ<br/>
+davon keine Urſache angeben. Nach der<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119292556">Wolta</a></span></span>iſchen Säule ſcheint es wahrſcheinlich<br/>
+<span title="dß" class="dta-abbr">daß</span> es gewiſſe große Linien in dem<br/>
+Weltraume gebe wie z.B. die Axe der<br/>
+<span class="aq ">Magnetpole</span>, <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">durch </span>welche weñ die Erde durchgeht<br/>
+ſolche heftige Bewegungen entſtehen.<br/>
+Allein warum ſollte das im̃er grade<br/>
+in die <span class="aq ">Aequinoctien</span> Punkte eintreffen.<br/>
+Der gleichmäßige und langsame Gang<br/>
+der Soñe kañ auch nicht die Urſache ſein<span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Es iſt vielleicht ein <span class="aq ">Effect</span> des Gleichgewichts<br/>
+der Erwärmung und des Aufſteigens<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0185 : 318|</span><br/>
+der Luft. –</p></div></div></div></body></html>

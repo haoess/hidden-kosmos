@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[39. Vorlesung, 19.03.1828]</span></div><br/>
+<div class=""><div class=""><p class="dta-p">Selbst in <span class="aq ">Africa</span><br/>
+giebt es mehrere †<span class="dta-marginal dta-marginal-left">Binnen</span>Bittern Seen, welche nach<br/>
+den Meſſungen von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117545201">Gira</a></span></span> 24 <span class="aq ">Fuss</span> tiefer<br/>
+liegen als das Mittel <span title="M." class="dta-abbr">Meer</span><span title="Schreibfehler: " class="dta-corr">.</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118534912">Franklin</a></span></span> bemerkte<br/>
+auf <span title="ſnr" class="dta-abbr">ſeiner</span> Reise daß ein Theil der Meere<br/>
+in gewiſſen Gegenden, wegen der stetigen<br/>
+Windrichtung eine größere <span class="aq ">Convexitaet</span> er-<br/>
+langt. Vor 12 Jahren ereignete ſich der<br/>
+merkwürdige Fall <span title="dß" class="dta-abbr">daß</span> der Haven <span title="v" class="dta-abbr">von</span> <span class="aq ">Marseille</span><br/>
+einige Stunden trocken blieb, bei der<br/>
+Wehung des Nordweſtwindes. Der <span class="aq ">Genfer</span><br/>
+see ſchwellt und senkt ſich wiederum, <span title="ud" class="dta-abbr">und</span><br/>
+man bemerkte darin eine <span class="aq ">Periodicaet</span><br/>
+welche <span class="dta-del" title="Streichung (#s)">mit</span><span class="dta-add" title="Hinzufügung (superlinear)">von</span> der der Winde abhängt. Die<br/>
+Strömungen ſelbſt <span title="ſnd" class="dta-abbr">ſind</span> Folgen der stündli-<br/>
+chen <span class="aq ">Variationen</span> des <span class="aq ">Barometer</span>ſtandes.</p><br/>
+</div>   <div class=""><div class="dta-head"><span class="u ">Gliederung der <span class="aq ">Continente</span></span>.</div><br/>
+<p class="dta-p">Man bemerkt zwei große Maſſen auf<br/>
+unſerem Erdball die alte <span title="ud" class="dta-abbr">und</span> die neue<br/>
+Welt. Wir haben ſchon angedeutet wie<br/>
+die <span title="Erstreckug" class="dta-abbr">Erstreckung</span> <span title="dr" class="dta-abbr">der</span> alten Welt von Oſten<br/>
+nach Weſten auf die <span class="aq ">climati</span>ſchen Verhältniſſe<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0114 : 249|</span><br/>
+derſelben wirkt. Die natürliche Wärme<br/>
+oder Kälte wird dadurch bedeutend ver-<br/>
+mehrt. Die <span title="Schreibfehler: nordliche" class="dta-corr">nördliche</span> <span class="aq ">Hemisphaere</span> iſt<br/>
+mehr eine <span class="aq ">continentale,</span> die ſüdliche mehr<br/>
+eine <span class="aq ">pelagiſche</span>, die letzte hat in Verhältniß<br/>
+der erſten nur ⅓ des <span class="aq ">Continentes</span>. Gegen<br/>
+den <span class="aq ">Nordpol</span> ſind alle <span class="aq ">Continente paralell</span><br/>
+abgeſchnitten namentlich zwiſchen dem 70–73°<br/>
+<span title="nördl." class="dta-abbr">nördlicher</span> <span title="Brte" class="dta-abbr">Breite</span>. In <span class="aq ">Nord America</span> ſteht die<br/>
+<span class="aq ">Barro</span><span class="dta-del" title="Streichung (#s)">t</span>ſtraße wahrſcheinlich mit dem<br/>
+Oſtmeere in <span class="aq ">Com̃unication</span>, in ihrem Süden<br/>
+breitet ſich ein ganzer <span class="aq ">Archipelagus</span> aus.<br/>
+Der <span class="aq ">Nordpol</span> ſelbſt ſcheint frei vom Lande zu<br/>
+ſein darüber <span class="aq ">Cf</span> die neue <span title="engl." class="dta-abbr">engliſche</span> Schrift<br/>
+von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117565261">Barrington</a></span></span>. – Die Inſeln bilden<br/>
+die Verlängerung <span title="dr" class="dta-abbr">der</span> <span class="aq ">Continente</span>. Die Inſeln<br/>
+von <span class="aq ">Nord America</span> erſtrecken ſich in großen<br/>
+Maſſen bis zu dem <span class="aq ">Pol</span> hin. Im alten<br/>
+<span class="aq ">Continente</span> iſt <span title="ds" class="dta-abbr">das</span> Meer längs dem <span class="aq ">Nordcap</span><br/>
+frei, es ſind da nur <span class="aq ">Spitzbergen</span> <span title="ud" class="dta-abbr">und</span><br/>
+<span class="aq ">Beeren</span>inſeln. Dieſes iſt auch die Urſache<br/>
+der milden Temperatur <span title="dſr" class="dta-abbr">dieſer</span> Inſeln<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0115 : 250|</span><br/>
+im <span class="aq ">Nordcap</span> gefriert <span title="ds" class="dta-abbr">das</span> Meer noch<br/>
+nicht, während auf dem <span class="aq ">Continente</span><br/>
+eine Kälte von − 24° herrſcht. Ob <span class="aq ">Nord<span title="Schreibfehler: " class="dta-corr">-</span><br/>
+pol</span> vom Lande frei iſt, iſt noch nicht<br/>
+ausgemacht. 1527 hat <span class="aq "><span title="Personenname"><a href="https://www.wikidata.org/wiki/Q19104745">Robert Torne</a></span></span> aus<br/>
+<span class="aq ">Bryeton</span> den kürzeren Weg <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">nach Indien </span>quer über<br/>
+den <span class="aq "><span title="NPol" class="dta-abbr">Nordpol</span></span> vorgeſchlagen. Unter <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118548204">Heinrich<br/>
+VIII.</a></span></span> hat man viele Verſuche, allein ver-<br/>
+geblich angeſtellt. Jetzt iſt es ſchwer<br/>
+über 81°, wegen den großen Eismaſſen<br/>
+vorzudringen. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117610097">Malgreve</a></span></span> drang bis zum<br/>
+80° 58′. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117565261">Barington</a></span></span> in <span title="ſnr" class="dta-abbr">ſeiner</span> Sam̃lung ver-<br/>
+ſchiedener Reisen gab den 83° an, bis zu<br/>
+welchen einzelne vorgedrungen waren. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117654167">Scores-<br/>
+bi</a></span></span> hat dies indeſſen wiederlegt. Er ſelbſt<br/>
+drang im <span class="aq ">Mai</span> 1806 bis 81° 13′ und nach<br/>
+Mittag bis 81½° vor. Die Eismaſſen<br/>
+wurden fest, und man wollte auf <span title="dm" class="dta-abbr">dem</span><br/>
+Schlitten vordringen. Er fand aber bald<br/>
+<span title="dß" class="dta-abbr">daß</span> er ſtatt nach <span class="aq ">Norden</span> zu dringen nach<br/>
+Süden kam, deñ die Bewegung der großen<br/>
+Eismaſſe nach Süden | die man nicht bemerkt<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0116 : 251|</span><br/>
+ihrer <span title="grßen" class="dta-abbr">großen</span> <span title="Original: Maſſenausdähug" class="dta-reg">Massenausdehnung</span> wegen |<br/>
+war größer als die <span title="Bewegug" class="dta-abbr">Bewegung</span> der<br/>
+Schlitten nach <span class="aq ">Norden</span>. Das <span title="engl." class="dta-abbr">engliſche</span> <span class="aq ">Par-<br/>
+lament</span> hat dem eine <span class="aq ">Premie</span> von 5000 <span class="gap">[unleserliches Material – Zeichen fehlt]</span> <span class="aq "><span title="Strlg" class="dta-abbr">Sterling</span></span><br/>
+zugeſichert der bis 89° <span class="dta-del" title="Streichung (#ow)">f</span><span class="dta-add" title="Hinzufügung (across)">v</span>ordringt, für<br/>
+die nordweſtliche Durchfahrt iſt die <span class="aq ">Praemie</span><br/>
+von 20000 <span class="gap">[unleserliches Material – Zeichen fehlt]</span>. <span class="aq "><span title="Strlg" class="dta-abbr">Sterling</span></span>. –</p><br/>
+<p class="dta-p">Die Gliederung <span title="dr" class="dta-abbr">der</span> <span class="aq ">Continente</span> iſt auf eine<br/>
+Seite zuſam̃engedrängt auf 250° Läng-<br/>
+grade. Zwiſchen <span class="aq ">Aſien</span> und <span class="aq ">America</span> iſt<br/>
+110° Längengrade ununterbrochenes<br/>
+Waſſer, ſo <span title="dß" class="dta-abbr">daß</span>, weñ wir dieſen Ozean<br/>
+in die Mitte der halben Erdkugel legen,<br/>
+an beyden Seiten nur zu 35° am <span class="aq ">Continent</span><br/>
+ſich erſtreck<span class="dta-del" title="Streichung (#ow)">t</span><span class="dta-add" title="Hinzufügung (across)">en</span> würden. An der anderen<br/>
+Erdhälfte wäre lauter <span class="aq ">Continent</span> ver-<br/>
+theilt <span class="dta-del" title="Streichung (#s)">durch </span>deſſen Mitte der <span class="aq ">atlantiſche</span><br/>
+Ocean durchzieht. <span title="Dſr" class="dta-abbr">Dieſer</span> Ocean iſt eine Thal-<br/>
+bildung indem die entgegengeſetzten<br/>
+<span class="aq ">Continente</span> eine <span class="aq ">paralelle</span> Richtung haben<br/>
+und fast dieſelben <span class="aq ">Constructionen,</span> die großen<br/>
+Zertrüm̃erungen bei der <span class="aq ">Hudsons</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Baffinsbay</span><br/>
+und an der <span class="aq ">Scandinavi</span>ſchen Halbinſel<span title="Schreibfehler: " class="dta-corr">.</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0117 : 252|</span><br/>
+Gegen Süden ſind die Erweiterungen<br/>
+einerſeits des <span class="aq ">Antillen</span> <span title="M." class="dta-abbr">Meeres</span> anderſeits<br/>
+des <span class="aq "><span title="europ:" class="dta-abbr">eropäischen</span></span> Mittel <span title="M." class="dta-abbr">Meeres</span> –</p><br/>
+<p class="dta-p">Alle <span class="aq ">Continente</span> haben gegen Süden eine<br/>
+<span class="aq ">pyramidalform</span>. Dieſe Bemerkung war<br/>
+ſchon von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118534432">Rheinhold Forster</a></span></span> gemacht.<br/>
+Die Endspitzen ſind ungleich nach dem<br/>
+Südpol hin ausgestreckt. Sie nehmen<br/>
+von <span class="aq ">Cap Hon</span> bis <span class="aq ">Cap</span> der guten <span title="Hoffng:" class="dta-abbr">Hoffnung</span><br/>
+stufenweise ab. Die Spitze <span title="v" class="dta-abbr">von</span> <span class="aq ">Africa</span><br/>
+erſtreckt ſich bis 33° 55′. Die Spitze des<br/>
+<span class="aq ">Vandimen</span>landes bis 43° 38′. <span class="aq ">Cap Horn</span><br/>
+bis 55°. Weñ man <span class="aq ">Aſien</span> mit <span class="aq ">Neu Holland</span><br/>
+durch die <span class="aq ">Sunda</span>inſel, und <span class="aq ">Europa</span> mit<br/>
+<span class="aq ">Africa</span> ſich verbunden denkt, ſo erſtreckt<br/>
+ſich jede <span title="dſr" class="dta-abbr">dieſer</span> drei Hauptmaſſen<br/>
+deſto weiter nach dem Süden, je weiter<br/>
+ſie ſich nach dem Norden erſtreckt.<br/>
+An dieſes Verhältniß ſchließen ſich<br/>
+die in den 3 Maſſen, fast gleichmäßig<br/>
+zertheilten Einbusungen. Der <span class="aq ">Westgolf</span><br/>
+<span title="v" class="dta-abbr">von</span> <span class="aq ">Guinea</span> in <span class="aq ">Africa</span> 3° <span title="nördl." class="dta-abbr">nördlicher</span> <span title="Brte" class="dta-abbr">Breite</span>. Der<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0118 : 253|</span><br/>
+<span title="Schreibfehler: der" class="dta-corr">[…]</span> unweit der <span class="aq ">Arekipa <span title="Schreibfehler: Vulcanen" class="dta-corr">Vulcane</span></span> ſich<br/>
+ausbreitende Golf <span title="v" class="dta-abbr">von</span> <span class="aq ">Arica</span> in <span class="aq ">America</span><br/>
+14½° <span title="ſüdl." class="dta-abbr">ſüdliche</span> <span title="Br." class="dta-abbr">Breite</span> davon liegt die <span class="aq ">Andes</span><br/>
+kette 20 Meilen entfernt; endlich<br/>
+der damit <span class="aq ">correspondi</span>rende <span class="aq ">Golf</span> den<br/>
+die Inſel <span class="aq ">Java</span> mit dem nordweſtlichen<br/>
+<span class="aq ">Witzland</span> in <span class="aq ">Neu Holland</span> bildet. –</p><br/>
+<p class="dta-p">Vor 15 Jahren glaubte man an den<br/>
+<span class="aq ">Pouvens, Neu Szettland</span>inſeln und an Süd<br/>
+<span class="aq ">Georgien</span> die Vorboten eines großen<br/>
+ſüdlichen <span class="aq ">Continentes</span> zu finden. Allein<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/172444462">Wedel</a></span></span>'s Expedition vor 5 Jahren, ver-<br/>
+nichtete dieſe <span class="aq ">Hypothese. <span title="Personenname"><a href="http://d-nb.info/gnd/118522027">Cook</a></span></span> drang<br/>
+gegen Süden bis 71° 10′ <span title="ſ. B." class="dta-abbr">ſüdliche Breite</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/172444462">Wedel</a></span></span><br/>
+bis 74°15′ vor, und fand ein Meer<br/>
+völlig frei vom Eise. Es iſt gerade<br/>
+die nordiſche <span class="aq ">Nation</span>, die Russen,<br/>
+welche beſonders im Südmeere große<br/>
+Entdeckungen gemacht haben. <span class="aq "><span title="Cpt." class="dta-abbr">Captain</span><br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/133531317">Billinghauſen</a></span></span> entdeckte unter 70° <span title="ſ. B." class="dta-abbr">ſüdliche Breite</span><br/>
+die Inſeln <span class="aq ">Peters I</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Alexanders I</span><span title="Schreibfehler: " class="dta-corr">.</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0119 : 254|</span><br/>
+<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">Auf </span><span class="dta-del" title="Streichung (#ow)">G</span><span class="dta-add" title="Hinzufügung (across)">g</span>roße Zertrüm̃erungen der <span class="aq ">Continente</span><br/>
+deuten die <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">hier </span>überall ſich vorfindenden<br/>
+Ueberreste <span title="ud" class="dta-abbr">und</span> Skelette nicht mehr exi-<br/>
+stirender Thiere als <span class="aq ">Rhinoceros</span> = <span class="aq ">Ele-<br/>
+phanten</span> = Katzen-Arten. Es ſind wahr-<br/>
+ſcheinlich untergegangene <span class="aq ">Continente</span>,<br/>
+welche nun theilweise zum Vorſchein<br/>
+kom̃en, und ſich <span title="Schreibfehler: zi" class="dta-corr">zu</span> feſten Maſſen vom<br/>
+Neuen bilden. Ein Aehnliches biete<span class="dta-del" title="Streichung (#ow)">s</span><span class="dta-add" title="Hinzufügung (across)">n</span><br/>
+die <span class="aq ">scandinaviſchen Fiorde</span> dar. Man<br/>
+kañ ſich davon ein anſchauliches Bild<br/>
+machen, weñ man ſich die zahlreichen<br/>
+<span class="aq ">Guatimala Vulcane</span>, bis auf eine<br/>
+gewiſſe Höhe im Waſſer verſetzt,<br/>
+denkt, dañ würden die <span class="aq ">Extremitaeten</span><br/>
+der Berge wie <span class="aq ">sporadi</span>ſche Inſeln<br/>
+auf dem Waſſer zertheilt ſein,<br/>
+<span title="ud" class="dta-abbr">und</span> im Kleinen d<span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)">as</span> Bild der <span class="aq ">Molukken</span><br/>
+geben. –</p><br/>
+<p class="dta-p">Bei der Vertheilung der Inſeln ſind<br/>
+diejenigen, die ſich den <span class="aq ">Continenten<br/>
+paralell</span> anſchließen, von denen<br/>
+zu unterſcheiden, die <span class="aq ">sporadiſch</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0120 : 255|</span><br/>
+auf dem weiten Oceane in<br/>
+Gruppen vertheilt ſind. Die letzten<br/>
+finden ſich vorzüglich in der <span title="südl" class="dta-abbr">südlichen</span><br/>
+<span class="aq ">Hemisphaere</span>. Die erſten ziehen ſich<br/>
+vom Indiſchen <span class="aq ">Archipel</span> an Oſt <span class="aq ">Aſien</span> bis<br/>
+nach <span class="aq ">Beeringsſtraße</span> hin. Sie haben viel<br/>
+zur <span class="aq ">Civilisation</span> der Oſt <span class="aq ">Aſiaten</span> beigetra-<br/>
+gen. Man findet bis jetzt in <span class="aq ">Corea</span><br/>
+<span title="ud" class="dta-abbr">und</span> <span class="aq ">Japan</span> Spuren von ſehr alten <span class="aq "><span title="Cultur" class="dta-abbr">Culturen</span></span>.<br/>
+Sie erleichtern den Handel, ſie bilden<br/>
+Brücken, wodurch die <span class="aq ">Continente</span> mit<br/>
+einander verbunden werden, durch<br/>
+ſie koñte leicht eine <span title="Völkerverbindug" class="dta-abbr">Völkerverbindung</span><br/>
+zwiſchen <span class="aq ">Aſien</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">America</span> entſtanden<br/>
+ſein, ohne <span title="dß" class="dta-abbr">daß</span> man nöthig hätte den<br/>
+Weg über den hohen <span class="aq ">Norden</span> von<br/>
+<span class="aq ">Aſien</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">America</span> zu überſteigen. –<br/>
+Die Küſtenzergliederung der <span class="aq ">Continente</span><br/>
+ſelbſt, die von Süd Oſt <span class="aq ">Aſien</span> und Süd<br/>
+West <span class="aq ">Europa,</span> ſind im größten <span class="aq ">Contraste</span> mit<br/>
+de<span class="dta-del" title="Streichung (#s)">s</span><span class="dta-add" title="Hinzufügung (superlinear)">m</span> überall abgestützten <span class="aq ">Africa</span>.<br/>
+Außer dem <span class="aq ">Golf</span> <span title="v" class="dta-abbr">von</span> <span class="aq ">Guinea</span> findet<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0121 : 256|</span><br/>
+dort keine Einbusung ſtatt. –</p><br/>
+<p class="dta-p">Die Berge ſelbſt ſind Erhöhungen<br/>
+auf der Feste, die ganzen <span class="aq ">Continente</span><br/>
+ſind Erhöhungen des iñeren Erdballs<br/>
+überall vom Waſſer umgeben, das<br/>
+die Niederungen <span title="ud" class="dta-abbr">und</span> Tiefen erfüllt.<br/>
+Eine ſchöne Anſicht ſtellt darüber<br/>
+<span class="aq ">Cicero</span> im Buche <span class="aq ">de naturae deorum</span><br/>
+auf. Die Berge bilden zweierlei<br/>
+Systeme. Es ſind 1.) <span class="aq ">elipti</span>ſche aufge-<br/>
+worfene Maſſen wie die <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="aq ">Sera Parime</span> </span>zwiſchen<br/>
+dem <span class="aq ">Amazonen</span> und <span class="aq ">Orinocco <span title="Schreibfehler: flusſe" class="dta-corr">Flusſe</span></span><br/>
+in <span class="aq ">America</span>, die <span class="aq ">coloſale</span> Gruppe von<br/>
+<span class="aq ">St. Marta</span> die 3000 <span class="aq ">Fuss</span> höher als<br/>
+<span class="aq ">Montblanc</span> iſt; oder 2) es ſind Erhe-<br/>
+bungen in Ketten, klüftenartig<br/>
+hervorspringend, wie die <span class="aq ">Andes</span>kette<br/>
+die ſich auf 700 deutſche <span title="Mlen" class="dta-abbr">Meilen</span> erſtreckt.<br/>
+Man hat ſich fälſchlich die Gebürgs-<br/>
+ketten in feſten Verbindungen<br/>
+gedacht, die gleichsam Ströme,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0122 : 257|</span><br/>
+an Gebürgsſtärke gewiñen, je<br/>
+mehr Nebenzweige an die Haupt-<br/>
+kette anſtoßen. Man hat ſich <span class="aq ">Centrale</span><br/>
+Berggruppen vorgeſtellt, von einer<br/>
+<span class="aq ">relativ</span> höchſten Höhe und größten<br/>
+Umfang, von wo aus die einzelnen<br/>
+Ketten <span class="aq ">Diminuendo</span> ausſtrahlen.<br/>
+Ein Beispiel davon giebt zwar die<br/>
+oſtindiſche Gebürgskette, wo zwiſchen<br/>
+<span class="aq ">Malacca</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Coromandel</span> das <span class="aq ">Mizur-<br/>
+plateau</span> ſich erhebt, mit Berggipfeln<br/>
+von 8000 <span class="aq ">Fuss <span title="absolut:" class="dta-abbr">absolute</span></span> Höhe, während<br/>
+das <span class="aq ">Plateau</span> ſelbſt 6–7000 <span class="aq ">Fuss</span> über dem<br/>
+<span class="aq ">Niveau</span> liegt. Allein bei den meiſten<br/>
+Gebürgszügen bewährt ſich dieſes<br/>
+<span class="dta-del" title="Streichung (#s)">N</span><span class="dta-add" title="Hinzufügung (superlinear)">n</span>icht. Sehr oft ſind die <span class="aq ">Central</span>knoten<br/>
+von einer viel <span title="Schreibfehler: geringerer" class="dta-corr">geringeren</span> Höhe <span title="ud" class="dta-abbr">und</span><br/>
+Umfang, während einzelne<br/>
+Berge der Ketten, weit davon eine<br/>
+unermeßliche Höhe erlangen.<br/>
+Die verſchiedenen <span class="aq ">Andes</span>ketten wechſeln<br/>
+in ihrer Höhe, ſo <span title="dß" class="dta-abbr">daß</span>, weñ die Gipfel<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0123 : 258|</span><br/>
+der einen die Schneelinie überſtei-<br/>
+gen, die der folgenden weit darun-<br/>
+ter ſich erheben. Auch iſt an einen<br/>
+<span class="aq ">submarinen</span> Zuſam̃enhang der Berg-<br/>
+ketten der <span title="verſchdenen" class="dta-abbr">verschiedenen</span> <span class="aq ">Continente</span> nicht<br/>
+zu denken. Endlich iſt auch die Anſicht<br/>
+falſch, <span title="dß" class="dta-abbr">daß</span> die Flüſſe die Gebürgsketten<br/>
+nicht durchbrechen. Der <span class="aq ">Amazonen</span><br/>
+ſtrom durchbricht den <span class="aq ">Centralknoten</span><br/>
+ſelbſt. Der <span class="aq ">Indus</span> nördlich von <span class="aq ">Pensza</span><br/>
+durchbricht das <span class="aq ">Himalaja</span> Gebürge<span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Die Höhe der Ebene in der Nähe der<br/>
+Gebürge iſt verſchieden, entweder gleich-<br/>
+hoch von beyden Seiten des Berges, oder<br/>
+die eine Seite, ſchwellt allmählig auf<br/>
+oft bis 3000 <span class="aq ">Fuss</span> <span title="vo" class="dta-abbr">von</span> wo aus plötzlich<br/>
+der Berg ſich erhebt, und von der anderen<br/>
+Seiten fällt der Berg steil in die<br/>
+Tiefe hinab. In <span class="aq ">America</span> ſind die Gebürge<br/>
+mittlerer Größe <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">3500 <span class="aq ">Fuss</span> </span>in der <span class="aq ">Andes</span>kette<br/>
+<span title="Original: zuſam̃engedrangt" class="dta-reg">zuſam̃engedrängt</span>. In <span class="aq ">Europa</span> befinden<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0124 : 259|</span><br/>
+ſich die größten Berge bis 10000 <span title="F." class="dta-abbr">Fuss</span> Höhe<br/>
+weit von der Hauptkette entfernt.<br/>
+</p></div></div></div></body></html>

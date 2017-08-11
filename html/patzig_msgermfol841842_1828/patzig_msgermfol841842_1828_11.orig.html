@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span title="Original: D. 8 Dcbr.&#xA;27." class="dta-reg">11. Vorlesung, 08.12.1827</span></div><br/>
+<p class="dta-p"><span class="u ">Wir kom̃en jetzt zum eigentlich aſtro-</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Aſtronomiſcher Theil der<br/>
+Wiſſenſchaft.</span><br/>
+</span><span class="u ">nomiſchen Theile der Wiſſenſchaft, wobei ni<span class="dta-supplied">[cht]</span></span><br/>
+gefragt werden ſoll wie die Entdeckungen<br/>
+angeſtellt ſind, ſondern was entdeckt<br/>
+worden iſt. Die Beſchaffenheit der Ma-<br/>
+terie iſt der Gäodeſie eigen u. nicht höher<br/>
+gehörig. Es iſt dabei nicht nöthig in das<br/>
+Einzelne zu dringen, ſo wie es <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span></span><br/>
+glückte die ſchwierigſte Materie von<br/>
+allen Gerüſte zu entfernen u. nur rein<span class="dta-supplied">[e]</span><br/>
+Reſultate zu liefern. <span class="u ">Es ſoll hier</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Phyſiſche Aſtronomie.</span><br/>
+</span><span class="u ">die phyſiſche Aſtronomie gelehrt werden<br/>
+u. es wird dabei die Rede ſein, nicht nur<br/>
+von</span> <span class="dta-del" title="Streichung (#s)"><span class="u ">frei</span></span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="u ">der</span></span> <span class="u ">Bewegung, ſondern auch von den<br/>
+phyſiſche Beſchaffenheit der Weltkörper,</span> ſo<br/>
+weit wie es wiſſen köñen. Es iſt dabei<br/>
+für uns ſehr vertheilhaft, <span title="dß" class="dta-abbr">daß</span> wir nicht<br/>
+auf einem ſelbſtleuchtenden Körper woher<br/>
+ſondern auf einem der mittlern Planet<span class="dta-supplied">[en.]</span><br/>
+Wären wir auf einer Photoſphäre, oder<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0077 : 73.|</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="uu ">Viertes Heft.</span><br/>
+</span>würde der Him̃el wegen des Sternenteppichs<br/>
+ganz leuchtend ſein: ſo hätten wir keine<br/>
+Keñtniß von der Exiſtenz der Geſtirne<br/>
+u. es würden daraus die traurigſten Folgen<br/>
+für die Cultur der Menſchheit entſtehen, die<br/>
+Jdeen würden eingeſchränkt ſein, u. jede<br/>
+religiöſe Begeiſterung, die zuerſt das<br/>
+Him̃elsgewölbe hervorgebracht, würde<br/>
+ſchwinden. Ferner hätten wir keine Jdee<br/>
+von der Geſtalt der Erde u. die <span class="aq ">am-<br/>
+plitudo</span> des Bogens köñten wir nicht keñen<br/>
+lernen; nicht einmal durch Pendelverſuche<br/>
+würden wir die Geſtalt der Erde be-<br/>
+ſtim̃en, u. der Azimuth des Nordpols bleibe<br/>
+uns unbekañt, nur höchſtens magnetiſche<br/>
+Meridiane würden wir ziehen köñen.<br/>
+Die Keñtniß der Geſtirne iſt in Wahrheit<br/>
+nicht bloß wichtig für die Belehrung der menſchl.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Keñtniß der Geſtirne wirkt<br/>
+auf die Cultur ſelbſt.</span><br/>
+</span>Geſellſchaft, ſondern ſ<span class="u ">ie hat auf die Cultur<br/>
+auf die Jntelligenz ſelbſt gewirkt. Der glück-<br/>
+lichſte Standpunkt</span> auf unſerm Planeten<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">beſte Standpunkt zu Beobachtun-<br/>
+gen.</span><br/>
+</span><span class="u ">zu Beobachtungen</span> iſt der unter dem Aequa-<br/>
+tor ſelbſt. Hier iſt die ganze Pflanzen-<br/>
+welt ſchichtenweiſe zu finden u. die Re-<br/>
+präſentanten aller organiſchen Weſen finden<br/>
+ſich hier; alle Sterne des Nord- u. Süd-<br/>
+pols tauchen hier auf, u. gewähren einen<br/>
+herrliche Anblick; der Bär des Nordens<br/>
+<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">erſcheint </span>in furchtbarer Größe. Ein großer Aſtro-<br/>
+nom <span title="H￼." class="dta-abbr">Herr</span> <span title="Personenname"><a href="http://d-nb.info/gnd/118703897">Herſchel</a></span>, der Sohn des unſterblichen<br/>
+Vaters, will ſich mit den ererbten <span title="trflich￼" class="dta-abbr">treflichen</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span title="Jnſtrument￼" class="dta-abbr">Jnſtrumenten</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0078 : 74.|</span><br/>
+Jnſtrumenten in die Tropen begeben<br/>
+u. hier auf Bergen, durch eine düñere<br/>
+Luftſchicht Beobachtungen anſtellen, von<br/>
+denen ſich die größten Früchte erwarten<br/>
+laſſen.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Exiſtenz der<br/>
+fernſten Welten.</span><br/>
+</span><span class="u ">Von der Exiſtenz der fernſten</span><br/>
+Welten erhalten wir durch die Licht-<br/>
+erſcheinungen nähern Keñtniß, nur muß<br/>
+man wohl unterſcheiden was hiebei Täu-<br/>
+ſchung der Sinn iſt. Soñe u. Mond ſind<br/>
+die einzigen Weltkörper die wir als<br/>
+Scheiben erblicken, alle andern erſchei-<br/>
+nen uns ſtrahlend. Es iſt dies nicht die<br/>
+bloße Folge des Selbſtleuchtens, indem<br/>
+die Planeten ebenfalls ſtrahlend uns<br/>
+erſcheinen. Erſt im Fernrohr verlie-<br/>
+ren ſich alle Strahlen, wie man auch<br/>
+dies ſchon erblicken kañ; indem man<br/>
+durch eine feine Nadelſtichöffnung im<br/>
+Papier die Sterne <span class="dta-del" title="Streichung (#ow)">A</span><span class="dta-add" title="Hinzufügung (across)">a</span>nſchaut. Es wäre<br/>
+dies ein trauriger Anblick, we<span class="dta-del" title="Streichung (#ow)">lch</span><span class="dta-add" title="Hinzufügung (across)">ñ</span> alle<br/>
+Geſtirne als kleine glanzloſe Scheiben<br/>
+da ſtänden. Schon wo die Atmoſphäre<br/>
+reiner iſt, iſt dieſe planetariſche Anblick<br/>
+des Him̃els ſchon zu beobachten, wie Zb.<br/>
+unter den Tropen u. wo ſie erſt gegen<br/>
+die Regenzeit mit größter Pracht zu<br/>
+funkeln anfangen. Durch zwei Stücke<br/>
+werden wir bei den Sternen getäuſcht.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Dilatation<br/>
+u.<br/>
+Polygonalfigur<br/>
+der Sterne.</span><br/>
+</span>Durch die <span class="u ">Dilatation</span> u. durch die<br/>
+<span class="u ">Polÿgonalfigur</span> die jeder zu <span class="gap">[unleserliches Material – 1 Wort fehlt]</span> ſcheint<br/>
+für unſer Auge giebt es n<span class="dta-del" title="Streichung (#erased)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">ä</span>mlich eine<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">gewiſſe</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0079 : 75.|</span><br/>
+gewiſſe Entfernung des deutlichen Sehens.<br/>
+Entfernt ſich der geometriſche Punkt<br/>
+ſo bildet ſich der Sehwinkel vor dem<br/>
+Auge u. der Gegenſtand bildet ſich<br/>
+aufs Neue vor oder hinter der Netz-<br/>
+haut in ſcheinbarer Vergrößerung.<br/>
+So ſcheint Zb. das Licht des dreitägigen<br/>
+Mondes einen größern Theil der Dunkeln<br/>
+Mondſcheibe zu umſchließen u. über den<br/>
+Rand vor zu ſtehen, dies rührt davon<br/>
+her, daß er auf der Netzhaut dilatirt.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Zerſtreuungskreis.</span><br/>
+</span>So giebt es auch einen <span class="u ">Zerſtreuungskreis</span><br/>
+welcher die Sterne vergrößert, Zb.<br/>
+iſt der Jupiter etwa 40 Sec. Durch-<br/>
+meſſer u. wächſt bis auf 4 Minuten<br/>
+an; aber ſo ſehr vergrößert ſich der<br/>
+Stern <span class="aq ">Veja</span> in der Leierx)<span class="dta-marginal dta-marginal-left">so daß Sterne die durch Photometriſche<br/>
+Meſſungen ¼ <span class="aq ">Sec</span>. betragen, Durchmeſſer<br/>
+v. 4 bis 5 Minuten erhalten.<br/>
+</span>. Oft ſehen<br/>
+wir, daß weñ die Mondſcheibe einen Stern<br/>
+verdeckt, derſelbe eine Zeitlang an<br/>
+erſtere zu kleben ſcheint, wo er<br/>
+doch plötzlich verſchwinden ſollte u.<br/>
+welches ſo wichtig oft iſt, die Längen<br/>
+zu beſtim̃en; dies rührt aber nicht von<br/>
+der Dilatation her, ſondern von den<br/>
+Wirkung der Beugung der Lichtſtrahlen.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Polygonalfigur<br/>
+der Geſtirne.</span><br/>
+</span>Was nun die Bildung der <span class="u ">Polÿgonal-<br/>
+Figuren</span> anbetrifft; ſo habe ich ſchon er-<br/>
+wähnt, <span title="dß" class="dta-abbr">daß</span> wir nun Soñe u. Mond als<br/>
+Scheiben erblicken, u. die Planeten als<br/>
+ſolche nur durch Fernröhre ſehen. Es iſt<br/>
+eine intereſſante Frage, wieviel wohl<br/>
+die <span class="aq ">Venus</span> wachſen müßte, damit wir<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">keine</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0080 : 76.|</span><br/>
+keine Strahlen bei ihr ſehen u. ſie uns<br/>
+als Scheibe erſcheint? ſie nicht mehr an<br/>
+<span class="aq ">poligona ſtellata</span> zu ſehen iſt? Jm<br/>
+Mittelalter ſoll ein auflodernder Stern<br/>
+ſich gezeigt haben der 7–8 Minuten<br/>
+Durchmeſſer gehalten u. der <span class="dta-del" title="Streichung (#erased)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">Ke</span>rn des Come-<br/>
+ten im J. 1206 ſoll ſo groß wie Ven<span class="dta-supplied">[us]</span><br/>
+geweſen ſein; es iſt aber nicht geſagt<br/>
+u. beobachtet, ob ſie Polygonalfiguren<br/>
+dabei gebildetx)<span class="dta-marginal dta-marginal-left">welches von großem Jntereſſe<br/>
+geweſen ſein würde.<br/>
+</span>. <span class="u ">So erſcheint die Soñe</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Wie groß er-<br/>
+ſcheint die Soñe auf den<br/>
+andern Planeten.</span><br/>
+</span>auf den kl. Planeten im Durchmeſſer<br/>
+10 Minuten, auf dem Jupiter 6 Minu-<br/>
+ten u. es frägt ſich, ob ſie hiebei als<br/>
+Scheibe oder als Stern funkelt. Perſo-<br/>
+nen ſehen hier dabei ſehr verſchieden.<br/>
+Jn großer Entfernung erſcheint den weiße<br/>
+Menſchen jedes Licht wie ein Stern, daher<br/>
+man auch bei Luft-Feuern die Einrichtung<br/>
+mit abwechſelnd farbigen Lichten einge-<br/>
+führt hat. Jch ſelbſt ſehe in einiger Entfer-<br/>
+nung jedes Gaslicht nicht wie gewöhnlich in<br/>
+8 ſondern nur in 7 Strahlen. Es hängt<br/>
+dies von der Figur des Auges ab, wie<br/>
+man dies bei Reverberen beobachten<br/>
+kañ. Hiebei iſt die Art der <span class="aq ">Suppressi<span class="dta-supplied">[on]</span></span><br/>
+der Strahlen merkwürdig. Senke ich<br/>
+den Kopf bei Beobachtung des Lichtes, ſo<br/>
+verſchwinden die obern Lichtſtrahlen, u.<br/>
+die untern nicht; habe ich den Kopf, ſo<br/>
+erblickt man das Gegentheil. Jm Alter-<br/>
+thum glaubte man die Zahl der Sternſtrah-<br/>
+len wären 5, u. es war die eigenthüml<span class="dta-supplied">[.]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Bezeichung</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0081 : 77.|</span><br/>
+Bezeichung derſelben. So viel iſt gewiß,<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Funkeln der<br/>
+Sterne nicht Folge<br/>
+der Atmoſphäre.</span><br/>
+</span><span title="dß" class="dta-abbr">daß</span> <span title="ds" class="dta-abbr">das</span> <span class="u ">Funkeln der Sterne</span> nicht Folge der<br/>
+Dünſte in der Atmoſphäre ſind. Dieſe<br/>
+Scintillation beſteht darin, daß das<br/>
+Licht emanirt, dañ ſchnell verſchwindet<br/>
+u. dabei Farben hervorbringt u.<br/>
+dieſe Abwechſelung <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">od. Pulſationen <span class="dta-del" title="Streichung (#s)">sind </span></span>ſehr ſchnell, <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">wie bis </span>fünf<br/>
+mal in einer <span class="dta-del" title="Streichung (#ow)">Minute</span><span class="dta-add" title="Hinzufügung (across)">Secunde</span> erfolgt. Es iſt<br/>
+ein im̃ittirendes Licht wie <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/1022525581">Mitſchl</a></span></span> es<br/>
+bewieſen, ein Phänomen der Jnter-<br/>
+ferenz. Eine <span class="u ">andere Erklärung</span> hat<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Andere Erklärung<br/>
+der Scintillation</span><br/>
+</span>man in neuerer Zeit gefunden. Weñ<br/>
+man in geringer Entfernung zwei Steine ins<br/>
+Waſſer wirft, ſo bilden ſie beide concen-<br/>
+triſche Kreiſe, die in weitern Bogen ſich<br/>
+endlich erreichen. Kom̃en die Wellen im Augen-<br/>
+blick der Jnterferenz in Kontakt, ſo hebt<br/>
+die Kraft der einen, die Kraft der andern<br/>
+auf, ſie vernichten ſich gegenſeitig, u. die<br/>
+Oberfläche des Waſſers iſt ruhig; coinci-<br/>
+diren ſie hingegen: ſo wird ihre gegenſeitige<br/>
+Kraft verſtärkt. Dies kañ man auf<br/>
+die Lichtſtrahlen anwenden, u. man hat<br/>
+durch Verſuche dies beſtätigt gefunden<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/123408571">Grimaldi</a></span></span> machte die Beobachtung, daß im <span class="aq ">Opa-<br/>
+ker</span> Körper in Licht geſtellt mit franzen-<br/>
+artige Streifen <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">u. zwar </span>mit farbigen Franzen an<br/>
+der Wand erſcheint. Derſelbe Verſuch iſt<br/>
+deutlich weñ man Zb. ein Licht durch Ritzen<br/>
+in einem Blech fallen läßt, wo der in<br/>
+der Mitte ſtehen gebliebene feſte Streifen<br/>
+durch inflektirtes Licht beleuchtet, durch<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">die</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0082 : 78.|</span><br/>
+die doppelten Lichtſtrahlen ſich an der<br/>
+Wand oder einer weißen Fläche dunkel<br/>
+darſtellen wird; weil ein Lichtſtrahl<br/>
+den andern verzehrt u. ſich gegenſei-<br/>
+tig zerſtöhrt. Eigentlich ſollten die Lichte<br/>
+einen Schattenprisma nur bilden u. die<br/>
+Fläche ohne Schatten des feinen Körpers<br/>
+ſich darſtellen; dies iſt aber nicht der<br/>
+Fall, ſondern weñ zwei Lichtſtrahlen<br/>
+unter einem kleinen Winkel ſich berüh-<br/>
+ren, zerſtöhren ſie ſich gegenſeitig<br/>
+u. bringen Dunkelheit hervor. HErr <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119032902">Fre-<br/>
+nel</a></span></span> hat <span class="u ">denſelben Verſuch mit zwei<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Gleicher Verſuch<br/>
+mit 2 Spiegeln</span><br/>
+</span>Spiegel</span> angeſtellt die unter einem<br/>
+kleinen Winkel Lichtſtrahlen auffangen<br/>
+u. reflectiren, wo der Strahl der einen<br/>
+Körpern Weg zu machen hat, den der einen<br/>
+längern Weg durchläuft, verdunkelt.<br/>
+Wenden wir dies auf die Sterne an,<br/>
+ſo würden ihre Lichtſtrahlen coincidiren<br/>
+Gehen die Strahlen durch ungleich geformt<br/>
+Luftſchichten ſo blitzt ein Strahl auf, der<br/>
+andern nicht, ſie verzehren ſich gegenſeitig<br/>
+u. zerſtöhren ſich dadurch; es entſteht gleich-<br/>
+ſam eine ewige <span class="aq ">undulation</span>.</p></div></body></html>

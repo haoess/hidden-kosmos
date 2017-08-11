@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span title="Original: D. 15. Dcbr.&#xA;1827." class="dta-reg">13. Vorlesung, 15.12.1827</span></div><br/>
+<p class="dta-p">Wir gehen jetzt über zu der ſpeciellen<br/>
+<span class="dta-marginal dta-marginal-left">Beſchreibung der nicht<br/>
+telluriſchen Stoffe.<br/>
+</span><span class="u ">Beſchreibung der nicht telluriſchen Stoffe.</span> Hätte<br/>
+ich nur über dasj<span class="dta-del" title="Streichung (#erased)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">enige</span> <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="ſprech￼" class="dta-abbr">ſprechen</span> </span>wollen, was wirklich<br/>
+hier zu <span title="bemerk￼" class="dta-abbr">bemerken</span> iſt, u. nicht von dem, was<br/>
+uns bloß erſcheint; ſo hätt<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">e</span> ich Zb. nichts<br/>
+von dem Funkeln der Geſtirne, nichts von<br/>
+ihrem Leuchten erwähnen dürfen, was jedoch<br/>
+ſo wichtig iſt näher zu erklären. Jch kañ<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Angabe der<br/>
+Quellen.</span><br/>
+</span>dabei nicht <span title="unterlaſſ￼" class="dta-abbr">unterlaſſen</span> <span class="u ">einige <span title="Quell￼" class="dta-abbr">Quellen</span></span> anzugeben,<br/>
+wo dies gründlich u. ausführlich behandelt<br/>
+iſt. Dahin gehören die Añalen der Chemie<br/>
+wo 1816, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119032902">Frenels</a></span></span> mathem. Memoiren<br/>
+über die Diffraction, der letzte Theil<br/>
+von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117351970">Thompson</a></span>s</span> Chemie |: Supplement-Band 1822 :|<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116551445">Fiſcher</a></span>s</span> mechaniſche Naturlehre. Die<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Womit beſchäftigt<br/>
+sich die Aſtro-<br/>
+geoſie</span><br/>
+</span><span class="u ">Aſtrogeoſie beſchäftigt</span> ſich mit den geball-<br/>
+ten u. <span title="ungeballt￼" class="dta-abbr">ungeballten</span> Stoffen, die in <span title="inſel-&#xA;förmig￼" class="dta-abbr">inſel-<br/>
+förmigen</span> Gruppen zerſtreut liegen. Da-<br/>
+zwiſchen <span title="lieg￼" class="dta-abbr">liegen</span> einzelne Sterne zerſtreut,<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">gleichſam</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0088 : 84.|</span><br/>
+gleichſam wie Sporaden, im <span title="unermeßlich￼" class="dta-abbr">unermeßlichen</span> Ozean<span class="dta-supplied">[,]</span><br/>
+wie <span class="aq ">St. Helena</span> liegt. Wir ſehen am Him̃el<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Sterngruppe<br/>
+unſers<br/>
+Syſtemes</span><br/>
+</span><span class="u ">Gruppen von Sternen</span>, die uns entfernt ſind<br/>
+u. die Gruppe zu der wir ſelbſt gehören.<br/>
+Jn dieſer <span title="Original: nächeſten" class="dta-reg">nächſten</span> Gruppe bewegt ſich unſer<br/>
+Syſtem mit <span title="ſein￼" class="dta-abbr">ſeinen</span> 11 Haupt- u. 18 Nebenpla-<br/>
+neten. <span class="u ">Die</span> <span title="Schreibfehler: Entferung" class="dta-corr"><span class="u ">Entfernung</span></span> <span class="u ">des <span title="letzt￼" class="dta-abbr">letzten</span> Planeten</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Entfernung<br/>
+des Planeten Uranus<br/>
+im Verhältniß zu<br/>
+dem <span title="letzt￼" class="dta-abbr">letzten</span> <span title="Comet￼" class="dta-abbr">Cometen</span></span><br/>
+</span><span class="aq ">Uranus</span> iſt noch nicht der 100<span class="u ">ſte</span> Theil der Ent-<br/>
+fernung von dem Centralkörper bis zur Gren-<br/>
+ze des <span title="letzt￼" class="dta-abbr">letzten</span> zu unſerm Soñenſyſtem allein geh<span class="dta-supplied">[ö-]</span><br/>
+renden Cometen. Sehr unwichtig u. klein<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Kleinheit unſers<br/>
+Syſtems</span><br/>
+</span>iſt daher unſer Planetenſyſtem, u. das ganze<br/>
+Soñenſyſtem unwichtig, gegen andere Syſteme<br/>
+u. unſerer Sternſchicht. Nehmen wir auch den<br/>
+größten Umkreis um die Soñe, den ſelbſt de<span class="dta-supplied">[r]</span><br/>
+Comet beſchreibt der in 80 Jahren wiederkehrt<br/>
+ſo köñen deñoch 37,000 mal ſolche Raume de<span class="dta-supplied">[r]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Größe der<br/>
+Sternſchicht</span><br/>
+</span>Länge nach in <span class="u ">unſerer Sternſchicht Platz finden</span>,<br/>
+es iſt ſo als weñ ich alle Jnſelgruppen der<br/>
+Südſee in Vergleich ſtelle mit einem kleine<span class="dta-supplied">[n]</span><br/>
+Korallen-Eilande. Es geht in der Weltbeſch<span class="dta-supplied">[r.]</span><br/>
+wie in der Weltgeſch., daß mit dem <span class="gap">[unleserliches Material – 1 Wort fehlt]</span><br/>
+Theile der Anfang gemacht wird; jedoch hat<br/>
+man hiebei Unrecht zu glauben, daß dies nur<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Gewißheit<br/>
+d. Größte.</span><br/>
+</span>Spiele der Phantaſie ſeien; deñ man hat es<br/>
+jetzt wirklich beobachtet; man iſt jetzt der<br/>
+Sache gewiß; man kañ durch absolute Zahlen<br/>
+die Grenzen der Gewißheit angeben.</p><br/>
+<p class="dta-p">Wir werden uns jetzt ferner beſchäftige<span class="dta-supplied">[n]</span></p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="uu ">Ueberſicht</span><br/>
+</span>1., <span class="u ">mit den fernſten Gruppen</span> 2., <span class="u ">mit<br/>
+der <span title="linſenförmig￼" class="dta-abbr">linſenförmigen</span> Schicht der Gruppe in der<br/>
+unſer Sÿſtem ſteht</span>, u. 3. <span class="u ">mit unſerm Plan<span class="dta-supplied">[et-]</span><br/>
+ſyſteme ſelbſt.</span></p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left">1. <span class="u ">Betrachtung der<br/>
+fernſten Gruppen.</span><br/>
+</span>1., <span class="u ">Betrachten wir die fernſten Gruppen</span><br/>
+ſo ſehen wir einen ſolchen mit Sternen ge-<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">flekte<span class="dta-supplied">[n]</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0089 : 85.|</span><br/>
+flekten Nebelfleck im Gürtel der Andromeda,<br/>
+ferner in der Krippe, im Krebſe <span title="Original: p" class="dta-reg"><span class="aq ">etc</span></span>. Zuerſt be-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Erſte Beobach-<br/>
+tung der Nebelflecke</span><br/>
+</span>obachtete <span class="u ">dieſe Nebelflecke</span> ein deutſcher<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11885979X">Simon Magius</a></span></span> im Anfange des 17<span title="t￼" class="dta-abbr"><span class="sup u ">ten</span></span> Jahrh.</p><br/>
+<p class="dta-p"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118639749">Huygens</a></span></span> unterſuchte ſie ſpäter, u. beſchrieb<br/>
+den Nebelfleck des Ariens, welches ſehr wichtig iſt.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118639749">Huygens</a></span></span><br/>
+</span>Da er jetzt bedeutend anders geſtaltet u. ſeine<br/>
+Veränderung wahrzunehmen iſt. <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span></span> iſt<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span></span><br/>
+</span>erſt der <span class="aq ">Columbus</span> dieſer Räume geworden,<br/>
+u. er hat zuerſt die Jdee von der <span title="körperlich￼" class="dta-abbr">körperlichen</span><br/>
+Geſtalt <span class="dta-del" title="Streichung (#s)">nach </span>derſelben gegeben, u. den<br/>
+Him̃el nach drei Dimenſionen gemeſſen; er<br/>
+hat das Senkblei <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">in </span>die Tiefe <span class="dta-del" title="Streichung (#s)">in </span><span class="dta-del" title="Streichung (#s)">den</span><span class="dta-add" title="Hinzufügung (superlinear)">der</span> him̃liſchen<br/>
+Räume geworfen, – <span class="aq ">coelum profundit</span> –</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Zweierlei Claſſen<br/>
+der Geſtirne</span><br/>
+</span>Es giebt <span class="u ">zweierlei Claſſe</span> dieſer Ge-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">1., auflöſbare</span><br/>
+</span>ſtirne 1. <span class="u ">auflöſbare</span> u. 2., <span class="u ">unauflöſbare</span>.<br/>
+Erſtere ſind ſolche wo der Nebel bei der<br/>
+Vergrößerung gänzlich verſchwindet, <span class="dta-del" title="Streichung (#erased)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">u</span>. ſich<br/>
+das Ganze in kleine Sterne auflöſet. Zb.<br/>
+die Milchſtraße. 1724 ſprach <span title="Personenname"><a href="http://d-nb.info/gnd/118639749">Huygens</a></span> ſchon<br/>
+dieſe Jdee aus, u. ſagte, <span title="dß" class="dta-abbr">daß</span> er mit ſeinem<br/>
+Fernrohr von 200 Fuß Länge die Milchſtraße<br/>
+auflöſen kañ. Bei den <span title="unvollkom̃e￼" class="dta-abbr">unvollkom̃enen</span> <span title="Jn-&#xA;ſtrument￼" class="dta-abbr">Jn-<br/>
+ſtrumenten</span> kañ dies jedoch nur Vermuthung<br/>
+<span class="dta-marginal dta-marginal-left">2., <span class="u ">unauflöſbare</span><br/>
+</span>geweſen ſein. <span class="u ">Viele Nebelſterne löſen ſich</span><br/>
+aber auch jetzt bei der größten Vergröße-<br/>
+rung <span class="u ">nicht auf</span>, wobei man freilich behaup-<br/>
+ten kañ, daß weñ wir nur beßern Jnſtru-<br/>
+mente hätten, ſie ſich endlich wohl auf-<br/>
+löſen würden. Es köñte allerdings ſo<br/>
+ſein; aber es läßt ſich nach Analogie hier<br/>
+ſchließen, daß ſie auch bei den <span title="größt￼" class="dta-abbr">größten</span> Jn-<br/>
+ſtrumenten deñoch unauflöſlich blieben;<br/>
+weil ſie auch bei der <span title="ſtärkſt￼" class="dta-abbr">ſtärkſten</span> Vergröße-<br/>
+rung in gleichartiger Erleuchtung bleiben.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Kera wird<br/>
+in der Lichtmaſſe bemerkt.</span><br/>
+</span>Bei andern giebt es dagegen <span class="u ">einen Kern</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">der</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0090 : 86.|</span><br/>
+der ſich glänzend auszeichnet. Häufig ſind<br/>
+2–3 ſolcher Teleskopiſchen Sterne in einen<br/>
+Nebelfleck eingeſenkt, die ſich darin fortbe-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">3000 Nebelflecke</span><br/>
+</span>wegen. <span class="u ">Man hat dergl. Nebelflecke ſchon<br/>
+3000 gezählt</span>, von denen der größte Theil<br/>
+unauflöſlich iſt. Zuſam̃en nehmen ſie am<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Jhr Raum am<br/>
+Him̃el.</span><br/>
+</span><span class="u ">Him̃elsgewölbe ungefähr einen Raum</span> von<br/>
+600 Vollmonden ein. <span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span> glaubt, daß<br/>
+ſie <span class="u ">8000 Syriusweiten von aus</span> entfernt ſind<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Jhre Weite<br/>
+von aus</span><br/>
+</span>u. folglich 24,000 Jahre Zeit gehört, bis das<br/>
+Licht zu uns kom̃t; ja die <span title="letzt￼" class="dta-abbr">letzten</span> ſchätzt er<br/>
+ſelbſt 30,000 Syriusweiten entfernt, die<br/>
+wie Licht u. Dunſtwolken dort ſchweben. Die<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Claſſification<br/>
+derſelben.</span><br/>
+</span>Nebelflecke <span class="u ">kañ man claſſificiren</span> 1., <span class="u ">in<br/>
+bloße Nebel</span>, die rund, ohne Stern ſind. 2.,<br/>
+<span class="u ">Nebelſterne</span>, die das Licht in der Mitte zu-<br/>
+ſam̃enziehen, welches ſich an den Rändern<br/>
+verliert u. da ſtets ſchwächer erſcheint<br/>
+n.d., <span class="u ">Sternnebel</span>, in die einzelne Sterne<br/>
+eingeſenkt ſind oder Sternenhaufen mit Nebel.<br/>
+Sie haben oft 12–15 Sec. im Durchmeſſer, wie<br/>
+unſere Planeten; man kañ daraus auf ihre<br/>
+beträchtliche Maſſe ſchließen. Ein Nebelfleck<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Jhre Größe</span><br/>
+</span>würde ſomit <span class="u ">den Raum von der Soñe</span> bis<br/>
+Uranus ausfüllen. <span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span> glaubt, ſie<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Jhre Geſtalt</span><br/>
+</span><span class="u ">wären</span> <span class="u ">Fixpunckte</span>, oft pinſelartig oder<br/>
+kam̃artig, oder mit Kometenſchweifen, mit<br/>
+einer Bewegung im iñern der ungeheuere<br/>
+Räume von der Schnelligkeit, die alles über-<br/>
+trifft was wir vom Lichte keñen. Wie<br/>
+ſchon erwährt hat <span title="Personenname"><a href="http://d-nb.info/gnd/118639749">Huygens</a></span> den Nebelfleck d<span class="dta-supplied">[es]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Beobachtung des<br/>
+Nebelflecks im Orion</span><br/>
+</span><span class="u ">Orions beob</span>achtet. Man köñte ihn jetzt bei d<span class="dta-supplied">[en]</span><br/>
+<span title="gefunden￼" class="dta-abbr">gefundenen</span> Veränder. <span title="deſſelb￼" class="dta-abbr">deſſelben</span> der <span title="unrichtig￼" class="dta-abbr">unrichtigen</span><br/>
+Beobachtung beſchuldigen; doch <span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span> hat ihn<br/>
+von 1774 noch genauer beobachtet u. bis<br/>
+1510 ſind ſchon merkliche Veränderungen<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">in</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0091 : 87.|</span><br/>
+in demſelben wahrgenom̃en; in dem ſich mehrere<br/>
+Sterne von demſelben ganz getreñt u. ent-<br/>
+fernt haben. Man kañ ſie für planetari-<br/>
+ſche Maſſe halten, die wie Ringe ſich la-<br/>
+gern u. verſch. Stufen der Verdichtung<br/>
+añehmen, wie ein Körper, der die <span title="ver-&#xA;ſchieden￼" class="dta-abbr">ver-<br/>
+ſchiedenen</span> Perioden des Alters durchläuft.<br/>
+<span class="dta-del" title="Streichung (#s)">u. </span>Schon über 600 <span title="hab￼" class="dta-abbr">haben</span> ſich ganz verdicht.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left">2., <span class="u ">Beſchreibung unſerer<br/>
+eigenen Sternſchicht.</span><br/>
+</span>Wir <span class="u ">kom̃en jetzt zum 2<span title="t￼" class="dta-abbr"><span class="sup u ">ten</span></span> Theil</span> <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="u ">od. zu</span> </span><span class="u ">unſrer<br/>
+Sternſchicht.</span> Unſer ganzes Soñenſyſtem<br/>
+köñen wir ebenfalls uneigentlich einen<br/>
+Nebelfleck neñen. Dieſe Jdee läßt ſich<br/>
+ſehr gut vertheidigen. Doch will ich zuerſt<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Einleitung</span><br/>
+</span>einiges von den verſch. Sternen ſelbſt re-<br/>
+den. Wären ſämtliche Sterne gleich groß<br/>
+ſo würde es ſehr ſchwer ſein die Tiefe<br/>
+des Him̃els zu beſtim̃en. Jch muß hier wie-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Araber<br/>
+u. <span title="der￼" class="dta-abbr">deren</span> Beobachtung</span><br/>
+</span>der auf die Araber <span title="zurückgeh￼" class="dta-abbr">zurückgehen</span>, die<br/>
+zuerſt die Sterne näher betrachteten u. ſie<br/>
+ſelbſt als Gegenſt. der relig. Verehrung un-<br/>
+ſahen. Erſt die Ptolemäer machten ſich an<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/100499651">Hipparch</a></span></span><br/>
+</span>die meſſende Aſtronomie <span class="u ">u. <span title="Personenname"><a href="http://d-nb.info/gnd/100499651">Hipparch</a></span></span> ent-<br/>
+warf das erſte Verzeichniß der Geſtirne.<br/>
+Dadurch, daß man bemerkte, ein Stern ſei<br/>
+verloren gegangen u. verſchwunden, wur-<br/>
+de er hierauf aufmerkſam u. verzeichnete<br/>
+Alle. Dabei iſt es außerordentl. wichtig<br/>
+in den verſch. Sternbildern die Sterne<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Verzeichniß <span title="d￼" class="dta-abbr">der</span><br/>
+Sterne in neuem<br/>
+Bilde nach dem<br/>
+Alphabet.</span><br/>
+</span>nach ihrer Helligkeit mit Buchſtaben zu<br/>
+bezeichnen; weil dadurch die Graduation<br/>
+bemerkt wird u. in der Scala die mögli-<br/>
+chen Veränderungen beobachtet werden<br/>
+köñen. So ſind Zb. im Sternbilde des <span class="aq ">Kra-<br/>
+nichs</span> ſchon längſt bedeutend Veränderun-<br/>
+gen wahrgenom̃en. Bei den frühern<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span title="Meſſung￼" class="dta-abbr">Meſſungen</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0092 : 88.|</span><br/>
+<span title="Meſſung￼" class="dta-abbr">Meſſungen</span> ſahe man nur <span class="u ">auf Länge u. Breite.</span><br/>
+<span class="dta-marginal dta-marginal-left"><br/>
+<span class="u ">Länge, Breite<br/>
+u. Tiefe des Him̃els<br/>
+beſtim̃te <span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span></span></span>Wie geſagt, <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span> unternahm es</span> zuerſt<br/>
+auch <span class="u ">die Tiefe des Him̃els zu beſtim̃en</span>. Es<br/>
+war deshalb ſehr wichtig u. nöthig photometri-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Meſſungen<br/>
+der Lichtſtärke</span><br/>
+</span>ſche <span class="u ">Meſſungen der Lichtſtärke</span> vorzunehmen. Solche<br/>
+<span title="Meſſung￼" class="dta-abbr">Meſſungen</span> ſind mit <span title="groſt￼" class="dta-abbr">groſten</span> <span title="Schwierigkeit￼" class="dta-abbr">Schwierigkeiten</span> ver-<br/>
+bunden. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118568876">Lambert</a></span></span> fand, daß das Licht der<br/>
+Soñe 277,000 u. 100000 ſtärker ſei, als<br/>
+das des Mondes. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11858975X">Olbers</a></span></span> fand, daß die<br/>
+Lichtſtärke des Aldebaran 400,000 mal<br/>
+ſchwächer ſei als des Vollmondes, u.<br/>
+daß die Soñe weñ ſie ⅓ mal weiter als<br/>
+Syrius entfernt wäre, anſtatt der 20 Mill.<br/>
+Meilen, wie Aldebaran leuchten würde<br/>
+beim Vollmonde hat ein Theil des Him̃els<br/>
+900000 mal weniger Licht als die Scheibe<br/>
+ſelbſt, u. die Lichtſtärke der Venus iſt<br/>
+3000 mal ſchwächer, als die des Vollmondes.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Blaſſe Mondſcheibe<br/>
+erhält Licht von der<br/>
+Erde</span><br/>
+</span>Weñ wir die <span class="u ">blaſſe Mondſcheibe</span> erblicken<br/>
+ſo iſt dies die Beleuchtung von unſerer<br/>
+Erde; u. bei der Venus <span title="erblick￼" class="dta-abbr">erblicken</span> wir<br/>
+in ihrem dunkeln Theile <span title="ein￼" class="dta-abbr">einen</span> eignen Licht-<br/>
+proceß in ſich ſelbſt, u. man darf daher<br/>
+nicht añehmen, daß ſelbſtleuchtende Körper<br/>
+ſtets von ungeheurer Größe wären.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Methode die<br/>
+Luftſtärke durch den<br/>
+Schatten zu meſſen.</span><br/>
+</span>Eine der ſicherſten Methoden <span class="u ">die Luftſtärke<br/>
+zu meſſen beſteht</span> darin, den Schatten zu<br/>
+meſſen, den zwei Lichte in gleicher Entfer-<br/>
+nung von einem Körper werfen. Sehr gut<br/>
+läßt ſich daher die Stärke des Lichts eines<br/>
+Reverbers mit einem gewöhnt. Licht ver-<br/>
+gleichen. Da ſich die Lichtſtärken wie<br/>
+die Quadrate der <span title="Entfernung￼" class="dta-abbr">Entfernungen</span> <span title="verhalt￼" class="dta-abbr">verhalten</span><br/>
+ſo läßt ſich die Quantität des Lichts ge-<br/>
+nau beſtim̃en. Durch dies Mittel werd<span class="dta-supplied">[en]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">die</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0093 : 89.|</span><br/>
+die Erleuchtungspatente geprüft u. genau<br/>
+beſtim̃t. Dieſe <span class="u ">Methode iſt vom Grafen </span><span title="Personenname"><a href="http://d-nb.info/gnd/118750372">Rom<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="u ">fort</span></span></a></span>.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Methode von<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118568876">Lambert</a></span></span></span>.<br/>
+</span>Die andere Methode iſt von <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118568876">Lambert</a></span></span>, durch<br/>
+Hohlgläſer das Licht der Soñe, u. das Licht<br/>
+der Erde durch Schatten zu <span title="beſtim̃￼" class="dta-abbr">beſtim̃en</span>. Die<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Methode von<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span></span><br/>
+</span>dritte <span class="u ">Methode iſt von <span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span></span> u. entdeckt<br/>
+bei der Beobacht. der Trabanten des Ju-<br/>
+piters; wie dies überhaupt von der<br/>
+größten Wichtigkeit für die <span title="geographiſch￼" class="dta-abbr">geographiſche</span><br/>
+Beſtim̃ung <span class="dta-del" title="Streichung (#s)">iſt </span>d<span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)">er</span> Länge <span class="dta-del" title="Streichung (#s)">zu <span title="beſtim̃￼" class="dta-abbr">beſtim̃en</span></span><span class="dta-add" title="Hinzufügung (superlinear)">iſt</span>, durch<br/>
+die Zeit, weñ die <span title="Trabant￼" class="dta-abbr">Trabanten</span> in den Schatten<br/>
+ihres Planeten treten. Man fand, daß<br/>
+Teleskope von ungleichen <span class="dta-del" title="Streichung (#s)">Licht</span><span class="dta-del" title="Streichung (#ow)">s</span><span class="dta-add" title="Hinzufügung (across)">S</span>tärke dies<br/>
+verſchieden angaben, u. es mußte eine<br/>
+gleiche Lichtſtärke <span title="denſelb￼" class="dta-abbr">denſelben</span> gegeben werden.<br/>
+Dies geſchah; in dem man Schirme in das<br/>
+Fernrohr ſetzte, welches <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118656880">Baily</a></span></span> erfand<br/>
+der das Opfer der Revolution wurde.<br/>
+Durch die Diaphragmen im Jñern des<br/>
+Fernrohrs <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">fa</span>nd man das Mittel der Gleich-<br/>
+ſtellung derſelben. <span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span> nahm jetzt Spie-<br/>
+gelteleskope von gleicher St<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">ä</span>rke u. rich-<br/>
+tete ſie auf verſch. Sterne, von denen<br/>
+der eine <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">Zb. </span>vier mal weniger leuchtete als<br/>
+der andere; jetzt verkleinerte er das<br/>
+Objektiv des Teleskops der auf den<br/>
+größern Stern gerichtet war, bis ſie<br/>
+gleich wurden, u. nun läßt ſich eine Be-<br/>
+rechnung anſtellen. Deñ verliehrt <span class="aq ">Alde</span>-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Entfernung<br/>
+der Sterne aus<br/>
+der Lichtſtarke der-<br/>
+selben zu <span title="find￼" class="dta-abbr">finden</span>.</span><br/>
+</span><span class="aq ">baran</span> den 4<span title="te￼" class="dta-abbr"><span class="sup u ">ten</span></span> Theil der Lichtſtärke,<br/>
+ſo ſind wir überhaupt, daß der Stern<br/>
+der kleiner iſt, 2 mal weiter entfernt<br/>
+iſt, verleiht er den 16<span title="t￼" class="dta-abbr"><span class="sup u ">ten</span></span> Theil, ſo iſt er<br/>
+4 mal <span title="weit￼" class="dta-abbr">weiter</span> entfernt u. ſ. w.</p></div></body></html>

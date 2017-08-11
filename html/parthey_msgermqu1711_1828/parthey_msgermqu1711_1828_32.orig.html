@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session">   <div class="dta-head"><span title="Original: 23. Febr.Februar 32." class="dta-reg">32. Vorlesung, 23.02.1828</span></div><br/>
+<p class="dta-p">Indem ich jezt zu den Erdbeben, heissen Quellen und Vulkanen<br/>
+übergehe, will ich in Erinnerung bringen, dass wir auch diese<br/>
+Erscheinungen nicht abgesondert und für sich betrachten werden,<br/>
+sondern im Zusammenhange dieser ganzen Reihe: denn nur,<br/>
+wenn man alle einzelnen Theile der Geognosie in Verbindung<br/>
+bringt, kann man einen Schematismus der geognostischen<br/>
+Erscheinungen zu Stande bringen.</p><br/>
+<p class="dta-p">Es wird dies klarer werden, wenn wir die 5 Abschnitte der<br/>
+Geognosie noch einmal kurz zusammenstellen:</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0363 : 180r|</span><br/>
+<p class="dta-p">Wir sprachen<br/>
+<div class="dta-list">   <span class="dta-list-item">1, von der <span class="u ">Form</span> und <span class="u ">Dichtigkeit</span> der Erde. Durch das Verdikken<br/>
+der flüssigen Theile entsteht die innere Erdwärme, sie trägt<br/>
+mächtig dazu bei,</span>
+<span class="dta-list-item">2, die <span class="u ">elektro-magnetische</span> Spannung zu bestimmen und zu<br/>
+erhalten, mit der das Polarlicht in der engsten Verbindung steht.<br/>
+Durch die innere Erdwärme werden zum Theil bedingt</span>
+<span class="dta-list-item">3, die <span class="u ">Veränderungen</span> auf der Erdoberfläche, die sich hauptsäch-<br/>
+lich in den 3 folgenden Gestalten zeigen, als<br/>
+<div class="dta-list">   <span class="dta-list-item">a, Erdbeben, dynamische Veränderungen.</span>
+<span class="dta-list-item">b, heisse Quellen, so wie Moffetten, Luftquellen.</span>
+<span class="dta-list-item">c, Vulkane<span class="dta-del" title="Streichung (#s)">n</span> –</span>
+</div>   </span>   <span class="dta-list-item">4, die <span class="u ">äussere Rinde</span> selbst, Gebirgsarten; neuere Ansicht, dass<br/>
+die <span class="dta-del" title="Streichung (#s)">Gebirgsarten</span><span class="dta-add" title="Hinzufügung (intralinear)">Vulkane</span> körniges Gestein bilden. Spuren<br/>
+der Organisazion in Versteinerungen. Phänomene von Erhebung<br/>
+der Gebirge im grossen.</span>
+<span class="dta-list-item">5, die Ansicht der <span class="u ">Erdoberfläche</span>; Gliederung der Kontinente,<br/>
+Richtung der Bergketten; Untersuchung, ob die Richtungsaxe<br/>
+der Gebirge parallel ist der Streichung, welche mit dem Fallen<br/>
+immer einen Rechten Winkel macht; Ebnen <span title="u." class="dta-abbr">und</span> Flusthäler. <span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span> –</span>
+</div></p>
+<span class="dta-pb" style="padding-left:15em">|#f0364 : 180v|</span><br/>
+<p class="dta-p">Wenn wir die Geognosie in dieser Algemeinheit fassen, so müssen<br/>
+wir sagen, dass die Alten sie nicht gekant haben; obgleich es<br/>
+bei ihnen, so gut wie bei uns, Vulkanisten und Neptunisten gab.<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118549421">Heraklit</a></span>, der alles aus dem Feuer herleitete, war das Haupt der<br/>
+Vulkanisten, <span title="Personenname"><a href="http://d-nb.info/gnd/118801732">Thales</a></span> und die Ionier bildeten die neptunische<br/>
+Schule; aber eben so wie bei uns seit dem Ende des vorigen<br/>
+Jahrhunderts, so gewannen bei den Alten seit <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118594893">Plato</a></span></span> die vul-<br/>
+kanischen Ideen die Oberhand. Ich selbst bin ein Beispiel der<br/>
+Umänderung eines Neptunisten in einen Vulkanisten, und alge-<br/>
+mein betrachtet man jezt Porphyr und Granit als Produkte des<br/>
+Feuers. <span class="u "><span title="Personenname">Douglas</span></span> in England ist auf den scherzhaften Einfall<br/>
+gekommen, ein Thermometer von Geognosten zusammenzusezen,<br/>
+auf dem man angedeutet sieht, wie die verschiedenen Gelehrten<br/>
+von dem wässrigen Reiche des Neptunismus in die feurigen<br/>
+Regionen des Vulkanismus sich erhoben haben. Diese Veränderung<br/>
+kann aber durchaus nicht getadelt werden: denn in einer Wis-<br/>
+senschaft welche fortschreitet, wie die Geognosie, dürfen nur die<br/>
+Stillstehenden ihrer Stabilität sich rühmen.</p><br/>
+<p class="dta-p">Im Mittelalter gaben die <span class="u ">Araber</span> einen neuen heilsamen<br/>
+Anstos, indem sie die Gebirgsarten nach ihrem Gewebe und<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0365 : 181r|</span><br/>
+ihrer Struktur unterschieden. Vieles blieb ihnen aber völlig<br/>
+fremd. So kanten sie durchaus nicht die Kristallographie, eine<br/>
+so wichtige Wissenschaft. Diese ist erst in ganz neuer Zeit von<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/119097125">Hauy</a></span> in Frankreich, und unter uns von <span title="Personenname"><a href="http://d-nb.info/gnd/118806556">Weiss</a></span> gegründet. Über-<br/>
+haupt gehört die Geognosie im engern Sinne zu den allerneusten<br/>
+Wissenschaften. Sie zält seit ihrer Entstehung kaum 40 Jahr.<br/>
+Der eigentliche Gründer derselben, welcher zuerst auf die Lagerung<br/>
+der Schichten übereinander, auf die Formazionen aufmerksam<br/>
+gemacht hat, ist der unsterbliche <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118767089">Werner</a></span></span> in Freyberg. Vor ihm<br/>
+war die Geognosie in unserm Sinne gar nicht bekant; ihr Name<br/>
+erinnerte lange nur an geologische Träume und Spiele<br/>
+dichterischer Einbildungskraft. Geognostische<span class="dta-add" title="Hinzufügung (superlinear)"><span title=" nomin." class="dta-abbr"> nominabilis</span></span> Mythen ersezten<br/>
+und zerstörten die Beobachtungen<span class="dta-add" title="Hinzufügung (superlinear)"><span title=" accus." class="dta-abbr"> accusabilis</span></span>, und es findet sich darin eine<br/>
+wunderbare Übereinstimmung bei allen Völkern. Ungewis bleibt<br/>
+es immer, ob zur Zeit jener Katastrophen, wo die Erdrinde,<br/>
+schon erhärtet, den furchtbarsten Umwälzungen mus ausgesezt<br/>
+gewesen sein, unser Geschlecht schon existirte, ob einzelne Grup-<br/>
+pen sich auf hohe Berge retteten, und so einen Anklang jener<br/>
+urweltlichen Vorgänge uns erhalten haben.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0366 : 181v|</span><br/>
+<p class="dta-p"><span class="u ">Von den Erdbeben.</span></p><br/>
+<p class="dta-p">Die Definizion des Erdbebens ist: Erschütterung der festen und<br/>
+flüssigen Theile der Erdoberfläche durch eine unterirdische Ur-<br/>
+sache. Diese Ursach kennen wir nicht, wir können nur durch<br/>
+Analogie schliessen, von welcher Art sie sein könne. Dass sie<br/>
+sehr tief liegen müsse, läst sich daraus beweisen, dass mit den<br/>
+Landstrekken zugleich das Meer bewegt wird, wo es 6–7000 Fus<br/>
+Tiefe hat. Ich selbst erlebte 2 sehr heftige in der Südsee, und<br/>
+hatte Gelegenheit, die Erscheinung zu beobachten: es ist, als<br/>
+ob das Schiff barrirt, d. h. auf eine Sandbank gerathen wäre,<br/>
+eine solche Erschütterung geht durch alle Planken und Bal-<br/>
+ken desselben. In den meisten Gegenden schreibt man das<br/>
+Erdbeben lokalen Ursachen zu: bei vielen Städten, die dem-<br/>
+selben ausgesezt sind, schiebt man die Schuld auf einen<br/>
+nahegelegenen Berg: allein dies ist durchaus nicht richtig.<br/>
+Ein eben so verbreitetes Vorurtheil ist es, dass ein gewis-<br/>
+ser Zustand der Athmosphäre ihm vorangehe, dass das<br/>
+Barometer sehr tief stehe, dass der Horizont mit röth-<br/>
+lichen Dünsten bedekt sei <span title="Schreibfehler: :pppp." class="dta-corr"><span title="Original: pp" class="dta-reg">pp.</span>:</span> alles dies ist vollkommen falsch.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0367 : 182r|</span><br/>
+<div class="fw-top fw-sig">46.</div><br/>
+Wohl aber ist es in Südamerika der Fall, dass vor der Re-<br/>
+genzeit sehr starke Erdbeben vorherzugehn pflegen: die<span class="dta-del" title="Streichung (#s)">s</span> Erd-<br/>
+beben sind in diesem Lande so häufig, dass man sie gar<br/>
+nicht zählen kann; aber nie hat die Athmosphäre Einflus<br/>
+darauf: in Folge der Erdbeben verändert sich manchmal das<br/>
+Wetter. Das schrekliche Erdbeben in Riobamba, wobei 40,000<span class="dta-marginal dta-marginal-right">(in wenigen Minuten)<br/>
+</span><br/>
+Indianer umkamen, war auch kurz vor der Regenzeit ein-<br/>
+getreten; allerdings bemerkt man an manchen Orten vor dem<br/>
+Erdbeben einen veränderten Barometerstand, dies kömt aber<br/>
+daher, dass schon an einer andern Stelle eine Erschütterung<br/>
+Statt gefunden hat, deren Einflus, bei der grossen Schnelligkeit,<br/>
+womit die Athmosphäre diese Bewegungen fortpflanzt, auf<br/>
+das Barometer einwirkt. Dabei mus aber bemerkt werden, dass<br/>
+die tägliche Ebbe und Flut des Barometers<span class="dta-del" title="Streichung (#ow)"> ,</span><span class="dta-add" title="Hinzufügung (across)"> (</span>welche unter den<br/>
+Tropen so regelmässig ist, dass man bis auf 10 Minuten die<br/>
+Zeit danach bestimmen könte) nicht im mindesten durch die<br/>
+Erdbeben gestört wird. Ich habe unzälige Beobachtungen darüber<br/>
+angestelt, und nie eine Veränderung bemerkt.</p><br/>
+<p class="dta-p">Oft ist mit dem Erdbeben ein unterirdisches Getöse verbunden.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0368 : 182v|</span><br/>
+Das was man in Italien hört, ist eben so unbedeutend, als die<br/>
+Erschütterungen selbst, in Amerika dagegen ist <span class="dta-del" title="Streichung (#s)">d</span>es viel<br/>
+stärker. In Quito, welches man für ganz unterminirt<br/>
+halten kann, hört man 7–8 Minuten vor dem Erdbeben ein<br/>
+Rasseln und Klirren, dazwischen einen hellen Klang, den<br/>
+die Eingebornen dem Klirren der Ketten vergleichen, den<br/>
+ich aber ähnlicher finde dem Zerspringen einer glasigen<br/>
+Masse oder dem Niederfallen von Obsidianfelsen. Sehr<br/>
+selten, obgleich nicht ohne Beispiel ist es, dass man ein<br/>
+<span class="dta-marginal dta-marginal-left">Guanaxuato<br/>
+</span>Getöse ohne Erdbeben hört: so war es 1784 in <span class="u ">Gua<span class="dta-del" title="Streichung (#ow)">i</span><span class="dta-add" title="Hinzufügung (across)">j</span>aquil</span><br/>
+der Fall, und<span title="Schreibfehler: " class="dta-corr"> ich</span> habe selbst viele Leute gesprochen, welche<br/>
+sich des Phänomens erinnerten und genau Rechenschaft<br/>
+davon abzulegen wusten. Die Spanier nennen dies Getöse:<br/>
+huelos subterraneos. Es lies sich zuerst ein ferner unterir-<br/>
+discher Donner hören, der nach und nach stärker wurde:<br/>
+er erreichte sein maximum, und nahm wieder ab, nachdem<br/>
+das ganze 3 Monate gedauert. Merkwürdig ist es, dass<br/>
+in den Bergwerken er nicht stärker wurde, man mochte auch<br/>
+bis in die lezte Tiefe hinab steigen: man hat damals<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0369 : 183r|</span><br/>
+viele Versuche angestelt, um zu entdekken, ob nur die leise-<br/>
+ste Erschütterung damit verbunden sei, aber vergebens: man<br/>
+stelte in die Bergwerke Gläser mit Wasser, die man übervoll<br/>
+gos, damit sie bei dem kleinsten Anstos überfliessen musten,<br/>
+aber sie blieben voll. Eben so sonderbar ist es, dass dies<br/>
+Getöse sich auf den Raum von ¼ Quadratmeile beschränkte,<br/>
+wenn man diesen verlies, so hörte man nichts mehr. Man<br/>
+hat aber bemerkt, dass diese ¼ <span title="□ M." class="dta-abbr">Quadratmeile</span> aus jenem Thonschiefer<br/>
+besteht, der so häufig mit Silberadern durchsezt ist, rings-<br/>
+umher aber ist eine andre Gebirgsart. Eine ähnliche Erscheinung<br/>
+haben wir auf Meleda, einer Insel des adriatischen Meeres,<br/>
+wo sich lange Zeit ein unterirdisches Getöse hören lies,<br/>
+das aber mehr einzelnen Kanonenschüssen zu vergleichen ist.</p><br/>
+<p class="dta-p">Bei den grossen Vulkanen in Amerika ist es sehr merk-<br/>
+würdig, dass man das Getöse auf so unglaublich weite Ent-<br/>
+fernungen hört: wenn ein entfernter Vulkan Ausbrüche<br/>
+macht, so verbreitet sich in der ganzen Gegend der Donner,<br/>
+aber nicht durch die Luft, sondern durch die Erde, wie es<br/>
+ja auch bekant ist, dass man, um einen entfernten Kanonen-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0370 : 183v|</span><br/>
+donner zu hören, das Ohr auf die Erde legt. Bei dem Aus-<br/>
+bruche des Cotopaxi am 30 April 1812 hörte man das Ge-<br/>
+töse in einer Entfernung, wie von hier nach Rom, oder von<br/>
+Lissabon nach Frankfurt. Dieser Ausbruch war einer der<br/>
+stärksten, den man lange Zeit erlebt hat. Bei demselben<br/>
+Vulkane hörte man 1814 das Getöse soweit wie von Berlin<br/>
+nach Sibirien. Wenn man dem Vulkan näher kömt, so<br/>
+müste man, da der Schall nach den Quadraten der Entfer-<br/>
+nung abnimt, ihn stärker hören: allein dies ist nicht der<br/>
+Fall: man hört ihn in der Nähe wie in der Ferne. Der Cotopaxi<br/>
+einer der grösten Vulkane der Erde, erhebt sich auf einer<br/>
+Ebne, die schon 11,000 Fus über dem Meere liegt: er ist rings<br/>
+von tiefen Einsenkungen umschlossen, hinter denen sich<br/>
+wieder hohe Gebirgsmassen erheben. Hier kann sich<br/>
+also der Schall schwerlich durch die Erdoberfläche fort-<br/>
+pflanzen, da diese <span title="Original: zusehr" class="dta-reg">zu sehr</span> von Thälern durchschnitten ist:<br/>
+es wird wahrscheinlich, dass er sehr tief in dem Innern<br/>
+der Erde entsteht, und durch Spalten, die sich in ver-<br/>
+schiedener Richtung erstrekken, nach der Oberfläche derselben<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0371 : 184r|</span><br/>
+hingeleitet wird: eine davon geht dann nach der Öfnung des<br/>
+Vulkans und erregt die Explosion: das vulkanische Phäno-<br/>
+men aber, oder die Ursache der Ausbrüche mus in einer<br/>
+sehr bedeutenden Tiefe unter der Oberfläche liegen.</p><br/>
+<p class="dta-p">Es ist vielfach untersucht und erörtert worden, ob die<br/>
+Erdbeben Einflus auf die Magnetnadeln haben: ich habe<br/>
+viele Beobachtungen darüber angestelt, aber nie gefunden, dass<br/>
+eine Ursache in den Bewegungen statt fand, wohl aber<span class="dta-metamark" title="metamark">⎡</span> dass eine<span class="dta-marginal dta-marginal-right"><span class="dta-metamark" title="metamark">⎡</span>in Cumanà<br/>
+</span><br/>
+Veränderung der Inklinazion sich zeigte, und zwar blieb dies ver-<br/>
+änderte Richtung stehn: als ich nach 1½ Jahren wieder nach<br/>
+Cumanà kam, war sie dieselbe, als kurz nach dem Erdbeben.</p><br/>
+<p class="dta-p">Gewöhnlich nimt man bei Erdbeben eine Bewegung von oben<br/>
+nach unten, eine andre von der Seite, und noch eine schiebende<br/>
+Bewegung an: allein es ist nicht möglich, dies so genau zu<br/>
+unterscheiden; wenigsten komt ganz erstaunlich viel auf die<br/>
+Lage der verschiedenen Städte an, wie wir an dem Beispiele von<br/>
+Quito und Lima sehn können. <span class="u ">Quito</span> hat Häuser von 3–4<br/>
+Stokwerken, Kirchen mit schönen gewölbten Kuppeln, und liegt<br/>
+am Fusse des Vulkans <span title="Schreibfehler: Pichincho" class="dta-corr">Pichincha</span>, wie Neapel am Fusse des<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0372 : 184v|</span><br/>
+Vesuv. Bei den stärk<span class="dta-del" title="Streichung (#ow)">er</span><span class="dta-add" title="Hinzufügung (across)">st</span>en Erdbeben ist aber die Bewegung so<br/>
+wunderbar sanft, dass alles an seinem Orte bleibt, die<br/>
+Häuser fallen nicht ein, und die hohen Gebäude erhalten<br/>
+nur zuweilen Risse, auf die man sorgfältig Acht giebt.<br/>
+Und doch sind der Erdbeben so viele, dass man sie gar nicht<br/>
+zälen kann, und man gewöhnt sich so bald daran, dass<br/>
+man in der Nacht nicht einmal versucht wird, jemanden,<br/>
+der etwa in demselben Zimmer schliefe, zu wekken. – In<br/>
+<span class="u ">Lima</span> dagegen wagt man es nicht, hohe Häuser er zu bauen,<br/>
+weil man aus Erfahrung weis, dass sie bis dem geringsten<br/>
+Erdbeben über den Haufen geworfen werden: daher besteht die<br/>
+ganze Stadt aus einstökkigen leichten Häusern, die aus einer<br/>
+Mischung von Lehm und Gyps aufgeführt werden, und an denen<br/>
+sich ein sehr schlechter architektonischer Geschmak kund thut;<br/>
+da sich aber bei einzelnen Einwohnern der Glaube festgesezt<br/>
+hat, dass in Lima die Erdbeben in einer Periode von 30-40<br/>
+Jahren sich folgen, so giebt es einige, welche sich höhere<br/>
+Häuser bauen, indem sie der Meinung sind, dass sie das<br/>
+nächste Erdbeben nicht mehr erleben werden. Dennoch ist es<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0373 : 185r|</span><br/>
+entschieden richtig, dass dem <span class="u ">Gefühle nach</span> die Erdbeben in<br/>
+Lima <span class="u ">nicht</span> so stark sind als in Quito.</p><br/>
+<p class="dta-p">Oft kömt auch der sonderbare Fall vor, dass die Oberfläche<br/>
+der Erde völlig versezt wird, aber unversehrt bleibt: wenn man<br/>
+also vorher auf einem Felde rechts Getreide und links Kohl<br/>
+pflanzte, so wird nach dem Erdbeben links Getreide und rechts<br/>
+der Kohl stehn. Bei dem Erdbeben von Riobamba ist das Ei-<br/>
+genthum auf eine sonderbare Weise verwirt worden. Die Men-<br/>
+beln eines ganzen Viertels wurden in ein anderes versezt, und<br/>
+es entstanden Streitigkeiten über die Zu<span class="dta-del" title="Streichung (#ow)">k</span><span class="dta-add" title="Hinzufügung (across)">r</span>ükgabe des früheren<br/>
+Besizes. Während meines dortigen Aufenthaltes habe ich<br/>
+einen Plan von Riobamba aufgenommen, (der noch nicht ge-<br/>
+stochen ist) auf dem sich die seltsamsten Unregelmässigkeiten<br/>
+finden. Viele Stellen sind in die Höhe gehoben: so finden sich<br/>
+mehrere 100 Menschengebeine auf der <span class="u ">Kolka</span>, einem Hügel<br/>
+<span class="dta-del" title="Streichung (#s)">von</span><span class="dta-add" title="Hinzufügung (superlinear)">bei</span> Riobamba von 300 Fus Höhe über der Stadt. An andern<br/>
+Stellen komt es vor, dass die Gegenstände völlig von der Erde<br/>
+verschlungen sind: so in Riobamba alle Häuser: diese<br/>
+Stadt hatte früher 3–4 stökkige Häuser, ich fand aber<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0374 : 185v|</span><br/>
+auf der ganzen Fläche keinen Schutthaufen über 5 Fus hoch.<br/>
+Viele Personen, die sich nachher retteten, haben erzählt, dass<br/>
+sie plözlich mit ihrem ganzen Hause versunken wären: im<br/>
+ersten Schrekken glaubten sich sehr tief unter der Oberfläche<br/>
+der Erde zu sein, bis sie an der noch zuströmenden Luft merk-<br/>
+ten, dass wenigstens die Spize des Hauses hervorrage. Sie zün-<br/>
+deten Licht an, und konten nun durch alle Zimmer des Hau-<br/>
+ses gehn: denn nichts war zerstört, bis sie sich durch das<br/>
+Dach retteten. Aber eine weit grössere Anzahl fand den Tod;<br/>
+es dauerte lange, ehe die Nachricht nach Quito kam, und ehe<br/>
+sich von dort das Militair und eine grosse Anzahl von<br/>
+Mönchen aufmachen konten. Vielen, die man unten schrei-<br/>
+en hörte, wurde die Absolu<span class="dta-del" title="Streichung (#ow)">t</span><span class="dta-add" title="Hinzufügung (across)">z</span>ion nach ihrer Beichte ertheilt,<br/>
+ohne dass es möglich war, sie hervorzuziehen, und sie star-<br/>
+ben vor Hunger oder an ihren Verwundungen. Einige Per-<br/>
+sonen sind 1½ Tage unter der Erde geblieben; und haben<br/>
+nachher glüklich einen Ausweg gefunden.</p><br/>
+<p class="dta-p">Den grösten <span class="dta-del" title="Streichung (#ow)">Z</span><span class="dta-add" title="Hinzufügung (across)">z</span>usammenhangenden Strich von Gegenden<br/>
+die dem Erdbeben unterworfen sind, finden wir an den Küsten<br/>
+der Südsee, wo die Erdbeben von Chili bis Guayaquil sich erstrek-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0375 : 186r|</span><br/>
+<div class="fw-top fw-sig">47.</div><br/>
+ken, also einen Zug von 400–450 <span title="geogr." class="dta-abbr">geographischen</span> Meilen einnehmen.<br/>
+Dass das Erdbeben überhaupt mit vulkanischen Erscheinungen<br/>
+zusammenhange, davon kann man sich am besten in dem Kra-<br/>
+ter eines brennenden Vulkans überzeugen. Es hat durchaus<br/>
+keine Gefahr, hineinzusteigen, wenn man nur irgend Vorsicht<br/>
+gebraucht. Zuerst hört man ein unterirdisches Getöse, dann fühlt<br/>
+man eine Erschütterung, und darauf werden <span class="dta-del" title="Streichung (#s)">die</span> Schlakken und<br/>
+Lava in die Höhe gestossen. Ich beobachtete dies sehr genau bei<br/>
+meiner 2<span title="￼" class="dta-abbr"><span class="sup uu ">ten</span></span> Reise nach dem Pichincha. Noch häufiger aber<br/>
+stossen die Vulkane blos eine grosse Masse von Dämpfen<br/>
+und Rauch in die Höhe, daher hat man sie mit vollkomnem<br/>
+Rechte Sicherheitsklappen genant: denn es ist bekant, dass wo<br/>
+sie speien, die Erdbeben aufhören. Daher wünschen die Umwoh-<br/>
+ner des Chimborazo, dass er ein Vulkan sein möge<span class="dta-del" title="Streichung (#s)">n</span>, und gewis –<br/>
+wenn sein hoher Trachytdom geöfnet wäre, so würde die Gegend<br/>
+weniger von Erdbeben zu leiden haben.</p><br/>
+<p class="dta-p">In mancher Hinsicht scheint das Gestein auf die Erdbeben<br/>
+keinen Einflus zu haben: es giebt denen eben so viele in Kalk-<br/>
+stein als in Gneus und Granit. In Cumanà, welches Kalk-<br/>
+stein hat, waren die Erdbeben von jeher häufig: die Einwohner<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0376 : 186v|</span><br/>
+von Carracas hielten sich daher für sicher, weil sie auf Gra-<br/>
+nit standen, aber leider wurde ihre Stadt im April 1812<br/>
+wie durch eine Mine in die Luft gesprengt, und von Grund aus<br/>
+zerstört. Dagegen scheint in anderer Hinsicht die Gebirgsart<br/>
+nicht ohne Einflus zu sein. An der Küste von Chili giebt<br/>
+es <span class="dta-del" title="Streichung (#ow)">s</span><span class="dta-add" title="Hinzufügung (across)">S</span>trekken von 5–6 Meilen, die <span class="u ">nie</span> erschüttert werden. Die<br/>
+Einwohner nennen dies sehr bezeichnend: Roca, que haze<br/>
+puente; die verschiedene Gebirgsart, woraus diese Strekken<br/>
+bestehn, bilden eine Brükke, und das Erdbeben überspringt sie.</p><br/>
+<p class="dta-p">Die Alten hatten schon ganz dieselbe Meinung, dass<br/>
+die Vulkane Sicherheitsventile wären: die schönste Stelle<br/>
+<span class="dta-marginal dta-marginal-left">(ich kann sie nicht finden)<br/>
+</span>finden wir bei <span title="Personenname"><a href="http://d-nb.info/gnd/118618806">Strabo</a></span>. I.</p><br/>
+<p class="dta-p">Cumanà gegenüber liegt die Halbinsel Araya durch einen<br/>
+Meeresarm getrent: in dieser spürte man früher durchaus keine<br/>
+Erschütterung: aber seit dem grossen Erdbeben 1798 in Cumanà<br/>
+ist auch sie mit in den Erschütterungskreis gezogen worden, und<br/>
+es kann jezt nicht d<span class="dta-del" title="Streichung (#s)">ie</span><span class="dta-add" title="Hinzufügung (superlinear)">er</span> leiseste Stos in Cumanà Statt finden,<br/>
+der nicht auch in Araya gefühlt würde. Dies scheint zu beweisen,<br/>
+dass sich jezt eine korrespondirende Öfnung unter der Halbin-<br/>
+sel befinde, die früher nicht vorhanden war, und nun die Stösse<br/>
+auf gleiche Weise nach Cumanà hin und nach Araya leitet. –</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0377 : 187r|</span><br/>
+<p class="dta-p">In <span class="u ">Bogotà</span> hat sich seit 6–8 Monaten eine solche Öfnung<br/>
+gebildet, und die Stadt ist, nach den Nachrichten, welche ich von<br/>
+<span title="Hrn." class="dta-abbr">Herrn</span> <span title="Personenname"><a href="http://d-nb.info/gnd/101165250">Boussingault</a></span> erhalten habe, durchaus der Zerstörung preisge-<br/>
+geben.</p><br/>
+<p class="dta-p">Auch Flammen und Rauch sieht man bei Erdbeben häufig aus<br/>
+der Erde aufsteigen, aber nicht immer. Sehr heftig waren sie 1755<br/>
+in Lissabon, wo ein grosser Theil von beiden Küsten des atlantischen<br/>
+Meeres die Erschütterung fühlte: das Meer wich an den Antillen<br/>
+zurük, und in Böhmen merkte man einen Einflus auf die Heil-<br/>
+quellen<span title="Schreibfehler: :" class="dta-corr">;</span> auch in Cumanà 1789 sah man Flammen.</p><br/>
+<p class="dta-p">Oft werden grosse Hügel aus der Erde hervorgehoben, die bei den<br/>
+Spanier <span class="u ">moja</span> h<span class="dta-del" title="Streichung (#s)">ie</span><span class="dta-add" title="Hinzufügung (superlinear)">ei</span>ssen: man hielt sie lange für verwitterten Por-<br/>
+phyr: aber die Untersuchungen von <span title="Personenname"><a href="http://d-nb.info/gnd/118723367">Klaproth</a></span> u<span class="dta-supplied">[n]</span>d neuerdings von<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/116609036">G. Rose</a></span> haben bewiesen, dass sie zum Theil aus gekohltem Wasserstof-<br/>
+gas bestehn; also eine vegetabilische Substanz sind<span class="dta-del" title="Streichung (#ow)">;</span><span class="dta-add" title="Hinzufügung (across)">:</span> dies beweiset uns,<br/>
+dass nicht alle <span title="vegetabil." class="dta-abbr">vegetabilischen</span> Substanzen einen organischen Ursprung haben.</p><br/>
+<p class="dta-p">Ob <span class="u ">Elektrizität</span> bei den Erdbeben frei wird, ist zweifelhaft: wenig-<br/>
+stens kann man behaupten, dass es nicht immer der Fall ist.<br/>
+In Quito, <span class="dta-del" title="Streichung (#s)">wo</span><span class="dta-add" title="Hinzufügung (superlinear)">kann</span> man, wenn die Erdbeben einmal angefangen haben, ganz<br/>
+sicher darauf rechnen, dass mehrere in einer kurzen Zeit folgen<br/>
+werden: ich habe daher unter freiem Himmel viele Versuche angestelt,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0378 : 187v|</span><br/>
+indem ich das Elektroskop in der Hand hielt, habe aber nie die<br/>
+geringste Einwirkung bemerken können. Dagegen ist es ganz entschie-<br/>
+den, dass bei dem heftigen Erdbeben in Piemont 1808 die Wirkung<br/>
+auf das Elektrometer sehr <span class="dta-del" title="Streichung (#s)">hefti</span><span class="dta-add" title="Hinzufügung (intralinear)">stark</span> war: in einigen Gemeinden<br/>
+in Pignerolles wurden an <span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)">E</span>inem Tage 60–80 Stösse gespürt.</p><br/>
+<p class="dta-p">Die Ursache des Erdbebens ist in nichts anderm als in den<br/>
+elastischen Flüssigkeiten zu suchen, die sich <span class="dta-del" title="Streichung (#ow)">ein</span><span class="dta-add" title="Hinzufügung (across)">im</span> Innern der Erde<br/>
+zusammenhäufen, durch ihre Kompression immer mehr Kraft ge-<br/>
+winnen, und sich am Ende einen Ausweg suchen. Dies kann man,<br/>
+wie gesagt, im Krater eines brennenden Vulkanes am besten be-<br/>
+<span class="dta-del" title="Streichung (#s)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span>merken, wo Donner, Erschütterung und Schlakkenauswurf regel-<br/>
+mässig aufeinander folgen.</p><br/>
+</div></body></html>

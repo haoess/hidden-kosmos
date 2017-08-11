@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[62. Vorlesung, 26.04.1828]</span></div><br/>
+<div class=""><div class=""><div class=""><div class=""><p class="dta-p">Ungefähr<br/>
+440 Mil. Menſchen, wovon ein <span title="Schreibfehler: Virtel" class="dta-corr">Viertel</span> indiſchen Ur-<br/>
+ſprungs: im eigentliche Sinne, nicht von den Sprachen<br/>
+hergeleitet.</p><br/>
+<p class="dta-p"><span class="u ">Sprachfamilien.</span> Wer ſich rühmt alle Sprachen zu<br/>
+kennen, würde eigentlich keinen ſo großen Ruhm haben;<br/>
+es würden am Ende doch nur 8 oder 9 ſein, die ſich<br/>
+wieder auf 3 Hauptſprachen reduciren laſsen:<br/>
+der baskiſchen Sprachen, der ſanſkritaliſchen und<br/>
+finniſchen. Zu den ſanſkritaliſchen Sprachen ſind<br/>
+zu rechnen: die indogermaniſchen, pelasge-germa-<br/>
+niſchen, ſlaviſchen und keltiſchen Sprachen, die nach<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118554727">W v <span class="aq ">Humboldt</span></a></span> alle eine große Ähnlichkeit in den<br/>
+grammatiſchen Formen haben.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">1,</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0649 : 643|</span><br/>
+<div class="dta-list"><div class="dta-list-item">1; <span class="u ">Baskiſche Sprache</span>. Jetzt noch bei den <span class="u ">Eskovas</span> nur<br/>
+ungefähr noch jetzt von einem Stamm von 700,000<br/>
+Köpfen. Früher war es gewiß ein großer Stamm,<br/>
+der die Ufer des mittelländiſchen Meers bewohn-<br/>
+te. Zu dieſen hat wahrſcheinlich gehört eine Na-<br/>
+tion von höherer Cultur die <span class="u ">Todetaner</span> eines<br/>
+der erſten Stämme der Iberier, deſsen ganze<br/>
+Literatur aber untergegangen iſt.</div>
+<div class="dta-list-item">2, <span class="u ">Keltiſche Sprache</span>, wo jetzt noch die Galiſche Sprache<br/>
+übrig iſt, die Kimbriſche gehört ebenfalls hinzu.<br/>
+Das Galiſche wird jetzt noch geſprochen in Schott-<br/>
+land, Irland und Wales von 8½ Mil. Menſchen.</div>
+<div class="dta-list-item">3, <span class="u ">Germaniſche</span> Sprachen, geſprochen von 60 Mil. Menſchen.</div>
+<div class="dta-list-item">4, <span class="u ">Slaviſche</span> Sprache 70 vielleicht 72 Mil. Menſchen,<br/>
+die den ganzen Theil von Europa einnehmen,<br/>
+vom adriatiſchen Meer bis zur Oſtſee, nach und<br/>
+nach verbreitete ſie ſich im nordöſtlichen Aſien<br/>
+bis zum weſtlichen Amerika hin.</div>
+<div class="dta-list-item">5, <span class="u ">Lettiſche</span> Sprache, fälſchlich germaniſch-slaviſche<br/>
+genannt, indem man nur die Völker kannte, die<br/>
+kaum ⅓ der geringen ausmachen die dieſe Sprache<br/>
+ſprechen. Das Lettiſche iſt vollkommen verſchieden<br/>
+vom ſlaviſchen, wie <span class="aq ">Wales</span> auseinander geſetzt hat<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">das</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0650|</span><br/>
+das Lettiſche welches noch Curland, Liefland und<br/>
+Altpreußen geſprochen wird, ſcheint vielmehr aus dem<br/>
+Sanſkrit direct herzuſtammen und nicht aus dem<br/>
+Slaviſchen divinirt zu ſein.</div>
+<div class="dta-list-item">6, Das <span class="u ">Finniſche</span> oder <span class="u ">Tſchudiſche,</span> in Finnland und<br/>
+weiter gegen Rußland hin. Wahrſcheinlich auch in Un-<br/>
+garn das Madſchariſche iſt hiezu gehörig.</div>
+<div class="dta-list-item">7, Die ganze Familie der romaniſchen Sprachen,<br/>
+das das lateiniſche Europa ſehr richtig benannt wor-<br/>
+den iſt 75 Mil. Menſchen.</div>
+<div class="dta-list-item">8, Ein kleiner Theil des Helleniſchen, das Albaniſche;<br/>
+man fand dieß als einen beſondern Dialekt des<br/>
+allen Griechiſchen, besonders hat es viel Ähnlichkeit<br/>
+mit den Ioniſchen.</div>
+</div><p class="dta-p">Man könnte noch hinzufügen die Inſel Malta,<br/>
+wo noch Reſte der ſemitiſchen Sprachen gefunden ſind,<br/>
+des Puniſchen.</p><br/>
+<p class="dta-p">Die Hauptſprachſtämme ſind aber auch nur das<br/>
+Baskiſche, Tſchudiſche, und das <span class="dta-add" title="Hinzufügung (superlinear)">im </span>SO Aſien einen Urſprung<br/>
+habenden Sanſkrit.</p><br/>
+<p class="dta-p">Durch chineſiſche Geſchichtsbücher hat man die hiſto-<br/>
+riſche Entdeckung gemacht, daß es 200 Jahre vor Chr:<br/>
+einen Indogermaniſchen Volksſtamm an der<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Chineſi</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0651 : 645|</span><br/>
+<span title="Schreibfehler: " class="dta-corr">Chineſiſchen </span>Mauer im weſtlichen Theile von China die <span class="u ">Usin</span>:<br/>
+blauäugig, blond, von ſehr weißer Farbe; ſie<br/>
+wurden von den Chineſen gereizt auf die Chiongus<br/>
+zu fallen, und ſo begann die Völkerwanderung<br/>
+aber 5 <span class="dta-del" title="Streichung (#ow)">00</span><span class="dta-add" title="Hinzufügung (across)">Jahr</span>hunderte früher als wir ſie gewöhnlich<br/>
+ſetzen, wenigſten war ſchon 200 <span title="aC" class="dta-abbr"><span class="aq ">ante Christum</span></span> die erſte<br/>
+Veranlaſsung dazu gegeben werden.</p><br/>
+<p class="dta-p">Eben ſo auffallend ſind die germaniſchen Stäm̃e<br/>
+die man noch jetzt im Innern Aſiens findet, die<br/>
+Kirgieſen, die hinaufreichen bis gegen den Usin,<br/>
+von ihnen ſtammen ſonderbare Inſchriften am Gene-<br/>
+ſey, ſie reden aber türkiſch. Andere Volksſtämme<br/>
+dagegen, die Eukaren haben eine rein perſiſche<br/>
+Sprache, also eine indogermaniſche.</p><br/>
+<p class="dta-p">Noch auffallender hat der Abbe <span class="aq ">Remuſat</span> eine rein<br/>
+ſanskadaniſche Sprache bis in der Breite von<br/>
+Madrid gefunden; es ſcheint dieß von einer indiſchen<br/>
+Colonie herzuſtammen, wo reines Indiſches ſich<br/>
+erhalten hat.</p></div><br/>
+<div class=""><div class="dta-head">Gelbe Menſchenracen.</div><br/>
+<p class="dta-p">Zu dieſen gehören die Mongolen, Chineſen, Japane-<br/>
+ſen und die nicht negerartigen Bewohner der Südsee-<br/>
+Inſeln; zuſammen 400 Mil. Menſchen. Die größten Welt-<br/>
+reiche ſind unter dieſer Menſchenrace entſtanden,<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">aber</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0652|</span><br/>
+aber ein von langen Dauer. Man denke nur an<br/>
+<span class="aq ">Attila</span> <span class="dta-metamark" title="metamark">|:</span> eigentlich nicht Mongolen, ſondern finniſchen<br/>
+Stamms. ſ. oben <span class="dta-metamark" title="metamark">:|</span> <span class="aq ">Tamerlan</span>, <span class="aq ">Tshingischan</span>, ja auch<br/>
+das der Chineſen, da es noch jetzt das größte von<br/>
+allen Reichen iſt.</p><br/>
+<p class="dta-p">Lange Zeit hat man mongoliſch und tartariſch für<br/>
+identiſch gehalten, ſelbſt noch in neuere Zeiten<br/>
+war es die Meinung von <span class="aq ">Meiners</span> und <span class="aq ">Schläger</span>. Es<br/>
+iſt gewiß daß die Mongolen als ſie zuerſt in<br/>
+Deutſchland einfielen und bei Varea 14<span class="dta-metamark" title="metamark">...</span> ge-<br/>
+ſchlagen wurden damals Tartaren genannt wurden<br/>
+es geht dieß aus einem Brief des heiligen <span class="aq ">Ludwig</span> her-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="dta-metamark" title="metamark">|:</span> Eben ſo wie<br/>
+Kannibalen<br/>
+von <span class="aq ">Karibe</span><br/>
+gemacht wurde <span class="dta-metamark" title="metamark">:|</span><br/>
+</span>vor den er an ſeine Mutter ſchreibt <q class="quote">„<span class="aq ">ad tartareas<br/>
+suas sedes</span>”</q> ein Wortſpiel durch daß in der ſpätern<br/>
+Zeit das r in das Wort Tataren eingeſchoben<br/>
+worden iſt, wodurch die falſche Benennung Tar-<br/>
+taren entſtand. Die Verwechselung <span class="aq ">Schlögers</span><br/>
+rührt von Tſchingishan her, der viel Mongolen in<br/>
+ſeinem Heere hatte, die Benennung der Herr-<br/>
+ſcher ging auf die Unterthanen über.</p></div><br/>
+<div class=""><div class="dta-head">Schwarze Menſchenracen.</div><br/>
+<p class="dta-p">Die ſchwarze Menſchenrace iſt nicht allein auf Afrika,<br/>
+in Suda eingeſchränkt, ſondern eben ſolche Neger<br/>
+findet man in der Kette der <span class="aq ">Andama</span> Inſeln die<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="aq u ">Arda</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0653 : 647|</span><br/>
+<div class="fw-top fw-sig">13.<br/>
+</div><br/>
+<span class="aq ">Ardaphores</span>, auf der Halbinſel Malacka, ferner in<br/>
+Guinea; aber bei letztern hat man in neuern Zeiten<br/>
+die Entdeckung gemacht, daß man die Andama<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">ne</span>n,<br/>
+die Bewohner des innern Landes, ganz andere Men-<br/>
+ſchen ſeien als die Küſtenbewohner, die Pagus. Sehr<br/>
+ſchwarze Menſchen findet man ferner in <span class="aq "><span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[v]</span></span><span class="dta-add" title="Hinzufügung (across)">V</span>an Dymens</span><br/>
+Land, Neu Ireland und Neu Brittanien. Jedoch fin-<br/>
+den ſich bei dieſen Schwarzen nicht überall die 3<br/>
+Merkmale, welche man gewöhnlich für die ſchwarze<br/>
+Menſchenrace aufſtellt. Von den zuerſt bekannt<span class="dta-add" title="Hinzufügung (intralinear)">en</span><br/>
+Schwarzen wurden dieſe Merkmale hergenom̃en:<br/>
+unter ſchwarze Farbe, wolliges Haar und eingedrückte<br/>
+Nase. Im Innern von Afrika findet man die ſchwärze-<br/>
+ſten Menſchen, die <span class="aq ">Golofs</span>, mit dünnen Lippen und<br/>
+großen Nasen, die ſich anſchlieſsenden <span class="aq ">Fullas</span> und<br/>
+<span class="aq ">Timbus</span> dagegen ſind bloß, haben aber vollkom̃-<br/>
+en Negerbildung und wolliges Haar. Die Kaffern<br/>
+haben eine hohe Stirne, europäiſche Nase wolliges<br/>
+Haar. Die Neu Irländer haben nur einen Facial<br/>
+Wirkel von 68°, wenig ſchwarze Farbe, Vollhaare<br/>
+und eingedrückte Nasen.</p><br/>
+<p class="dta-p">In Polyneſien iſt es ſehr merkwürdig denn wenn<br/>
+man einen Meridian zieht von Neu Guinea aus,<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">ſo</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0654|</span><br/>
+ſo ſind diejenigen Inſeln welche weſtlich liegen<br/>
+von ſchwarzen Menſchen bewohnt; dagegen öſtlich<br/>
+davon weiße Menſchen wohnen. Ähnlich iſt es auch in<br/>
+der Wüſte Sara, die im Stamme getheilt iſt die den-<br/>
+ſelben Dialeckt ſprechen, und von denen einige ſehr ſchwarz<br/>
+ſind, andern aber ganz bloß. – Auf den Südſee Inſeln<br/>
+ſind einige ſehr ſchwarze, und grade die, die nicht einer<br/>
+ſo beſondern ſtarken Sonnenhitze ausgeſetzt ſind.<br/>
+Es war ſehr übel für <span class="aq ">La Peyrouse</span> daß ſein Schiff ge-<br/>
+rade auf den Seite ſcheiterte, wo die Schwarzen wohnen,<br/>
+würde er weiter öſtlich geſcheitert ſein, ſo ware er<br/>
+zu ſehr gutmüthigen Menſchen geſtoßen.</p><br/>
+<p class="dta-p">Die ſchönſten Menſchen unter den Bewohnern der Südſee<br/>
+Inſeln ſind die der Neu-Car<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">o</span>linen. Nach <span class="aq ">Garnaux</span> und<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span>'s</span> Unterſuchungen haben dieſe viel Ähnlichkeit<br/>
+mit der mongoliſchen Race, und auffallend genug<br/>
+mehr in der Knochenbildung als in der Geſichtslinie.<br/>
+Wir ſehen demnach in Polyneſien 3 Menſchenracen:<br/>
+nördlich vom Aequator, kaukaſiſche mit mongoliſcher<br/>
+Knochenbildung, weſtlich die Schwarzen, und öſtlich<br/>
+die Malayiſche Race auf den Geſellſchafts Inſeln<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">und</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0655 : 649|</span><br/>
+und Freundſchafts Inſeln. Im Innern der Südſee In-<br/>
+ſeln gibt es auch einige Schwarze auf den Philippinen<br/>
+<span class="aq ">Blumenbach</span> trennt noch die Malayiſche Race, und fügt<br/>
+die Amerikaner hinzu, wodurch er ſeine Eintheilung<br/>
+in 5 Racen erhält.</p></div><br/>
+<div class=""><div class="dta-head">Die Amerikaner</div><br/>
+<hr/><br/>
+<p class="dta-p">Die Amerikaner ſind hauptſächlich merkwürdig<br/>
+weil es keinen Menſchenſtamm gibt der ſo abgeſchloſ-<br/>
+ſen iſt, wie dieſe. Bei allen amerikaniſchen Stam-<br/>
+men iſt nicht bloß eine große Ähnlichkeit ihrer kör-<br/>
+perlichen Formen ſondern auch in ihren Sprachen,<br/>
+in den grammatiſchen Formen, und in der Zusam̃en-<br/>
+ſetzung der Worte. Doch muß man unter ihnen un-<br/>
+terſcheiden die nördlichern Stämme, wo ſich eine<br/>
+kaukaſiſche Race befindet: die Eskimos; auch ſelbſt<br/>
+Tſchukſchen an der Bahrings-Straße und im ganzen<br/>
+nördlichen Archipelagus N. von der Barrow Straße:<br/>
+dieſe ganze Gegend iſt von Grönländern und Es-<br/>
+kimos bewohnt; die Rinder haben eine ganz weiße<br/>
+Farbe, und erſt wenn ſie älter werden, wird ſie<br/>
+gelb, was zu den Glauben geführt hat ſie ſeine ein<br/>
+mongoliſcher Stamm. – <span class="aq ">Blumenbach</span> hat geglaubt daß<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">am</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0656|</span><br/>
+am Pole preſthafte Menſchen wohnten, und einen<br/>
+Polarſtamm angenommen wozu er die Lappen, Samo-<br/>
+jeden und Eskimos rechnete; es ſind dieß aber ganz<br/>
+verſchiedene Meſchenſtämme: die Lappen gehören<br/>
+zu den Finnen; die Samojeden wohnen nicht im<br/>
+nördlichen Aſien in der Nähe des Pols, ſondern auch<br/>
+in Süd Aſien. <span class="aq ">Klaproth</span> hat die beiden Stämme ver-<br/>
+glichen und gefunden daß ſie zu einem Stamm ge-<br/>
+hören. Von dieſen ſind beſonders diejenigen Samojeden<br/>
+die im Gouvernement <span class="aq ">Perl</span> wohnen, weiß und ſehr<br/>
+ſchlank; durch das Klima haben ſie die Geſtaltungen<br/>
+in demselben Stamm ſehr geändert, aber der Haupt Ty-<br/>
+pus iſt bei ihnen derſelbe. – Eben ſo müſsen wir<br/>
+den dritten Stamm die Eskimos, die <span class="aq ">Blumenbach</span> zu<br/>
+den Polar Racen zählte zur kaukaſiſchen Race rechnen,<br/>
+die den nördlichen Theil von Amerika bewohnen. Be-<br/>
+kannt iſt es, daß bevor man die Eskimos kannte,<br/>
+ſchon lebendige Eskimos nach <span class="aq ">Valacey's</span> Angabe 1683 und<br/>
+1684 in Brittanien durch den Golfſtrom auf ihren Ca-<br/>
+nots verſchlagen worden waren; ja wahrſcheinlich<br/>
+waren es auch Eskimos, die zur Zeit der Römer in<br/>
+Gallien anlangten, und die G. <span class="aq ">Mutalius Celo</span> Toden hielt<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">und</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0657 : 651|</span><br/>
+und ſie nach Rom ſchickte.</p><br/>
+<p class="dta-p">Unter den Ureinwohnern von Amerika finden ſich<br/>
+Hinsichts der Farbe merkwürdige Unterſchiede. Man<br/>
+ſollte glauben, daß die Bewohner der temperirten<br/>
+Zonen, und unter dem Aequator in den höhern<br/>
+Ge<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">g</span>enden weißer ſein müßten als die übrigen,<br/>
+aber grade im Gegentheil ſind die Bewohner der<br/>
+temperirten Zone am dunkelſten gefärbt. Die Be-<br/>
+wohner der Gegenden nördlich von Mexiko, haben<br/>
+ſtarke Bärte, und ſind eine dunkle Menſchenrace ob-<br/>
+gleich ſie in einem milden Klima leben bei 28 und<br/>
+30° n B. Eben ſo findet man hinwiederum in den<br/>
+Ebenen der Tropengenden ſehr weiße Menſchen-<br/>
+racen, ſo an den Quellen des Orinoko, die wie<br/>
+Meſtzigen ausſehen.</p><br/>
+<p class="dta-p">Die Form der Schädel von denen die der Caraiben<br/>
+ſo auffallend waren dadurch daß ſie ſo deprimirte<br/>
+Stirnen haben, iſt bloß ein Werk der Kunſt. Die Köp-<br/>
+fe der Kinder werden zwiſchen 2 Bretter gebracht<br/>
+die nach und nach zuſammen gedrückt werden, ſo daß<br/>
+die Stirn mehr zurüktreten muß. Eben ſo bringen<br/>
+ſie in dem Muskelfleiſch bandartige Ringe hervor,<br/>
+durch breite Lederriemen die ſie ſehr feſt um den Leib ziehen.<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">An</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0658|</span><br/>
+An der weſtlichen Küſte von Amerika wohnt eine blau-<br/>
+äugige Menſchenrace, zuerſt von <span class="aq ">Marchaud</span> auf-<br/>
+gefunden, und zwar in einer Gegend wo von keiner<br/>
+Gemeinſchaft <span title="Schreibfehler: Gemeinſchaft " class="dta-corr">[…]</span>mit den Europäern hat<br/>
+die Rede ſein können. Vielleicht iſt es möglich daß<br/>
+ſie zuſammenhängen mit dem Indo-germaniſchen<br/>
+Stamm in Aſien, doch findet man keine ähnlichen<br/>
+Menſchen jenseit des Amu Fluſses.</p><br/>
+<p class="dta-p">Eine andere ſonderbare Form findet man nicht mehr<br/>
+im Leben, ſondern nur in den Abbildungen, mit<br/>
+ungeheuren Habichts Nasen. Man findet dieſe Ab-<br/>
+bildungen auf Monumenten beſonders in Gua-<br/>
+timala; ſo eine Adoration des Kreuzes <span class="aq ">etc</span>. Eben ſo<br/>
+eine Abbildung der erſten Menſchen, wo die ame-<br/>
+rikaniſche Eva ebenfalls mit einer ſolchen Nase<br/>
+dargeſtellt iſt. – Merkwürdig iſt dabei die große<br/>
+Uebereinſtimmung hinsichts der Nasen bei den<br/>
+verſchiedenen menſchlichen Figuren, ſo daß die<br/>
+Frage aufgeworfen iſt, ob dieß bloß ein Spiel der<br/>
+Phantaſie ſein ſollte, o<span class="dta-del" title="Streichung (#ow)">b</span><span class="dta-add" title="Hinzufügung (across)">d</span>er ob es wirklich ſolche<br/>
+Menſchenſtämme gegeben hat die ausgeſtorben ſind,<br/>
+und man iſt ſehr geneigt für letzteres einzugehen.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Die</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0659 : 653|</span><br/>
+<p class="dta-p">Die Frage ob die Malagiſche Sprache auf den Südſee<br/>
+Inſeln mit den amerikaniſchen zuſammenhänge<br/>
+iſt neuerdings vielfach unterſucht worden; W.v. <span class="aq ">Flam-<br/>
+boldt</span> hat Anklänge in den grammatiſchen Formen<br/>
+gefunden.</p></div></div><br/>
+<hr/><br/>
+<div class=""><p class="dta-p">Wir ſehen daß die erſte Cultur keinen Menſchenſtam̃<br/>
+allein angehöre, ſo finden wir gleichfertig Cultur,<br/>
+bei dem Mongolen, im Indus, und in Aegypten.<br/>
+Unter der kaukaſiſchen Race ſehen wir die erſten<br/>
+leuchtenden Punkte in Oſtindien am den Ufern des<br/>
+Euphrat und Iran, wo das Zend einen ſehr alten<br/>
+Urſprung bezeugt. In den Keilſchriften die man<br/>
+im Perſepolis entdeckte findet man 3 Sprachen<br/>
+zuſammen: die eine davon iſt das alte Zend,<br/>
+die andere iſt eine ſemitiſche Sprache und von<br/>
+der 3ten iſt es noch unbekannt man weiß nicht<br/>
+recht welche Sprache dieſes ſei; also iſt das frühe<br/>
+Aufkeimen bei mehreren Stämmen zugleich. Wenn<br/>
+wir die Litteratur in Aſien, des Hellas und in Iberien,<br/>
+– der alten Totanen – beobachten ſo geht es uns<br/>
+ſo wie mit den Himmelskürzern, deren Intensität<br/>
+des Lichts wir wohl kennen, aber deren relative Ent-<br/>
+fernung uns noch ganz unbekannt iſt. So weiß man nicht<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">ob</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0660 : 654|</span><br/>
+ob die Literatur von Perſien älter iſt, oder die der<br/>
+Meere in Aegypten.</p><br/>
+<p class="dta-p">Das Blühen der Cultur iſt aber nicht ſowohl aus der<br/>
+Abſtammung ſelbſt hervorgegangen als vielmehr<br/>
+durch die Unterſchiede im Menſchengeſchlecht.</p><br/>
+<p class="dta-p">So ſehen wir auch die großen Unterſchiede zwiſchen<br/>
+den Menſchen welche das Kaſtenweſen gehabt haben<br/>
+oder wo ein permanenter Deſpotismus ſtereotyp<br/>
+geblieben iſt, und denen wo eine gewiſse gei-<br/>
+ſtige Freiheit herrſchte. Bei jenem finden wir mehr<br/>
+eine Maſsencultur als des einzelnen Individu-<br/>
+ums, wir ſehen dabei hauptsächlich alles das aus-<br/>
+gebildet, was auf Bequemlichkeit Bezug hat,<br/>
+Straßenbau <span class="aq ">etc</span>, weniger geiſtiges denken. Die<br/>
+ſchönſte Blüte finden wir da wo eine geiſtige<br/>
+Freiheit herrſchte; wir ſehen ſie zuerſt in Hellas,<br/>
+ſpäter unter den germaniſchen Stämmen, wo-<br/>
+durch ſie ſich über ganz Europa ausdehnte.</p><br/>
+<p class="dta-p">Geſchloſsen den<br/>
+26ſten <span class="aq ">April</span><br/>
+1828.</p></div></div></div></div></body></html>

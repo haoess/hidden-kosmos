@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span title="Original: D. 22 Dcbr. 1827." class="dta-reg">15. Vorlesung, 22.12.1827</span></div><br/>
+<p class="dta-p">Wir fahren fort die linſenförmige Stern-<br/>
+ſchicht betrachten zu der alle Geſtirne <span title="gehör￼" class="dta-abbr">gehören</span><br/>
+die wir mit bloßen Augen ſehen. Weñ ich mich<br/>
+hiebei länger verweile, ſo geſchieht dies aus<br/>
+einem <span title="Schreibfehler: zwifachen" class="dta-corr">zweifachen</span> Grunde, weil das hier bekañt<br/>
+zu machende, der meiſten Zuhörern wohl nicht zu-<br/>
+gänglich u. in vielen kleinen Schriften zerſtreut<br/>
+iſt, u. dañ auch der Character einer Weltbeſchrei-<br/>
+bung anders iſt, als der in <span title="aſtronomiſch￼" class="dta-abbr">aſtronomiſchen</span> Vorle-<br/>
+ſungen herrſcht, wo mehr der meſſende Theil die<br/>
+Hauptſache iſt. Jn unſerer Natur- u. Weltbeſchreibung<br/>
+iſt das größere Jntresſe bei <span class="dta-del" title="Streichung (#s)">bei </span>den größern<br/>
+Maſſen zu verweilen. Jn der letzten Vor-<br/>
+leſung habe ich der Geſtalt des ſüdl. Him̃els<br/>
+geſchildert u. bin bei den <span title="ſogenañt￼" class="dta-abbr">ſogenañten</span> Kohlſäcken<br/>
+ſtehen geblieben. Hiebei habe ich eine Erklä-<br/>
+rung gewagt, die viel wahrſcheinliches für<br/>
+ſich hat, daß hier n<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">äm</span>lich ein Durchbruch<br/>
+des Him̃els zu erblicken, wo kein Licht mehr<br/>
+zu uns gelangt von den uns fernern Stern-<br/>
+ſchichten. Entgegengeſetzt dieſen ſchwarzen <span title="Fleck￼" class="dta-abbr">Flecken</span><br/>
+<span class="dta-marginal dta-marginal-left">Magellaniſch<span class="dta-del" title="Streichung (#ow)">en</span><span class="dta-add" title="Hinzufügung (across)">e</span><br/>
+Wolken<br/>
+</span>erſcheinen die <span class="u ">Magellaniſchen Wolken</span>, die um<br/>
+den Süd-Pol Kreiſen in dem Abſtande, wie der<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">große</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0100 : 96.|</span><br/>
+große Bär um den Nordpol. Sie <span class="gap">[unleserliches Material – 1 Wort fehlt]</span><br/>
+lichte Wolken an Glanz der Milchſtraße ähnlich<span class="dta-supplied">[.]</span><br/>
+Weit von dieſem Nebelfleck bemerkt man<br/>
+Sterne u. es läßt ſich nicht unterſchieden ob<br/>
+er unauflöſlich iſt oder nicht, u. eben ſo un<span class="dta-supplied">[ge-]</span><br/>
+wiß iſt es, ob ſie außerhalb unſrer Sternſch<span class="dta-supplied">[icht]</span><br/>
+liegen. Die Größe beträgt 8 Mondenbrei<span class="dta-supplied">[te]</span><br/>
+u. 3–4° in längerer Axe. Die <span title="Griech￼" class="dta-abbr">Griechen</span> hab<span class="dta-supplied">[en]</span><br/>
+ſie nie geſehen noch beſchrieben, die Arabe<span class="dta-supplied">[r]</span><br/>
+gedenken aber ihrer ums Jahr 1515; ſie ſ<span class="dta-supplied">[ahen]</span><br/>
+ſie im <span title="ſüdlich￼" class="dta-abbr">ſüdlichen</span> Arabien u. <span title="nañt￼" class="dta-abbr">nañten</span> dieſe Fleck<span class="dta-supplied">[en]</span><br/>
+die weißen Ochſen. Der berühmte Reiſende <span title="Personenname"><a href="http://d-nb.info/gnd/116994193"><span class="aq "><span class="dta-supplied">[Hor-]</span><br/>
+ner</span></a></span> vermuthet zwar, daß dieſe Wolken frü<span class="dta-supplied">[her]</span><br/>
+da geſtanden wo jetzt die <span title="ſchwarz￼" class="dta-abbr">ſchwarzen</span> Flecke <span class="dta-supplied">[ſich]</span><br/>
+finden; jedoch iſt dieſe Añahme zu gewagt.<br/>
+Noch will ich hier einiges nachholen was ich <span class="dta-supplied">[über]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Südliche Kreutz</span><br/>
+</span>das ſ<span class="u ">üdliche Kreutz</span> noch zu ſagen habe. Z<span class="dta-supplied">[u]</span><br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11853131X">Eudokus</a></span></span> Zeiten koñte man noch in <span class="aq "><span title="Alexan-&#xA;dri￼" class="dta-abbr">Alexan-<br/>
+drien</span></span> einige Sterne <span title="deſſelb￼" class="dta-abbr">deſſelben</span> <span title="erblick￼" class="dta-abbr">erblicken</span>, jetzt<br/>
+nicht mehr. Das <span class="aq ">α Crucis</span> bleibt jetzt 3<span class="dta-supplied">[° un-]</span><br/>
+ter dem Horizonte. Es ſind 4 ſehr regel-<br/>
+mäßig in einer Kreutzesform ſtehende Sterne<br/>
+welches ſenkrecht am Him̃el ſteht, weñ es M<span class="dta-supplied">[it-]</span><br/>
+ternacht iſt u. nach Auf- u. Niedergang ge-<br/>
+ſenkt ſich erhebt u. neiget. Jm <span title="Süd￼" class="dta-abbr">Süden</span> iſt<br/>
+daher ein gewöhnl. Spruchwort, es iſt ſchon<br/>
+ſpät, das Kreutz ſteht ſenkrecht. Der D<span class="dta-supplied">[ichter]</span><br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118523708">Dante</a></span></span> hat <span title="daeſſelb￼" class="dta-abbr">d<span class="dta-del" title="Streichung (#ow)">a</span><span class="dta-add" title="Hinzufügung (across)">e</span>ſſelben</span> in ſeinem Gedichte: da<span class="dta-supplied">[s]</span><br/>
+Fegefeuer gedacht, wie der <span title="Nord￼" class="dta-abbr">Norden</span> dieſe<span class="dta-supplied">[s]</span><br/>
+herrl. Bild niemals zu Geſichte bekom̃<span class="dta-supplied">[t.]</span></p><br/>
+<p class="dta-p">Ein anderer ſehr wichtiger Gegenſta<span class="dta-supplied">[nd]</span><br/>
+der Aſtronomie iſt außer der Photometrie<br/>
+die Winkelmeſſung, unter der uns zwei St<span class="dta-supplied">[erne]</span><br/>
+erſcheinen u. ſo <span title="lieg￼" class="dta-abbr">liegen</span> uns hier zunächſt <span class="dta-supplied">[die]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Doppelſterne.</span><br/>
+</span><span class="u ">Doppelſterne</span> <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">von </span><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118537229">Gallilaei</a></span></span> beobachtet zue<span class="dta-supplied">[rſt]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">d<span class="dta-supplied">[ie-]</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0101 : 97.|</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="uu ">Fünftes Heft</span><br/>
+</span>dieſelben<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="dta-metamark" title="metamark">x</span> nämlich Doppelſterne</span> u. ſtellte die ſcharfsinnige Meinung<br/>
+<span class="dta-marginal dta-marginal-left">Das<br/>
+Nähern über<br/>
+die Doppelſterne<br/>
+</span>auf, daß ſie dazu dienen köñten, die Paralaxen<br/>
+zu beſtim̃en, durch Beobachtung des optiſchen<br/>
+Standpunktes den ſie eiñahmen. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span></span> unter-<br/>
+nahm 1782 aufs Neue dieſe Unterſuchung u.<br/>
+fand daß ſie dem größten Theile nach in iñerer<br/>
+Beziehung auf einander ſtehen u. <span title="Personenname"><a href="http://d-nb.info/gnd/118510215">Beſſel</a></span> hat<br/>
+dies genau beſtim̃t. Man kañ ſie daher ſehr<br/>
+uneigentlich Fixſterne keñen. Bei 61 Sternen<br/>
+des Schwans werden im̃er zwei Sterne von<br/>
+einer eigenen Bewegung afficirt u. es herrſcht<br/>
+<span title="zwiſch￼" class="dta-abbr">zwiſchen</span> <span title="denſelb￼" class="dta-abbr">denſelben</span> ein iñerer Zuſam̃enhang.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Was<br/>
+bei ihnen zu<br/>
+betrachten.</span><br/>
+</span>Wir werden <span class="u ">ihre Zahl u. Natur</span> betrachten,<br/>
+ihre Farben, ihre Größe u. Zeit der Bewegung<br/>
+unterſuchen. Bei vielen kañ man in der<br/>
+Zeit eines Monates ihre ganze Beweglichkeit<br/>
+bemerken; da nun die <span title="nächſt￼" class="dta-abbr">nächſten</span> Fixterne<br/>
+4 Bill. Meilen von uns entfernt ſind, dieſe<br/>
+aber wenigſtens 12 mal weiter entfernt<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Schnelligkeit<br/>
+der Bewegung.</span><br/>
+</span>sind, ſo iſt dies eine <span class="u ">unbegreifliche Schnelligkeit.</span><br/>
+Die Anzahl der Doppelſterne hat ſich merk-<br/>
+würdig durch neuern Entdeckungen vermehrt.<br/>
+Früher kañte man kaum 800–1000. HErr<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118988255">Struve</a></span></span> zu <span class="aq ">Dorpat</span> hat vor wenigen Wochen<br/>
+<span class="dta-marginal dta-marginal-left">Anzahl<br/>
+</span>einen Catalog <span title="herausgegeb￼" class="dta-abbr">herausgegeben</span>, <span class="u ">wo 3112 Dop-</span><br/>
+pelſterne verzeichnet ſind, von denen wir<br/>
+2300 ſeiner <span title="eign￼" class="dta-abbr">eignen</span> Thätigkeit in d. Entdeckung<br/>
+derſelben verdanken. Er hat nicht nur un-<br/>
+terſucht wie ſie vertheilt ſind; ſondern<br/>
+auch beſtim̃t, wie von den Sternen 1–3 Größe<br/>
+unter 5 ein Doppelſtern, von 6–7 Größe, unter<br/>
+12 ein Doppelſtern ſich befindet. Die Entfern-<br/>
+tern ſind nicht ſo leicht zu finden. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118988255">Struve</a></span></span><br/>
+hat entdeckt, daß weñ man Sterne bis zur<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">7<span title="t￼" class="dta-abbr"><span class="sup u ">ten</span></span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0102 : 98.|</span><br/>
+7<span title="t￼" class="dta-abbr"><span class="sup u ">ten</span></span> Größe zuſam̃enwirft, unter 11 Sternen<br/>
+ein Doppelſtern ſich befindet. Da um Sterne 1–7<br/>
+Größe 33,000 vorhanden ſind, ſo findet man<br/>
+daß es 3000 <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">D</span>oppelſterne giebt. Wäre es bloß<br/>
+Folge einer zufälligen Projection, ſo wäre<br/>
+kein Grund vorhanden, warum nicht unter den<br/>
+kleinen Sternen eben ſo häufig wie unter den<br/>
+größern ſie zu finden wären; ſie bewegen<br/>
+ſich aber eigenthümlich u. ſind nur bei den kleinen<br/>
+Sternen ſchwer zu beobachten. So iſt <span class="aq ">Caſtor</span><br/>
+ein Doppelſtern 2<span class="u ">ter</span> u. 11ter Größe; <span class="aq ">β</span> in<br/>
+der Leier iſt 4 Fach; σ in Orion 16 Fach<br/>
+Seit der <span title="älteſt￼" class="dta-abbr">älteſten</span> diesfäll. Beobacht. von<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118903217">Merquilin</a></span></span> hat man bei vielen die Um-<br/>
+laufszeit ſchon entdecken köñen. Was <span class="dta-supplied">[ihre]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Farbe<br/>
+der Doppelſterne</span><br/>
+</span><span class="u ">Farben</span> anbetrifft, ſo kontraſtiren ſie ſ<span class="dta-supplied">[ehr]</span><br/>
+mit einander. Man findet kein Beiſpiel da<span class="dta-supplied">[ß]</span><br/>
+der Größere derſelben der bunte Stern wä<span class="dta-supplied">[re,]</span><br/>
+aber häufig iſt das Beiſpiel, daß ſich zwe<span class="dta-supplied">[i]</span><br/>
+bunte Sterne um einander bewegen. Da d<span class="dta-supplied">[ie]</span><br/>
+Farben derſelben, blau, gelb, grün, roth<br/>
+ſind, ſo iſt man auf die Jdee gekom̃en, d<span class="dta-supplied">[aß]</span><br/>
+ſie nicht dieſe <span title="Farb￼" class="dta-abbr">Farben</span> haben, ſondern nur etwas<br/>
+mit der Farbenforderung gemein haben, <span class="dta-supplied">[wie]</span><br/>
+Zb. Purpurroth, grün verlangt, was von<br/>
+<span title="Schreibfehler: von " class="dta-corr">[…]</span>unſrer Subjectivität abhängt. Dies iſt<br/>
+aber nicht der Fall, ſondern ſie haben ihr eig<span class="dta-supplied">[nes]</span><br/>
+farbiges Licht, welches ſtets gleich bleibt u. d<span class="gap">[unleserliches Material]</span><br/>
+alle Teleskope gleich erſcheint. Nicht nur die St<span class="dta-supplied">[er-]</span><br/>
+ne ſelbſt haben ſolche Farben, ſondern ſoga<span class="dta-supplied">[r]</span><br/>
+die Nebelflecke, wie Zb. der, in der Androm<span class="dta-supplied">[eda]</span><br/>
+grün erſcheint. Merkwürdig iſt es, daß bl<span class="dta-supplied">[aue]</span><br/>
+u. grüne Sterne nie iſolirt erſcheinen, die ro<span class="dta-supplied">[then]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Zwifache<br/>
+Bewegung</span><br/>
+</span>aber allerdings. <span class="u ">Die Bewegung derſelben <span class="gap">[verlorenes Material – 1 Wort fehlt]</span><br/>
+zwiefach</span>, entweder um einander oder um ein<span class="dta-supplied">[en]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">geme<span class="dta-supplied">[in-]</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0103 : 99.|</span><br/>
+gemeinſamen Schwerpunkt. Körper <span title="beweg￼" class="dta-abbr">bewegen</span> ſich<br/>
+zwar im̃er um einen Schwerpunkt, aber ſo liegt<br/>
+in unſerm Soñenſyſtem derſelbe in der Soñe ſelbſt.<br/>
+Oefter <span title="beweg￼" class="dta-abbr">bewegen</span> ſich 2–3 Sterne um <span title="ein￼" class="dta-abbr">einen</span> <span title="ſolch￼" class="dta-abbr">ſolchen</span><br/>
+Schwerpunkt. Dieſe Bewegung iſt zu erkeñen,<br/>
+daß ſich der Poſitionswinkel oder <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">die </span>Diſtanz<br/>
+verändert, oft iſt die Occultation zweier<br/>
+Sterne beobachtet, daß ſie nach u. nach in einander<br/>
+ſchmelzen. So wird <span title="wahrſcheinl" class="dta-abbr">wahrſcheinlich</span> in 10–12 Jahren<br/>
+ein Stern im <span class="aq ">Hercules</span>bilde wieder hervortre-<br/>
+ten. Die Schnelligkeit <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (intralinear)">iſt </span>ungeheuer; 10–12° in einem<br/>
+Jahre. Cahlos bewegt ſich alle Jahr 1°.<br/>
+Der Stern ξ im <span title="groß￼" class="dta-abbr">großen</span> Fuchs 12° in einem<br/>
+Jahr, u. da die Anziehungskraft im Verhältniß<br/>
+ſtets mit den Quadraten der Entfernung, ſo iſt<br/>
+dies <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118561448">Kepler</a></span>ſche</span> Geſetz ſelbſt auf die fernſten<br/>
+Räume anwendbar u. das ξ wird in 52<br/>
+Jahren ſeinen Kreislauf vollendet haben.<br/>
+Alle Bewegung der Him̃elskörper iſt von Weſten<br/>
+nach Oſten, nur die <span title="Comet￼" class="dta-abbr">Cometen</span> <span title="geh￼" class="dta-abbr">gehen</span> u. ziehen<br/>
+in allen Richtungen u. d<span class="dta-del" title="Streichung (#ow)">a</span><span class="dta-add" title="Hinzufügung (across)">ie</span>s iſt derſelbe Fall<br/>
+auch bei den Doppelſternen.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Vulkaniſche<br/>
+Welträume</span><br/>
+</span>Jm Allgemeinen wollen wir jetzt zuerſt<br/>
+gewiße Räume <span class="u ">des Him̃els betrachten</span>, die<br/>
+wir gleichſam <span class="u ">vulkaniſche Welträume</span><br/>
+neuen köñen. Alle Sterne die plötzlich<br/>
+<span title="entſtand￼" class="dta-abbr">entſtanden</span> u. wieder verſchwunden ſind,<br/>
+sind in dem Raume des Him̃els zwiſchen<br/>
+der <span class="aq ">Cassiopeja</span> u. dem Scorpion entdeckt<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Was<br/>
+man bei den<br/>
+plötzlich entſtehenden<br/>
+Sternen zu beachten hat.</span><br/>
+</span>worden, u. man bemerkte dabei 1., <span class="u ">die<br/>
+kurze Dauer ihres Aufloderns</span> 2., <span class="u ">die Ver-<br/>
+ſchiedenheit ihrer Farben</span>, die von weiß<br/>
+bis zum Verſchwinden ins farbige Spalten<br/>
+u. 3. ihre beſondern Character ohne eine<br/>
+Ortsveränderung. <span title="Personenname"><a href="http://d-nb.info/gnd/118514237">T<span class="dta-del" title="Streichung (#ow)">i</span><span class="dta-add" title="Hinzufügung (across)">ÿ</span>ch<span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)">o</span></a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/118561448">Keple<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">r</span></a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Kaſſini</a></span><br/>
+die ſolche Sterne <span title="beobachtet￼" class="dta-abbr">beobachteten</span>, fanden bei<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span title="denſelb￼" class="dta-abbr">denſelben</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0104 : 100.|</span><br/>
+denſelben nie eine Paralaxe. Die älteſte<br/>
+Begebenheit <span class="dta-del" title="Streichung (#s)">von </span>d<span class="dta-del" title="Streichung (#ow)">er</span><span class="dta-add" title="Hinzufügung (across)">ie</span>ser Art, von der wir<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Ein Stern<br/>
+erſcheint 389.</span><br/>
+</span>Kunde haben e<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">r</span>eignete ſich im <span class="u ">Adler, 389</span><br/>
+n. C. wo ein Stern aufloderte in der Grö<span class="dta-supplied">[ße]</span><br/>
+wie Venus u. 3 Monate lang leuchtete.<br/>
+Es wurde ſogar im <span title="Schreibfehler: Scoripon" class="dta-corr">Scorpion</span> 4 Monate<br/>
+lang ein Stern geſehen, der den 4<span title="t￼" class="dta-abbr"><span class="sup u ">ten</span></span><br/>
+Theil des Durchmeſſers des Mondes enthielt.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">dergl. 1572</span><br/>
+</span>Ein Stern funk<span class="u ">elte 1572</span> in der Caſſiop<span class="dta-supplied">[e-]</span><br/>
+ja zuerſt weiß, dañ gelb, dañ roth,<br/>
+dañ trüb; <span class="dta-del" title="Streichung (#s)"><span class="gap">[unleserliches Material – 1 Wort fehlt]</span> </span>der endlich glänzend wie<br/>
+Venus verſchwand. Er war 16 Mona<span class="dta-supplied">[te]</span><br/>
+lang zu <span title="ſeh￼" class="dta-abbr">ſehen</span> u. <span title="Personenname"><a href="http://d-nb.info/gnd/118514237">Tÿcho</a></span> beobachtete ihn<br/>
+An demſelben Orte wurde ſchon 945<br/>
+1264, 1572 der Stern bemerkt, ſo d<span class="dta-supplied">[aß]</span><br/>
+man <span title="vermuth￼" class="dta-abbr">vermuthen</span> kañ, er kom̃e in <span title="Period￼" class="dta-abbr">Perioden</span><br/>
+von 319 u. 308 J. wieder u. dürfe 188<span class="dta-supplied">[0]</span><br/>
+ungefähr erſcheinen. Jch möchte dieſen<br/>
+<span title="bezeichnet￼" class="dta-abbr">bezeichneten</span> Weltraum den <span title="vulkaniſch￼" class="dta-abbr">vulkaniſchen</span> B<span class="gap">[unleserliches Material]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">desgl. 1670</span><br/>
+</span>des Him̃els gleichſam neuen. <span class="u ">Jm J. 1670</span><br/>
+ſahe <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Cassini</a></span></span> fünf neue Sterne auf einmal<br/>
+entſtehen, von denen 2 <span title="verſchwund￼" class="dta-abbr">verſchwunden</span> u. 3<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">desgl. 1604</span><br/>
+</span><span class="dta-del" title="Streichung (#s)">noch</span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="b ">bis</span></span> jetzt geblieben ſind. <span class="u ">1604. l<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">o</span>dert<span class="dta-supplied">[e]</span></span><br/>
+ein Stern im <span title="öſtlich￼" class="dta-abbr">öſtlichen</span> Fuß des Schlangentr<span class="dta-supplied">[ä-]</span><br/>
+gers auf, den <span title="Personenname"><a href="http://d-nb.info/gnd/118561448">Kepler</a></span> beobachtete. Es w<span class="dta-supplied">[ar]</span><br/>
+ein Stern 1<span title="ſt￼" class="dta-abbr"><span class="sup ">ſter</span></span> Größe, der zuerſt gelb, d<span class="dta-supplied">[añ]</span><br/>
+ſafranfarbig, dañ purpurroth, <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (intralinear)">dañ </span>blaßroth<br/>
+leuchtete, u. in Jahresfriſt verſchwand.<br/>
+Es war grade die Zeit der Conjuncti<span class="dta-supplied">[on]</span><br/>
+von Jupiter u. Saturn 1604, in deren<br/>
+Nähe dieſer Stern aufloderte; Mars<br/>
+ſtand gleichfalls nicht weit davon ab;<br/>
+ſo daß <span title="Personenname"><a href="http://d-nb.info/gnd/118561448">Kepler</a></span> auf mÿſtiſche Jdeen hieb<span class="dta-supplied">[ei]</span><br/>
+gerieth, im Geiſte jener <span title="Zeit￼" class="dta-abbr">Zeiten</span>. Es war<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">die</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0105 : 101.|</span><br/>
+die Frage, ob dieſer Stern, nicht der<br/>
+Stern der Weiſen ſei. Jdler hat <span title="hierüb￼" class="dta-abbr">hierüber</span><br/>
+eine vortrefliche Unterſuchung angeſtellt,<br/>
+um aus der Conjunction dieſer Geſtirne<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">desgl. 1670</span><br/>
+</span>Chriſti Geburt zu beſtim̃en. <span class="u ">1670 er-</span><br/>
+ſchien nahe der Gegend des Schwans ein<br/>
+Stern, den Pater <span class="aq "><span title="Personenname"><a href="http://viaf.org/viaf/299934989">An<span class="dta-del" title="Streichung (#erased)">h</span><span class="dta-add" title="Hinzufügung (across)">t</span>elm</a></span></span> entdeckte;<br/>
+er war 3<span class="sup u ">ter</span> Größe u. verſchwand<br/>
+bald; er wurde 1671 noch einmal von<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Cassini</a></span></span> geſehen. Wie ſich bei den <span title="Azor￼" class="dta-abbr">Azoren</span><br/>
+Jnſeln aus dem <span title="Meeresbod￼" class="dta-abbr">Meeresboden</span> <span title="erheb￼" class="dta-abbr">erheben</span>; ſo<br/>
+<span title="leucht￼" class="dta-abbr">leuchten</span> hier Sterne auf, u. verſchwinden.<br/>
+So ſagt man daß im Siebengeſtirn ein<br/>
+Stern verlohr<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (intralinear)"><span class="b ">en</span></span> <span title="gegang￼" class="dta-abbr">gegangen</span> ſein ſoll, doch<br/>
+dieſes mit Unrecht; aber im Perſeus<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Veränderun-<br/>
+gen der Sterne<br/>
+im Perſeusbilde</span><br/>
+</span>verändern ſich noch Sterne ganz peri-<br/>
+odiſch in 2 <span title="Tag￼" class="dta-abbr">Tagen</span> 20 <span class="dta-del" title="Streichung (#ow)">M</span><span class="dta-add" title="Hinzufügung (across)">St</span>. 48 M. wie dies 1781.<br/>
+unterſucht worden iſt. Eine ſehr regel-<br/>
+mäßige Veränderung erleidet auch<br/>
+<span class="aq ">η</span> im <span class="aq ">Antinou<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">s</span></span> u. der Wechſel iſt<br/>
+7 Tage. <span title="Eb￼" class="dta-abbr">Eben</span> ſo unregelmäßig verän-<br/>
+dern ſich andere Geſtirne<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"> Zb</span>. Mira im Wall-<br/>
+fiſch, bemerkte <span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Caſſini</a></span> 1596, der in einem<br/>
+Jahr von der 2 zur 3<span title="t￼" class="dta-abbr"><span class="sup u ">ten</span></span> Größe abnim̃t,<br/>
+u. deñ ganz verſchwindet. 1600 beobachte-<br/>
+ten <span class="aq "><span title="Personenname"><a href="http://viaf.org/viaf/299934989">Antelm</a></span></span> u. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118561448">Kepler</a></span></span> <span title="ein￼" class="dta-abbr">einen</span> <span title="veränderlich￼" class="dta-abbr">veränderlichen</span><br/>
+Stern in Schwan, der 19 Jahre lang leuchte-<br/>
+te, dañ bis zum Stern 3<span title="t￼" class="dta-abbr"><span class="sup u ">ter</span></span> Größe herab-<br/>
+ſank u. jetzt als Stern 6<span title="t￼" class="dta-abbr"><span class="sup u ">ter</span></span> Größe ſchim̃ert.<br/>
+Eine Veränder. iſt <span title="zwiſch￼" class="dta-abbr">zwiſchen</span> dem Sternbil-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u "><span class="aq ">Caſtor</span> u. <span class="aq ">Pollux</span></span><br/>
+</span>der von <span class="aq "><span class="u ">Caſtor</span> u. <span class="u ">Pollux</span></span> wahrgenom̃en,<br/>
+von dem <span class="aq ">Caſtor</span> im̃er lichtſchwächer jetzt<br/>
+wird; ſo iſt auch <span class="u ">der Stern <span class="aq ">δ</span> des gro-</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Stern <span class="aq ">δ</span><br/>
+im Bären licht-<br/>
+ſchwächer ge-<br/>
+worden.</span><br/>
+</span>ßen Bären lichtſchwächer geworden, der<br/>
+noch zu <span title="Personenname"><a href="http://d-nb.info/gnd/118514237">Tÿcho</a></span>s <span title="Zeit￼" class="dta-abbr">Zeiten</span> ein Stern zweiter<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Größe</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0106 : 102.|</span><br/>
+Größe war. <span class="u ">Die Urſache dieſer Ver-</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Urſachen<br/>
+dieſer Verände-<br/>
+rungen.</span><br/>
+</span><span class="u ">änderung iſt ſchwer zu erklären.</span> Sind<br/>
+es vielleicht linſenförmige Körper die<br/>
+rotiren u. uns von Zeit zu Zeit den<br/>
+Rand der <span title="Scheib￼" class="dta-abbr">Scheiben</span> nur <span title="zeig￼" class="dta-abbr">zeigen</span>; oder <span title="hab￼" class="dta-abbr">haben</span><br/>
+die Körper dunkle Flecken, die das Licht<br/>
+ſchwächen? Es köñen auch wohl dunkle<br/>
+Welten ohne Licht oder in <span title="ſchwach￼" class="dta-abbr">ſchwachen</span> Licht-<br/>
+prozeſſe begriffen ſein, oder daß von<br/>
+Zeit zu Zeit dunkle Körper die hellen<br/>
+bedecken; aber merkwürdig bleibt es<br/>
+daß dieſe <span title="Veränderung￼" class="dta-abbr">Veränderungen</span> nur in dem<br/>
+Him̃elsgebiete <span title="zwiſch￼" class="dta-abbr">zwiſchen</span> u. in der <span class="aq ">Cassiopej<span class="dta-supplied">[a]</span></span><span class="dta-supplied">[,]</span><br/>
+Schwan u. Fuchs <span title="wahrgenom̃￼" class="dta-abbr">wahrgenom̃en</span> werd<span class="dta-supplied">[en.]</span></p></div></body></html>

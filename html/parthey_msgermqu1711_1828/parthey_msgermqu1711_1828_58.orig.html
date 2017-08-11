@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session">   <div class="dta-head"><span title="Original: 22 April 58." class="dta-reg">58. Vorlesung, 22.04.1828</span></div><br/>
+<p class="dta-p">Nachdem wir jezt die Pflanzenwelt absolvirt haben, treten wir in die<br/>
+Sphäre des thierischen Organismus ein, der mit leicht erkenbaren<br/>
+Apparaten der Empfindung ausgerüstet, dem Menschen näher steht; weil<br/>
+er sogar unser Mitleid erregen kann: denn ein Hauptmoment des thie-<br/>
+rischen Lebens ist der Schmerz. Wir messen den Schmerz nach dem<br/>
+Ausdrukke desselben, und haben dann an unserm eignen Schmerze einen<br/>
+Maasstab. <span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span> hat zwar an einigen Nautilus-arten Augen, Ohren<br/>
+und andre Organe der Empfindung nachgewiesen: aber doch stehn sie uns<br/>
+fast so fern als die Pflanzen. Zwar erinnern einige reizbare Mimosen<br/>
+durch das Zusammenfalten der Blätter an die Reizbarkeit der Thiere:<br/>
+allein wir können nicht sagen, dass die Mimosen <span class="dta-add" title="Hinzufügung (superlinear)">das </span>zeigen, was wir<br/>
+Schmerz nennen: denn der Schmerz ist das uralte Band, das den<br/>
+Menschen an die Thierwelt knüpft<span class="dta-del" title="Streichung (#ow)">:</span><span class="dta-add" title="Hinzufügung (across)">,</span> so wie das Mitleiden ihn ehrt.</p><br/>
+<p class="dta-p">Die Thiere werden durch ihre Nahrung, welche grossentheils aus<br/>
+dem Pflanzenreiche herkomt, modifizirt, und <span title="Personenname"><a href="http://d-nb.info/gnd/118573349">Linnée</a></span> sagt sehr rich-<br/>
+tig, dass die Existenz der Thierwelt die der Pflanzenwelt voraus-<br/>
+seze: dies beweiset auch der Anblik der Gebirgsschichten: in denen<br/>
+das erste Aufkeimen der <span class="dta-del" title="Streichung (#s)">Pflanzen</span><span class="dta-add" title="Hinzufügung (superlinear)">Natur</span> mit den Pflanzen anfängt;<br/>
+noch vor den Mollusken und dann gleichzeitig mit ihnen sehn<br/>
+wir in dem thonartigen <span title="Schreibfehler: Übergängsgebirge" class="dta-corr">Übergangsgebirge</span> Bambusaceen und Cac-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0735 : 366r|</span><br/>
+tusarten; im Übergangskalkstein Seetang und Zostera.</p><br/>
+<p class="dta-p">Dass man<span class="dta-add" title="Hinzufügung (sublinear)">che</span> Pflanzensamen, besonders die gefiederten, durch den Wind<br/>
+sehr weit getrieben werden können, – dass viele durch Meeresströmun-<br/>
+gen, wie durch den grossen Golfstrom an entfernte Küsten kommen<br/>
+können, das sehn wir an den Littoralgewächsen, die an beiden Ufern des<br/>
+atlantischen Ozeans sich finden: nicht unähnlich unter den Völkern<br/>
+den Malayen, die sich in Indien auch nur an den Küsten aufhal-<br/>
+ten, und die im Innern der Länder gefunden werden.</p><br/>
+<p class="dta-p">Die Thiere sind, schon<span class="dta-del" title="Streichung (#s)">,</span> ihrer mehr volkomnen Organe wegen, be-<br/>
+weglicher als die Pflanzen; die gröste Verbreitung derselben sehn<br/>
+wir bei den Vögeln und Fischen, welche die tropfbar-flüssige und<br/>
+luftförmige Umhüllung des Erdkörpers bewohnen; sie finden in den<br/>
+auf- und absteigenden Schichten eine Verschiedenheit des Klima,<br/>
+die ihrer Organisazion zuträglich ist. Wenn die nördlichen Fische<br/>
+gegen Süden ziehn: so finden sie in der Tiefe des Meeres ihr kal-<br/>
+tes nördliches Klima wieder. Weniger ist dies mit den Vögeln<br/>
+der Fall: denn wenn wir auch oben gesehn haben, dass die Tempe-<br/>
+ratur von dem Meeresspiegel an, nach oben und unten hin ab-<br/>
+nimt, so ist die Abnahme nach oben hin, in der Luft lange nicht<br/>
+so bedeutend, als die im Wasser.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0736 : 366v|</span><br/>
+<p class="dta-p">In dem grossen Werke von <span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/117339385">Valenciennes</a></span> über die Fische<br/>
+wird es gezeigt, dass nur wenige Fische von England nach Nordameri-<br/>
+ka hinübergegangen zu sein scheinen: sehr viele aber sich von West-<br/>
+europa an Spanien hin bis zum Senegal ziehn, wenigstens sind die Ar-<br/>
+ten sich sehr ähnlich. Seriola Cosmopolita, eine Art Makrele, hat<br/>
+von ihrer grossen Verbreitung den Namen: sie findet sich in Europa,<br/>
+Westindien, Ostindien und auf den Sandwichinseln; – Squalus galeus <span class="dta-metamark" title="metamark">?</span><br/>
+im Mittelmeer, in Brasilien und am Kap.; – Thermodon hepta-<br/>
+canthus in Europa, an der Isle de Bourbon in Westindien, und neu-<br/>
+erlich ist er sogar in Madagascar gefunden worden; –</p><br/>
+<p class="dta-p">Weniger ist dies mit den Süswasserfischen der Fall; in den<br/>
+Anden trift man in Seeen von <span class="dta-del" title="Streichung (#s)">7</span><span class="dta-add" title="Hinzufügung (superlinear)">8</span>–<span class="dta-del" title="Streichung (#s)">8</span><span class="dta-add" title="Hinzufügung (superlinear)">10,</span>000 Fus Höhe eigne Genera an,<br/>
+Astronepus <span class="dta-metamark" title="metamark">?</span> und Erimophilus; in den Pyrenäen auf 7000 Fus<br/>
+Höhe fand <span title="Personenname"><a href="http://d-nb.info/gnd/118787802">Ramond</a></span> <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">eine </span>eigne Art von Fischen, an die er interessante<br/>
+meteorologische Untersuchungen knüpft: Diese Thiere leben in<br/>
+einer <span title="mittl." class="dta-abbr">mittleren</span> Temperatur von höchstens +1° <span title="Original: R" class="dta-reg">R.</span>, und 4 Monate<br/>
+hindurch ist die Oberfläche des Seees gefroren: sie verdanken ihr<br/>
+Leben nur der merkwürdigen und wohlthätigen Eigenschaft des<br/>
+Wassers, dass es bei +4½° R. seine gröste Dichtigkeit erreicht, und<br/>
+zu Boden sinkt: so dass die Fische unten eine etwas mildere<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0737 : 367r|</span><br/>
+Temperatur finden.</p><br/>
+<p class="dta-p">Die Geographie der Thiere, obgleich sie 2 mal so alt ist als die<span title="Schreibfehler: " class="dta-corr"> der</span> Pflan-<br/>
+zen, ist doch nur 40 Jahre alt: aber lange noch nicht so ausge-<br/>
+bildet als die Pflanzengeographie. Das erste Buch von Bedeutung<br/>
+darüber ist: <span title="Personenname"><a href="http://d-nb.info/gnd/11882435X">Zimmermann</a></span> Geogr. animal. Specimen; welches viel Ver-<br/>
+dienst hat eben weil es das erste ist, aber auf zu unsichern Grund-<br/>
+lagen gebaut, weil damals diese Wissenschaft noch ohne den Beistand<br/>
+der Meteorologie und Physik betrieben wurde. Sehr schäzbare Be-<br/>
+merkungen sind in den vielen Journalen der Reisenden enthalten,<br/>
+aber noch niemand hat sie zusammengestelt. Doch müssen genant<br/>
+werden: <span title="Personenname"><a href="http://d-nb.info/gnd/116862831">Latreille</a></span> Géographie des Insektes; und <span title="Personenname"><a href="http://d-nb.info/gnd/101317697">Marcel de Serre</a></span> <span class="dta-metamark" title="metamark">?</span><br/>
+Essai sur les animaux de la France méridionale, wo in der Ein-<br/>
+leitung sehr ausführlich und schön die Geographie der Thiere ab-<br/>
+gehandelt wird.</p><br/>
+<p class="dta-p">Wir fragen zuerst: wieweit ist das Thierleben verbreitet, und na-<br/>
+mentlich: ist es so weit verbreitet als die Pflanzen? Hier ist das<br/>
+Resultat, dass es nach oben nicht so weit vordringt als die Pflanzen,<br/>
+wohl aber nach unten, nur nicht in so grosser Menge. Thermestes<br/>
+und besonders einige Apteren findet man in den unterirdischen<br/>
+Pflanzen der Bergwerke. <span title="Personenname"><a href="http://d-nb.info/gnd/118529250">Ehrenberg</a></span> fand Infusorien im Brunnen-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0738 : 367v|</span><br/>
+wasser verdekter Brunnen, das aber sehr trinkbar war. Proteus ur-<br/>
+binus <span class="dta-metamark" title="metamark">?</span> lebt in den unterirdischen Seeen in Krain. Wie bei den<br/>
+Pflanzen finden sich auch viele Insekten von Erde umgeben:<span class="dta-del" title="Streichung (#s)"> viele</span><br/>
+manche graben sich selbst Löcher und Höhlen in den humus, und leben<br/>
+hier in einer Luft, die beinahe ganz aus gekohlten Wasserstof be-<br/>
+steht, und kaum 0,03 Sauerstof enthält (während die athmosphär.<br/>
+Luft, 0,21 enthält.) Ich machte viele Versuche dieser Art mit Po-<br/>
+lyoptern: ich tauchte sie in Stikstof, dem kaum 0,01 Sauerstof<br/>
+beigemischt war, und sah, dass sie noch lange fortlebten: auf<br/>
+diese Weise mögen sie sich in den Bergwerken, wo die Stollen sich<br/>
+schon geschlossen haben, Jahrhunderte lang fortpflanzen und er-<br/>
+halten. So erhielt ich neulich aus Freiberg einen gewöhnlichen<br/>
+Pietzker <span class="dta-metamark" title="metamark">??</span> Corbites barbatula, der sich dort 7–800 Fus unter der<br/>
+Erde aufhält. – In den Anden findet man den Pymelodes Cy-<br/>
+clopum, einen kleinen Fisch, der in unterirdischen Höhlen lebt, und<br/>
+von den Vulkanen gleichsam destillirt, <span class="dta-del" title="Streichung (#s)">wird </span>und nahe an der Schnee-<br/>
+gränze todt herausgeworfen wird. Alle diese Fische haben sehr<br/>
+grosse Augen, von denen man nicht weis, wozu sie in der totalen<br/>
+Finsternis nüzen.</p><br/>
+<p class="dta-p">Es scheint, dass es doch weniger Fische in der Tiefe als <span class="dta-del" title="Streichung (#s)">an</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0739 : 368r|</span><br/>
+<div class="fw-top fw-sig">92.</div><br/>
+nahe an der Oberfläche giebt. <span title="Personenname"><a href="http://d-nb.info/gnd/11618860X">Biot</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/123544890">de Laroche</a></span> haben im Mittel-<br/>
+meer Untersuchungen darüber angestelt, und Fische aus 5000 Fus<br/>
+heraufgeholt, welches die gröste Tiefe ist, in der man je gefischt<br/>
+hat. Ihre Schwimblase, die bei allen andern reines <span title="Schreibfehler: Stifstof" class="dta-corr">Stikstof</span> enthält,<br/>
+war mit fast reinem Sauerstofgas angefült; 0,80 an Gehalt.</p><br/>
+<p class="dta-p">Auf die Berge steigt das Thierleben nicht so hoch als das Pflan-<br/>
+zenleben. <span title="Personenname">Marcel</span> führt es an: dass in den Pyrenäen das thierische<br/>
+Leben schon 2000 Fus vor der Schneegränze aufhört. Es ist natür-<br/>
+lich hier nicht von fliegenden Insekten die Rede, die man auf<br/>
+der Silla de Caracas, dem Chimboraco, dem Montblanc und fast<br/>
+allen hohen Bergen findet, besonders Dipteren und Tepulae <span class="dta-metamark" title="metamark">?</span> diese<br/>
+werden durch die aufsteigenden Luftströme in die Höhe geführt,<br/>
+können aber nicht daselbst leben. Die Vögel steigen noch höher,<br/>
+aber nur temporär. Ich sah über dem Chimboraco, wohl in 22,000<br/>
+Fus Höhe den grossen Kondur schweben: allein dies ist nur der<br/>
+Fall, wo die Berge sich wie Untiefen auf dem Boden des Luft-<br/>
+meeres erheben, die Vögel schweben also vielleicht nur einige 1000<br/>
+Fus über dem höchsten Gipfel, wo noch eine Hofnung der Nah-<br/>
+rung sein kann. <span title="Personenname"><a href="http://d-nb.info/gnd/118716581">Gay Lussac</a></span> bei seiner aërostatischen Reise befand<br/>
+sich schon auf 2–3000 Fus Höhe in einer völligen Einöde.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0740 : 368v|</span><br/>
+<p class="dta-p">Was die Quantität der Spezies anbetrift, so haben die neueren Ent-<br/>
+dekkungen die Thierwelt in's unglaubliche vermehrt. Wenn von <span title="Personenname"><a href="http://d-nb.info/gnd/118573349">Linnée</a></span><br/>
+bis auf uns die Pflanzenspezies von 10,000 auf 60,000 angewachsen sind,<br/>
+eben so kante <span title="Personenname"><a href="http://d-nb.info/gnd/115636978">Fabrizius</a></span> nur 11000 Insekten, während <span title="Personenname"><a href="http://d-nb.info/gnd/116240792">Klug</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/116862831">La-<br/>
+treille</a></span> bereits 44000 aufgezält haben. Das Museum in Berlin<br/>
+erhält allein gegen 30000 Spezies. 1790 kante man 420 Säugethiere<br/>
+auf der Erde, jezt 900.</p><br/>
+<p class="dta-p">Ich will kurz ein Inventarium der ganzen Thierwelt geben, insoweit<br/>
+sie beschrieben und bestimt ist.</p><br/>
+<div class="dta-list">   <div class="dta-list-item">900 Säugethiere: davon auf Europa 80 Landsäugethiere, die Ceta-<br/>
+ceen dazu gerechnet, giebt 100.</div>
+<div class="dta-list-item">5000 Vögel: hier walten manche Zweifel über die Varietäten, doch<br/>
+ist die Zahl eher zu klein. <span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span> behauptet, dass im Museum<br/>
+zu Paris allein 5800 Spezies von Vögeln sich finden.</div>
+<div class="dta-list-item">700 Amphibien: hier giebt es gewis mehr, weil diese Thiere dem<br/>
+Menschen so leicht entgehn.</div>
+<div class="dta-list-item">5000 Fische, nach dem grossen Werke, was <span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/117339385">Valenciennes</a></span><br/>
+herauszugeben angefangen haben. Dies stimt bis auf 12 oder<br/>
+15 mit den Vögeln überein.</div>
+</div>   <p class="dta-p">Dies alles sind Thiere mit einem Knochengerüste und Gehirn,<br/>
+das die Medullarsubstanz zusammengedrängt enthält: bei den<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0741 : 369r|</span><br/>
+höhern Thierklassen ist das Gehirn zusammengedrängter, als bei<br/>
+den niedern. <span title="Personenname"><a href="http://d-nb.info/gnd/118805193">Sömmering</a></span> machte die schöne Entdekkung, dass die<br/>
+geistigen Fähigkeiten nicht nach der Grösse des Gehirnes <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">an sich </span>beurtheilt<br/>
+werden müssen: sondern nach seinem Verhältnis zu den übrigen<br/>
+Nerven: in dieser Hinsicht ist es beim Menschen am grösten: bei<br/>
+den Thieren dagegen sind die Nerven mehr ausgebildet; bei ihnen<br/>
+wird der galvanische Prozes, der durch die Medullarsubstanz<br/>
+und das arterielle Blut hervorgebracht wird, in jedem einzel-<br/>
+nen Gliede bedingt: daher haben die Theile ein längeres par-<br/>
+zielles Leben, wenn sie von dem Körper getrent werden.</p><br/>
+<p class="dta-p">Von den Thieren mit Rükkenwirbeln (animaux vertébrés) giebt<br/>
+es 11600, wovon <span class="sup ">10</span>/<span class="sub ">11</span> den flüssigen Umhüllungen angehören, wegen<br/>
+der grossen Menge der Vögel und Fische. Bei den Vögeln finden<br/>
+wir das maximum, bei den Fischen das minimum der Luftrespi-<br/>
+razion: bei den Vögeln ist überdies die gröste Blutwärme: ein<br/>
+Huhn hat 33½° R. nach <span title="Personenname"><a href="http://d-nb.info/gnd/117626708">J. Davy</a></span>, und 176 Pulsschläge in der<br/>
+Minute. Ein Pferd dagegen 29½° R. Blutwärme, und 56 bis<br/>
+58 Pulsschläge. Die schwache Respirazion der Fische durch die<br/>
+Kiemen, ist ein Prozes, durch den der Sauerstof aus dem Wasser<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0742 : 369v|</span><br/>
+abgeschieden wird. In süssem Wasser beträgt er 0,31, in der<br/>
+Luft 0,21. In Wasser, welches mit vieler Sorgfalt von aller Luft<br/>
+gereinigt war, habe ich Fische eben so schnell ersäuft, als ob<br/>
+sie vergiftet wären, welches <span title="Personenname"><a href="http://d-nb.info/gnd/118798189">Spallanzani</a></span> geläugnet hatte. Die<br/>
+Operazion mus unter Queksilber vorgenommen werden. Ich be-<br/>
+merkte zugleich dass verschiedene Luftgemenge mit verschiedener<br/>
+Geschwindigkeit in dies ganz luftreine Wasser hinabsteigen, und<br/>
+sich damit vermischen. Daher komt es, dass die Goldfische, welche<br/>
+man in Gläsern hat, am Ende das Wasser erschöpfen, d. h. die<br/>
+Luft daraus absorbiren: dann sieht man, wie sie an die Oberflä-<br/>
+che kommen, um Luft zu schöpfen, ohne welche sie nicht <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">l</span>eben<br/>
+können. Aal-arten können nach ihrer eignen Organisazion<br/>
+lange Zeit in der Luft leben, wie eine Raze: allein es scheint, als<br/>
+ob durch das blosse Athmen von Luft <span class="dta-del" title="Streichung (#s)">das</span><span class="dta-add" title="Hinzufügung (superlinear)">ihr</span> Blut vom Sauerstof<br/>
+so erhizt wird, dass sie daran sterben. Im Wasser ist eine<br/>
+äusserst kleine Quantität von Sauerstof hinlänglich, um<br/>
+die schwache Respirazion der Fische lange zu erhalten.</p><br/>
+<p class="dta-p">Die Ursach, warum Vögel und Fische ⅚ der höheren Orga-<br/>
+nisazionen ausmachen, liegt darin, dass sie den grossen Kata-<br/>
+strophen, die unsern Erdball verändert haben, leichter entfliehen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0743 : 370r|</span><br/>
+konten, die Thiere der Veste dagegen sind mehr zerstört worden.<br/>
+Von den Pachydermen, deren es jezt 17–18 auf der Erde giebt, sind<br/>
+nach <span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span>, allein 56 Spezies verschwunden.</p><br/>
+<p class="dta-p">Am meisten scheint sich die Natur in der Bildung der Insek-<br/>
+ten gefallen zu haben, wegen der grossen Menge derselben; 5000<br/>
+Schaalthiere und Seegewürme, 6000 Zoophyten; im Ganzen:</p><br/>
+<p class="dta-p">= 66600 Spezies von Thieren, und zufällig eben so viel Pflan-<br/>
+zenspezies. Die Insekten <span class="dta-del" title="Streichung (#ow)">n</span><span class="dta-add" title="Hinzufügung (across)">m</span>achen ⅔ aller Thiere aus: allein es<br/>
+mus noch weit mehr geben als 44000, wie man aus der Ana-<br/>
+logie schliessen kann: wenn im Ganzen 44000 Insekten <span title="u" class="dta-abbr">und</span> 60,000<br/>
+Pflanzen vorhanden sind: so komt auf jede Pflanze noch nicht 1<br/>
+Insekt. In der Gegend von Berlin aber, wo wir 2000 Pflanzen haben,<br/>
+giebt es nach <span title="Personenname"><a href="http://d-nb.info/gnd/116240792">Klug</a></span> 5000 Insekten: also 2:5. Es fehlen uns also<br/>
+noch sehr viele Insekten, ehe wir für die 60,000 Pflanzenspezies<br/>
+das Verhältnis 2:5 erhalten. In den lezten <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">50 </span>Jahren ist sehr<br/>
+viel dafür geschehn: dennoch herscht hier die gröste Unsicher-<br/>
+heit in der Zahl der möglichen Formen, welche bei den andern<br/>
+Thierklassen kaum ⅛ oder ⅑ beträgt.</p><br/>
+<p class="dta-p">Der Reichthum an Thieren nimt mit der Wärme zu: die<br/>
+Lebensfülle der Spezies ist unter den Tropen am stärksten.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0744 : 370v|</span><br/>
+Die meisten Thiere finden sich zusammengedrängt in Südamerika,<br/>
+am Himalaya, auf einigen Inseln des indischen Archipels, kurz<br/>
+– da am mannigfaltigsten, wo der Karakter der Landschaft am<br/>
+meisten individualisirt ist.</p><br/>
+<p class="dta-p">Es ist nur ein Vorurtheil, dass das thierische Leben in Amerika<br/>
+auf einer geringeren Stufe der Ausbildung stehe, als im alten<br/>
+Kontinent: man schliest dies gewöhnlich daraus, dass im Amerika<br/>
+die grossen Pachydermen fehlen allein dies ist ganz zufällig,<br/>
+sie haben früher doch existirt, und sind nur jezt verschwunden,<br/>
+denn man findet die unzweifelhaften Reste. Ich fand 3 neue<br/>
+Spezies von Elephanten, (welche <span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span> nach den Zähnen bestimte<span title="Schreibfehler: ," class="dta-corr">)</span><br/>
+auf den höchsten Bergrükken in Peru, Mexiko <span title="Original: pp" class="dta-reg">pp.</span> auf 6–7000<br/>
+Fus Höhe, wo die Temperatur unsrer nördlichen Gegenden herscht.<br/>
+Auch im alten Kontinent ziehn sich seit ein paar Jahrhunder-<br/>
+ten die Elephanten gar sehr zusammen, und fangen in einigen<br/>
+Ländern an, ganz zu fehlen. In Amerika erreichen die Panter-<br/>
+artigen Kazen dieselbe Grösse wie in Asien. In den vereinig-<br/>
+ten Staaten giebt es Bisons, die 2000 ℔ wiegen. Der President<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118711962">Jefferson</a></span>, in einem Mémoire über die Grösse der amerikanischen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0745 : 371r|</span><br/>
+Thiere, beschreibt Bisons, welche 9–10 Fus Höhe bis auf den Rük-<br/>
+ken haben, also einem Elephanten wenig nachstehn: sie finden<br/>
+sich in Heerden von 8–10,000 Stük früher zwischen dem Ohio und<br/>
+Missouri, jezt aber, durch die Kultur nach Westen gedrängt, zwi-<br/>
+schen dem Missouri und den Stonymountains.</p><br/>
+<p class="dta-p">Diese grossen Thiere sind immer krautfressend, wie <span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span> bemerkt<br/>
+nach einer wohlthätigen Einrichtung der Natur. Das gröste Kro-<br/>
+kodil hat man in Sussex <span class="dta-metamark" title="metamark">?</span> gefunden: es ist 70–80 Fus lang (wäh-<br/>
+rend unsre heutigen selten 22–24 Fus übersteigen) und erreicht die<br/>
+Höhe des Rhinozeros. (<span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span> nante es Yguanodon <span class="dta-metamark" title="metamark">?</span>) also eins der<br/>
+fürchterlichsten Thiere, und auch dies ist nach den Zähnen zu schlies-<br/>
+sen, ein Grasfresser.</p><br/>
+<p class="dta-p">Die Kontraste der Grösse sind bei den Thieren eben so stark als<br/>
+bei den Pflanzen, und sicherer zu messen. Von den Infusorien Monas<br/>
+lens und M. Thermo können wir aufsteigen bis zu den Wallfischen;<br/>
+bei den kleiner Pflanzen ist es immer ungewis, ob es wirklich mikro-<br/>
+skopische Pflanzen giebt, ob es nicht Thieranfänge sind. Die Grösse<br/>
+der Thiere hängt wieder mit gewissen Bedingungen ihres Organismus<br/>
+zusammen: so giebt es keinen mikroskopischen Fisch oder Nagetthier<br/>
+es findet sich hier eine Gränze des maximum und minimum für<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0746 : 371v|</span><br/>
+jede Form. Früher glaubte man der kleinste Fisch sei der gewöhn-<br/>
+liche Stekling von 1½ Zoll Länge; allein <span title="Personenname"><a href="http://d-nb.info/gnd/118529250">Ehrenberg</a></span> brachte aus<br/>
+dem rothen Meere kleine Korallenfische mit vor 7–8 Linien Länge,<br/>
+<span class="dta-marginal dta-marginal-left">Gobins<br/>
+</span>die man fälschlich für die Brut gehalten hatte, und dem <span class="u ">Govins</span><br/>
+<span class="dta-marginal dta-marginal-left">Chaetodon<br/>
+</span>oder <span class="u ">Chatedon</span> <span class="dta-metamark" title="metamark">?</span> beigemessen. Er machte daraus 2 neue Genera:<br/>
+<span class="dta-marginal dta-marginal-left">Priolepis<br/>
+</span><span class="dta-marginal dta-marginal-left">Acanthopomus<br/>
+</span><span class="u ">Spiolepus</span> <span class="dta-metamark" title="metamark">?</span> fasciatus und <span class="u ">Acanthocomus</span> Meleagris.</p><br/>
+<p class="dta-p">Vergleicht man diese kleinen Fische von 7–8 Linien mit dem Wan-<br/>
+derhayfisch; Squalus maximus, der an 30 Fus lang wird: so hat<br/>
+man das Verhältnis 1:700.</p><br/>
+<p class="dta-p">Der Straus im Verhältnis zu den <span title="Original: Trochilus arten" class="dta-reg">Trochilusarten</span> oder Kolibri zeigt<br/>
+keine so grosse Verschiedenheit. Man hat die Grösse der Wallfi-<br/>
+sche sehr übertrieben; in <span title="Personenname"><a href="http://d-nb.info/gnd/11909813X">Lacepède</a></span>'s treflichem Werke über die Fi-<br/>
+sche, findet sich noch die Behauptung, dass die Wallfische gegen<br/>
+300 Fus lang werden. <span title="Personenname"><a href="http://d-nb.info/gnd/117654167">Scoresby</a></span>, der auf seinen nördlichen Reisen<br/>
+322 Wallfische getödtet hat, fand nie ein Exemplar, dass über 65<br/>
+oder 70 Fus lang gewesen wäre; ja er berechnet sehr genau nach<br/>
+der Quantität des Thrans, dass man auch in früheren Jahrhun-<br/>
+derten niemals längere gefangen habe. Einzelne Potfische oder<br/>
+Cachelots mögen wohl manchmal die Länge von 92–100 Fus er-<br/>
+reichen. Vergleicht man das kleinste Nagethier von 1½ Zoll mit<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0747 : 372r|</span><br/>
+<div class="fw-top fw-sig">93.</div><br/>
+einem solchen Cachelot: so hat man das Verhältnis von 1:600 (fast<br/>
+dasselbe wie oben.) Es ist Spielerei, wenn man das kleinste Infusorium<br/>
+von <span class="sup ">1</span>/<span class="sub ">1600</span> Linie Länge mit dem Cachelot vergleicht: man bekömt<br/>
+das Verhältnis = 1:23 Millionen, indessen man sieht daraus,<br/>
+dass eine unbegreifliche Verschiedenheit in der Masse der Thiere<br/>
+herscht, die weit grösser ist als bei den Pflanzen.</p><br/>
+</div></body></html>

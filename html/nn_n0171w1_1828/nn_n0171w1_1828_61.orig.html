@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[61. Vorlesung, 25.04.1828]</span></div><br/>
+<div class=""><div class=""><div class=""><p class="dta-p">Daß die Typen jetzt ſelbſt feſt ſind, ſieht man daran<br/>
+daß die gefärbten Menſchenracen dieſelben Eigenheiten<br/>
+behalten wenn ſie in andern Gegenden leben. Die Fabel<br/>
+von Portugieſen die ſchwarz geworden wären hat<br/>
+ſich nach ſpätern Unterſuchungen als durchaus ir-<br/>
+rig erwieſen. – Es iſt eine Art pſÿchologiſcher Fabel<br/>
+daß die gelbe Farbe die von Leberkrankheiten<br/>
+kommt, wenn ſie ſich mit Sauerſtoff verbindet ſchwarz<br/>
+werde; die Neger müßte man demnach annehmen<br/>
+als in ſteter Leberkrankheit ſich befindend; man hat<br/>
+aber auch ſelbſt neuerdings gefunden daß die<br/>
+Gelbsucht nicht aus der Leber ſelbſt entſtehe.<br/>
+Beſonders zeigt ſich Feſtigkeit der Typen wenn<br/>
+verſchiedene Menſchenracen in einer Gegend zu-<br/>
+ſammen befinden. Man hat Zweifel über die klei-<br/>
+nen Menſchenrace in den Feuerlanden, über die<br/>
+Picheres gehabt; aber <span title="H￼." class="dta-abbr">Herr</span> <span class="aq ">Wedde</span> hat ſie in neuern Zeiten<br/>
+wieder aufgenommen. Dieſe kaum 4′ großen Men-<br/>
+ſchen, den Patagonern, die meiſt eine Größe von<br/>
+5′ 8″ haben. In demselben Verhältniß beinah finden<br/>
+ſich im ſüdlichen Afrika die kleinen Hottentotten<br/>
+gegen die großen Kaffern; und eben ſo fand <span class="aq ">Doc</span><br/>
+ein ähnliches Verhältniß zwiſchen den <span class="aq ">Shihetta</span> In-<br/>
+diern und den Caraiben. In Schottland herrſcht<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">eben-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0636|</span><br/>
+ebenfalls ein großer Unterſchied zwiſchen den <span title="Schreibfehler: Boländern" class="dta-corr">Lowlän-<br/>
+dern</span> und Hochländern, ſie erſten ſind blond und blau-<br/>
+äugig, die andern dagegen ſchwarzäugig.</p><br/>
+<p class="dta-p">Mit Recht hat man die Bemerkung gemacht, daß man<br/>
+vielleicht ein auf die Idee verſchiedener Menſchen-<br/>
+racen gekommen wäre, wären nicht die Neger vor-<br/>
+handen. Da dieſe ſo ganz Extreme von den weißen<br/>
+Menſchen waren, hat man mehr Werth auf dieſe Ver-<br/>
+ſchiedenheit gelegt, als es wohl ſonſt geſchehen wäre.<br/>
+Bei den Thieren finden die verſchiedenartigſten Farben,<br/>
+ohne darauf eine besondere Eintheilung zu gründen;<br/>
+ſo daß also wohl das Pigment nicht ſo wichtig iſt als<br/>
+es ſcheint.</p><br/>
+<div class=""><p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Eintheilungsgrün-<br/>
+de für die Men-<br/>
+ſchenracen.</span><br/>
+</span>Die verſchiedenen Untersuchungen haben Anlaß zu<br/>
+ſchneidenden Unterſcheidungen gegeben wie ſie eigentlich<br/>
+nicht in die Natur vorhanden ſind. Man hat verſchieden<br/>
+Eintheilungs-Gründe aufgesucht: 1, nach der Haut, und<br/>
+zwar entweder nach dem farbigen Pigment der Haut<br/>
+ſelbſt oder 2, nach der Farbe der Haare. 3, nach den Gesichts-<br/>
+linien <span class="dta-metamark" title="metamark">|:</span> Facaal Linien <span class="dta-metamark" title="metamark">:|</span> und endlich 4, nach der Sprachen-<br/>
+verſchiedenheit.</p><br/>
+<p class="dta-p"><span class="u ">Nach der Farbe</span> der Haut gibt es weiße, gelbe und<br/>
+rothe auch ſchwarze Menſchenracen. Die Einwirkung<br/>
+des Klimas auf die Farbe mußte ſehr früh entſtehen<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">und</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0637 : 631|</span><br/>
+<div class="fw-top fw-sig">11.<br/>
+</div><br/>
+und zugleich die Idee daß die Sonne die Haut <span class="dta-del" title="Streichung (#ow)">F</span><span class="dta-add" title="Hinzufügung (across)">f</span>ärbe,<br/>
+wie es besonders <span class="b ">bei den Alten</span> geſchah, die nur<br/>
+wenig kannten, und noch ſelbſt glaubten, daß es<br/>
+unter dem Aequator ſelbſt weniger heiß ſei als<br/>
+nördlich daran.</p><br/>
+<p class="dta-p"><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118501828">Alexander</a></span>s</span> Expedition nach Indien mußte noch<br/>
+mehr dazu beitragen, die Frage warum die Be-<br/>
+wohner des nördlichen Indiens weniger gefärbt<br/>
+waren als des ſüdlichen, und die Bethiopier dage-<br/>
+gen ſchwärzer wären wurde jetzt untersucht und<br/>
+da die Philosophen des Alterthums alle ihre Er-<br/>
+klärungen über Naturerſcheinungen nur haupt-<br/>
+ſächlich auf Wärme und Feuchtigkeit baſirten,<br/>
+ſo erklärte man ſich dadurch daß eine feuchte<br/>
+Wärme ein größeres Schwarz hervorbringe.<br/>
+In neuren Zeiten hat man gefunden daß in Indien<br/>
+gar nicht dieſer Unterſchied ſtatt findet; nur einige<br/>
+Kaſten ſind mehrgefärbt als die andern. Die Bekannt-<br/>
+ſchaft der Alten mit Aegypten, Nubien und Süd Afrika<br/>
+ſo wie mit Indien, mußte ſie auf die ſeltsame Idee<br/>
+fehren die neuerdings wiederholt worden iſt.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Plin-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0638|</span><br/>
+<p class="dta-p"><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118595083">Plinius</a></span></span> ſagt daß die Menſchen von der Sonne ge-<br/>
+färbt würden, eben ſo wie <span class="aq ">Ruffon</span> ſich ausdrükt <span class="aq ">livré de etime</span>.<br/>
+Eine andere Eintheilung iſt nach <span class="u ">den Haaren.</span> Man<br/>
+macht h<span class="dta-del" title="Streichung (#ow)"><span class="gap">[verlorenes Material]</span></span><span class="dta-add" title="Hinzufügung (across)">e</span>r nach 3 Verſchiedenheiten: entweder Men-<br/>
+ſchen mit ſchichten Haaren ſind die Amerikaner. So<br/>
+nahe ſonſt die malayiſche Race auch die mongo-<br/>
+liſche Race ſcheint, ſo ſind ſie doch ſehr durch dieſen<br/>
+Eintheilungsgrund von einander entfernt, indem<br/>
+bei letztern das Haar immer feucht erſcheint. –<br/>
+Die 2te Verſchiedenheit ſind Menſchen mit bloß<br/>
+lockigen Haar, wie die kaukaſiſche Race, und endlich<br/>
+die 3te Art von Haaren iſt die Negervolle. Allein<br/>
+noch weit weniger wie der Eintheilungs Grund nach<br/>
+dem Pigment der Haut iſt der nach den Haaren<br/>
+allgemein durchgreifend: es gibt Schwarze die<br/>
+nicht wolliges Haar haben und dagegen Weiße<br/>
+mit wolligen Haare.</p><br/>
+<p class="dta-p">Ein dritter Eintheilungs Grund iſt <span class="u ">nach dem Geſichts-<br/>
+winkel,</span> der <span class="u ">Facial Linie</span>, der im Ganzen ſehr ſcharf-<br/>
+ſinnig iſt, aber deſsen Uebertreibung zu den ſelt-<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">ſam</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0639 : 633|</span><br/>
+ſamen, <span class="b ">bereits</span> erwähnten Eintheilungen von voll-<br/>
+kommen <span class="dta-add" title="Hinzufügung (superlinear)">und </span>unvollkommnen Menſchen Veranlaſsung<br/>
+gegeben hat. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119291827">Peter Camper</a></span></span> hat dieſen Eintheilungs Grund<span class="dta-marginal dta-marginal-right">S. Phyſik 18<span class="sup ">26</span>/<span class="sub ">27</span>.<br/>
+</span><br/>
+angegeben. Der Gesichtswinkel wird gebildet, durch<br/>
+zwei Linien, einer von obern Schneidezähnen<br/>
+nach der Stirn gezogen, und der andern von den<br/>
+obern Schneidezähnen nach den Ohren. Nach <span class="aq ">Somerding</span><br/>
+beträgt dieſer Winkel bei dem Menſchengeſchlecht<br/>
+zwiſchen 75 und 80°. Wiewohl ein Schädel eines Neu-<br/>
+ſeeländers gefunden worden iſt, wo dieſer Winkel<br/>
+nur 65° betrug; eine Ausnahme die aber nicht in<br/>
+der Natur ſelbſt ihren Grund hat, ſondern vielmehr<br/>
+durch Kunſt hervor gebracht wird, indem die Neu-<br/>
+ſeeländer ſchon den Kindern die Köpfe platt drücken<br/>
+indem ſie es für ſchön halten.</p><br/>
+<p class="dta-p">Der 4te Eintheilung-Grund endlich iſt <span class="u ">nach der<br/>
+Verſchiedenheit der Sprachen</span>. Es iſt ſonderbar daß<br/>
+ſchon die älteſte Volkergeſchichte Spuren von Un-<br/>
+tersuchungen zeigt, wie ſie noch jetzt mit eben<br/>
+ſo wenigen Glück geführt werden um auf eine<br/>
+Ursache zu kommen. <span class="aq ">Herodot</span> hat ſchon erzählt daß<br/>
+<span class="aq ">Psammittig</span> ein Paar Kinder Hirten zu erziehen<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">ge-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0640|</span><br/>
+gegeben haben um ſie von den Menſchen entfernt<br/>
+zu erziehen, und daraus daß ſie ſelbſt ſich eine<br/>
+Sprache bilden würden, zu ſehen welches die älteſte<br/>
+Sprache ſei. Man glaubte damals aus ein Wort<br/>
+welches ſie ſprachen zu finden daß die phöniziſche<br/>
+Sprache die älteſte wäre. So richtig es iſt ein Krite-<br/>
+rium für die Sprachen zu finden, ſo wurden doch ſchwer-<br/>
+lich ſolche Untersuchungen dahin führen. –</p><br/>
+<p class="dta-p"><span title="Personenname"><a href="http://d-nb.info/gnd/118554727">W. v <span class="aq ">Humboldt</span></a></span> <span class="dta-metamark" title="metamark">|:</span> Bruder des <span class="aq ">Doc</span> <span class="dta-metamark" title="metamark">:|</span> hat neuerdings eine<br/>
+ſehr ſchöne Abhandlung „Untersuchungen über den<br/>
+Bau und die Verwandtſchaften der Sprachen bei allen<br/>
+Völkern” geſchrieben, die bis jetzt noch nicht im Druck<br/>
+erſchienen iſt. Er ſagt darin: daß die Sprachen nicht<br/>
+Racenweiſe und nach der Natur des Landes vertheilt<br/>
+ſind. Geſchichtliche Ereigniſse haben Nationen ver-<br/>
+ſchiedener Stämme dieſelbe Sprache aufgedrungen,<br/>
+die Landesſprache hat ſich häufig mit der der Eroberer<br/>
+vermengt. Sehr wahrſcheinlich iſt es daß die racen-<br/>
+artige Körperliche Verſchiedenheit keine Aenderung<br/>
+auf Bildung der Sprache macht da ſie aus dem Geiſte<br/>
+hervorgeht. Die Verſchiedenheit der Sprachorgane kann<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">nur</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0641 : 635|</span><br/>
+nur unweſentliche Änderungen haben; ganz gewiß<br/>
+hat die Natur einen Einfluß auf die Sprache der aber<br/>
+nicht ſo groß iſt um einen Eintheilungs Grund darauf<br/>
+zu gründen. So gibt es eine Menge amerikaniſcher<br/>
+Sprachen, doch wie verſchieden in demselben auch die<br/>
+Wurzelwörter ſelbſt ſind ſo findet ſich doch vom<br/>
+Feuerland bis Neu England viel Ähnlichkeit<br/>
+in den grammatiſchen Formen.</p><br/>
+<p class="dta-p">So iſt es faſt allen dieſen Sprachen eigenthüm-<br/>
+lich, daß ſie das Object in die Verben einſchieben,<br/>
+ſie haben wenig Flection, aber verſchiedene Formen,<br/>
+wenn ſie von lebenden oder todten Gegenſtänden<br/>
+ſprachen, von vielen oder wenigen <span class="aq ">etc</span>. Die Form<br/>
+des Verbungs gibt dieß jederzeit an, ja ſelbſt<br/>
+ob die Sache oder Person etwas Ehrwürdiges<br/>
+iſt, von der man ſpricht. Daſselbe hat <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118554727">W. v Humboldt</a></span></span><br/>
+bei andern Sprachen wieder gefunden, ſo bei den<br/>
+Basken und einigen Negerſtämmen.</p><br/>
+<p class="dta-p">Wenn alle dieſe Eintheilungs Gründe nicht durchgreifend<br/>
+ſind ſo bleiben uns für verſchiedene Menſchen-<br/>
+racen daher nur phyſiſche Kennzeichen übrig. Man<br/>
+muß bei dieſen äußern Kennzeichen unterſcheiden<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">die</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0642|</span><br/>
+die größern Abtheilungen und Kleinern, ſo wie<br/>
+wir unterſcheiden die Stämme <span class="aq ">etc</span>. ſo auch die<br/>
+Nationen Unterſchiede, Völkerformen ſelbſt <span class="aq ">etc</span>.<br/>
+Eben ſo wenig kann es <span class="aq ">a priori</span> aufgeſtellt wer-<br/>
+den wo man den Anfang eines Volksſtammes<br/>
+einer National Verſchiedenheit annehmen ſoll, es<br/>
+ſind zu viel Nuancean, die eine ſcharfe Abgren-<br/>
+zung nicht zulaſsen; ſo wenn wir den Unterſchied<br/>
+zwiſchen Süddeutſchen und Niederdeutſchen aufſtellen<br/>
+<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Wort fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">sollten</span> oder zwiſchen Brandenburg und Schleſien.<br/>
+Wir kommen jedoch auf dieſe Art zu Abtheilungen,<br/>
+in welche das Menſchengeſchlecht zerfällt, zu Gradua-<br/>
+tionen in den Formen. Am beſten macht man es<br/>
+hier ſo, wie man es mit den Sprachen machte, daß<br/>
+man nicht Mutterſprache oder abgeleitete unterſcheiden<br/>
+kann, ſondern nur zu wiſsen vermag ob es dialeckte<br/>
+ſind oder verſchiedene Sprachen: ſo wie man in einen<br/>
+Sinne des däniſche als abgeleitet vom deutſchen er-<br/>
+kennt, kann man auch das Griechiſche, Persiſche und den<br/>
+Sanskrit als eine Sprache betrachten. Eben ſo kann<br/>
+man nur ſagen daß eine mongoliſche Race von<br/>
+einer andern ſich unterſcheidet wie z. B. die ſlaviſche<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Sprache</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0643 : 637|</span><br/>
+Sprache von der germaniſchen. – Nennt man Mon-<br/>
+golen, Neger und amerikaniſche Volksſtämme<br/>
+ſo kann man die Verſchiedenheiten unter den einzel-<br/>
+nen nicht Stammverſchiedenheiten nennen.</p><br/>
+<p class="dta-p"><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span></span> hat 3 große Abtheilungen angenommen;<br/>
+<span class="aq ">Blumenbach</span> 5. Wiewohl letztere in 5 Abtheilungen<br/>
+weit älter iſt als die in 3, ſo iſt es dem Verſtänd-<br/>
+niß nach leichter mit einer geringen Zahl von Ab-<br/>
+theilungen anzufangen; daher nehmen wir hier<br/>
+zuerſt die Abtheilungen von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span></span> und werden<br/>
+dann die übrigen von <span class="aq ">Blumenbach</span> hinzufügen. –<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span></span> theilt die Menſchen ein, in weiße, gelbe<br/>
+und ſchwarze, eine Eintheilung die nicht mehr<br/>
+Vorzug hat, als andern die man in andern or-<br/>
+ganiſchen Theilen gemacht hat, indem man in<br/>
+der neuern Zeit immer viel nach besondern<br/>
+Charakteren ſuchte.</p></div><br/>
+<div class=""><div class="dta-head">Weiße Menſchen</div><br/>
+<hr/><br/>
+<p class="dta-p">Die weiße oder kaukaſiſche Menſchenrace iſt<br/>
+charakterisirt durch die größten Werke der Denk-<br/>
+kraft nur Phantaſie; unter ihr wurden die dauer-<br/>
+hafteſten Reiche geſtiftet; 3 Religionen entſtan-<br/>
+den aus ihrer Mitte. Nach unſere begriffen<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">ſchrei</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0644|</span><br/>
+ſchreiben wir dieſer Race die größte Schönheit zu<br/>
+die wir dann besonders finden in Cirkaſsien, Geor-<br/>
+gien und Hellas. Der Name kaukaſiſche Race<br/>
+iſt nicht gut gewählt, kein Volk dieſer Race wohnt<br/>
+unten am Kaukaſus die Oſseten ausgenommen;<br/>
+andern ſind femiſchen Urſprungs mit den Lappen<br/>
+zuſammenhängend, um wenn dieſe auch zu den<br/>
+europäiſchen Stämmen gehören ſo ſind ſie doch die<br/>
+weniger Charakteriſtiſchen. – Die übrigen ſind bei<br/>
+der großen Völkerwanderung nur zur geringen<br/>
+Theil über den Kaukasus gezogen, wo noch einige<br/>
+Zurückblieben während die andern weiter zogen:<br/>
+der größte Theil jedoch iſt jar nicht über dem Kau-<br/>
+kaſus gekommen. Durch ſolche Zuge, wo immer ei-<br/>
+nige auf hohen Gebirgen zurückblieben entſteht<br/>
+die jederzeit ſo große Verſchiedenheit der Gebirgs-<br/>
+völker; ſo werden in der Mexikaniſchen Republik<br/>
+viele Sprachen geſprochen; während unten im allen<br/>
+Continent der große Zug der Völkerwanderungen<br/>
+von O. gegen SW. ging, ſo in Amerika von N. gegen S.;<br/>
+man kann dieſe Völkerwanderung in Amerika hiſtoriſch<br/>
+verfolgen bis an den Gila Strom.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Die</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0645 : 639|</span><br/>
+<div class="fw-top fw-sig">12.<br/>
+</div><br/>
+<p class="dta-p">Die Geſchichte lehrt uns zwar nicht den Uebergang<br/>
+über den Iſthmus von Panama, doch aus denk-<br/>
+mälern nun Traditionen kann man dieſe Völker-<br/>
+wanderung von den Ufern des Gila Stroms verfolgen<br/>
+bis nach Carabua. Einige von dieſen wanderden<br/>
+Völkern ſind in den Gebirgen von Mexikositzen ge-<br/>
+blieben, während die andern fortzogen, und eben<br/>
+ſo geſchah es auch am Kaukasus. – Ein großer<br/>
+Theil der Völkerſchaften der kaukasiſchen Race iſt<br/>
+gar nicht über den Kaukasus gekommen, ſondern<br/>
+hat ihn umgangen, zu dieſen gehört eine Maſse von<br/>
+Völkerſchaften die die jetzigen und die ältern Be-<br/>
+wohner Europas aus machen, des helleniſchen, ger-<br/>
+maniſchen, pelasgiſchen und baskiſchen Stammes;<br/>
+eben <span class="dta-add" title="Hinzufügung (superlinear)">ſo </span>auch die Sinnen und Lappen.</p><br/>
+<p class="dta-p">In ganz Europa iſt eigentlich nur eine ſehr geringe<br/>
+Maſse von Völkern, wenn man auf ihre Abſtam̃ung<br/>
+ſieht. Man kann ſie kaum auf 5 oder 6 bringen; ja<br/>
+wenn man noch hinzurechnet welche Ähnlichkeit ſich<br/>
+in den Sprachen bei dem indiſch germaniſchen Stamm<br/>
+und den ſlaviſchen und keltiſchen Völkern erweiſen,<br/>
+ſo iſt es ſchwer die großen Unterſchiede feſtgeſtellen die<br/>
+man früher darin gemacht hat. <span class="aq ">Leibnitz</span> machte zuerſt<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">da</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0646|</span><br/>
+darauf aufmerksam. Lange hat man geglaubt daß<br/>
+der ſlaviſche Stamm ſehr vereinzelt ſtände, aber<br/>
+man hat viel Verwandſchaft mit den ruſsiſchen, pol-<br/>
+niſchen und auf lettiſchen Völkern und Sprachen gefunden.<br/>
+Wollten wir jedoch dennoch die ſlaviſchen und keltiſchen<br/>
+Stämme unterſcheiden, wie es nach dem Charackter<br/>
+der äußere Bildung nöthig zu ſein ſcheint, ſo kann<br/>
+man ſie zurückführen auf folgende Stämme: –<br/>
+Um im äußerſten Weſten anzufangen: 1, Basken und<br/>
+Iberer; an letztern ſchlieſsen ſich 2, die Kelten <span class="dta-metamark" title="metamark">|:</span> aus<br/>
+deren Vermengung Celteberier <span class="dta-metamark" title="metamark">:|</span> 3, Germaniſche<br/>
+Stämme. 4, Finnen, Tſchudiſche Stämme <span class="dta-metamark" title="metamark">|:</span> zu ihren<br/>
+ſcheinen die <span class="u ">Madſcharen</span> in Ungarn zu gehören <span class="dta-metamark" title="metamark">:|</span><br/>
+In Italien außerdem was durch die germaniſchen<br/>
+Stämme hineingekommen iſt: 5, die Etrusker. Es<br/>
+iſt ſehr ſchwierig zu unterſcheiden was vor dem<br/>
+Colonie Weſen dort geweſen iſt, und was erſt<br/>
+durch daſselbe entſtand, und endlich 7, die Slaven<br/>
+und Letten durch Einwanderungen von Süden.<br/>
+Wir haben nur einige von dieſen Völkerſtämmen heraus:<br/>
+Die Tſchudiſchen Völkerſtämme oder die Finnen die<br/>
+man auch die Uraliſche Race nennt. Zu ihnen ge-<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">hören</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0647 : 641|</span><br/>
+hören die Hunnen die alten Chiongus geweſen wären;<br/>
+nach neueſten Untersuchungen ſind aber die<br/>
+Chiongus kurkiſchen Urſprungs. – Durch die Huñen<br/>
+bekam man freilich keine ſehr glänzende Idee von<br/>
+den tſchudiſchen Völkerſtämmen. Ein Schriftſteller<br/>
+aus dem 2ten Jahrhundert erwähnt ihrer in einer<br/>
+gräßlichen Beſchreibung, wo er ſie beinah als<br/>
+Thiere ſchildert <q class="quote">„<span class="aq ">oculi cum puncti</span>”</q>, und <span class="aq ">Sidonius</span><br/>
+von <span class="aq ">Apollonia</span>, Biſchoff von Clermont im 5ten Jahr-<br/>
+hundert ſagt gar von ihnen <q class="quote">„<span class="aq ">oculis absentibus</span>”</q>. Es<br/>
+hatten dieſe übertriebene Beſchreibungen ihren<br/>
+Grund darin, daß die Europäer ſchon an ſchönere<br/>
+Völkerſtämme gewohnt waren, wie die Vandalen.<br/>
+<span class="aq ">etc</span>. Man beſchrieb die Hunnen als große Fleiſch klum-<br/>
+pen, die nur dadurch etwas menſchliches zeigten,<br/>
+daß ſie eine Sprache hätten; man ſchrieb ihnen Na-<br/>
+ſenlosigkeit zu, indem ihre Nasen ſehr eingedrückt ſind.<br/>
+Die Hunen müſsen nicht mit den Mongolen werden,<br/>
+die ein öſtlichen Aſien wohnten, zwiſchen beide<br/>
+wohnten ſehr ſchöne Menſchenſtämme, der Türken.<br/>
+Erſt ſpäter ſind ſie ſich näher gekommen. – Mit die-<br/>
+ſen Hunnen gehören ſie zu demselben finniſchen Völ-<br/>
+kerſtamm die ſchönen Madſcharen die mit den Avaren<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">und</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0648|</span><br/>
+Ungarn eins ſind. Sehr wahrſcheinlich iſt es, daß ſie<br/>
+ſich mit den Türken vermiſcht haben, wie es über-<br/>
+haupt die Erfahrung zeigt, daß alte Völkerſtäm̃e<br/>
+die mit den Türken in nahe Verbindung getreten<br/>
+ſind, verſchönert haben.</p><br/>
+<p class="dta-p">Zu dieſer kaukasiſchen Race gehören, wie die ſy-<br/>
+ſtematiſchen Claſsificirer es haben wollen außer<br/>
+den europäiſchen Völkerſtämmen alle Türken,<br/>
+Araber, Perser, Indier, Abeſsinier <span class="aq ">etc</span>.</p></div></div></div></div></div></body></html>

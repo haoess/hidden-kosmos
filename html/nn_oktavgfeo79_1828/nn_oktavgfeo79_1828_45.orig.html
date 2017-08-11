@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><span class="dta-supplied">[45. Vorlesung, 29.03.1828]</span><div class=""><div class=""><div class=""><div class=""><p class="dta-p">Neuere Verſuche haben den Unterſchied des Drucks der<br/>
+Luft unter dem Aequator und in der temperirten Zone be-<br/>
+ſtimmt. Der Höhenſtand des Barometers iſt in unſerer<br/>
+Atmosphäre dadurch wichtig, daß durch ihn die Höhen beſtimmt<br/>
+werden können, indem die mittlere Barometerhöhe am Meere<br/>
+28″ beträgt. In phyſiſcher Rückſicht iſt er noch wichtiger.<br/>
+Unter den Tropen iſt er geringer, weil die Wärme das<br/>
+Aufſteigen der Luft veranlaßt. In neuern Zeiten hat<br/>
+<span title="H￼" class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/101165250">Bousſignolt</a></span></span> bei Carracas folgenden Unterſchied ge-<br/>
+funden: wenn der mittlere Barometerſtand und die Temperatur<br/>
+auf 0 reducirt wird, ſo beträgt der Höhenſtand in der temperirte<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0380 : 374.|</span><br/>
+Zone 337,25 Linien oder 28″1,2‴, und in den Tropen<br/>
+336,94 Linien oder 28″0,3‴ am Meeresſtrande, mithin<br/>
+iſt der Barometerdruck in den Tropen etwas geringer.<br/>
+Doch macht auch die Frequenz der Winde eine große Ver-<br/>
+ſchiedenheit in dem Drucke der Luft ſelbſt. 21 tägige Be-<br/>
+obachtungen zu Paris, haben ergeben, daß der Barometerſtrand<br/>
+beim Südwinde 3½ Linie niedriger iſt als beim Nordwinde.<br/>
+So hören auch zu Havanah die regelmäßigen Oscillationen<br/>
+auf, ſobald die Nordſtürme anfangen, kehren aber beim Oſt-<br/>
+winde wieder zurück. Andere Ausnahmen ſind, daß die<br/>
+Stürme große Anhäufungen der Luft veranlaſſen, oder<br/>
+feuchte Luft bringen. So bemerkte <span title="H￼" class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">v. Buch</a></span></span> an der<br/>
+Küſte Norwegens, daß dort der Druck geringer als bei uns<br/>
+iſt, weil da eine häufigere Frequenz ſüdlicher Winde ſtatt<br/>
+findet. Dagegen beobachtete derſelben bei den Canariſchen<br/>
+Inſeln, daß durch das Herabſinken der obern Luftſchichten,<br/>
+eine Anhäufung von Luft eintrit, ſo daß das Barometer auf<br/>
+28″3‴ ſtand. Die erſte Idee vom Ueberſtrömen der Aequi-<br/>
+noctialluft nach den Polen, ſprach ſchon <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118774883">Hook</a></span></span> im Jahre 1668<br/>
+aus. Die Paſſatwinde ziehen ſich aber am amerikaniſchen<br/>
+Continente um viele Grade nördlicher als an dem afrikaniſchen.<br/>
+Die Grenze der Paſſatwinde hängt von den Wärmeſtrahlen der<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0381 : 375.|</span><br/>
+Continente ab, und iſt von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118855093">Prevoſt</a></span></span> berechnet werden, wonach ſah<br/>
+die mittlere Wärme der ſüdlichen zur nördlichen Hemisphäre<br/>
+wie 9:10 verhält.</p><br/>
+<p class="dta-p">Von den periodiſchen Veränderungen, welche der Druck<br/>
+der Atmosphäre erleidet, hatte 1665 <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/1069800295">James By</a></span></span> in London<br/>
+die erſte Idee; und in den Tropen fanden <span class="aq "><span title="Personenname">Varrin</span> &amp; <span title="Personenname"><a href="http://viaf.org/viaf/27369279">Claude</a></span></span><br/>
+zuerſt dieſe Variationen durch den Höhenſtand des Barometers<br/>
+1682. Unter dem Aequator wo ſie am ſtärkſten ſind, be-<br/>
+tragen ſie 1½‴, Paris <span class="sup ">3</span>/<span class="sub ">10</span>‴, Königsberg ⅒‴ und in Montpellier ¾‴<br/>
+nach den Unterſuchungen der Herren <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118510215">Besſel</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/122209575">Sommer</a></span>.</span></p><br/>
+<p class="dta-p">Dieſes große cosmiſche Phänomen, welches die Atmosphäre nur<br/>
+im Wechſel von 2 Stunden hat, iſt beſtimmten Geſetzen unter-<br/>
+worfen. Viele Unterſuchungen von <span title="H￼" class="dta-abbr">Herrn</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116299762">Bouvier</a></span></span> in Bogota<br/>
+haben gezeigt, daß der Mond keinen bemerkbaren Einfluß<br/>
+hierauf hat, denn von 9000 Beobachtungen folgt kaum ein<br/>
+Unterſchied von <span class="sup ">1</span>/<span class="sub ">100</span> Linie. Man hat lange geglaubt, daß<br/>
+dieſe Oscillationen auf Bergen unterbrochen würden, allein<br/>
+ſie bleiben ſich immer gleich wenn man ſowohl in die Höhebene<br/>
+von Quito 8–9000′ oder in die von Artiſane 12000′ hoch ſteigt.<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11948496X">Pictett</a></span></span> ſtellte dieſerhalb Beobachtungen im Kloſter des <span class="aq ">St.</span><br/>
+Bernhard an, und es ergab ſich, daß des Barometer in der-<br/>
+ſelben Stunde wo es in Genf ſenk, auf der <span class="aq ">St.</span> Bernhard ſtieg.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0382 : 376.|</span><br/>
+Barometerverſuche in der nördlichen Zone vom <span class="aq ">Prof. <span title="Personenname"><a href="http://d-nb.info/gnd/100055427">Brandes</a></span></span><br/>
+angeſtellt, geben eine Verſchiedenheit von 6–8‴ die gleich-<br/>
+zeitig in großen Strecken beobachtet wurden. Hiervon waren<br/>
+aber die Einwirkungen der Stürme die Urſache.</p><br/>
+<p class="dta-p">Die Stürme entſtehen da wohin ſie wehen, und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118534912">Fränklin</a></span></span><br/>
+fand daß die Nordſtürme in der ſüdlichen Hemisphäre an-<br/>
+fangen, indem eine Luftſchicht in der ſüdlichen Gegend aufſteigt<br/>
+und durch das Sollicitiren der andern Luftſchichten der Stürm be-<br/>
+ginnt. Etwas Aehnliches wurde von <span title="H￼" class="dta-abbr">Herrn</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">von Buch</a></span></span> bei Portugal<br/>
+beobachtet, wo die Veränderung des Windes da anfing wohin<br/>
+er ging. Die Veränderungen der Südoſtwinde in die <span title="Schreibfehler: Norſt-&#xA;oſtwinde" class="dta-corr">Nord-<br/>
+oſtwinde</span> verurſachen bei den Canariſchen Inſeln auf Grande<br/>
+Canaria die Erſcheinung, daß das Maximum der Wärme<br/>
+dort erſt in October eintritt. Schon <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/1013254422">Georg Glaſs</a></span></span> machte die<br/>
+Bemerkung, daß auf dem Pic ſtets Weſtwinde herrſchen.<br/>
+Daß die obern Luftſchichten ſich oft den untern entgegengeſetzt<br/>
+bewegen, beweiſt der Vulcan von St. Vincent, der nach Bar-<br/>
+bados die Aſche wirft, was nur durch obern entgegengeſetzten<br/>
+Luftſtrömungen möglich iſt.</p><br/>
+<p class="dta-p">Wenn die Cultur Einfluß auf die Winde hätte, ſo<br/>
+müßte ſie auch auf das ganze <span class="u ">Clima</span> einzelner Länder wirken,<br/>
+dies iſt aber wenigſtens ſo gering, daß es unbemerkbar iſt.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0383 : 377.|</span><br/>
+<p class="dta-p">Der Unterſchied der Oſt- und Weſtwinde auf das Clima<br/>
+iſt, daß erſtere kälter, letztern wärmer wehen. Nach 21<br/>
+jährigen Beobachtungen zu Paris verhält ſich dort die Quanti-<br/>
+tät der Oſtwinde zu der der Weſtwinde wie 23:70, alſo<br/>
+faſt wie 1:3. Hieraus ergiebt ſich, daß durch das Verherr-<br/>
+ſchen der Weſtwinde die Temperatur begünſtigt wird,<br/>
+und wäre das Verhältniß 1:7 ſo würde das Clima um<br/>
+2° wärmer ſein; dagegen würde die Zunahme das Oſtwindes<br/>
+natürlich einen entgegengeſetzten Effect hervorbringen. Es<br/>
+iſt auch nicht wahrſcheinlich, daß die Veränderungen der Cultur<br/>
+einen Einfluß auf die Temperaturverhältniſſe äußern ſollten,<br/>
+beſonders ſehen wir im Norden von Amerika, wo durch das<br/>
+Abhauen der Wälder und andern Veränderungen der Cultur<br/>
+durch größern Bevölkerung, ſich kein Unterſchied gezeigt hat.</p><br/>
+<p class="dta-p">Es giebt Perioden wo ſich plötzlich ſtarke Luftbe-<br/>
+wegungen einſtellen, wie die <span class="u ">Aequinoctialſtürme</span>. Dieſe<br/>
+Veränderungen der Luft ſtellen ſich beim Steigen der Sonne<br/>
+ſehr regelmäßig ein, verbreiten ſich über die ganze Erde,<br/>
+und dauern gegen 3 Wochen, 12 bis 15 Tage nach dem<br/>
+Aequinoctium nehmen ſie ihre Anfang. Man hat bisher noch<br/>
+keine Urſache darüber angeben können. Man hat geglaubt<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0384 : 378.|</span><br/>
+daß ſie in dem Weltraume ſelbſt ſein könne, indem gewiſſe<br/>
+große Linien da entſtänden wenn 2 mächtige magnetiſche<br/>
+Pole ſich einander gegenüber ſtehen. Wir ſind jetzt bald<br/>
+in der Zeit <span title="Original: /" class="dta-reg">(</span>März<span title="Original: /" class="dta-reg">)</span> wo es mit einer ſolchen Stellung.</p><br/>
+<p class="dta-p">Es iſt viel wahrſcheinlicher, daß es ein Effect des Auf-<br/>
+ſteigens der Luft iſt.</p><br/>
+<p class="dta-p">Bei der Schnelligkeit und Intenſität des Schalles habe<br/>
+ich noch vergeſſen zu erwähnen, daß die Licht- und Schallwellen<br/>
+in einem nahen Verhältniſſe ſtehen. So iſt man in der<br/>
+Schweiz beſorgt für Lawinen, wenn man des Nachts<br/>
+den Schall gut hört. Ebenſo erfolgt in der Regel Regen,<br/>
+wenn die Intenſität des Lichts und Schall's eintritt.<br/>
+Vielleicht hängt es mit dem aufſteigenden Luftſtrom<br/>
+zuſammen, da die Lichtwelle leichter zu uns gelangt.</p><br/>
+</div>
+<span class="dta-pb" style="padding-left:15em">|#f0385 : 379.|</span><br/>
+<div class="">   <div class="dta-head">4. Hydroſtatiſche Beſchaffenheit der Luft,<br/>
+Entwickelung <span class="u ">das Thaues</span> und Regens <span class="aq ">etc</span>.</div><br/>
+<hr/><br/>
+<p class="dta-p">Der Waſſergehalt der Luft iſt unaufhörlichen<br/>
+Veränderungen unterworfen, die theils von der beſtändigen<br/>
+Bewegung, welche die ungleiche Vertheilung des Wärme-<br/>
+ſtoffs in ihr verurſacht, theils von dem geringere ſpecifiſchen<br/>
+Gewichte der waſſergashaltigern Luft, und theils von der<br/>
+ungleichen Temperatur der verſchiedenen Stellen des Erd-<br/>
+bodens und der Luftſchichten, herrühren.</p><br/>
+<p class="dta-p">Hörte die Sonne auf zu ſcheinen, ſo würde der tropfbar-<br/>
+flüſſige Theil der Erdmaſſe in der vollkommenſten Ruhe bleiben,<br/>
+und die Luft ſtets eine unveränderliche Menge von Waſſer-<br/>
+gas enthalten, welche der Expanſionskraft des Waſſers<br/>
+bei der beſtehenden Erdtemperatur entſpräche, wenn dieſe<br/>
+nicht etwa ſo abſolut kalt wäre, daß die Expanſionskraft<br/>
+0 würde. – So aber treffen die Sonnenſtrahlen unſere<br/>
+Erde, werden von der feſten Maſſe derſelben zerſetzt,<br/>
+und laſſen dabei ihren Wärmeſtoff fahren; dadurch wird die<br/>
+untern Schicht der Atmosphäre ſtark ausgedehnt und muß in<br/>
+die Höhe ſteigen, um einer kälteren Luft Platz zu machen,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0386 : 380.|</span><br/>
+welche überall in ihn niederſinkt und eine Art Bewegung<br/>
+in der Luft verurſacht. Dabei erwärmen die Sonnenſtrahlen<br/>
+die verſchiedenen Theile der Erdoberfläche ungleich ſtark, das<br/>
+Land mehr, als das Waſſer, welches den größten Theil<br/>
+der Sonnenſtrahlen zurückwirft, wodurch alſo eine <span class="u ">zweite,</span><br/>
+ſtärkere Bewegung der Luft verurſacht wird. Endlich wird<br/>
+auch der mittlere Theil der Erde ſtark erwärmt, während<br/>
+um die Pole herum eine ſtrenge Kälte herrſcht, und hieraus<br/>
+muß mithin die ſtärkſte Bewegung in der Atmosphäre<br/>
+entſtehen. Denn über den erwärmten Erdſtrichen muß<br/>
+die warme Luft ſtets emporſteigen und allmählig von<br/>
+der Luft aus den kälteren Gegenden wieder erſetzt werden,<br/>
+die höhern, wärmern und leichtere Luftſäule welche empor-<br/>
+ſtieg, muß ſich aber ſeitwärts wieder herabziehen und den<br/>
+Gegenden zuſtrömen, wo die kältere Luft herkam.</p><br/>
+<p class="dta-p">Die Luft bleibt über der Oberfläche des Erdbodens<br/>
+und der Seen niemals ſo lange ſtehen, daß ſie ſich dem<br/>
+höhſten Grade der Feuchtigkeit nähern könnte. Die Quan-<br/>
+tität iſt in der temperirte Zone natürlich geringer, da ſie hier<br/>
+0,78, in den Tropen dagegen 0,88 beträgt. – Dieſe<br/>
+Feuchtigkeit wird, durch Verdunſtungen bis zu einem gewiſſen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0387 : 381.|</span><br/>
+Grade feuchten Luft durch die mehr oder minder ſtarken<br/>
+Bewegungen der Atmosphäre in Regionen des Luftkreiſes<br/>
+oder nach Gegenden der Erde geführt, wo ſie abgekühlt<br/>
+wird und den <span title="Original: /" class="dta-reg">(</span>dieſer Abkühlung<span title="Original: /" class="dta-reg">)</span> entſprechenden Theil ihres<br/>
+Waſſers abſetzt, welcher dann Wolken, Regen, Nebel<br/>
+und dergl. m. bildet. Strömt nun dieſe, durch Erkältung von<br/>
+ihrer vorigen Feuchtigkeit befreiete Luft wiederum nach<br/>
+wärmeren Ländern oder den unteren Regionen der At-<br/>
+mosphäre wieder zu, ſo iſt ſie, im Verhältniß der Temperatur<br/>
+der letzteren, im hohen Grade trocken und kann ſich von neuem<br/>
+wieder mit Waſſergas mengen. Wegen dieſer unauf-<br/>
+hörlichen Veränderungen kann der Gehalt den Luft an<br/>
+Waſſergas niemals ſo gleichförmig ſein, wie ihr Gehalt<br/>
+an beſtändigen gasförmigen Gemengtheilen iſt, und durch<br/>
+dieſen Umſtand werden Quellen, Flüße, Seen und zu-<br/>
+gleich die ganze lebende Natur erhalten.</p><br/>
+<p class="dta-p">Um die Bildung der Wolken und die Entſtehung<br/>
+des Regens richtig zu begreifen, muß man ſich vor-<br/>
+ſtellen, daß beides über einem großen, gleichförmig<br/>
+erwärmten Landſtriche und bei einer vollkommenen Ruhe<br/>
+in den oberen und unteren Regionen der Atmosphäre vor ſich gehe.  –<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0388 : 382.|</span><br/>
+Das Waſſer der Seen, Flüße und das feuchten Erd-<br/>
+reichs verdunſtet mit der, ſeiner Temperatur ange-<br/>
+meſſenen Expanſionskraft; die Luft aber, welche das<br/>
+hierbei entſtehende Waſſergas aufnimmt, wird theils<br/>
+durch deſſen Beimengung, theils durch die Erwärmung vom<br/>
+Sonnenlichte, leichter, und muß hierdurch aufſteigen und<br/>
+einer weniger feuchten Luft Platz machen. Sie zieht<br/>
+ſich auf dieſe Weiſe nach und nach bis zu Luftſchichten<br/>
+empor, wo ſie ſo ſehr abgekühlt wird, daß das Waſſer,<br/>
+welches ſie mit ſich führt, ſeine Gasgeſtalt nicht mehr be-<br/>
+halten kann und in Geſtalt eines Dampfes niedergeſchla-<br/>
+gen wird. Je wärmer die Luft und je weniger ſie<br/>
+mit Waſſer geſättigt iſt, in deſto größerer Höhe geht<br/>
+dieſer Niederſchlag vor ſich, welcher nur dadurch ſichtbar wird<br/>
+und Wolken bildet, daß die Maſſe der Dämpfe theils<br/>
+von der Sonne erleuchtet wird, theils dieſe verdeckt.<br/>
+Je dichter die Dämpfe ſich zuſammenhäufen, deſto weniger<br/>
+durchſichtiger werden ſie, und deſto dunkler erſcheinen<br/>
+ſie aus.</p><br/>
+<p class="dta-p">Die Wolken wachſen nach und nach, und erhalten ſich,<br/>
+weil die kleinen Bläſchen mit der Luft ziemlich gleiches<br/>
+ſpecif. Gewicht haben, einige Zeit in den höheren Regionen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0389 : 383.|</span><br/>
+der Luft ſchwebend. Haben ſie endlich einen gewiſſen<br/>
+Grad von Dichtigkeit erlangt, ſo fangen ſie allmählig an,<br/>
+ſich zu ſenken, und wenn die Dämpfe nun wieder in eine<br/>
+niedrigere, wärmere Luftſchicht kommen, werden ſie nach<br/>
+und nach wieder aufgelöſt, bis die Luft ihr Maximum<br/>
+von Feuchtigkeit erreicht hat. Man ſieht dabei deutlich,<br/>
+wie ganze Wolken ſich ſenken, ohne daß noch ein Tropfen<br/>
+Regen gefallen iſt. Die Luft zwiſchen der unteren<br/>
+Fläche der Wolken und der Erde wird dadurch ihrem höch-<br/>
+ſten Grade von Feuchtigkeit nahe gebracht, daß die Wolken<br/>
+die Sonne verdecken, dieſe Luft dadurch abgekühlt und die<br/>
+Expanſionskraft des Waſſers vermindert wird. Hat die<br/>
+Luft endlich dies Maximum erreicht, ſo fängt es an zu<br/>
+regnen. Beobachtet man dabei es Hygrometer, ſo ſieht<br/>
+man, wie die Feuchtigkeit der Luft ſich nach und nach ver-<br/>
+mehrt, bis ſie aufs Aeußerſte gebracht wird, wo dann einige<br/>
+Augenblicke vorher oder nachher die erſten Regentropfen fallen.</p><br/>
+<p class="dta-p">Die Regentropfen werden durch die kleinen Luftbläſchen<br/>
+gebildet, die, wenn ſie bei ihrem Falle von der feuchten<br/>
+Luft nicht mehr aufgelöſt werden, einander immer mehr<br/>
+und mehr berühren und kleine Waſſerkugeln bilden.<br/>
+Dieſe nahmen beim Niederfallen an Größe zu, theils durch<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0390 : 384.|</span><br/>
+die Vereinigung mit andern Bläſchen und Tropfen, theils<br/>
+dadurch, daß ſie gewöhnlich aus einer kälteren in eine wärmer<br/>
+Luftregion fallen, und ſo wie jeder andere kalte Körper in<br/>
+warmer und feuchter Luft, während des Fallens, Waſſer<br/>
+an ihrer Oberfläche niederſchlagen. Deshalb ſind in Sommer<br/>
+die Tropfen beim Anfange eines Regens größer, und<br/>
+werden nachher allmählig kleiner. Im Winter hingegen<br/>
+und in den kälteren Jahreszeiten, wo der Unterſchied zwiſchen<br/>
+der Temperatur der oberen und unteren Luftſchichten geringer<br/>
+iſt, oder wenn, wie zuweilen geſchieht, die in der Höhe<br/>
+niedergeſchlagenen Waſſerdünſte zum Theil die Temperatur<br/>
+des Landſtrichs, aus welchem ſie hergeführt worden ſind, noch<br/>
+beibehalten, und daher wärmer als die untern Luft ſind,<br/>
+iſt der Unterſchied weniger merklich. Bei Stürmen, Ge-<br/>
+witter und Regenwetter kommen ebenfalls vielfältige Ver-<br/>
+änderungen vor. – Ganz allmählig ſchlägt ſich auf dieſe<br/>
+Weiſe die Wolke gänzlich nieder, der Himmel heitert<br/>
+ſich auf, die Sonne kommt wieder zum Vorſchein, und die<br/>
+vom Regen abgekühlte Luft wird wieder erwärmt. Das<br/>
+Hygrometer zeigt nun ein ſchnelles Zunehmen der Trocken-<br/>
+heit, weil das Waſſer, womit die Luft während des<br/>
+Regens geſättigt war, durch die kalten Regentropfen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0391 : 385.|</span><br/>
+gefällt wurde, und je kälter der Regen war, deſto trockner<br/>
+wird die Luft nachher, aus leicht begreiflichem Grund.</p><br/>
+<p class="dta-p">Dies ſind die Grundregeln für den Regen überhaupt, und<br/>
+faſt ganz ſo beſchaffen iſt der Regen, welcher nach einem<br/>
+aufgeſtiegenen Morgenthaue fällt. Allein höchſt ſelten trägt<br/>
+ſich dieſes Phänomen bei vollkommener Windſtille und ſo ein-<br/>
+fach zu, als ich es erwähnt habe. Die beſtändigen Be-<br/>
+wegungen der Atmosphäre und die Elektricitäten bringen<br/>
+Veränderungen darin hervor, die zwar zum Theil leicht be-<br/>
+greiflich ſind, zum Theil aber bei dem jetzigen Stande un-<br/>
+ſerer Kenntniße unerklärlich bleiben.</p><br/>
+<p class="dta-p">Gewiſſe Wolken bringen eine eigenthümliche Erſcheinung<br/>
+hervor, welche wir Donner nennen. Dieſe Wolken zeigen<br/>
+von ihrer Entſtehung an Merkmals von freier Elektricität;<br/>
+dieſe wächſt aber zuweilen augenblicklich zu einem außer-<br/>
+ordentliche Grade elektriſcher Ladung, entweder zwiſchen<br/>
+verſchiedenen Wolkentheilen, oder zwiſchen ihnen und dem<br/>
+Erdboden, an, und entladet ſich durch einen ſtarken Funken,<br/>
+welcher zuweilen ungemein große Sprünge macht und das<br/>
+eigentliche Phänomen des Donners oder Donnerſchlages aus-<br/>
+macht. Der Regen der gewöhnlich dieſe Erſcheinungen der Elek-<br/>
+tricität begleitet, nennen wir Gewitterregen. Die Gewitter-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0392 : 386.|</span><br/>
+wolken kommen oft ſehr ſchnell heran, ziehen gegen den herr-<br/>
+ſchenden Wind, und haben oft heftige Sturmwinde zu Vor-<br/>
+läufern, welche ganz ſchmale Erdſtreifen einnehmen. Ihre Ent-<br/>
+ſtehung, ihr Zuſammenhang mit der Elektricität, ob ſie durch<br/>
+dieſe allein oder <span title="Schreibfehler: durch2 nur1" class="dta-corr">nur durch</span> Mitwirkung derſelben gebildet<br/>
+werden u. ſ. w. iſt uns gänzlich unbekannt. Manche haben<br/>
+die ungereimte Vermuthung aufgeſtellt, der Knall des Donners<br/>
+werde in den höheren Luftſchichten durch die Entzündung eines<br/>
+Gemenges von Waſſerſtoffgas und atmosphäriſcher Luft,<br/>
+mittelſt des elektriſchen Funkens, hervorgebracht, und der<br/>
+herabfallende Regen werde dadurch erzeugt. Allein es laſſen<br/>
+ſich die augenſcheinlichſten Beweiſe gegen dieſe Behauptung<br/>
+aufſtellen, die ſich blos auf die Aehnlichkeit des Schalles<br/>
+und auf den Umſtand gründet, daß die Gewitterwolken<br/>
+Regen gaben. –</p><br/>
+<p class="dta-p">Ein Regen wird gewöhnlich durch das Fallen eines Baro-<br/>
+meters angekundigt. Dies rührt wahrſcheinlich daher,<br/>
+daß die Luft in dem Maaße, als ihre Feuchtigkeit zu-<br/>
+nimmt, leichter, folglich die Atmosphäre höher, als bei<br/>
+trockner Luft, wird, wodurch der obere Theil der feuchten<br/>
+Luftſäule ſich ſeitwärts niederſenkt und folglich keiner<br/>
+ſo hohen Queckſilberſäule, als vorher, das Gegengewicht halten<br/>
+kann. Man hat auch, wiewohl vielleicht weniger richtig,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0393 : 387.|</span><br/>
+den Regen für eine Folge von der Verdünnung der Luft<br/>
+erklärt, welche das Fallen des Barometers zu erkennen<br/>
+giebt. – –</p><br/>
+<p class="dta-p">Auf der Andeskette nimmt die Wärme merklich ab, ſo<br/>
+bald man in die Wolken ſteigt, und von 7200′ an iſt man<br/>
+faſt beſtändig in Nebel gefüllt. Von der Meeresfläche<br/>
+bis zu dieſen Regionen iſt die Abnahme der Wärme aus gering<br/>
+oberhalb aber fangen die Wolken das Licht und die Wärme<br/>
+der Sonne auf. Die Gipfel hohen Berge müſſen ſich mehr<br/>
+abkühlen, ſie entziehen der von unten aufſtrömenden wärmere<br/>
+Luft einen Theil Wärme, wodurch ein Nebel entſteht,<br/>
+der ſie gleich einem Hute bedeckt, was man ſo häufig be-<br/>
+merkt, und lange deren hängen bleibt. Wenn zwiſchen<br/>
+einer Bergkette und der Küſte eine große Ebene iſt, ſo<br/>
+regnet es in dieſer ſelten, weil das Gebirge die Wolken<br/>
+anzieht, wie es in Peru beſonders und in Afrika der<br/>
+Fall iſt. Durch die Aufſtrömungen der Luftſchichte auf ſolchen<br/>
+Ebenen kommt es nicht leicht zum regnen, die Wolken werden<br/>
+gleichſam weggeſchoben, bis ſie an Berge kommen, wo ſie<br/>
+ſich niederſchlagen.</p><br/>
+<p class="dta-p">Die Form der Wolken iſt verſchieden und richtet<br/>
+ſich häufig<span class="dta-metamark" title="metamark">?</span> nach der Form der Erde. Die höchſten Wolken<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0394 : 388.|</span><br/>
+ſind die, die man Schäfchen nennt, ſtill ſtehen, und in<br/>
+den Tropen wahrſcheinlich an 27,000′ hoch ſtehen. Es ſind<br/>
+dies dieſelben Wolken welche <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118692844">Fränklin</a></span></span> in Island<br/>
+leuchten ſah. Bei uns ſind die Wolken in der Sommer-<br/>
+wärme 2800–3000′ hoch, in den Tropen dagegen 4–5000′.</p><br/>
+<p class="dta-p">Wenn man von Carracas oder der Andeskette aus,<br/>
+da wo die Wälder der <span class="aq ">Cinchonen</span> anfangen, bis zur Höhe<br/>
+von Amtiſane die 12000′ hoch iſt, hinanſteigt, ſo ſieht man<br/>
+mehrere Schichten der Wolken aufeinander folgen, ſo daß die<br/>
+verſchiedenen Hochebenen auch verſchiedene Wolkenſchichten haben.</p><br/>
+<p class="dta-p">Auf dem Meere finden ſich ſelbſt da Wolken wo kleine<br/>
+Inſeln ſind, weil die Temperatur dieſer kleinen Eilande,<br/>
+ſchon eine elektriſche Spannung äußert. Für die Schiffarth<br/>
+iſt dies wichtig, indem man ſogar flaches Land in der<br/>
+Ferne dadurch erkennen kann, die Wolken ſtehen oft wie<br/>
+auf Bergen 5–6000′ hoch, und dies Phänomen zeigt ſich<br/>
+oft ſelbſt bei Sandbänken.</p><br/>
+<p class="dta-p">Die Wolken wirken auf die Atmosphäre ſowohl Kälte<br/>
+als Wärme erregend. Kälte erregend, weil ſie die<br/>
+Intenſität des Lichts vermindern, und ſo der Sonne die<br/>
+Wirkung benehmen, wie es in Linie auffallend iſt, wo das<br/>
+Thermometer auf 12° ſteht, und doch in den angrenzenden Ländern<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0395 : 389.|</span><br/>
+nie unter 17–18° ſinkt. Ihre Wärme erregende Kraft<br/>
+iſt aber weit größer, weil ſie die Ausſtrahlung der<br/>
+Erdwärme hindern, damit dieſe ſich nicht ſo bald in das<br/>
+Weltall ausbreitet. Daher ſieht man auf das Thermo-<br/>
+meter ſteigen, wenn eine Wolke am klaren Himmel<br/>
+vorüber zieht.</p><br/>
+<p class="dta-p"><span class="u ">Thau.</span> Der Unterſchied zwiſchen der Temperatur des<br/>
+Tages und der Nacht verändert den Waſſergehalt der<br/>
+Luft; aber ſtatt daß das Waſſergas ſich in Geſtalt<br/>
+eines Dampfes in der Luft niederſchlagen ſollte, ſetzt es<br/>
+ſich auf dem Erdboden ab und die Luft behält ihre Durchſich-<br/>
+tigkeit. Es iſt ſchwierig, alle beim Niederfallen des Thaues<br/>
+wirkenden Kräfte zu beſtimmen; ſeine Grundurſache aber iſt<br/>
+die Abkühlung, und daß er ſich <span class="u ">nicht in der</span> Luft, ſondern<br/>
+auf dem Erdboden niederſchlägt, kommt von der Anziehung<br/>
+der feſten Körper zur Waſſer, und von dem Umſtande<br/>
+her, daß der Niederſchlag in der, dem Erdboden am näch-<br/>
+ſten gelegene Luftſchicht, als der wärmſten und waſſer-<br/>
+reichſten, ſeinen Anfang nimmt. Das Waſſergas der<br/>
+oberen Luftſchichten breitet ſich dann allmählig nach<br/>
+der untern, als nach einer von Waſſergas freieren Luft,<br/>
+aus, und daher kommt es, daß der Niederſchlag nach<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0396 : 390.|</span><br/>
+unten ſeinen Fortgang hat. Die Anziehung der feſten<br/>
+Körper zum Waſſer wird übrigens dadurch bewieſen,<br/>
+daß ſich der Thau nicht auf alle Körper gleichförmig an-<br/>
+legt. Nichtleiter für den Wärmeſtoff werden meiſt davon<br/>
+befeuchtet, Leiter hingegen weniger, und Metalle werden<br/>
+ſehr ſelten davon feucht, wenn es nicht ungewöhnlich ſtark<br/>
+gethaut hat. Man hat ſich die Erklärung dieſes Phäno-<br/>
+mens durch die Beobachtung erſchwert, daß der Erdboden<br/>
+beim Fallen des Thaues immer um einen oder einige<br/>
+Grade wärmer als die Luft ſei; dies verhält ſich auch<br/>
+für eine Tiefe des Erdbodens von einem oder ein<br/>
+Paar Zollen wirklich ſo, allein die oberſte Kruſte des<br/>
+Bodens und die darauf ſtehenden Gewächſe erkalten<br/>
+durch Ausſtrahlen des Wärmeſtoffs, und folglich mit<br/>
+weit größerer Schnelligkeit, als die Luft. Herr<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/124462286">Wells</a></span></span> hat durch eine Reihe ſehr intereſſanter Verſuche<br/>
+bewieſen, daß das Niederſchlagen des Thaues durchaus eine<br/>
+Wirkung der, durch Ausſtrahlung von Wärmeſtoff ent-<br/>
+ſtehenden Abkühlung ſei. Er legte z. B. des Abends<br/>
+eine abgewogene Menge Wolle unter freien Himmel,<br/>
+und neben dieſe eine andere gleich große und zu einer<br/>
+gleich großen Oberfläche ausgebreitete Menge, ſtellte<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0397 : 391.|</span><br/>
+aber über die letztere einen Tiſch. Die unbedeckte<br/>
+Wolle hatte weit mehr an Gewicht gewonnen, als die<br/>
+unter dem Tiſche liegende, weil zwiſchen der letztern<br/>
+und dem Tiſche eine gegenſeitigen Ausſtrahlung von Wärme-<br/>
+ſtrahlen ſtattgefunden hatte, wodurch dieſe Wolle weniger<br/>
+ſchnell abgekühlt worden war, als die offen unter freiem<br/>
+Himmel ſtehende, deren Wärmeſtrahlen, ohne erſetzt zu<br/>
+werden, geradezu fort gegangen waren. Daher fällt der<br/>
+Thau ſehr oft bei klaren Abenden in größter Menge, ſeltener<br/>
+aber und nur in geringer Menge bei wolkigem Himmel,<br/>
+weil in dieſem Falle die Wärmeſtrahlen des Erdbodens<br/>
+durch die Wärmeſtrahlen der über ihm befindlichen Wolken-<br/>
+ſchichten erſetzt werden. Metalle und wärmeleitende<br/>
+Körper bedecken ſich nicht mit Thau, ſo lange ſie von der<br/>
+Luft oder ihrer Unterlage die Wärme erſetzen, welche ſie<br/>
+durch Radiation verlieren.</p><br/>
+<p class="dta-p">Wenn die Luft am Tage ſo wenig Waſſer enthält,<br/>
+daß es durch ſeine Expanſionskraft bei der Temperatur<br/>
+der Nachtluft ſich in derſelben erhalten kann, ſo fällt kein<br/>
+Thau. Man behauptet auch ferner, daß ein großer Theil<br/>
+des Thaues von den Ausdünſtungen der Gewächſe herrühre,<br/>
+welche von der Luft nun nicht aufgenommen werden könnten.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0398 : 392.|</span><br/>
+Dies iſt aber wenig glaublich, denn dieſe Ausdünſtungen<br/>
+müßten denn in flüſſiger Geſtalt abgeſondert werden,<br/>
+und der Thau würde ſich in ſolchen Fällen, wo die Luft<br/>
+ihr Maximum von Feuchtigkeit aufgenommen hat, auch um<br/>
+Mittag einſtellen. Man hat Thau auf Pflanzen unter<br/>
+Glasglocken gefunden, die man über Nacht im Freien<br/>
+gelaſſen hatte. Dieſer Thau entſteht auf dieſelbe Weiſe,<br/>
+wie in freier Luft, und kann eben ſo ſtark fallen, weil die<br/>
+wärmere Luft unter der Glasglocke mehr Feuchtigkeit<br/>
+enthält. Daß er nicht von den Ausdünſtungen der Pflanzen<br/>
+herrühre, ſieht man deutlich daraus, daß die Luft unter<br/>
+der Glocke allemal ihr Maximum von Feuchtigkeit erreicht<br/>
+haben muß, weil ſie wenig gewechſelt werden kann, und<br/>
+die Ausſonderungen der Pflanzen ſie in dieſem Falle<br/>
+mit einem beſtändigen Thaue überziehen würden. –</p><br/>
+<p class="dta-p">Herr <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/124462286">Wells</a></span></span> fand ferner, daß Körper welche eine<br/>
+große Dünnigkeit haben, als Wolle, Papierſtreifen, Blätter<br/>
+<span class="aq ">etc.</span> über einander gelegt, bei einen wolkenfreien Himmel<br/>
+ſich bei + 6–7° auf 0 erkälteten. Metalle nur <span title="Schreibfehler: nur" class="dta-corr">[…]</span> dagegen<br/>
+bei 2°. Hierauf beruht auch die Kälte erregende Kraft<br/>
+der Waldungen, weil die horizontale Lage der Blätter<br/>
+das Ausſtrahlen der Wärme befördert, und die Feuchtigkeit<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0399 : 393.|</span><br/>
+der Luft ſich an der Oberfläche als kältern Körper nieder-<br/>
+ſchlägt. Auch die Theorie des Eismachens in Indien<br/>
+gehört hierher, in dem ſie bei einer Temperatur unter<br/>
++6°, des Nachts Waſſer in poröſen Steinkrügen dem<br/>
+wolkenfreien Himmel ausſetzen, wodurch das Waſſer<br/>
+nach auſſen fortwährend verdunſtet, wobei der umgebende<br/>
+Wärmeſtoff gebunden und gegen den wolkenfrein Himmel<br/>
+ausſtrahlt, innerlich aber ſo abgekühlt wird, daß es<br/>
+zum Theil friert. – Hiermit ſteht auch die Mei-<br/>
+nung der Landleute in Verbindung, daß nämlich der<br/>
+rothe Mond im Anfange Mai Kälte bringt.</p></div></div></div></div></div></body></html>

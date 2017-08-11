@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><span class="dta-supplied">[38. Vorlesung, 15.03.1828]</span><div class=""><div class=""><div class=""><div class=""><p class="dta-p">Dieſem folgt nun die Gliederung der Continente und<br/>
+Bergketten, da die höhern Berge ſich ſpäter als die ter-<br/>
+tiären Gebirge haben. Dies ſteht in ſehr inniger Ver-<br/>
+bindung mit der Vertheilung der Climate und giebt einen<br/>
+Uebergang der Climatologie in die Geognoſie. Die<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0292 : 286.|</span><br/>
+Temperaturvertheilung hängt von dem Verhältniße der<br/>
+feſten und flüßigen Theile ab. Wenn Afrika uns<br/>
+nicht in denſelben Graden gegen Süden läge, ſo würden<br/>
+wir das kältere Clima vom nördlichen Aſien theilen,<br/>
+deſſen öſtlicher und ſüdlicher Mangel an ſtarren Theilen,<br/>
+dies kältere Clima bedingt.</p><br/>
+<p class="dta-p">Endlich folgt der letzte Theil der Geognoſie, welcher<br/>
+des Anſehen der Oberfläche unſres Planeten, die äußere<br/>
+Form deſſelben in der Gliederung der Continente und<br/>
+Bergketten, und die ſie umgebendem Waſſer- und Luft-<br/>
+Oceane in ſich faßt. Es iſt dies der Theil welcher in<br/>
+einem ſo innigen Zuſammenhange mit der Geographie<br/>
+ſteht, die in den geiſtreichen Anſichten des <span title="H￼" class="dta-abbr">Herrn</span> <span class="aq ">Prof:<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/11860130X">Ritter</a></span></span> ſo ſchön entwickelt iſt; und iſt auch der anmuthig-<br/>
+ſte Theil, da er mit einem Blicke das Bild erkennen<br/>
+läßt, wie die entwilderten Naturſcenen nach den Be-<br/>
+dürfnißen der Völker zur Cultur, und wiederum zur<br/>
+jetzigen äußern Bildung beigetragen haben.</p><br/>
+<p class="dta-p">Die Oberfläche unſers Planeten erhält ihre Ge-<br/>
+ſtalt von den feſten und ſtarren Theilen der Conti-<br/>
+nente und den Meern. Der Contact beider beſtim̃t<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0293 : 287.|</span><br/>
+die Umgrenzung, Richtung und Lage des einen zu dem<br/>
+andern. So finden ſich kleine Becken im Innern der ſtarren<br/>
+Theile, von denen ſelbſt einige tiefer als das Niveau<br/>
+des Meeres ſind, wie es von dem caſpiſchen Meere er-<br/>
+mittelt iſt. Andere dagegen, wie die See von Tiſchelka<br/>
+im höhern Theile des ſüdlichen Peru, breiten ihr Becken<br/>
+aus in einer Höhe von 8–9000′ über dem Meere, in dem<br/>
+ſich Fiſche von eigener Geſtalt finden, und dort in einer<br/>
+Region leben, welche 3 mal höher als die Wolken-<br/>
+ſchichten der jetzigen Jahreszeit iſt. Dieſe Seen zeichnen<br/>
+ſich auch von den andern durch ihre chemiſche Natur aus<br/>
+da ſie Beſtandtheile enthalten, die von organiſchen Stoffen<br/>
+und Auflöſung der Gebirgsarten herrühren, durch die Bäche<br/>
+ihnen zu geführt wurden, und bei dem Mangel des Abflußes<br/>
+ſich ſeit Jahrtauſenden in ihnen anhäuften, auch enthalten<br/>
+ſie vorzüglich Salze. Die See Dſchaka von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119426943">Klapperton</a></span></span><br/>
+in Afrika gefunden, iſt wahrſcheinlich auch eine von dieſen.<br/>
+Die See Catarigue in Venezuela enthält ſalzſauren<br/>
+Kalk und zwar ziemlich frei von andern Subſtanzen.<br/>
+Auſſer dieſen giebt es noch ſchmale lange Waſſerbecken,<br/>
+die durch Bifurcationen und anaſtomoſe Zertheilung in große<br/>
+Ebenen Meſepotaliden oder große Inſeln bilden, die ganz<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0294 : 288.|</span><br/>
+durch ſolche Waſſerverzweigungen von einander getrennt<br/>
+ſind. Die größte dieſer Inſeln iſt die, welche der Euphrat<br/>
+und Tigris einſchließt, da der Perſiſche Meerbuſen beide<br/>
+Flüſſe verbindet. Eine andere iſt die neu ſpaniſche J.<br/>
+Jucanan, die durch den einen Arm des Orinoko, der in<br/>
+den Rio Negro geht und der ſich wieder in den Amazonen-<br/>
+ſtrom ergießt, gebildet wird. Die Breite dieſer Becken<br/>
+ſind oft ſo beträchtlich, daß ſie ſelbſt die Wanderungen<br/>
+der Völker hemmten, und ſo die Natur den Drang und<br/>
+des Fortſchreiten ganzer Nationen ſteigerte, durch einen<br/>
+Damm der Hinderniſſe ihrer ſonſt nicht aufzuhaltenden<br/>
+Bewegungen. Einige von ihnen in Amerika haben eine<br/>
+Breite von 30, 40,000′, und mehrere die ſich in Golfe<br/>
+ausdehnen erreichen eine Breite bis zu 30 Meilen.<br/>
+Dieſe Golfe enthalten aber größtentheils noch ſüßes<br/>
+Waſſer, da die Ebbe und Fluth den Ausfluß immer<br/>
+wieder zurücktreibt und nur weniges Seewaſſer mit<br/>
+hineintrit, und bei der weiten Fläche verdunſtet das<br/>
+meiſte das von den Strömen zugeführten Waſſers.</p><br/>
+<p class="dta-p">Die Wichtigkeit des Waſſers iſt um ſo größer<br/>
+da es 4 mal ſo viel Sauerſtoff enthält als die Atmosphäre,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0295 : 289.|</span><br/>
+und bedingt durch ſein Daſein auf der Erde ein or-<br/>
+ganiſches Leben, wie es nicht auf dem Monde ſein<br/>
+kann, weil alle Beobachtungen darin übereinſtimmen<br/>
+daß es dort fehlt. Die Exiſtenz des Waſſers und<br/>
+der Luft iſt für den Organismus nothwendiger als<br/>
+das Sonnenlicht, denn einige Organiſationen können ja<br/>
+ohne Licht vegetiren, das Leben von Pflanzen und<br/>
+Thieren in tiefen Schichten ſind Bärgen dafür.</p><br/>
+<p class="dta-p">Unſer Planet hat bekanntlich 2 Umhüllungen,<br/>
+als Luft und Waſſer, eine allgemeine in der At-<br/>
+mosphäre und eine partielle in dem Ocean. Je höher<br/>
+wir ſteigen um ſo weniger thieriſches Leben findet<br/>
+ſich, und die hohen Gipfel der Berge ſind nur einzeln<br/>
+von Geiern, Adlern, dem Condor, die in Peru bis 18,000′<br/>
+hoch ſich emporſchwingen, und ferner von Inſecten be-<br/>
+ſonders Schmetterlingen belebt. Letztere haben aber<br/>
+nicht ihren Wohnort in dieſer Höhe, ſondern geben ein<br/>
+Beiſpiel von der Aſcenſion der Luftſtrömungen neben<br/>
+den Gebirgen hin, wodurch ſie mit in die Höhe fort-<br/>
+geriſſen werden. Herr <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/101165250">Bousſingault</a></span></span> der den<br/>
+Dieſilin bei Carracas von neuem gemeſſen hat, da man<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0296 : 290.|</span><br/>
+glaubte daß er nach dem Erdbeben geſunken ſei, aber<br/>
+dieſelbe Höhe von 1500 Toiſen wie meine Meſſungen<br/>
+ergeben fand, beobachtete auch in jener Höhe durch<br/>
+die Luftſtrömungen hinaufgehobene Schmetterlinge und<br/>
+Grashalme, und der ausgezeichnete Botaniker Herr<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/115674667">Kunth</a></span>,</span> erkannte in letztere eine neue ziemlich ent-<br/>
+fernt davon wachſende Art der Gattung <span class="aq ">Kyllingia.</span></p><br/>
+<p class="dta-p">Der erſte Schnee welchen man im hohen Norden an-<br/>
+trifft, und ſelbſt bei uns ſich fortpflanzt, iſt mehr im<br/>
+Beweis dafür, daß organiſche Anfänge in der Luft<br/>
+vorbereitet werden können, da es wahrſcheinlich iſt,<br/>
+daß ſich die Subſtanz erſt nachdem der Schnee gefallen,<br/>
+entwickelt.</p><br/>
+<p class="dta-p">Dürre, Clima und Bewohnbarkeit hängen gemein-<br/>
+ſchaftlich ab, von der Verbindung der Uebereinſtimmung<br/>
+und dem Wechſel des Meeres mit den Continenten<br/>
+Climatologie und Geographie ſtehen in einem einigen<br/>
+Verhältniſſe zu der Geognoſie, und dieſe 3 bilden<br/>
+ein Ganzes. Das Reſultat des Zuſammenwirkens<br/>
+der trocknen Erde mit dem Flüſſigen, bietet das<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0297 : 291.|</span><br/>
+mannigfaltig Gegliederte dar, und dies bedingt wieder<br/>
+auf eine mannigf. Art das Clima durch Erwärmung<br/>
+und die wäſſrigen Theile in der Atmosphäre. Die<br/>
+Durchſichtigkeit des Luftkreiſes iſt nicht von der Quan-<br/>
+tität, ſondern von der Beſchaffenheit der Fruchtigkeit<br/>
+in der Luft bedingt, ob dieſe nämlich ganz aufgelöſt<br/>
+oder zu Wolken verdichtet iſt. Die Wolkenſchichten<br/>
+ſind ſo nicht blos eine Urſache der Erkältung, indem ſie<br/>
+die Strahlen der Sonne hemmen, ſondern auch Urſache der<br/>
+Erwärmung, weil ſie das Auſſtrahlen der Wärme des<br/>
+Erdkörpers verhindern, weshalb die drückenſte und ſchwühlſte<br/>
+Luft heißer Sommertage, uns bei bewölkten Himmel am<br/>
+beſchwerlichſten fällt. Die mehr oder weniger lichtſchwächende<br/>
+Kraft der Atmosphäre und die Durchſichtigkeit der Schichten,<br/>
+ſind die Urſachen der Begünſtigung des Clima's mancher Ge-<br/>
+genden. Wenn es gewiß iſt, daß die Geſtalt der Schich-<br/>
+tungen und ihre Lage über die naturhiſtoriſchen Zeiten hieraus<br/>
+fallen, ſo iſt es eben ſo gewiß, daß ganze Continente durch<br/>
+ihre Hebung in jenen Zeiten ihre jetzige Lage erhielten,<br/>
+und die Beſtandtheile lehren uns, wie die Climata hierbei<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0298 : 292.|</span><br/>
+mitgewirkt haben. Nach der Erhärtung haben die<br/>
+elaſtiſchflüſſigen Kräfte mehr gegen die nördliche He-<br/>
+misphäre gewirkt, was vielleicht eine Störung des Gleich-<br/>
+gewichts veranlaßte. In Amerika iſt die neu oxydirte<br/>
+Erdrinde faſt von Pol zu Pol aufgetrieben; auf dem<br/>
+alten Continente iſt dagegen eine größere Strecke von<br/>
+Oſten gegen Weſten gehoben.</p><br/>
+<p class="dta-p">Wie ganz anders würde der Temperaturzuſtand<br/>
+Europa's und in Bezug auf Ackerbau und ſo vielen andern<br/>
+Erwerbe das ruhig ſich darbietenden Naturlebens ſein,<br/>
+wenn nicht das Mittelmeer exiſtirte. Ein weit kälteres<br/>
+Clima würde Europa haben, wenn es nicht durch die<br/>
+Lage Amerika's bedingt wäre, ſo aber liegt im Süden<br/>
+zwiſchen dem Meridiane von Liſſabon und dem des<br/>
+Urals ein großer feſter Continent, der eine Menge<br/>
+Sonnenſtrahlen abſorbirt und Wärme über Europa<br/>
+verbreitet. –</p><br/>
+<p class="dta-p">Unſer Europa verdankt ein milderes Clima ſeiner<br/>
+Erdſtellung <span title="Original: /" class="dta-reg">(</span>ſeinem Poſitions-Verhältniſſe gegen das<br/>
+nahe Meer<span title="Original: /" class="dta-reg">)</span> und ſeiner gegliederten Geſtaltung. –<br/>
+Europa iſt der weſtliche Theil des alten Continents,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0299 : 293.|</span><br/>
+und hat alſo den großen, ſchon an ſich kälteminderden<br/>
+und dazu noch vom Golfſtrom theilweiſe erwärmten<br/>
+Atlantiſchen Ocean in Weſten. Zwiſchen den Meri-<br/>
+dianen, in denen Europa ſich hinſtreckt, fällt die Aequa-<br/>
+torial-Zone nicht in das Becken des Oceans, wie ſüd-<br/>
+lich von dem, eben deshalb kälteren Aſien. Der Welt-<br/>
+theil, der unter allen den größten Theil des tropiſchen<br/>
+Clima's genießt, das ſandbedeckte Afrika, iſt ſo gele-<br/>
+gen, daß Europa von den Luftſchichten erwärmt wird,<br/>
+welche über Afrika aufſteigend, ſich von dem Aequator<br/>
+gegen den Nordpol ergießen. Ohne die Exiſtenz<br/>
+des mittelländiſchen Meeres würde der Einfluß<br/>
+des nahen Afrika's auf Temperatur und geographiſche<br/>
+Verbreitung von Pflanzen und Thieren noch wirkſamer<br/>
+ſein. Der Dritte Hauptgrund des milderen Clima's<br/>
+von Europa liegt darin, daß dieſer Welttheil ſich<br/>
+weniger weit gegen den Nordpol erſtreckt als Ame-<br/>
+rika und Aſien, je daß an dem größten Buſen<br/>
+eisfreien Meerwaſſers gegenüberliegt, den man<br/>
+in der ganzen Polarzone kennt. Die <span title="Schreibfehler: kälteteſten" class="dta-corr">kälteſten</span> Punkte<br/>
+der Erde, neuerlichſt uneigentlich Kälte-Pole genannt,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0300 : 294.|</span><br/>
+fallen nicht wie der ſonſt ſo ſcharfſinnige <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119440660">Brewſter</a></span></span> in<br/>
+der engliſchen Bearbeitung meiner Abhandlung von den iſo-<br/>
+thermen Linien zu beweiſen geſucht hat, mit den mag-<br/>
+netiſchen Polen zuſammen. Das Minimum des mittleren<br/>
+jährlichen Temperatur der Erdoberfläche liegt, nach Capitain<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11671350X">Sabine</a></span>'s</span> Unterſuchungen, im Nordweſten von Me<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">lvil</span>le's<br/>
+Inſeln, im Meridian der Behrings-Straße, wahrſcheinlich<br/>
+in 82–83 Grad Breite. Die Sommergrenze des Eiſes,<br/>
+welche zwiſchen Spitzbergen und Oſtgrönland ſich bis zum<br/>
+80 und 81 Grade zurückzieht, findet ſich überall zwiſchen<br/>
+Nova-Zembla, den Knochen-Inſeln von Neu-Sibirien<br/>
+und dem weſtlichſten amerikaniſchen Eiscap, ſchon im<br/>
+75 Grade der Breite. Selbſt die Wintergrenze des<br/>
+Eiſes, die Linie, auf welcher die Eisdecke ſich unſerm<br/>
+Welttheile am meiſten nähert, umgiebt kaum die Bären-<br/>
+Inſel. Vom Scandinaviſchen Nordcap, welches ein ſüd-<br/>
+weſtlicher Meereſſtrom erwärmt, iſt die Fahrt zum ſüd-<br/>
+lichſten Vorgebirge von Spitzbergen ſelbſt im ſtrengſten<br/>
+Winter nicht unterbrochen. Das Polareis vermindert ſich<br/>
+überall, wo es frei abfließen kann, wie in der Baffins-<br/>
+Bay und zwiſchen Island und Spitzbergen. Die Lage<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0301 : 295.|</span><br/>
+des atlantiſchen Oceans hat den wohlthätigſten Einfluß<br/>
+auf die Exiſtenz jenes, für das Clima von Nord-Europa<br/>
+ſo wichtigen, Eis-freien Meerwaſſers in dem Meridian<br/>
+von Oſtgrönland und Spitzbergen.</p><br/>
+<p class="dta-p">Dagegen häufen ſich die im Sommer aus der Baffins-<br/>
+Bay und Barrows-Straße ſüdlich getriebenen Eisberge in<br/>
+dem großen Mittelmeere an, welches die Geographen mit<br/>
+dem Namen der Hudſons-Bay bezeichnen. Dieſe Anhäufung<br/>
+vermehrt ſo ſehr die Kälte in dem benachbarten Continent,<br/>
+daß man in der Factorei York und bei der Mündung<br/>
+des Hayes-Fluſſes, nach Capitain <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118534912">Franklin</a></span>'s</span> neueſten<br/>
+handſchriftlichen Berichten, in einer Breite mit Nord-Preuſſen<br/>
+und Curland, am Ende des Auguſts und im Anfange<br/>
+des September's, beim Brunnengraben, in 4 Fuß Tiefe,<br/>
+überall Eis findet. Die nördlichſten und ſüdlichſten<br/>
+Grenzen des feſten Polar-Eiſes, das heißt die Sommer-<br/>
+und Wintergrenzen, von deren Lage die Temperatur der<br/>
+nördlichen Continental-Maſſen abhängt, ſcheint in den hiſto-<br/>
+riſchen Zeiten, wie gründliche Unterſuchungen endlich gelehrt<br/>
+haben, wenig verändert worden zu ſein. Der ſchädliche Ein-<br/>
+fluß, welchen kleine, iſolirte, durch Strömungen zuweilen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0302 : 296.|</span><br/>
+bis in die Nähe der Azoren getriebenen, Eismaſſen auf<br/>
+das Clima von Europa ausüben ſollen, gehört zu den Mythen,<br/>
+die von den Phyſikern ausgehen und ſich unter dem Volke<br/>
+verbreiten, wenn die Phyſiker längſt aufgehört haben,<br/>
+ihnen Glauben beizumeſſen.</p><br/>
+<p class="dta-p">Finden ſich, unter denſelben Breiten-Graden, wo in dem<br/>
+nördlichen Europa noch Garten- und Ackerbau getrieben <span class="dta-supplied">[werden,]</span><br/>
+in Nord-Amerika und Nord-Aſien nur ſumpfige, moos<span class="dta-supplied">[be-]</span><br/>
+deckte Länder, ſo äußert dagegen die kräftige Wärme-<br/>
+Strahlung von Inner-Aſien, zwiſchen den faſt parallelen<br/>
+Bergketten des Himalaya, des Zungling und des Himmels-<br/>
+Gebirges, <span title="Original: /" class="dta-reg">(</span>eine Gegend über welche <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/10082451X">Klaproth</a></span>'s</span> geogra-<br/>
+phiſche Unterſuchungen viel Licht verbreiten<span title="Original: /" class="dta-reg">)</span> den<br/>
+glücklichſten Einfluß auf die aſiatiſche Bevölkerung.<br/>
+Die ewige Schneegrenze liegt am nördlichen Abhange des<br/>
+Himalaya 4000′ höher als am ſüdlichen Abhange, und die<br/>
+phyſikaliſche Erklärung welche ich von dieſer ſonderbaren<br/>
+Erſcheinung in den <span class="aq ">Annales de Chemie et de Phyſique</span> <span class="dta-supplied">[<span class="aq "><span title="T." class="dta-abbr">Tome</span> III.</span>]</span><br/>
+<span class="aq ">p.</span> 297. <span class="aq "><span title="T." class="dta-abbr">Tome</span> IX. p.</span> 310 und <span class="aq "><span title="T." class="dta-abbr">Tome</span> XIV. p.</span> 5. gegeben, iſt durch<br/>
+neue Meſſungen und Beobachtungen in Oſt-Indien, nach<br/>
+Herrn <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116636688">Colebrooke</a></span>'s</span> Berichte, beſtätigt worden. Millionen<br/>
+von Menſchen Thibetaniſcher Abkunft und düſterer, religiöſer<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0303 : 297.|</span><br/>
+Gemüthsſtimmung, bewohnen volkreiche Städte, da, wo<br/>
+bei einer minderen Ausdehnung und minderen Continuität<br/>
+der Hochebenen, Felder und Städte, das ganze Jahr<br/>
+hindurch, in tiefem Schnee vergraben ſein würden. –</p><br/>
+<p class="dta-p">Um einen Begriff von den Verhältniß der Continente<br/>
+zu dem Meere zu erhalten, iſt es nöthig, die mittlere Tiefe<br/>
+der Meere und die mittlere Höhe der Continente zu kennen.<br/>
+Dieſe ſinnreiche Idee hat <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span></span> lange beſchäfftigt. Er<br/>
+glaubte nach der Theorie der Ebbe und Fluth die mittlere<br/>
+Tiefe des Oceans auf 60–70,000′ annehmen zu können.<br/>
+Aber noch kurz vor ſeinem Tode gab er noch eine kleine Schrift<br/>
+heraus, worin er die mittlere Tiefe zu 900′ und ebenſo<br/>
+die mittlere Höhe der Continente angab. Die Pendelver-<br/>
+ſuche ſcheinen das gleiche Verhältniß beider zu beſtätigen.<br/>
+Solche Pendelverſuche am Meere angeſtellt, würden bei<br/>
+ungleicher Attraction oft ſehr verſchieden ſein, z. B. auf<br/>
+<span class="dta-supplied">[den]</span> weſtlichen Küſte Amerika's würde das Pendel auf<br/>
+<span class="dta-supplied">[der]</span> einen Seite angezogen werden, dagegen auf der andern<br/>
+am Boden des Meeres den poſitiven und negativen Ordinaten<br/>
+gleich ſein. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span>'s A</span>ngabe der mittleren Höhe und Tiefe<br/>
+iſt dennoch viel zu groß, denn ſie fällt zwiſchen 5–600 Fuß.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0304 : 298.|</span><br/>
+Bei der Meſſung der Berge iſt die Höhenlage der<br/>
+Ebenen faſt gänzlich vernachläſſigt, obgleich ihre Kennt-<br/>
+niß ſehr wichtig iſt. Die Höhe der bekanntern ſind:</p><br/>
+<table class="dta-table"><tr><td>Die Fläche von Venetianiſchen und der Lombardei</td><td>400–480′</td></tr><tr><td>Im nördlichen Deutſchland die von Stettin und Poſen</td><td>180–200′</td></tr><tr><td>Das flache Land Rußlands nach Moskau ſich hinerſtreckend</td><td>870′</td></tr><tr><td>Die Ebene der Schweiz<span title="Original: 〃〃" class="dta-reg">&nbsp;&nbsp;&nbsp;</span></td><td>1300′</td></tr><tr><td>Die Ebene von Bayonne<span title="Original: 〃〃" class="dta-reg">&nbsp;&nbsp;&nbsp;</span></td><td>1560′</td></tr><tr><td>Die Ebene Spaniens von <span title="Schreibfehler: Amanza" class="dta-corr">Almanza</span> bis Aſtorga<span title="Original:  〃" class="dta-reg">&nbsp;&nbsp;&nbsp;</span></td><td>2100′</td></tr><tr><td>Die Ebene Mizor auf der indiſchen Halbinſel diſſeit<br/>
+&nbsp;&nbsp;&nbsp;des Ganges<span title="Original:  〃" class="dta-reg">&nbsp;&nbsp;&nbsp;</span></td><td><br/>
+2760′</td></tr><tr><td>Die Ebene Cobi in Aſien<span title="Original: 〃〃" class="dta-reg">&nbsp;&nbsp;&nbsp;</span></td><td>3000′</td></tr></table>   <p class="dta-p">Nach den wenigen Temperaturbeobachtungen ſcheint das<br/>
+Plateau des Centralpunktes Aſiens von Chilango und<br/>
+Tibet 6000′ hoch zu ſein. Auf der ſüdlichen Seite des<br/>
+Himalah- oder Himalaya-Gebirges, das bekanntlich Oſtindien<br/>
+von Tibet trennt, fand <span title="H￼" class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname">Ronette</span></span> in der Gegend von<br/>
+Dava öſtlich von Tibet ſo warme Thäler, daß auf eine<br/>
+Höhe von 14,000′ noch Kern gebauet wurde. In Amerika<br/>
+iſt der höchſte Punkt des Ackerbaues 12,000′. Das neue<br/>
+Spanien iſt 3mal ſo hoch als das alte. In Europa ſind die<br/>
+am höchſten gelegenen Dörfer der Schweiz und beſonders<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0305 : 299.|</span><br/>
+der Pyrenäen welche die <span title="H￼" class="dta-abbr">Herren</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100240445">Parrot</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">v Buch</a></span> </span> fanden<br/>
+4000′ hoch, doch neuerlich fand <span title="H￼" class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname">von Velden</span></span> daß das Dorf<br/>
+Bette in den Pyrenäen 7100′ hoch liegt.</p><br/>
+<p class="dta-p">Genaue Meſſungen um die Tiefe des Meeres zu er-<br/>
+forſchen ſind nicht ſo leicht zu bewerkſtellen, da oft die<br/>
+perpendiculäre Richtung des Senkbleie's durch Strömungen<br/>
+ſo verändert wird, daß ſie einen Winkel von 40–50°<br/>
+macht, wodurch alſo die eigentliche Tiefe um ⅓ größer er-<br/>
+ſcheinen kann. Bei dem Cap <span class="aq ">St. Antonio</span> wurde von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118692844">Fränklin</a></span></span><br/>
+ſondirt, um die Temperatur der untern Waſſerſchichten<br/>
+zu meſſen, und er fand überall bei 7200′ Tiefe noch<br/>
+keinen Grund.</p><br/>
+<p class="dta-p">Alles Flachland der Continente hat nur eine ge-<br/>
+ringe Maſſe, und die Bergketten ein Verhältniß zum<br/>
+Ganzen nur einen kleinen Einfluß auf die geſammte<br/>
+Erhebung. Die Bergketten in alten und neuen Con-<br/>
+tinente bilden nur ſchmale Mauern von 15–20<span title="Original: /" class="dta-reg">(</span>–20–30<span class="dta-metamark" title="metamark">?</span><span title="Original: /" class="dta-reg">)</span> Breite.<br/>
+Vom Fuße der Andeskette bis zum Amazonenſtrom<br/>
+ſind 700 Meilen, zerſtreut man deren Erhebung auf<br/>
+die ganze Fläche, ſo wird ſie nur wenig gehoben.<br/>
+Die mittlere Höhe der Continente und Tiefe der Meere ſcheint<br/>
+demnach zwiſchen 5–600′ zu ſchweben. Es iſt weit wichtiger<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0306 : 300.|</span><br/>
+die cultivirten Ebenen als hohe Berge zu meſſen.</p><br/>
+<p class="dta-p">Die Höhe des Meeresſpiegels beſtimmt den Umriß<br/>
+der Continente und ihre verſch. Geſtalten. So geringfügig<br/>
+die Quantität der Maſſe an ſich auch ſein mag, ſo iſt ſie<br/>
+doch für die Oberfläche des Erdkörpers und der Cultur<br/>
+der Continente von der großten Wichtigkeit, denn un-<br/>
+bedeutende Veränderungen derſelben würden den Con<span class="dta-supplied">[tact]</span><br/>
+der Flächen gleich anders geſtalten. Das Meer<br/>
+dürfte nur 300′ ſteigen, ſo würde Norddeutſchland und<br/>
+Polen verſchwinden. Ich ging eigens nach Temopento an den<br/>
+öſtlichen Fuß der Andeskette, um die Länge zu beſtimmen,<br/>
+wo die Höhe der Gegend erſt 1200′ betrug. Ja bei Chalcha-<br/>
+pados iſt eine Fläche von nicht mehr als 3–400′.</p><br/>
+<p class="dta-p">Die Erhöhungen und Erniedrigungen des Niveau's<br/>
+der Meere ſind überall gleich, was man früher bezwei-<br/>
+felte. So wird angegeben, daß der Serapistempel im<br/>
+Meere geſtanden, weil ſeine Säulen mit Muſcheln be-<br/>
+deckt ſind; man glaubt deshalb, daß das Meer ihn über-<br/>
+ſchwemmt habe, allein denn müßte auch ganz Aegypten<br/>
+überſchwemmt ſein. Andere glauben wieder daß die Säu-<br/>
+len in Meere gelegen haben. Wahrſcheinlicher iſt es aber,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0307 : 301.|</span><br/>
+daß eine Dünenreihe den Tempel umgab, in der ſich<br/>
+kleine Salzſeeen bildeten, die dann oft höher denn 8–10′<br/>
+über der Meeresfläche liegen, und ſo die Mollusken ſich<br/>
+an die Säulen anhafteten.</p><br/>
+<p class="dta-p">Wenn auch das Meer überall gleich hoch iſt, ſo giebt es<br/>
+doch in den kleinen Waſſerbecken allerdings Unterſchiede,<br/>
+wie wir dies beſonders vom Rothen- und Caspiſchen Meere<br/>
+wiſſen. Das rothe Meer iſt 25–30′ höher als das<br/>
+Mittelmeer; das Kaspiſche Meer dagegen iſt noch viel nie-<br/>
+driger als das Mittelmeer. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100827365">Engelhart</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100240445">Parrot</a></span>,</span> die<br/>
+ſehr mühſam nivellirt haben, fanden daß der Einfluß<br/>
+des Cuabo in's ſchwarze Meer, zum Tereck der ſich ins<br/>
+Ca<span class="dta-add" title="Hinzufügung (intralinear)">s</span>piſche Meer ergießt, letzterer um 280′ niedriger war<br/>
+als der erſtere, folglich das Caspiſche Meer auch um eben<br/>
+ſoviel niedriger ſein muß als das Mittelländiſche. Andere<br/>
+Meſſungen ergeben 324′. Der <span class="aq ">Dr. <span title="Personenname">Panzer</span></span> und <span class="aq "><span title="Personenname">Sozche-<br/>
+goratzoff</span></span> haben über die Richtigkeit dieſer Angaben Zwei-<br/>
+fel erhoben, da ihr Reſultat 200′ Unterſchied der Lage<br/>
+betrug. Ein genaues Reſultat zu erhalten iſt übrigens<br/>
+ſehr ſchwierig, da Barometermeſſungen nicht ausreichen, und<br/>
+die Vergleichung nicht anders iſt, als wenn man durch jene<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0308 : 302.|</span><br/>
+den Stand der Nordſee zum Caspiſchen Meere beſtimmen<br/>
+wollte. Die Alten glaubten, daß das ſchwarze Meer<br/>
+früher geſchloſſen geweſen ſei, und durch 2 Schlaufen, die<br/>
+der Dardanellen und der Säulen des Hercules ſich ge-<br/>
+öffnet habe. Merkwürdig iſt die Höhe des Meeres<br/>
+bei den Antillen, wo theoretiſche Beobachtungen irre<br/>
+führten. Am Iſthmus von Panama hat man geglaubt<br/>
+daß das eine Meer höher liege als das andern. Meine<br/>
+und <span title="H￼" class="dta-abbr">Herrn</span> <span class="aq "><span title="Personenname">Niverotti</span></span> Unterſuchungen fanden keinen Unterſchied,<br/>
+wenigſtens iſt er ſo geringe, daß das Antilliſche Meer<br/>
+nicht über 10–12′ höher ſein kann.</p></div></div></div></div></div></body></html>

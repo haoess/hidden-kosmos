@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[56. Vorlesung, 19.04.1828]</span></div><br/>
+<div class=""><div class=""><div class=""><p class="dta-p">Im Ganzen <span title="Original: ſind" class="dta-reg">sind</span> jetzt 60 bis 65000 Species von <span title="Original: P" class="dta-reg">Phanerogamen</span><span class="dta-del" title="Streichung (#erased)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: h" class="dta-reg"/></span><span title="Original: an" class="dta-reg"/><span class="dta-add" title="Hinzufügung (intralinear)"><span title="Original: e" class="dta-reg"/></span><span title="Original: -&#xA;rogamen" class="dta-reg"/> <span title="Original: beſchrieben" class="dta-reg">beschrieben</span>; es käme demnach nur 1 Species<br/>
+auf 41 Q.M. <span title="Original: –" class="dta-reg">-</span> In allen <span title="Original: engliſchen" class="dta-reg">englischen</span> Gärten <span title="Original: zuſam̃en" class="dta-reg">zusammen</span><br/>
+genommen <span title="Original: ſind" class="dta-reg">sind</span> 16000 Species, Phanerogamen <span title="Original: cultivirt" class="dta-reg">kultiviert</span>,<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">al-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0562|</span><br/>
+<span title="Original: alſo" class="dta-reg">also</span> ungefähr ¼ der ganzen <span title="Original: Maſse" class="dta-reg">Maße</span> von den Pflanzen<br/>
+die <span title="Original: beſchrieben" class="dta-reg">beschrieben</span> <span title="Original: ſind" class="dta-reg">sind</span>. Ehemals hielt man ein Herbarium<br/>
+das 8 bis 9000 Species enthielt <span title="Original: ſchon" class="dta-reg">schon</span> für <span title="Original: ſehr" class="dta-reg">sehr</span> groß, jetzt<br/>
+wurden <span title="Original: dieſe" class="dta-reg">diese</span> nur <span title="Original: ſehr" class="dta-reg">sehr</span> gering <span title="Original: erſcheinen" class="dta-reg">erscheinen</span>. In <span title="Original: Eng-&#xA;land" class="dta-reg">England</span> <span title="Original: iſt" class="dta-reg">ist</span> jetzt ein Herbarium das 35000 Species enthält.<br/>
+Es <span title="Original: iſt" class="dta-reg">ist</span> merkwürdig daß man beinahe <span title="Original: dieſelbe" class="dta-reg">dieselbe</span> Zahl<br/>
+von <span title="Original: Thier-Claſsen" class="dta-reg">Tier-Klassen</span> kennt, wie bei den Pflanzen,<br/>
+nur 66000. Bei dem Pflanzen nehmen die größere<br/>
+Zahl die <span title="Original: ausgebildetern" class="dta-reg">ausgebildeteren</span> ein, bei den <span title="Original: Thieren" class="dta-reg">Tieren</span> <span title="Original: iſt" class="dta-reg">ist</span><br/>
+es umgekehrt, hier <span title="Original: ſind" class="dta-reg">sind</span> die <span title="Original: untern" class="dta-reg">unteren</span> <span title="Original: Thierklaſsen" class="dta-reg">Tierklassen</span><br/>
+die <span title="Original: Zahlreichern" class="dta-reg">Zahlreicheren</span> <span class="dta-metamark" title="metamark">|:</span> 44000 Insekten <span class="dta-metamark" title="metamark">:|</span> <span class="sup "><span title="Original: 5" class="dta-reg">5/6</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 6" class="dta-reg"/></span> der ganzen<br/>
+<span title="Original: Maſse" class="dta-reg">Maße</span> gehen auf die <span title="Original: untern" class="dta-reg">unteren</span> <span title="Original: Thierklaſsen" class="dta-reg">Tierklassen</span>. <span title="Original: –" class="dta-reg">-</span><br/>
+Von den Pflanzen hat man zwar nur wenige<br/>
+<span title="Original: Cryptogamen" class="dta-reg">Kryptogamen</span> <span title="Original: beſchrieben" class="dta-reg">beschrieben</span>, aber unter den <span title="Original: beſchrie-&#xA;benen" class="dta-reg">beschriebenen</span> <span title="Original: ſind" class="dta-reg">sind</span> auch nur <span class="sup "><span title="Original: 1" class="dta-reg">1/7</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 7" class="dta-reg"/></span> der ganzen <span title="Original: Maſse" class="dta-reg">Maße</span> der<br/>
+Pflanzen <span class="dta-metamark" title="metamark">|:</span> <span title="Original: alſo" class="dta-reg">also</span> <span class="sup "><span title="Original: 6" class="dta-reg">6/7</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 7" class="dta-reg"/></span> Phanerogamen <span class="dta-metamark" title="metamark">:|</span></p><br/>
+<p class="dta-p">Europa hat nach <span class="aq ">Brown</span> 7000 Species, bei einer<br/>
+Größe von 155000 Q.M. macht <span title="Original: dieß" class="dta-reg">dies</span> 1 Species auf<br/>
+22 Q.M. <span title="Original: –" class="dta-reg">-</span> <span class="b ">Wenn man</span> diejenigen Species abrechnet,<br/>
+<span class="dta-del" title="Streichung (#erased)">ſo hat</span><span class="dta-add" title="Hinzufügung (across)">die</span> Europa mit Amerika und Asien <span title="Original: gemeinſchaft-&#xA;lich" class="dta-reg">gemeinschaftlich</span> hat, <span title="Original: ſo" class="dta-reg">so</span> hat Europa 1800 bis 2000 Species <span title="Original: eigenthüm-&#xA;lich" class="dta-reg">eigentümlich</span>. <span title="Original: –" class="dta-reg">-</span> <span class="aq ">Cambdon</span> hat geglaubt daß es im Ganzen auf<br/>
+der Erde nur 120000 Species von Phanerogamen gebe;<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">es</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0563 : 557|</span><br/>
+es <span title="Original: ſtimmt" class="dta-reg">stimmt</span> <span title="Original: dieß" class="dta-reg">dies</span> merkwürdiger <span title="Original: Weiſe" class="dta-reg">Weise</span> mit der Zahl<br/>
+überein die im <span title="Original: Alterthum" class="dta-reg">Altertum</span> die <span title="Original: Zend-Areſta" class="dta-reg">Zend-Aresta</span> angegeben<br/>
+hat; doch <span title="Original: iſt" class="dta-reg">ist</span> wohl <span title="Original: wahrſcheinlich" class="dta-reg">wahrscheinlich</span> daß die Zahl der<br/>
+Phanerogamen weit größer <span title="Original: ſei" class="dta-reg">sei</span>.</p><br/>
+<p class="dta-p">Eine andere Frage <span title="Original: iſt" class="dta-reg">ist</span>, ob die Zahl der Species zu<br/>
+oder abnimmt. Wir können <span title="Original: hiebei" class="dta-reg">hierbei</span> nicht in die Zeit<br/>
+zurück gehen, wo der ganze Erdkörper einen Tropen<br/>
+Vegetation gehabt zu haben <span title="Original: ſcheint" class="dta-reg">scheint</span>, <span title="Original: ſondern" class="dta-reg">sondern</span> nur<br/>
+von der <span title="Original: hiſtoriſchen" class="dta-reg">historischen</span> Zeit reden.</p><br/>
+<p class="dta-p">Man hat Beispiele von <span title="Original: Thieren" class="dta-reg">Tieren</span> die während der<br/>
+<span title="Original: hiſtoriſchen" class="dta-reg">historischen</span> Zeit untergegangen <span title="Original: ſind" class="dta-reg">sind</span>, <span title="Original: ſo" class="dta-reg">so</span> Daonten<br/>
+<span class="aq ">etc</span>. <span title="Original: –" class="dta-reg">-</span> Von Pflanzen <span title="Original: iſt" class="dta-reg">ist</span> es wohl <span title="Original: wahrſcheinlich" class="dta-reg">wahrscheinlich</span>,<br/>
+daß Species <span title="Original: entſtehen" class="dta-reg">entstehen</span> und vorgehen bei <span title="Original: niedern" class="dta-reg">niederen</span><br/>
+Organisationen. Aber daß Pflanzen <span title="Original: höhrer" class="dta-reg">höherer</span> <span title="Original: Or-&#xA;ganisation" class="dta-reg">Organisation</span> <span title="Original: entſtehen" class="dta-reg">entstehen</span>, fällt außer der Grenze<br/>
+<span title="Original: naturhiſtoriſcher" class="dta-reg">naturhistorischer</span> <span title="Original: Unterſuchung" class="dta-reg">Untersuchung</span>.</p><br/>
+<p class="dta-p">Bei den <span title="Original: Thieren" class="dta-reg">Tieren</span> hat man neue Species gefunden, <span title="Original: ſo" class="dta-reg">so</span><span class="dta-marginal dta-marginal-right">?<br/>
+</span><br/>
+<span title="Original: Süßwaſserfiſche" class="dta-reg">Süßwasserfische</span> auf der <span title="Original: Societäts" class="dta-reg">Sozietät</span> <span title="Original: Inſeln" class="dta-reg">Inseln</span>, in den Seen<br/>
+auf der Pyrenäen die ganz <span title="Original: verſchieden" class="dta-reg">verschieden</span> von denen in<br/>
+der Ebene <span title="Original: ſind" class="dta-reg">sind</span>. <span title="Original: –" class="dta-reg">-</span> Von den Pflanzen <span title="Original: iſt" class="dta-reg">ist</span> es im <span title="Original: ſüdlichen" class="dta-reg">südlichen</span><br/>
+Frankreich <span title="Original: ſchon" class="dta-reg">schon</span> <span title="Original: einzuſehen" class="dta-reg">einzusehen</span> wie Pflanzen von einem<br/>
+<span title="Original: Flußthal" class="dta-reg">Flußtal</span> zum <span title="Original: andern" class="dta-reg">anderen</span> übergehen, wo <span title="Original: dazwiſchen" class="dta-reg">dazwischen</span><br/>
+große Gebirge <span title="Original: ſich" class="dta-reg">sich</span> befinden. So Blumen im Po und<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Rhone</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0564|</span><br/>
+Rhone <span title="Original: Thal" class="dta-reg">Tal</span>. <span class="dta-metamark" title="metamark">|:</span> <span class="aq ">Cambdon</span> <span class="dta-metamark" title="metamark">:|</span> <span title="Original: –" class="dta-reg">-</span> Auch hat man Beispiele von<br/>
+permanenten Varietäten die <span title="Original: ſich" class="dta-reg">sich</span> fortgepflanzt haben.</p><br/>
+<div class=""><p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Verbreitung der<br/>
+Pflanzen in den<br/>
+<span title="Original: verſchiedenen" class="dta-reg">verschiedenen</span><br/>
+Zonen.</span><br/>
+</span>Wenn man die Zahl der Species nach der Verbreitung<br/>
+der <span title="Original: verſchiedenen" class="dta-reg">verschiedenen</span> Zonen betrachtet, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ſehen" class="dta-reg">sehen</span> wir<br/>
+wie die Pflanzendecke dichter und dichter gewebt <span title="Original: iſt" class="dta-reg">ist</span>,<br/>
+wenn man von den Polen gegen die Tropen <span title="Original: fort-&#xA;geht" class="dta-reg">fortgeht</span>. Vor einigen Jahren war durch <span title="H￼." class="dta-abbr">Herrn</span> <span class="aq ">Brown</span> die<br/>
+allgemeine Meinung aufgekommen, daß die<br/>
+größte <span title="Original: Maſse" class="dta-reg">Maße</span> der Pflanzen <span title="Original: ſich" class="dta-reg">sich</span> nicht in den Tropen<br/>
+<span title="Original: ſelbſt" class="dta-reg">selbst</span> befinde, <span title="Original: ſondern" class="dta-reg">sondern</span> 30° S. Br. in <span title="Original: Auſtralien" class="dta-reg">Australien</span>.<br/>
+<span class="aq ">Doc</span> hat eine große Menge von Pflanzen mit <span title="H￼" class="dta-abbr">Herrn</span> <br/>
+<span class="aq ">Bonplard</span> aus den Tropengegenden Amerikas mit<br/>
+gebracht, nur <span title="H￼." class="dta-abbr">Herr</span> <span class="aq ">Pohl</span> 8000 Species nur allein aus<br/>
+<span class="dta-marginal dta-marginal-left"><span class="dta-metamark" title="metamark">|:</span> in Frankreich<br/>
+hat man dagegen<br/>
+nur 3800 <span title="Original: Pha-&#xA;nerogamen" class="dta-reg">Phanerogamen</span> <span class="dta-metamark" title="metamark">:|</span><br/>
+</span>Brasilien auf einer Strecke von 18000 Q.M.; wenn<br/>
+er alle Gegenden hätte <span title="Original: ſehen" class="dta-reg">sehen</span> können die er <span title="Original: be-&#xA;reiſt" class="dta-reg">bereist</span> hat, doch kann man wohl annehmen daß er nur<br/>
+die Hälfte <span title="Original: durchforſchte" class="dta-reg">durchforschte</span>. <span title="H￼." class="dta-abbr">Herr</span> <span class="aq ">Brown</span> hat jetzt <span title="Original: ſelbſt" class="dta-reg">selbst</span><br/>
+<span title="Original: ſeinen" class="dta-reg">seinen</span> <span title="Original: Irrthum" class="dta-reg">Irrtum</span> <span title="Original: eingeſtanden" class="dta-reg">eingestanden</span>, und es <span title="Original: ſcheint" class="dta-reg">scheint</span> evident<br/>
+zu <span title="Original: ſein" class="dta-reg">sein</span>, daß das größte <span title="Original: Pflanzenwachsthum" class="dta-reg">Pflanzenwachstum</span> in den<br/>
+Tropen <span title="Original: ſich" class="dta-reg">sich</span> befindet.</p><br/>
+<p class="dta-p">Auf die Tropengegenden kann man 7500 Species <span title="Original: rech-&#xA;nen" class="dta-reg">rechnen</span>. Frankreich hat 3800 Phanerogamen; es <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ge-&#xA;nau" class="dta-reg">genau</span> bekannt nur <span title="Original: durchforſcht" class="dta-reg">durchforscht</span> daß wohl darauf zu rechnen<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">iſt</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0565 : 559|</span><br/>
+<div class="fw-top fw-sig">2<span title="Original: " class="dta-reg">.</span><br/>
+</div><br/>
+<span title="Original: iſt" class="dta-reg">ist</span> daß man keine neue mehr finden wird.</p><br/>
+<p class="dta-p"><span title="Original: Deutſchland" class="dta-reg">Deutschland</span> und die Schweiz <span title="Original: zuſammen" class="dta-reg">zusammen</span> haben<br/>
+ungefähr <span title="Original: ſoviel" class="dta-reg">soviel</span> wie Frankreich 3400 Phanerogamen.<br/>
+<span class="dta-metamark" title="metamark">|:</span> <span title="Original: Deutſchland" class="dta-reg">Deutschland</span> allein hat 2300 Phanerogamen <span class="dta-metamark" title="metamark">:|</span> Die<br/>
+Flora <span title="Original: zwiſchen" class="dta-reg">zwischen</span> Spree und Havel <span class="dta-metamark" title="metamark">|:</span> von <span title="Original: Schlechtendal" class="dta-reg">Schlechtental</span> <span class="dta-metamark" title="metamark">:|</span><br/>
+enthält 950 Phanerogamen; im Ganzen 2200 <span title="Original: For-&#xA;men" class="dta-reg">Formen</span> von Pflanzen. <span title="Original: –" class="dta-reg">-</span> Im ganzen <span title="Original: Würtembergiſchen" class="dta-reg">Württembergischen</span><br/>
+Land finden <span title="Original: ſich" class="dta-reg">sich</span> nur 230 Phanerogamen <span class="dta-metamark" title="metamark">|:</span> <span class="aq ">Schädler</span> <span class="dta-metamark" title="metamark">:|</span> <span title="Original: –" class="dta-reg">-</span><br/>
+<span class="dta-metamark" title="metamark">|:</span> Mitteleuropa hat überhaupt 2 bis 2000 Phanerogamen <span class="dta-metamark" title="metamark">:|</span><br/>
+Lappland bis <span title="Original: 66–69" class="dta-reg">66-69</span>° n Br. hat nach <span class="aq ">Wahlenbergs</span> <span title="Original: Unter-&#xA;ſuchungen" class="dta-reg">Untersuchungen</span> 526 Phanerogamen <span title="Original: ſelbſt" class="dta-reg">selbst</span> die ganze<br/>
+Zahl der Spezies beträgt dort nur 1100 die <span title="Original: Crypto-&#xA;gamen" class="dta-reg">Kryptogamen</span> nehmen hier <span title="Original: ſehr" class="dta-reg">sehr</span> zu.</p><br/>
+<p class="dta-p">Island, obgleich es ein milderes Klima hat zeigt<br/>
+darin daß es eine <span title="Original: Inſel" class="dta-reg">Insel</span> <span title="Original: iſt" class="dta-reg">ist</span> die immer weniger<br/>
+Species haben; es hat nur 374 Phanerogamen. <span title="Original: –" class="dta-reg">-</span><br/>
+Von den Melvils <span title="Original: Inſeln" class="dta-reg">Inseln</span>, bei 74° n Br. hat <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parry</a></span></span> 67<br/>
+Species von Pflanzen mitgebracht. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">Die <span title="Original: Inſeln" class="dta-reg">Inseln</span> <span class="dta-add" title="Hinzufügung (intralinear)">die </span>im <span title="Original: atlantiſchen" class="dta-reg">atlantischen</span> Ozean als Vulkane <span title="Original: her-&#xA;vortreten" class="dta-reg">hervortreten</span>, haben ebenfalls nur eine <span title="Original: ſehr" class="dta-reg">sehr</span> geringe<br/>
+Vegetation; <span title="Original: ſo" class="dta-reg">so</span> haben Helena nur 73 Species. <span title="Original: –" class="dta-reg">-</span><br/>
+Große Dürre macht ebenfalls einen bedeutenden<br/>
+<span title="Original: Unterſchied" class="dta-reg">Unterschied</span> in der Vegetation. So hat <span title="Original: Aegypten" class="dta-reg">Ägypten</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">nicht</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0566|</span><br/>
+nicht viel mehr Species als Berlin 1000 Phanerogamen<br/>
+<span class="dta-metamark" title="metamark">|:</span> nach <span class="aq ">Delille</span> <span class="dta-metamark" title="metamark">:|</span> Noch <span title="Original: ſüdlicher" class="dta-reg">südlicher</span> gegen Nubien hin <span title="Original: fin-&#xA;det" class="dta-reg">findet</span> man noch weniger; nach <span class="aq ">Doc</span>. <span class="aq ">Ehrenberg</span> 200 Species;<br/>
+doch glaubt er daß man vielleicht noch 100 Species mehr<br/>
+finden könnte, <span title="Original: alſo" class="dta-reg">also</span> vielleicht 300, in <span title="Original: derſelben" class="dta-reg">derselben</span> Breite,<br/>
+wo Südamerika 7 bis 8000 <span title="Original: Pflanzenspecies" class="dta-reg">Pflanzenspezies</span> hat.</p></div></div><br/>
+<div class=""><p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u "><span title="Original: Verſchiedenheit" class="dta-reg">Verschiedenheit</span><br/>
+der Pflanzen<br/>
+in <span title="Original: geographiſcher" class="dta-reg">geographischer</span><br/>
+Beziehung</span>.<br/>
+</span>Eine weitere <span title="Original: Unterſuchung" class="dta-reg">Untersuchung</span> bei der Geographie der<br/>
+Pflanzen <span title="Original: iſt" class="dta-reg">ist</span> die <span title="Original: geographiſche" class="dta-reg">geographische</span> <span title="Original: Verſchiedenheit" class="dta-reg">Verschiedenheit</span> <span title="Original: derſelben" class="dta-reg">derselben</span><br/>
+insofern <span title="Original: ſie" class="dta-reg">sie</span> von der <span title="Original: phyſiſchen" class="dta-reg">physischen</span> <span title="Original: Beſchaffenheit" class="dta-reg">Beschaffenheit</span> des<br/>
+Landes abhängt. Die <span title="Original: nächſte" class="dta-reg">nächste</span> Frage dabei <span title="Original: iſt" class="dta-reg">ist</span>: ob die<br/>
+Pflanzen im Allgemeinen größer unter den Tropen<br/>
+<span title="Original: ſind" class="dta-reg">sind</span> als in den <span title="Original: temperirten" class="dta-reg">temperierten</span> Zonen. <span title="Original: –" class="dta-reg">-</span> Man <span title="Original: ſollte" class="dta-reg">sollte</span> <span title="Original: glau-&#xA;ben" class="dta-reg">glauben</span> daß <span title="Original: dieſe" class="dta-reg">diese</span> Frage bald zu beantworten wäre,<br/>
+doch finden <span title="Original: ſich" class="dta-reg">sich</span> manche Schwierigkeiten. Die <span title="Original: Colipheren" class="dta-reg">Colifeen</span><br/>
+<span class="dta-metamark" title="metamark">|:</span> Zapfenbäume <span class="dta-metamark" title="metamark">:|</span> der <span title="Original: temperirten" class="dta-reg">temperierten</span> Zonen <span title="Original: ſind" class="dta-reg">sind</span> oft<br/>
+größer als die Monocotyledonen der Tropen.<br/>
+Die Pinus Arten <span title="Original: wetteifree" class="dta-reg">wetteifre</span> mit den Palmen. <span title="Original: –" class="dta-reg">-</span><br/>
+Die größten <span title="Original: Contraſte" class="dta-reg">Kontraste</span> im Pflanzenreich geben um<br/>
+von den <span title="Original: kleinern" class="dta-reg">kleineren</span> anzufangen die <span title="Original: mikroskopiſchen" class="dta-reg">mikroskopischen</span><br/>
+Pflanzen, die Oscillatorien die mehr zum <span title="Original: Pflanzen-&#xA;reich" class="dta-reg">Pflanzenreich</span> als zum <span title="Original: Thierreich" class="dta-reg">Tierreich</span> zu zählen <span title="Original: ſind" class="dta-reg">sind</span>; und die <span title="Original: me-&#xA;teoriſche" class="dta-reg">meteorische</span> Vegetation des <span title="Original: rothen" class="dta-reg">roten</span> Schnees, von dem<br/>
+man früher glaubte daß die <span title="Original: rothe" class="dta-reg">rote</span> Farbe von <span title="Original: unorga-" class="dta-reg">unorganischen</span>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">niſch</span></div><span title="Original: " class="dta-reg"/>
+<span class="dta-pb" style="padding-left:15em">|#f0567 : 561|</span><br/>
+<span title="Original: niſchen" class="dta-reg"/> Stoffen <span title="Original: herſtamme" class="dta-reg">herstamme</span>.</p><br/>
+<p class="dta-p">Auf der <span title="Original: Reiſe" class="dta-reg">Reise</span> des <span class="aq "><span title="Original: Capt" class="dta-reg">kappt</span>. <span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parry</a></span></span> fand aber <span title="H￼" class="dta-abbr">Herr</span> <span class="aq ">Bauer</span><br/>
+mehrere Q. M. mit <span title="Original: ſolchen" class="dta-reg">solchen</span> <span title="Original: rothen" class="dta-reg">roten</span> Schnee bedeckt;<br/>
+er hielt <span title="Original: ſie" class="dta-reg">sie</span> im Anfang für kleine Pilzen, aber als<br/>
+man den Schnee <span title="Original: aufthauen" class="dta-reg">auftauen</span> ließ fanden <span title="Original: ſich" class="dta-reg">sich</span> kleine<br/>
+Körner, kleine Sphären, von denen <span title="Original: ſich" class="dta-reg">sich</span> wieder andere<br/>
+Kügelchen: trennen <span title="Original: lieſsen" class="dta-reg">ließen</span>; merkwürdig genug<br/>
+<span title="Original: iſt" class="dta-reg">ist</span> es daß <span title="Original: ſie" class="dta-reg">sie</span> nicht bloß bei 0° <span title="Original: ſind" class="dta-reg">sind</span> <span title="Original: ſondern" class="dta-reg">sondern</span> auch 15° R<br/>
+<span title="Original: ſich" class="dta-reg">sich</span> fortpflanzen. <span class="aq ">Doc</span> hat <span title="Original: ſie" class="dta-reg">sie</span> nicht <span title="Original: geſehen" class="dta-reg">gesehen</span>; <span title="H￼" class="dta-abbr">Herr</span> <span class="aq ">Bauer</span><br/>
+brachte aber einige nach London mit, und hier <span title="Original: ſo-&#xA;wohl" class="dta-reg">sowohl</span> als in Paris nur Genf haben <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſich" class="dta-reg">sich</span> eine <span title="Original: Zeit-&#xA;lang" class="dta-reg">Zeitlang</span> fortgepflanzt.</p><br/>
+<p class="dta-p">Mit <span title="Original: dieſen" class="dta-reg">diesen</span> <span title="Original: kleinſten" class="dta-reg">kleinsten</span> Vegetationsformen <span title="Original: ſtehe" class="dta-reg">stehe</span> im<br/>
+größten <span title="Original: Contraſte" class="dta-reg">Kontraste</span> die <span title="Original: majeſtätiſchen" class="dta-reg">majestätischen</span> Formen<br/>
+der Palmenwälder <span title="Original: beſonders" class="dta-reg">besonders</span> in der <span title="Original: Andeskette" class="dta-reg">Andenkette</span>.</p><br/>
+<p class="dta-p">Von den Palmen hat man geglaubt daß <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſich" class="dta-reg">sich</span> nur<br/>
+bis 3000<span title="Original: ′" class="dta-reg">'</span> erheben, aber die <span title="Original: höchſten" class="dta-reg">höchsten</span>, die Bergpalmen<br/>
+finden <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: erſt" class="dta-reg">erst</span> bei einer Höhe von 4 bis 5000<span title="Original: ′" class="dta-reg">'</span> und<br/>
+<span title="Original: ſteigen" class="dta-reg">steigen</span> bis <span title="Original: 8000′" class="dta-reg">8000'</span> heran. <span class="aq ">Doc</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span> hat einen <span title="Original: ſolchen" class="dta-reg">solchen</span><br/>
+<span title="Original: Palmbaum" class="dta-reg">Palmenbaum</span> gefüllt, der 180 <span title="Original: pariser" class="dta-reg">Pariser</span> Fuß Länge hatte. <span title="Original: –" class="dta-reg">-</span><br/>
+In Neu Holland <span title="Original: iſt" class="dta-reg">ist</span> eine <span title="Original: eigne" class="dta-reg">eigene</span> <span class="aq ">Selluca</span> Species die<br/>
+<span title="Original: 170′" class="dta-reg">170'</span> lang <span title="Original: ſind" class="dta-reg">sind</span>.</p><br/>
+<p class="dta-p">Aber unter den Zapfenbäumen hat man ebenfalls<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">noch</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0568|</span><br/>
+noch <span title="Original: größern" class="dta-reg">größeren</span> Arten gefunden, <span title="Original: ſo" class="dta-reg">so</span> die <span class="aq ">Coliph excelsa</span><br/>
+240<span title="Original: ′" class="dta-reg">'</span> Länge. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p"><span class="dta-metamark" title="metamark">|:</span> In den Norfolks <span title="Original: Inſeln" class="dta-reg">Inseln</span> bei 29° S Br. <span class="dta-metamark" title="metamark">:|</span></p><br/>
+<p class="dta-p">Noch neuerdings hat der Engländer <span class="aq ">Douglas</span> und ein<br/>
+<span class="aq "><span title="Original: Capt" class="dta-reg">kappt</span> Franklin</span> <span class="dta-metamark" title="metamark">|:</span> nicht <span title="Original: derſelbe" class="dta-reg">derselbe</span> von dem <span title="Original: ſchon" class="dta-reg">schon</span> öfters<br/>
+die Rede war <span class="dta-metamark" title="metamark">:|</span> <span title="Original: erſterer" class="dta-reg">ersterer</span> am <span class="aq ">Rio di Columbia</span> und<br/>
+letzterer bei <span title="Original: Canada" class="dta-reg">Kanada</span> eine Pinus Art von <span title="Original: außer-&#xA;ordentlicher" class="dta-reg">außerordentlicher</span> Größe entdeckt, die 15<span title="Original: ′" class="dta-reg">'</span> im <span title="Original: Durchmeſser" class="dta-reg">Durchmesser</span><br/>
+hatte, <span title="Original: ſo" class="dta-reg">so</span> daß ein <span title="Original: ſtehender" class="dta-reg">stehender</span> Mann, wenn <span title="Original: dieſelbe" class="dta-reg">dieselbe</span><br/>
+gefällt vor <span title="Original: ſich" class="dta-reg">sich</span> dahinter verbergen konnte; die <span title="Original: er-&#xA;ſtere" class="dta-reg">erstere</span> hatte 260<span title="Original: ′" class="dta-reg">'</span> Länge, die letztere Pinus Art hatte<br/>
+Zapfen von <span title="Original: 1½" class="dta-reg">11/2</span><span title="Original: ′" class="dta-reg">'</span> Länge. <span title="Original: –" class="dta-reg">-</span> Von <span title="Original: dieſer" class="dta-reg">dieser</span> großen Höhe<br/>
+von 260<span title="Original: ′" class="dta-reg">'</span> <span title="Original: ſchrumpfen" class="dta-reg">schrumpfen</span> die Bäume <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: zuſammen" class="dta-reg">zusammen</span>, daß<br/>
+man in den Spitzbergen nur auf den Melvils <span title="Original: In-&#xA;ſeln" class="dta-reg">Inseln</span> Bäume von 2<span title="Original: ″" class="dta-reg">"</span> Länge findet: die <span class="aq ">Salia arctica</span>.<br/>
+Noch merkwürdiger <span title="Original: iſt" class="dta-reg">ist</span> die <span title="Original: verſchiedenartige" class="dta-reg">verschiedenartige</span> <span title="Original: Aus-&#xA;dehnung" class="dta-reg">Ausdehnung</span> in der Breite. Wir erwähnen hier nur<br/>
+die größere Ausdehnungen, die <span title="Original: ſich" class="dta-reg">sich</span> hauptsächlich<br/>
+nur in den Tropengegenden bei den Amazonien<br/>
+und <span title="Original: Guſtabone" class="dta-reg">Gustabone</span>. <span title="Original: –" class="dta-reg">-</span> Die <span class="aq ">Amazonia udacia</span>, die <span class="aq ">Gulberg</span><br/>
+<span title="Original: unterſucht" class="dta-reg">untersucht</span> hat, hat einen Stamm von nur 60<span title="Original: ′" class="dta-reg">'</span> Höhe aber<br/>
+einen <span title="Original: Durchmeſser" class="dta-reg">Durchmesser</span> von 34<span title="Original: ′" class="dta-reg">'</span> <span title="Original: –" class="dta-reg">-</span> <span class="dta-metamark" title="metamark">|:</span> Ein Baum der von Natur<br/>
+<span title="Original: ausgefühlt" class="dta-reg">ausgefüllt</span> <span title="Original: iſt" class="dta-reg">ist</span> und dabei einen <span title="Original: ſolchen" class="dta-reg">solchen</span> Raum gewährt daß<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">die</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0569 : 563|</span><br/>
+die Neger ihre <span title="Original: Rathsversammlungen" class="dta-reg">Ratsversammlungen</span> darin halten <span class="dta-metamark" title="metamark">:|</span><br/>
+Gewöhnlich <span title="Original: iſt" class="dta-reg">ist</span> der <span title="Original: Durchmeſser" class="dta-reg">Durchmesser</span> der Bäume in den<br/>
+Tropengegenden 5 bis 6 Fuß. Der Drachenbaum hat<br/>
+15<span title="Original: ′" class="dta-reg">'</span> im <span title="Original: Durchmeſser" class="dta-reg">Durchmesser</span> <span class="dta-metamark" title="metamark">|:</span> <span title="Original: Kanariſche" class="dta-reg">Kanarische</span> <span title="Original: Inſeln" class="dta-reg">Inseln</span> <span class="dta-metamark" title="metamark">:|</span></p><br/>
+<p class="dta-p">Ähnlich finden wir auch <span title="Original: Contraſte" class="dta-reg">Kontraste</span> in den <span title="Original: Blüten-&#xA;theilen" class="dta-reg">Blütenteilen</span>; wenn wir die kleiner Blumen der <span title="Original: Dolden-&#xA;gewachſe" class="dta-reg">Doldengewachse</span> betrachten, und dagegen die große <span class="aq ">Raphlosia</span><br/>
+von der die Blume 15 Pfund wiegt und 3 Fuß im<br/>
+<span title="Original: Durchmeſser" class="dta-reg">Durchmesser</span> hat; man hat <span title="Original: ſie" class="dta-reg">sie</span> im <span title="Original: ſüdlichen" class="dta-reg">südlichen</span> <span title="Original: Ocean" class="dta-reg">Ozean</span><br/>
+gefunden. Bevor man <span title="Original: dieſe" class="dta-reg">diese</span> kannte war als größte<br/>
+Blume bekannt die <span class="aq ">Aristolochia</span> die 16 bis 17<span title="Original: ″" class="dta-reg">"</span> <span title="Original: pariser" class="dta-reg">Pariser</span><br/>
+im <span title="Original: Durchmeſser" class="dta-reg">Durchmesser</span> hat. <span class="aq ">Doc</span> und <span class="aq "><span title="Original: Bon" class="dta-reg">Bonpland</span><span class="dta-del" title="Streichung (#s)">fo</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Original: p" class="dta-reg"/></span><span title="Original: land" class="dta-reg"/></span> brachten <span title="Original: Blü-&#xA;ten" class="dta-reg">Blüten</span> davon nach Paris.</p><br/>
+<p class="dta-p">Das <span title="Original: Characteriſtiſche" class="dta-reg">charakteristische</span> der Tropenvegetation <span title="Original: be-&#xA;ſteht" class="dta-reg">besteht</span> hauptsächlich in Größe der Formen und <span title="Original: aufſtre-&#xA;bender" class="dta-reg">aufstrebender</span> Vegetation. <span title="Original: –" class="dta-reg">-</span> Schon darum findet man dort<br/>
+größere Bäume, weil die baumartigen <span title="Original: Monoco-&#xA;tyledonen" class="dta-reg">Monocotyledonen</span> <span class="dta-metamark" title="metamark">|:</span> wozu die Größer gehören die <span title="Original: ſich" class="dta-reg">sich</span> bis<br/>
+60 und 70<span title="Original: ′" class="dta-reg">'</span> <span title="Original: ſchon" class="dta-reg">schon</span> erheben <span class="dta-metamark" title="metamark">:|</span> wie die <span title="Original: Palmbäume" class="dta-reg">Palmenbäume</span>, <span title="Original: baum-&#xA;artige" class="dta-reg">baumartige</span> <span title="Original: Farrenkräuter" class="dta-reg">Farnkräuter</span> und dgl. nur der Tropen-<br/>
+Zone angehören.</p><br/>
+<p class="dta-p">Nimmt man Bäume von einer Höhe von 14 bis 15<span class="dta-marginal dta-marginal-right">?<br/>
+</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Fuß</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0570|</span><br/>
+Fuß, <span title="Original: ſo" class="dta-reg">so</span> findet man kaum 12 bis 14 Waldbäume in<br/>
+<span title="Original: Deutſchland" class="dta-reg">Deutschland</span> die dazu gehören; wogegen in der <span title="Original: Tro-&#xA;pengegend" class="dta-reg">Tropengegend</span> <span title="Original: faſt" class="dta-reg">fast</span> alle Bäume bis auf 100, 120 und<br/>
+130 Fuß <span title="Original: aufſchießen" class="dta-reg">aufschießen</span>.</p><br/>
+<p class="dta-p">Die Art wie die Baumartigkeit <span title="Original: begünſtigt" class="dta-reg">begünstigt</span> wird,<br/>
+liegt nicht bloß im <span title="Original: Clima" class="dta-reg">Klima</span> <span title="Original: ſondern" class="dta-reg">sondern</span> auch in der<br/>
+Lage <span title="Original: ſelbſt" class="dta-reg">selbst</span>. Wenn es bei uns nur 2 <span title="Original: Eichenar-&#xA;ten" class="dta-reg">Eichenarten</span> <span title="Original: giebt" class="dta-reg">gibt</span>, <span title="Original: ſo" class="dta-reg">so</span> hat man in Amerika 40 Arten. <span title="Original: Dieſe" class="dta-reg">Diese</span><br/>
+Form <span title="Original: iſt" class="dta-reg">ist</span> dort <span title="Original: ſo" class="dta-reg">so</span> verbreitet, daß <span title="H￼." class="dta-abbr">Herr</span> <span class="aq "><span title="Original: Bon" class="dta-reg">Bonpland</span><span class="dta-del" title="Streichung (#ow)">fe</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: p" class="dta-reg"/></span><span title="Original: land" class="dta-reg"/></span><br/>
+auch noch in der <span class="dta-del" title="Streichung (#ow)"/><span class="dta-add" title="Hinzufügung (across)">(</span><span title="Original: andern" class="dta-reg">anderen</span><span class="dta-del" title="Streichung (#ow)"/><span class="dta-add" title="Hinzufügung (across)">)</span> <span title="Original: temperirten" class="dta-reg">temperierten</span> Zone 25<br/>
+Arten hinzugefügt hat in <span title="Original: Neuſpanien" class="dta-reg">Neuspanien</span>. <span title="Original: –" class="dta-reg">-</span> Einige<br/>
+Pflanzen die bei uns nur <span title="Original: ſehr" class="dta-reg">sehr</span> niedrig <span title="Original: ſind" class="dta-reg">sind</span>,<br/>
+wie z. B. die <span title="Original: Matron" class="dta-reg">Matrone</span>, <span title="Original: ſind" class="dta-reg">sind</span> <span title="Original: grade" class="dta-reg">gerade</span> <span title="Original: ſolche" class="dta-reg">solche</span> welche dort<br/>
+<span title="Original: ſehr" class="dta-reg">sehr</span> hoch werden; <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: iſt" class="dta-reg">ist</span> die <span class="aq ">Amazonia</span> eine Matron-<br/>
+Art.</p><br/>
+<p class="dta-p">Eben <span title="Original: ſo" class="dta-reg">so</span> wenn <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſich" class="dta-reg">sich</span> durch Höhe, Baumartigkeit<br/>
+und herrliche Ausbreitung der Blätter auszeichnen<br/>
+<span title="Original: ſo" class="dta-reg">so</span> zeigen die Tropengegenden auch die größte <span title="Original: Zu-&#xA;ſammenziehung" class="dta-reg">Zusammenziehung</span> der <span class="u ">Parenthemas</span> des Apendiculär<br/>
+<span title="Original: Syſtems" class="dta-reg">Systems</span> <span title="Original: –" class="dta-reg">-</span> <span title="Original: ſo" class="dta-reg">so</span> die <span class="u ">Faladien</span>. So <span title="Original: iſt" class="dta-reg">ist</span> daher die <span title="Original: Tropenge-&#xA;gend" class="dta-reg">Tropengegend</span> reich an <span title="Original: Contraſten" class="dta-reg">Kontrasten</span>.</p><br/>
+<p class="dta-p">Ein Vorzug der <span title="Original: temperirten" class="dta-reg">temperierten</span> Zone <span title="Original: iſt" class="dta-reg">ist</span>, daß in den <span title="Original: niedern" class="dta-reg">niederen</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Ge-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0571 : 565|</span><br/>
+<span title="Original: Gewächſen" class="dta-reg">Gewächsen</span> ein <span title="Original: friſches" class="dta-reg">frisches</span> Grün <span title="Original: herrſcht" class="dta-reg">herrscht</span>. Wiesen <span title="Original: ſind" class="dta-reg">sind</span><br/>
+den Tropengegenden <span title="Original: beinah" class="dta-reg">beinahe</span> ganz unbekannt; es <span title="Original: kom̃t" class="dta-reg">kommt</span><br/>
+<span title="Original: dieß" class="dta-reg">dies</span> her von der geringen Zahl der annellen<br/>
+und bis annellen Pflanzen in den Tropen, die<br/>
+zugleich abnehmen von der <span title="Original: temperirten" class="dta-reg">temperierten</span> Zone<br/>
+aus, gegen den Pol und gegen den <span title="Original: Aequator" class="dta-reg">Äquator</span>.<br/>
+<span class="dta-metamark" title="metamark">|:</span> nach <span class="aq ">Doc</span> Calcuten <span class="dta-metamark" title="metamark">:|</span> <span title="Original: –" class="dta-reg">-</span> So <span title="Original: giebt" class="dta-reg">gibt</span> es einjährige <span title="Original: Pflan-&#xA;zen" class="dta-reg">Pflanzen</span> in Lappland <span class="sup "><span title="Original: 1" class="dta-reg">1/60</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 60" class="dta-reg"/></span>; in <span title="Original: Deutſchland" class="dta-reg">Deutschland</span> dagegen <span class="sup "><span title="Original: 1" class="dta-reg">1/30</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 30" class="dta-reg"/></span>.<br/>
+Der letzte <span title="Original: Unterſchied" class="dta-reg">Unterschied</span> den wir <span title="Original: unterſuchen" class="dta-reg">untersuchen</span> <span title="Original: iſt" class="dta-reg">ist</span> die<br/>
+<span title="Original: Verſchiedenheit" class="dta-reg">Verschiedenheit</span> in der Größe der Blüten <span title="Original: zwiſchen" class="dta-reg">zwischen</span><br/>
+den Tropen nur <span title="Original: temperirten" class="dta-reg">temperierten</span> Zonen. Bei <span title="Original: unſern" class="dta-reg">unseren</span><br/>
+Bäumen <span title="Original: ſind" class="dta-reg">sind</span> die größten Blüten bis die <span title="Original: Amen-&#xA;lacien" class="dta-reg">Amenlacien</span> und Zapfenbäumen, aber doch nur <span title="Original: ſehr" class="dta-reg">sehr</span><br/>
+dürftig, wenn man dagegen die vielfarbigen<br/>
+großen Blüten in den Tropengegenden <span title="Original: ansicht" class="dta-reg">Ansicht</span> <span title="Original: –" class="dta-reg">-</span><br/>
+Wenn <span title="Original: unſer" class="dta-reg">unser</span> Bäume mit Mors Arten überzogen<br/>
+<span title="Original: ſind" class="dta-reg">sind</span> <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: iſt" class="dta-reg">ist</span> das Gewand der Tropenbäume aus<br/>
+Schmetterlings ähnlichen Blüten, gewebt, die den<br/>
+Stamm bedecken; <span title="Original: ſo" class="dta-reg">so</span> daß oft auf einen Baum<br/>
+<span title="Original: ſtamm" class="dta-reg">stamm</span> in den Tropen mehr <span title="Original: verſchiedene" class="dta-reg">verschiedene</span> Pflanzen<br/>
+<span title="Original: zuſammen" class="dta-reg">zusammen</span> gedrängt <span title="Original: ſind" class="dta-reg">sind</span>, als bei uns bisweilen<br/>
+auf einigen Morgen.</p></div><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Ein</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0572|</span><br/>
+<div class=""><p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Gesellig lebende<br/>
+Pflanzen und<br/>
+<span title="Original: iſolirt" class="dta-reg">isoliert</span> lebende</span>.<br/>
+</span>Ein merkwürdiger <span title="Original: Unterſchied" class="dta-reg">Unterschied</span> bei den Pflanzen<br/>
+<span title="Original: beſteht" class="dta-reg">besteht</span> noch in ihrer <span title="Original: Gruppirung" class="dta-reg">Gruppierung</span>, ob <span title="Original: ſie" class="dta-reg">sie</span> nämlich <span title="Original: iſo-&#xA;lirt" class="dta-reg">isoliert</span> leben oder <span title="Original: geſellig" class="dta-reg">gesellig</span> bei einander leben. <span title="Original: –" class="dta-reg">-</span><br/>
+Das <span title="Original: geſellige" class="dta-reg">gesellige</span> Leben der Pflanzen findet <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: beſonders" class="dta-reg">besonders</span><br/>
+in den Heideländern, und in den <span title="Original: temperirten" class="dta-reg">temperierten</span> Zonen<br/>
+mehr als in den Tropengegenden, welche wegen<br/>
+der <span title="Original: großern" class="dta-reg">großen</span> <span title="Original: Abwechselung" class="dta-reg">Abwechslung</span> deshalb einen <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ſchönen" class="dta-reg">schönen</span><br/>
+Anblick darbieten.</p><br/>
+<p class="dta-p">Man findet als allgemeines <span title="Original: Geſetz" class="dta-reg">Gesetz</span> daß eine <span title="Original: je-&#xA;de" class="dta-reg">jede</span> Pflanze da wo <span title="Original: ſie" class="dta-reg">sie</span> anfängt zu gedeihen, <span title="Original: iſo-&#xA;lirt" class="dta-reg">isoliert</span> lebt, weiter hin aber <span title="Original: geſellig" class="dta-reg">gesellig</span>, da wo das <span title="Original: Clima" class="dta-reg">Klima</span><br/>
+ihr mehr <span title="Original: zuſpricht" class="dta-reg">zuspricht</span>. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">Unter den Tropen <span title="Original: iſt" class="dta-reg">ist</span> das <span title="Original: geſellige" class="dta-reg">gesellige</span> Leben <span title="Original: ſehr" class="dta-reg">sehr</span> <span title="Original: ſel-&#xA;ten" class="dta-reg">selten</span>; Heidenwälder <span title="Original: beſtehen" class="dta-reg">bestehen</span> aus den <span title="Original: verſchiedenar-&#xA;tigſten" class="dta-reg">verschiedenartigsten</span> Pflanzen, und die Frage aus welchen <span title="Original: Bäu-&#xA;men" class="dta-reg">Bäumen</span> ein <span title="Original: gewiſser" class="dta-reg">gewisser</span> Wald <span title="Original: beſteht" class="dta-reg">besteht</span> würde in der<br/>
+Tropenzone gar keinen Sinn haben, da man nie<br/>
+eine einzige <span title="Original: vorherrſchende" class="dta-reg">vorherrschende</span> Art wie bei uns würde<br/>
+nennen können doch <span title="Original: giebt" class="dta-reg">gibt</span> es einige Ausnahmen,<br/>
+<span title="Original: ſo" class="dta-reg">so</span> die <span class="aq ">Rotol's</span>, die <span class="aq "><span title="Original: Cactus" class="dta-reg">Kaktus</span></span> Arten, die <span title="Original: characteriſti-&#xA;ſchen" class="dta-reg">charakteristischen</span> für Amerika <span title="Original: ſind" class="dta-reg">sind</span>, die <span title="Original: Bambu" class="dta-reg">Bambusaien</span><span class="dta-del" title="Streichung (#ow)">s</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: ſ" class="dta-reg"/></span><span title="Original: a" class="dta-reg"/><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span title="Original: ien" class="dta-reg"/> <span class="dta-metamark" title="metamark">|:</span> nicht die <span title="Original: eigent" class="dta-reg">eigentlichen</span><span class="dta-supplied">[<span title="Original: lichen" class="dta-reg"/>]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="aq u ">Bam-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0573 : 567|</span><br/>
+<div class="fw-top fw-sig">3<span title="Original: " class="dta-reg">.</span><br/>
+</div><br/>
+<span class="aq "><span title="Original: Bambuſa" class="dta-reg">Bambusse</span></span> die <span title="Original: ſchon" class="dta-reg">schon</span> in <span title="Original: frühern" class="dta-reg">früheren</span> Zeiten <span title="Original: ſo" class="dta-reg">so</span> berühmt<br/>
+war <span class="dta-metamark" title="metamark">:|</span> <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">Die <span title="Original: Cactus" class="dta-reg">Kaktus</span> Arten erreichen, oft eine Höhe von 25<br/>
+bis 30<span title="Original: ′" class="dta-reg">'</span>, und bieten einen Anblick wie Orgelpfeifen.<br/>
+<span title="Original: Dieſe" class="dta-reg">Diese</span> <span title="Original: ſowohl" class="dta-reg">sowohl</span> wegen ihres dichten <span title="Original: Wachsthums" class="dta-reg">Wachstums</span>, als<br/>
+die <span title="Original: Crokodille" class="dta-reg">Krokodile</span> die <span title="Original: ſich" class="dta-reg">sich</span> viel davon nähren werden<br/>
+bei <span title="Original: Befeſtigungen" class="dta-reg">Befestigungen</span> in Amerika vielfach angewandt.<br/>
+Die <span class="aq "><span title="Original: Bambuſa" class="dta-reg">Bambusse</span></span> erhebt <span title="Original: ſich" class="dta-reg">sich</span> bis 50 und 60<span title="Original: ′" class="dta-reg">'</span> Höhe und<br/>
+wird <span title="Original: 2–3½" class="dta-reg">2-31/2"</span><span title="Original: ″" class="dta-reg"/> breit.</p><br/>
+<p class="dta-p">Das Leben der Pflanzen in <span title="Original: Hinſicht" class="dta-reg">Hinsicht</span> ihrer <span title="Original: Grup-&#xA;pirungen" class="dta-reg">Gruppierungen</span> zu kennen <span title="Original: iſt" class="dta-reg">ist</span> nicht nur richtig für die<br/>
+<span title="Original: Phyſiogonomik" class="dta-reg">Physiogonomik</span> des Erdkörpers, <span title="Original: ſondern" class="dta-reg">sondern</span> auch für<br/>
+das <span title="Original: Schickſal" class="dta-reg">Schicksal</span> der <span title="Original: Menſchen" class="dta-reg">Menschen</span>.</p><br/>
+<p class="dta-p">Die <span title="Original: Verſchiedenheit" class="dta-reg">Verschiedenheit</span> <span title="Original: geſelliger" class="dta-reg">geselliger</span> oder <span title="Original: iſolirten" class="dta-reg">isolierten</span> <span title="Original: Pflan-&#xA;zen" class="dta-reg">Pflanzen</span> <span title="Original: iſt" class="dta-reg">ist</span> für die <span title="Original: Phyſiogonomik" class="dta-reg">Physiogonomik</span> des Erdkörpers<br/>
+<span title="Original: ſehr" class="dta-reg">sehr</span> eingreifend. Eine Gegend die viel <span title="Original: geſellig" class="dta-reg">gesellig</span><br/>
+lebende Pflanzen hat, wie man die Zapfenbäume<br/>
+ganze Wälder bildend findet, bietet einen <span title="Original: trau-&#xA;rigen" class="dta-reg">traurigen</span> Anblick dar; in den Tropen Gegenden<br/>
+hat man <span title="Original: dieß" class="dta-reg">dies</span> nicht zu befürchten, da man <span title="Original: ſelten" class="dta-reg">selten</span><br/>
+lange <span title="Original: dieſelben" class="dta-reg">dieselben</span> Arten von Pflanzen findet, und<br/>
+bald Abwechselungen eintreten.</p><br/>
+<p class="dta-p">Auf die <span title="Original: Schickſale" class="dta-reg">Schicksale</span> der <span title="Original: Menſchen" class="dta-reg">Menschen</span> hat <span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: Verſchie-" class="dta-reg">Verschiedenheit</span>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">den</span></div><span title="Original: " class="dta-reg"/>
+<span class="dta-pb" style="padding-left:15em">|#f0574|</span><br/>
+<span title="Original: denheit" class="dta-reg"/> den größten Einfluß ausgeübt. Wo das <span title="Original: ge-&#xA;ſellige" class="dta-reg">gesellige</span> Leben der baumartigen Pflanzen <span title="Original: herrſchte" class="dta-reg">herrschte</span>,<br/>
+mußten die großen Waldungen dem Ackerbau <span title="Original: Hin-&#xA;derniſse" class="dta-reg">Hindernisse</span> in den Weg legen; die <span title="Original: Menſchen" class="dta-reg">Menschen</span> bildeten<br/>
+<span title="Original: ſich" class="dta-reg">sich</span> hier mehr zu <span class="dta-del" title="Streichung (#ow)">h</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: J" class="dta-reg">Jägern</span></span><span title="Original: äg" class="dta-reg"/><span class="dta-del" title="Streichung (#erased)"><span class="gap">[verlorenes Material]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: er" class="dta-reg"/></span><span title="Original: n" class="dta-reg"/> aus und lebten weniger<br/>
+in <span title="Original: Gemeinſchaft" class="dta-reg">Gemeinschaft</span>. <span title="Original: –" class="dta-reg">-</span> Noch mehr Einfluß aber brachten<br/>
+die Steppen hervor die von dem <span title="Original: geſelligen" class="dta-reg">geselligen</span> Leben<br/>
+der Monocotyledonen, der Grasarten <span title="Original: entſtehen" class="dta-reg">entstehen</span>: es<br/>
+bildeten <span title="Original: ſich" class="dta-reg">sich</span> hier daraus Hirtenleben aus in Asien,<br/>
+die Nomaden Stämme <span title="Original: entſtanden" class="dta-reg">entstanden</span>, und das <span title="Original: patrio-&#xA;tiſche" class="dta-reg">patriotische</span> Leben mußte unter den Völkern <span title="Original: hervor-&#xA;gebracht" class="dta-reg">hervorgebracht</span> werden, indem Familien mit ihrer <span title="Original: Heer-&#xA;den" class="dta-reg">Herden</span> im Lande herumzogen, immer gewiß, daß<br/>
+<span title="Original: ſie" class="dta-reg">sie</span> ihre <span title="Original: Bedürfniſse" class="dta-reg">Bedürfnisse</span> finden würden. Zugleich <span title="Original: wur-&#xA;de" class="dta-reg">wurde</span> dadurch zu den <span title="Original: asiatiſchen" class="dta-reg">asiatischen</span> Despotien <span title="Original: ange-&#xA;legt" class="dta-reg">angelegt</span>. Wenn ein <span title="Original: Herrſcher" class="dta-reg">Herrscher</span> auf Eroberungen <span title="Original: aus-&#xA;zog" class="dta-reg">auszog</span> <span title="Original: ſo" class="dta-reg">so</span> brauchte er nicht für den Unterhalt <span title="Original: ſeiner" class="dta-reg">seiner</span><br/>
+Krieger zu <span title="Original: ſorgen" class="dta-reg">sorgen</span>, keinen Proviant mit zu <span title="Original: neh-&#xA;men" class="dta-reg">nehmen</span>, und überall das Land die <span title="Original: Bedürfniſse" class="dta-reg">Bedürfnisse</span><br/>
+dar, <span title="Original: ſo" class="dta-reg">so</span> wurden Eroberungen mit Leichtigkeit <span title="Original: ge-&#xA;macht" class="dta-reg">gemacht</span>, und es <span title="Original: entſtanden" class="dta-reg">entstanden</span> die großen <span title="Original: asiatiſchen" class="dta-reg">asiatischen</span><br/>
+Reiche.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Wir</span></div></div></div></div></div></body></html>

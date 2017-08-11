@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[26. Vorlesung, 02.02.1828]</span></div><br/>
+<div class=""><div class=""><div class="dta-head">Die Telluriſchen Verhältniſse.</div><br/>
+<hr/><br/>
+<p class="dta-p">Es iſt dieß der Theil unſrer Wiſsenſchaft den<br/>
+man gewöhnlich allein unter dem Namen phyſiſche<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Geo-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0228|</span><br/>
+Geographie bezeichnet. – Wir theilen dieſen Haupt-<br/>
+theil der Kosmographie in 3 Hauptmomente ein;<br/>
+wir betrachten nur 1, das Starre, 2, die flüſsigen<br/>
+Hüllen; und zwar die elaſtiſch flüſsigen im Luft-<br/>
+meer und die tropfbarflüſsigen im Ocean 3,<br/>
+das Organiſche, die Pflanzen und Thiere.</p><br/>
+<div class=""><div class="dta-head">1, Das Starre</div><br/>
+<hr/><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="gap">[unleserliches Material]</span><br/>
+</span>Der ſtarre Theil wird gewöhnlich mit dem Na-<br/>
+men Geognoſie belegt; es iſt dieß eine falſche<br/>
+Benennung indem außer den Gebirgsarten noch<br/>
+vieles andere dazu gehört. Es würde aber un-<br/>
+nütz ſein ſolche Benennungen die einmal durch<br/>
+den Gebrauch geheiligt ſind, verändern zu wollen.<br/>
+Wir werden in dieſem Theile betrachten:</p><br/>
+<div class="dta-list"><div class="dta-list-item">1, die Geſtalt der Erde</div>
+<div class="dta-list-item">2, die innere Wärme, und die Lichterſcheinun-<br/>
+gen der Erde.</div>
+<div class="dta-list-item">3, <span title="Schreibfehler: elector" class="dta-corr">electro</span>-magnetiſchen Erſcheinungen</div>
+<div class="dta-list-item">4, die Veränderungen welche eine Folge der<br/>
+Communicationen der äußeren Oberfläche<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">mit</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0229 : 221|</span><br/>
+mit dem Innern der Erde ſind <span class="dta-metamark" title="metamark">|:</span> heiße Quellen,<br/>
+Vulkan <span class="aq ">etc</span> <span class="dta-metamark" title="metamark">:|</span></div>
+<div class="dta-list-item">5, Das Oberflächen-Anſehen ſelbſt das Gegliederte<br/>
+der Continente.</div>
+</div><div class=""><div class="dta-head">Von der Geſtalt der Erde</div><br/>
+<hr/><br/>
+<p class="dta-p">Die Kenntniß der Geſtalt der Erde iſt nicht<br/>
+blos ein Gegenſtand der Neugierde; die Be-<br/>
+ſtimmung derſelben hat Einfluß auf das bür-<br/>
+gerliche Leben,<span class="dta-add" title="Hinzufügung (intralinear)"><span class="gap">[unleserliches Material – 2 Zeichen fehlen]</span></span>die <span title="Schreibfehler: Schifffarth" class="dta-corr">Schifffahrt</span>, die Beſtim̃ung der<br/>
+Entfernungen und auf die Möglichkeit richtige<br/>
+Karten zu zeichnen, <span class="dta-del" title="Streichung (#s)">für</span><span class="dta-add" title="Hinzufügung (intralinear)">auf</span> Alles was das Graphiſche<br/>
+betrifft. –</p><br/>
+<p class="dta-p">Was für die Beſtimmung der Geſtalt der Erde<br/>
+geſchehen iſt, und wie man ſich nach und nach der<br/>
+Wahrheit genähert hat ſoll hier geſchichtlich an-<br/>
+geführt werden.</p><br/>
+<p class="dta-p">Die erſte Anſicht von der Erde war eine<br/>
+flache Erdſcheibe vom Oceanus umflutet, ſo giebt<br/>
+ſie uns <span title="Personenname"><a href="http://d-nb.info/gnd/11855333X">Homer</a></span> und dieß war auch vermuthlich die<br/>
+Anſicht von <span title="Personenname"><a href="http://d-nb.info/gnd/118801732">T<span class="dta-add" title="Hinzufügung (intralinear)">h</span>ales</a></span>, wiewohl <span title="Personenname"><a href="http://d-nb.info/gnd/118595083">Plinius</a></span> ſagt <span title="Personenname"><a href="http://d-nb.info/gnd/118801732">T<span class="dta-add" title="Hinzufügung (intralinear)">h</span>ales</a></span> habe<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">schon</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0230|</span><br/>
+ſchon die Anſicht von einer Kugelgeſtalt gehabt.<br/>
+Es ſcheint dieß erſt die Anſicht des pythagoriſchen<br/>
+Bundes geweſen zu ſein, nach dem Zeugniß das<br/>
+uns <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118791974">Philalaus</a></span></span> davon giebt. – Die Gründe die<br/>
+wir noch jetzt für die runde Geſtalt der Erde<br/>
+haben werden ſchon von den Alten angeführt;<br/>
+der Schatten der Erde bei Mondfinſterniſsen; die<br/>
+Bemerkung, daß wenn man von Cypern her<br/>
+kam man den Canopus immer höher und höher<br/>
+hinauf ſteigen ſah u.ſ.w. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118650130">Aristoteles</a></span></span> ſagt in einer<br/>
+merkwürdigen Stelle: <q class="quote">„Die Erde müſse eine<br/>
+ſphäriſche Geſtalt haben, weil alle Theilchen der-<br/>
+ſelben vermöge der Schwere nach einem Mittelpunkt<br/>
+getrieben werden; wäre demnach irgend wo eine<br/>
+größere Anhäufung von Theilen, ſo würden dieſe<br/>
+herabrutſchen bis ſie ins Gleichgewicht kämen.”</q></p><br/>
+<p class="dta-p">Was in den früheſten ſchon allgemeine Meinung war,<br/>
+wurde ſpäter ſo irrig angeſehen, daß man eine ſol-<br/>
+che Idee durchaus verbot und der Pabſt <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100964397">Zacharias</a></span></span> den<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118804723">Vigelius</a></span></span> ſeines Biſchoffsamts entſetzte weil er behauptete<br/>
+daß es Antipoden gäbe. Auch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118564994">Christ. Columbus</a></span></span> hatte noch viele<br/>
+Schwierigkeiten um mit ſeiner Idee gehört zu werden. –</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0231 : 223|</span><br/>
+<p class="dta-p"><span class="u ">Beſtimmung durch Meſsungen.</span> Eine jede Meſsung iſt<br/>
+zum Theil mathematiſch theils aſtronomiſch. – Schon früher<br/>
+hatte man ſich mit Meſsungen beſchäftigt, die rein<br/>
+mathematiſch waren und nur geringe Beſtimmungen<br/>
+der Aſtronomie voraus ſetzten. – Unter dem Kalifen<br/>
+<span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118847686">Almand</a></span></span></span> wurde ſo eine Gradmeſsung von Norden<br/>
+gegen Süden vorgenommen. –</p><br/>
+<p class="dta-p">In neuern Zeiten wurden 1½ Grad in Penſylvanien<br/>
+mit Ketten gemeſsen. – Doch iſt dieſe Art von<br/>
+Meſsung wie <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118878913">Delambre</a></span></span> bewieſen hat wegen der<br/>
+Unvollkommenheit der Inſtrumente ſowohl als der<br/>
+Schwierigkeit in geraden Linie fortzugehen, nicht ſo<br/>
+ſicher als man vielleicht glauben ſollte.</p><br/>
+<p class="dta-p"><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118797794">Snellius</a></span></span> – nicht <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11900643X">Picard</a></span></span>, wie man gewöhnlich ſagt – iſt<br/>
+zuerſt darauf gefallen durch trigometriſche Netze<br/>
+und die unmittelbare Meſsung einer einzigen<br/>
+Baſis die Meſsung einer Gradlänge zu vollführen.<br/>
+Zuerſt wurde eine ſolche Meſsung zwiſchen Alkmar<br/>
+und Leyden vorgenommen.</p><br/>
+<p class="dta-p">Es wurde dieſe Meſsung zugleich Ver<span class="dta-add" title="Hinzufügung (superlinear)">an</span>laſsung<br/>
+zur Vervollkommung aſtronomiſcher Inſtrumente und<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">der</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0232|</span><br/>
+Analyſe ſelbſt.</p><br/>
+<p class="dta-p">Der 2<span title="t" class="dta-abbr"><span class="sup ">te</span></span> Theil der Meſsung iſt der aſtronomiſche Theil;<br/>
+man ſoll nur den Winkel beſtimmen der zwiſchen<br/>
+den 2 Standorten <span class="dta-add" title="Hinzufügung (superlinear)">und</span><span class="dta-add" title="Hinzufügung (intralinear)">(</span>zwiſchen<span class="dta-add" title="Hinzufügung (intralinear)">)</span> einen Stern entſteht, der<br/>
+in dem einen Standort ſich im Zenith befindet. –<br/>
+Um einen <span class="dta-add" title="Hinzufügung (superlinear)"><span class="dta-metamark" title="metamark">⎡</span><span class="gap">[unleserliches Material – 1 Wort fehlt]</span></span>Grad zu bekämmen müßt man den Un-<br/>
+terſchied der Meridianhöhe eines Sterns von 2 Stand-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="dta-metamark" title="metamark">|:</span> s. Gäodasie 1827/28 <span class="dta-metamark" title="metamark">:|</span><br/>
+</span>orten geſehen.</p><br/>
+<p class="dta-p">In den frühern Zeiten war in dieſer Art der Ver-<br/>
+ſuch von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118530674">Erathostenes</a></span></span> der mehr eine Schätzung als<br/>
+Meſsung zu nennen iſt; erfand hier die Länge<br/>
+eines Grads auf 252000 Stadien.</p><br/>
+<p class="dta-p">Auf den Durchmeſser des Sonnenbildes wurde durch-<br/>
+aus keine Rückſicht genommen. Eben ſo wenig darauf<br/>
+daß Sienä und Alexandria nicht in einem Me-<br/>
+ridian liegen. –</p><br/>
+<p class="dta-p">Eine 2te Meſsung der Art, aber auch eben ſo unvoll-<br/>
+kommen wird einen gewiſsen <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118595946">Posidonius</a></span></span> zu ge-<br/>
+ſchrieben. Es war nur Canopus in Rhodus kaum ſicht-<br/>
+bar; in Alexandrien ſtand er aber ſehr hoch; daraus<br/>
+verglich er die Entfernung durch bloße Schätzung.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Pto</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0233 : 225|</span><br/>
+<p class="dta-p"><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118641786">Ptolomäus Amagestus</a></span></span> rühmt ſich, ſelbſt eine Meſsung ge-<br/>
+macht zu haben; doch war dieß nur eine Winkel-<br/>
+meſsung. Unter <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118847686">Almamud</a></span></span> geſchah geſchah die 4te<br/>
+Meſsung um die Richtigkeit der frühern zu unter-<br/>
+ſuchen; ſie fanden daſselbe was <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118641786">Ptolomäus Ama-<br/>
+gestus</a></span></span> gefunden hatte.</p><br/>
+<p class="dta-p">Was bisweilen die Zufälligkeit für ziemlich richtige<span class="dta-marginal dta-marginal-right"><span class="dta-metamark" title="metamark">|:</span> S. Gäodäsie 1827/28 <span class="dta-metamark" title="metamark">:|</span><br/>
+</span><br/>
+Reſultate geben kann zeigt die Meſsung eines<br/>
+Franzoſen <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119220903">Fernel</a></span></span>, die er in ſeinem Wagen machte<br/>
+indem er die Umdrehung des Rades beobachtete. –<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119174596">Lacaille</a></span></span> fand in einer ſpäter Meſsung beinah<br/>
+daſselbe Reſultat.</p><br/>
+<p class="dta-p">Wie ſchon oben erwähnt verließ <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118797794">Snellius</a></span></span> zuerſt<br/>
+dieſe Methode, nachdem <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118587544">Newton</a></span></span> lange Zeit durch<span class="dta-marginal dta-marginal-right">?<br/>
+</span><br/>
+die Meſsung eines Englanders irre geleitet wor-<br/>
+den war. Die beſten Meſsungen im 17ten Jahr-<br/>
+hundert ſind die von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11900643X">Picard</a></span></span> 1669 und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Dom Casſini</a></span></span><br/>
+1689 in Frankreich. Das man die beiden Meſsungen<br/>
+vergleich fand ſich das ſonderbare Reſultat, daß die<br/>
+Erde an den Polen zugeſpitzt und nicht abgeplattet<br/>
+ſei; es fiel dieß um ſo mehr auf da <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118587544">Newton</a></span></span> ſchon<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">em-</span></div><br/>
+<div class="&#xA;            fw-bottom-sig&#xA;          "><span class="aq ">d</span>. 2</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0234|</span><br/>
+empiriſch das Gegentheil gezeigt hatte. –</p><br/>
+<p class="dta-p"><span class="u ">Pendelſchwingungen</span>. Die Beobachtungen mit dem Pen-<br/>
+del zeigten das Gegentheil: <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117531936">Riché</a></span></span> wurde auf ſei-<br/>
+ner Reiſe nach Bayonne von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Casſini</a></span></span> aufgefordert,<br/>
+dort das Pendel ſchwingen zu laſsen, und fand daß<br/>
+er es verkürzen mußte um dieſelbe Zahl von<br/>
+Schwingungen in einer gewiſsen Zeit zu haben,<br/>
+die das Pendel in Paris machte. Es entſtand<br/>
+die Frage nach der Urſache dieſer Erſcheinung;<br/>
+entweder war unter dem Aequator eine größe<br/>
+Wurfkraft der Erde oder 2, die Erdmaſse war dort<br/>
+mehr angehäuft als an den Polen und das Pendel<br/>
+daher weiter vom Mittelpunkt entfernt. – Die<br/>
+nähere Unterſuchung dieſes Gegenſtandes gab Ver-<br/>
+anlaſsung zu vielen großen Reiſen: <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117622974">Hugo</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/117547786">Godel</a></span></span></span><br/>
+und andere reiſten nach Quit<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">o in</span> <span title="Schreibfehler: dem" class="dta-corr">den</span> Jahren<br/>
+von 1735 bis 1746. um dort eine Meſsung zu ver-<br/>
+anſtalten. Sie hatten hier eine ſchwierige Beob-<br/>
+achtung in der Andeskette zu machen; ſie mußten<br/>
+bis nahe an die Schneegrenze hinauf nach dem Hauſe<span class="dta-add" title="Hinzufügung (superlinear)"><span class="gap">[unleserliches Material]</span></span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">des</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0235 : 227|</span><br/>
+des <span class="aq ">Pichincha</span> wo das Thermometer nur höchſtens<br/>
+auf 6–8° R. ſteigt in der Nacht aber gewöhnlich<br/>
+auf −4° ſteht. – Dazu kam daß man ſich noch der<br/>
+pyramidaliſchen Signale bediente, die wegen<br/>
+der Lichtverſchiedenheit nicht einen feſten Viſions-<br/>
+punkt geben. <span class="dta-metamark" title="metamark">|:</span> Später erfand man die ſogenannten<br/>
+Nachtſignale mit Hohlſpiegeln und Lampen; eine<br/>
+dritte Methode gab <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118510215">Besſel</a></span></span> an der das Sonnenbild<br/>
+ſelbſt benutzt, <span class="dta-del" title="Streichung (#s)">dieß</span><span class="dta-add" title="Hinzufügung (superlinear)">das</span> auf weit entfernte Punkte hin-<br/>
+geleitet werden kann. – <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/104234644">Gausſ</a></span></span>, <span class="aq ">Heliotrop</span> <span class="dta-metamark" title="metamark">:|</span></p><br/>
+<p class="dta-p">Im Jahre 1726 begab ſich eine andere Geſellſchaft<br/>
+unter denen <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11852092X">Cleron</a></span></span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117672025">Camus</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118731998">Maupertius</a></span></span> ſich be-<br/>
+fanden nach Norden in Lappland in der Gegend<br/>
+von Torneo um dort einen Grad zu meſsen. –<br/>
+Durch Vergleichung dieſer beiden Gradmeſsungen<br/>
+fand ſich die Abplattung auf 305–310. –</p><br/>
+<p class="dta-p">In den neuern Zeiten ſind viele Zweifel über<br/>
+dieſe Meſsung entſtanden. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117679100">Swanberg</a></span></span> glaubte<br/>
+einen Unterſchied von 1200′, auf den Grad zu<br/>
+finden. Profeſsor <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116622784">Roſenberger</a></span></span> in <span class="aq ">Halle</span> hat ſie je-<br/>
+doch von Neuem unterſucht und gefunden daß es<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">nicht</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0236|</span><br/>
+nicht wahrſcheinlich ſei, daß <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118731998">Maupertius</a></span></span> ſo große<br/>
+Irrthümer gemacht habe; er fand das <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117679100">Swanberg</a></span>s</span><br/>
+Meſsung nicht auf denſelben Punkten geſchah.<br/>
+Wir haben jetzt im Allgemeinen folgende große<br/>
+Meſsungen:</p><br/>
+<p class="dta-p">1, Die alte Peruaniſche Gradmeſsung neu<br/>
+berechnet von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118878913">Delambre</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119151456">Zach</a></span></span>. – 2, Die große<br/>
+franzöſiſche Meſsung zur Beſtimmung des Meter<br/>
+als 10 millioniſten Theil des Quadranten; 3,<br/>
+<span class="dta-marginal dta-marginal-left">(?)<br/>
+</span>die Meſsung des General <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/130800600">Roy</a></span></span></span> unter dem <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/1055317457">Much</a></span></span></span><br/>
+arbeitete; die Aſtronomiſche Beobachtungen dazu ſind<br/>
+von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span></span> Vater und Sohn und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span>. –</p><br/>
+<p class="dta-p">Außer dieſen ſind noch in neuren Zeiten mehre-<br/>
+re andere Vermeſsungen angeſtellt worden,<br/>
+wie von den Engländern <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117574406">Lemton</a></span></span> und <span class="aq "><span title="Personenname">Paske</span></span> in<br/>
+Oſtindien; <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118988255">Struvo</a></span></span> in Rußland. Die Vermeſsung<br/>
+von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/104234644">Gausſ</a></span></span> iſt noch nicht ihrem Reſultat noch bekannt.<br/>
+Je weiter man gegen Norden kömmt, deſto größer<br/>
+werden die Grade; nach der peruaniſchen Meſsung<br/>
+war ein Grad am Aequator 56731 Toiſen; im<br/>
+Lappland dagegen 57209.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">In</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0237 : 229|</span><br/>
+<p class="dta-p">In neuren Zeiten hat man zur Beſtimmung der<br/>
+Abplattung die Pendelverſuche vorgezogen. Man<br/>
+hat als allgemeines Geſetz gefunden daß man<br/>
+die Pendelſchnur in dem Verhältniß der Quadrate<br/>
+der Sinus der Breite verkürzen müſse. – Man<br/>
+hat 2 Methoden bei Beobachtungen mit dem Pendel.<br/>
+Man richtet entweder an jedem beſtimmten<br/>
+Ort das Pendel ſo ein, daß es eine gewiſse<br/>
+Zahl von Schwingungen in einer Secunde macht,<br/>
+und bemerkt den Unterſchied der Pendellänge<br/>
+zwiſchen zweien Orten; ſo war die von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117531936">Riché</a></span></span><br/>
+in Bayonne, und ſpäter von andern an der afri-<br/>
+kaniſchen Küſte. – Oder nach einer 2ten Methode nim̃t<br/>
+man eine beſtimmte Normal Länge des Pendels,<br/>
+und beobachtet die Anzahl der Schwingungen die<br/>
+es bei einem jedem Orte macht. – <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118510215">Besſel</a></span></span> hat noch<br/>
+eine andere Methode erfunden, die er aber<br/>
+noch nicht bekannt gemacht hat. – Von den Fran-<br/>
+zoſen und Engländern iſt hierin am meiſten<br/>
+geſchehen; beſonders hat in neurer Zeit <span class="aq ">Capitain<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/11671350X">Savy</a></span></span> Beobachtungen in Weſtindien angeſtellt, <span title="Schreibfehler: eben" class="dta-corr">[…]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">so</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0238|</span><br/>
+ebenſo in Gröndland und Spitzbergen. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/124760295">Freſenay</a></span></span><br/>
+und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117663476">Duperay</a></span></span> haben auf ihren großen Reiſen<br/>
+in vielen Orten Pendelſchwingungen beobachtet.<br/>
+Nach den verſchiedenen Methoden die man zur<br/>
+Beſtimmung der Abplattung der Erde angeſtellt<br/>
+hat ſchwankt dieſelbe zwiſchen <span class="sup ">1</span>/<span class="sub ">305</span> und <span class="sup ">1</span>/<span class="sub ">280</span>; man<br/>
+fand ſie früher kleiner als in den neueſten Zei-<br/>
+ten. Die Größe dieſes Unterſchiedes zwiſchen<br/>
+den verſchiedenen Beſtimmungen betragt 3600′<br/>
+oder <span class="sup ">1</span>/<span class="sub ">18</span> –</p><br/>
+<p class="dta-p">Die Folge der Abplattung würde ungefähr<br/>
+2½ mal unſrer höchſten Berge betragen; ſod<span class="b ">aß</span><br/>
+das Himalaya Gebirge 2½ mal unter dem<br/>
+Aequator aufgetragen werden mußte. Ein<br/>
+Punkt auf dem Aequator iſt 10700 Toiſen oder<br/>
+64000 Fuß entfernter vom Mittelpunkt als ein<br/>
+Punkt am Pol; etwa 8 Meilen, bei einem Halb-<br/>
+meſser von 860 Meilen. – Die Gradmeſsungen<br/>
+geben eine geringere Abplattung als die Pendel-<br/>
+ſchwingungen |<span class="sup ">1</span>/<span class="sub ">305</span>| und die neure franzöſiſche<br/>
+mit der von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117679100">Swanberg</a></span></span> in Lappland verglichen <span title="Schreibfehler: nähert" class="dta-corr">[…]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">sich</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0239 : 231|</span><br/>
+nähert ſich dieſen <span class="dta-metamark" title="metamark">|:</span> <span class="sup ">1</span>/<span class="sub ">290</span> <span class="dta-metamark" title="metamark">:|</span>. – Die Mondstheorie giebt<br/>
+<span class="sup ">1</span>/<span class="sub ">305</span>, nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116299762">Bouvard</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117161357">Burkhard</a></span>s</span> Beobachtungen<br/>
+<span class="sup ">1</span>/<span class="sub ">291</span>. – Alle Pendelverſuche ſchwanken zwiſchen <span class="sup ">1</span>/<span class="sub ">280</span>.<br/>
+und <span class="sup ">1</span>/<span class="sub ">290</span>.</p><br/>
+<p class="dta-p">Man hat gefragt ob die ſüdliche Abplattung größer<br/>
+ſei als die nördliche, da im Süden weit mehr<br/>
+Waſser und weniger Continent ſich befinden;<br/>
+er hat dieß ſelbſt verurſacht, daß man glaubte<br/>
+die Erde habe eine andere Geſtalt als die elliptiſche.<br/>
+So gab dieß auch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119174596">Lacaille</a></span>'s</span> Meſsung am <span class="aq ">Cap de<br/>
+Bonesperence</span>. – <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/124760295">Freſenay</a></span>'s</span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117663476">Duperay</a></span>'s</span> Unterſuchun-<br/>
+gen, ſo wie die Reiſen von <span class="dta-metamark" title="metamark">|:</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119228521">Manaſpina</a></span></span> <span class="dta-metamark" title="metamark">:|</span> <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/119228521">Malestina</a></span></span><br/>
+und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116522305">Bristbay</a></span></span> haben gezeigt daß keine Verſchieden-<br/>
+heit zwiſchen der nördlichen und ſüdlichen Abplat-<br/>
+tung ſtatt findet. –</p><br/>
+<p class="dta-p">Merkwürdig iſt es aber, daß ſich in den verſchiedenen<br/>
+Meridianen die Abplattung verſchieden zeigt.</p><br/>
+<p class="dta-p">Bei den Pendelverſuchen kann man ſehr leicht auf<br/>
+Irrthümer kommen; auf Inſeln wo viel Baſalt<br/>
+iſt fanden <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> und <span class="aq ">Doc</span> daß die Pendelſchwin-<br/>
+gungen ſchneller waren. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11671350X">Savy</a></span></span> fand daß ähnliche<br/>
+auf der Inſel Ascenſion.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Auch</span></div><br/>
+</div></div></div></div></div></body></html>

@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session">                  <div class="dta-head">13<span title="t￼" class="dta-abbr"><span class="sup u ">te</span></span> Vorl.</div><br/>
+<p class="dta-p">Wenn in den Zeiten unter den spätern Kaisern, die aufkeimende<br/>
+würdigere Ansicht der Natur, durch mannigfaltige mythische Ideen verdunkelt<br/>
+wurde, wenn gehässige Streitigkeiten über religiöse Gegenstände, und allgemei-<br/>
+ne Unduldsamkeit viel zur Schwächung des römischen Reiches beitrugen, so ver-<br/>
+breiteten die nachfolgenden Einfälle der Barbaren vollends eine tiefe Nacht<br/>
+über das Abendland, während Griechenland, obgleich denselben Mängeln unter-<br/>
+liegend, sich doch einen Schein des Lichts bewahrte.</p><br/>
+<p class="dta-p">Die 3<span class="sup u ">te</span> Epoche wird durch den Einfall der Araber bezeichnet, durch wel-<br/>
+chen ohne Zweifel die in Schwachheit versunkene Welt wieder aufgefrischt wor-<br/>
+den ist. – Die Araber waren ein wandernder semitischer Stamm, und<br/>
+warfen sich, nachdem sie 50 Jahr erobernd in Arabien umhergezogen, zuerst<br/>
+auf <span class="aq ">Aegypten</span>. (Es muß bemerkt werden, daß, wohl schon viel früher eine<br/>
+ähnliche <span class="aq ">Invasion</span> statt gefunden. Herr General <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116675799">Rühle von Lilienstern</a></span></span> hat es<br/>
+wahrscheinlich gemacht, daß die uralten <span class="aq ">Hyksos</span> nichts anderes waren, als ein<br/>
+erobernder semitischer Stamm der Perser oder Meder.) Kaum aber ha<span class="dta-del" title="Streichung (#s)">t</span>-<br/>
+ben sie ihre vaterländischen Gränzen verlassen, so verbreiten sie sich mit<br/>
+solcher Schnelligkeit, daß in unbegreiflich kurzer Zeit von den Ufern des<br/>
+Ganges, bis an die Säulen des Hercules, alle Völkerschaften ihnen unter-<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">than</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0118 : 57v|</span><br/>
+than sind. Sie selbst vergleichen sich in ihren Gedichten einem Wolkenzuge, der<br/>
+an den Bergen lagert, um jeder neuen Richtung des Windes zu folgen.</p><br/>
+<p class="dta-p">Um die Araber kurz zu charakterisiren, so kann man sie im Allge-<br/>
+meinen unwissend nennen, aber nicht roh. Einzelne unter ihnen zeichnen<br/>
+sich aus durch eine große Liebe zur Natur, die sie gründlicher zu untersuchen<br/>
+anfangen, und man möchte die Art unserer heutigen Naturbeobachtung von<br/>
+den Arabern <span class="aq ">dati</span>ren. Früh schon, vor <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118583158">Mohamed</a></span></span> hatten griechische Aerzte<br/>
+aus der Schule von <span class="aq ">Edessa</span> und <span class="aq ">Athen</span> wissenschaftliche Kenntnisse unter ihnen<br/>
+verbreitet, und die Dichtkunst hatte selbst eine schöne Blüthe erreicht. Zu<br/>
+<span class="aq ">Mecca</span> und <span class="aq ">Okkadh</span> waren im 5<span class="sup u ">ten</span> Jahrhundert lyrische Kampfspiele ange-<br/>
+ordnet, die nicht unähnlich den olympischen, zu gewissen bestimmten Zeiten ge-<br/>
+halten wurden. Die Gedichte denen man den Preis zuerkannte, wurden<br/>
+mit goldnen Buchstaben auf <span class="aq ">Byssus</span> geschrieben, und in der <span class="aq ">Caaba</span> zu <span class="aq ">Mecca</span> auf-<br/>
+gehängt. (Von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118974009">Antara</a></span></span> ist eine der 7 <span class="aq ">Moallakah</span>, und <span class="aq ">Hamaza</span> Heldenlieder<br/>
+sind kürzlich von Prof. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100126707">Freitag</a></span></span> in <span class="aq ">Bonn</span> edirt worden.)</p><br/>
+<p class="dta-p">Den höchsten Flor des Reichs kann man unter den <span class="aq ">Hascheniden</span> und <span class="aq ">Abbas-<br/>
+siden</span> annehmen. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11883889X">Al-Manzur</a></span></span>, ein Chalif der letzteren Dynastie erbaute<br/>
+<span class="aq ">Bagdad</span> (762) zur Residenz, wo unter dem großen <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118863096">Harun-al-Raschid</a></span></span>, gelehr-<br/>
+te Schulen gestiftet wurden, so wie auch zu <span class="aq ">Mosul</span>. Diese erhielten ihren er-<br/>
+sten Glanz durch griechische Flüchtlinge, die wegen orthodoxer Verfolgungen ihr<br/>
+Vaterland aufzugeben, sich gezwungen sahen. So muß es denn dankbar er-<br/>
+kannt werden, daß Griechenland, die alte Wiege abendländischer Kultur, von<br/>
+jeher, selbst im Stande der tiefsten Versunkenheit, Strahlen der Civilisation nach<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">allen</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0119 : 58r|</span><br/>
+allen Seiten ausgesendet hat.</p><br/>
+<p class="dta-p"><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118863096">Harun-al-Raschid</a></span></span> ließ die Werke der berühmtesten griechischen Gelehrten ins<br/>
+Arabische übersetzen, durch einen eignen Uebersetzer-Ausschuß, der diese Ueber-<br/>
+tragungen durch viele Abschriften verbreitete. Einer seiner Nachfolger, der<br/>
+Khalif <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118847686">Al Mamum</a></span></span> machte es zur Bedingung eines Friedensschlusses, daß der<br/>
+griechische Kaiser ihm mehrere ausgezeichnete Manuscripte, (den <span class="aq ">Almagest</span> des<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118641786">Ptolomaeus</a></span></span>) überlassen mußte. –</p><br/>
+<p class="dta-p">Mit der Dynastie der <span class="aq ">Abbassiden</span> wetteiferte die der <span class="aq ">Ommajaden</span> in Spanien.<br/>
+Was <span class="aq ">Bagdad</span> in Asien, war die hohe Schule von <span class="aq ">Cordova</span> für Europa, wo denn<br/>
+überhaupt im 10<span title="t￼" class="dta-abbr"><span class="sup u ">ten</span></span> Jahrh. die Araber die Stütze der Litteratur wurden. –<br/>
+In Astronomie, Geographie, Medicin und Physik hat ihr Fleiß sehr glücklich<br/>
+und nützlich gewirkt, und noch zeugt manches arabische Kunstwort von ihrem<br/>
+Einfluß, selbst auf unsere heutige Kultur. Namentlich trägt der Himmel<br/>
+die Spuren ihrer Herschaft, indem die meisten Constellationen arabische Be-<br/>
+nennungen haben. – Schon früher ist erwähnt worden, daß die indi-<br/>
+schen Zahlzeichen durch die Araber in Europa eingeführt wurden, die höchst<br/>
+wahrscheinlich im 13<span class="sup u ">ten</span> Jahrh. über Persien ihnen zugekommen waren.<br/>
+Erst im 14<span title="t￼" class="dta-abbr"><span class="sup u ">ten</span></span> Jahrh. wurden diese Ziffern, nach ihren Verbreitern die Ara-<br/>
+bischen genannt, durch den Handel der Genueser und Venetianer allgemei-<br/>
+ner bekannt. Das erste Document in dem die Bezeichnung der Jahreszahl<br/>
+auf diese Weise vorkommt ist ein Brief des <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118593234">Petrarca</a></span></span> über den heiligen<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118505114">Augustinus</a></span></span>, vom Jahre 1373.</p><br/>
+<p class="dta-p">Zu ihren wichtigsten chemischen Entdeckungen gehört die Auffindung der<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Säuren:</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0120 : 58v|</span><br/>
+Säuren: sie kannten die Salpetersäure, und das Königswasser, deren Entdek-<br/>
+kung man fälschlich dem <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118575279">Raimundus Lullus</a></span></span> zuschreibt: sie gebührt dem großen<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118864718">Abelmoussa Schafr el Saffa</a></span></span>. <span class="dta-metamark" title="metamark">(?)</span></p><br/>
+<p class="dta-p">Auch die Kunst des <span class="aq ">destilli</span>rens sind wir den Arabern schuldig: sie verfer-<br/>
+tigten Alkohol und Naphta, und kannten das Quecksilberoxyd.</p><br/>
+<p class="dta-p">Wir bemerken 2 Reflexe des arabischen, wissenschaftlichen Lichtes; den<br/>
+einen nach Osten hin, gegen die Mongolen, wo ein Enkel des <span class="aq ">Timur</span> zu<br/>
+<span class="aq ">Samarkand</span> einen Sternkatalog anfertigen ließ: den andern im Westen,<br/>
+wo in Spanien <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11864811X">Alphons X.</a></span></span> (1252–1284, mit einer Toleranz, die man jetzt<br/>
+kaum begreifen würde) zu <span class="aq ">Toledo</span> einen Congreß von christlichen, jüdischen<br/>
+und saracenischen Astronomen vereinigte, durch welche die berühmten<br/>
+<span class="aq ">alphonsinischen</span> Tafeln ausgearbeitet wurden. – Der Historiker <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11878188X">Mariana</a></span></span><br/>
+sagt von diesem Könige: er verlor die Erde, indem er zu viel nach den<br/>
+Sternen sah.</p><br/>
+<p class="dta-p">Die glänzende Epoche der arabischen Herschaft beginnt 640 mit der Erobe-<br/>
+rung von Aegypten, und schließt 1236 mit der Eroberung von <span class="aq ">Cordova</span> durch<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119146193">Ferdinand III.</a></span></span></p><br/>
+<p class="dta-p">Einen schwachen Abglanz der arabischen wissenschaftlichen Bestrebungen fin-<br/>
+den wir bei dem Spanier <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118575279">Raimundus Lullus</a></span></span> aus <span class="aq ">Majorca</span>, in dessen Schriften<br/>
+aber ein mystischer Spuk vorherrscht, den er die: <span class="aq ">ars magna</span>, nennt. Bei<br/>
+weitem höher steht <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118651595">Roger Baco</a></span></span>, ein englischer Mönch des 13<span class="sup u ">ten</span> <span title="Jahrh." class="dta-abbr">Jahrhunderts</span>, der durch<br/>
+die Kraft seines <span class="aq ">Genie</span>'s sich weit über sein Zeitalter erhob, und in mehreren<br/>
+Wissenschaften Entdeckungen machte, welche die Bewunderung der Nachwelt ver-<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">dienen.</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0121 : 59r|</span><br/>
+dienen. Man kann sagen, daß von ihm eine völlige Reform der Naturlehre<br/>
+ausging. Der Zauberei angeklagt, und von dem General des <span title="Original: Franziskaner&#xA;Ordens" class="dta-reg">Franziskaner-<br/>
+Ordens</span> verfolgt, mußte er viele Jahre seines Lebens im Kerker schmachten.</p><br/>
+<p class="dta-p">Wenn hier abermals ein sichtbarer Ruhepunkt eintritt in der Geschichte<br/>
+menschlicher Bestrebungen in Erkenntniß eines Naturganzen, so ist doch<br/>
+der organische Zusammenhang nicht zu übersehen, wie sich allgemach die wich-<br/>
+tige 4<span class="sup u ">te</span> Epoche vorbereitete, welche wir mit der Entdeckung von Amerika<br/>
+bezeichnen. Gleichzeitig mit dem Aufblühen des Handels der italienischen<br/>
+Freistaaten, <span class="aq ">datirt</span> die für das Vorschreiten der Wissenschaften merk-<br/>
+würdigste Erfindung der Buchdruckerkunst (1436) und ein allgemeiner er-<br/>
+wachendes Interresse für die klassische Litteratur. Die Verbindung zwi-<br/>
+schen Griechenland und Italien war nie ganz aufgehoben gewesen: wie<br/>
+denn <span class="aq ">Apulien</span> und Calabrien noch lange unter byzantinischer Herrschaft blieb.<br/>
+Der normännische König <span title="Personenname"><a href="http://d-nb.info/gnd/118789066"><span class="aq ">Robert</span> von <span class="aq ">Neapel</span></a></span> schickte 1453 eigne Gesandte nach<br/>
+Constantinopel, um von dorther Handschriften von guten Autoren zu erlan-<br/>
+gen. – Wir erinnern uns hier besonders an die Namen: <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118593234">Petrarca</a></span></span>,<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11851217X">Boccaccio</a></span></span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11759587X">Lascaris</a></span></span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118595512">Poliziano</a></span></span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118662554">Bessarion</a></span></span> – Männer die sich besonders<br/>
+ausgezeichnet haben im Kampf gegen die Scholastiker, und durch deren Bestrebun-<br/>
+gen die allgemeine Schätzung der klassischen Litteratur so sehr befördert worden<br/>
+ist, um deren Erweckung sich auch die <span class="aq ">Academie</span> der Medicäer zu Florenz<br/>
+Verdienste erworben hat. – Durchaus ungegründet ist die Behauptung, daß<br/>
+das Studium der klassischen Autoren von dem der Natur abgeführt habe, viel-<br/>
+mehr danken wir dem erwachten Sinn für die Klassiker, die erneuerte Keñt-<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">niß</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0122 : 59v|</span><br/>
+niß vieler einzelner Zweige der Wissenschaft, deren Horizont durch materielle<br/>
+geographische Entdeckungen sich so sehr erweitern sollte.</p><br/>
+<p class="dta-p">Schon im Jahre 1003 waren scandinavische Schiffer nach <span class="aq ">New-foundland</span> gekom-<br/>
+men, wo sie eine Art Weinstock (unserer <span class="aq ">Vitis vinifera</span> zum Verwechseln<br/>
+ähnlich) gefunden hatten, wonach sie dem ganzen Lande den Namen <span class="aq ">Wienland</span><br/>
+gaben. Später im Jahre 1390 besuchten die Brüder <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/129008338">Zeen</a></span></span> den großen westli-<br/>
+chen Continent, und obgleich ihre Nachrichten von den einzelnen Ländern dunkel<br/>
+und verworren sind, so kann man doch mit Gewißheit annehmen, daß sie<br/>
+einen Theil der vereinigten Staaten müssen gesehen haben. – Frühere aus-<br/>
+gedehnte Landreisen, besonders nach Asien hin, hatten mit der großen Erstreckung<br/>
+unserer Erdhälfte gegen Osten bekannt gemacht, und auf die Annahme der Run-<br/>
+dung der Erde geführt. Die meisten dieser Reisen, von Mönchen unternom-<br/>
+men, waren großentheils ohne bedeutendes Ergebniß für die Naturwissenschaft<br/>
+geblieben, mit Ausnahme derjenigen des Venezianers <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118595563">Marco Polo</a></span></span>, der nicht nur<br/>
+die nördlichen Theile von Asien bereiste, sondern auch seinen Rückweg durch das<br/>
+Tropenklima von Jawa und Sumatra nahm. Es war dies ein zuvor ungebil-<br/>
+deter, aber geistreicher Mann, der interressante naturhistorische Bemerkun-<br/>
+gen gemacht hat, und unter andern auf den hohen Bergen der Bucharei den<br/>
+verminderten Luftdruck erkannte, und die Schwierigkeit auf diesen Höhen<br/>
+Feuer anzuzünden.</p><br/>
+<p class="dta-p">Aber wie unbedeutend ist der Einfluß einzelner Reisender, im Vergleich<br/>
+mit dem Leben großer Heere, ja ganzer Völker, die nach Entdeckung des neuen<br/>
+Continentes nach Amerika hinüberzogen, und Städte gründeten auf Höhen,<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">die</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0123 : 60r|</span><br/>
+die selbst unter dem Aequator die Schneegrenze erreichen.</p><br/>
+<p class="dta-p">Merkwürdig, und unstreitig einwirkend ist es, daß um dieselbe Zeit die-<br/>
+ser wichtigen Entdeckung die schönsten Gebilde der griechischen Kunst, aus dem<br/>
+Schooße der Erde ans Licht kamen, und aus ihren Gräbern wieder hervorgin-<br/>
+gen. Von 1498–1506 fand man den <span class="aq ">Laocoon</span>, den <span class="aq ">Apoll</span> und den <span class="aq ">Torso</span>.<br/>
+Gleichzeitig mußten auch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118575449">Luther</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118518534">Calvin</a></span></span> auftreten, um dem menschlichen<br/>
+Geschlechte eine neue <span title="Original: Geistes Freiheit" class="dta-reg">Geistes-<span class="aq ">Freiheit</span></span> und <span title="Original: Stärke" class="dta-reg">-<span class="aq ">Stärke</span></span>, (denn beide sind eins) zu<br/>
+erwerben.</p><br/>
+<p class="dta-p"><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118565273">Copernicus</a></span></span> neues Weltsystem wurde erst kurz vor dem Tode des großen<br/>
+Mannes bekannt, um das Jahr 1543, obgleich es erwiesen ist, daß er es un-<br/>
+gleich früher vollendet hatte. Bei seiner gründlichen Bekanntschaft mit dem<br/>
+klassischen Alterthume hatte er gefunden, daß mehrere alte Schriftsteller, wie<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/102395543">Nicetas</a></span></span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119000237">Ecphontes</a></span></span> <span title="Original: p p" class="dta-reg">pp.</span> von einer Bewegung der Erde reden, und wenn dies auch<br/>
+auf eine leere, nichts sagende Weise geschieht, so hatte er doch darin Veranla-<br/>
+ßung gefunden näher darüber nachzudenken. Er glaubte nur das System des<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118791974">Philolaus</a></span></span> herzustellen, obgleich dieser keinesweges die Sonne, sondern einen<br/>
+großen Weltheerd als Mittelpunkt des Weltgebäudes annahm. Besonders be-<br/>
+geisterte ihn, wie Prof. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100351212">Ideler</a></span></span> nachgewiesen hat, eine Stelle aus dem Werke des<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118578278">Martianus Capella</a></span></span>, der den Mercur und die Venus um die Sonne kreisen<br/>
+läßt. Die dem System des <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118565273">Copernicus</a></span></span> analogste Stelle, die bei den Alten<br/>
+über die Bewegung der Erde vorkommt, die vom <span title="Personenname"><a href="http://d-nb.info/gnd/118645714"><span class="aq ">Aristarch</span> von <span class="aq ">Samos</span></a></span> kann<br/>
+er nicht einmal gekannt haben. Sie steht im <span class="aq ">Arenarius</span> des <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118503863">Archimedes</a></span></span>, der nach<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100351212">Ideler</a></span></span>, erst ein Jahr nach des <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118565273">Copernicus</a></span></span> Tode zu <span class="aq ">Venedig</span> herauskam.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0124 : 60v|</span><br/>
+<p class="dta-p">Diese vorbereitende Entwickelung, wie diese gleichzeitigen Erscheinungen bezeich-<br/>
+nen die Entdeckung der neuen Erdhälfte, als die merkwürdigste Epoche in der Ge-<br/>
+schichte des menschlichen Geistes, und von hier an <span class="aq ">datirt</span> eben so wohl im Allgemei-<br/>
+nen eine großartigere Ansicht der Natur, als insbesondere die Ausbildung ei-<br/>
+ner eigentlichen physicalischen Geographie. – Eine Menge neuer Erscheinungen<br/>
+boten sich den Ankömlingen in Amerika dar. Man fand einen großen Con-<br/>
+tinent, von ununterbrochener Erstreckung, in dem unter dem Aequator Schnee<br/>
+auf den Bergen liegt. Dies führte auf eine genauere Bestimmung der un-<br/>
+teren Schneegränze in den verschiedenen Klimaten, die man nach ihrer relati-<br/>
+ven Höhe über dem Meere unterscheiden lernte; so wie man auch die <span title="Original: Pflan-&#xA;zen" class="dta-reg">Pflan-<br/>
+zen-</span> und Thierformen verschieden fand, je nach der Höhe und Breite unter der<br/>
+sie vorkommen. Man warf die Frage auf, <span title="Schreibfehler: i" class="dta-corr">[…]</span>warum Amerika unter dem<br/>
+Gleicher nicht so heiß sei als Afrika, und ob in seiner ganzen Erstreckung es<br/>
+nirgend von Negern bewohnt werde? Man fand, daß seine Einwohner einen<br/>
+abgeschlossenen Menschenstamm ausmachen, der zwar unter sich verschieden, durch<br/>
+einen eigenthümlichen Bau der Backenknochen übereinstimmt, noch mehr aber<br/>
+durch eine gewisse grammatische Analogie der Sprache verbunden ist, in denen<br/>
+man bald semitische, bald sogar baskische Anklänge zu vernehmen glaubte. Alles<br/>
+dies mußte gründliche Untersuchungen über die Menschenracen anregen, und<br/>
+verbreiten. Ganz besonders beschäftigte damals die Frage, die noch jetzt der Ge-<br/>
+genstand von Untersuchungen ist, von woher die erste Bevölkerung dieses Erd-<br/>
+theils an Menschen und Thieren gekommen, und ob eine Einwanderung vom<br/>
+nördlichen Asien her wahrscheinlich sey? Ein sonst geistreicher Schriftsteller glaub-<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">te</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0125 : 61r|</span><br/>
+te, um das Ueberkommen der reißenden Thiere zu erklären, zu der Annahme<br/>
+genöthigt zu seyn, daß sie als <span class="aq ">ganz kleine</span> Thiere in denselben Böten, worin die<br/>
+Menschen kamen, mit eingeschifft worden wären.</p><br/>
+<p class="dta-p">Mit der Entwickelung so vieler <span title="Schreibfehler: andern" class="dta-corr">anderer</span> Kenntniße eröffnete sich auch eine<br/>
+neue Ansicht über die Natur des vulkanischen Feuers. Noch nirgend hatte<br/>
+man so lange Reihen von Vulkanen gesehen, wie hier in der Andeskette,<br/>
+wo die Ausbrüche der innen wirkenden Kräfte bald auf dem Rücken dersel-<br/>
+ben statt finden, bald am Fuße der Gebirge, wie in der <span title="Original: CentralRepublik" class="dta-reg">Central-Republik</span><br/>
+<span class="aq ">Guatemala</span>. – Ebenfalls wurde man damals aufmerksam auf die Strömun-<br/>
+gen der Meere, namentlich auf den mehrmals erwähnten Golphstrom, der<br/>
+sich von den Antillen bis nach Norwegen und Ireland erstreckt, und von dem<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118740490">Petrus Martyr de Anghiera</a></span></span> in seiner <span class="aq ">Oceanica</span> eine eben so lebhafte als gründ-<br/>
+liche Beschreibung giebt.</p><br/>
+<p class="dta-p">Ein ganz neuer Himmel zeigte sich dem erstaunten Europäer. Man<br/>
+sah die Magellanischen Wolken, die mit dem Glanz der Milchstraße den<br/>
+südlichen Pol umkreisen, so wie jene schwarzen Flecken, Kohlensäcke, genannt,<br/>
+die zu so mannigfaltigen Hypothesen Anlaß gegeben haben. Aber keine<br/>
+der Constellationen war geeigneter einen lebhaften Eindruck auf die<br/>
+Phantasie zu machen, als das südliche Kreuz, das erst mit der Entdeckung<br/>
+von Amerika den nördlichen Völkern bekannt wurde. – Ich will<br/>
+hierbei der erhabenen Stelle des <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118523708">Dante</a></span></span> im <span class="aq ">Purgatorio</span> erwähnen, die<br/>
+von den berühmtesten <span class="aq ">Commentatoren</span> auf dieses Sternbild bezogen<br/>
+worden:</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0126 : 61v|</span><br/>
+<span class=" "><q class="quote">                              <div class="poem">                                  <span class="aq ">Io mi volsi a man destra, e posi mente</span><br/>
+<div class="aq et "><span>All altro polo, e vidi quattro stelle</span></div><br/>
+<div class="aq et "><span>Non viste mai fuor, ch'alla prima gente.</span></div><br/>
+<span class="aq ">Goder parea 'l ciel di lor fiamelle.</span><br/>
+<div class="aq et "><span>O settentrional vedovo sito,</span></div><br/>
+<div class="aq et "><span>Poi che privato se' di mirar quelle!</span></div><br/>
+</div></q></span>   <p class="dta-p">Denn obgleich <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118523708">Dante</a></span></span> 1321 starb, so konnte er doch durch Venezianische u. Genuesische<br/>
+Schiffer die im arabischen Meerbusen Handel trieben, Nachricht von diesem Sternbilde<br/>
+bekommen haben, das in jenen Gegenden allerdings sichtbar ist.</p><br/>
+<p class="dta-p">Wie mächtig die Entdeckung von Amerika auf die Gemüther der Zeitgenossen ein-<br/>
+gewirkt hat, wie mit nichts anderm vergleichbar der Eindruck gewesen, welchen sie<br/>
+hervorbrachte, davon finden wir die Spuren in allen gleichzeitigen Schriftstellern.<br/>
+Zwei Bücher jedoch sind als besonders reichhaltig anzuführen für denjenigen der sich<br/>
+einen Begriff machen will von den Umwälzungen in den wissenschaftlichen Ansich-<br/>
+ten, welche als Folge dieser großen Begebenheit zu betrachten sind. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/12116117X">Acosta</a></span></span>'s Natur-<br/>
+geschichte ist für die Geographie besonders wichtig, wogegen <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118740490">Pet. Mart. de Anghiera</a></span></span> beson-<br/>
+ders die klimatischen Verhältnisse berücksichtigt. Letzterer ein Geheimschreiber <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118560093">Carl V</a></span></span><br/>
+hatte den <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118564994">Columbus</a></span></span> persönlich gekannt, und von ihm ist uns ein Brief aufbehalten,<br/>
+vom <span title="Jan." class="dta-abbr">Januar</span> 1493, in dem er mit gleicher Lebendigkeit und Würde des Ausdrucks den<br/>
+Eindruck schildert, welchen die Nachrichten von dem Umfange u. der Wichtigkeit der<br/>
+großen Entdeckungen, auf ihn und seine Freunde hervorgebracht hatten.</p><br/>
+<p class="dta-p">Daß um dieselbe Zeit die ergraute scholastisch-dogmatische Philosophie, wel-<br/>
+che jeder freieren Untersuchung die lähmendsten Fesseln angelegt hatte, einer rei-<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">neren</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0127 : 62r|</span><br/>
+neren Naturanschauung weichen mußte, ist unstreitig mehr dem fortrückenden<br/>
+Geist der Zeit, als dem Einflusse einzelner Männer zuzuschreiben. Doch verdie-<br/>
+nen hier 3 derselben genannt zu werden, deren Wirken und Schriften von dem<br/>
+entschiedensten Einflusse waren. 1.  <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118516221">Giordano Bruno</a></span></span>, ein Pantheist, der sich zuerst<br/>
+das copernikanische System aneignete, zu <span class="aq ">London</span>, <span class="aq ">Paris</span> und <span class="aq ">Wittenberg</span> Naturwissen-<br/>
+schaften lehrte, und das sonderbare Schicksal hatte, von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118518534">Calvin</a></span></span> verketzert, und von<br/>
+der Inquisition in Venedig verbrannt zu werden. 2. der Kanzler <span title="Personenname"><a href="http://d-nb.info/gnd/118505696"><span class="aq ">Baco</span> von <span class="aq ">Ve-<br/>
+rulam</span></a></span> einer der ausgezeichnetsten Geister, deren ein Zeitalter sich zu rühmen hat:<br/>
+der es fühlte und darthat, daß in allen Zweigen der positiven Wissenschaft, der<br/>
+einzige Weg zur Wahrheit die Beobachtung der Natur sey. 3. der Italiener <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11863819X">Cam-<br/>
+panella</a></span></span> der durch Beobachtungen und Versuche sich um die Wissenschaft ganz beson-<br/>
+ders verdient gemacht hat.</p><br/>
+<p class="dta-p">Die 5<span class="sup u ">te</span> Epoche von 1590–1643 ist durch die Entdeckungen neuer physikalischer<br/>
+Instrumente bezeichnet, welche der sinnlichen Beobachtung, (mit der natürlichen<br/>
+Stärke unserer Sinne) geschärftere Organe hinzufügte. Wir heben hier insbeson-<br/>
+dere 4 Werkzeuge heraus, welche die Fortschritte der Wissenschaft merkwürdig geför-<br/>
+dert haben: das Fernrohr, das Thermometer, das Barometer, und wenn es erlaubt<br/>
+ist eine der schönsten Entdeckungen ein Organ zu nennen, die Infinitesimal-Rech-<br/>
+nung. – Das Fernrohr wurde 1590 von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/1026506565">Janssen</a></span></span> in <span class="aq ">Middelburg</span> erfunden, und bis<br/>
+zum Jahre 1611 waren schon die wichtigsten Entdeckungen damit gemacht. Die Ju-<br/>
+piterstrabanten waren aufgefunden, die Phasen der Venus beobachtet, und somit<br/>
+ein neuer Beweis für die Richtigkeit des Copernikanischen Weltsystems geführt. Das<br/>
+neblichte Ansehen der Milchstraße hatte vor dem Fernrohr sich in unendliche<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Sterne</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0128 : 62v|</span><br/>
+Sterne aufgelöst; der Ring des Saturn war entdeckt, und die Berge des Mondes<br/>
+wurden gemessen. Die Sonnenflecke führten auf die Kenntniß der Rotation des<br/>
+großen Weltkörpers, so wie die Anwendung des Fernrohrs bei astronomischen<br/>
+Winkelmessungen, eine früher stets mangelnde Genauigkeit erreichen ließ.</p><br/>
+<p class="dta-p">Das Thermometer 1660 von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100816207">Drebbel</a></span></span> in <span class="aq ">Alkmar</span> erfunden, machte aufmerksam<br/>
+auf die Verschiedenheit der Klimate, und ihren Einfluß auf die allgemeinen Vegeta-<br/>
+tionsverhältnisse. Doch erst als <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118749420">Réaumur</a></span></span> hundert Jahr später dies Instrument<br/>
+durch die Bestimmung der beiden festen Punkte comparabel gemacht hatte, konnte<br/>
+man sich desselben bei klimatischen Untersuchungen mit Nutzen bedienen.</p><br/>
+<p class="dta-p">1643 erfand der große <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118623427">Torricelli</a></span></span> das Barometer, und der geistreiche Philosoph<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118591843">Pascal</a></span></span> wandte dasselbe auf die Messung der Berghöhen an. Es ist augenscheinlich<br/>
+daß das Barometer sehr viel zu einer genaueren Kenntniß der Erdoberfläche<br/>
+beigetragen hat, indem insbesondere die Anwendung dieses Instruments zu Hö-<br/>
+henbestimmungen, uns mit der Lage vieler Länder und Städte bekannt gemacht hat,<br/>
+was durch trigonometrische Messungen weder so schnell, noch in diesem Umfan-<br/>
+ge zu erreichen gewesen wäre. So z. B. können wir mittelst des Barometers<br/>
+schnell bestimmen, daß <span class="aq ">München</span> auf einem weiten <span class="aq ">plateau</span> 1200′ über dem Mee-<br/>
+re gelegen ist, wogegen dieselbe Bestimmung durch <span class="aq ">Nivellement</span> bis zum Meeres-<br/>
+ufer großen <span title="Original: Kosten" class="dta-reg">Kosten-</span> und <span title="Original: Zeit Aufwand" class="dta-reg">Zeit-Aufwand</span> erfordern würde.</p><br/>
+<p class="dta-p">Das einflußreichste Organ aber ist unstreitig die <span class="aq ">Analysis</span> des Unendlichen, zu glei-<br/>
+cher Zeit entdeckt von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118587544">Newton</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118571249">Leibnitz</a></span>.</span> Die Anwendung derselben auf Physik und Astro-<br/>
+nomie war von der entschiedensten Wichtigkeit, und erscheint als eine der größten Bege-<br/>
+benheiten in der Geschichte der physikalischen Wissenschaft, die von nun an, da auch die<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Beobachtungen</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0129 : 63r|</span><br/>
+Beobachtungen sich immer mehr häuften, mit Riesenschritten vorwärts ging.</p><br/>
+<p class="dta-p">Je mehr wir uns aber der neueren Zeit nähern, um so schwerer wird es ein klares<br/>
+Bild von dem Vorschreiten in der Einsicht des Naturganzen zu unterwerfen, indem<br/>
+die Beobachtungen und Erfahrungen immer zahlreicher und wichtiger werden.<br/>
+Wenn wir uns aber streng daran binden das Gleichartige unter einem Ge-<br/>
+sichtspunkt zu vereinigen, so werden wir nicht anstehen, mit den <span class="aq ">Weltreisen <span title="Personenname"><a href="http://d-nb.info/gnd/118522027">Cook</a></span></span>'s<br/>
+die 6<span class="sup u ">te</span> Epoche, oder den letzten Ruhepunkt zu bezeichnen. Durch diese erste große<br/>
+nautische Expedition, die nicht blos auf Entdeckungen berechnet war, wurde die<br/>
+geographische Kunde des Erdkörpers in großen <span title="Original: Massen" class="dta-reg">Maßen</span> vollendet. <span class="aq ">Neu Holland</span><br/>
+wurde zwar nicht zuerst entdeckt, aber doch ein großer Theil desselben umschifft<br/>
+und geographisch bestimmt. Die magnetischen Linien wurden nicht allein nach<br/>
+ihrer Declination, sondern auch nach ihrer Inclination genauer gezogen. Die<br/>
+Temperatur des Meeres, seine Tiefe und abnehmende Wärme wurde unter-<br/>
+sucht und festgestellt, und der jüngere <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118534416">Forster</a></span></span> lieferte eine geistreiche Beschrei-<br/>
+bung, eben so der Sitten verschiedener Völker, als des phisiognomischen Anblicks<br/>
+der Pflanzen, und ihm gebührt das Verdienst alle diese Beobachtungen philosophisch<br/>
+zusammengefaßt, und in ein Naturbild vereinigt zu haben.</p><br/>
+<p class="dta-p">Was die Landreisen betrifft, so sind dieselben in den neusten Zeiten nicht<br/>
+so ausgedehnt gewesen, als im Mittelalter. Damals gehörte es nicht zu den<br/>
+Seltenheiten, wenn ein Europäer die äußerste Gränze von China erreichte, und<br/>
+von dort über <span class="aq ">Timbouctu</span> nach <span class="aq ">Cordova</span> gelangte: allein der Nutzen der neueren ein-<br/>
+geschränkteren Landreisen ist ungleich bedeutender, schon in Rücksicht auf die zur Beo-<br/>
+bachtung geschärften Organe. Für Asien will ich nur insbesondere nennen:                      <div class="&#xA;            fw-bottom-catch&#xA;          "><span class="aq ">Gmelin</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0130 : 63v|</span><br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11903705X">Gmelin</a></span></span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118734784">Niebuhr</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118591371">Pallas</a></span></span>; für Europa <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118804790">Saussure</a></span></span>; für das <span class="aq ">Cap</span> <span title="d." class="dta-abbr">der</span> <span title="gut." class="dta-abbr">guten</span> Hoffnung <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117583065">Barrow</a></span></span><br/>
+u. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100190014">Lichtenstein</a></span></span>. Durch die neueren Expeditionen in das Innere von Afrika von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118707094">Hor-<br/>
+nemann</a></span></span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118702203">Burckhard</a></span></span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117632368">Denham</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119426943">Clapperton</a></span></span> sollten mehr geographische, als eigent-<br/>
+lich physikalische Zwecke erreicht werden.</p><br/>
+<p class="dta-p">Die Gründung der Geognosie als Wissenschaft ist einzig das Ergebniß von Forschun-<br/>
+gen der neuesten Zeit. Durch die Verbindung der Zoologie und vergleichenden Ana-<br/>
+tomie mit der Geognosie, durch die Entdeckung der geognostischen Reisen, der rela-<br/>
+tiven Folge der Erdschichten, ist man dahin gekommen die Gebirgsformationen<br/>
+mit Sicherheit zu bestimmen.</p><br/>
+<p class="dta-p">Den raumdurchdringenden Instrumenten von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herschel</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116746599">Frauenhofer</a></span></span> danken<br/>
+wir die Erweiterung unserer Ideen vom Weltbau, der täglich durch neue Ent-<br/>
+deckungen in unserer Erkenntniß an räumlicher Ausdehnung gewinnt.</p><br/>
+<p class="dta-p">Die physikalischen Entdeckungen häufen sich in dem Maaße, daß es unmöglich<br/>
+wird hier auch nur einen allgemeinen Ueberblick derselben zu geben. Doch will<br/>
+ich der einflußreichen <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119292556">Volta</a></span></span>schen Säule erwähnen, einer der größten Entdeckun-<br/>
+gen des Jahrhunderts, die noch wichtiger wird, durch die Anwendung davon, welche<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118524089">Davy</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118510185">Berzelius</a></span></span> auf die Zerlegung der sonst einfach genannten Stoffe gemacht<br/>
+haben. Eben so will ich nur anführen, daß <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118786784">Oerstädt</a></span></span> die Identität der electrischen<br/>
+und magnetischen Kraft nachgewiesen, und daß <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117541052">Malus</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> uns zugleich mit der<br/>
+Polarisation des farbigen und unfarbigen Lichtes bekannt gemacht, und dadurch in den<br/>
+Stand gesetzt haben die physikalische Beschaffenheit der entferntesten Weltkörper zu unter-<br/>
+suchen.</p><br/>
+</div></body></html>

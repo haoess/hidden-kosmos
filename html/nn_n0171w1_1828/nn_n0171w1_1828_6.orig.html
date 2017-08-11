@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[6. Vorlesung, 21.11.1827]</span></div><br/>
+<div class=""><div class=""><p class="dta-p">Die Geſchichte der Weltbeſchreibung kann man<br/>
+in große Epochen theilen, welche theils große Welt-<br/>
+begebenheiten theils freie Beſtrebungen einzel-<br/>
+ner Männer, theils Erfindungen neuer Organe<br/>
+bezeichnen. Wir können deren 6 annehmen.</p><br/>
+<div class="dta-list"><div class="dta-list-item">1, die Zeit der joniſchen Naturphiloſophen und<br/>
+der doriſch-pythagoriſchen Schule.</div>
+<div class="dta-list-item">2, <span title="Personenname"><a href="http://d-nb.info/gnd/118501828">Alexander</a></span>s große Expedition nach Indien.</div>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">3,</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0025 : 17|</span><br/>
+<div class="dta-list-item">3, Die Züge der Araber im Mittelalter und die<br/>
+Leiſtungen ihrer großen Gelehrten.</div>
+<div class="dta-list-item">4, Die Entdeckung von Amerika.</div>
+<div class="dta-list-item">5, Die Erfindung neuer Inſtrumente, Behufs der Beob-<br/>
+achtungen und</div>
+<div class="dta-list-item">6, <span title="Personenname"><a href="http://d-nb.info/gnd/118522027">Cook</a></span>s große Reiſen.</div>
+</div><div class=""><div class="dta-head">1<span class="sup ">te</span> Epoche</div><br/>
+<hr/><br/>
+<p class="dta-p">Die Reflexionen der wilden Völker über die<br/>
+Einheit der Natur finden wir zuerſt ausge-<br/>
+ſprochen bei den Do<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">r</span>ern und Ionie<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">r</span>n. –<br/>
+Die Philoſophie der erſten joniſchen Philoſophen,<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118801732">Thales</a></span> war mehr auf ſinnliche Anſchauungen ge-<br/>
+gründet; weit ernſter und großartiger aber<br/>
+die des <span title="Personenname"><a href="http://d-nb.info/gnd/118597248">P<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">y</span>thagoras</a></span>.</p><br/>
+<p class="dta-p"><span title="Personenname"><a href="http://d-nb.info/gnd/118801732">Thales</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/118649043">Anaximenes</a></span>, <span title="Personenname">Eteokles</span>, <span title="Personenname"><a href="http://d-nb.info/gnd/118672029">Diognes von A<span class="dta-del" title="Streichung (#s)">p</span>-<span class="dta-marginal dta-marginal-right"><span class="dta-metamark" title="metamark">⎡</span><br/>
+</span><br/>
+pollonia</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/118645102">Anaximander</a></span><span class="dta-del" title="Streichung (#s)">,</span> waren die vorzüg-<br/>
+lichſten unter den joniſchen Ph<span class="dta-del" title="Streichung (#ow)">i</span><span class="dta-add" title="Hinzufügung (across)">y</span>loſophen. – Sie<br/>
+hatten in ihrer Ph<span class="dta-del" title="Streichung (#ow)">i</span><span class="dta-add" title="Hinzufügung (across)">y</span>loſophie manches richtige, das<br/>
+ſpätere ebenfalls wieder annahmen. Es lehrte die-<br/>
+ſe Schule, daß Himmel und Erde aus einem<br/>
+Grundſtoff entſtanden ſei, das eine <span class="dta-del" title="Streichung (#ow)">dah</span><span class="dta-add" title="Hinzufügung (across)">durch</span><span class="dta-del" title="Streichung (#s)">er</span><br/>
+Verdicken, das andere <span class="dta-del" title="Streichung (#ow)">dah</span><span class="dta-add" title="Hinzufügung (across)">durch</span><span class="dta-del" title="Streichung (#s)">er</span> Verdünnen.</p><br/>
+<p class="dta-p"><span class="dta-metamark" title="metamark">|:</span> Attractions- und Repulſionskraft ſind gewiſser-<br/>
+maſsen darin ausgeſprochen <span class="dta-metamark" title="metamark">:|</span> Sie beobachteten<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">noch</div><br/>
+<div class="&#xA;            fw-bottom-sig&#xA;          ">Phyſicaliſche Geographie <span class="aq ">c</span>.</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0026|</span><br/>
+noch nicht jeden Planet als ein für ſich beſtehendes<br/>
+abgeſchloſsenes Ganzes ſondern ſahen daß <span class="dta-del" title="Streichung (#ow)">ju</span><span class="dta-add" title="Hinzufügung (across)">ga</span>n<span class="dta-del" title="Streichung (#ow)">ge</span><span class="dta-add" title="Hinzufügung (across)">ze</span> Welt-<br/>
+ſyſtem als ein Ganzes an, wo ſich die ſchwereren<br/>
+Stoffe tiefen, die leichteren Höher befänden. – Es<br/>
+fand ſich bei ihnen ein Ahnen, daß es keine <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">H</span>e-<br/>
+terog<span class="dta-del" title="Streichung (#ow)">ä</span><span class="dta-add" title="Hinzufügung (across)">e</span>nität gäbe; indem die verſchiednen Elemen-<br/>
+te aus dem allgemeinen Grundſtoffe hervorgelei-<br/>
+tet wurden.</p><br/>
+<p class="dta-p">Die joniſchen Philoſophen beobachteten auch nicht<br/>
+immer im Allgemeinen, auch nicht im Einzelnen.<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118672029">Diog<span class="dta-del" title="Streichung (#ow)">ne</span><span class="dta-add" title="Hinzufügung (across)">ene</span>s von A<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">p</span>ollonia</a></span> hatte z. B. ſchon ſehr gu-<br/>
+te Begriffe vor der Art der Reſpiration der Fiſche.<br/>
+Die Lehre des <span title="Personenname"><a href="http://d-nb.info/gnd/118597248">Pythagoras</a></span> hängt mit der der jo-<br/>
+niſchen Schule genau zuſammen, erſcheint auch in<br/>
+einem weit großartigere Charakter. – Er brach-<br/>
+te die Mathematik in nähere<span class="dta-del" title="Streichung (#s)">r</span> Verbindung mit<br/>
+der Ph<span class="dta-del" title="Streichung (#ow)">i</span><span class="dta-add" title="Hinzufügung (across)">y</span>loſophie und bediente ſich ſelbſt einer ma-<br/>
+thematiſchen Symbolik zur Beweiſung der Natur-<br/>
+verhältniſse – <span class="dta-metamark" title="metamark">|</span> Unterſuchungen <span title="Personenname"><a href="http://d-nb.info/gnd/118808850">Böcks</a></span> u. <span title="Personenname"><a href="http://d-nb.info/gnd/118801732">Tales</a></span><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span> <span class="dta-metamark" title="metamark">|</span>.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="dta-metamark" title="metamark">⎡</span><br/>
+</span>Man kann ſeine Ph<span class="dta-del" title="Streichung (#ow)">i</span><span class="dta-add" title="Hinzufügung (across)">y</span>loſophie ganz beſtimmt eine<br/>
+Ph<span class="dta-del" title="Streichung (#ow)">i</span><span class="dta-add" title="Hinzufügung (across)">y</span>loſophie des Maaßes und der Harmonie nennen.<br/>
+In ſpäterer Zeit bald nach der Verbreitung des<br/>
+Chriſtenthums <span class="dta-del" title="Streichung (#s)">er</span><span class="dta-del" title="Streichung (#ow)">hielt</span><span class="dta-add" title="Hinzufügung (across)">hatte</span> dieſe Lehre durch die Neu-<br/>
+Pythagoräer eine <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 3 Zeichen fehlen]</span></span><span class="dta-add" title="Hinzufügung (across)">ganz</span> au<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)"><span class="gap">[unleserliches Material – 3 Zeichen fehlen]</span></span> mehr<span class="dta-del" title="Streichung (#s)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span>e</span>myſtiſche Geſtalt<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">an-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0027 : 19|</span><br/>
+angenommen als früher. – Es iſt jedoch bekannt<br/>
+daß hauptſächlich das Syſtem auf <span title="Personenname"><a href="http://d-nb.info/gnd/118565273">Copernikus</a></span><br/>
+gewirkt hat: es war nicht einig das Syſtem des<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118597248">Pythagoras</a></span> ſelbſt, ſondern vielmehr das des <span title="Personenname"><a href="http://d-nb.info/gnd/118791974">Philo-<span class="dta-marginal dta-marginal-right"><span class="dta-metamark" title="metamark">⎡</span><br/>
+</span><br/>
+laus</a></span>, welches <span title="Personenname"><a href="http://d-nb.info/gnd/118565273">Copernikus</a></span> ſtudierte, und das<br/>
+ihm die Idee eingab das Weltſyſtem ſei anders<br/>
+als man es bisher betrachtet hatte. – Die Pytha-<br/>
+goräer nahmen einen Weltheerd als Centrum<br/>
+an um de<span class="dta-del" title="Streichung (#ow)">m</span><span class="dta-add" title="Hinzufügung (across)">n</span> ſi<span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)">ch</span> die Sonne und die Planeten<br/>
+drehten; – die Sonne betrachtete er wie einen<br/>
+Spiegel, der das Licht, welches vom Weltheerde<br/>
+auf die Erde fällt, reflecktire<span class="dta-del" title="Streichung (#s)">nd</span>.</p><br/>
+<p class="dta-p"><span class="dta-del" title="Streichung (#ow)">Außer dem</span><span class="dta-add" title="Hinzufügung (across)">Außerdem</span> Beweg<span class="dta-del" title="Streichung (#ow)">u</span><span class="dta-add" title="Hinzufügung (across)">e</span><span class="dta-del" title="Streichung (#s)">ngen</span> ſich neben der Erde<br/>
+noch eine dunkle Gegenerde und <span class="dta-del" title="Streichung (#ow)">dahin</span><span class="dta-add" title="Hinzufügung (across)">durch</span> ei-<br/>
+ne Eklipſe, indem ſich dieſe zwiſchen der Soñe<br/>
+und Erde befinde, entſtehe Nacht. –</p><br/>
+<p class="dta-p">Anklänge des Pythagoriſchen Wiſsens finden<br/>
+ſich auch bei <span title="Personenname"><a href="http://d-nb.info/gnd/118594893">Plato</a></span>, der einiges in ſeinen Ti-<br/>
+mäus davon ausſpricht. – Man muß bei ihm<br/>
+zweierlei unterſcheiden: ſeine rationellen Be-<br/>
+obachtungen ſind meiſt dunkel; durchgängig ſeine<br/>
+einzelnen Beobachtungen höchſt ſcharfſinnig; und<br/>
+<span class="dta-add" title="Hinzufügung (intralinear)">be</span>ziehen ſich <span class="b ">zugleich</span> auf unſere heutige Naturkunde<br/>
+und Geographie. – Er nahm einen überirdiſchen<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Zu-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0028|</span><br/>
+Zuſammenhang des Waſsers an, eine Anſicht auf<br/>
+<span class="dta-del" title="Streichung (#s)">die</span> welche <span class="dta-add" title="Hinzufügung (intralinear)"><span class="b ">wir</span></span> in <span class="dta-add" title="Hinzufügung (intralinear)"><span class="b ">den</span></span> heutigen Tagen wieder zurück-<br/>
+gekommen ſind. – Ferner im Innern der Erde<br/>
+<span class="dta-marginal dta-marginal-left"><span class="dta-metamark" title="metamark">⎡</span><br/>
+</span>einen Feuerſtrom – Periphlegeton – und die<br/>
+Vulkane als Verbindung deſselben mit den<br/>
+Äußeren – er belegte ſie daher <span title="Original: charakteriſch" class="dta-reg">charakteriſtiſch</span><br/>
+mit den Namen Schornſteine. Er ſah zuerſt<br/>
+das mittelländiſche Meer als eine Niederung an;<br/>
+auch gab er ſehr gute Ideen über Entſtehung<br/>
+der Gebirgsarten und dgl., er unterſchied Ge-<br/>
+birgsarten, wie durch Waſser entſtanden ſind, oder<br/>
+durch ehemaligen Brand; rauhe u. zerſplitterte<br/>
+u.ſ.w.</p></div><br/>
+<div class=""><div class="dta-head">2<span class="sup u ">te</span> Epoche</div><br/>
+<hr/><br/>
+<p class="dta-p">Nichts hat mächtiger gewirkt auf die Kenntniß<br/>
+der Natur für die alten Völker als <span title="Personenname"><a href="http://d-nb.info/gnd/118501828">Alexander<br/>
+de<span class="dta-del" title="Streichung (#ow)">r</span><span class="dta-add" title="Hinzufügung (across)">s</span> Großen</a></span> Expedition nach Indien. Die Keñt-<br/>
+niß der Alten war bis dahin immer auf einen<br/>
+geringen Landſtrich beſchränkt; ſie kannten noch<br/>
+keine Erzeugniſse der <span class="dta-del" title="Streichung (#erased)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">T</span>ro<span class="dta-del" title="Streichung (#ow)">g</span><span class="dta-add" title="Hinzufügung (across)">p</span>enländer. – Auch<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118501828">Alexander</a></span> drang nicht bis zu den Tropen vor; doch<br/>
+wegen des <span title="Original: Continental Zuſammenhangs" class="dta-reg">Continental-Zuſammenhangs</span>, ſah er ſchon<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">die</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0029 : 21|</span><br/>
+die Erzeugniſse dieſer Länder. – Es iſt eine<br/>
+ſeltſame Erſcheinung daß auf Kontinenten<br/>
+Pflanzenformen und Thierformen von dem Süden<br/>
+nach dem <span class="dta-del" title="Streichung (#ow)">Weſt</span><span class="dta-add" title="Hinzufügung (across)">Nord</span>en übergehen – ſo findet man in<br/>
+Amerika den Kolibri in einer Breite wie<br/>
+Riga und Danzig. – Daher fand <span title="Personenname"><a href="http://d-nb.info/gnd/118501828">Alexander</a></span> ſchon<br/>
+in Indien in einer Breite von 32° Palmen<br/>
+und andere tropiſche Gewächſe –</p><br/>
+<p class="dta-p">Einzelne Beſchreibungen der Tropengewächſe<br/>
+gab es ſchon vor <span title="Personenname"><a href="http://d-nb.info/gnd/118501828">Alexander</a></span>, ſo beſchreibt <span title="Personenname"><a href="http://d-nb.info/gnd/118549855">He-<br/>
+rodot</a></span> das Bambusrohr – die<span class="dta-del" title="Streichung (#ow)">s</span><span class="dta-add" title="Hinzufügung (intralinear)">ſes</span> hat man oft<br/>
+mit dem Zuckerrohre verwechſelt. –</p><br/>
+<p class="dta-p"><span title="Personenname"><a href="http://d-nb.info/gnd/119379295"><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">K</span>teſias</a></span> macht viele Beſchreibungen von den<br/>
+ſeltſamſten Thieren und Pflanzen; er hatte ſehr<br/>
+viele Kenntniſse auf Reiſen erworben, und<br/>
+leider ließ er ſeinen Erzählungen viele Fabeln<br/>
+einflieſsen. –</p><br/>
+<p class="dta-p">Man glaubt daß das Wunderbare in ſeinen<br/>
+Werken hauptſächlich den jungen <span title="Personenname"><a href="http://d-nb.info/gnd/118501828">Alexander</a></span><br/>
+zu dieſer Expedition angeregt hätte.</p><br/>
+<p class="dta-p">Die Eindrücke, die dieſe Expedition bei den<br/>
+Griechen hervorbrachte, hat man immer mit<br/>
+denen der Entdeckung von Amerika des<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">15-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0030|</span><br/>
+15<span class="sup ">ten</span> Jahrhunderts verglichen. –</p><br/>
+<p class="dta-p">Man lernte viele neue Pflanzen kennen, ſah<br/>
+hier zuerſt große Thiergeſtalten; Elephanten wel-<br/>
+che ſpäterhin Pyrrhus zum Schreken der Römer<br/>
+nach Italien brachte. – Man beurtheilte hier-<br/>
+nach die verſchiedenartigen Winde; und erkañ-<br/>
+te daß die Urſache des Steigens und Fallens<br/>
+der Flüſse nicht das Schmelzen des Schnees, ſon-<br/>
+dern die Regengüſse in den Tropen ſeien. –<br/>
+Man lernte hier eine neun Menſchenrace<br/>
+kennen, dachte um die Urſache der Verſchieden-<br/>
+heit der Racen nach und ſtellte die erſte Theorie<br/>
+darüber auf. <span class="dta-metamark" title="metamark">|:</span> Der Keim zu den übrigen<br/>
+Theorien <span class="dta-metamark" title="metamark">:|</span> – Von der Weisheit der Inder<br/>
+lernte man die Naturproducte kennen;<br/>
+doch drang <span title="Personenname"><a href="http://d-nb.info/gnd/118501828">Alexander</a></span> noch nicht bis in den Gegend<br/>
+ein, w<span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)">o</span> wieder die eigentliche Cultur <span class="dta-add" title="Hinzufügung (intralinear)"><span class="b ">der Inder</span></span><br/>
+herrſchte <span class="dta-metamark" title="metamark">|:</span> am Ganges <span class="dta-metamark" title="metamark">:|</span> – <span title="Personenname"><a href="http://d-nb.info/gnd/118966669">Seleukus Merkator</a></span><br/>
+ging ſpäterhin weiter bis nach dieſer Gegend<br/>
+hin und machte dort die Bekanntſchaft mit<br/>
+den indiſchen Prieſtern. – Von den Chaldäern,<br/>
+einer Prieſterkaſte in Babylon, lernte man<br/>
+die Himmelskunde; <span title="Personenname"><a href="http://d-nb.info/gnd/118640062">Kalliſthenes</a></span> ſoll den<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Ariſto</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0031 : 23|</span><br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118650130">Ariſtote<span class="dta-add" title="Hinzufügung (intralinear)"><span class="b ">les</span></span></a></span> die Beobachtungen von 1900 Eklipſen ge-<br/>
+ſchickt haben die <span class="dta-del" title="Streichung (#ow)">er</span><span class="dta-add" title="Hinzufügung (across)">wir</span> vorfanden, jedoch findet<br/>
+ſich in <span title="Personenname"><a href="http://d-nb.info/gnd/118650130">Ariſtoteles</a></span> Werken nichts davon.</p><br/>
+<p class="dta-p"><span title="Personenname"><a href="http://d-nb.info/gnd/118650130">Ariſtoteles</a></span> Wiſsen müſsen wir als Frucht<br/>
+des Zuges <span title="Personenname"><a href="http://d-nb.info/gnd/118501828">Alexander</a></span>s anſehen; er ſammelte<br/>
+die Entdeckungen die dieſer Zug bewirkte. –<br/>
+Er legte ſchon eine Art <span title="Original: Naturalien Kabinett" class="dta-reg">Naturalien-Kabinett</span><br/>
+an, und ihm verdanken wir, daß die Natur-<br/>
+beſchreibung an die Stelle der Einheit der<br/>
+Natur getreten iſt; er ging mehr ins <span class="dta-del" title="Streichung (#ow)">ſ</span><span class="dta-add" title="Hinzufügung (across)">S</span>pecielle<br/>
+ein, und er<span class="dta-add" title="Hinzufügung (intralinear)">ſt</span> jetzt <span title="Schreibfehler: kom0t" class="dta-corr">kam</span> man auf eigentliche<br/>
+Beobachtungen. In ſeinem Werke <span class="aq ">mirabilia<br/>
+<span class="dta-del" title="Streichung (#ow)">dema<span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span>do</span><span class="dta-add" title="Hinzufügung (across)">de mundo</span><span title="Original: n" class="dta-reg"> </span> etc</span> ſtellt er ſchon viele Theorien auf<br/>
+jedoch die Anſicht über Wärmeleitung, und ei-<br/>
+ne andere von den Farben, die man ihm<br/>
+gewöhnlich zuſchreibt, gehören ihm nicht, ſondern<br/>
+ſind jüngerer Zeit. – Dagegen iſt von ihm<br/>
+eine Naturgeſchichte, eine vergleichende<br/>
+Anatomie, phyſikaliſche Anſichten <span class="dta-del" title="Streichung (#ow)">und</span><span class="dta-add" title="Hinzufügung (across)">über</span> das<br/>
+Leben der <span class="b ">Thiere</span> und dgl. mehr. –</p><br/>
+<p class="dta-p">Derſelbe Geiſt des Sammelns blieb auch<br/>
+fernerhin in der alexandrianiſchen Schule. –<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Sam-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0032|</span><br/>
+Sammlungen von Naturalien und <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">Bibli-<br/>
+otheken</span> wurden überall nach dem Muſter<br/>
+der erſten des <span title="Personenname"><a href="http://d-nb.info/gnd/118650130">Ariſtoteles</a></span> angelegt. –</p><br/>
+<p class="dta-p">Unter den Ptolemäern wurde die Papyrus-<br/>
+ſtaude zu Schreibmaterial benutzt. – Nach<br/>
+<span class="dta-marginal dta-marginal-left"><span class="dta-metamark" title="metamark">⎡</span><br/>
+</span><span title="Personenname"><a href="http://d-nb.info/gnd/11768693X">Paſsalaqua</a></span>s Unterſuchungen fehlt dieſes Ge-<br/>
+wächs jetzt in <span class="dta-del" title="Streichung (#ow)">E</span><span class="dta-add" title="Hinzufügung (across)">Ä</span>gypten ganz, aber in Sizilien<br/>
+findet man es wild wachſen. – – Als Grie-<br/>
+chenland eine Provinz der Römer wurde<br/>
+ging die Tendenz des Sammelns auch nach<br/>
+Italien über. – <span title="Personenname"><a href="http://d-nb.info/gnd/118618806">Strabo</a></span> unter dem Kaiſer<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118505122">Auguſtus</a></span> verfaßte ein Werk, das zum<br/>
+Theil Erdbeſchreibung iſt. Er ſtellte hier zu-<br/>
+erſt auf, daß man aus der Geſtalt der Pflan-<br/>
+zen und Thiere, die Climate eines Landes<br/>
+und d<span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)">er</span> geographiſche<span class="dta-del" title="Streichung (#s)">n</span> Breite beſtimmen<br/>
+könne; er ſagte: die Sonne bringe ſchöne<br/>
+Thiergattungen hervor, färbe die <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">F</span>edern der<br/>
+Vögel und die Blätter der Pflanzen u.ſ.w.<br/>
+Später ſchrieb der ältere <span title="Personenname"><a href="http://d-nb.info/gnd/118595083">Plinius</a></span> ein Werk<br/>
+in 34 Büchern <span title="Schreibfehler: daß" class="dta-corr">das</span> großartigſte <span class="dta-del" title="Streichung (#ow)"><span class="dta-metamark" title="metamark">⎡</span></span><span class="dta-add" title="Hinzufügung (intralinear)">Unter-</span><br/>
+nehmen einer Weltbeſchreibung. –</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Freilich</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0033 : 25|</span><br/>
+<p class="dta-p">Freilich war auch der Plan zu dieſem Wer-<br/>
+ke theoretiſcher als die Ausführung.</p><br/>
+<p class="dta-p">Es fehlte ihm die Erfahrung; <span class="dta-del" title="Streichung (#ow)">imme</span><span class="dta-add" title="Hinzufügung (across)">er wa</span>r ein gro-<br/>
+ßer Mann, der wenig ſelbſt arbeitete und<br/>
+ſich auf die Erfahrungen anderer verließ. –<br/>
+Er hatte eine ſolche Menge von Materialien<br/>
+daß er ſie ſelbſt nicht überſehen konnte. –<br/>
+Sein Werk fängt mit allgemeinen Betrachtun-<br/>
+gen über die Welt an, und geht dann das<br/>
+Einzelne ſpeziell durch: metrologiſche Erſchei-<br/>
+nungen – Producte – Geographie; Menſchenracen,<br/>
+geiſtige, Entwickelung des Menſchen. Den<br/>
+Schluß macht eine vergleichende Naturbe-<br/>
+ſchreibung; und eine Betrachtung <span class="dta-del" title="Streichung (#ow)">und</span><span class="dta-add" title="Hinzufügung (across)">über</span> die<br/>
+Geſtalt der Länder.</p><br/>
+<p class="dta-p">Dieſer ernſte, ſtrenge Weg, wurde nicht<br/>
+lange befolgt; die morgenländiſche Ph<span class="dta-del" title="Streichung (#ow)">y</span><span class="dta-add" title="Hinzufügung (across)">i</span>loſophie<br/>
+drang in Italien ein, und führte hier zur<br/>
+Schwärmerei <span class="dta-metamark" title="metamark">|:</span> zur Zeit <span title="Personenname"><a href="http://d-nb.info/gnd/118544373">Hadrian</a></span>s <span class="dta-metamark" title="metamark">:|</span> – Es entſtan-<br/>
+den die Schulen der Neupytha<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 3 Zeichen fehlen]</span></span><span class="dta-add" title="Hinzufügung (across)">gor</span>ä<span class="dta-del" title="Streichung (#s)"><span class="gap">[unleserliches Material]</span></span>er, Neupla-<br/>
+toniker und der Gnoſtiker.</p><br/>
+<p class="dta-p">D<span class="dta-del" title="Streichung (#ow)">aher</span><span class="dta-add" title="Hinzufügung (across)">och</span> hatte auch dieſe Schwärmerei ihre Vor-<br/>
+theile, da man jetzt anfing ſich zu ſehr mit dem<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Spec-</span></div><br/>
+<div class="&#xA;            fw-bottom-sig&#xA;          ">Phyſikaliſche Geographie <span class="aq ">d</span>.</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0034|</span><br/>
+Speziellen zu beſchäftigen, man kam jetzt wie-<br/>
+der auf das Gefühl der Einheit der Natur zu-<br/>
+rück, und bildete das aus was bei den roheſten<br/>
+Völkern ſchon geahndet wurde. – </p></div></div></div></div></body></html>

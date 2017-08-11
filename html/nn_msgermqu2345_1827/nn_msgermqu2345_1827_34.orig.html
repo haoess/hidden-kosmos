@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[34. Vorlesung, 01.03.1828]</span></div><br/>
+<div class=""><div class=""><div class=""><p class="dta-p">Bei dem Studium der Naturwissenschaft überhaupt, und<br/>
+besonders bei dem der Geognosie welche so viele <span title="Original: Phaenomen" class="dta-reg">Phaenomene</span> in<br/>
+ihren Tiefen umfaßt, ist es von besonderer Wichtigkeit, daß wir<br/>
+<span class="dta-marginal dta-marginal-left">wörtl.<br/>
+</span>uns nicht in den einzelnen Erscheinungen verlieren, sondern<br/>
+das Gemeinsame derselben auffaßend, ihren Causalnexus<br/>
+zu errathen suchen. Daher werden wir den Zusammenhang<br/>
+des innern Erdkörpers mit der äußern Rinde als in 3erlei<br/>
+Gestalt sich offenbarend, betrachten müssen: 1., durch Bewe-<br/>
+gung allein, daher die Erdbeben, welche um so schrecklicher für<br/>
+uns sind, da wir seit der frühesten Kindheit uns daran ge-<br/>
+wöhnt, den Boden worauf wir treten, als etwas festes und <span class="dta-add" title="Hinzufügung (intralinear)">un</span>beweg-<br/>
+liches zu betrachten; 2., indem durch das Verschieben der Erdrinde<br/>
+etwas ungewöhnliches zum Vorschein kommt<span title="Schreibfehler: :," class="dta-corr">:</span> Dampf, Luft, Wasser,<br/>
+Schlamm; oft werden auch Steine von Flammen begleitet her-<br/>
+vorgeschleudert. 3., Durch intermittirende, geschmolzene Erde<br/>
+ergießende Quellen, die aus einem Trachÿtkegel ausfließen.</p><br/>
+<p class="dta-p">Eben so wie man beim organischen Bau von dem ein-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0169 : [163]|</span><br/>
+fachen zum zusammengesetzten übergeht, wie der Zusammen-<br/>
+hang der Formen klarer wird, indem man zuerst bei einer<br/>
+Bildung mit wenigen Gliedern verweilt und d<span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)">a</span>nn eins<br/>
+und mehrere zusetzt: eben so hier. Bei jeder folgenden Gruppe<br/>
+von Erscheinungen findet man alles vor, was in der frühern<br/>
+vorhanden war. Bei den Vulkanen zeigt sich z. E. Feuer, wie<br/>
+bei den Erdbeben und bei den Luftquellen. Bei den Quellen<br/>
+von <span class="aq ">Baku</span> über die leider noch fast gar nichts bekannt ist,<br/>
+scheint es der Fall zu sein, daß sie sich von selbst entzünden<br/>
+und daß man das Feuer wellenförmig über die Erde sich<br/>
+dahin wälzen sieht, welches aber doch nicht durch das Ausströ-<br/>
+men von Wasserstofgas hervorgebracht wird, wie man früher<br/>
+glaubte. Bei <span class="aq ">Pietra<span class="dta-del" title="Streichung (#s)">in</span><span class="dta-add" title="Hinzufügung (superlinear)">m</span>ala</span> dagegen scheint keine Selbstentzün-<br/>
+<span class="dta-marginal dta-marginal-left">wör<span class="dta-supplied">[t]</span>l.<br/>
+</span>dung Statt zu finden, sondern die Spalten nur immer von den<br/>
+Reisenden angezündet worden zu sein. Selbst bei den Schlam̃-<br/>
+vulkanen sind Flammen aus der Erde aufsteigend gesehen<br/>
+worden. Die Vulkane vereinigen alle Erscheinungen die wir<br/>
+bei den heißen Quellen und Erdbeben gesehen haben, nemlich<br/>
+Ausstoßen von heißem Wasser, Luft, Flammen und haben<br/>
+nun noch ein neues Phaenomen, nemlich die Erdquellen,<br/>
+welche d<span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)">a</span>nn in einzelnen Schichten erstarren und sich<br/>
+consolidiren.</p><br/>
+<p class="dta-p">Die unterirdische Kraft, welcher diese Erdquellen<br/>
+ihr Dasein verdanken, ist eine schaffende, wie alle Naturkräfte;<br/>
+indem sie die alten Verwandschaften der Körper <span title="Schreibfehler: läßt" class="dta-corr">löst</span> und<br/>
+daher neue hervorbringt; sie ist aber nicht bloß eine schaffende,<br/>
+sondern auch eine bewegende, indem sie die von ihr<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0170 : [164]|</span><br/>
+bereiteten Ma<span class="dta-del" title="Streichung (#ow)">ß</span><span class="dta-add" title="Hinzufügung (across)">ss</span>en bis auf die Oberfläche der Erde emporhebt,<br/>
+wo sie an der Luft erstarren. Dies Erstarren, je nachdem es<br/>
+unter einem großen oder geringen Drucke (unter dem der<br/>
+Atmosphaere oder des ungeheuren Meeres) vor sich geht, ist<br/>
+steinartig als Lava, glasartig als Obsidian.</p><br/>
+<p class="dta-p">Die größte Masse der <span class="u ">Gebirgsarten</span> ist vor unserer<br/>
+Geschichte entstanden; aber ein großer Theil davon schreibt sich,<br/>
+so zu sagen, noch aus der historischen Zeit her und wird her-<br/>
+vorgebracht:<br/>
+<div class="dta-list"><span class="dta-list-item">1., <span class="u ">durch Quellen</span> wie der <span class="aq ">Travertino</span> von der Umgegend <span class="aq ">Roms</span><br/>
+der sich bis zu 500 Fuß Höhe erhebt. Die schönen <span class="aq ">Kaskatellen</span><br/>
+von <span class="aq ">Tivoli</span> bestehen daraus: man hat sie genau untersucht<br/>
+<span class="dta-marginal dta-marginal-left">wörtl.<br/>
+</span>und gefunden, daß sie nichts sind, als eine Anhäufung von<br/>
+kohlensaurer Kalkerde, meist cÿlindrisch um ein Centrum ge-<br/>
+lagert, das dem Pflanzenreiche angehört. Der kleine Fluß<br/>
+<span class="aq ">Aniene</span>, welcher die Wasserfälle bildete, bringt noch heut zu<br/>
+Tage solche Schichten hervor; eine Menge der größten Ge-<br/>
+bäude des alten und neuen Roms sind aus diesem <span class="aq ">Travertino</span><br/>
+gebaut, der zu den Süßwasserformationen gehört. Aehnliche<br/>
+Erscheinungen finden sich in <span class="aq ">Paris</span> in den Kalkbrüchen; auch in<br/>
+Ungarn giebt es mehrere Seen, welche noch immer Gebirgs-<br/>
+arten absetzen.</span>
+<span class="dta-list-item">2., <span class="u ">Durch Anschwemmung</span>. Wenn wir bei den Quellenbildungen<br/>
+annehmen, daß sie wirklich das Gestein durch Niederschlag bilden,<br/>
+so müssen wir hier bemerken, daß die Bildung nur durch Ver-<br/>
+schiebung hervorgebracht wird: dahin gehören die <span title="Original: Tufschichten" class="dta-reg">Tuffschichten</span> und<br/>
+Breccien<span class="dta-del" title="Streichung (#ow)">, d</span><span class="dta-add" title="Hinzufügung (across)">. D</span>er fragmentarische Sandstein, den wir bei uns<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0171 : [165]|</span><br/>
+finden, ist auch dazu zu rechnen, indem seine Entstehung nur<br/>
+als Folge des Fortschiebens angesehen werden kann. Die<br/>
+<span class="aq ">Salse</span> oder <span title="Schreibfehler: Kothvulkan" class="dta-corr">Kothvulkane</span> bringen Lettenschichten durch Aufstoßen<br/>
+hervor; ja bei dem großen <span class="aq ">Kotopaxi</span> ist es der Fall gewesen,<br/>
+daß er Letten in ungeheurer Menge umherschleuderte,<br/>
+welche mehrere □ Meilen Landes bedeckten. Wenn wir<br/>
+noch weiter gehen, so hängen vielleicht die Lettenschichten<br/>
+auf den Basaltinseln (wie <span class="aq ">Böhmen</span>) mit Vulkanen zusam̃en,<br/>
+die wir uns nicht so mikroskopisch denken können als die <span class="aq ">Salse</span>; <span class="dta-add" title="Hinzufügung (right)">aber</span><br/>
+<span class="dta-add" title="Hinzufügung (left)">in den</span> Trachytvulkanen ist der eigentliche Sitz der Hervorbringung<br/>
+von körnigen Gesteinen.</span></div></p><br/>
+<p class="dta-p">Diese Trachÿtvulkane oder eigentlichen feuerspeienden<br/>
+<span class="dta-marginal dta-marginal-left">wörtl.<br/>
+</span>Berge betrachten wir in 3 Rücksichten:<br/>
+<div class="dta-list"><span class="dta-list-item">1., nach ihrer <span class="u ">Entstehung</span>. Es kommt sehr häufig vor, daß sie<br/>
+sich in Maßen bilden, also: Aufsteigen von Inseln aus dem<br/>
+Meere: sehr selten ist die Bildung im Trocknen, an der<br/>
+Erdoberfläche auf dem Boden des Luftoceans. Der Vulkan<br/>
+von <span class="aq ">Xorullo</span> in <span class="aq ">Mexiko</span>, welchen <span class="dta-del" title="Streichung (#s)"><span class="dta-del" title="Streichung (#erased)"><span class="aq ">H</span><span class="dta-supplied">[.]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Personenname"><a href="http://d-nb.info/gnd/118554700">Humbold</a></span></span></span><span class="dta-add" title="Hinzufügung (superlinear)">ich</span> beschrieben, ist kein<br/>
+eigentlicher zu nennen, so wenig als der <span class="aq ">Epomeo</span> auf<br/>
+<span class="aq ">Ischia</span> obgleich dieser letzte 1302 einen sehr starken Aus-<br/>
+bruch hatte.</span>
+<span class="dta-list-item">2., nach ihrem <span class="u ">gegenwärtigen Zustande</span> in voller Wirksamkeit,<br/>
+den man ihr reiferes Alter nennen könnte. Hierbei können<br/>
+lange Pausen von Unthätigkeit eintreten, so wie es bekannt<br/>
+ist, daß der <span class="aq ">Vesuv</span>, vor dem großen Ausbruche vom <span class="aq ">Pompeji</span><br/>
+und <span class="aq ">Herculanum</span> mehrere Jahrhunderte ruhte, so daß der<br/>
+Glaube an seine feuerspeiende Eigenschaft sich beinahe aus<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0172 : [166]|</span><br/>
+dem Gedächtniß der Umwohner verloren hatte.</span>
+<span class="dta-list-item">3., nach ihrem <span class="u ">veralteten Zustande</span> wo sie als <span class="aq ">Solfataren</span><br/>
+erscheinen. Dieß ist das letzte Stadium der Vulkane, gar<br/>
+<span class="dta-marginal dta-marginal-left">wörtl.<br/>
+</span>sehr von ihrem reiferen Alter abweichend: denn auch die<br/>
+chemischen Erscheinungen, Entwicklung von Gasarten <span class="aq ">etc</span>: <span class="aq ">etc</span>:<br/>
+sind nicht dieselben bei den Solfataren und Vulkanen. Schon<br/>
+die Alten machten die Bemerkung, daß bei den Vulkanen<br/>
+dasjenige, was auf die Oberfläche der Erde ausgeströmt wird,<br/>
+von sehr fern herkomm<span class="dta-del" title="Streichung (#erased)">en</span><span class="dta-add" title="Hinzufügung (across)">e</span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118613200">Seneca</a></span></span> sagt sehr richtig vom<br/>
+Aetna: er seÿ nicht <span class="u "><span class="aq ">alimentum</span></span>, sondern <span class="u "><span class="aq ">via ignis</span>.</span></span></div></p><br/>
+<p class="dta-p">Dem ausgezeichneten Naturforscher <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">L. v. Buch</a></span></span>, dem<br/>
+wir so viel <span class="dta-del" title="Streichung (#ow)">n</span><span class="dta-add" title="Hinzufügung (across)">N</span>eues über die Vulkane im allgemeinen ver-<br/>
+danken, gehört auch die Bemerkung, daß man den Ausbruchskrater<br/>
+wohl vom Erhebungskrater unterscheiden müsse. Wenn die<br/>
+feste Gesteinmasse durch elastische Dämpfe gehoben wird: so<br/>
+muß sie entweder oben zerbersten und einen Krater bilden,<br/>
+oder sie zeigt sich als Dom wie der <span class="aq ">Chimborasso</span> und die Kuppen<br/>
+in <span class="aq ">Vivarais</span> i<span class="dta-del" title="Streichung (#erased)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">n</span> <span class="aq ">Auvergne</span>. Nachdem der Erhebungskrater<br/>
+sich gebildet, entwickelt eine andere Hebung den Trachÿtkrater<br/>
+als Ausbruchskrater. So fand <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">v. Buch</a></span></span> auf <span class="aq ">Palma</span>, einer der<br/>
+kanarischen Inseln, daß die ganze Insel nichts ist als ein<br/>
+Erhebungskrater. Blöcke von Glimmerschiefer sind hervorge-<br/>
+schleudert worin man Granaten findet, d<span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)">a</span>nn Stücke von<br/>
+Basalt. Der <span class="aq ">Pic v. Teneriffa</span> ist <span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)">w</span>ie mit einem Mantel,<br/>
+oder mit Wall und Graben durch den Erhebungskrater umgeben.<br/>
+Dieser bildet auf einer bedeutenden Höhe eine große Ebene,<br/>
+wo fast nichts wächst als <span class="aq ">Retama</span> nach dem spanischen Dialecte<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0173 : [167]|</span><br/>
+der Insel (<span class="aq ">Spartium nubigenum</span>.) In <span class="aq ">Fortaventura</span><br/>
+(um noch ein Beispiel von den kanarischen Inseln zu nehmen)<br/>
+liegt die Stadt <span class="aq ">St. Maria della Grazia</span> ganz in dem Erhebungs-<br/>
+krater. Bei der Erhebung einer solchen Insel entstehen <span class="aq ">Barancas</span>,<span class="dta-marginal dta-marginal-right">Barancos<br/>
+<span class="dta-metamark" title="metamark">?</span><br/>
+</span><br/>
+tiefe Thäler, die strahlförmig gegen den Krater in die Höhe<br/>
+gehen; ein sehr merkwürdiges <span class="aq ">Factum</span>: denn durch das Daseyn<br/>
+der Thäler wird der vulkanische Ursprung der Insel beurkundet:<br/>
+<span class="dta-marginal dta-marginal-left">wörtl<span class="dta-supplied">[.]</span><br/>
+</span><span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)">E</span>s war nicht anders möglich, als daß die Ma<span class="dta-del" title="Streichung (#ow)">ß</span><span class="dta-add" title="Hinzufügung (across)">ss</span>e, nach dem sie aus<br/>
+dem Meere herauf gestiegen war an der Luft erkaltend und<br/>
+erstarrend in unzählige Einsenkungen sich spaltete. Die kleine<br/>
+Insel <span class="aq ">Amsterdam</span> (zwischen dem Cap der guten Hoffnung und <span class="aq ">Vandiemens</span>-Land)<br/>
+ist eine ganz ähnliche pelagische Erscheinung; sie besteht aus einem<br/>
+basaltischen Ringe mit einer Bresche, aus der zuweilen sie-<br/>
+dendheißes Wasser stürzt.</p><br/>
+<p class="dta-p">Die Erscheinung von <span class="aq ">Santerin</span> im griech<span class="dta-add" title="Hinzufügung (intralinear)">ischen</span> Archipelagus<br/>
+wurde schon von den Alten beobachtet. Hier hat die Trachÿtma<span class="dta-del" title="Streichung (#ow)">ß</span><span class="dta-add" title="Hinzufügung (across)">ss</span>e<span title="Schreibfehler: -" class="dta-corr">[…]</span><br/>
+erst Thonschiefer und darauf Kalkschiefer hervorgehoben<span title="Schreibfehler: ." class="dta-corr">,</span><br/>
+so daß man<span class="dta-add" title="Hinzufügung (superlinear)"><span class="dta-metamark" title="metamark">⎡</span> also</span> fast die Natur in ihrer Werkstatt belauschen kann.<br/>
+Die 3 Inseln <span class="aq ">Santorino</span>, <span class="aq ">Therasia</span> und <span class="aq ">Astronisi</span> bilden eben-<br/>
+falls einen Ring, der aber nicht ganz vollständig ist und in<br/>
+dem Mittelpunkt der 3 hat sich noch eine kleine Insel bilden<br/>
+wollen, die aber kaum zu Stande gekommen ist. So bil-<br/>
+deten sich im Jahre 1573 die alten <span class="aq ">Kamenen</span> <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[u.]</span></span><span class="dta-add" title="Hinzufügung (across)">und</span> 1700 und<br/>
+1709 die neuen <span class="aq ">Kamenen</span> bei welchen mehrere Naturforscher,<br/>
+die sich grade in der Nähe befanden, so glücklich waren, <span class="dta-del" title="Streichung (#s)">den</span><span class="dta-add" title="Hinzufügung (right)">den</span><br/>
+Verlauf der ganzen Entstehung mit anzusehen. Es erfolgte<br/>
+kein Schlackenausbruch, sondern ein Felsen schob sich aus de<span class="dta-del" title="Streichung (#ow)">n</span><span class="dta-add" title="Hinzufügung (across)">m</span> Meere<br/>
+hervor.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0174 : [168]|</span><br/>
+<p class="dta-p">Unter den <span class="aq ">Azoren</span> ist eine Insel, die ordentlich eine Epo-<br/>
+che des Entstehens und Verschwindens hat. Bei <span class="aq ">St: Michael</span><br/>
+erhob sich zuerst 1638 eine Insel, verschwand aber bald wieder;<br/>
+<span class="dta-del" title="Streichung (#ow)">s</span><span class="dta-add" title="Hinzufügung (across)">S</span>ie kehrte zurück, obgleich nicht ganz an derselben Stelle 1719<br/>
+und verschwand wieder. Endlich erhob sie sich wieder 1811 aber<br/>
+immer nur auf kurze Dauer. Ihre Höhe betrug 200 Fuß<br/>
+und nachdem sie versunken war, sondirte man das Meer<br/>
+und fand 400 Fuß, so daß also die ganze Ausdehnung des<br/>
+Phaenomens 600 Fuß betrug. Zwischen dem 1<span class="sup ">ten</span> und 2<span class="sup ">ten</span><br/>
+Ausbruche verflossen 81 Jahre; zwischen dem 2<span class="sup ">ten</span> und 3<span class="sup ">ten</span> 92.<br/>
+Ob nun wirklich die elastischen Dämpfe diese bestimmte Periode<br/>
+brauchen um eine Kraft zu erlangen welche den Dom in die<br/>
+Höhe heben könne, oder ob diese Zwischenräume zufällig sind,<br/>
+<span class="dta-marginal dta-marginal-left">wörtl<span class="dta-supplied">[.]</span><br/>
+</span>muß unentschieden bleiben.</p><br/>
+<p class="dta-p">Eine andere, mit submarinen Bewegungen zusam-<br/>
+menhangende Erscheinung, ist die große Unruhe des Meeres<br/>
+in manchen Tropengegenden, ohne Sturm, ja selbst ohne<br/>
+Windstoß. Besonders häufig findet sie sich an den Küsten<br/>
+von <span class="aq ">Lima</span> und <span class="aq ">Peru</span>. <span class="dta-del" title="Streichung (#s)"><span title="Personenname"><a href="http://d-nb.info/gnd/118554700">Humbold</a></span></span><span class="dta-add" title="Hinzufügung (superlinear)">Ich</span> wurde in diesen Gegenden oft<br/>
+durch das Brausen der Wellen geweckt welche ohne einen<br/>
+Lufthauch in einer Höhe von 20–25 Fuß an das Ufer<br/>
+rollten. Auch versichern die Einwohner, daß manchmal<br/>
+Flammen aus dem Meere aufsteigen. Ein ähnliches<br/>
+unterirdisches Phaenomen muß es veranlaßt haben, daß<br/>
+1739 eine große Menge todter Fische in <span class="aq ">Lanzerote</span> ans<br/>
+Ufer geworfen wurden.</p><br/>
+<p class="dta-p">An einigen Stellen wird das Meer erwärmt.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0175 : [169]|</span><br/>
+Im <span class="aq ">Golf</span> von <span class="aq ">Cariaco</span> ist ungefähr auf ¼ □ Meile das<br/>
+Wasser wärmer als in den übrigen Stellen. Welch eine<br/>
+gewaltige Hitze muß dazu gehören um diese große<br/>
+Wassermaße von unten durchzuwärmen! Am schwie-<br/>
+rigsten ist von allen Erscheinungen das Emporsteigen der<br/>
+Flammen aus dem Meer zu erklären; auf eine Art nem-<br/>
+lich die sich mit einer gesunden Phÿsik vertrüge. Herr <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">v.<br/>
+Buch</a></span></span> nimmt an, und dabei müssen wir fürs erste stehen<br/>
+bleiben, daß Blöcke von den neuen Met<span class="dta-del" title="Streichung (#s)">e</span><span class="dta-add" title="Hinzufügung (superlinear)">a</span>lloiden der Alkalien<br/>
+in die Höhe geworfen würden: diese werden beim Durchgange<br/>
+durch das Wasser an ihrer Oberfläche oxÿdirt, zerplatzen aber<br/>
+an der Luft und verbrennen mit Feuererscheinung.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left">wörtl.<br/>
+</span>Es ist eine weit verbreitete Meinung, daß die Nähe des<br/>
+Wassers zur Unterhaltung der Vulkane nöthig sei, durch Hervor-<br/>
+bringung von Wasserstoffgas, weil wirklich die meisten Vulkane<br/>
+nicht weit vom Meere liegen. Aber überall läßt sich dies nicht<br/>
+durchführen, denn die Entfernungen werden manchmal zu be-<br/>
+trächtlich. So habe ich durch trigonometrische Messungen gefun-<br/>
+den, daß der Vulkan <span class="aq ">Kopakotelepek</span><span class="dta-add" title="Hinzufügung (intralinear)"><span class="dta-metamark" title="metamark">(?)</span></span> in <span class="aq ">Mexico</span> volle 32 Mei-<br/>
+len von jedem Meere entfernt ist. Der <span class="aq ">Guatamajo</span><span class="dta-add" title="Hinzufügung (intralinear)"><span class="dta-metamark" title="metamark">(?)</span></span> welcher<br/>
+merkwürdig ist wegen des gewaltigen unterirdischen Doñers,<br/>
+den man fast regelmäßig von halber zu halber Stunde hört,<br/>
+östlich von der Andeskette im Innern gelegen, ist 40 Meilen<br/>
+vom Meere entfernt. Durch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11669811X">Rüppel</a></span></span> hat man Nachrichten<br/>
+von einem Vulkan der sich in <span class="aq ">Kordofan</span> befinden soll, und<br/>
+wenigstens 120 Meilen vom Meere abstehen würde. Aber<br/>
+bei weitem die größte Entfernung (und zwar historisch erwiesen)<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0176 : [170]|</span><br/>
+eines Vulkans vom Meere finden wir in dem Innern<br/>
+Asiens. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/10082451X">Klaproth</a></span></span> machte die Entdeckung in den chinesischen<br/>
+Annalen, welche auch von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100318371">Abel-Remus<span class="dta-metamark" title="metamark">⎡</span>s<br/>
+at</a></span></span> bestätigt wurde,<br/>
+daß sich unter 42½° N. B. ein Feuerberg <span class="aq ">Ko-tschang</span> nicht<br/>
+weit von der Stadt <span class="aq ">Ku-tsche</span> befinde, also 270 Meilen vom<br/>
+Meer, so weit als von <span class="aq ">Moskau</span> bis zum schwarzen Meer.<br/>
+Dieser Feuerberg ist nicht bloß ein einzelner Ausbruch, sondern<br/>
+die Beschreibung von den Ausbrüchen der geschmolzenen Erd-<br/>
+arten, Steinen <span class="aq ">etc</span>: <span class="aq ">etc</span>: sind so detaillirt, daß man an der<br/>
+Richtigkeit nicht zweifeln kann: man hätte dies sonst für<br/>
+ein Phaenomen halten können wie das der <span class="aq ">Borax</span>säure<br/>
+im Florentinischen; allein es ist ein eigener Vulkan und es<br/>
+<span class="dta-marginal dta-marginal-left">wörtl<span class="dta-supplied">[.]</span><br/>
+</span>ließe vielleicht, um die Hÿpothese zu retten,<span class="dta-add" title="Hinzufügung (superlinear)"><span class="dta-metamark" title="metamark">⎡</span> sich</span> annehmen, daß<br/>
+ein großer See in der Nähe sich vorfände. So liegt nördlich<br/>
+von <span class="aq ">Tcheran</span> der Vulkan <span class="aq ">Dunawengi</span> nicht fern vom caspi-<br/>
+schen See. Doch überhaupt ist die Annahme einer großen<br/>
+Wassermaße nicht nöthig zur Unterhaltung des unterirdischen<br/>
+Feuers, und wir müssen sagen, daß uns der erste Grund<br/>
+davon unbekannt ist, wenigstens kann ein Eindringen des<br/>
+Wassers in die Vulkane der Grund nicht sein.</p><br/>
+<p class="dta-p">Der <span class="aq ">Monte nuovo</span> entstand 1538 in den phlegräischen Fel-<br/>
+dern bei <span class="aq ">Neapel</span>. Ich habe selbst mich davon überzeugt, daß er<br/>
+nichts ist als ein Schlackenhügel und ich entdeckte auch einen sehr<br/>
+kleinen Erguß von Lava. Da nun ganz neuerlich in <span class="aq ">Ischia</span><br/>
+ein Erdbeben gewesen ist, so wäre es sehr möglich, daß das<br/>
+vulkanische Feuer sich auf kurze Zeit von dem Vesuv weg, nach<br/>
+der Gegend des <span class="aq ">Epomeo</span> zöge, von dem wir wissen, daß er<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0177 : [171]|</span><br/>
+1302 einen heftigen Ausbruch gehabt hat. Höchst merkwürdig<br/>
+ist die Entstehung des mexikanischen Vulkans <span class="aq ">Xorullo</span> 1759.<br/>
+Er liegt in einer schönen Hochebene wo Basalt und Trachÿt<br/>
+in der Nähe sind, also auf vulkanische Mächte hindeuten.<br/>
+Früher waren hier reiche Indigo- und Caffee<span class="dta-metamark" title="metamark">⎡</span>Kaffee<br/>
+-Pflanzungen<br/>
+deren Pfleger in leichten Schilfhütten wohnten. Sie hörten<br/>
+zuerst einen unterirdischen Donner; sahen, daß die Erde<br/>
+sich in Klüfte spaltete aus welchen <span title="Original: Bimstein" class="dta-reg">Bimsstein</span> und andere<br/>
+leichte Materien hervorgeschleudert wurden (wie <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118595091">Plinius</a></span></span><br/>
+vom <span class="aq ">Vesuv</span> erzählt) dazu gesellte sich ein Aschenregen. Die<br/>
+Bewohner flohen auf den nahgelegenen Hügel von <span class="aq ">Aguasaco</span><br/>
+<span class="dta-marginal dta-marginal-left">W.<br/>
+</span>von wo auch ich das Phaenomen betrachtet habe. Ich maß von<br/>
+hier aus in der Ebene eine Erhebung von 280–300 Fuß, wie<br/>
+eine Blase mit einer Spalte; worauf sich der Krater von<br/>
+<span class="aq ">Xorullo</span> und mit ihm <span class="u ">2</span> andere Vulkane erhoben hatten.<span class="dta-marginal dta-marginal-right">3 <span class="dta-metamark" title="metamark">?</span><br/>
+</span><br/>
+Zugleich war ein großer Lavaausbruch erfolgt. Das merk-<br/>
+würdigste aber ist, daß auf dieser vulkanischen Fläche sich<br/>
+3–4000 kleine Kegel befinden, von 5–6 Fuß Höhe, von den<br/>
+Einwohnern <span class="aq ">fornitos</span> (<span title="Original: Oefen Oefen" class="dta-reg">Oefen</span>) genannt, welche immerfort<br/>
+rauchen: daher glaubt man in der Ferne die Gegend sei be-<br/>
+baut und der Rauch steige aus den Hütten der Dörfer.<br/>
+<span class="dta-add" title="Hinzufügung (intralinear)">[</span>Nicht immer haben die Vulkane, wenn sie zum reifern<br/>
+Alter gelangt sind, dieselbe Thätigkeit, sondern die Erscheinungen<br/>
+sind sehr ungleich. In dem Krater des <span class="aq ">Stromboli</span> sind ununter-<br/>
+brochen Eruptionen und die Auswürfe von Flammen und glü-<br/>
+henden Steinen, welche man vom Meer aus sehen kann, folgen<br/>
+sich beinahe regelmäßig von 6–7 Minuten. Da man nun schon<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0178 : [172]|</span><br/>
+mehre Jahrhunderte n. Chr: dieselben Erscheinungen gesehn hat,<br/>
+so läßt sich denken, wie viele Millionen Male die Eruptionen<br/>
+sich müssen wiederholt haben, und man kann dies nur eine<br/>
+pulsirende Lufterscheinung nennen. Auch scheint es, daß die<br/>
+kleinen Vulkane häufigere Ausbrüche haben, als die großen.<br/>
+Die ganz hohen in Amerika bleiben oft 60 bis 70 Jahre ruhig; viel-<br/>
+leicht weil eine größere Kraft dazu gehört die Lava so hoch zu heben;<br/>
+daher kommen denn auch bei ihnen die häufigen Seitenausbrüche.<br/>
+Doch muß man bedenken, daß in so bedeutenden Höhen der Rauch<br/>
+nicht so leicht sichtbar ist, weil er sich nicht so bald niederschlagen<br/>
+kann. Beim Vesuv sind die Rauchsäulen nichts als Wasser-<br/>
+dämpfe, die sich aus der Atmosphaere niederschlagen und auf<br/>
+de<span class="dta-del" title="Streichung (#ow)">n</span><span class="dta-add" title="Hinzufügung (across)">m</span> heißen Krater in Verdampfung übergehen; daher<br/>
+scheint es als stiegen sie aus dem Krater.</p><br/>
+<p class="dta-p">Meist haben die Vulkane die Gestalt von Domen gleich<br/>
+<span class="dta-marginal dta-marginal-left">wörtl.<br/>
+</span>viel ob mit oder ohne Oeffnung. Der <span class="aq ">Chimborasso</span> hat keine<br/>
+Oeffnung, doch entdeckte ich einen kleinen, niedrig liegenden<br/>
+Seitenvulkan mit Lava, zum deutlichen Beweis, daß die<br/>
+elastischen Dämpfe nicht Kraft genug gehabt hatten, den Dom<br/>
+selbst zu sprengen.</p><br/>
+<p class="dta-p">Der höchste bekannte Vulkan ist der <span class="aq ">Kotopaxi</span>, nach<br/>
+meinen Messungen 17700 Fuß, nach andern 17712. Dann<br/>
+folgt der <span class="aq ">Kopatopeletl</span> 16600 Fuß hoch.</p><br/>
+<p class="dta-p">Man stellt sich gewöhnlich die Vulkane steiler vor als sie<br/>
+sind. Wenn man die Höhe nach dem Verhältniß des Grund-<br/>
+durchmessers berechnet, so findet sich eine merkwürdige Ue-<br/>
+bereinstimmung zwischen Vesuv, Aetna und Pic von Teneriffa,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0179 : [173]|</span><br/>
+S. 202 l.<br/>
+<br/>
+wie 1:28. Also ist die Höhe ungefähr<br/>
+<span class="ph dta-figure" type="1">
+        [Abbildung]
+        </span><br/>
+<span class="sup ">1</span>/<span class="sub ">30</span> des <span class="dta-del" title="Streichung (#erased)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">Durchmessers</span><span class="dta-metamark" title="metamark">⎡</span>Umfangs <span class="dta-metamark" title="metamark">?</span><br/>
+; daher sind die Ab-<br/>
+hänge meist so sehr gering, kaum 10 bis 12 Grad.</p><br/>
+<p class="dta-p">Das Verhältniß der Höhe des Aschenkegels zur Höhe des<br/>
+Vulkans ist sehr verschieden: je stärker die Eruptionen um<br/>
+desto höher der Aschenkegel. Beim Ve-<br/>
+<span class="ph dta-figure" type="2">
+        [Abbildung]
+        </span><br/>
+suv beträgt er ⅓ der ganzen Höhe,<br/>
+beim <span class="aq ">Pic</span> <span class="sup ">1</span>/<span class="sub ">22</span>: beim Vesuv 200 Toisen<br/>
+beim <span class="aq ">Pic</span> 84 Toisen.</p><br/>
+<p class="dta-p">Nach sichern Zeichen des Ausbruches hat man viel und ver-<br/>
+gebens gesucht. In Neapel glaubt man, daß der Vesuv im<br/>
+Herbst häufiger speie als sonst: aber man würde sich nur<br/>
+einen schwachen Begriff von der Stärke der vulkanischen Heerde<br/>
+<span class="dta-marginal dta-marginal-left">W.<br/>
+</span>machen, wenn man annähme, daß der Zustand unserer Atmos-<br/>
+phaere Einfluß darauf haben könnte; im Gegentheil ist zu<br/>
+glauben, daß die vulkanischen Erscheinungen auf den Luft-<br/>
+kreis einwirken. Indeß wird beim <span class="aq ">Stromboli</span> behauptet<br/>
+und scheint durch alle Zeugni<span class="dta-del" title="Streichung (#ow)">ß</span><span class="dta-add" title="Hinzufügung (across)">ss</span>e bestätigt, daß er wirklich<br/>
+im Winter heftiger speie als im Sommer. Vielleicht ist<br/>
+bei diesem kleinen Vulkane ein Zunehmen der Kräfte durch<br/>
+Verdampfung denkbar, indem im Winter mehr Regen<br/>
+hineinfällt als im Sommer.</p><br/>
+<p class="dta-p">Beim Vesuv hat man jedoch ein sicheres Zeichen entdeckt;<br/>
+es ist das Ausbleiben der Quellen von <span class="aq ">Resina</span>, weil die<br/>
+große herannahende Hitze die Dämpfe verhindert sich nie-<br/>
+derzuschlagen. Der Herzog <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/122861531">della Torre</a></span></span> hat in <span class="aq ">Resina</span> und in<br/>
+<span class="aq ">Torre dell' Anunaziata</span> viele Versuche darüber angestellt,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0180 : [174]|</span><br/>
+und ihm verdanken wir das meiste was wir darüber wissen.<br/>
+<span class="dta-add" title="Hinzufügung (intralinear)">[</span>Die Größe des Kraters ist durchaus nicht bestimmt und verändert<br/>
+sich auch durch Ausbrüche und Einstürze. Beim <span class="aq ">Pic. v. Teneriffa</span> ist<br/>
+er von 300 Fuß im Durchmesser. Beim Aetna ist er nach den<br/>
+letzten Messungen viel kleiner als man glaubte. Den größten<br/>
+Krater fand ich beim <span class="aq ">Pichincha</span> an <span title="Schreibfehler: dessem" class="dta-corr">dessen</span> Fuße <span class="aq ">Quito</span> liegt;<br/>
+er hat 4200 Fuß im Durchmesser. Auf dem Rande desselben<br/>
+bilden sich wieder kleine Krater welche das Umhergehen auf<br/>
+der scharfen Kante des Kraters sehr erschweren. Eben so beim<br/>
+<span class="aq ">Xorullo</span>. Auch ist der Krater nicht immer becherartig, sondern<br/>
+oft unregelmäßig. Der Kratersee von <span class="aq ">Choruca</span> in <span class="aq ">Mexico</span><br/>
+ist wie mit hohen, <span title="Original: einzel stehenden" class="dta-reg">einzelnstehenden</span> Thürmen umgeben: dazwi-<br/>
+schen liegt ewiger Schnee über den man nicht wagen darf zu<br/>
+<span class="dta-marginal dta-marginal-left">W.<br/>
+</span>schreiten, da er in allen <span title="Original: Tropenländer" class="dta-reg">Tropenländern</span> nicht Consistenz genug hat<br/>
+um den Menschen zu tragen.<span class="dta-add" title="Hinzufügung (superlinear)"> [Ein Satz fehlt]</span> Auf dem <span class="aq ">Pichincha</span> ist derselbe<br/>
+Fall, daher blieb mir, als ich zu einer Ansicht des Kraters ge-<br/>
+langen wollte, nichts anders übrig als diese thurmähnlichen<br/>
+Felsen zu erklimmen. Diese Felsen haben oben nur 8–9 Fuß<br/>
+Durchmesser, daher mußte ich mich gleich zur Erde werfen,<br/>
+sobald ich oben angelangt war um nicht herabzustürzen.<br/>
+Aber zu trigometrischen Messungen sind diese Spitzen vor-<br/>
+trefflich geeignet und ich fand dadurch den Diameter des<br/>
+<span class="aq ">Pichincha</span> von 4200 Fuß bei einer Tiefe von 3–4000 Fuß.<br/>
+Eine der erhabensten Ansichten!</p></div></div></div></div></body></html>

@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span title="Original: D. 1 April&#xA;1828" class="dta-reg">47. Vorlesung, 01.04.1828</span></div><br/>
+<p class="dta-p">Erhebt man <span title="Original: ſich" class="dta-reg">sich</span> zu <span title="Original: höhern" class="dta-reg">höheren</span> <span title="Original: Anſichten" class="dta-reg">Ansichten</span> der <span title="Original: Natur-&#xA;wiſſenſchaft" class="dta-reg">Naturwissenschaft</span>, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: iſt" class="dta-reg">ist</span> die Betrachtung der <span title="Original: Ver-" class="dta-reg">Verteilung</span>
+<span class="dta-marginal dta-marginal-left"><span class="b "><span title="Original: Vertheilung" class="dta-reg">Verteilung</span><br/>
+der Wärme.</span><br/>
+</span><span title="Original: theilung" class="dta-reg"/> der Wärme am <span title="Original: wichtigſten" class="dta-reg">wichtigsten</span>. Hiernach<br/>
+hat <span title="Original: ſich" class="dta-reg">sich</span> die Kultur der <span title="Original: Menſchheit" class="dta-reg">Menschheit</span> <span title="Original: hauptſächlich" class="dta-reg">hauptsächlich</span><br/>
+<span title="Original: modificirt" class="dta-reg">modifiziert</span>, u. <span title="Original: größern" class="dta-reg">größeren</span> Einfluß auf <span title="Original: ſie" class="dta-reg">sie</span> gehabt<br/>
+als der Druck, die Feuchtigkeit der Luft u. dgl.<br/>
+Nach den Breiten <span title="Original: iſt" class="dta-reg">ist</span> die Wärme <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ſehr" class="dta-reg">sehr</span> <span title="Original: ver-&#xA;ſchieden" class="dta-reg">verschieden</span>, während die <span title="Original: andern" class="dta-reg">anderen</span> <span title="Original: Erſcheinungen" class="dta-reg">Erscheinungen</span> <span title="Original: gleich-" class="dta-reg">gleichmäßiger</span>
+<span class="dta-marginal dta-marginal-left"><span class="b "><span title="Original: Jhre" class="dta-reg">Ihre</span><br/>
+Wichtigkeit</span><br/>
+</span><span title="Original: mäßiger" class="dta-reg"/> wirken; u. ihre <span title="Original: Vertheilung" class="dta-reg">Verteilung</span> hängt<br/>
+genau mit der <span title="Original: Geſchichte" class="dta-reg">Geschichte</span> der <span title="Original: Menſchheit" class="dta-reg">Menschheit</span> <span title="Original: zu-&#xA;ſam̃en" class="dta-reg">zusammen</span>. <span title="Original: Weñ" class="dta-reg">Wenn</span> klares <span title="Original: Erkeñen" class="dta-reg">Erkennen</span> der <span title="Original: eignen" class="dta-reg">eigenen</span> Natur<br/>
+Ziel der <span title="Original: Wiſſenſchaft" class="dta-reg">Wissenschaft</span> <span title="Original: iſt" class="dta-reg">ist</span>, <span title="Original: ſo" class="dta-reg">so</span> wird <span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: be-&#xA;dingt" class="dta-reg">bedingt</span> durch die Kultur des Bodens, die wieder<br/>
+von der Lufttemperatur, u. der Mittelzahl<br/>
+der Wärme in den <span title="Original: verſchiedenen" class="dta-reg">verschiedenen</span> Jahreszeiten<br/>
+abhängig <span title="Original: iſt" class="dta-reg">ist</span>. Dies gehört zum <span title="Original: beſondern" class="dta-reg">besonderen</span> <span title="Original: Ge-&#xA;ſichtspunkte" class="dta-reg">Gesichtspunkte</span> der <span title="Original: Weltbeſchreibung" class="dta-reg">Weltbeschreibung</span>. Es <span title="Original: iſt" class="dta-reg">ist</span> klar,<br/>
+daß von den <span title="Verhältniß￼" class="dta-abbr"><span title="Original: Verhältnißen" class="dta-reg">Verhältnissen</span></span> der Wärme das<br/>
+ganze <span title="Original: häuſliche" class="dta-reg">häusliche</span> u. bürgerliche Leben <span title="Original: durchdrun-&#xA;gen" class="dta-reg">durchdrungen</span> wird. <span title="Original: Dieſe" class="dta-reg">Diese</span> <span title="Original: climatiſchen" class="dta-reg">klimatischen</span> <span title="Original: Verhältniße" class="dta-reg">Verhältnisse</span> haben<br/>
+Einfluß auf die Sprache, der <span title="Original: Character" class="dta-reg">Charakter</span>, die<br/>
+<span title="Original: Abſtam̃ung" class="dta-reg">Abstammung</span>, <span title="Original: ſelbſt" class="dta-reg">selbst</span> auf die natürl. Anlagen<br/>
+der <span title="Original: Menſchheit" class="dta-reg">Menschheit</span>x)<span class="dta-marginal dta-marginal-left">Welche <span title="Original: Abſtufungen" class="dta-reg">Abstufungen</span> finden <span title="Original: h" class="dta-reg">hier</span><span title="Original: ier" class="dta-reg"/> <span title="Original: ſtatt" class="dta-reg">statt</span>,<br/>
+von dem Klima des <span title="Original: Piſangs" class="dta-reg">Pisangs</span>, bis zu<br/>
+dem Oelbau, Weinbau, den <span title="Original: Cerea-&#xA;lien" class="dta-reg">Cerealien</span> u. endlich Kartoffeln.<br/>
+</span>. Es <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: hiſtoriſch" class="dta-reg">historisch</span> <span title="Original: erwieſen" class="dta-reg">erwiesen</span>,<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Klima<br/>
+der <span title="Original: temperir-&#xA;ten" class="dta-reg">temperierten</span> Zone</span><br/>
+</span>daß das Klima der <span title="Original: temperirten" class="dta-reg">temperierten</span> Zone, <span title="Original: na-&#xA;mentlich" class="dta-reg">namentlich</span> des Abendlandes, am <span title="Original: günſtigen" class="dta-reg">günstigen</span> der<br/>
+<span title="Original: Entwickelung" class="dta-reg">Entwicklung</span> des <span title="Original: menſchl." class="dta-reg">menschl.</span> <span title="Original: Geiſtes" class="dta-reg">Geistes</span> <span title="Original: geweſen" class="dta-reg">gewesen</span>.<br/>
+Sehr <span title="Original: unbeſtim̃t" class="dta-reg">unbestimmt</span> <span title="Original: iſt" class="dta-reg">ist</span> freilich der Ausdruck, <span title="Original: tem-&#xA;perirte" class="dta-reg">temperierte</span> Zone; in dem vom <span title="Original: 30–45" class="dta-reg">30-45</span>° N. B.<br/>
+die Kultur <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: beſonders" class="dta-reg">besonders</span> entwickelt hat.<br/>
+<span class="dta-del" title="Streichung (#s)">der Ausdruck <span class="gap">[unleserliches Material – 1 Wort fehlt]</span> Zone iſt.</span> Welche <span title="Original: Ver-&#xA;ſchiedenheit" class="dta-reg">Verschiedenheit</span> des Klimas <span title="Original: herrſcht" class="dta-reg">herrscht</span> hier in kl. <span title="Original: Aſien" class="dta-reg">Asien</span><br/>
+in <span title="Original: Jtalien" class="dta-reg">Italien</span>, in <span title="Original: Heſperien" class="dta-reg">Hesperien</span><span class="dta-del" title="Streichung (#s)">x)<span class="dta-marginal dta-marginal-left">von den Erbau des Piſangs<br/>
+</span></span>. Nach <span title="Original: unſern" class="dta-reg">unseren</span> <span title="Original: nörd-&#xA;lichen" class="dta-reg">nördlichen</span> <span title="Original: Jdeen" class="dta-reg">Ideen</span> gehören <span title="Original: dieſe" class="dta-reg">diese</span> Länder <span title="Original: ſchon" class="dta-reg">schon</span> zur<br/>
+<span title="Original: temperirten" class="dta-reg">temperierten</span> Zone, <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: iſt" class="dta-reg">ist</span> aber eigentlich <span title="Original: zwi-&#xA;ſchen" class="dta-reg">zwischen</span> <span title="Original: 11–14" class="dta-reg">11-14</span>° N. Br. oder die Zone der <span title="Original: Oel-&#xA;bäume" class="dta-reg">Oelbäume</span>. Die mittlere Temperatur beträgt<br/>
+hier <span title="Original: 21–22" class="dta-reg">21-22</span>° R. Wärme, während <span title="Original: ſie" class="dta-reg">sie</span><span class="dta-del" title="Streichung (#s)"> <span class="dta-del" title="Streichung (#s)">dorten</span><span class="dta-add" title="Hinzufügung (superlinear)">hier</span></span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">im <span title="Original: ſüdl." class="dta-reg">südl.</span> Europa</span><br/>
+</span>nur 13,5° <span title="Original: iſt" class="dta-reg">ist</span>. Schon aus der Zeiten des<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">pytha-</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0309 : 292.|</span><br/>
+<span class="dta-marginal dta-marginal-left"><span title="Original: Anſicht" class="dta-reg">Ansicht</span><br/>
+der Alten über<br/>
+die Wärme.<br/>
+</span><span title="Original: pythagoräiſchen" class="dta-reg">pythagoräischen</span> Bundes <span title="Original: ſprach" class="dta-reg">sprach</span> es ein <span title="Original: Hiſtoriker" class="dta-reg">Historiker</span><br/>
+aus: die Griechen bewohnen die gemäßigte<br/>
+Zone, daher <span title="Original: ſind" class="dta-reg">sind</span> ihre Sitten milde; die <span title="Original: Scythen" class="dta-reg">Skythen</span><br/>
+hingegen die mit Sturm u. Schnee zu kämpfen<br/>
+haben <span title="Original: ſind" class="dta-reg">sind</span> eben <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ungeſchlacht" class="dta-reg">ungeschlacht</span> u. <span title="Original: barbariſch" class="dta-reg">barbarisch</span><br/>
+als das Wetter <span title="dort￼" class="dta-abbr">dorten</span> mild <span title="Original: iſt" class="dta-reg">ist</span>. <span title="Original: Zwiſchen" class="dta-reg">Zwischen</span><br/>
+<span title="Original: 30–45" class="dta-reg">30-45</span>° N. Br. <span title="Original: iſt" class="dta-reg">ist</span> die mittlere Temper. 18.<br/>
+19°, u. in den <span title="Original: Som̃ermonaten" class="dta-reg">Sommermonaten</span> 24°. <span title="Original: Jn" class="dta-reg">In</span> <span title="Original: d" class="dta-reg">der</span><span class="dta-supplied">[<span title="Original: er" class="dta-reg"/>]</span><br/>
+Zone des Zuckerrohrs <span title="Original: iſt" class="dta-reg">ist</span> die Bildung noch<br/>
+älter wie <span class="dta-del" title="Streichung (#s)">bei</span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="b ">unter</span></span> den Tropen Zb. in <span title="Perſi￼" class="dta-abbr"><span class="aq "><span title="Original: Perſien" class="dta-reg">Persien</span></span></span>,<br/>
+<span class="aq "><span title="Original: Paſſagardis" class="dta-reg">Passagardis</span></span>, weil <span class="dta-del" title="Streichung (#s)">ſie</span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="b ">die Luft</span></span> außerhalb der<br/>
+<span title="Original: ſelben" class="dta-reg">selben</span> <span title="Original: ſchon" class="dta-reg">schon</span> mehr <span title="Original: temperirt" class="dta-reg">temperiert</span> <span title="Original: iſt" class="dta-reg">ist</span>. Unter<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Central-<br/>
+Punkt der Natur.</span><br/>
+</span>den <span title="Original: Wendekreiſen" class="dta-reg">Wendekreisen</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span> <span title="Original: iſt" class="dta-reg">ist</span> der <span title="Original: Central-&#xA;punkt" class="dta-reg">Centralpunkt</span> der Natur. <span class="aq ">Meroe</span> <span title="Original: bekañt" class="dta-reg">bekannt</span><br/>
+durch <span title="Original: ſeine" class="dta-reg">seine</span> alten Handelsverbindungen <span title="Original: wa" class="dta-reg">war</span><span class="dta-supplied">[<span title="Original: r" class="dta-reg"/>]</span><br/>
+der Sitz uralter Kultur. Ferner <span title="Original: Jndien" class="dta-reg">Indien</span><br/>
+nicht das was <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118501828">Alexander</a></span></span> eroberte, <span title="Original: ſondern" class="dta-reg">sondern</span><br/>
+Karnatik, Dekan, wo die Kultur <span title="Original: ſich" class="dta-reg">sich</span><br/>
+in <span title="Original: älteſter" class="dta-reg">ältester</span> Zeit nicht <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="b "><span title="Original: zuerſt" class="dta-reg">zuerst</span></span> </span>auf <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="b ">den</span> </span>Bergebenen<br/>
+bildete. Nur <span title="Original: allmählig" class="dta-reg">allmählich</span> gingen die <span title="Original: Menſchen" class="dta-reg">Menschen</span><br/>
+vom <span title="Original: Aequator" class="dta-reg">Äquator</span> aus, <span title="Original: im̃er" class="dta-reg">immer</span> höher, um die<br/>
+Wärme zu vermeiden. <span title="Original: Jn" class="dta-reg">In</span> den Ebenen<br/>
+nahe den Bergen, <span class="dta-del" title="Streichung (#s)">iſt dort</span><span class="dta-add" title="Hinzufügung (superlinear)">wo die <span title="Original: Soñe" class="dta-reg">Sonne</span> <span title="Original: 26–27" class="dta-reg">26-27</span>° im <span title="Original: Som̃er" class="dta-reg">Sommer</span> wirkt </span>das Klima <span title="Original: ſo" class="dta-reg">so</span><br/>
+ungemäßigt, daß Zb. in <span class="aq ">Benores</span> von<br/>
++ <span title="Original: 34–35" class="dta-reg">34-35</span>° R. im Schatten, das <span title="Original: Termometer" class="dta-reg">Thermometer</span><br/>
+in einigen Monaten bis + 6° R. <span title="Original: herabſink" class="dta-reg">herabsinkt</span><span class="dta-supplied">[<span title="Original: t" class="dta-reg"/>.]</span><br/>
+Nach <span title="Original: unſern" class="dta-reg">unseren</span> <span title="Original: Vorurtheilen" class="dta-reg">Vorurteilen</span> muß eine <span title="Original: ſ" class="dta-reg">solche</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: ol" class="dta-reg"/></span><span title="Original: c" class="dta-reg"/><span class="dta-supplied">[<span title="Original: he" class="dta-reg"/>]</span><br/>
+Temper. der <span title="Original: Entwickelung" class="dta-reg">Entwicklung</span> der <span title="Original: Menſchheit" class="dta-reg">Menschheit</span><br/>
+<span title="Original: ungünſtig" class="dta-reg">ungünstig</span> <span title="Original: ſein" class="dta-reg">sein</span>. <span title="Original: Thatſache" class="dta-reg">Tatsache</span> bleibt es <span title="Original: abe" class="dta-reg">aber</span><span class="dta-supplied">[<span title="Original: r" class="dta-reg"/>]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b "><span title="Original: Erſtes" class="dta-reg">Erstes</span><br/>
+Erwachen der<br/>
+Kultur</span><br/>
+</span>daß <span title="Original: Menſchen" class="dta-reg">Menschen</span> zu <span title="Original: mildern" class="dta-reg">milderen</span> Sitten u. zu<br/>
+<span title="Original: beſſerer" class="dta-reg">besserer</span> höherer <span title="Original: Cultur" class="dta-reg">Kultur</span> <span title="Original: zuerſt" class="dta-reg">zuerst</span> unterm<br/>
+<span title="Original: 11–22" class="dta-reg">11-22</span>° erwacht <span title="Original: ſind" class="dta-reg">sind</span>, wo das <span title="Original: Zuckerroh" class="dta-reg">Zuckerrohr</span><span class="dta-supplied">[<span title="Original: r" class="dta-reg"/>]</span><br/>
+<span title="Original: wächſt" class="dta-reg">wächst</span>, u. hier die Entwilderung vor <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: ge-&#xA;gangen" class="dta-reg">gegangen</span><span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"> <span title="Original: iſt" class="dta-reg">ist</span></span>. Sollte es <span title="Original: erwieſen" class="dta-reg">erwiesen</span> <span title="Original: ſein" class="dta-reg">sein</span>, daß <span title="Original: d" class="dta-reg">die</span><span class="dta-supplied">[<span title="Original: ie" class="dta-reg"/>]</span><br/>
+<span title="Original: Tropencultur" class="dta-reg">Tropenkultur</span> von Norden <span title="Original: wahrſcheinlich" class="dta-reg">wahrscheinlich</span><br/>
+eingewandert <span title="Original: iſt" class="dta-reg">ist</span>; <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: iſt" class="dta-reg">ist</span> noch nicht <span title="Original: genugſ" class="dta-reg">genügsam</span><span class="dta-supplied">[<span title="Original: am" class="dta-reg"/>]</span><br/>
+beprüft u. beachtet, daß in Theben, <span title="Original: Mem-&#xA;phis" class="dta-reg">Memphis</span>, <span title="Original: Babÿlon" class="dta-reg">Babylon</span> <span title="Original: p" class="dta-reg"><span class="aq "><span title="Original: etc" class="dta-reg">etc.</span></span><span title="Original: ." class="dta-reg"/></span> das Klima dort <span title="Original: ſelbſt" class="dta-reg">selbst</span><br/>
+der Bildung <span title="Original: günſtig" class="dta-reg">günstig</span> <span title="Original: geweſen" class="dta-reg">gewesen</span>. Ganz<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">ander</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0310 : 293.|</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b "><span title="Original: Nachtheilige" class="dta-reg">nachteilige</span><br/>
+Wirkung <span title="Original: über-&#xA;mäßiger" class="dta-reg">übermäßiger</span> Kälte</span><br/>
+</span>Ganz anders wirkt auf die <span title="Original: Menſchen" class="dta-reg">Menschen</span> eine<br/>
+übermäßige Kälte, wo die mittlere <span title="Original: Tempera-&#xA;tur" class="dta-reg">Temperatur</span> − 2° R. beträgt. Wo die mittlere<br/>
+Temper. noch nicht + 7° erreicht, u. die <span title="Birk￼" class="dta-abbr">Birken</span><br/>
+<span title="Original: ſelbſt" class="dta-reg">selbst</span> nicht <span title="Original: wachſen" class="dta-reg">wachsen</span> <span title="Original: köñen" class="dta-reg">können</span>, indem <span title="Original: ſie" class="dta-reg">sie</span><br/>
+etwa 20 Tage lang eine Temper. von<br/>
++ 7° bedürfen um zu grünen; da <span title="Original: ſind" class="dta-reg">sind</span><br/>
+die <span title="Original: Som̃er" class="dta-reg">Sommer</span> nicht <span title="Original: ſo" class="dta-reg">so</span> warm, daß mehlreiche<br/>
+<span title="Original: Gräſer" class="dta-reg">Gräser</span>, wie Große, Kartoffeln <span title="Original: p" class="dta-reg"><span class="aq "><span title="Original: etc" class="dta-reg">etc.</span></span><span title="Original: ." class="dta-reg"/></span> gedeihen<br/>
+u. alle Cerealien hören auf <span title="Original: zwiſchen" class="dta-reg">zwischen</span><br/>
+dem Temperatur von − 2° u. + 6°. <span title="Original: Jn" class="dta-reg">In</span><br/>
+<span title="Original: Aſien" class="dta-reg">Asien</span> <span title="Original: iſt" class="dta-reg">ist</span> dies bereits der Fall bei 60°<br/>
+N. B. in Amerika bei 50° N. B. <span title="Original: Europa" class="dta-reg">Europas</span><span class="dta-supplied">[<span title="Original: s" class="dta-reg"/>]</span><br/>
+Lage <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: günſtig" class="dta-reg">günstig</span>, daß in <span title="Original: Scandinavi-&#xA;en" class="dta-reg">Skandinavien</span> nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">v. Buch</a></span></span> <span title="Original: Gerſte" class="dta-reg">Gerste</span> bis 69°5<span title="Original: ′" class="dta-reg">'</span> N Br.<br/>
+gebaut wird. Der <span title="Original: Theil" class="dta-reg">Teil</span> des <span title="Original: nörd-&#xA;lichen" class="dta-reg">nördlichen</span> <span title="Original: Aſiens" class="dta-reg">Asiens</span> <span title="Original: zwiſchen" class="dta-reg">zwischen</span> der Lena, dem<br/>
+Obi u. <span title="Original: Jeniſei" class="dta-reg">Jenissei</span>, wo Völker <span title="Original: fiñiſcher" class="dta-reg">finnischer</span><br/>
+<span title="Original: huñiſcher" class="dta-reg">hündischer</span> u. <span title="Original: mandſchuiſcher" class="dta-reg">mandschuischer</span> Abkunft<br/>
+wohnen, <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ſchädlich" class="dta-reg">schädlich</span> der Kultur, daß<br/>
+<span title="Original: ſie" class="dta-reg">sie</span> in dem <span title="Original: Verhältniß" class="dta-reg">Verhältnis</span> zu den Bewohnern<br/>
+der Zone <span class="dta-del" title="Streichung (#s)">in</span><span class="dta-add" title="Hinzufügung (superlinear)">des <span title="hoh￼" class="dta-abbr">hohen</span> <span title="Original: Central-" class="dta-reg">Central-Asiens</span></span><span title="Original: Aſiens" class="dta-reg"/> <span title="Original: zwiſchen" class="dta-reg">zwischen</span> 45 u. 60° N Br.,<br/>
+barbaren <span title="Original: genañt" class="dta-reg">genannt</span> werden <span title="Original: köñen" class="dta-reg">können</span>.<br/>
+<span title="Original: Weñ" class="dta-reg">Wenn</span> dorten auch nicht die <span title="Original: Cultur" class="dta-reg">Kultur</span> wie<br/>
+in <span title="Original: Weſtaſien" class="dta-reg">Westasien</span> u. Syrien <span title="Original: herrſcht" class="dta-reg">herrscht</span>; <span title="Original: ſo" class="dta-reg">so</span><br/>
+<span title="Original: iſt" class="dta-reg">ist</span> durch <span title="Original: im̃er" class="dta-reg">immer</span> einen <span title="Original: gewiße" class="dta-reg">gewisse</span> <span title="Original: Cultur" class="dta-reg">Kultur</span> dort<br/>
+<span title="Original: geweſen" class="dta-reg">gewesen</span>. <span title="Original: Jch" class="dta-reg">Ich</span> <span title="Original: eriñere" class="dta-reg">erinnere</span> nur an die <span title="Original: Herr-&#xA;ſchaft" class="dta-reg">Herrschaft</span> der Mongolen unter <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/101926820">Ulugbeyhk</a></span></span>, der<br/>
+in <span class="aq ">Samarkard</span> <span title="Original: aſtron." class="dta-reg">astron.</span> <span title="Original: Wiſſenſchaften" class="dta-reg">Wissenschaften</span> <span title="Original: trei-&#xA;ben" class="dta-reg">treiben</span> ließ. <span title="Original: Thatſachen" class="dta-reg">Tatsachen</span> <span title="Original: beweiſen" class="dta-reg">beweisen</span>, daß<br/>
+bei übermäßiger Kälte, bei einen <span title="Original: Tem-&#xA;peratur" class="dta-reg">Temperatur</span> von + 3° R. die Kultur <span title="Original: gehin-&#xA;dert" class="dta-reg">gehindert</span> wird; obwohl <span title="Original: ſie" class="dta-reg">sie</span> gedeihen <span title="Original: kañ" class="dta-reg">kann</span>,<br/>
+<span title="Original: weñ" class="dta-reg">wenn</span> <span title="Original: ſie" class="dta-reg">sie</span> von <span title="ſüdlich￼" class="dta-abbr"><span title="Original: ſüdlichen" class="dta-reg">südlichen</span></span> Ländern <span title="Original: einge-&#xA;führt" class="dta-reg">eingeführt</span> wird, Zb. in <span title="Original: Jsland" class="dta-reg">Island</span>, wo <span title="Original: Jahr-&#xA;hunderte" class="dta-reg">Jahrhunderte</span> lang <span title="Original: Wiſſenſchaften" class="dta-reg">Wissenschaften</span> <span title="Original: blüheten" class="dta-reg">blühten</span>.<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Bei</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0311 : 294.|</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Einfluß<br/>
+der Wärme</span><br/>
+</span>bei der Wärme <span title="Original: iſt" class="dta-reg">ist</span> dies nicht der Fall<br/>
+Nicht <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Wort fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">nur</span> der Einfluß auf das Gefühl <span title="Original: wirk" class="dta-reg">wirkt</span><span class="dta-supplied">[<span title="Original: t" class="dta-reg"/>]</span><br/>
+hier <span title="Original: wohlthätig" class="dta-reg">wohltätig</span>; <span title="Original: ſondern" class="dta-reg">sondern</span> der <span title="Original: wichtigſte" class="dta-reg">wichtigste</span> Punkt<br/>
+<span title="Original: iſt" class="dta-reg">ist</span> auch der, daß der <span title="Original: Nahrungſſtof" class="dta-reg">Nahrungsstoff</span> über<span class="gap">[unleserliches Material – 3 Zeichen fehlen]</span><br/>
+bei übermäßiger Kälte fehlt. Unter<br/>
+allen <span title="Original: Jnſtrumenten" class="dta-reg">Instrumenten</span> die <span title="phÿſiſch￼" class="dta-abbr"><span title="Original: phÿſiſchen" class="dta-reg">physischen</span></span> <span title="Original: Erſcheinun-" class="dta-reg">Erscheinungen</span>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Wichtigkeit<br/>
+des <span title="Original: Termometers" class="dta-reg">Thermometers</span></span><br/>
+</span><span title="Original: gen" class="dta-reg"/> zu <span title="Original: meſſen" class="dta-reg">messen</span> u. zu <span title="Original: beſtim̃en" class="dta-reg">bestimmen</span> hat das<br/>
+<span title="Original: Termometer" class="dta-reg">Thermometer</span> die <span title="Original: meiſten" class="dta-reg">meisten</span> <span title="Original: Jdeen" class="dta-reg">Ideen</span> geweckt<br/>
+über Handel, Ackerbau, Kultur <span title="Original: p." class="dta-reg"><span class="aq ">etc</span>.</span> <span title="Original: Keine" class="dta-reg">Keines</span><span class="dta-supplied">[<span title="Original: s" class="dta-reg"/>]</span><br/>
+<span title="Original: iſt" class="dta-reg">ist</span> wichtiger <span title="Original: geweſen" class="dta-reg">gewesen</span> den Horizont des<br/>
+<span title="Original: Wiſſens" class="dta-reg">Wissens</span> zu erweitern. Die Entdeckung<br/>
+<span title="Original: deſſelben" class="dta-reg">desselben</span> <span title="Original: iſt" class="dta-reg">ist</span> bereits 1600 zu <span class="aq ">Alkmos</span> in<br/>
+Holland gemacht, ohne Gebrauch davon <span title="Original: z" class="dta-reg">zu</span><span class="dta-supplied">[<span title="Original: u" class="dta-reg"/>]</span><br/>
+machen. <span title="Original: Selbſt" class="dta-reg">Selbst</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118720066">Halle</a></span></span> <span title="Original: ſtellte" class="dta-reg">stellte</span> <span title="Original: ſeine" class="dta-reg">seine</span> <span title="Original: theore-&#xA;tiſchen" class="dta-reg">theoretischen</span> <span title="Original: Verſuche" class="dta-reg">Versuche</span> über Wärme ohne <span title="Original: Ter-&#xA;mometer" class="dta-reg">Thermometer</span> an. <span title="Original: Erſt" class="dta-reg">Erst</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118749420"><span title="Original: Reaumur" class="dta-reg">Réaumur</span></a></span></span> fing <span title="Original: beſtim̃t" class="dta-reg">bestimmt</span><br/>
+an, <span title="Original: ſie" class="dta-reg">sie</span> vergleichbar zu machen, u. <span title="Original: ga" class="dta-reg">gab</span><span class="dta-supplied">[<span title="Original: b" class="dta-reg"/>]</span><br/>
+<span title="Original: reiſenden" class="dta-reg">reisenden</span> <span title="Original: Jeſuiten" class="dta-reg">Jesuiten</span> nach Afrika u. <span title="Original: Ameri-&#xA;ka" class="dta-reg">Amerika</span> <span title="Original: Jnſtr" class="dta-reg">Jnstr</span>. zu Beobachtungen mit. Lang<br/>
+dauerte es, bis <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">man </span>aufhörte die <span title="Original: Termome-&#xA;ter" class="dta-reg">Thermometer</span> anzuklagen, daß <span title="Original: ſie" class="dta-reg">sie</span> unter den <span title="Original: Trop" class="dta-reg">Tropen</span><span class="dta-supplied">[<span title="Original: en" class="dta-reg"/>]</span><br/>
+<span title="Original: ſo" class="dta-reg">so</span> wenige Wärmegrade zeigten. Eine über<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b "><span title="Original: Falſche" class="dta-reg">Falsche</span><br/>
+<span title="Vorſtellung￼" class="dta-abbr"><span title="Original: Vorſtellungen" class="dta-reg">Vorstellungen</span></span><br/>
+von der Wärme.</span><br/>
+</span><span title="Original: triebene" class="dta-reg">trieben</span> <span title="Original: Vorſtellung" class="dta-reg">Vorstellung</span> hatte man von der<br/>
+dortigen Hitze, <span title="Original: deñ" class="dta-reg">denn</span> man fand dort <span title="Original: ſelte" class="dta-reg">selten</span><span class="dta-supplied">[<span title="Original: n" class="dta-reg"/>]</span><br/>
+<span title="Original: 28–29" class="dta-reg">28-29</span>° R. im Schatten, was bei uns <span title="Original: ſehr" class="dta-reg">sehr</span><br/>
+häufig <span title="Original: iſt" class="dta-reg">ist</span>. <span title="Original: Erſt" class="dta-reg">Erst</span> dies <span title="Original: beſtimtere" class="dta-reg">bestimmtere</span> Maß als<br/>
+das bloße Gefühl, zeigte, daß es bei uns<br/>
+einzelne Tage <span title="Original: giebt" class="dta-reg">gibt</span>, wo es heißer als <span title="Original: do" class="dta-reg">dorten</span><span class="dta-supplied">[<span title="Original: r-" class="dta-reg"/>]</span><span title="Original: &#xA;ten" class="dta-reg"/> <span title="Original: iſt" class="dta-reg">ist</span>. Die Hitze hängt <span title="Original: ſtets" class="dta-reg">stets</span> vom <span title="Original: Ein-&#xA;fallswinkel" class="dta-reg">Einfallswinkel</span> der <span title="Original: Lichtſtrahlen" class="dta-reg">Lichtstrahlen</span> u. von der<br/>
+Quantität <span title="Original: derſelben" class="dta-reg">derselben</span> ab die <span title="reflectir￼" class="dta-abbr"><span title="Original: reflectiren" class="dta-reg">reflektieren</span></span><br/>
+u. die hinwieder eindringen u. Wärme <span title="Original: er-&#xA;regen" class="dta-reg">erregen</span>. Man muß dabei nicht <span title="Original: vergeſſen" class="dta-reg">vergessen</span><br/>
+daß die Dauer einer Wirkung <span title="Original: vollkom̃" class="dta-reg">vollkommen</span><span class="dta-supplied">[<span title="Original: en" class="dta-reg"/>]</span><br/>
+die größere Stärke in kürzerer Zeit <span title="Original: co" class="dta-reg">kompensiert</span><span class="dta-supplied">[<span title="Original: m-" class="dta-reg"/>]</span><span title="Original: &#xA;penſirt" class="dta-reg"/>. Sollte unter den Tropen die Hitze<br/>
+den langen Tag wie bei uns im <span title="Original: Som̃er" class="dta-reg">Sommer</span> währen<br/>
+<span title="Original: ſo" class="dta-reg">so</span> <span title="Original: köñte" class="dta-reg">könnte</span> der <span title="Original: Menſch" class="dta-reg">Mensch</span> dorten kaum dauern.<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Hiezu</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0312 : 295.|</span><br/>
+<span title="Original: Hiezu" class="dta-reg">Hierzu</span> <span title="Original: kom̃t" class="dta-reg">kommt</span> nach, daß bei der längere<br/>
+nächtlichen <span title="Original: Ausſtrahlung" class="dta-reg">Ausstrahlung</span> viel Wärme <span title="Original: ver-&#xA;lo" class="dta-reg">verloren</span><span class="dta-del" title="Streichung (#erased)"><span class="dta-supplied">[h]</span></span><span title="Original: ren" class="dta-reg"/> <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Wort fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">geht</span>. Mit ähnlichen Betrachtungen<br/>
+hängt es <span title="Original: zuſam̃en" class="dta-reg">zusammen</span>, daß wir von der <span title="Original: Tem-&#xA;per" class="dta-reg">Temper</span>. des <span title="Original: Wendekreiſes" class="dta-reg">Wendekreises</span> mehr <span title="Original: wiſſen" class="dta-reg">wissen</span>, als<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Temperatur<br/>
+der <span title="Original: Wendekreiſe" class="dta-reg">Wendekreise</span><br/>
+uns <span title="Original: ſehr" class="dta-reg">sehr</span> <span title="Original: bekañt" class="dta-reg">bekannt</span>.</span><br/>
+</span>vom <span title="Original: Aequator" class="dta-reg">Äquator</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span>, weil alle <span title="Original: bedeuten-&#xA;den" class="dta-reg">bedeutenden</span> <span title="Original: Handelſſtädte" class="dta-reg">Handelsstädte</span> unter <span title="Original: 22–23" class="dta-reg">22-23</span>° N. u. S. Br.<br/>
+liegen. <span class="aq ">Rio Janeiro</span> <span title="Original: ſüdl." class="dta-reg">südl.</span> u. <span class="aq "><span title="Original: Canton" class="dta-reg">Kanton</span></span>, <span class="aq ">Macao</span>,<br/>
+<span class="aq ">Calouetta</span>, <span class="aq ">Vera Cruz</span> <span title="Original: p." class="dta-reg"><span class="aq "><span title="Original: etc" class="dta-reg">etc.</span></span><span title="Original: ." class="dta-reg"/></span> nördlich. Die <span title="Original: Tem-&#xA;peratur" class="dta-reg">Temperatur</span> der <span title="Original: Som̃erwärme" class="dta-reg">Sommerwärme</span> <span title="Original: iſt" class="dta-reg">ist</span> hier höher<br/>
+wie unter dem <span title="Original: Aequator" class="dta-reg">Äquator</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span>; indem hier<br/>
+die Erkältung der Oberfläche dadurch<br/>
+daß die <span title="Original: Soñe" class="dta-reg">Sonne</span> zweimal durch den <span title="Original: Aequator" class="dta-reg">Äquator</span><br/>
+geht, <span title="Original: ſtärker" class="dta-reg">stärker</span> <span title="Original: iſt" class="dta-reg">ist</span>.</p><br/>
+<p class="dta-p">Um nicht in <span title="Original: Einzelnheiten" class="dta-reg">Einzelheiten</span> uns zu <span title="Original: ver-&#xA;lieren" class="dta-reg">verlieren</span>, <span title="Original: ſondern" class="dta-reg">sondern</span> das ganze <span title="Original: zuſam̃enzuhalten" class="dta-reg">zusammenzuhalten</span>,<br/>
+werden wir uns mit der <span title="Original: Vertheilung" class="dta-reg">Verteilung</span> der<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b "><span title="Original: Jſotermen" class="dta-reg">Isothermen</span> Linien</span><br/>
+</span><span title="Original: Jſoterm" class="dta-reg">Isothermen</span><span class="dta-del" title="Streichung (#s)">iſch</span><span title="Original: en" class="dta-reg"/> Linien <span title="Original: beſchäftigen" class="dta-reg">beschäftigen</span>. Wir<br/>
+betrachten die <span title="Original: Vertheilung" class="dta-reg">Verteilung</span> des Luftmeeres,<br/>
+<span title="Original: inſofern" class="dta-reg">insofern</span> der Boden <span title="Original: deſſelben" class="dta-reg">desselben</span> <span title="Original: ſtarr" class="dta-reg">starr</span>,<br/>
+|: entweder eine Ebene oder Berge :| <span title="Original: iſt" class="dta-reg">ist</span>,<br/>
+oder in <span title="Original: ſo" class="dta-reg">so</span> fern es auf dem <span title="Original: Ocean" class="dta-reg">Ozean</span> ruht.<br/>
+Sehen wir auf die Ebene, in der Nähe<br/>
+der Berge; <span title="Original: ſo" class="dta-reg">so</span> wirken <span title="Original: dieſe" class="dta-reg">diese</span> wärmend,<br/>
+wie dies bereits erwähnt <span title="Original: iſt" class="dta-reg">ist</span>, <span title="Original: ſo" class="dta-reg">so</span> daß<br/>
+der Oelbau <span title="Original: cultivirt" class="dta-reg">kultiviert</span> werden <span title="Original: kañ" class="dta-reg">kann</span>; oder<br/>
+<span title="Original: ſchützend" class="dta-reg">schützend</span>, dadurch, daß <span title="Original: ſie" class="dta-reg">sie</span> Kälte <span title="Original: abhal-&#xA;ten" class="dta-reg">abhalten</span>. Vom Harz bis zum Ural <span title="Original: iſt" class="dta-reg">ist</span> alles<br/>
+Land offen, daher <span title="Original: ſchädlicher" class="dta-reg">schädlicher</span> Einfluß der<br/>
+Nordwinde. Das <span title="Original: Gegentheil" class="dta-reg">Gegenteil</span> <span title="Original: iſt" class="dta-reg">ist</span> in den<br/>
+<span title="Original: Thälern" class="dta-reg">Tälern</span> Griechenlands zu finden, u. größere<br/>
+<span title="Original: kosmiſche" class="dta-reg">kosmische</span> <span title="Original: Erſch." class="dta-reg">Ersch.</span> bieten uns die Gebirge<br/>
+<span title="Original: Aſiens" class="dta-reg">Asiens</span> u. Amerikas dar. Auch dadurch<br/>
+wirken <span title="Original: ſie" class="dta-reg">sie</span> erwärmend, daß <span title="Original: ſie" class="dta-reg">sie</span> als<br/>
+Zapfen <span title="Original: gleichſam" class="dta-reg">gleichsam</span> ins Luftmeer treten, <span title="Original: ſich" class="dta-reg">sich</span><br/>
+im <span title="Original: Som̃er" class="dta-reg">Sommer</span> <span title="Original: ſehr" class="dta-reg">sehr</span> <span title="erwärm￼" class="dta-abbr">erwärmen</span> u. die Wärme <span title="Original: aus-" class="dta-reg">ausstrahlen</span>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">ſtrahlen.</div><span title="Original: " class="dta-reg"/>
+<span class="dta-pb" style="padding-left:15em">|#f0313 : 296.|</span><br/>
+<span title="Original: ſtrahlen" class="dta-reg"/>. Geringe hohe Spitze wirken <span title="Original: abe" class="dta-reg">aber</span><span class="dta-supplied">[<span title="Original: r" class="dta-reg"/>]</span><br/>
+wie erwähnt <span title="Original: entgegengeſetzt" class="dta-reg">entgegengesetzt</span>. Die <span title="Original: untern" class="dta-reg">unteren</span><br/>
+erwärmten <span title="Original: Luftſchichten" class="dta-reg">Luftschichten</span> <span title="Original: ſteigen" class="dta-reg">steigen</span> in <span title="Original: Luftſtrö-" class="dta-reg">Luftströmen</span>
+<span class="dta-marginal dta-marginal-left"><span class="b "><span title="Original: Luftſtröme" class="dta-reg">Luftströme</span><br/>
+an den Bergen.</span><br/>
+</span><span title="Original: men" class="dta-reg"/> bei Tage aufwärts, u. die kältere<br/>
+Luft <span title="Original: ſtrömt" class="dta-reg">strömt</span> wieder bei Nacht herab, <span title="Original: ſo" class="dta-reg">so</span><br/>
+daß unmittelbar am Fuß des Berges <span title="Original: kal" class="dta-reg">kalte</span><span class="dta-supplied">[<span title="Original: te" class="dta-reg"/>]</span><br/>
+erregt wird, doch muß man <span title="Original: dieſem" class="dta-reg">diesem</span> <span title="Original: Einflu" class="dta-reg">Einfluß</span><span class="dta-supplied">[<span title="Original: ß" class="dta-reg"/>]</span><br/>
+nicht zu viel <span title="Original: zuſchreiben" class="dta-reg">zuschreiben</span>. <span title="Original: Dieſe" class="dta-reg">Diese</span> Kälte <span title="Original: wir" class="dta-reg">wird</span><span class="dta-supplied">[<span title="Original: d" class="dta-reg"/>]</span><br/>
+auch durch den Schatten erregt, <span title="Original: weñ" class="dta-reg">wenn</span> die<br/>
+<span title="Original: Soñe" class="dta-reg">Sonne</span> <span title="Original: ſchon" class="dta-reg">schon</span> früh hinter die Gipfel der Berge<br/>
+<span title="Original: ſinkt" class="dta-reg">sinkt</span>. Die Nähe einer Gebirgsk. wirkt auf<br/>
+die Temp. der Ebene auch durch die Art<br/>
+des <span title="Original: Geſteins" class="dta-reg">Gesteins</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span>, in <span title="Original: ſo" class="dta-reg">so</span> fern es <span title="Original: ſich" class="dta-reg">sich</span> leicht<br/>
+oder <span title="Original: ſchwer" class="dta-reg">schwer</span> erwärmt, welches wieder<br/>
+<span title="Original: verſchieden" class="dta-reg">verschieden</span> <span title="Original: iſt" class="dta-reg">ist</span> nach der Luft, ob <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: trocke" class="dta-reg">trocken</span><span class="dta-supplied">[<span title="Original: n" class="dta-reg"/>]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Erdreich<br/>
+erwärmt <span title="Original: ſich" class="dta-reg">sich</span><br/>
+<span title="Original: verſchieden" class="dta-reg">verschieden</span></span><br/>
+</span>oder kalt <span title="Original: iſt" class="dta-reg">ist</span>. <span title="Original: Weñ" class="dta-reg">Wenn</span> <span title="Original: ſchwarzes" class="dta-reg">schwarzes</span> Erdreich<br/>
+eine Stunde der <span title="Original: Soñe" class="dta-reg">Sonne</span> <span title="Original: ausgeſetzt" class="dta-reg">ausgesetzt</span> <span title="Original: iſt" class="dta-reg">ist</span>, <span title="Original: er-&#xA;wärmt" class="dta-reg">erwärmt</span> es <span title="Original: ſich" class="dta-reg">sich</span> von 15° R. bis 20°; <span title="Original: hin-&#xA;gegen" class="dta-reg">hingegen</span> weißliches Land <span title="Original: ſteigt" class="dta-reg">steigt</span> nur von 15<br/>
+R. bis auf 16°. Eben <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: iſt" class="dta-reg">ist</span> es mit der <span title="Original: nächtl" class="dta-reg">nächtlichen</span><span class="dta-supplied">[<span title="Original: ichen" class="dta-reg"/>]</span><br/>
+Erkältung; <span title="Original: deñ" class="dta-reg">denn</span> was leicht Wärme <span title="Original: añim̃t" class="dta-reg">annimmt</span>,<br/>
+verliert es auch wieder <span title="Original: ſehr" class="dta-reg">sehr</span> leicht.<br/>
+<span title="Original: Jn" class="dta-reg">In</span> der Zeit, <span title="dß" class="dta-abbr">daß</span> fruchtbarer Boden <span title="Original: ſich" class="dta-reg">sich</span><br/>
+7° erkältet, verliert der magere Boden<br/>
+nur 2°. Die <span title="Original: Moräſte" class="dta-reg">Moraste</span> <span title="Original: ſind" class="dta-reg">sind</span> <span title="Original: hiebei" class="dta-reg">hierbei</span> <span title="Original: ebe" class="dta-reg">eben</span><span class="dta-supplied">[<span title="Original: n" class="dta-reg"/>]</span><br/>
+<span title="Original: ſo" class="dta-reg">so</span> wichtig. Frieren <span title="Original: ſie" class="dta-reg">sie</span> nicht zu, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: halte" class="dta-reg">halten</span><span class="dta-supplied">[<span title="Original: n" class="dta-reg"/>]</span><br/>
+<span title="Original: ſie" class="dta-reg">sie</span> den <span title="Original: Som̃er" class="dta-reg">Sommer</span> u. Winter <span title="Original: temperirt" class="dta-reg">temperiert</span>; <span title="Original: i" class="dta-reg">ist</span><span class="dta-supplied">[<span title="Original: ſt" class="dta-reg"/>]</span><br/>
+dies aber der Fall, <span title="Original: ſo" class="dta-reg">so</span> bilden <span title="Original: ſie" class="dta-reg">sie</span> kleine<br/>
+<span title="Original: Gletſcher" class="dta-reg">Gletscher</span> die bis Juni kaum <span title="Original: aufthauen" class="dta-reg">auftauen</span><br/>
+<span title="Original: Jn" class="dta-reg">In</span> <span title="Original: neuern" class="dta-reg">neueren</span> Zeiten hat man die Wirkung<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Wälder<br/>
+kalt.</span><br/>
+</span>der Wälder <span title="Original: eingeſehen" class="dta-reg">eingesehen</span>, daß <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: erkäl" class="dta-reg">erkältend</span><span class="dta-supplied">[<span title="Original: -" class="dta-reg"/>]</span><span title="Original: &#xA;tend" class="dta-reg"/> wirken durch ihre Blätter, als d<span class="gap">[unleserliches Material]</span><br/>
+<span title="Original: ſtrahlende" class="dta-reg">strahlende</span> Körper. Dies führt uns zur<br/>
+Reinheit u. <span title="Original: lichtſchwächenden" class="dta-reg">lichtschwächenden</span> Kraft der<br/>
+<span title="Original: Atmoſphäre" class="dta-reg">Atmosphäre</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span>. Bei <span title="Original: trockner" class="dta-reg">trockener</span> Luft<br/>
+<span title="Original: ſind" class="dta-reg">sind</span> die <span title="Theilch￼" class="dta-abbr"><span title="Original: Theilchen" class="dta-reg">Teilchen</span></span> mehr gedrückt, weniger<br/>
+<span title="Original: Waſſerbläſchen" class="dta-reg">Wasserbläschen</span> <span title="Original: ſind" class="dta-reg">sind</span> vorhanden u. der<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Strahl</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0314 : 297.|</span><br/>
+Strahl des Lichts wirkt <span title="Original: ſtärker" class="dta-reg">stärker</span> auf<br/>
+die Erde. Sind Dämpfe in der Luft <span title="Original: ſo" class="dta-reg">so</span><br/>
+wird die Helligkeit des Lichts gleich <span title="Original: gehin-&#xA;dert" class="dta-reg">gehindert</span>. <span title="Original: Jn" class="dta-reg">In</span> Peru, wo <span title="Original: Soñe" class="dta-reg">Sonne</span> u. Mond <span title="Original: Mona-&#xA;te" class="dta-reg">Monate</span> lang durch einen Nebel <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">uns </span>zu <span title="Original: ſehen" class="dta-reg">sehen</span> <span title="Original: ſind" class="dta-reg">sind</span>,<br/>
+wirken die <span title="Original: Soñenſtrahlen" class="dta-reg">Sonnenstrahlen</span> wenig, u. das<br/>
+<span title="Original: Termometer" class="dta-reg">Thermometer</span> <span title="Original: ſinkt" class="dta-reg">sinkt</span> auf + <span title="Original: 13–14°" class="dta-reg">13-14°</span> herab.<br/>
+<span title="Original: Dieſe" class="dta-reg">Diese</span> Wirkung des Strahlens der Wärme<br/>
+<span title="Original: iſt" class="dta-reg">ist</span> gefährlich für den Ackerbau <span title="Original: ſelbſt" class="dta-reg">selbst</span>.<br/>
+<span title="Original: Jn" class="dta-reg">In</span> einer Höhe zu <span class="aq ">Caracas</span> von <span title="Original: 9–10000" class="dta-reg">9-10000</span> Fuß<br/>
+wo mittlere Temp. 14° <span title="Original: iſt" class="dta-reg">ist</span>, wie etwa<br/>
+in <span class="aq ">Marseille</span>, friert die <span title="Original: Gerſte" class="dta-reg">Gerste</span> im <span title="Original: hei-&#xA;ßeſten" class="dta-reg">heißesten</span> <span title="Original: Som̃er" class="dta-reg">Sommer</span> <span title="Original: faſt" class="dta-reg">fast</span> alle Monate ab, <span title="Original: weñ" class="dta-reg">wenn</span><br/>
+gleich bei Tage + <span title="Original: 17–18" class="dta-reg">17-18</span>° R. Bei Nacht<br/>
+<span title="Original: ſinkt" class="dta-reg">sinkt</span> das Term. + <span title="Original: 4–5" class="dta-reg">4-5</span>° u. <span title="Original: hiebei" class="dta-reg">hierbei</span> <span title="Original: iſt" class="dta-reg">ist</span><br/>
+die <span title="Original: Ausſtrahlung" class="dta-reg">Ausstrahlung</span> der <span title="Original: Gräſer" class="dta-reg">Gräser</span> <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ſtark" class="dta-reg">stark</span>,<br/>
+daß <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span> erfrieren.</p></div></body></html>

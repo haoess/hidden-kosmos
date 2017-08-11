@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><span class="dta-supplied">[41. Vorlesung, 24.03.1828]</span><div class=""><div class=""><div class=""><p class="dta-p">So hätten wir die <span title="Original: Conſtruction" class="dta-reg">Konstruktion</span> der Gebirge und Ebenen<br/>
+entwickelt, das <span title="Original: Gemeinſame" class="dta-reg">Gemeinsame</span> der <span title="Original: Verhältniſſe" class="dta-reg">Verhältnisse</span> beider <span title="Original: wahr-&#xA;genommen" class="dta-reg">wahrgenommen</span>, und <span title="Original: geſehen" class="dta-reg">gesehen</span> wie der Rücken <span title="Original: einſt" class="dta-reg">einst</span> <span title="Original: blos" class="dta-reg">bloß</span> aus<br/>
+einer Anhäufung der Berge <span title="Original: ſich" class="dta-reg">sich</span> bildete, <span title="Original: ſondern" class="dta-reg">sondern</span> <span title="Original: dieſe" class="dta-reg">diese</span> auch<br/>
+in Ketten übergingen, wo das Maximum aller Kräfte<br/>
+aus dem <span title="Original: Innern" class="dta-reg">Inneren</span> <span title="Original: wol" class="dta-reg">wohl</span> mitgewirkt haben kann. Dies<br/>
+erkennen wir bei den Ausbruchskratern, wo die <span title="Original: Verbrei-&#xA;tung" class="dta-reg">Verbreitung</span> der Schlacken in ihrer unmittelbaren Nähe und <span title="Original: wei-&#xA;tern" class="dta-reg">weiteren</span> Ferne, das <span title="Original: Beiſpiel" class="dta-reg">Beispiel</span> von der mittleren Kraft <span title="Original: giebt" class="dta-reg">gibt</span>,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0330 : 324.|</span><br/>
+wonach die Bildung <span title="Original: ſich" class="dta-reg">sich</span> fügte und vollendete.</p><br/>
+<p class="dta-p">Die Betrachtung der Ebenen hat uns auf die <span title="Original: merk-&#xA;würdige" class="dta-reg">merkwürdige</span> <span title="Original: Erſcheinung" class="dta-reg">Erscheinung</span> der <span title="Original: Flüſſe" class="dta-reg">Flüsse</span> in <span title="Original: denſelben" class="dta-reg">denselben</span> geführt,<br/>
+und <span title="Original: beſonders" class="dta-reg">besonders</span> auf die Bificationen, von denen wir <span title="Original: ſehen" class="dta-reg">sehen</span><br/>
+daß <span title="Original: ſie" class="dta-reg">sie</span> denn <span title="Original: entſtehen" class="dta-reg">entstehen</span>, wenn die Scheidegrenze in ein<br/>
+anderes Flußbett übergeht. Die große Breite der<br/>
+<span title="Original: Flüſſe" class="dta-reg">Flüsse</span> in <span title="Original: Aſien" class="dta-reg">Asien</span> und Amerika erleichtert die Bification<br/>
+da die Ströme bei weiten weniger <span title="Original: Waſſer" class="dta-reg">Wasser</span> haben als<br/>
+<span title="Original: ſcheint" class="dta-reg">scheint</span>, denn <span title="Original: 2–3000′" class="dta-reg">2-3000'</span> weit vom Ufer <span title="Original: ſind" class="dta-reg">sind</span> <span title="Original: ſie" class="dta-reg">sie</span> nur 2 bis<br/>
+<span title="Original: 3′" class="dta-reg">3'</span> tief, denn kommt ein Kanal als das eigentliche <span title="Original: Fluß-&#xA;bette" class="dta-reg">Flußbette</span> von etwa 30<span title="Original: ′" class="dta-reg">'</span> Tiefe, dann folgt wieder eine <span title="Original: ſeichte" class="dta-reg">seichte</span><br/>
+Stelle und wieder ein Kanal. Man kann oft mehrere<br/>
+Stunden weit hinein reiten ohne daß das Pferd bis an<br/>
+den Bauch <span title="Original: in's" class="dta-reg">ins</span> <span title="Original: Waſſer" class="dta-reg">Wasser</span> kommt. Die Größe des <span title="Original: Fluß-&#xA;gebietes" class="dta-reg">Flußgebietes</span> und die <span title="Original: Waſſermenge" class="dta-reg">Wassermenge</span> hängt von der <span title="Original: Maſſe" class="dta-reg">Maße</span> des<br/>
+<span title="Original: Waſſers" class="dta-reg">Wassers</span> ab, die der Fluß erhält, von der Tiefe der<br/>
+Niederung in der er fließt, und <span title="Original: beſonders" class="dta-reg">besonders</span> von der <span title="Original: Maſſe" class="dta-reg">Maße</span><br/>
+des fallenden Regens, die in den Tropenländern weit<br/>
+beträchtlicher <span title="Original: iſt" class="dta-reg">ist</span>, da in <span title="Original: dieſen" class="dta-reg">diesen</span> jährlich über 80, bei uns<br/>
+aber nur 22 Cubiczoll Regen auf eine gleiche Fläche<br/>
+fällt. Hiernach richtet <span title="Original: ſich" class="dta-reg">sich</span> auch natürlich die Größe der<br/>
+<span title="Original: Flüße" class="dta-reg">Flüsse</span>, die Donau zum <span title="Original: Amazonenſtrome" class="dta-reg">Amazonenstrome</span> verhält <span title="Original: ſich" class="dta-reg">sich</span> nach<br/>
+<span title="Original: dieſer" class="dta-reg">dieser</span> Angabe wie 4:22. Je <span title="Original: ſchmaler" class="dta-reg">schmaler</span> ein Fluß <span title="Original: iſt" class="dta-reg">ist</span>,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0331 : 325.|</span><br/>
+je höher wird er <span title="Original: anſchwellen" class="dta-reg">anschwellen</span>, und um <span title="Original: ſo" class="dta-reg">so</span> leichter <span title="Original: ſeine" class="dta-reg">seine</span><br/>
+Ufer <span title="Original: überſtrömen" class="dta-reg">überströmen</span>. Man kann auch die <span title="Original: Flüſſe" class="dta-reg">Flüsse</span> als <span title="Original: Regen-&#xA;meſſer" class="dta-reg">Regenmesser</span> <span title="Original: /" class="dta-reg">(</span><span class="aq ">Ombrometer</span> oder <span class="aq ">Hyetometer</span><span title="Original: /" class="dta-reg">)</span> betrachten, da die<br/>
+Höhe ihres Standes die <span title="Original: Maſſe" class="dta-reg">Maße</span> <span title="Original: deſſelben" class="dta-reg">desselben</span> <span title="Original: angiebt" class="dta-reg">angibt</span>. Der Nil,<br/>
+wo nur von dem <span title="Original: untern" class="dta-reg">unteren</span> <span title="Original: Theile" class="dta-reg">Teile</span> die Rede <span title="Original: iſt" class="dta-reg">ist</span>, <span title="Original: ſteigt" class="dta-reg">steigt</span> immer zu<br/>
+<span title="Original: derſelben" class="dta-reg">derselben</span> Höhe von 24<span title="Original: ′" class="dta-reg">'</span>, wie der <span title="Original: Orinoko" class="dta-reg">Orinoco</span> bei <span class="aq "><span title="Original: Anguſtura" class="dta-reg">Angustura</span></span>, 80<br/>
+Meilen über <span title="Original: ſeiner" class="dta-reg">seiner</span> Mündung. Wir <span title="Original: wiſſen" class="dta-reg">wissen</span> hierdurch genau<br/>
+daß <span title="Original: ſeit" class="dta-reg">seit</span> 2000 Jahren die <span title="Original: Maſſe" class="dta-reg">Maße</span> des fallenden Regens <span title="Original: ſich" class="dta-reg">sich</span><br/>
+nicht geändert hat, weil das Steigen und Fallen des<br/>
+Nils <span title="Original: ſich" class="dta-reg">sich</span> in <span title="Original: dieſer" class="dta-reg">dieser</span> Zeit immer gleich blieb. Die Menge<br/>
+des <span title="Original: Waſſers" class="dta-reg">Wassers</span> im <span title="Original: Fluſſe" class="dta-reg">Flusse</span> wird nicht allein durch <span title="Original: ſeine" class="dta-reg">seine</span> Tiefe,<br/>
+<span title="Original: ſondern" class="dta-reg">sondern</span> auch durch die Arin, und <span title="Original: beſonders" class="dta-reg">besonders</span> durch die <span title="Original: Schnellig-&#xA;keit" class="dta-reg">Schnelligkeit</span> <span title="Original: ſeines" class="dta-reg">seines</span> Laufes <span title="Original: beſtimmt" class="dta-reg">bestimmt</span>. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117545201"><span title="Original: Geràrd" class="dta-reg">Gerard</span></a></span></span> hat <span title="Original: zuerſt" class="dta-reg">zuerst</span> in<br/>
+den <span class="aq "><span title="Original: Memoires" class="dta-reg">Mémoires</span> D'Aegypte</span> genaue <span title="Original: Meſſungen" class="dta-reg">Messungen</span> über die <span title="Original: Ge-&#xA;ſchwindigkeit" class="dta-reg">Geschwindigkeit</span> des Nils gegeben, die andere zum <span title="Original: Muſter" class="dta-reg">Muster</span><br/>
+dienen können. Die <span title="Original: Flüße" class="dta-reg">Flüsse</span> münden <span title="Original: ſich" class="dta-reg">sich</span> entweder in die<br/>
+Meere, oder <span title="Original: ſie" class="dta-reg">sie</span> gehen, wie <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118534912">Fränklin</a></span></span> <span title="Original: ſich" class="dta-reg">sich</span> ausdrückte,<br/>
+in die Luft, d. h. <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: verdunſten" class="dta-reg">verdunsten</span>. <span title="Original: Flüſſe" class="dta-reg">Flüsse</span>, vorzüglich<br/>
+die der <span title="Original: ſüdlichen" class="dta-reg">südlichen</span> Hemisphäre, verlieren immer mehr und mehr<br/>
+an <span title="Original: Waſſer" class="dta-reg">Wasser</span>, je weiter <span title="Original: ſie" class="dta-reg">sie</span> fließen, nicht allein durch <span title="Original: Ver-&#xA;dunſtung" class="dta-reg">Verdunstung</span> <span title="Original: ſondern" class="dta-reg">sondern</span> es dringt auch viel <span title="Original: Waſſer" class="dta-reg">Wasser</span> in den lockeren<br/>
+Sand ein. So <span title="Original: ſoll" class="dta-reg">soll</span> der Orangefluß im <span title="Original: ſüdlichen" class="dta-reg">südlichen</span> Afrika <span title="Original: faſt" class="dta-reg">fast</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0332 : 326.|</span><br/>
+ganz <span title="Original: ſein" class="dta-reg">sein</span> <span title="Original: Waſſer" class="dta-reg">Wasser</span> verlieren. <span title="Original: Daſſelbe" class="dta-reg">Dasselbe</span> gilt von <span class="aq ">Rio<br/>
+Apura,</span> <span title="Original: deſſen" class="dta-reg">dessen</span> <span title="Original: Geſchwindigkeit" class="dta-reg">Geschwindigkeit</span> und Breite ich <span title="Original: mãß" class="dta-reg">maß</span>, und nur<br/>
+halb <span title="Original: ſo" class="dta-reg">so</span> breit als die Donau <span title="Original: iſt" class="dta-reg">ist</span>. Das Schwinden der <span title="Original: Flüſſe" class="dta-reg">Flüsse</span><br/>
+tritt <span title="Original: beſonders" class="dta-reg">besonders</span> da ein, wo die Ufer aus Sand <span title="Original: beſtehen" class="dta-reg">bestehen</span>,<br/>
+der oft eine Hitze von <span title="Original: 52–54" class="dta-reg">52-54</span>° R. annimmt. Solche <span title="Original: An-&#xA;ſichten" class="dta-reg">Ansichten</span> hat man auch vom Niger, doch <span title="Original: iſt" class="dta-reg">ist</span> es <span title="Original: ſehr" class="dta-reg">sehr</span> <span title="Original: unwahrſchein-&#xA;lich" class="dta-reg">unwahrscheinlich</span>, daß <span title="Original: ſeine" class="dta-reg">seine</span> <span title="Original: Waſſermaſſe" class="dta-reg">Wassermasse</span> <span title="Original: ſich" class="dta-reg">sich</span> ganz verliert.</p><br/>
+<p class="dta-p">Wo die <span title="Original: Flüſſe" class="dta-reg">Flüsse</span> in die Meere münden, bilden <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſüße" class="dta-reg">süße</span><br/>
+<span title="Original: Seeen" class="dta-reg">Seen</span>, <span title="Schreibfehler: weil2 denn1" class="dta-corr">denn weil</span> das <span title="Original: Salzwaſſer" class="dta-reg">Salzwasser</span> <span title="Original: ſchwerer" class="dta-reg">schwerer</span> <span title="Original: iſt" class="dta-reg">ist</span>, <span title="Original: ſo" class="dta-reg">so</span> wird es<br/>
+bei der Ebbe und <span title="Original: Fluth" class="dta-reg">Flut</span> gehindert weit in die Mündung der<br/>
+<span title="Original: Flüſſe" class="dta-reg">Flüsse</span> einzutreten, und man kann oft bei <span title="Original: dieſer" class="dta-reg">dieser</span> auf der<br/>
+Oberfläche <span title="Original: ſüßes" class="dta-reg">süßes</span>, in der Tiefe dagegen <span title="Original: ſalziges" class="dta-reg">salziges</span> <span title="Original: Waſſer" class="dta-reg">Wasser</span> <span title="Original: ſchöpfen" class="dta-reg">schöpfen</span>.</p><br/>
+<p class="dta-p">Ebbe und <span title="Original: Fluth" class="dta-reg">Flut</span> <span title="Original: ſind" class="dta-reg">sind</span> <span title="Original: periodiſche" class="dta-reg">periodische</span> <span title="Original: Aenderungen" class="dta-reg">Änderungen</span>, welche<br/>
+von der Anziehung der Sonne und des Mondes herrühren.<br/>
+Das <span title="Original: ſüße" class="dta-reg">süße</span> <span title="Original: Waſſer" class="dta-reg">Wasser</span> wird <span title="Original: ſo" class="dta-reg">so</span> mit dem <span title="Original: ſalzigen" class="dta-reg">salzigen</span> ohne <span title="Original: ſich" class="dta-reg">sich</span> zu<br/>
+<span title="Original: miſchen" class="dta-reg">mischen</span> bald aufgehoben, bald <span title="Original: ſinkt" class="dta-reg">sinkt</span> es wieder. Wo aber<br/>
+das Meer eine <span title="Original: ſtarke" class="dta-reg">starke</span> <span title="Original: Fluth" class="dta-reg">Flut</span> von 16<span title="Original: ′" class="dta-reg">'</span> hat, <span title="Original: miſchen" class="dta-reg">mischen</span> <span title="Original: ſich" class="dta-reg">sich</span> die<br/>
+<span title="Original: obern" class="dta-reg">oberen</span> mit den <span title="Original: untern" class="dta-reg">unteren</span> <span title="Original: Waſſerſchichten" class="dta-reg">Wasserschichten</span>. Als die <span title="Original: Cultur" class="dta-reg">Kultur</span><br/>
+nur um das Mittelmeer ausgebreitet war, konnte allein bei<br/>
+den <span title="Original: Phöniciern" class="dta-reg">Phöniziern</span> eine richtige <span title="Original: Anſicht" class="dta-reg">Ansicht</span> von Ebbe und <span title="Original: Fluth" class="dta-reg">Flut</span> <span title="Original: ent-&#xA;ſtehen" class="dta-reg">entstehen</span>. Die Griechen lernten <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: zuerſt" class="dta-reg">zuerst</span> durch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118501828"><span title="Original: Alexander" class="dta-reg">Alexander's</span></a></span><span title="Original: 's" class="dta-reg"/></span> Zug<br/>
+am Indus kennen. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118793764">Petius</a></span></span> ging <span title="Original: ſpäter" class="dta-reg">später</span> <span title="Original: beſonders" class="dta-reg">besonders</span> nach<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0333 : 327.|</span><br/>
+<span title="Original: Marſeille" class="dta-reg">Marseille</span> um <span title="Original: ſie" class="dta-reg">sie</span> kennen zu lernen. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118594893">Plato</a></span>,</span> der alles<br/>
+uns dem <span title="Original: Innern" class="dta-reg">Inneren</span> der Erde herzuleiten <span title="Original: ſuchte" class="dta-reg">suchte</span>, glaubte daß<br/>
+es ein <span title="Original: Ausſprudeln" class="dta-reg">Aussprudeln</span> aus dem <span title="Original: Innern" class="dta-reg">Inneren</span> <span title="Original: derſelbe" class="dta-reg">derselbe</span> <span title="Original: ſei" class="dta-reg">sei</span>. <span title="Original: –" class="dta-reg">-</span><br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118595091">Plinius</a></span></span> hatte aber <span title="Original: ſchon" class="dta-reg">schon</span> <span title="Original: ſehr" class="dta-reg">sehr</span> richtige <span title="Original: Anſichten" class="dta-reg">Ansichten</span> darüber<br/>
+indem er <span title="Original: ſagte" class="dta-reg">sagte</span>: <span class="aq "><span title="Original: cauſa" class="dta-reg">causa</span> in <span title="Original: ſole" class="dta-reg">sole</span> lunaque.</span> Und vor ihm<br/>
+hatte auch <span title="Original: ſchon" class="dta-reg">schon</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118650130"><span title="Original: Ariſtoteles" class="dta-reg">Aristoteles</span></a></span></span> klare Begriffe davon. Die <span title="Original: erſte" class="dta-reg">erste</span><br/>
+Theorie wurde über dies <span title="Original: Phaenomen" class="dta-reg">Phänomen</span> im Jahre 1680 von <span class="dta-metamark" title="metamark"><span title="Original: ―" class="dta-reg">--</span> ?</span><br/>
+<span title="Original: aufgeſtellt" class="dta-reg">aufgestellt</span>. In <span title="Original: neuern" class="dta-reg">neueren</span> Zeiten hat aber <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span></span> 1772<br/>
+und noch einmal kurz vor <span title="Original: ſeinem" class="dta-reg">seinem</span> Tode, eine deutliche Theorie<br/>
+auf viele Beobachtungen <span title="Original: geſtützt" class="dta-reg">gestützt</span>, gegeben. Er <span title="Original: ſtellte" class="dta-reg">stellte</span> deshalb<br/>
+in <span title="Original: Breſt" class="dta-reg">Brest</span> 10,000 Beobachtungen an, um die <span title="Original: Coëfficienten" class="dta-reg">Koeffizienten</span><br/>
+zu <span title="Original: beſtimmen" class="dta-reg">bestimmen</span>, und fand daß die Anziehung der Sonne<br/>
+auf <span title="Original: unſere" class="dta-reg">unsere</span> Erde um 13 Millionen <span title="Original: mal" class="dta-reg">Mal</span> <span title="Original: ſtärker" class="dta-reg">stärker</span> als die<br/>
+des Mondes <span title="Original: iſt" class="dta-reg">ist</span>. Dagegen verhält <span title="Original: ſich" class="dta-reg">sich</span> die Anziehung<br/>
+der Erde zu der des Mondes wie <span title="Original: 2" class="dta-reg">24/10</span><span class="sup "><span title="Original: 4" class="dta-reg"/></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 10" class="dta-reg"/></span> zu 1. Die <span title="Original: Culmi-&#xA;nation" class="dta-reg">Kulmination</span> <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: ſo" class="dta-reg">so</span>, daß <span title="Original: ſich" class="dta-reg">sich</span> täglich 49 Minuten <span title="Original: ſpäter" class="dta-reg">später</span> <span title="Original: eintrit" class="dta-reg">Eintritt</span>.<br/>
+Die größten <span title="Original: Fluthen" class="dta-reg">Fluten</span> finden beim Neu- und Vollmonde<br/>
+<span title="Original: ſtatt" class="dta-reg">statt</span>, eine Beobachtung, die <span title="Original: ſchon" class="dta-reg">schon</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118518275"><span title="Original: Caeſar" class="dta-reg">Caesar</span></a></span></span> machte; hierbei<br/>
+wirken Sonne und Mond <span title="Original: zuſammen" class="dta-reg">zusammen</span>. Die Einwirkung<br/>
+der Sonne und des Mondes auf <span title="Original: unſere" class="dta-reg">unsere</span> Erde <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ſtark" class="dta-reg">stark</span>,<br/>
+daß man umgekehrt von <span title="Original: dieſer" class="dta-reg">dieser</span> auf den Mond <span title="Original: geſchloſſen" class="dta-reg">geschlossen</span> hat.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0334 : 328.|</span><br/>
+<p class="dta-p"><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span></span> unter <span title="Original: andern" class="dta-reg">anderen</span> erweiterte <span title="Original: ſo" class="dta-reg">so</span> auf eine <span title="Original: bewund" class="dta-reg">bewunderungswürdige</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)"><span class="dta-supplied">[<span title="Original: erungs-" class="dta-reg"/>]</span></span><span title="Original: &#xA;würdige" class="dta-reg"/> <span title="Original: Weiſe" class="dta-reg">Weise</span> die <span title="Original: Kenntniß" class="dta-reg">Kenntnis</span> von der <span title="Original: Maſſe" class="dta-reg">Maße</span> des Mondes.<br/>
+Wenn <span title="Original: dieſer" class="dta-reg">dieser</span> in der Erdnähe <span title="Original: iſt" class="dta-reg">ist</span>, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ſteigt" class="dta-reg">steigt</span> die <span title="Original: Fluth" class="dta-reg">Flut</span> bei<br/>
+<span title="Original: Breſt" class="dta-reg">Brest</span> um 5<span title="Original: ′" class="dta-reg">'</span> höher, als in der Erdferne. Die Sonne und<br/>
+der Mond wirken dahin, daß <span title="Original: ſie" class="dta-reg">sie</span> einzelne <span title="Original: Theile" class="dta-reg">Teile</span> des <span title="Original: Waſſers" class="dta-reg">Wassers</span><br/>
+von Mittelpunkte der Erde weiter entfernen, wodurch auf<br/>
+jeder Seite <span title="Original: derſelben" class="dta-reg">derselben</span> eine <span title="Original: Anſchwellung" class="dta-reg">Anschwellung</span> erfolgen muß.<br/>
+Die parallele Richtung der <span title="Original: Curve" class="dta-reg">Kurve</span> kann nur denn <span title="Original: entſtehen" class="dta-reg">entstehen</span>,<br/>
+wenn die <span title="Original: Attraction" class="dta-reg">Attraktion</span> gleich <span title="Original: iſt" class="dta-reg">ist</span>. Alle <span title="Original: dieſe" class="dta-reg">diese</span> Beobachtungen<br/>
+können aber nur bei großen Meeren gemacht werden, denn<br/>
+bei den <span title="Original: eingeſchloſſenen" class="dta-reg">eingeschlossenen</span> finden andere <span title="Original: Verhältniſſe" class="dta-reg">Verhältnisse</span> <span title="Original: ſtatt" class="dta-reg">statt</span>,<br/>
+weil die Kleinheit der <span title="Original: Maſſe" class="dta-reg">Maße</span> das <span title="Original: ſtarke" class="dta-reg">starke</span> <span title="Original: Anſchwellen" class="dta-reg">Anschwellen</span><br/>
+verhindert, indem nicht genug <span title="Original: Waſſer" class="dta-reg">Wasser</span> nachfließen kann, und<br/>
+daher andere <span title="Original: Geſetze" class="dta-reg">Gesetze</span> eintreten. Eben <span title="Original: ſo" class="dta-reg">so</span> muß man die<br/>
+Richtung <span title="Original: dieſer" class="dta-reg">dieser</span> Meere <span title="Original: unterſchieden" class="dta-reg">unterschieden</span>, ob <span title="Original: ſie" class="dta-reg">sie</span> von <span title="Original: Oſten" class="dta-reg">Osten</span> nach<br/>
+<span title="Original: Weſten" class="dta-reg">Westen</span>, oder von Süden nach Norden <span title="Original: ſich" class="dta-reg">sich</span> hinzieht. Die<br/>
+<span title="Original: Fluth" class="dta-reg">Flut</span> eines <span title="Original: ſolchen" class="dta-reg">solchen</span> Binnenmeeres verhält <span title="Original: ſich" class="dta-reg">sich</span> zur <span title="Original: Fluth" class="dta-reg">Flut</span> des<br/>
+<span title="Original: Oceans" class="dta-reg">Ozeans</span>, wie der <span title="Original: Längendurchmeſſer" class="dta-reg">Längendurchmesser</span> des Mondes zum<br/>
+<span title="Original: Halbmeſſer" class="dta-reg">Halbmesser</span> der Erde. Auch die Lage der Meere hat den<br/>
+<span title="Original: entſchiedenſten" class="dta-reg">entschiedensten</span> Einfluß, wie beim <span title="Original: Kaspiſchen" class="dta-reg">Kaspischen</span> Meere, das<br/>
+nicht allein <span title="Original: ſeiner" class="dta-reg">seiner</span> geringen <span title="Original: Waſſermaſſe" class="dta-reg">Wassermasse</span> wegen, <span title="Original: ſondern" class="dta-reg">sondern</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0335 : 329.|</span><br/>
+auch weil es von Süden nach Norden hin <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: erſtreckt" class="dta-reg">erstreckt</span>,<br/>
+nur wenig Ebbe und <span title="Original: Fluth" class="dta-reg">Flut</span> hat. Das Mittelmeer hat<br/>
+<span title="Original: ebenſo" class="dta-reg">ebenso</span> <span title="Original: faſt" class="dta-reg">fast</span> gar keine Ebbe und <span title="Original: Fluth" class="dta-reg">Flut</span>, die größte <span title="Original: Fluth" class="dta-reg">Flut</span><br/>
+in <span title="Original: dieſem" class="dta-reg">diesem</span> zeigt <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: öſtlich" class="dta-reg">östlich</span> von Malta, weil hier <span title="Original: ſeine" class="dta-reg">seine</span><br/>
+größte Oberfläche und Tiefe <span title="Original: iſt" class="dta-reg">ist</span>. Bei den Binnenmeeren<br/>
+kommt es auch auf die Lage der <span title="Original: Oeffnungen" class="dta-reg">Öffnungen</span> an, wäre <span title="Original: ſo" class="dta-reg">so</span><br/>
+das Mittelmeer gegen Syrien geöffnet, denn würde die<br/>
+<span title="Original: Fluth" class="dta-reg">Flut</span> bedeutend <span title="Original: ſtärker" class="dta-reg">stärker</span> <span title="Original: ſich" class="dta-reg">sich</span> zeigen, und die <span title="Original: Oeffnung" class="dta-reg">Öffnung</span> nach<br/>
+<span title="Original: Weſten" class="dta-reg">Westen</span> <span title="Original: iſt" class="dta-reg">ist</span> deshalb um <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ungünſtigen" class="dta-reg">ungünstigen</span>, weil die Ebbe und<br/>
+<span title="Original: Fluth" class="dta-reg">Flut</span> <span title="Original: ſich" class="dta-reg">sich</span> von <span title="Original: Oſten" class="dta-reg">Osten</span> nach <span title="Original: Weſten" class="dta-reg">Westen</span> fort bewegt. <span title="Original: –" class="dta-reg">-</span><br/>
+Der Theorie nach <span title="Original: ſollte" class="dta-reg">sollte</span> im hohen Norden keine Ebbe und<br/>
+<span title="Original: Fluth" class="dta-reg">Flut</span> <span title="Original: ſein" class="dta-reg">sein</span>, da <span title="Original: ſie" class="dta-reg">sie</span> aber in der <span title="Original: Hudſonsbai" class="dta-reg">Hudson Bay</span> <span title="Original: iſt" class="dta-reg">ist</span>, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: giebt" class="dta-reg">gibt</span> dies<br/>
+einen Beweis von dem Durchbruche nach der Baffinsbai.<br/>
+Die <span title="Original: Oſtſee" class="dta-reg">Ostsee</span> hat keine <span title="Original: Fluth" class="dta-reg">Flut</span>, ihr <span title="Original: Anſchwellen" class="dta-reg">Anschwellen</span> wird von<br/>
+<span title="Original: periodiſchen" class="dta-reg">periodischen</span> Winden hervor gebracht. Bei den Antillen<br/>
+erreicht die <span title="Original: Fluth" class="dta-reg">Flut</span> nur die Höhe von <span title="Original: 8–10" class="dta-reg">8-10</span> Zoll. Die<br/>
+größte <span title="Original: Fluth" class="dta-reg">Flut</span> <span title="Original: iſt" class="dta-reg">ist</span> in der Mündung der Severne bei<br/>
+<span class="aq ">St. Malo</span> <span class="dta-metamark" title="metamark">?</span>, wo <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: 45–46′" class="dta-reg">45-46'</span> hoch, ja die <span title="Original: Springfluth" class="dta-reg">Springflut</span> <span title="Original: ſogar" class="dta-reg">sogar</span><br/>
+bis zur Höhe von 60<span title="Original: ′" class="dta-reg">'</span> <span title="Original: ſteigt" class="dta-reg">steigt</span>. Ein <span title="Original: ſolches" class="dta-reg">solches</span> Eindringen<br/>
+<span title="Original: iſt" class="dta-reg">ist</span> das des Maskarets, auch auf dem <span title="Original: Amazonenſtrom" class="dta-reg">Amazonenstrom</span><br/>
+<span title="Original: ſieht" class="dta-reg">sieht</span> man <span title="Original: Waſſermaſſen" class="dta-reg">Wassermassen</span> <span title="Original: Häuſer" class="dta-reg">Häuser</span> hoch andringen, was auch<br/>
+eine Folge der <span title="Original: Fluth" class="dta-reg">Flut</span> <span title="Original: iſt" class="dta-reg">ist</span>.</p><br/>
+</div>
+<span class="dta-pb" style="padding-left:15em">|#f0336 : 330.|</span><br/>
+<div class="">   <div class="dta-head"><span class="u ">Von den Wellen</span>.</div>   <br/>
+<p class="dta-p">Die Höhe <span title="Original: derſelben" class="dta-reg">derselben</span> <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: ſehr" class="dta-reg">sehr</span> <span title="Original: verſchieden" class="dta-reg">verschieden</span> <span title="Original: ange-&#xA;geben" class="dta-reg">angegeben</span> und <span title="Original: mehrentheils" class="dta-reg">mehrenteils</span> übertrieben. Um die Höhe<br/>
+der Wellen richtig zu <span title="Original: beſtimmen" class="dta-reg">bestimmen</span>, muß man zweierlei<br/>
+<span title="Original: unterſcheiden" class="dta-reg">unterscheiden</span>, ob <span title="Original: ſie" class="dta-reg">sie</span> nämlich aus der Tiefe <span title="Original: aufſchlagen" class="dta-reg">aufschlagen</span><br/>
+oder nur gegen die <span title="Original: Küſte" class="dta-reg">Küste</span> anprallen. In der <span title="Original: Südſee" class="dta-reg">Südsee</span><br/>
+<span title="Original: ſind" class="dta-reg">sind</span> im allgemeinen die <span title="Original: höchſten" class="dta-reg">höchsten</span> Wellen, und ich <span title="Original: ſah" class="dta-reg">sah</span> an<br/>
+einem hellen <span title="Original: ſehr" class="dta-reg">sehr</span> <span title="Original: ſtürmiſchen" class="dta-reg">stürmischen</span> Tage <span title="Original: daſelbſt" class="dta-reg">daselbst</span> wo die Sonne<br/>
+wirklich <span title="Original: ſchon" class="dta-reg">schon</span> untergegangen war, <span title="Original: dieſelben" class="dta-reg">dieselben</span> von der Höhe<br/>
+des <span title="Original: Maſtbaumes" class="dta-reg">Mastbaumes</span> noch deutlich über dem Horizonte, was<br/>
+mir <span title="Original: ſo" class="dta-reg">so</span> die <span title="Original: Depreſſion" class="dta-reg">Depression</span> des Horizonts gab. Auf <span title="Original: dieſe" class="dta-reg">diese</span><br/>
+<span title="Original: Weiſe" class="dta-reg">Weise</span> mißt man <span title="Original: /" class="dta-reg">(</span><span title="Original: vermittelſt" class="dta-reg">vermittels</span> <span title="Original: Spiegelſextanten" class="dta-reg">Spiegelsextanten</span><span title="Original: /" class="dta-reg">)</span> die<br/>
+Höhe und das <span title="Original: Thal" class="dta-reg">Tal</span> der Wellen, und ich fand als größte<br/>
+Höhe <span title="Original: 42–44" class="dta-reg">42-44</span><span title="Original: ′" class="dta-reg">'</span>. Dies <span title="Original: iſt" class="dta-reg">ist</span> auch die Meinung mehrerer <span title="Original: engl" class="dta-reg">Engel</span>.<br/>
+Schiffscapitäine, die ich darüber <span title="Original: ſprach" class="dta-reg">sprach</span>. Die Höhe hängt<br/>
+nicht <span title="Original: blos" class="dta-reg">bloß</span> von der Indifferenz der Wellen und des Windes<br/>
+ab, im <span title="Original: Gegentheil" class="dta-reg">Gegenteil</span> <span title="Original: ſchwächt" class="dta-reg">schwächt</span> <span title="Original: ſich" class="dta-reg">sich</span> die Höhe, wenn der <span title="Original: Wellen-&#xA;berg" class="dta-reg">Wellenberg</span> mit dem <span title="Original: Wellenthale" class="dta-reg">Wellentale</span> <span title="Original: zuſammenkommt" class="dta-reg">zusammenkommt</span>, <span title="Original: ſondern" class="dta-reg">sondern</span> <span title="Original: rich-&#xA;tet" class="dta-reg">richtet</span> <span title="Original: ſich" class="dta-reg">sich</span> vielmehr nach der Tiefe des Meeres. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/142999881">Brimontier</a></span></span><br/>
+<span title="Original: giebt" class="dta-reg">gibt</span> die Höhe der Wellen auf <span title="Original: 60–80" class="dta-reg">60-80</span><span title="Original: ′" class="dta-reg">'</span> an, wobei aber<br/>
+das <span title="Original: Waſſer" class="dta-reg">Wasser</span> bis zu <span title="Original: 160–200′" class="dta-reg">160-200'</span> tief aufgewühlt wird.<br/>
+Bei Neufundland <span class="dta-metamark" title="metamark">.......</span>.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0337 : 331.|</span><br/>
+<p class="dta-p">Etwas ähnliches findet <span title="Original: ſich" class="dta-reg">sich</span> an der Nadelbank <span title="Original: ſüdlich" class="dta-reg">südlich</span><br/>
+von Afrika, wo <span title="Original: ſich" class="dta-reg">sich</span> noch bei 280<span title="Original: ′" class="dta-reg">'</span> Tiefe die Richtung der<br/>
+Strömung verändert. Gewöhnlich gehen die Wellen nicht<br/>
+über <span title="Original: 20–22′" class="dta-reg">20-22'</span> hoch. Die <span title="Original: phyſikaliſche" class="dta-reg">physikalische</span> Theorie hat vor zwei<br/>
+Jahren durch das Werk der beiden Brüder <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118765817">Weber</a></span></span> eine<br/>
+unvergleichliche Arbeit erhalten. <span title="Original: Dieſe" class="dta-reg">Diese</span> machten den <span title="Original: An-&#xA;fang" class="dta-reg">Anfang</span> mit <span title="Original: Verſuchen" class="dta-reg">Versuchen</span> über die Schwere des <span title="Original: Queckſilbers" class="dta-reg">Quecksilbers</span>,<br/>
+wobei <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: zuerſt" class="dta-reg">zuerst</span> die Dichtigkeit der <span title="Original: Flüſſigkeiten" class="dta-reg">Flüssigkeiten</span> beachteten.<br/>
+Später <span title="Original: reiſten" class="dta-reg">reisten</span> <span title="Original: ſie" class="dta-reg">sie</span> nach dem <span title="Original: Mittelländiſchen" class="dta-reg">Mittelländischen</span> Meere, um<br/>
+dort in der Natur ihre Theorie zu prüfen. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">Das Meer <span title="Original: ſelbſt" class="dta-reg">selbst</span> umfaßt <span title="Original: ⅔" class="dta-reg"> 2/3 </span> der ganzen Erde,<br/>
+und <span title="Original: iſt" class="dta-reg">ist</span> mit Gewißheit nicht über 7000<span title="Original: ′" class="dta-reg">'</span> <span title="Original: ſondirt" class="dta-reg">sondiert</span>, wo noch<br/>
+kein Grund zu finden war. Die Tiefe der Meere <span title="Original: ſoll" class="dta-reg">soll</span><br/>
+übrigens mit den Höhen der Berge <span title="Original: correspondiren" class="dta-reg">korrespondieren</span>.<br/>
+Schon <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118595237">Plutarch</a></span></span> erwähnt im Leben des <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11864713X">Emilius Paulus</a></span>,</span><br/>
+daß die größte Tiefe der Meere, der größten Höhe<br/>
+der Berge gleich <span title="Original: ſein" class="dta-reg">sein</span> <span title="Original: müße" class="dta-reg">müsse</span>, was wir nur durch <span title="Original: Pendel-&#xA;verſuche" class="dta-reg">Pendelversuche</span> <span title="Original: wiſſen" class="dta-reg">wissen</span>. Er <span title="Original: ſagt" class="dta-reg">sagt</span>, die größte Höhe des Olymps<br/>
+<span title="Original: ſei" class="dta-reg">sei</span> der größten Tiefe des Meeres gleich, nämlich 10<br/>
+Stadien.</p><br/>
+</div>
+<span class="dta-pb" style="padding-left:15em">|#f0338 : 332.|</span><br/>
+<div class="">   <div class="dta-head">Von der Dichtigkeit und <span title="Original: chemiſchen" class="dta-reg">chemischen</span> <span title="Original: Beſchaffenheit" class="dta-reg">Beschaffenheit</span><br/>
+des <span class="u "><span title="Original: Waſſers" class="dta-reg">Wassers</span>.</span></div><br/>
+<p class="dta-p">Je mehr man in <span title="Original: neuern" class="dta-reg">neueren</span> Zeiten die Dichtigkeit des<br/>
+<span title="Original: Waſſers" class="dta-reg">Wassers</span> <span title="Original: maaß" class="dta-reg">maß</span>, um <span title="Original: ſo" class="dta-reg">so</span> verwirrter wurden die <span title="Original: Anſichten" class="dta-reg">Ansichten</span> darüber.<br/>
+<span title="Original: Zuerſt" class="dta-reg">Zuerst</span> glaubte man, daß die größte Dichtigkeit <span title="Original: deſſelben" class="dta-reg">desselben</span><br/>
+am <span title="Original: Aequator" class="dta-reg">Äquator</span> <span title="Original: ſei" class="dta-reg">sei</span>, doch aus den <span title="Original: Verſuchen" class="dta-reg">Versuchen</span> von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118716581">Gay <span title="Original: Lusſac" class="dta-reg">Lussac</span></a></span></span><br/>
+und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117626708">J. Delle</a></span>,</span> der deshalb nach Ceylon <span title="Original: gieng" class="dta-reg">ging</span>, <span title="Original: iſt" class="dta-reg">ist</span> der <span title="Original: Unter-&#xA;ſchied" class="dta-reg">Unterschied</span> der Dichtigkeit in den <span title="Original: verſchiedenen" class="dta-reg">verschiedenen</span> Zonen nur <span title="Original: unbe-&#xA;deutend" class="dta-reg">unbedeutend</span>, denn <span title="Original: ſie" class="dta-reg">sie</span> fanden, daß die fixen <span title="Original: Beſtandtheile" class="dta-reg">Bestandteile</span> des<br/>
+<span title="Original: Waſſers" class="dta-reg">Wassers</span> nicht viel über <span title="Original: 3½" class="dta-reg">31/2</span> <span title="Original: Procent" class="dta-reg">Prozent</span> ausmachen. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118716581">Gay<br/>
+<span title="Original: Lusſac" class="dta-reg">Lussac</span></a></span></span> fand auch, daß der <span title="Original: Unterſchied" class="dta-reg">Unterschied</span> der Dichtigkeit <span class="dta-add" title="Hinzufügung (superlinear)">nicht</span><br/>
+von den Salzen abhängt. Das <span title="Original: Waſſer" class="dta-reg">Wasser</span> <span title="Original: iſt" class="dta-reg">ist</span> in den größten<br/>
+Tiefen nicht mehr oder weniger <span title="Original: ſalzig" class="dta-reg">salzig</span> als in den <span title="Original: obern" class="dta-reg">oberen</span><br/>
+Schichten. Nach <span class="aq "><span title="Personenname">Marcets</span></span> <span title="Original: Analyſe" class="dta-reg">Analyse</span> enthält das<br/>
+<span title="Original: Meerwaſſer" class="dta-reg">Meerwasser</span> auf 1000 <span title="Original: Theile" class="dta-reg">Teile</span>:</p><br/>
+<div class="dta-list">   <div class="dta-list-item">26,6 <span title="Original: ſalzſaures" class="dta-reg">salzsaures</span> Natron,</div>
+<div class="dta-list-item">4,66 <span title="Original: ſchwefelſaures" class="dta-reg">schwefelsaures</span> Natron,</div>
+<div class="dta-list-item">1,232 <span title="Original: ſalzſaure" class="dta-reg">salzsaure</span> Kalkerde,</div>
+<div class="dta-list-item">5,154 <span title="Original: 〃" class="dta-reg">"</span> Talkerde,</div>
+</div>   <p class="dta-p">alle <span title="Original: Beſtandtheile" class="dta-reg">Bestandteile</span> in <span title="Original: waſſerfreiem" class="dta-reg">wasserfreiem</span> <span title="Original: Zuſtande" class="dta-reg">Zustande</span> berechnet.<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117433144"><span title="Original: Wollaſton" class="dta-reg">Wollaston</span></a></span></span> hat gefunden, daß das <span title="Original: Meerwaſſer" class="dta-reg">Meerwasser</span> <span title="Original: außer-" class="dta-reg">außerdem</span>
+<span class="dta-pb" style="padding-left:15em">|#f0339 : 333.|</span><br/>
+<span title="Original: dem" class="dta-reg"/> auch <span title="Original: ſalzſaures" class="dta-reg">salzsaures</span> und <span title="Original: ſchwefelſaures" class="dta-reg">schwefelsaures</span> Kali, jedoch nicht<br/>
+über <span class="sup "><span title="Original: 1" class="dta-reg">1/2000</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 2000" class="dta-reg"/></span> vom Gewichte des <span title="Original: Waſſers" class="dta-reg">Wassers</span>, enthalte, und<br/>
+<span class="aq "><span title="Personenname">Marcet</span></span> hat gezeigt, daß keine Spur von <span title="Original: ſalpeterſauren" class="dta-reg">salpetersauren</span><br/>
+Salzen darin enthalten <span title="Original: ſei" class="dta-reg">sei</span>. Dagegen <span title="Original: ſetzt" class="dta-reg">setzt</span> es beim <span title="Original: Ab-&#xA;dampfen" class="dta-reg">Abdampfen</span> eine nicht unbedeutende Menge <span title="Original: kohlenſauren" class="dta-reg">kohlensauren</span> Kalkes<br/>
+ab. <span title="Original: Dieſer" class="dta-reg">Dieser</span> im <span title="Original: Meerwaſſer" class="dta-reg">Meerwasser</span> <span title="Original: aufgelöſte" class="dta-reg">aufgelöste</span> <span title="Original: kohlenſaure" class="dta-reg">kohlensaure</span> Kalk<br/>
+<span title="Original: ſcheint" class="dta-reg">scheint</span> die Quelle zu <span title="Original: ſein" class="dta-reg">sein</span>, wovon die <span title="Original: Schaalthiere" class="dta-reg">Schaltiere</span> im<br/>
+Meere die Materialien zur Bildung ihrer <span title="Original: Schaalen" class="dta-reg">Schalen</span> nehmen.<br/>
+Außerdem hat man in <span title="Original: neuern" class="dta-reg">neueren</span> Zeiten noch Jod und<br/>
+Brom im <span title="Original: Meerwaſſer" class="dta-reg">Meerwasser</span> entdeckt.</p><br/>
+<p class="dta-p">Merkwürdig genug finden <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: Süßwaſſerquellen" class="dta-reg">Süßwasserquellen</span> auf <span title="Original: Sand-&#xA;bänken" class="dta-reg">Sandbänken</span> oft mitten im Meere. Eine <span title="Original: ſolche" class="dta-reg">solche</span> <span title="Original: Süßwaſſer-&#xA;quelle" class="dta-reg">Süßwasserquelle</span> <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: ſüdlich" class="dta-reg">südlich</span> von Cuba, als die Folge eines <span title="Original: aero-&#xA;ſtatiſchen" class="dta-reg">aerostatischen</span> Drucks. Die Schiffer können hier mehrere Meilen<br/>
+weit <span title="Original: ſüßes" class="dta-reg">süßes</span> <span title="Original: Waſſer" class="dta-reg">Wasser</span> <span title="Original: ſchöpfen" class="dta-reg">schöpfen</span>, und Seekühe, die <span title="Original: ſich" class="dta-reg">sich</span> nur<br/>
+auf <span title="Original: ſüßem" class="dta-reg">süßem</span> <span title="Original: Waſſer" class="dta-reg">Wasser</span> zeigen, erinnere <span title="Original: ſie" class="dta-reg">sie</span> daran.</p><br/>
+<p class="dta-p">Man hat das <span title="Original: Meerwaſſer" class="dta-reg">Meerwasser</span> auf mancherlei <span title="Original: Weiſe" class="dta-reg">Weise</span> zu<br/>
+reinigen und trinkbar zu machen <span title="Original: geſucht" class="dta-reg">gesucht</span>; allein nur zwei<br/>
+Arten <span title="Original: ſind" class="dta-reg">sind</span> geglückt, und auch <span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: ſind" class="dta-reg">sind</span> mit <span title="Original: ſo" class="dta-reg">so</span> viel <span title="Original: Schwie-&#xA;rigkeiten" class="dta-reg">Schwierigkeiten</span> verknüpft, daß <span title="Original: ſie" class="dta-reg">sie</span> bei <span title="Original: Schiffreiſen" class="dta-reg">Schiffreisen</span> wenig<br/>
+brauchbar <span title="Original: ſind" class="dta-reg">sind</span>. Die eine <span title="Original: iſt" class="dta-reg">ist</span> die <span title="Original: Deſtillation" class="dta-reg">Destillation</span>, die andere<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0340 : 334.|</span><br/>
+das <span title="Original: Durchſeihen" class="dta-reg">Durchseihen</span> des <span title="Original: Waſſers" class="dta-reg">Wassers</span> durch Sand. Da letztere<br/>
+Methode aber noch weniger <span title="Original: ſeinem" class="dta-reg">seinem</span> Entzwecke <span title="Original: entſpricht" class="dta-reg">entspricht</span><br/>
+als <span title="Original: erſtere" class="dta-reg">erstere</span>, <span title="Original: ſo" class="dta-reg">so</span> hat man <span title="Original: ſich" class="dta-reg">sich</span> kürzlich auf der, von der <span title="Original: fran-&#xA;zöſiſchen" class="dta-reg">französischen</span> Regierung unter <span class="aq "><span title="Original: Capitain" class="dta-reg">Kapitän</span> <span title="Personenname"><a href="http://d-nb.info/gnd/124760295">Freycinet</a></span></span> <span title="Original: ausgerüſteten" class="dta-reg">ausgerüsteten</span><br/>
+Entdeckungs-Expedition mit Erfolg der <span title="Original: Deſtillation" class="dta-reg">Destillation</span><br/>
+von <span title="Original: Meerwaſſer" class="dta-reg">Meerwasser</span>, zur Gewinnung trinkbaren <span title="Original: Waſſers" class="dta-reg">Wassers</span><br/>
+zu bedienen <span title="Original: verſucht" class="dta-reg">versucht</span>, wobei der <span title="Original: Deſtillationsapparat" class="dta-reg">Destillationsapparat</span> <span title="Original: ſo" class="dta-reg">so</span><br/>
+eingerichtet war, daß das <span title="Original: Waſſer" class="dta-reg">Wasser</span> mit dem <span title="Original: Ueberſchuße" class="dta-reg">Überschusse</span><br/>
+der Wärme bei der Zubereitung der <span title="Original: Speiſen" class="dta-reg">Speisen</span> <span title="Original: deſtillirt" class="dta-reg">destilliert</span><br/>
+wurde. <span title="Original: –" class="dta-reg">-</span> <span title="Original: –" class="dta-reg">-</span> Noch <span title="Original: iſt" class="dta-reg">ist</span> aber ein<br/>
+bitterer Schleim, <span title="Original: organiſchen" class="dta-reg">organischen</span> <span title="Original: Urſprungs" class="dta-reg">Ursprungs</span>, im <span title="Original: Meerwaſſer" class="dta-reg">Meerwasser</span><br/>
+enthalten, womit das Leuchten des Meeres <span title="Original: zuſammenhängt" class="dta-reg">zusammenhängt</span>,<br/>
+und was am <span title="Original: ſchönſten" class="dta-reg">schönsten</span> in den Tropenländern wahrgenommen<br/>
+wird. <span title="Original: Dieſer" class="dta-reg">Dieser</span> Schlamm dient den <span class="aq ">Cetaceen,</span> <span title="Original: Wallfiſchen" class="dta-reg">Wallfischen</span> <span class="aq ">etc.</span> zur<br/>
+Nahrung, und das <span title="Original: Waſſer" class="dta-reg">Wasser</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span> <span title="Original: genoſſen" class="dta-reg">genossen</span> erregt <span title="Original: Uebel-&#xA;keit" class="dta-reg">Übelkeit</span>. <span title="Original: Zweien" class="dta-reg">Zwei</span> <span title="Original: Urſachen" class="dta-reg">Ursachen</span> <span title="Original: iſt" class="dta-reg">ist</span> dies Leuchten überhaupt<br/>
+<span title="Original: zuzuſchreiben" class="dta-reg">zuzuschreiben</span>, <span title="Original: erſtens" class="dta-reg">erstens</span> rührt es von <span title="Original: Thieren" class="dta-reg">Tieren</span> aus dem<br/>
+<span title="Original: Molluskengeſchlecht" class="dta-reg">Molluskengeschlecht</span>, als die <span title="Original: geſellig" class="dta-reg">gesellig</span> lebenden <span title="Original: D" class="dta-reg">Degusen</span><span title="Original: e" class="dta-reg"/><span title="Original: guſen" class="dta-reg"/>, <span title="Schreibfehler: Berelit" class="dta-corr"><span title="Original: Beroë" class="dta-reg">Beroe</span></span>,<br/>
+<span title="Original: Peroſoma" class="dta-reg">Perosoma</span> <span class="aq "><span title="Original: etc" class="dta-reg">etc.</span></span><span title="Original: ." class="dta-reg"/> <span class="dta-add" title="Hinzufügung (superlinear)">her<span title="Schreibfehler: " class="dta-corr">.</span></span> Von den vollkommenen <span title="Original: Thieren" class="dta-reg">Tieren</span> <span title="Original: ſind" class="dta-reg">sind</span> es die<br/>
+<span title="Original: Strahlenthiere" class="dta-reg">Strahlentiere</span>, zu denen die <span title="Original: Meduſen" class="dta-reg">Medusen</span> gehören, welche <span title="Original: ſelbſt" class="dta-reg">selbst</span><br/>
+noch <span title="Original: 12′" class="dta-reg">12'</span> tief unter dem <span title="Original: Waſſer" class="dta-reg">Wasser</span> leuchten, wozu <span title="Original: alſo" class="dta-reg">also</span> der<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0341 : 335.|</span><br/>
+<span title="Original: Sauerſtoff" class="dta-reg">Sauerstoff</span> der Atmosphäre nicht mitwirken kann, wie<br/>
+man früher wohl glaubte. Zweitens rührt der größere<br/>
+<span title="Original: Theil" class="dta-reg">Teil</span> des Leuchtens vorzüglich von <span title="Original: ſchleimartigen" class="dta-reg">schleimartigen</span> <span title="Original: organiſchen" class="dta-reg">organischen</span><br/>
+<span title="Original: Maſſen" class="dta-reg">Massen</span> her, die auf dem Meere <span title="Original: ſchwimmend" class="dta-reg">schwimmend</span> angetroffen<br/>
+werden, wie mich <span title="Original: ei" class="dta-reg">eigene</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 4 Zeichen fehlen]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: gene" class="dta-reg"/></span> <span title="Original: Unterſuchungen" class="dta-reg">Untersuchungen</span> überzeugten,<br/>
+und auch die des <span class="aq ">Dr. <span title="Personenname"><a href="http://d-nb.info/gnd/118529250"><span title="Original: Ehrenberg" class="dta-reg">Ehrenbergs</span></a></span><span title="Original: s" class="dta-reg"/></span> im <span title="Original: rothen" class="dta-reg">roten</span> Meere <span title="Original: beſtätigen" class="dta-reg">bestätigen</span>.<br/>
+Leuchtende <span title="Original: Infuſionsthierchen" class="dta-reg">Infusionstierchen</span> <span title="Original: giebt" class="dta-reg">gibt</span> es dagegen nicht.<br/>
+Durch jede <span title="Original: Erſchütterung" class="dta-reg">Erschütterung</span> wird das Leuchten erregt; die<br/>
+<span title="Original: Meduſen" class="dta-reg">Medusen</span> leuchten durch den Schlag, eine andere Erzeugung<br/>
+<span title="Schreibfehler: iſt " class="dta-corr">[…]</span><span title="Original: deſſelben" class="dta-reg">desselben</span> <span title="Original: iſt" class="dta-reg">ist</span> durch den Nervenreiz, wobei <span title="Original: ſie" class="dta-reg">sie</span> den <span title="Original: orga-&#xA;niſchen" class="dta-reg">organischen</span> <span title="Original: Lichtproceß" class="dta-reg">Lichtprozeß</span> geben. Alle <span title="Original: Erſcheinungen" class="dta-reg">Erscheinungen</span> <span title="Original: dieſes" class="dta-reg">dieses</span> Leuchtens<br/>
+hängen mit der Witterung <span title="Original: zuſammen" class="dta-reg">zusammen</span>, und es <span title="Original: iſt" class="dta-reg">ist</span> möglich,<br/>
+daß die <span title="Original: Thiere" class="dta-reg">Tiere</span> zu <span title="Original: gewiſſen" class="dta-reg">gewissen</span> Zeiten lieber an die Oberfläche<br/>
+kommen als zu <span title="Original: andern" class="dta-reg">anderen</span>. Das Ganze <span title="Original: iſt" class="dta-reg">ist</span> demnach kein<br/>
+<span title="Original: meteorlogiſches" class="dta-reg">meteorlogisches</span> Phänomen.</p></div></div></div></div></body></html>

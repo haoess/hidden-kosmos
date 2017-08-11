@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[46. Vorlesung, 31.03.1828]</span></div><br/>
+<div class=""><div class=""><div class=""><div class=""><p class="dta-p">Die Meteorologie hat wie die Botanik ihre geogra-<br/>
+phiſchen Gebiete, die wir hier betrachten wollen. Es kann<br/>
+hier aber nicht die Rede von einzelnen Phänomenen ſein,<br/>
+ſondern nur in ſo weit gehören ſie hier einer Unterſuchung<br/>
+an, als ſie in geographiſcher Beziehung damit in Ver-<br/>
+bindung ſtehen. Lange hat man in dieſer Wiſſenſchaft<br/>
+keinen andern Theil als den der Wärme beſtimmt,<br/>
+denn was das Hygrometer betrifft, ſo iſt es erſt in neuem<br/>
+Zeiten zu ſichern Reſultaten angewandt.</p><br/>
+<p class="dta-p">Bei uns bemerken wir den Thau nur zu Lande; auf<br/>
+dem Meere giebt es faſt gar nicht, oder doch nur ſelten Thau,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0400 : 394.|</span><br/>
+weshalb die Schiffer durch ſeine Gegenwart ſicher auf ein<br/>
+nahes Eiland ſchlieſſen. Häufiger und ſtärker aber als<br/>
+in der temperirten Zone, iſt er in den Tropen. –</p><br/>
+<p class="dta-p">Gewöhnlich iſt das Regen- und Schneewaſſer mit atmos-<br/>
+phäriſcher Luft, ein wenig Salpeterſäure <span title="Original: /" class="dta-reg">(</span>in geringer Menge<br/>
+bei Verbrennungen gebildet<span title="Original: /" class="dta-reg">)</span> und, wie behauptet wird, von<br/>
+einer äußerſt geringen Menge ſalzſauren Kalke verunreinigt.<br/>
+Was inzwiſchen den letztern betrifft, ſo iſt deſſen Anwe-<br/>
+ſenheit wenig wahrſcheinlich; denn dieſes Salz iſt völlig<br/>
+feuerbeſtändig, und kommt, ſo viel wir jetzt wiſſen, nicht<br/>
+in Gasgeſtalt vor. <span class="dta-metamark" title="metamark">―</span> <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118510185">Berzelius</a></span></span></span>.</p><br/>
+<p class="dta-p">Merkwürdig iſt es daß in den Tropen die Regenzeit<br/>
+mit der trocknen Jahrszeit wechſelt, da erſtere wie bekannt-<br/>
+lich dort den Winter vertrit. Der Anfang der Regenzeit<br/>
+daſelbſt beginnt mit dem Aufhören der Paſſat- oder Oſt-<br/>
+winde, und iſt um ſo eindrucksvoller, da es oft in 5 bis<br/>
+6 Monaten gar nicht regnet, nicht einmal ein Wölkchen am<br/>
+Himmel ſich ſehen läßt, und Thiere wie Pflanzen beim<br/>
+Waſſermengel zu verdurſten ſcheinen. Die Verboten der<br/>
+Regenzeit ſind, daß einige Wolken ſich zeigen, das Blaue<br/>
+des Himmels verändert ſich, und die Sterne fangen an<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0401 : 395.|</span><br/>
+mehr zu funkeln, weil mehr ungleiche Luftſchichten die<br/>
+Lichtwellen ſtärker brechen. Dann entſteht eine Wolken-<br/>
+wand tief im Oſten, das Hygrometer zeigt mehr Feuchtig-<br/>
+keit und der Paſſatwind wird ſchwächer. Anfänglich iſt<br/>
+keine Einwirkung der Elektricität bemerkbar, dann geht<br/>
+dieſe aber plötzlich vom Poſitiven zum Negativen über. Nach<br/>
+und nach ſieht man jeden Abend aus dem Gewölke das<br/>
+Wetterleuchten, es entſteht ein, Gewitter, und das Ge-<br/>
+wölk beginnt im April oder Mai, ſich in einem anhaltenden<br/>
+Regen zu entladen, der nun mit dem gänzliche Aufhören<br/>
+des Paſſatwindes beginnt. – Durch die kühlere Luft-<br/>
+ſchicht, die mit den Paſſatwinden vom Pole zum Aequator<br/>
+geführt wird, wurden die aufſteigende Waſſerdünſte<br/>
+verjagt, bei dem Aufhören dieſer Strömungen aber bleiben<br/>
+ſie, und laſſen ſich in Regengüſſen nieder. Die Regenzeit<br/>
+entſteht gerade dann, wenn die Sonne durch den Zenith des<br/>
+Ortes geht.</p><br/>
+<p class="dta-p">Die Quantität des Regens iſt bei uns jährlich 18<br/>
+bis 24″ in den Tropen dagegen 118–128″, d. h. das<br/>
+Regenwaſſer würde, wenn es nicht ablaufen und nicht in die<br/>
+Erde dringen könnte, ſo hoch ſtehen. Auffallend findet aber<br/>
+in Europa ein bedeutender Unterſchied gegen andere tempe-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0402 : 396.|</span><br/>
+rirte Zonen an der weſtlichen Küſte von England ſtatt,<br/>
+wo 43″ fallen, während an der öſtlichen Küſte die Menge<br/>
+deſſelben nur 22″ beträgt. Dieſer Umſtand rührt von<br/>
+der Menge feuchter Winde her, welche über den Attlan-<br/>
+tiſchen Ocean kommen, und dieſe Küſte zuerſt berühren.<br/>
+Ebenſo fand <span title="H￼" class="dta-abbr">Herr</span> <span title="Personenname"><a href="http://d-nb.info/gnd/116817569">L. <span class="aq ">v. Buch</span></a></span>, daß es bei Bergen in Scan-<br/>
+dinavien 70–92″ jährlich regnet, und im Innern nur<br/>
+14–15″ Regen fällt. Die Quantität des Regens<br/>
+und einmal in den Tropen, und an einem Tage beträgt 4–<br/>
+5 mal mehr als hier.</p><br/>
+<p class="dta-p">Der Regen iſt von verſchiedenen Graden der <span title="Schreibfehler: Heflig-&#xA;keit" class="dta-corr">Heftig-<br/>
+keit</span>, und erhält hiernach beſondere Namen, z. B. Staub-<br/>
+regen, Platzregen u. ſ. w. Die Verſchiedenheit des Regens<br/>
+rührt von der ungleichen Höhe der Wolken über der<br/>
+Erdoberfläche her, wenn ſie nicht durch die Elektricität ent-<br/>
+ſteht. Bei einem Staubregen ſtreichen die Wolken oft<br/>
+ganz auf der Erde hin, bei einem ſtärkern Regen gehen<br/>
+ſie weit höher. Je höher die Wolken ziehen, deſto größer<br/>
+werden die Tropfen beim Fallen und deſto ſchneller ſtürzen<br/>
+ſie herab. Daher iſt ein Platzregen in wärmern Ländern<br/>
+gewöhnlicher, als im Norden, weil in jenen die wärmeren<br/>
+Schichten der Atmosphäre tiefer ſind und das Waſſergas<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0403 : 397.|</span><br/>
+daher genöthigt wird, vor ſeiner Verdichtung zu Wolken,<br/>
+in eine gröſſere Höhe aufzuſteigen. Daher werden die<br/>
+Regentropfen zwiſchen den Wendekreiſen bisweilen ſo groß,<br/>
+daß ſie ¼ Zoll im Durchmeſſer haben, und unter dem Aequator<br/>
+hat man ſie ſogar zuweilen von einem ganzen Zoll im Durch-<br/>
+meſſer beobachtet.</p><br/>
+<p class="dta-p">Das Regenwaſſer iſt immer kälter <span title="Original: /" class="dta-reg">(</span>1–1⅐°<span title="Original: /" class="dta-reg">)</span> als<br/>
+die umgebende Luft, was erſtens daher rühren kann, daß<br/>
+die Tropfen während des Fallens etwas verdampfen, und<br/>
+zweitens muß man die Höhe berückſichtigen, aus der ſie<br/>
+fallen. – In den temperirten Zonen ſowohl wie in<br/>
+den Tropen, fällt in verſchiedene Zeiten auch eine ſehr ver-<br/>
+ſchiedene Quantität des Regens; ſo fand <span title="H￼" class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname">Cardi de la Broſe</span></span><br/>
+im ſüdlichen Frankreich, daß wenn es in einem Monate nur<br/>
+einige Zoll regnete, im einem Monate zu einer andern Zeit<br/>
+2′5″ Regen fielen. Ebenſo hat man in Cajenne beobachtet<br/>
+daß innerhalb 24 Tagen 12′2″ Waſſer fielen.</p><br/>
+<p class="dta-p">Wenn der Regen in einen Ombrometer <span title="Original: /" class="dta-reg">(</span>Hyetometer<span title="Original: /" class="dta-reg">)</span> aufge-<br/>
+fangen wird, ſo fällt auf einem Thurme weniger Waſſer<br/>
+als unten auf der Erde. In Paris zeigte ſich nach 10<br/>
+jährigen Beobachtungen der Unterſchied durch Mittelzahlen<br/>
+nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116299762">Bouvois</a></span></span> berechnet, daß einer Höhe von 90′ um 74<br/>
+mehr Waſſer unten in der Tiefe gefallen war, als oben.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0404 : 398.|</span><br/>
+<p class="dta-p"><span class="u ">Schnee</span>. Wenn ſich Wolken bei einer Temperatur unter<br/>
+0° bilden, ſo verwandeln ſich die Waſſerdünſte in unendlich<br/>
+kleine und nadelförmige Kryſtalle, von welchen ſich immer<br/>
+mehrere unter Winkeln von 60° und 120° zuſammenſetzen,<br/>
+wie die Nadeln des gefrierenden Waſſers, und dadurch<br/>
+ſehr verſchiedenartige Kryſtallgeſtalten <span title="Original: /" class="dta-reg">(</span>das Waſſer<br/>
+ſoll überhaupt nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11858281X">Mitſcherlich</a></span></span> verſchiedene Kryſtallformen<br/>
+annehmen<span title="Original: /" class="dta-reg">)</span> vom ſchönſten Anſehen, bilden, welche einander<br/>
+bei einem und demſelben Schneewetter immer gleich ſind.<br/>
+Sie wachſen im Fallen, wie die Regentropfen, und häufen<br/>
+ſich oft zu groſſen Flocken zuſammen. Ueberhaupt gilt<br/>
+vom Schnee alles das, was ich vom Regen geſagt habe,<br/>
+und der Unterſchied liegt blos in der Temperatur.</p><br/>
+<p class="dta-p">Bei einem windſtillen und ſehr kalten Tage fällt kein<br/>
+Schnee, weil kein Waſſergas gefällt werden kann, ſondern<br/>
+wenn es da ſchneien ſoll, muß aus eine weniger kalte<br/>
+und feuchtere Luft zugeführt werden. Dieſe wird dann abge-<br/>
+kühlt, ſetzt ihr Waſſer ab und bildet Schnee. Daher<br/>
+pflegt auch die Luft kurz vor dem Schneien milder zu werden,<br/>
+als vorher. Gewöhnlich ſchreibt man dieſe Erſcheinung der<br/>
+Kryſtalliſation des Waſſers zu, wobei die Wärmeſtoff<br/>
+des Gaſes frei würde; allein in dieſem Falle würde der<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0405 : 399.|</span><br/>
+Wärmeſtoff von neuem die Expanſionskraft des Waſſers<br/>
+vermehren, und es könnte daher in jedem Falle nicht mehr<br/>
+Schnee gebildet werden, als die Abkühlung geſtattete. –<br/>
+Wenn wir bei Nordwind zuweilen Schnee mit ſtarker<br/>
+Kälte und Sturm bekommen, ſo iſt dieſer Schnee gewöhnlich<br/>
+in der aus wärmeren Ländern kommenden Luft gebildet, welche<br/>
+die höheren Regionen der Atmosphäre in entgegengeſetzter<br/>
+Richtung durchſtreicht.</p><br/>
+<p class="dta-p">Wenn Nordwind ohne Schnee weht, ſo iſt die Luft<br/>
+gewöhnlich klar, und Schnee und Eis verdunſten. Dieſe<br/>
+Luft iſt nämlich in nördlichen Ländern ſtärker abgekühlt<br/>
+worden, und hat dort ihr Waſſer abgeſetzt. Wenn ſie<br/>
+nun auf ihrem Wege nach Süden allmählig weniger kalt<br/>
+wird, ſo nimmt ihr Vermögen zu, mehr und mehr Waſſer-<br/>
+gas an ſich zu behalten, und dieſes verdunſtet, nach Ver-<br/>
+hältniß der Lufttemperatur, von dem Schnee und Eiſe,<br/>
+über welches die Luft hinſtreicht.</p><br/>
+<p class="dta-p">In den Tropen, namentlich auf der Andeskette, bei<br/>
+einer Höhe von 15–18000′ giebt es noch eine andere merk-<br/>
+würdige Bildung, ein Mittelding zwiſchen Schnee und Hagel,<br/>
+ſo verſchieden geſtaltet und ſcharf, daß das Geſicht davon<br/>
+wie zerſchnitten wird. –</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0406 : 400.|</span><br/>
+<p class="dta-p">Unter den Tropen ſchneiet es weit häufiger wenn<br/>
+das Thermometer einige Grade über dem Gefrierpunkte<br/>
+ſteht, als darunter; wie auch in mehrern andere Gegenden,<br/>
+was die vielen Beobachtungen von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11935439X">Roſs</a></span></span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parry</a></span></span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11671350X">Sabine</a></span></span>,<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117654167">Scoresby</a></span> etc</span>. beſtätigen, doch haben dieſelben Reiſenden<br/>
+auch gefunden, daß es bei 12° R. ſchneiete.</p><br/>
+<p class="dta-p">Unter dem Aequator fällt nur auf Höhen von<br/>
+mindeſten 12000′ Schnee; von die Tropen aufhören<br/>
+etwa unter dem 20° der Breite nur auf Höhen von 9300′.<br/>
+In Mexico weiß man es ſich nur 2 mal zu erinnern daß<br/>
+Schnee fiel, und hiervon einmal vor 30–40 Jahren, zu-<br/>
+fällig an demſelben Tage als die Jeſuiten vertrieben<br/>
+wurden. – –</p><br/>
+<p class="dta-p">Der Schnee giebt wenn er zuſammengepreßt wird<br/>
+⅓ Waſſer, ſo locker ungepreßt nur <span class="sup ">1</span>/<span class="sub ">12</span>.</p><br/>
+<p class="dta-p">Bei Argantſchir am See Lexla trug ſich das merkwürdige<br/>
+Phänomen zu, daß Schnee bei und nach ſeinem Falle leuch-<br/>
+tete, was ich aber nicht ſelbſt geſehen habe. Es iſt dies<br/>
+vielleicht der Zuſtand, wo die meteoriſch organiſche Bildung<br/>
+beginnt, denn zuverläſſige Perſonen, die den Schnee mit<br/>
+ihren Fingern anfaßten, bemerkten, daß ſelbſt dieſe leuch-<br/>
+tend blieben. Der rothe Schnee, über deſſen Bildung<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0407 : 401.|</span><br/>
+ich weil er den Pflanzen angehört, noch näher ſprechen<br/>
+werde, ſcheint auch einen ſolchen Zuſammenhang zu haben.</p><br/>
+<p class="dta-p"><span class="u ">Hagel</span> wird ebenfalls durch Kälte erzeugt, aber<br/>
+unter ganz andern Umſtänden. Er entſteht nur im<br/>
+Sommer, oder in wärmern Ländern, und zwar, einer allge-<br/>
+meinen Beobachtung zufolge, nur wenn die Sonne ſich<br/>
+über dem Horizont befindet und die Luft nicht ſo kalt<br/>
+iſt, daß die Waſſerdämpfe ſelbſt erſtarren können, jedoch<br/>
+in den höhern Regionen der Atmosphäre ſchnell eine ſo<br/>
+ſtarke Kälte entſteht, daß die ſchon gebildeten Regentropfen<br/>
+zu Eis gefrieren. Der Hagel beſteht daher mehr aus<br/>
+runden Körnern und nicht aus regelmäßigen Kryſtallen,<br/>
+wie der Schnee. Gewöhnlich ſind dieſe Hagelkörner ſo kalt,<br/>
+daß das Waſſer, welches ſich im Herabfallen an ſie anſetzt,<br/>
+ſogleich zu Eiskruſten gefriert, in welchen das urſprüng-<br/>
+liche Hagelkorn als ein weißer und durchſichtiger Kern<br/>
+eingeſchloſſen iſt. In wärmern Ländern, wo die Wolken<br/>
+oft ſehr hoch gehen und die Luft mehr Feuchtigkeit enthält,<br/>
+wird der Hagel oft weit größer, als bei uns. Dieſer<br/>
+bildet ſich aber nicht auf einmal in der Luft, ſondern ver-<br/>
+größert ſich erſt im Herabfallen, theils durch das Waſſer,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0408 : 402.|</span><br/>
+das ſich wegen ihrer Kälte auf ihnen niederſchlägt,<br/>
+theils durch das Zuſammenfrieren mehrerer Körner, welche<br/>
+ſich mit jedem Augenblicke vermehren müſſen, weil die<br/>
+Schnelligkeit der größern Hagelkörner in größere Ver-<br/>
+hältniße, als bei den kleineren, zunimmt, dieſe daher<br/>
+von den größern im Fallen ereilt werden und ſich<br/>
+an ſie feſtſetzen.</p><br/>
+<p class="dta-p">Die Urſache einer ſo ſchnell entſtehenden Kälte in<br/>
+der Sommer-Atmosphäre iſt uns unbekannt. Jedes<br/>
+Hagelwetter iſt, wo nicht ſtets von Donner, doch wenig-<br/>
+ſtens immer von ſehr deutlichen Merkmalen von Elektrici-<br/>
+tät begleitet; in welchem Zuſammenhange aber die<br/>
+Elektricität mit jener ſchnellen Erzeugung von Kälte<br/>
+ſtehe, können wir noch nicht erklären.</p><br/>
+<p class="dta-p">Man glaubt daß wenn zwei elektriſche Wolken<br/>
+neben einander ſtehen, ſie den Hagel wechſelweiſe an-<br/>
+ziehen und abſtoßen, und dies die Urſache von dem<br/>
+Raſſeln in der Luft ſei das man beim Hageln hört,<br/>
+und vorzugsweiſe ein Phänomen der temperirten Zone iſt.</p><br/>
+<p class="dta-p">An den Polen wie unter den Tropen hagelt es faſt<br/>
+gar nicht, unter den Tropen höchſt ſelten bei 5000′ Höhe.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0409 : 403.|</span><br/>
+<p class="dta-p">Warum es unter den Tropen ſo höchſt ſelten hagelt, iſt<br/>
+bisher noch nicht ermittelt, da die Urſache nicht die iſt, daß<br/>
+er ſchmilzt. Im ſüdliche Europa hagelt es am <span title="meiſt࿼" class="dta-abbr">meiſten</span>,<br/>
+vorzüglich in Thälern. Nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100690793">Thibaut Ch.</a></span></span> weiß man,<br/>
+daß es in Martinique nur einmal gehagelt hat, und zwar<br/>
+vor 50–60 Jahren. In Carracas würde der Hagel<br/>
+eben ſoviel Aufſehen erregen, als wenn bei uns Me-<br/>
+teore fielen. Nach <span title="H￼" class="dta-abbr">Herrn</span> <span title="Personenname"><a href="http://d-nb.info/gnd/116817569">L. <span class="aq ">v. Buch</span></a></span> hagelt es ſelten<br/>
+auf großen Höhen, jedoch hat dieſer auch ſelbſt gefunden<br/>
+daß 14–15000′ hoch Hagel fiel. Er fällt ſeltener des<br/>
+Nachts wie bei Tage, und früher glaubte man daß es<br/>
+des Nachts gar nicht hageln, da das Einwirken der Sonne<br/>
+dazu nöthig ſei; dies iſt aber nicht der Fall.</p><br/>
+<p class="dta-p">Die Gröſſe des Hagels iſt nach den Zonen verſchie-<br/>
+den; in den Cordilleren iſt er wohl ¼–½℔ ſchwer vor-<br/>
+gekommen, jedoch auch hier ſo wenig wie in andern Gegenden<br/>
+viel gröſſer, ſo viel auch darüber gefabelt iſt. Herr<br/>
+<span class="aq "><span title="Personenname">Heine</span></span> erwähnt zwar einen beſondere Fall, der kaum<br/>
+glaublich iſt, und ſehr der Beſtätigung bedarf, daß nämlich<br/>
+in Myſore <span title="Original: /" class="dta-reg">(</span>Oſtindien<span title="Original: /" class="dta-reg">)</span> zur Zeit des <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11902327X">Tippo Saheb</a></span>,</span> ein<br/>
+Hagelkorn ſo groß wie ein Elephant gefallen ſei, und beim<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0410 : 404.|</span><br/>
+Schmelzen einen höchſt unangenehmen Geruch verbreitet<br/>
+habe, der vielleicht von dem darin enthalten geweſenen<br/>
+Schwefelkies herrühre. Auch im Gouvernement Orenburg<br/>
+ſollen Hagelſtücke gefallen ſein, die in der Mitte kryſtal-<br/>
+liſirten Schwefelkies enthielten. Obgleich von Einigen<br/>
+dieſe Angabe behauptet wird, bedarf ſie doch, wenn es gleich<br/>
+nicht unmöglich iſt, noch ſehr der Beſtätigung, da man beider<br/>
+Unterſuchung nicht mehr den Hagel, ſondern nur noch den<br/>
+Schwefelkies hatte.</p><br/>
+<p class="dta-p">Die Form des Hagels iſt ebenfalls verſchieden, und<br/>
+oft ſehr ſonderbar. Durch das Rotiren der Körner von<br/>
+ihrer erſten Bildung an, bilden ſich einzelne concentriſche<br/>
+Lagen; andere dagegen ſind mehr abgeplattet, auch oft<br/>
+ſo wie die Weltkörper geformt, indem ſie gleich dieſen<br/>
+eine runde Form mit 2 abgeplatteten Polen haben.<br/>
+Andere giebt es unter dieſen wieder, die gleichſam einen<br/>
+Saturnring haben, der leicht abgelöſt werden kann. Der<br/>
+Herr <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">von Buch</a></span></span> ſich im hohen Norden von Scandinavien<br/>
+Hagel fallen, der eine Spitze nach oben hatte. Auf<br/>
+der Andeskette iſt aber der rothe Hagel in ziemlich<br/>
+groſſen Körner merkwürdig, von dem die Indianer mir<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0411 : 405.|</span><br/>
+viel erzählt haben. Um ſo mehr Intereſſe muß es erregen<br/>
+von rothem Hagel zu hören, da er dem Gedanken auf-<br/>
+keimen läßt, daß er mit dem rothen Schnee in Ver-<br/>
+bindung ſteht, welcher kleine vegetabiliſche Körner ent-<br/>
+hält, die ſich häufig vermehren, und mehrere Jahre erhalten<br/>
+laſſen. Wenn dieſe Vegetation ſich nicht im Schnee ſelbſt,<br/>
+ſondern der Keim ſchon in der Atmosphäre ſich bildete, ſo<br/>
+würde es ſehr beachtenswerth ſein. –</p><br/>
+<p class="dta-p"><span class="u ">Der Nebel</span> rührt von denſelben Urſachen, wie die<br/>
+Wolken, her, und iſt eigentlich nichts anders, als eine<br/>
+Wolke, die ſich nahe an der Erdoberfläche bildet. Er<br/>
+entſteht, wenn die Luftwärme ſchnell um mehrere Grade<br/>
+gegen die Temperatur des Erdbodens abgekühlt wird,<br/>
+wobei das Waſſer mit der, der Wärme der Erde ange-<br/>
+meſſenen Expanſionskraft von der Oberfläche der Erde und<br/>
+der Gewäſſer zu verdunſten fortfährt, das neugebildete<br/>
+Waſſergas aber ſogleich in der Luft wieder abgekühlt<br/>
+wird und niedergeſchlagen, nachher aber, wegen der Bewegung<br/>
+der wärmern Luft am Erdboden, allmählig höher und höher<br/>
+ſteigt. Der Nebel beginnt auf dieſe Weiſe, einige<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0412 : 406.|</span><br/>
+Stunden nach Sonnenuntergang oder eine Stunde vor ihrem<br/>
+Aufgange, über Waſſer und ſumpfigen Wieſen, und<br/>
+dauert fort, bis er entweder durch ſeine eigene Schwere<br/>
+als eine Art von Staubregen niederfällt, oder bis er nach<br/>
+Aufgang der Sonne durch die erwärmte Luft aufgelöſt<br/>
+wird. Oft ſieht man dabei, wie er vom Erdboden zu ver-<br/>
+ſchwinden anfängt, und dann auch nach oben zu allmählig<br/>
+abnimmt, in dem Maaſſe, wie die Luftſchichten immer höher<br/>
+und höher hinauf erwärmt werden. Da die Oberfläche<br/>
+des Waſſers ſtärker verdunſtet, als das trockne<br/>
+Land, ſo iſt der Nebel über Seen, und dann zunächſt<br/>
+an Seeküſten am häufigſten und dichteſten, weniger<br/>
+allgemein aber auf dem Lande. Er kann ſich eben ſo<br/>
+gut im Winter, als im Sommer bilden, und man ſieht<br/>
+in kalten Wintertagen oft Quellen und nicht zuge-<br/>
+frorene Ströme rauchen. Wenn der Nebel bei<br/>
+ſtarker Kälte fällt, ſo ſetzt er ſich in wollähnlichen<br/>
+Kryſtallen an Bäume und Häuſer an und bildet<br/>
+den <span class="u ">Reif</span>.</p><br/>
+<hr/>   <br/>
+</div>   </div></div></div></div></body></html>

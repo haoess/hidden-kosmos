@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span title="Original: D. 12. Jan. 28" class="dta-reg">20. Vorlesung, 12.01.1828</span></div><br/>
+<p class="dta-p"><span class="u ">Wir werden in dieſer Stunde anfangen</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Beſchreibung<br/>
+der Weltkörper<br/>
+selbſt.</span><br/>
+</span><span class="u ">die Weltkörper ſelbſt zu beſchreiben</span> u.<br/>
+zuerſt reden von den <span title="Planet￼" class="dta-abbr">Planeten</span> <span title="zwiſch￼" class="dta-abbr">zwiſchen</span> der<br/>
+Soñe u. der Erde, u. dañ <span title="zwiſch￼" class="dta-abbr">zwiſchen</span> dieſer<br/>
+u. dem Uranus; ferner <span title="betracht￼" class="dta-abbr">betrachten</span> wir<br/>
+als dañ die Cometen, ſowohl außerhalb<br/>
+als iñerhalb der Planetenbahn, u. dañ<br/>
+endlich die <span title="Aerolith￼" class="dta-abbr">Aerolithen</span>, die höchſt wahrſcheinlich<br/>
+kleine ſelbſtſtändige planetariſche Erſch.<br/>
+ſind. Da letztere viel gemeinſames mit den<br/>
+irdiſchen Stoffen haben; ſo werden wir<br/>
+ſie erſt im <span title="geognoſtiſch￼" class="dta-abbr">geognoſtiſchen</span> Theile abhandeln,<br/>
+beſonders die wir ſie erſt deutlich<br/>
+erkeñen, weñ ſie zu uns kom̃en. Jch<br/>
+fange zuerſt von den Soñe ſelbſt an</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0128 : 124.|</span><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Soñe</span><br/>
+</span><span class="u ">Sie iſt ein Centralkörper</span> u. hat 825 mal<br/>
+mehr <span class="aq ">Volumen</span> u. 560 mal mehr Maſſe oder<br/>
+materielle Theile als alle Planeten zuſam<span class="dta-supplied">[̃en]</span><br/>
+in eine einzige Kugel geballt. Der Durchm<span class="dta-supplied">[eſ-]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Durchmeſſer</span><br/>
+</span>ſer derſelben iſt gleich <span class="u ">109¾ Durchmeſſer</span><br/>
+der Erde, u. ihre Entfernung von derſel<span class="dta-supplied">[ben]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Entfernung</span><br/>
+</span><span class="u ">20 <span title="Million￼" class="dta-abbr">Millionen</span> u. 871,000 Meilen</span>. Sie iſt ſo <span class="dta-supplied">[groß]</span><br/>
+im Volumen, daß Mond u. Erde zwei mal<br/>
+ihr ſtehen köñen. Jch liebe nicht ſpielen<br/>
+Vergleiche, doch köñen ſie dazu dienen ein<span class="dta-supplied">[e]</span><br/>
+deutliche Anſicht des Maßes zu geben. Weñ<br/>
+demnach eine Kanonenkugel, die mit einer<br/>
+Geſchwindigkeit von 1500 Fuß in der Secun<span class="dta-supplied">[de]</span><br/>
+fliegt, <span title="abgeſchoß￼" class="dta-abbr">abgeſchoßen</span> würde, u. in gleicher Ge-<br/>
+ſchwindigkeit <span title="ununterbroch￼" class="dta-abbr">ununterbrochen</span> bliebe; ſo br<span class="dta-supplied">[auchen]</span><br/>
+dieſe von Paris bis Berlin zu gelange<span class="dta-supplied">[n]</span><br/>
+8 <span title="Minut￼" class="dta-abbr">Minuten</span> Zeit, von der Erde bis zum Mon<span class="dta-supplied">[de]</span><br/>
+9 Tage u. von der Erde bis zur Soñe<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Geſchwindigk.<br/>
+des Lichts</span><br/>
+</span>9 Jahre. <span class="u ">Das Licht der Soñe kom̃t zu</span> <span class="u ">uns</span><br/>
+<span class="u ">in 8 <span title="Minut￼" class="dta-abbr">Minuten</span> u. 13. Sec.</span> Beiläufig will<br/>
+ich nur hier erwähnen, daß weñ die Ge-<br/>
+ſchwindigkeit der Maſſe, die vielleicht d<span class="dta-supplied">[ie]</span><br/>
+Vulkane des Mondes auswerfen, 700<br/>
+Fuß in einer Secunde betragen möchte<br/>
+ſie allerdings nur etwa eine vier mal<br/>
+größere Kraft als Pulver bedürft<span class="dta-supplied">[en,]</span><br/>
+um hieher geſchleudert zu werden.<br/>
+Was ſehr merkwürdig iſt, daß ſind d<span class="dta-supplied">[ie]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Flecken</span><br/>
+</span><span class="u "><span title="Fleck￼" class="dta-abbr">Flecken</span> der Soñe</span>, die am <span title="öſtlich￼" class="dta-abbr">öſtlichen</span> Rand<br/>
+derſelben entſtehen, u. nach <span title="Weſt￼" class="dta-abbr">Weſten</span> ſich<br/>
+<span title="beweg￼" class="dta-abbr">bewegen</span> u. in 13 Tagen verſchwinden.<br/>
+Man hat aus dieſer Bewegung auf die<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Rotation</span><br/>
+</span><span class="u ">Rotation</span> geſchloſſen, die etwa 25,<span class="dta-supplied">[12]</span><br/>
+Tage dauert. Schon frühe sahe man dieſ<span class="dta-supplied">[e]</span><br/>
+Flecken mit bloßen Augen u. die Anale<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">der</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0129 : 125.|</span><br/>
+<span title="Schreibfehler: " class="dta-corr">der </span>Völker erzählen, daß die Hälfte der<br/>
+Soñenſcheibe einſt verdunkelt geweſen. Dieſe<br/>
+Epoche iſt in <span title="chineſiſch￼" class="dta-abbr">chineſiſchen</span> Analen um das J. 321<br/>
+n.C.G. angegeben. Große <span title="Fleck￼" class="dta-abbr">Flecken</span> ſahen die<br/>
+Arabiſchen Aſtronomen im Jahr 535 u. 626,<br/>
+wobei ſie glaubten, den Merkur in der<br/>
+Soñenſcheibe geſehen zu haben, welches aber<br/>
+unmöglich iſt mit <span title="bloß￼" class="dta-abbr">bloßen</span> Augen wahrzuneh-<br/>
+men; da er ſich nur wie ein ſchwarzer<br/>
+Punkt in der Soñenſcheibe zeigt. Da in<br/>
+Peru die Soñe viele Monate lang<span class="dta-del" title="Streichung (#s)"> wie</span><br/>
+in einen Nebel gefüllt erſcheint, ſo <span title="wurd￼" class="dta-abbr">wurden</span><br/>
+auch hier ſchon dieſe Flecken in der Soñe be-<br/>
+merkt. Bei Erfindung der Fernröhre quälte<br/>
+man ſich bei der Beobachtung der Soñe, indem<br/>
+man noch nicht kañte ſich der Blendgläſer<br/>
+dabei zu bedienen. Es entſtand ein Streit<br/>
+über die <span title="Soñenfleck￼" class="dta-abbr">Soñenflecken</span>, u. als 1610 ſie<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118720473">Herriot</a></span> beobachtete <span title="ſagt￼" class="dta-abbr">ſagten</span> Viele, er<br/>
+habe Fleck in den <span title="Aug￼" class="dta-abbr">Augen</span> gehabt, u. ſie nicht<br/>
+in der Soñe geſehen. Jch habe dieſe <span title="Fleck￼" class="dta-abbr">Flecken</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Beſchaffen-<br/>
+heit der Soñen-<br/>
+flecken.</span><br/>
+</span>selbſt lange beobachtet u. gefunden daß<br/>
+ſie <span class="u ">kohlſchwarz</span> ſind, von einem Halbſchatten<br/>
+oder <span title="aſchfarben￼" class="dta-abbr">aſchfarbenen</span> Rande umgeben; rund um<br/>
+<span title="dieſelb￼" class="dta-abbr">dieſelben</span> befinden ſich helle Lichtadern.<br/>
+Die Flecken entfernen ſich vom Aequator<br/>
+nicht weiter als etwa 30°. Es erſcheinen<br/>
+zuerſt helle Lichtfackeln u. als dañ kom̃t<br/>
+nach zwei Stunden ein ſchwarzer Flecken.<br/>
+Der ihn umgebende Halbſchatten iſt vollkom-<br/>
+men begrenzt. Es war von Profeſſor<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117581135">Huyzon</a></span></span> 1773. eine feine Beobachtung, daß<br/>
+die <span class="aq ">Penumbra</span>, weñ der <span title="Fleck￼" class="dta-abbr">Flecken</span> mitten in der<br/>
+Soñe ſteht, gleich groß iſt, an einer Seite<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">beim</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0130 : 126.|</span><br/>
+beim Entſtehen des Flecken ſchmale u. auf <span class="dta-supplied">[der]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Erſcheinung der <span title="Soñenfleck￼" class="dta-abbr">Soñenflecken</span></span><br/>
+<table class="dta-table"><tr><td><span class="u ">Beim Entſtehen am<br/>
+Rande d. Soñenflecke</span></td><td><span class="u ">Jn der Mitte<br/>
+<span title="derſelb￼" class="dta-abbr">derſelben</span></span></td><td><span class="u ">Beim <span title="Verſchwind￼" class="dta-abbr">Verſchwinden</span><br/>
+<span title="derſelb￼" class="dta-abbr">derſelben</span></span></td></tr><tr><td><span class="ph dta-figure" type="1">
+        [Abbildung]
+        </span><br/>
+</td><td><span class="ph dta-figure" type="2">
+        [Abbildung]
+        </span><br/>
+</td><td><span class="ph dta-figure" type="3">
+        [Abbildung]
+        </span><br/>
+</td></tr></table><br/>
+</span>andern breiter erſcheint u. dies beim <span title="Ver-&#xA;ſchwind￼" class="dta-abbr">Ve<span class="dta-supplied">[r-]</span><br/>
+ſchwinden</span> <span title="deſſelb￼" class="dta-abbr">deſſelben</span> der umgekehrte Fall iſt<br/>
+Die nebenſtehende Figur wird dies v<span class="dta-supplied">[er-]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Erklärung<br/>
+der Penumbra<br/>
+von <span title="Personenname"><a href="http://d-nb.info/gnd/116215372">Bode</a></span></span><br/>
+</span>deutlichen. <span class="u ">Eine gewöhnliche Erklärung</span> <span class="dta-supplied">[die]</span><br/>
+auch von <span title="Personenname"><a href="http://d-nb.info/gnd/116215372">Bode</a></span> angenom̃en, iſt die, daß d<span class="dta-supplied">[ie]</span><br/>
+Soñe ſelbſt kein leuchtender ſondern ein <span class="dta-supplied">[opa-]</span><br/>
+ker Körper iſt, mit einer lichten Photoſphäre <span class="dta-supplied">[um-]</span><br/>
+geben. Dieſe elaſtiſche Flüßigkeit macht<br/>
+zuweilen aus uns <span title="unbekañt￼" class="dta-abbr">unbekañten</span> Urſachen trich-<br/>
+terförmige Oeffnungen. Jn der Tiefe derſel<span class="dta-supplied">[ben]</span><br/>
+erblicken wir den Soñenkörper ſelbſt, d<span class="dta-supplied">[er]</span><br/>
+uns ſchwarz erſcheint; die geſchwächtern The<span class="dta-supplied">[ile]</span><br/>
+des Lichts in dieſer <span title="trichterförmig￼" class="dta-abbr">trichterförmigen</span> Oeffn<span class="dta-supplied">[ung]</span><br/>
+erſcheinen uns als dañ aſchfarbig. Allein <span class="gap">[unleserliches Material – 1 Wort fehlt]</span><br/>
+läßt ſich nicht die ſcharfe Begrenzung der <span class="aq ">Pen<span class="dta-supplied">[um-]</span><br/>
+bra</span> erklären; indem dieſe unbegrenzt ſich<br/>
+bei obiger Erklärung im Lichtmeere <span class="gap">[unleserliches Material – 1 Wort fehlt]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">desgl. von<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span><br/>
+u. <span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span><br/>
+</span>müßte. <span class="u ">Folgende Erklärung von <span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span></span><br/>
+u. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> iſt aber bei Anwendung auf obige<br/>
+Phänomen ganz hinreichend. Man kañ <span class="dta-supplied">[añeh-]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="ph dta-figure" type="4">
+        [Abbildung]
+        </span><br/>
+</span>men daß der Soñenkörper nach nebenſtehe<span class="dta-supplied">[nder]</span><br/>
+Figur von zwei Wolkenſchichten eingehüllt<br/>
+wird, von denen die obere leuch<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">te</span>nd, die<br/>
+untere minder leuchtend iſt; ſo bald die<br/>
+iñere elaſtiſche Flüßigkeit die Wolken an-<br/>
+einander treibt; ſo wird, weñ das<br/>
+Auge im Standpunkt <span class="aq ">a</span> iſt, der ſchwarz<span class="dta-supplied">[e]</span><br/>
+Fleck der obern Fläche der Soñe <span class="aq ">α</span> u. <span class="aq ">β</span><br/>
+von der Penumbra <span class="aq ">γ δ</span> regelmäßig<br/>
+<span title="eingeſchloſſ￼" class="dta-abbr">eingeſchloſſen</span> <span title="erſchein￼" class="dta-abbr">erſcheinen</span>; befindet ſich <span title="dageg￼" class="dta-abbr">dagegen</span><br/>
+das Auge im Standpunkt <span class="aq ">b</span>, ſo wird zw<span class="dta-supplied">[ar]</span><br/>
+ein gleicher ſchwarzer Fleck sichtbar <span class="gap">[unleserliches Material – 1 Wort fehlt]</span><br/>
+<span title="ab￼" class="dta-abbr">aber</span> die <span class="aq ">Penumbra</span> <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">w</span>ird auf <span title="ein￼" class="dta-abbr">einer</span> Se<span class="dta-supplied">[ite]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">verſch<span class="dta-supplied">[win-]</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0131 : 127.|</span><br/>
+verſchwinden, während ſie nach gewöhnlich<br/>
+<span title="optiſch￼" class="dta-abbr">optiſchen</span> Geſetzen auf der andern Seite zu-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Soñe<br/>
+opaker Körper</span><br/>
+</span>nim̃t. <span class="u ">Die von allen <span title="Aſtronom￼" class="dta-abbr">Aſtronomen</span> jetzt nicht</span><br/>
+mehr bezweifelte Jdee, daß <span class="u ">die Soñe ein o-<br/>
+paker Körper</span> ſei, wurde noch vor <span title="wenig￼" class="dta-abbr">wenigen</span><br/>
+Jahren als eine Tollheit betrachtet u. es<br/>
+glückt einem Advokaten, aus dem Umſtande,<br/>
+daß ein junger Menſch zu Oxford eine Abhand-<br/>
+lung hatte <span title="druck￼" class="dta-abbr">drucken</span> <span title="laſſ￼" class="dta-abbr">laſſen</span>, worin er bewies,<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Durch dieſe<br/>
+Behauptung wird<br/>
+ein junger Menſch<br/>
+von d. Todesſtrafe befreit.</span><br/>
+</span>daß die Soñe ein dunkler Körper ſei u.<br/>
+der <span class="u ">darauf eines Verbrechens wegen zum<br/>
+Tode verurtheilt wurde</span>, <span class="dta-del" title="Streichung (#s)">hieraus </span>zu bewie-<br/>
+ſen, daß der Delinquent nicht bei Siñen<br/>
+ſei, weil er ja kurz vorher eine ſo<br/>
+unerhörte Behauptung gewagt hatte, u.<br/>
+ihn ſomit von der Todesſtrafe zu <span title="befrei￼" class="dta-abbr">befreien</span>.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Meinung<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span>s in Be-<br/>
+treff der Soñen-<br/>
+flecken</span><br/>
+</span><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span> ging von der Vorausſetzung aus,</span><br/>
+daß viele <span title="Soñenfleck￼" class="dta-abbr">Soñenflecken</span> die Wärme hindeu-<br/>
+ten, u. da dieſe in Epoche <span title="erſchein￼" class="dta-abbr">erſcheinen</span>, ähn-<br/>
+lich den <span title="Erſcheinung￼" class="dta-abbr">Erſcheinungen</span> des Nordlichts die oft<br/>
+20 J. lang ausbleiben; ſo ſtellte er<br/>
+Tabellen auf, über die Verhältniße der<br/>
+Koropreiſe u. der <span title="erſchienen￼" class="dta-abbr">erſchienenen</span> <span title="Soñenfleck￼" class="dta-abbr">Soñenflecken</span>.<br/>
+Obwohl dies eine ſonderbare Conjunction<br/>
+iſt, ſo darf man doch die Jdee nicht für<br/>
+unvernünftig erklären. Eine merk-<br/>
+würdige Entdeckung der neuern Zeit<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Soñenlicht<br/>
+beſteht aus<br/>
+dreierlei Strah-<br/>
+len</span><br/>
+</span>iſt die, <span class="u ">daß das Soñenlicht aus dreierlei<br/>
+Strahlen</span> beſteht, ſolche die chemiſch<br/>
+wirken, die magnetiſch ſind u. die<br/>
+leuchten. Durch das von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117533777">Rochon</a></span></span> 1775<br/>
+erfundene priſmatiſche Fernrohr kañ<br/>
+man die Strahlen ſcheiden, u. man findet<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">hier</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0132 : 128.|</span><br/>
+hier, daß der violette Strahl gar nicht<br/>
+erwärmt, wohl aber der rothe. Das<br/>
+Maximum der Wärme erſteht jedoch d<span class="dta-supplied">[a]</span><br/>
+wo man kein Licht ſieht, außerhalb des<br/>
+rothen Strahls. Der kälteſte iſt der violet<span class="dta-supplied">[te]</span><br/>
+Strahl. Dieſer Verſuch iſt leicht anzuſtellen<br/>
+indem man die <span title="Strahl￼" class="dta-abbr">Strahlen</span> auf verſchiedene<br/>
+Termometer leitet. Scheint das Soñenlicht<br/>
+anhaltend auf Waſſer, ſo entwickelt ſich die<br/>
+Kohlenſtoff u. bringt eine grüne Colorati<span class="dta-supplied">[on]</span><br/>
+hervor. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118716581">Jai Lussac</a></span></span> fand, daß eine Miſchung<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Soñenlicht<br/>
+veranlaßt Ex-<br/>
+ploſionen</span><br/>
+</span><span class="u ">von Chlor u. Waſſerſtoff auch bei dem ſchwäc<span class="dta-supplied">[h-]</span><br/>
+ſten Soñenliche explodirt.</span> Der violette Strah<span class="dta-supplied">[l]</span><br/>
+einzeln explodirt ſogleich u. wirkt chemiſch<br/>
+der rothe Strahl hingegen nicht; ſelbſt in einem<br/>
+roth gefärbtem Gl<span class="dta-del" title="Streichung (#s)">ä</span><span class="dta-add" title="Hinzufügung (across)">a</span>se entſteht <span class="dta-del" title="Streichung (#s)">die</span><span class="dta-add" title="Hinzufügung (superlinear)">keine</span> Exploſion<br/>
+wohl aber im violetten. Auch die bolognieſe<span class="dta-supplied">[r]</span><br/>
+Lichtſteine leuchten ſogleich im <span title="violett￼" class="dta-abbr">violetten</span> Strahl,<br/>
+während ſie im <span class="dta-del" title="Streichung (#ow)">violetten</span><span class="dta-add" title="Hinzufügung (across)">rothen</span> verlöſchen. Die<br/>
+Verſuche von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/101697406">Mo<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">r</span>i<span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)">t</span>imi</a></span></span> u. Mshtr. <span title="Personenname"><a href="http://d-nb.info/gnd/117476560">Som̃erville</a></span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Violetten<br/>
+Strahl magne-<br/>
+tiſirt Eiſen.</span><br/>
+</span>thun <span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span> dar, <span class="u "><span title="dß" class="dta-abbr">daß</span> der violette Strahl Eiſen<br/>
+vorzügl. magnetiſch mache</span>, der rothe nicht,<br/>
+ſo wie erſterer auch den <span title="größt￼" class="dta-abbr">größten</span> Einfluß<br/>
+auf das grün werden der Pflanzen hat.<br/>
+Am meiſten leuchtet der gelbe Strahl.</p><br/>
+<p class="dta-p">Man hat vermuthet, daß durch das<br/>
+unaufhörliche Ausſtrömen des Soñenlichts<br/>
+der Durchmeſſer der Soñe endlich abnehmen<br/>
+müßte; doch iſt dies nicht der Fall nach<br/>
+den <span title="neueſt￼" class="dta-abbr">neueſten</span> <span title="Beobachtung￼" class="dta-abbr">Beobachtungen</span>. <span class="u ">Die Stärke</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Stärke des<br/>
+Soñenlichts</span><br/>
+</span><span class="u ">des Soñenlichts iſt 300,000 mal ſtärker<br/>
+als das Licht des Vollmondes</span>. Das Licht<br/>
+hängt von dem Stande der Soñe ab, u.<br/>
+ſteht die Soñe 66° u. wieder 19° Höhe,<br/>
+ſo verhält ſich die Lichtſtarke wie 3 : 2.<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Reiſend</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0133 : 129.|</span><br/>
+Reiſende, die zuerſt die <span title="Trop￼" class="dta-abbr">Tropen</span> gegend<br/>
+betreten, wird die große Helligkeit des<br/>
+Tages beſonders bemerklich. <span class="u ">Eine Frage iſt</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Die Soñe<br/>
+ſcheint am Rande<br/>
+nicht heller wie im<br/>
+Centro.</span><br/>
+</span>es, ob die Soñe am Rande heller ſcheint<br/>
+wie im Centro? erſteres ſollte nach der<br/>
+Jdee <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118561448">Kepler</a></span>s</span> der Fall ſein, da ſich hier<br/>
+die Atmoſphäre verdichtet. Dies iſt wohl<br/>
+wahr, jedoch ſind die Quantität der<br/>
+Strahlen von der Richtung der Flächen<br/>
+abhängig, u. ſie <span title="verhalt￼" class="dta-abbr">verhalten</span> ſich wie die<br/>
+<span class="aq ">Sinus</span> der Winkel mit den Flächen ſelbſt.<br/>
+Die fliehenden Flächen ſtrömen mehr Licht<br/>
+fort u. ſo giebt das <span class="aq ">Centrum</span> ſo viel Licht<br/>
+als die Ränder ſelbſt. Auch wird die<br/>
+Vermuthung beſtätigt, daß das ausſtrö-<br/>
+mende Licht eine gasförmige Materie iſt,<br/>
+deñ man kañ das letztere oder Gaslicht<br/>
+ſofort vom Lampenlicht. Dadurch unterſcheiden,<br/>
+<span title="dß" class="dta-abbr">daß</span> bei erſterem Polariſation ſtatt<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Benutzung<br/>
+des Soñenlichts</span><br/>
+</span>findet. <span class="u "><span title="H￼." class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/104234644">Gaus</a></span></span> hat verſucht das Soñenlicht<br/>
+im Spiegel <span title="aufzufang￼" class="dta-abbr">aufzufangen</span></span> u. auf die Spitzen<br/>
+der Thürme <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span> behufs der trigonometr. Mes-<br/>
+ſungen zu leiten; wo er es deutlich in eine<br/>
+Entfernung von 7–8 <span title="Meil￼" class="dta-abbr">Meilen</span> noch ſehen <span title="koñt￼" class="dta-abbr">koñten</span>.<br/>
+Einige <span title="Schreibfehler: Aſtromen" class="dta-corr">Aſtronomen</span> wollen bei der Beobachtung<br/>
+der Soñenſcheibe, <span class="u "><span title="Aerolith￼" class="dta-abbr">Aerolithen</span> vorbeiziehn</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Aerolithen<br/>
+ziehen vorbei</span><br/>
+</span><span class="u ">geſehen haben.</span> Andre <span title="glaubt￼" class="dta-abbr">glaubten</span> dies <span title="wär￼" class="dta-abbr">wären</span><br/>
+Vögel <span title="geweſ￼" class="dta-abbr">geweſen</span> die in unſerer Atmoſphäre<br/>
+vorbeizogen, welches <span title="ab￼" class="dta-abbr">aber</span> nicht anzunehmen<br/>
+iſt, da dies <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">mit </span>ein<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (intralinear)">er</span> Geſchwindigkeit von 40–50<br/>
+Fuß in einer Secunde geſchehen müßte.</p><br/>
+<p class="dta-p">Bei der Soñe findet <span class="u ">eine doppelt Bewe-</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Bewegung<br/>
+der Soñe</span><br/>
+</span><span class="u ">gung ſtatt,</span> zuerſt die ſchwankende Bewe-<br/>
+gung des Centrums, die etwa 60 <span title="Meil￼" class="dta-abbr">Meilen</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">beträgt</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0134 : 130.|</span><br/>
+beträgt, u. durch die Schwerkraft der<br/>
+Planeten erregt wird. Die andere Bewe-<br/>
+gung iſt die der Translation in der <span title="lin-&#xA;ſenförmig￼" class="dta-abbr">lin-<br/>
+ſenförmigen</span> <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="b ">Stern-</span></span>Schicht ſelbſt.</p></div></body></html>

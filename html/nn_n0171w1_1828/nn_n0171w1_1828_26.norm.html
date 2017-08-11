@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[26. Vorlesung, 02.02.1828]</span></div><br/>
+<div class=""><div class=""><div class="dta-head">Die <span title="Original: Telluriſchen" class="dta-reg">Tellurischen</span> <span title="Original: Verhältniſse" class="dta-reg">Verhältnisse</span>.</div><br/>
+<hr/><br/>
+<p class="dta-p">Es <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: dieß" class="dta-reg">dies</span> der <span title="Original: Theil" class="dta-reg">Teil</span> <span title="Original: unſrer" class="dta-reg">unserer</span> <span title="Original: Wiſsenſchaft" class="dta-reg">Wissenschaft</span> den<br/>
+man gewöhnlich allein unter dem Namen <span title="Original: phyſiſche" class="dta-reg">physische</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Geo-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0228|</span><br/>
+Geographie bezeichnet. <span title="Original: –" class="dta-reg">-</span> Wir <span title="Original: theilen" class="dta-reg">teilen</span> <span title="Original: dieſen" class="dta-reg">diesen</span> <span title="Original: Haupt-&#xA;theil" class="dta-reg">Hauptteil</span> der Kosmographie in 3 Hauptmomente ein;<br/>
+wir betrachten nur 1, das Starre, 2, die <span title="Original: flüſsigen" class="dta-reg">flüssigen</span><br/>
+Hüllen; und zwar die <span title="Original: elaſtiſch" class="dta-reg">elastisch</span> <span title="Original: flüſsigen" class="dta-reg">flüssigen</span> im <span title="Original: Luft-&#xA;meer" class="dta-reg">Luftmeer</span> und die <span title="Original: tropfbarflüſsigen" class="dta-reg">tropfbarflüssigen</span> im <span title="Original: Ocean" class="dta-reg">Ozean</span> 3,<br/>
+das <span title="Original: Organiſche" class="dta-reg">Organische</span>, die Pflanzen und <span title="Original: Thiere" class="dta-reg">Tiere</span>.</p><br/>
+<div class=""><div class="dta-head">1, Das Starre</div><br/>
+<hr/><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="gap">[unleserliches Material]</span><br/>
+</span>Der <span title="Original: ſtarre" class="dta-reg">starre</span> <span title="Original: Theil" class="dta-reg">Teil</span> wird gewöhnlich mit dem <span title="Original: Na-&#xA;men" class="dta-reg">Namen</span> <span title="Original: Geognoſie" class="dta-reg">Geognosie</span> belegt; es <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: dieß" class="dta-reg">dies</span> eine <span title="Original: falſche" class="dta-reg">falsche</span><br/>
+Benennung indem außer den Gebirgsarten noch<br/>
+vieles andere dazu gehört. Es würde aber <span title="Original: un-&#xA;nütz" class="dta-reg">unnütz</span> <span title="Original: ſein" class="dta-reg">sein</span> <span title="Original: ſolche" class="dta-reg">solche</span> Benennungen die einmal durch<br/>
+den Gebrauch geheiligt <span title="Original: ſind" class="dta-reg">sind</span>, verändern zu wollen.<br/>
+Wir werden in <span title="Original: dieſem" class="dta-reg">diesem</span> <span title="Original: Theile" class="dta-reg">Teile</span> betrachten:</p><br/>
+<div class="dta-list"><div class="dta-list-item">1, die <span title="Original: Geſtalt" class="dta-reg">Gestalt</span> der Erde</div>
+<div class="dta-list-item">2, die innere Wärme, und die <span title="Original: Lichterſcheinun-&#xA;gen" class="dta-reg">Lichterscheinungen</span> der Erde.</div>
+<div class="dta-list-item">3, <span title="Schreibfehler: elector" class="dta-corr"><span title="Original: electro" class="dta-reg">elektromagnetischen</span></span><span title="Original: -magnetiſchen" class="dta-reg"/> <span title="Original: Erſcheinungen" class="dta-reg">Erscheinungen</span></div>
+<div class="dta-list-item">4, die Veränderungen welche eine Folge der<br/>
+<span title="Original: Communicationen" class="dta-reg">Kommunikationen</span> der äußeren Oberfläche<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">mit</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0229 : 221|</span><br/>
+mit dem <span title="Original: Innern" class="dta-reg">Inneren</span> der Erde <span title="Original: ſind" class="dta-reg">sind</span> <span class="dta-metamark" title="metamark">|:</span> heiße Quellen,<br/>
+Vulkan <span class="aq ">etc</span> <span class="dta-metamark" title="metamark">:|</span></div>
+<div class="dta-list-item">5, Das <span title="Original: Oberflächen-Anſehen" class="dta-reg">Oberflächen-Ansehen</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span> das Gegliederte<br/>
+der <span title="Original: Continente" class="dta-reg">Kontinente</span>.</div>
+</div><div class=""><div class="dta-head">Von der <span title="Original: Geſtalt" class="dta-reg">Gestalt</span> der Erde</div><br/>
+<hr/><br/>
+<p class="dta-p">Die <span title="Original: Kenntniß" class="dta-reg">Kenntnis</span> der <span title="Original: Geſtalt" class="dta-reg">Gestalt</span> der Erde <span title="Original: iſt" class="dta-reg">ist</span> nicht<br/>
+<span title="Original: blos" class="dta-reg">bloß</span> ein <span title="Original: Gegenſtand" class="dta-reg">Gegenstand</span> der Neugierde; die <span title="Original: Be-&#xA;ſtimmung" class="dta-reg">Bestimmung</span> <span title="Original: derſelben" class="dta-reg">derselben</span> hat Einfluß auf das <span title="Original: bür-&#xA;gerliche" class="dta-reg">bürgerliche</span> Leben,<span class="dta-add" title="Hinzufügung (intralinear)"><span class="gap">[unleserliches Material – 2 Zeichen fehlen]</span></span>die <span title="Schreibfehler: Schifffarth" class="dta-corr">Schifffahrt</span>, die <span title="Original: Beſtim̃ung" class="dta-reg">Bestimmung</span> der<br/>
+Entfernungen und auf die Möglichkeit richtige<br/>
+Karten zu zeichnen, <span class="dta-del" title="Streichung (#s)">für</span><span class="dta-add" title="Hinzufügung (intralinear)">auf</span> Alles was das <span title="Original: Graphiſche" class="dta-reg">Graphische</span><br/>
+betrifft. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">Was für die <span title="Original: Beſtimmung" class="dta-reg">Bestimmung</span> der <span title="Original: Geſtalt" class="dta-reg">Gestalt</span> der Erde<br/>
+<span title="Original: geſchehen" class="dta-reg">geschehen</span> <span title="Original: iſt" class="dta-reg">ist</span>, und wie man <span title="Original: ſich" class="dta-reg">sich</span> nach und nach der<br/>
+Wahrheit genähert hat <span title="Original: ſoll" class="dta-reg">soll</span> hier <span title="Original: geſchichtlich" class="dta-reg">geschichtlich</span> <span title="Original: an-&#xA;geführt" class="dta-reg">angeführt</span> werden.</p><br/>
+<p class="dta-p">Die <span title="Original: erſte" class="dta-reg">erste</span> <span title="Original: Anſicht" class="dta-reg">Ansicht</span> von der Erde war eine<br/>
+flache <span title="Original: Erdſcheibe" class="dta-reg">Erdscheibe</span> vom Oceanus umflutet, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: giebt" class="dta-reg">gibt</span><br/>
+<span title="Original: ſie" class="dta-reg">sie</span> uns <span title="Personenname"><a href="http://d-nb.info/gnd/11855333X">Homer</a></span> und <span title="Original: dieß" class="dta-reg">dies</span> war auch <span title="Original: vermuthlich" class="dta-reg">vermutlich</span> die<br/>
+<span title="Original: Anſicht" class="dta-reg">Ansicht</span> von <span title="Personenname"><a href="http://d-nb.info/gnd/118801732"><span title="Original: T" class="dta-reg">Tales</span><span class="dta-add" title="Hinzufügung (intralinear)"><span title="Original: h" class="dta-reg"/></span><span title="Original: ales" class="dta-reg"/></a></span>, wiewohl <span title="Personenname"><a href="http://d-nb.info/gnd/118595083">Plinius</a></span> <span title="Original: ſagt" class="dta-reg">sagt</span> <span title="Personenname"><a href="http://d-nb.info/gnd/118801732"><span title="Original: T" class="dta-reg">Tales</span><span class="dta-add" title="Hinzufügung (intralinear)"><span title="Original: h" class="dta-reg"/></span><span title="Original: ales" class="dta-reg"/></a></span> habe<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">schon</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0230|</span><br/>
+<span title="Original: ſchon" class="dta-reg">schon</span> die <span title="Original: Anſicht" class="dta-reg">Ansicht</span> von einer <span title="Original: Kugelgeſtalt" class="dta-reg">Kugelgestalt</span> gehabt.<br/>
+Es <span title="Original: ſcheint" class="dta-reg">scheint</span> <span title="Original: dieß" class="dta-reg">dies</span> <span title="Original: erſt" class="dta-reg">erst</span> die <span title="Original: Anſicht" class="dta-reg">Ansicht</span> des <span title="Original: pythagoriſchen" class="dta-reg">pythagoreischen</span><br/>
+Bundes <span title="Original: geweſen" class="dta-reg">gewesen</span> zu <span title="Original: ſein" class="dta-reg">sein</span>, nach dem <span title="Original: Zeugniß" class="dta-reg">Zeugnis</span> das<br/>
+uns <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118791974">Philalaus</a></span></span> davon <span title="Original: giebt" class="dta-reg">gibt</span>. <span title="Original: –" class="dta-reg">-</span> Die Gründe die<br/>
+wir noch jetzt für die runde <span title="Original: Geſtalt" class="dta-reg">Gestalt</span> der Erde<br/>
+haben werden <span title="Original: ſchon" class="dta-reg">schon</span> von den Alten angeführt;<br/>
+der Schatten der Erde bei <span title="Original: Mondfinſterniſsen" class="dta-reg">Mondfinsternissen</span>; die<br/>
+Bemerkung, daß wenn man von <span title="Original: Cypern" class="dta-reg">Zypern</span> her<br/>
+kam man den Canopus immer höher und höher<br/>
+hinauf <span title="Original: ſteigen" class="dta-reg">steigen</span> <span title="Original: ſah" class="dta-reg">sah</span> u.<span title="Original: ſ.w." class="dta-reg">s.w.</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118650130">Aristoteles</a></span></span> <span title="Original: ſagt" class="dta-reg">sagt</span> in einer<br/>
+merkwürdigen Stelle: <q class="quote"><span title="Original: „" class="dta-reg">"</span>Die Erde <span title="Original: müſse" class="dta-reg">müsse</span> eine<br/>
+<span title="Original: ſphäriſche" class="dta-reg">sphärische</span> <span title="Original: Geſtalt" class="dta-reg">Gestalt</span> haben, weil alle <span title="Original: Theilchen" class="dta-reg">Teilchen</span> <span title="Original: der-&#xA;ſelben" class="dta-reg">derselben</span> vermöge der Schwere nach einem Mittelpunkt<br/>
+getrieben werden; wäre demnach irgend wo eine<br/>
+größere Anhäufung von <span title="Original: Theilen" class="dta-reg">Teilen</span>, <span title="Original: ſo" class="dta-reg">so</span> würden <span title="Original: dieſe" class="dta-reg">diese</span><br/>
+<span title="Original: herabrutſchen" class="dta-reg">herabrutschen</span> bis <span title="Original: ſie" class="dta-reg">sie</span> ins Gleichgewicht kämen.<span title="Original: ”" class="dta-reg">"</span></q></p><br/>
+<p class="dta-p">Was in den <span title="Original: früheſten" class="dta-reg">frühesten</span> <span title="Original: ſchon" class="dta-reg">schon</span> allgemeine Meinung war,<br/>
+wurde <span title="Original: ſpäter" class="dta-reg">später</span> <span title="Original: ſo" class="dta-reg">so</span> irrig <span title="Original: angeſehen" class="dta-reg">angesehen</span>, daß man eine <span title="Original: ſol-&#xA;che" class="dta-reg">solche</span> Idee durchaus verbot und der <span title="Original: Pabſt" class="dta-reg">Papst</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100964397">Zacharias</a></span></span> den<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118804723">Vigelius</a></span></span> <span title="Original: ſeines" class="dta-reg">seines</span> <span title="Original: Biſchoffsamts" class="dta-reg">Bischofsamts</span> <span title="Original: entſetzte" class="dta-reg">entsetzte</span> weil er behauptete<br/>
+daß es Antipoden gäbe. Auch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118564994">Christ. Columbus</a></span></span> hatte noch viele<br/>
+Schwierigkeiten um mit <span title="Original: ſeiner" class="dta-reg">seiner</span> Idee gehört zu werden. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0231 : 223|</span><br/>
+<p class="dta-p"><span class="u "><span title="Original: Beſtimmung" class="dta-reg">Bestimmung</span> durch <span title="Original: Meſsungen" class="dta-reg">Messungen</span>.</span> Eine jede <span title="Original: Meſsung" class="dta-reg">Messung</span> <span title="Original: iſt" class="dta-reg">ist</span><br/>
+zum <span title="Original: Theil" class="dta-reg">Teil</span> <span title="Original: mathematiſch" class="dta-reg">mathematisch</span> <span title="Original: theils" class="dta-reg">teils</span> <span title="Original: aſtronomiſch" class="dta-reg">astronomisch</span>. <span title="Original: –" class="dta-reg">-</span> Schon früher<br/>
+hatte man <span title="Original: ſich" class="dta-reg">sich</span> mit <span title="Original: Meſsungen" class="dta-reg">Messungen</span> <span title="Original: beſchäftigt" class="dta-reg">beschäftigt</span>, die rein<br/>
+<span title="Original: mathematiſch" class="dta-reg">mathematisch</span> waren und nur geringe <span title="Original: Beſtimmungen" class="dta-reg">Bestimmungen</span><br/>
+der <span title="Original: Aſtronomie" class="dta-reg">Astronomie</span> voraus <span title="Original: ſetzten" class="dta-reg">setzten</span>. <span title="Original: –" class="dta-reg">-</span> Unter dem Kalifen<br/>
+<span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118847686">Almand</a></span></span></span> wurde <span title="Original: ſo" class="dta-reg">so</span> eine <span title="Original: Gradmeſsung" class="dta-reg">Gradmessung</span> von Norden<br/>
+gegen Süden vorgenommen. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">In <span title="Original: neuern" class="dta-reg">neueren</span> Zeiten wurden <span title="Original: 1½" class="dta-reg">11/2</span> Grad in <span title="Original: Penſylvanien" class="dta-reg">Pensylvanien</span><br/>
+mit Ketten <span title="Original: gemeſsen" class="dta-reg">gemessen</span>. <span title="Original: –" class="dta-reg">-</span> Doch <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: dieſe" class="dta-reg">diese</span> Art von<br/>
+<span title="Original: Meſsung" class="dta-reg">Messung</span> wie <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118878913">Delambre</a></span></span> <span title="Original: bewieſen" class="dta-reg">bewiesen</span> hat wegen der<br/>
+Unvollkommenheit der <span title="Original: Inſtrumente" class="dta-reg">Instrumente</span> <span title="Original: ſowohl" class="dta-reg">sowohl</span> als der<br/>
+Schwierigkeit in geraden Linie fortzugehen, nicht <span title="Original: ſo" class="dta-reg">so</span><br/>
+<span title="Original: ſicher" class="dta-reg">sicher</span> als man vielleicht glauben <span title="Original: ſollte" class="dta-reg">sollte</span>.</p><br/>
+<p class="dta-p"><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118797794">Snellius</a></span></span> <span title="Original: –" class="dta-reg">-</span> nicht <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11900643X">Picard</a></span></span>, wie man gewöhnlich <span title="Original: ſagt" class="dta-reg">sagt</span> <span title="Original: –" class="dta-reg">-</span> <span title="Original: iſt" class="dta-reg">ist</span><br/>
+<span title="Original: zuerſt" class="dta-reg">zuerst</span> darauf gefallen durch <span title="Original: trigometriſche" class="dta-reg">trigometrische</span> Netze<br/>
+und die unmittelbare <span title="Original: Meſsung" class="dta-reg">Messung</span> einer einzigen<br/>
+<span title="Original: Baſis" class="dta-reg">Basis</span> die <span title="Original: Meſsung" class="dta-reg">Messung</span> einer Gradlänge zu vollführen.<br/>
+<span title="Original: Zuerſt" class="dta-reg">Zuerst</span> wurde eine <span title="Original: ſolche" class="dta-reg">solche</span> <span title="Original: Meſsung" class="dta-reg">Messung</span> <span title="Original: zwiſchen" class="dta-reg">zwischen</span> Alkmar<br/>
+und <span title="Original: Leyden" class="dta-reg">Leiden</span> vorgenommen.</p><br/>
+<p class="dta-p">Es wurde <span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: Meſsung" class="dta-reg">Messung</span> zugleich <span title="Original: Ver" class="dta-reg">Veranlassung</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Original: an" class="dta-reg"/></span><span title="Original: laſsung" class="dta-reg"/><br/>
+zur <span title="Original: Vervollkommung" class="dta-reg">Vervollkommnung</span> <span title="Original: aſtronomiſcher" class="dta-reg">astronomischer</span> <span title="Original: Inſtrumente" class="dta-reg">Instrumente</span> und<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">der</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0232|</span><br/>
+<span title="Original: Analyſe" class="dta-reg">Analyse</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span>.</p><br/>
+<p class="dta-p">Der <span title="Original: 2" class="dta-reg">2te</span><span title="t" class="dta-abbr"><span class="sup "><span title="Original: te" class="dta-reg"/></span></span> <span title="Original: Theil" class="dta-reg">Teil</span> der <span title="Original: Meſsung" class="dta-reg">Messung</span> <span title="Original: iſt" class="dta-reg">ist</span> der <span title="Original: aſtronomiſche" class="dta-reg">astronomische</span> <span title="Original: Theil" class="dta-reg">Teil</span>;<br/>
+man <span title="Original: ſoll" class="dta-reg">soll</span> nur den Winkel <span title="Original: beſtimmen" class="dta-reg">bestimmen</span> der <span title="Original: zwiſchen" class="dta-reg">zwischen</span><br/>
+den 2 Standorten <span class="dta-add" title="Hinzufügung (superlinear)">und</span><span class="dta-add" title="Hinzufügung (intralinear)"><span title="Original: (" class="dta-reg"/></span><span title="Original: zwiſchen" class="dta-reg">zwischen</span><span class="dta-add" title="Hinzufügung (intralinear)">)</span> einen Stern <span title="Original: entſteht" class="dta-reg">entsteht</span>, der<br/>
+in dem einen Standort <span title="Original: ſich" class="dta-reg">sich</span> im <span title="Original: Zenith" class="dta-reg">Zenit</span> befindet. <span title="Original: –" class="dta-reg">-</span><br/>
+Um einen <span class="dta-add" title="Hinzufügung (superlinear)"><span class="dta-metamark" title="metamark">⎡</span><span class="gap">[unleserliches Material – 1 Wort fehlt]</span></span>Grad zu <span title="Original: bekämmen" class="dta-reg">bekämen</span> müßt man den <span title="Original: Un-&#xA;terſchied" class="dta-reg">Unterschied</span> der Meridianhöhe eines Sterns von 2 <span title="Original: Stand-" class="dta-reg">Standorten</span>
+<span class="dta-marginal dta-marginal-left"><span class="dta-metamark" title="metamark">|:</span> s. Gäodasie 1827/28 <span class="dta-metamark" title="metamark">:|</span><br/>
+</span><span title="Original: orten" class="dta-reg"/> <span title="Original: geſehen" class="dta-reg">gesehen</span>.</p><br/>
+<p class="dta-p">In den <span title="Original: frühern" class="dta-reg">früheren</span> Zeiten war in <span title="Original: dieſer" class="dta-reg">dieser</span> Art der <span title="Original: Ver-&#xA;ſuch" class="dta-reg">Versuch</span> von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118530674">Erathostenes</a></span></span> der mehr eine Schätzung als<br/>
+<span title="Original: Meſsung" class="dta-reg">Messung</span> zu nennen <span title="Original: iſt" class="dta-reg">ist</span>; erfand hier die Länge<br/>
+eines Grads auf 252000 Stadien.</p><br/>
+<p class="dta-p">Auf den <span title="Original: Durchmeſser" class="dta-reg">Durchmesser</span> des Sonnenbildes wurde <span title="Original: durch-&#xA;aus" class="dta-reg">durchaus</span> keine <span title="Original: Rückſicht" class="dta-reg">Rücksicht</span> genommen. Eben <span title="Original: ſo" class="dta-reg">so</span> wenig darauf<br/>
+daß <span title="Original: Sienä" class="dta-reg">Sinne</span> und Alexandria nicht in einem <span title="Original: Me-&#xA;ridian" class="dta-reg">Meridian</span> liegen. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">Eine 2te <span title="Original: Meſsung" class="dta-reg">Messung</span> der Art, aber auch eben <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: unvoll-&#xA;kommen" class="dta-reg">unvollkommen</span> wird einen <span title="Original: gewiſsen" class="dta-reg">gewissen</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118595946">Posidonius</a></span></span> zu <span title="Original: ge-&#xA;ſchrieben" class="dta-reg">geschrieben</span>. Es war nur Canopus in <span title="Original: Rhodus" class="dta-reg">Rhodos</span> kaum <span title="Original: ſicht-&#xA;bar" class="dta-reg">sichtbar</span>; in <span title="Original: Alexandrien" class="dta-reg">Alexandria</span> <span title="Original: ſtand" class="dta-reg">stand</span> er aber <span title="Original: ſehr" class="dta-reg">sehr</span> hoch; daraus<br/>
+verglich er die Entfernung durch bloße Schätzung.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Pto</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0233 : 225|</span><br/>
+<p class="dta-p"><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118641786">Ptolomäus Amagestus</a></span></span> rühmt <span title="Original: ſich" class="dta-reg">sich</span>, <span title="Original: ſelbſt" class="dta-reg">selbst</span> eine <span title="Original: Meſsung" class="dta-reg">Messung</span> <span title="Original: ge-&#xA;macht" class="dta-reg">gemacht</span> zu haben; doch war <span title="Original: dieß" class="dta-reg">dies</span> nur eine <span title="Original: Winkel-&#xA;meſsung" class="dta-reg">Winkelmessung</span>. Unter <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118847686">Almamud</a></span></span> <span title="Original: geſchah" class="dta-reg">geschah</span> <span title="Original: geſchah" class="dta-reg">geschah</span> die 4te<br/>
+<span title="Original: Meſsung" class="dta-reg">Messung</span> um die Richtigkeit der <span title="Original: frühern" class="dta-reg">früheren</span> zu <span title="Original: unter-&#xA;ſuchen" class="dta-reg">untersuchen</span>; <span title="Original: ſie" class="dta-reg">sie</span> fanden <span title="Original: daſselbe" class="dta-reg">dasselbe</span> was <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118641786">Ptolomäus <span title="Original: Ama-&#xA;gestus" class="dta-reg">Amagestus</span></a></span></span> gefunden hatte.</p><br/>
+<p class="dta-p">Was bisweilen die Zufälligkeit für ziemlich richtige<span class="dta-marginal dta-marginal-right"><span class="dta-metamark" title="metamark">|:</span> S. <span title="Original: Gäodäsie" class="dta-reg">Geodäsie</span> 1827/28 <span class="dta-metamark" title="metamark">:|</span><br/>
+</span><br/>
+<span title="Original: Reſultate" class="dta-reg">Resultate</span> geben kann zeigt die <span title="Original: Meſsung" class="dta-reg">Messung</span> eines<br/>
+<span title="Original: Franzoſen" class="dta-reg">Franzosen</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119220903">Fernel</a></span></span>, die er in <span title="Original: ſeinem" class="dta-reg">seinem</span> Wagen machte<br/>
+indem er die Umdrehung des Rades beobachtete. <span title="Original: –" class="dta-reg">-</span><br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119174596">Lacaille</a></span></span> fand in einer <span title="Original: ſpäter" class="dta-reg">später</span> <span title="Original: Meſsung" class="dta-reg">Messung</span> <span title="Original: beinah" class="dta-reg">beinahe</span><br/>
+<span title="Original: daſselbe" class="dta-reg">dasselbe</span> <span title="Original: Reſultat" class="dta-reg">Resultat</span>.</p><br/>
+<p class="dta-p">Wie <span title="Original: ſchon" class="dta-reg">schon</span> oben erwähnt verließ <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118797794">Snellius</a></span></span> <span title="Original: zuerſt" class="dta-reg">zuerst</span><br/>
+<span title="Original: dieſe" class="dta-reg">diese</span> Methode, nachdem <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118587544">Newton</a></span></span> lange Zeit durch<span class="dta-marginal dta-marginal-right">?<br/>
+</span><br/>
+die <span title="Original: Meſsung" class="dta-reg">Messung</span> eines Englanders irre geleitet <span title="Original: wor-&#xA;den" class="dta-reg">worden</span> war. Die <span title="Original: beſten" class="dta-reg">besten</span> <span title="Original: Meſsungen" class="dta-reg">Messungen</span> im 17ten <span title="Original: Jahr-&#xA;hundert" class="dta-reg">Jahrhundert</span> <span title="Original: ſind" class="dta-reg">sind</span> die von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11900643X">Picard</a></span></span> 1669 und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Dom <span title="Original: Casſini" class="dta-reg">Cassini</span></a></span></span><br/>
+1689 in Frankreich. Das man die beiden <span title="Original: Meſsungen" class="dta-reg">Messungen</span><br/>
+<span title="Original: vergleich" class="dta-reg">Vergleich</span> fand <span title="Original: ſich" class="dta-reg">sich</span> das <span title="Original: ſonderbare" class="dta-reg">sonderbare</span> <span title="Original: Reſultat" class="dta-reg">Resultat</span>, daß die<br/>
+Erde an den Polen <span title="Original: zugeſpitzt" class="dta-reg">zugespitzt</span> und nicht <span title="Original: abgeplatt" class="dta-reg">abgeplattet</span><span title="Original: et" class="dta-reg"/><br/>
+<span title="Original: ſei" class="dta-reg">sei</span>; es fiel <span title="Original: dieß" class="dta-reg">dies</span> um <span title="Original: ſo" class="dta-reg">so</span> mehr auf da <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118587544">Newton</a></span></span> <span title="Original: ſchon" class="dta-reg">schon</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">em-</span></div><br/>
+<div class="&#xA;            fw-bottom-sig&#xA;          "><span class="aq ">d</span>. 2</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0234|</span><br/>
+<span title="Original: empiriſch" class="dta-reg">empirisch</span> das <span title="Original: Gegentheil" class="dta-reg">Gegenteil</span> gezeigt hatte. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p"><span class="u "><span title="Original: Pendelſchwingungen" class="dta-reg">Pendelschwingungen</span></span>. Die Beobachtungen mit dem <span title="Original: Pen-&#xA;del" class="dta-reg">Pendel</span> zeigten das <span title="Original: Gegentheil" class="dta-reg">Gegenteil</span>: <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117531936"><span title="Original: Riché" class="dta-reg">Rieche</span></a></span></span> wurde auf <span title="Original: ſei-&#xA;ner" class="dta-reg">seiner</span> <span title="Original: Reiſe" class="dta-reg">Reise</span> nach Bayonne von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119408007"><span title="Original: Casſini" class="dta-reg">Cassini</span></a></span></span> aufgefordert,<br/>
+dort das Pendel <span title="Original: ſchwingen" class="dta-reg">schwingen</span> zu <span title="Original: laſsen" class="dta-reg">lassen</span>, und fand daß<br/>
+er es verkürzen mußte um <span title="Original: dieſelbe" class="dta-reg">dieselbe</span> Zahl von<br/>
+Schwingungen in einer <span title="Original: gewiſsen" class="dta-reg">gewissen</span> Zeit zu haben,<br/>
+die das Pendel in Paris machte. Es <span title="Original: entſtand" class="dta-reg">entstand</span><br/>
+die Frage nach der <span title="Original: Urſache" class="dta-reg">Ursache</span> <span title="Original: dieſer" class="dta-reg">dieser</span> <span title="Original: Erſcheinung" class="dta-reg">Erscheinung</span>;<br/>
+entweder war unter dem <span title="Original: Aequator" class="dta-reg">Äquator</span> eine <span title="Original: größe" class="dta-reg">Größe</span><br/>
+Wurfkraft der Erde oder 2, die <span title="Original: Erdmaſse" class="dta-reg">Erdmasse</span> war dort<br/>
+mehr angehäuft als an den Polen und das Pendel<br/>
+daher weiter vom Mittelpunkt entfernt. <span title="Original: –" class="dta-reg">-</span> Die<br/>
+nähere <span title="Original: Unterſuchung" class="dta-reg">Untersuchung</span> <span title="Original: dieſes" class="dta-reg">dieses</span> <span title="Original: Gegenſtandes" class="dta-reg">Gegenstandes</span> gab <span title="Original: Ver-&#xA;anlaſsung" class="dta-reg">Veranlassung</span> zu vielen großen <span title="Original: Reiſen" class="dta-reg">Reisen</span>: <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117622974">Hugo</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/117547786">Godel</a></span></span></span><br/>
+und andere <span title="Original: reiſten" class="dta-reg">reisten</span> nach <span title="Original: Quit" class="dta-reg">Quito</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: o" class="dta-reg"/> in</span> <span title="Schreibfehler: dem" class="dta-corr">den</span> Jahren<br/>
+von 1735 bis 1746. um dort eine <span title="Original: Meſsung" class="dta-reg">Messung</span> zu <span title="Original: ver-&#xA;anſtalten" class="dta-reg">veranstalten</span>. Sie hatten hier eine <span title="Original: ſchwierige" class="dta-reg">schwierige</span> <span title="Original: Beob-&#xA;achtung" class="dta-reg">Beobachtung</span> in der <span title="Original: Andeskette" class="dta-reg">Andenkette</span> zu machen; <span title="Original: ſie" class="dta-reg">sie</span> mußten<br/>
+bis nahe an die Schneegrenze hinauf nach dem <span title="Original: Hauſe" class="dta-reg">Hause</span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="gap">[unleserliches Material]</span></span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">des</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0235 : 227|</span><br/>
+des <span class="aq ">Pichincha</span> wo das Thermometer nur <span title="Original: höchſtens" class="dta-reg">höchstens</span><br/>
+auf <span title="Original: 6–8" class="dta-reg">6-8</span>° R. <span title="Original: ſteigt" class="dta-reg">steigt</span> in der Nacht aber gewöhnlich<br/>
+auf <span title="Original: −4" class="dta-reg">4</span>° <span title="Original: ſteht" class="dta-reg">steht</span>. <span title="Original: –" class="dta-reg">-</span> Dazu kam daß man <span title="Original: ſich" class="dta-reg">sich</span> noch der<br/>
+<span title="Original: pyramidaliſchen" class="dta-reg">pyramidaleschen</span> Signale bediente, die wegen<br/>
+der <span title="Original: Lichtverſchiedenheit" class="dta-reg">Lichtverschiedenheit</span> nicht einen <span title="Original: feſten" class="dta-reg">festen</span> <span title="Original: Viſions-&#xA;punkt" class="dta-reg">Visionspunkt</span> geben. <span class="dta-metamark" title="metamark">|:</span> Später erfand man die <span title="Original: ſogenannten" class="dta-reg">sogenannten</span><br/>
+<span title="Original: Nachtſignale" class="dta-reg">Nachtsignale</span> mit <span title="Original: Hohlſpiegeln" class="dta-reg">Hohlspiegeln</span> und Lampen; eine<br/>
+dritte Methode gab <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118510215"><span title="Original: Besſel" class="dta-reg">Bessel</span></a></span></span> an der das Sonnenbild<br/>
+<span title="Original: ſelbſt" class="dta-reg">selbst</span> benutzt, <span class="dta-del" title="Streichung (#s)">dieß</span><span class="dta-add" title="Hinzufügung (superlinear)">das</span> auf weit entfernte Punkte <span title="Original: hin-&#xA;geleitet" class="dta-reg">hingeleitet</span> werden kann. <span title="Original: –" class="dta-reg">-</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/104234644"><span title="Original: Gausſ" class="dta-reg">Gauss</span></a></span></span>, <span class="aq ">Heliotrop</span> <span class="dta-metamark" title="metamark">:|</span></p><br/>
+<p class="dta-p">Im Jahre 1726 begab <span title="Original: ſich" class="dta-reg">sich</span> eine andere <span title="Original: Geſellſchaft" class="dta-reg">Gesellschaft</span><br/>
+unter denen <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11852092X">Cleron</a></span></span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117672025">Camus</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118731998">Maupertius</a></span></span> <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: be-&#xA;fanden" class="dta-reg">befanden</span> nach Norden in Lappland in der Gegend<br/>
+von Torneo um dort einen Grad zu <span title="Original: meſsen" class="dta-reg">messen</span>. <span title="Original: –" class="dta-reg">-</span><br/>
+Durch Vergleichung <span title="Original: dieſer" class="dta-reg">dieser</span> beiden <span title="Original: Gradmeſsungen" class="dta-reg">Gradmessungen</span><br/>
+fand <span title="Original: ſich" class="dta-reg">sich</span> die Abplattung auf <span title="Original: 305–310" class="dta-reg">305-310</span>. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">In den <span title="Original: neuern" class="dta-reg">neueren</span> Zeiten <span title="Original: ſind" class="dta-reg">sind</span> viele Zweifel über<br/>
+<span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: Meſsung" class="dta-reg">Messung</span> <span title="Original: entſtanden" class="dta-reg">entstanden</span>. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117679100"><span title="Original: Swanberg" class="dta-reg">Schwanberg</span></a></span></span> glaubte<br/>
+einen <span title="Original: Unterſchied" class="dta-reg">Unterschied</span> von 1200<span title="Original: ′" class="dta-reg">'</span>, auf den Grad zu<br/>
+finden. <span title="Original: Profeſsor" class="dta-reg">Professor</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116622784"><span title="Original: Roſenberger" class="dta-reg">Rosenberger</span></a></span></span> in <span class="aq ">Halle</span> hat <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: je-&#xA;doch" class="dta-reg">jedoch</span> von Neuem <span title="Original: unterſucht" class="dta-reg">untersucht</span> und gefunden daß es<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">nicht</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0236|</span><br/>
+nicht <span title="Original: wahrſcheinlich" class="dta-reg">wahrscheinlich</span> <span title="Original: ſei" class="dta-reg">sei</span>, daß <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118731998">Maupertius</a></span></span> <span title="Original: ſo" class="dta-reg">so</span> große<br/>
+<span title="Original: Irrthümer" class="dta-reg">Irrtümer</span> gemacht habe; er fand das <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117679100"><span title="Original: Swanberg" class="dta-reg">Schwanbergs</span></a></span><span title="Original: s" class="dta-reg"/></span><br/>
+<span title="Original: Meſsung" class="dta-reg">Messung</span> nicht auf <span title="Original: denſelben" class="dta-reg">denselben</span> Punkten <span title="Original: geſchah" class="dta-reg">geschah</span>.<br/>
+Wir haben jetzt im Allgemeinen folgende große<br/>
+<span title="Original: Meſsungen" class="dta-reg">Messungen</span>:</p><br/>
+<p class="dta-p">1, Die alte <span title="Original: Peruaniſche" class="dta-reg">Peruanische</span> <span title="Original: Gradmeſsung" class="dta-reg">Gradmessung</span> neu<br/>
+berechnet von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118878913">Delambre</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119151456"><span title="Original: Zach" class="dta-reg">Zach.</span></a></span></span><span title="Original: ." class="dta-reg"/> <span title="Original: –" class="dta-reg">-</span> 2, Die große<br/>
+<span title="Original: franzöſiſche" class="dta-reg">französische</span> <span title="Original: Meſsung" class="dta-reg">Messung</span> zur <span title="Original: Beſtimmung" class="dta-reg">Bestimmung</span> des Meter<br/>
+als 10 <span title="Original: millioniſten" class="dta-reg">Millionesten</span> <span title="Original: Theil" class="dta-reg">Teil</span> des Quadranten; 3,<br/>
+<span class="dta-marginal dta-marginal-left">(?)<br/>
+</span>die <span title="Original: Meſsung" class="dta-reg">Messung</span> des General <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/130800600">Roy</a></span></span></span> unter dem <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/1055317457">Much</a></span></span></span><br/>
+arbeitete; die <span title="Original: Aſtronomiſche" class="dta-reg">Astronomische</span> Beobachtungen dazu <span title="Original: ſind" class="dta-reg">sind</span><br/>
+von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118841920"><span title="Original: Herſchel" class="dta-reg">Herschel</span></a></span></span> Vater und Sohn und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span>. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">Außer <span title="Original: dieſen" class="dta-reg">diesen</span> <span title="Original: ſind" class="dta-reg">sind</span> noch in <span title="Original: neuren" class="dta-reg">neueren</span> Zeiten <span title="Original: mehre-&#xA;re" class="dta-reg">mehrere</span> andere <span title="Original: Vermeſsungen" class="dta-reg">Vermessungen</span> <span title="Original: angeſtellt" class="dta-reg">angestellt</span> worden,<br/>
+wie von den Engländern <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117574406">Lemton</a></span></span> und <span class="aq "><span title="Personenname"><span title="Original: Paske" class="dta-reg">Baske</span></span></span> in<br/>
+<span title="Original: Oſtindien" class="dta-reg">Ostindien</span>; <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118988255">Struvo</a></span></span> in Rußland. Die <span title="Original: Vermeſsung" class="dta-reg">Vermessung</span><br/>
+von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/104234644"><span title="Original: Gausſ" class="dta-reg">Gauss</span></a></span></span> <span title="Original: iſt" class="dta-reg">ist</span> noch nicht ihrem <span title="Original: Reſultat" class="dta-reg">Resultat</span> noch bekannt.<br/>
+Je weiter man gegen Norden <span title="Original: kömmt" class="dta-reg">kommt</span>, <span title="Original: deſto" class="dta-reg">desto</span> größer<br/>
+werden die Grade; nach der <span title="Original: peruaniſchen" class="dta-reg">peruanischen</span> <span title="Original: Meſsung" class="dta-reg">Messung</span><br/>
+war ein Grad am <span title="Original: Aequator" class="dta-reg">Äquator</span> 56731 <span title="Original: Toiſen" class="dta-reg">Toisen</span>; im<br/>
+Lappland dagegen 57209.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">In</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0237 : 229|</span><br/>
+<p class="dta-p">In <span title="Original: neuren" class="dta-reg">neueren</span> Zeiten hat man zur <span title="Original: Beſtimmung" class="dta-reg">Bestimmung</span> der<br/>
+Abplattung die <span title="Original: Pendelverſuche" class="dta-reg">Pendelversuche</span> vorgezogen. Man<br/>
+hat als allgemeines <span title="Original: Geſetz" class="dta-reg">Gesetz</span> gefunden daß man<br/>
+die <span title="Original: Pendelſchnur" class="dta-reg">Pendelschnur</span> in dem <span title="Original: Verhältniß" class="dta-reg">Verhältnis</span> der Quadrate<br/>
+der Sinus der Breite verkürzen <span title="Original: müſse" class="dta-reg">müsse</span>. <span title="Original: –" class="dta-reg">-</span> Man<br/>
+hat 2 Methoden bei Beobachtungen mit dem Pendel.<br/>
+Man richtet entweder an jedem <span title="Original: beſtimmten" class="dta-reg">bestimmten</span><br/>
+Ort das Pendel <span title="Original: ſo" class="dta-reg">so</span> ein, daß es eine <span title="Original: gewiſse" class="dta-reg">gewisse</span><br/>
+Zahl von Schwingungen in einer <span title="Original: Secunde" class="dta-reg">Sekunde</span> macht,<br/>
+und bemerkt den <span title="Original: Unterſchied" class="dta-reg">Unterschied</span> der Pendellänge<br/>
+<span title="Original: zwiſchen" class="dta-reg">zwischen</span> <span title="Original: zweien" class="dta-reg">zwei</span> Orten; <span title="Original: ſo" class="dta-reg">so</span> war die von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117531936"><span title="Original: Riché" class="dta-reg">Rieche</span></a></span></span><br/>
+in Bayonne, und <span title="Original: ſpäter" class="dta-reg">später</span> von <span title="Original: andern" class="dta-reg">anderen</span> an der <span title="Original: afri-&#xA;kaniſchen" class="dta-reg">afrikanischen</span> <span title="Original: Küſte" class="dta-reg">Küste</span>. <span title="Original: –" class="dta-reg">-</span> Oder nach einer 2ten Methode <span title="Original: nim̃t" class="dta-reg">nimmt</span><br/>
+man eine <span title="Original: beſtimmte" class="dta-reg">bestimmte</span> Normal Länge des Pendels,<br/>
+und beobachtet die Anzahl der Schwingungen die<br/>
+es bei einem jedem Orte macht. <span title="Original: –" class="dta-reg">-</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118510215"><span title="Original: Besſel" class="dta-reg">Bessel</span></a></span></span> hat noch<br/>
+eine andere Methode erfunden, die er aber<br/>
+noch nicht bekannt gemacht hat. <span title="Original: –" class="dta-reg">-</span> Von den <span title="Original: Fran-&#xA;zoſen" class="dta-reg">Franzosen</span> und Engländern <span title="Original: iſt" class="dta-reg">ist</span> hierin am <span title="Original: meiſten" class="dta-reg">meisten</span><br/>
+<span title="Original: geſchehen" class="dta-reg">geschehen</span>; <span title="Original: beſonders" class="dta-reg">besonders</span> hat in <span title="Original: neurer" class="dta-reg">neuerer</span> Zeit <span class="aq "><span title="Original: Capitain" class="dta-reg">Kapitän</span><br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/11671350X">Savy</a></span></span> Beobachtungen in <span title="Original: Weſtindien" class="dta-reg">Westindien</span> <span title="Original: angeſtellt" class="dta-reg">angestellt</span>, <span title="Schreibfehler: eben" class="dta-corr">[…]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">so</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0238|</span><br/>
+<span title="Original: ebenſo" class="dta-reg">ebenso</span> in Gröndland und Spitzbergen. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/124760295"><span title="Original: Freſenay" class="dta-reg">Fressenay</span></a></span></span><br/>
+und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117663476">Duperay</a></span></span> haben auf ihren großen <span title="Original: Reiſen" class="dta-reg">Reisen</span><br/>
+in vielen Orten <span title="Original: Pendelſchwingungen" class="dta-reg">Pendelschwingungen</span> beobachtet.<br/>
+Nach den <span title="Original: verſchiedenen" class="dta-reg">verschiedenen</span> Methoden die man zur<br/>
+<span title="Original: Beſtimmung" class="dta-reg">Bestimmung</span> der Abplattung der Erde <span title="Original: angeſtellt" class="dta-reg">angestellt</span><br/>
+hat <span title="Original: ſchwankt" class="dta-reg">schwankt</span> <span title="Original: dieſelbe" class="dta-reg">dieselbe</span> <span title="Original: zwiſchen" class="dta-reg">zwischen</span> <span class="sup "><span title="Original: 1" class="dta-reg">1/305</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 305" class="dta-reg"/></span> und <span class="sup "><span title="Original: 1" class="dta-reg">1/280</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 280" class="dta-reg"/></span>; man<br/>
+fand <span title="Original: ſie" class="dta-reg">sie</span> früher kleiner als in den <span title="Original: neueſten" class="dta-reg">neuesten</span> <span title="Original: Zei-&#xA;ten" class="dta-reg">Zeiten</span>. Die Größe <span title="Original: dieſes" class="dta-reg">dieses</span> <span title="Original: Unterſchiedes" class="dta-reg">Unterschiedes</span> <span title="Original: zwiſchen" class="dta-reg">zwischen</span><br/>
+den <span title="Original: verſchiedenen" class="dta-reg">verschiedenen</span> <span title="Original: Beſtimmungen" class="dta-reg">Bestimmungen</span> betragt 3600<span title="Original: ′" class="dta-reg">'</span><br/>
+oder <span class="sup "><span title="Original: 1" class="dta-reg">1/18</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 18" class="dta-reg"/></span> <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">Die Folge der Abplattung würde ungefähr<br/>
+<span title="Original: 2½" class="dta-reg">21/2</span> <span title="Original: mal" class="dta-reg">Mal</span> <span title="Original: unſrer" class="dta-reg">unserer</span> <span title="Original: höchſten" class="dta-reg">höchsten</span> Berge betragen; <span title="Original: ſod" class="dta-reg">sodaß</span><span class="b "><span title="Original: aß" class="dta-reg"/></span><br/>
+das <span title="Original: Himalaya" class="dta-reg">Himalaja</span> Gebirge <span title="Original: 2½" class="dta-reg">21/2</span> <span title="Original: mal" class="dta-reg">Mal</span> unter dem<br/>
+<span title="Original: Aequator" class="dta-reg">Äquator</span> aufgetragen werden mußte. Ein<br/>
+Punkt auf dem <span title="Original: Aequator" class="dta-reg">Äquator</span> <span title="Original: iſt" class="dta-reg">ist</span> 10700 <span title="Original: Toiſen" class="dta-reg">Toisen</span> oder<br/>
+64000 Fuß entfernter vom Mittelpunkt als ein<br/>
+Punkt am Pol; etwa 8 Meilen, bei einem <span title="Original: Halb-&#xA;meſser" class="dta-reg">Halbmesser</span> von 860 Meilen. <span title="Original: –" class="dta-reg">-</span> Die <span title="Original: Gradmeſsungen" class="dta-reg">Gradmessungen</span><br/>
+geben eine geringere Abplattung als die <span title="Original: Pendel-&#xA;ſchwingungen" class="dta-reg">Pendelschwingungen</span> <span title="Original: |" class="dta-reg">|1</span><span class="sup "><span title="Original: 1" class="dta-reg"/></span>/<span class="sub ">305</span>| und die neure <span title="Original: franzöſiſche" class="dta-reg">französische</span><br/>
+mit der von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117679100"><span title="Original: Swanberg" class="dta-reg">Schwanberg</span></a></span></span> in Lappland verglichen <span title="Schreibfehler: nähert" class="dta-corr">[…]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">sich</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0239 : 231|</span><br/>
+nähert <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: dieſen" class="dta-reg">diesen</span> <span class="dta-metamark" title="metamark">|:</span> <span class="sup "><span title="Original: 1" class="dta-reg">1/290</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 290" class="dta-reg"/></span> <span class="dta-metamark" title="metamark">:|</span>. <span title="Original: –" class="dta-reg">-</span> Die Mondstheorie <span title="Original: giebt" class="dta-reg">gibt</span><br/>
+<span class="sup "><span title="Original: 1" class="dta-reg">1/305</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 305" class="dta-reg"/></span>, nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116299762">Bouvard</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117161357"><span title="Original: Burkhard" class="dta-reg">Burkhards</span></a></span><span title="Original: s" class="dta-reg"/></span> Beobachtungen<br/>
+<span class="sup "><span title="Original: 1" class="dta-reg">1/291</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 291" class="dta-reg"/></span>. <span title="Original: –" class="dta-reg">-</span> Alle <span title="Original: Pendelverſuche" class="dta-reg">Pendelversuche</span> <span title="Original: ſchwanken" class="dta-reg">schwanken</span> <span title="Original: zwiſchen" class="dta-reg">zwischen</span> <span class="sup "><span title="Original: 1" class="dta-reg">1/280.</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 280" class="dta-reg"/></span><span title="Original: ." class="dta-reg"/><br/>
+und <span class="sup "><span title="Original: 1" class="dta-reg">1/290</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 290" class="dta-reg"/></span>.</p><br/>
+<p class="dta-p">Man hat gefragt ob die <span title="Original: ſüdliche" class="dta-reg">südliche</span> Abplattung größer<br/>
+<span title="Original: ſei" class="dta-reg">sei</span> als die nördliche, da im Süden weit mehr<br/>
+<span title="Original: Waſser" class="dta-reg">Wasser</span> und weniger <span title="Original: Continent" class="dta-reg">Kontinent</span> <span title="Original: ſich" class="dta-reg">sich</span> befinden;<br/>
+er hat <span title="Original: dieß" class="dta-reg">dies</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span> <span title="Original: verurſacht" class="dta-reg">verursacht</span>, daß man glaubte<br/>
+die Erde habe eine andere <span title="Original: Geſtalt" class="dta-reg">Gestalt</span> als die <span title="Original: elliptiſche" class="dta-reg">elliptische</span>.<br/>
+So gab <span title="Original: dieß" class="dta-reg">dies</span> auch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119174596"><span title="Original: Lacaille" class="dta-reg">Lacaille's</span></a></span><span title="Original: 's" class="dta-reg"/></span> <span title="Original: Meſsung" class="dta-reg">Messung</span> am <span class="aq "><span title="Original: Cap" class="dta-reg">Kap</span> de<br/>
+Bonesperence</span>. <span title="Original: –" class="dta-reg">-</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/124760295"><span title="Original: Freſenay" class="dta-reg">Fressenays</span></a></span><span title="Original: 's" class="dta-reg"/></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117663476"><span title="Original: Duperay" class="dta-reg">Duperay's</span></a></span><span title="Original: 's" class="dta-reg"/></span> <span title="Original: Unterſuchun-&#xA;gen" class="dta-reg">Untersuchungen</span>, <span title="Original: ſo" class="dta-reg">so</span> wie die <span title="Original: Reiſen" class="dta-reg">Reisen</span> von <span class="dta-metamark" title="metamark">|:</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119228521"><span title="Original: Manaſpina" class="dta-reg">Manaspina</span></a></span></span> <span class="dta-metamark" title="metamark">:|</span> <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/119228521">Malestina</a></span></span><br/>
+und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116522305">Bristbay</a></span></span> haben gezeigt daß keine <span title="Original: Verſchieden-&#xA;heit" class="dta-reg">Verschiedenheit</span> <span title="Original: zwiſchen" class="dta-reg">zwischen</span> der nördlichen und <span title="Original: ſüdlichen" class="dta-reg">südlichen</span> <span title="Original: Abplat-&#xA;tung" class="dta-reg">Abplattung</span> <span title="Original: ſtatt" class="dta-reg">statt</span> findet. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">Merkwürdig <span title="Original: iſt" class="dta-reg">ist</span> es aber, daß <span title="Original: ſich" class="dta-reg">sich</span> in den <span title="Original: verſchiedenen" class="dta-reg">verschiedenen</span><br/>
+Meridianen die Abplattung <span title="Original: verſchieden" class="dta-reg">verschieden</span> zeigt.</p><br/>
+<p class="dta-p">Bei den <span title="Original: Pendelverſuchen" class="dta-reg">Pendelversuchen</span> kann man <span title="Original: ſehr" class="dta-reg">sehr</span> leicht auf<br/>
+<span title="Original: Irrthümer" class="dta-reg">Irrtümer</span> kommen; auf <span title="Original: Inſeln" class="dta-reg">Inseln</span> wo viel <span title="Original: Baſalt" class="dta-reg">Basalt</span><br/>
+<span title="Original: iſt" class="dta-reg">ist</span> fanden <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> und <span class="aq ">Doc</span> daß die <span title="Original: Pendelſchwin-&#xA;gungen" class="dta-reg">Pendelschwingungen</span> <span title="Original: ſchneller" class="dta-reg">schneller</span> waren. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11671350X">Savy</a></span></span> fand daß ähnliche<br/>
+auf der <span title="Original: Inſel" class="dta-reg">Insel</span> <span title="Original: Ascenſion" class="dta-reg">Ascension</span>.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Auch</span></div><br/>
+</div></div></div></div></div></body></html>

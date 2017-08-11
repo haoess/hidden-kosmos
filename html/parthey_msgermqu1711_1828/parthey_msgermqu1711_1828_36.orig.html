@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session">   <div class="dta-head"><span title="Original: 36. 8 März" class="dta-reg">36. Vorlesung, 08.03.1828</span></div><br/>
+<p class="dta-p">Es bleibt uns nun noch übrig, einiges <span class="dta-del" title="Streichung (#s)">über</span><span class="dta-add" title="Hinzufügung (superlinear)">von</span> d<span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)">er</span> Aneinanderreihung der<br/>
+Vulkane zu sagen; ein Studium, welches erst in ganz neuster Zeit seine<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0422 : 209v|</span><br/>
+Ausbildung erhalten. Das meiste und gediegenste darüber haben wir von<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/116817569">L. v. <span class="u ">Buch</span></a></span>, theils in seiner Beschreibung der kanarischen Inseln,<br/>
+theils in einem neuren Aufsaz in <span title="Personenname"><a href="http://d-nb.info/gnd/116250836">Poggendorf</a></span>'s Journal: über die Natur<br/>
+und den Zusammenhang der Vulkane.</p><br/>
+<p class="dta-p">Man theilt die Vulkane in <span class="u ">Zentral-</span>vulkane und in <span class="u ">Reihen</span>-vul-<br/>
+kane. Jene bilden den Mittelpunkt einer Menge um sie her fast<br/>
+gleichmässig nach allen Seiten wirkender Ausbrüche. – Diese liegen<br/>
+in einer Reihe hintereinander, oft nur wenig von einander entfernt,<br/>
+wie Essen auf einer grossen Spalte. In Hinsicht ihrer Lage sind<br/>
+die Reihenvulkane dann wieder von 2erlei Art. Entweder erheben<br/>
+sie sich als einzelne Kegel-inseln aus dem Grunde der See: dann<br/>
+läuft gewöhnlich ihnen zur Seite ein primitives Gebirge völlig in<br/>
+derselben Richtung, dessen Fus sie zu bezeichnen scheinen, oder<br/>
+diese Vulkane stehn auf dem höchsten Rükken dieser Gebirgs-<br/>
+reihe, und bilden die Gipfel selbst. In ihrer Zusammensezung <span title="u" class="dta-abbr">und</span><br/>
+in ihren Produkten sind sie nicht von einander verschieden. Es<br/>
+sind fast immer Berge von Trachyt, und die festen Produkte<br/>
+daraus lassen sich auf Trachyt zurükführen.</p><br/>
+<p class="dta-p">Zu den Zentralvulkanen gehören: der <span class="u ">Vesuv</span>, mit den phlegraischen<br/>
+Feldern, und vieleicht dem Epomeo; – der <span class="u ">Ätna</span>, mit den liparischen<br/>
+Inseln, worunter Stromboli; – der <span class="u ">Pic</span> von Teneriffa mit den kanari-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0423 : 210r|</span><br/>
+<div class="fw-top fw-sig">53.</div><br/>
+schen Inseln; – die azorischen Inseln; – die Cap-Verdischen Inseln; – die<br/>
+Gallāpăgos <span title="Original: ppp" class="dta-reg">pp.</span><span title="Schreibfehler: " class="dta-corr">.</span></p><br/>
+<p class="dta-p">Zu den Reihen-vulkanen: die <span class="u ">Andes</span>kette, (<span title="S." class="dta-abbr">Siehe</span> meine geognostischen An-<br/>
+sichten von Südamerika) sehr merkwürdig ist es, dass wenn man hier<br/>
+vom Granit und Glimmerschiefer verlassen wird, das Vorkommen von<br/>
+Trachytkonglomeraten die Nähe eines Vulkans anzeigt; – die Reihe<br/>
+von Guatemala; – die Molukken; – die Philippinen; – die kurilischen<br/>
+Inseln.</p><br/>
+<p class="dta-p">Mit der Erscheinung der <span class="dta-del" title="Streichung (#s)">Erde schei</span><span class="dta-add" title="Hinzufügung (intralinear)">Vulkane scheint</span> eine Hebung<br/>
+der Erde verbunden bei den Zykladen und in Mexiko: äusserst selten ist<br/>
+das Vorkommen von uranfänglichem Gestein in der Nähe eines Vulkans, doch<br/>
+giebt es Beispiele <span class="dta-del" title="Streichung (#s)"><span title="Original: zB." class="dta-reg">z. B.</span></span>; am Vesuv sieht man solche granitischen Fünd-<br/>
+linge im Fosso grande; aber sehr wenig; bei Tunguragua in Mexiko nahe<br/>
+von der grossen Hängebrükke aus Strikken, ist Gneis vom Vulkane ge-<br/>
+hoben worden.</p><br/>
+<p class="dta-p">Indem wir einige allgemeine Betrachtungen über die Geognosie hin-<br/>
+zufügen, können wir uns natürlich nicht in das einzelne einlassen, <span class="dta-del" title="Streichung (#s)">in-</span><br/>
+<span class="dta-del" title="Streichung (#s)">dem</span> da dies der Gegenstand der Geognosie selbst ist. – Erst in neueren Zei-<br/>
+ten hat man angefangen, auch die schaffende Kraft der Vulkane hervor-<br/>
+zuheben, da man früher nur auf ihre zerstörende gesehn hatte: es ist<br/>
+erwiesen, dass die Vulkane immer noch körnige Gebirgsarten bilden.<br/>
+Wir sehn diesen Prozes unter unsern Augen, und man hat in Folge<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0424 : 210v|</span><br/>
+davon versucht, die Massen welche wir durch die Vulkane erhalten, künst-<br/>
+lich nachzuahmen: um diesen Zweig der Naturkunde haben sich beson-<br/>
+ders verdient gemacht die Engländer <span title="Personenname"><a href="http://d-nb.info/gnd/116828978">Greenough</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/117565741">Warburton</a></span> &amp; <span title="Personenname"><a href="http://d-nb.info/gnd/124329810">Söwerby</a></span> <span class="dta-metamark" title="metamark">(?)</span><span title="Schreibfehler: " class="dta-corr">.</span><br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/116817569">L. v. Buch</a></span> hat im Flemser Thal im südlichen Tyrol eine Stelle ent-<br/>
+dekt, wo dichter Kalkstein in körnigen verwandelt ist durch eine<br/>
+Spalte des hervorgedrungenen Urgebirges; endlich haben die neusten<br/>
+Versuche von <span title="Personenname"><a href="http://d-nb.info/gnd/11858281X">Mitscherlich</a></span> künstliche Fossilien hervorgebracht, indem er<br/>
+die Materialien derselben der Hize eines <span title="Original: Hohofens" class="dta-reg">Hochofens</span> aussezte: er fand<br/>
+auf diese Weise, dass man künstlich darstellen könne: Glimmer,<br/>
+Augit, Olivin und Titan. Andre Chemiker haben die Schlakken der<br/>
+<span title="Original: Hohöfen" class="dta-reg">Hochöfen</span> untersucht, und auch schon da mehrere <span title="Schreibfehler: künstlichen" class="dta-corr">künstliche</span> Mi-<br/>
+neralien gefunden. – Diese Versuche sind nicht blos in chemischer<br/>
+Hinsicht von grosser Wichtigkeit, sondern auch für die Theorie be-<br/>
+deutend: denn es ist klar, dass die verwandelnde Masse jünger<br/>
+sein mus als die verwandelte: wenn wir also, wie im Flemser Thale<br/>
+dichten Kalkstein in körnigen umgeändert sehn, und daneben eine<br/>
+Spalte mit Urgebirge, so mus dieses später aus der Spalte her-<br/>
+vorgedrungen, also in seiner Bildung auf den Kalkstein ge-<br/>
+folgt sein.</p><br/>
+<p class="dta-p">Ich lasse nun noch einige Bemerkungen über die äussere<br/>
+Erdrinde im allgemeinen folgen, worüber ich ausführlich mich<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0425 : 211r|</span><br/>
+ausgesprochen in meinem: Geognostischen Versuch über die Lagerung<br/>
+der Gebirgsarten in beiden Erdhälften.</p><br/>
+<p class="dta-p">Es ist oft die Frage aufgeworfen, wie tief wir unter die Erdrinde,<br/>
+vom Spiegel des Meeres an gerechnet, gekommen sind? Lange hielt<br/>
+man die Grube von Ansin bei Valenciennes für die tiefste, welche<br/>
+850 Fus unter dem Meere hat: allein die Messungen 2er ausgezeich-<br/>
+neten Geognosten, der <span title="H￼." class="dta-abbr">Herren</span> <span title="Personenname"><a href="http://d-nb.info/gnd/123197066">v. Dechen</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/117110213">von Oeynhausen</a></span> haben ge-<br/>
+zeigt, dass die tiefste Arbeit der Menschen unter dem Meeresspiegel<br/>
+bei Lüttich ist. Die Grube im Maasthale bei Val S<span class="sup uu ">t</span> Lambert hat<br/>
+1500 Fus ganze Tiefe: da der Ort nun ungefähr 100 Fus über dem<br/>
+Meere liegt, so ist man hier <span class="u ">1400 Fus</span> unter dem Meeres-niveau.<br/>
+Man hielt auch die Gruben von Whitehaven für die tiefsten, aber sie<br/>
+erreichen nur 1000 Fus. In Kornwall hat man eine Grube, wo ein <span class="dta-del" title="Streichung (#s)">Schacht</span><span class="dta-add" title="Hinzufügung (right)">Stollen</span><br/>
+mehrere 1000 Fus unter dem Meere hinläuft, und der äusserste<br/>
+Punkt desselben ist nur 8 Fus von dem Wasser entfernt. In dem<br/>
+Gebiete von Penswan <span class="dta-metamark" title="metamark">(?)</span> ist eine noch merkwürdigere Erscheinung: hier<br/>
+ist eine Grube auf einer Klippe im Meere, die gegen die Fluth durch<br/>
+Dämme hat geschüzt werden müssen, man baute 5 Jahre lang<br/>
+auf Eisenerze, bis endlich ein Schiff <span class="dta-del" title="Streichung (#s)">de</span> an der Klippe scheiterte<br/>
+und den Damm zerstörte, worauf die Grube ersoff; zum Glükke war<br/>
+Niemand unten. In Freiberg ist die tiefste Grube der Thonhofer Zug,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0426 : 211v|</span><br/>
+der 1670 Fus hat: da aber Freiberg schon 1200 Fus über dem Meere<br/>
+liegt, so bleiben nur 400 Fus für die absolute Tiefe übrig. In<br/>
+Mexiko maas ich eine Grube von 1530 Fus, die zu den tiefsten be-<br/>
+kanten gehört, allein die ganze Gegend liegt 6000 Fus über dem<br/>
+Meere. – Im Ganzen kann man annehmen, dass der Mensch 4<br/>
+<span class="dta-marginal dta-marginal-left"><span class="ph dta-figure" type="1">
+        [Abbildung]
+        </span><br/>
+</span>mal so tief unter das Meer sich gearbeitet hat, als das Maas<br/>
+der höchsten menschlichen Bauwerke über der Erde beträgt, für<br/>
+welche es auch eine bestimte Gränze zu geben scheint: die Pyra-<br/>
+mide von Ghizeh, der Cheops genant, das Strasburger Münster,<br/>
+die Peterskirche in Rom (Dom in Antwerpen) alle schwanken<br/>
+zwischen 440–450 Fus Höhe, und dies ist wiederum nur 40 mal<br/>
+höher als die Bauwerke der Thiere: denn die Wohnungen der<br/>
+weissen Ameisen erheben sich bis 10 und 12 Fus.</p><br/>
+<p class="dta-p">Allein ausser den Gruben haben wir andere Mittel, das In-<br/>
+nere der Erde zu erforschen: wir bedienen uns der Hebung<br/>
+der Gebirge, obgleich dies auch noch nicht viel ist. Nehmen<br/>
+wir an, dass die ganzen Gebirgsketten durch elastische Däm-<br/>
+pfe aus der Tiefe hervor gehoben sind, wie es nach den neuen<br/>
+Ansichten sehr wahrscheinlich ist: so ist also der unterste<br/>
+Fus des höchsten Gebirges die tiefst-heraufgehobene Stelle.<br/>
+Nun hat man auf dem Himalaya bis jezt die Höhe von 18500<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0427 : 212r|</span><br/>
+Fus über dem Meere erreicht, und der höchste Gipfel, der Deva-<br/>
+lagiri ist, wiewohl noch ziemlich unsicher, auf 26400 Fus ge-<br/>
+messen worden<span class="dta-del" title="Streichung (#ow)">.</span><span class="dta-add" title="Hinzufügung (across)">,</span> <span class="dta-del" title="Streichung (#s)">Bedenken wir ferner</span> und d<span class="dta-del" title="Streichung (#ow)">ass</span><span class="dta-add" title="Hinzufügung (across)">er</span> Fus dieses Gebirges<br/>
+wäre also die aus dem tiefsten Grunde hervorgehobene Stelle, die<br/>
+wir kennen. Bedenken wir aber, dass eine <span title="geograph." class="dta-abbr">geographische</span> Meile 22800<br/>
+Fus hat, und dass der Erdhalbmesser 860 Meilen beträgt, so sieht<br/>
+man, dass wir etwas über eine Meile, also nur einen sehr geringen<br/>
+Theil de<span class="dta-del" title="Streichung (#ow)">r</span><span class="dta-add" title="Hinzufügung (across)">s</span> Erdradius kennen.</p><br/>
+<p class="dta-p">Aus noch grösserer Tiefe indessen wirken die Vulkane herauf,<br/>
+und namentlich müssen wir annehmen, dass die Fündlinge kör-<br/>
+nigen Gesteines, wie man sie beim Vesuv am Fosso grande <span title="Original: pp" class="dta-reg">pp.</span> findet,<br/>
+aus bedeutender Tiefe hervorgeschleudert worden sind.</p><br/>
+<p class="dta-p">Wenn wir von oben nach unten hinabsteigen, so unterscheiden<br/>
+wir 5 körnige Gebirgsarten:</p><br/>
+<div class="dta-list">   <div class="dta-list-item">1, neuste Laven mit Eisenoxyd.</div>
+<div class="dta-list-item">2, ältere Basaltformazion.</div>
+<div class="dta-list-item">3, Trachyt mit glasigem Feldspath.</div>
+<div class="dta-list-item">4, Porphyr mit und ohne Quarz.</div>
+<div class="dta-list-item">5, Syenit, Gneis, Granit.</div>
+</div>   <p class="dta-p">Die 5<span title="￼" class="dta-abbr"><span class="sup u ">te</span></span> Abtheilung nante man lange: Urgebirge, aber <span title="Personenname"><a href="http://d-nb.info/gnd/118510185">Berzelius</a></span> fand<br/>
+in <span title="Schreibfehler: den" class="dta-corr">dem</span> Syenit: Olivin. Nehmen wir die übrigen Fossile dazu, so<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0428 : 212v|</span><br/>
+haben wir von oben nach unten gehend:</p><br/>
+<div class="dta-list">   <div class="dta-list-item">1, lokkere Schichten von Dammerde mit Thierknochen.</div>
+<div class="dta-list-item">2, dichtere Schichten von Kalkstein mit <span title="Schreibfehler: Seefische" class="dta-corr">Seefischen</span>, Bivalven, Polytha-<br/>
+lamen, Tellinen <span title="Original: pp" class="dta-reg">pp.</span></div>
+<div class="dta-list-item">3, Thonschiefer mit einigen Spuren von Bambus.</div>
+<div class="dta-list-item">4, körnige feldspathreiche Massen, Serpentin.</div>
+<div class="dta-list-item"><span class="dta-del" title="Streichung (#ow)">4</span><span class="dta-add" title="Hinzufügung (across)">5</span>, Granite, Dolerite, Basalte, ohne Reste organischer Körper.<br/>
+</div>   </div>   <p class="dta-p">Die 3<span title="￼" class="dta-abbr"><span class="sup u ">te</span></span> von diesen Gruppen heist auch Übergangsgebirge: in ihr<br/>
+findet sich das erste Aufkeimen des organischen Lebens: Bambus,<br/>
+baumartige Farrenkräuter <span title="Original: pp" class="dta-reg">pp.</span><span title="Schreibfehler: " class="dta-corr">.</span></p><br/>
+<p class="dta-p">Die 2<span title="￼" class="dta-abbr"><span class="sup u ">te</span></span> Gruppe sind die Flözgebirge mit Palmenstämmen <span title="Original: ppp" class="dta-reg">pp.</span><span title="Schreibfehler: " class="dta-corr">.</span></p><br/>
+<p class="dta-p">Darüber lagert sich die erste Gruppe als terziäre Bildung, und<br/>
+hier finden wir Baumstämme von Dikotyledonen, wie aus unsern<br/>
+nordischen Wäldern.</p><br/>
+<p class="dta-p">Dann folgt ein aufgeschwemtes Gebirge mit Goldsand und fossi-<br/>
+len Landthieren, und dies bildet die oberste Erdschicht.</p><br/>
+<p class="dta-p">Zwei grosse Zerstörungen der Vegetazion, nachdem die Erdrin-<br/>
+de schon erhärtet und erkaltet war, können wir in diesen<br/>
+Erscheinungen wahrnehmen: sie bezeichnen die Gränzen der<br/>
+Flözgebirge nach oben und nach unten. Die oberste ist die Stein-<br/>
+kohlenformazion, welche aus einer untergegangenen Palmenforma-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0429 : 213r|</span><br/>
+zion also Monokotyledonen entstanden ist: darunter die bernstein-<br/>
+haltige Braunkohle aus Dikotyledonen. Hier greift die Botanik<br/>
+so eng in die Geognosie ein, dass sie kaum mehr von einander zu<br/>
+trennen sind, daher kann es bemerkt werden, dass <span title="Monokotyl." class="dta-abbr">Monokotyledonen</span> solche<br/>
+Pflanzen sind, deren Stamm meist einfach in die Höhe steigt, und<br/>
+aus einer schwammigen Masse besteht; <span title="Dikotyl." class="dta-abbr">Dikotyledonen</span> aber einen festen<br/>
+vielfach-verzweigten Stamm haben, der bei seinem Wachsthum<br/>
+Jahresringe ansezt. Daher ist der oberste geognostische Horizont durch<br/>
+die Gestalten der meist oval-abgeplatteten Stämme ausgezeich-<br/>
+net. Man mus aber nicht glauben, dass diese Formazionen überall<br/>
+abgesondert sind; es finden sich Übergänge, so enthält der Gyps<br/>
+Knochen von Rhinozeros und Elephanten-artigen Thieren zusam̃en<br/>
+mit Palmen und baumartigen Farrenkräutern, die man in so gros-<br/>
+ser Menge antrift, dass man annehmen mus, die Vegetazion<br/>
+der Vorwelt habe nur daraus bestanden, während jezt unter den<br/>
+Tropen die Masse der Wälder nicht aus einer Mehrzahl von Mono-<br/>
+kotyledonen besteht, ausgenommen jene dichtbewachsenen Stellen<br/>
+am Orenoco, und am Rio Apure.</p><br/>
+<p class="dta-p">In diesen beiden grossen Ablagerungen der Steinkohlen und der<br/>
+Braunkohle ist es zu bemerken, dass man noch nie fossile Men-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0430 : 213v|</span><br/>
+schenknochen gefunden hat: dies läst auf das hohe Alter dieser<br/>
+Revoluzionen schliessen. Die Flora und Fauna finden sich über-<br/>
+einandergelagert, aber sie gehören einer früheren längst unterge-<br/>
+gangenen Welt an, in der noch keine Menschen existirten. Diese<br/>
+Verbindung der vegetativen und animalischen Welt mit den Fossi-<br/>
+len giebt der Geognosie unserer Zeiten einen neuen eignen Reiz. Es<br/>
+wird möglich, auch in ihr das Leben zu verfolgen, wie es von den<br/>
+ersten Anfängen aufwärts steigend, zusammengesezte Formen an-<br/>
+nimt, und sich endlich bis zur höchsten animalischen Bildung<br/>
+erhebt.</p><br/>
+<p class="dta-p">Wir müssen nun kurz die <span class="u ">Typen der Organisazion</span>, wie sich die-<br/>
+selben in den verschiedenen Schichten gelagert finden, angeben:</p><br/>
+<p class="dta-p">Im <span class="u ">Übergangs</span>gebirge, woraus ein grosser Theil des Harzes<br/>
+besteht, findet sich zu unterst: Bambusschilf mit Korallen<br/>
+und baumartigen Gräsern: zugleich Trilobiten, von der Art,<br/>
+die man sonst Käfermuscheln nante: also sehr ausgebildete<br/>
+Thiere, von denen eins mit grossen gegitterten Augen, dem Käfer<br/>
+auf Japan nicht unähnlich, der zu den grösten bekanten ge-<br/>
+hört, indem er 3–4 Fus Länge hat, – ferner Sepiaartige<br/>
+Fische, Cephalopoden, Orthozerat<span class="dta-del" title="Streichung (#s)">h</span>iten <span title="Original: pp" class="dta-reg">pp.</span> – Im <span class="u ">Flözgebirge</span> fin-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0431 : 214r|</span><br/>
+<div class="fw-top fw-sig">54.</div><br/>
+det sich eine zahllose Menge von Polythalmen, die sogenanten<br/>
+Ammonshörner und Belemniten: auch ein Thier, das seine Schale<br/>
+in dem Leibe hat, anstatt aussen um denselben, und welches man<br/>
+lange für untergegangen hielt; aber bei der Reise des Capitain<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/119227568"><span class="u ">Baudin</span></a></span> ist es dem Naturforscher <span title="Personenname"><a href="http://d-nb.info/gnd/118936530"><span class="u ">Péron</span></a></span> geglükt, ein solches<br/>
+Thier, die Spirula lebendig zu finden. Ich habe es in Paris in<br/>
+Spiritus gesehn, und es gelang, die Schale in seinem Leibe zu er-<br/>
+kennen und herauszunehmen. – ferner Nummuliten, von denen<br/>
+man eine grosse Menge in dem Gesteine sieht, aus dem die Pyra-<br/>
+miden in Aegypten gebaut sind. – Sepien; <span title="Hr." class="dta-abbr">Herr</span> <span title="Personenname"><a href="http://d-nb.info/gnd/116828315">Bukland</a></span> in Oxford<br/>
+hat sogar den farbigen Theil einer Sepia als eine gelbliche Mas-<br/>
+se gefunden, und es ist gelungen; dieselbe in heissem Wasser aufzu-<br/>
+lösen: ich habe ein Bildnis dieses kleinen Fisches mit seiner eignen<br/>
+Farbe gemalt gesehn, die also viele 1000 Jahre ungebraucht gelegen<br/>
+hatte. – Fische von allen Arten, die ich nicht weiter aufzählen will. –<br/>
+Tropenformen: krokodill-artige Thiere. Im <span class="u ">Lyas</span> <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">sind </span>besonders abwei-<br/>
+chende Formen: hier <span title="Schreibfehler: finden" class="dta-corr">findet</span> man die ungeheuer grossen Thiere; den ge-<br/>
+waltigen <span class="u ">Megalosaurus</span>, eine Eidexe von 40–50 Fus Länge (die grösten<br/>
+Krokodille, welche ich gemessen habe, hatten nur 20–22 Fus) deren<br/>
+Schenkelknochen 4 Fus mist; – den <span class="u ">Pleisiosaurus</span>, ein Krokodill<br/>
+mit einem Schwanenhals; von dem man sich denken kann, dass<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0432 : 214v|</span><br/>
+es auf dem Troknen gelegen habe, und seinen langen Hals in das<br/>
+Wasser hinab lassen konte, um seine Beute zu erhaschen; – den<br/>
+Ichthyosaurus, ein Krokodil mit Fischaugen, während alle andern<br/>
+lange geschlizte Augen haben; dann das wirkliche Krokodill, wie<br/>
+es als Gaviale im Ganges vorkömt; – eine sonderbare Flügel-ei-<br/>
+dexe, die einen eignen Finger hat, der mit dem Flügel verbun-<br/>
+den ist, Pterodactyles genant, worüber zwischen <span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span> und<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118805193">Sömmering</a></span> ein langer Streit geführt wurde; – dann die ganze<br/>
+Reihe der Cetaceen, wallfisch-artige Thiere, warmblütige Be-<br/>
+wohner des Meeres; – Seekühe, wie man sie in den antillischen<br/>
+Meeren findet, Lamantins genant. <span class="u ">Über</span> der <span class="u ">Kreide</span> fangen die<br/>
+Säugethiere des Landes an; – ungeheure, Rhinozeros-ähnliche:<br/>
+wie das Anaplotherion, Palaiotherion; – der kolossale Tapir,<br/>
+den man lange für ein blos amerikanisches Thier hielt, bis<br/>
+man kürzlich in Malakka einen entdekt hat, den man zwar<br/>
+für eine neue Spezies ansehn mus, der aber mit dem amerika-<br/>
+nischen viel Ähnlichkeit hat; – merkwürdig genug ist nie<br/>
+ein <span class="u ">Auerochse</span> fossil gefunden worden. Man hat in neuern<br/>
+Zeiten erwiesen, dass unser Rindvieh nicht von dem Auer-<br/>
+ochsen abstamt, sondern dass der Urstam sich in Amerika<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0433 : 215r|</span><br/>
+findet; – einen höheren und grösseren Elephanten; ein Rhino-<br/>
+zeros, neue Spezies vom Nilpferd <span title="Original: pp" class="dta-reg">pp.</span> – einen solchen ungeheu-<br/>
+ren Elephanten hat man im nördlichen Asien entdekt. Schon<br/>
+1771 fand man daselbst fossile Elephantenknochen mit Stük-<br/>
+ken Fleisch daran: aber die wichtigste Entdekkung machte<br/>
+<span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/12017507X">Adams</a></span></span>, ein in russischen Diensten stehender Physiker, auf<br/>
+einer Reise 1799 in Sibirien: er fand eine grosse Eismasse mit<br/>
+einzelnen Knochen und Fleisch: es brauchte 5–6 Jahre, ehe<br/>
+das Thier ganz vom Eise frei wurde; unterdessen zehrten Hun-<br/>
+de und Wölfe in grosser Menge daran; endlich 1804 meldeten<br/>
+die Jakuten an <span title="Personenname"><a href="http://d-nb.info/gnd/12017507X">Adams</a></span>, dass das Thier frei sei, und nun wurden<br/>
+endlich die Reste nach Petersburg geschaft. Man fand die<br/>
+Augen und einen Theil des Gehirns; das Thier war mit 15 Zoll<br/>
+langen Haaren bedekt, und dies gab Veranlassung zu der Ver-<br/>
+muthung, dass es dadurch gegen die Kälte habe geschüzt werden<br/>
+sollen, und dass es also auch in der kalten Zone könne<br/>
+Elephanten <span title="Original: pp" class="dta-reg">pp.</span> gegeben; allein die Behauptung ist nicht wahr-<br/>
+scheinlich: wenn man auch zugiebt, dass Elephanten in der<br/>
+kalten Zone gelebt haben: so findet man doch neben den Überresten<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0434 : 215v|</span><br/>
+dieser Thiere, und zwar gleichzeitig mit ihnen, Palmen und andre<br/>
+Tropengewächse; es ist <span class="dta-del" title="Streichung (#s)">aber</span> erwiesen, dass in der kalten Zone nur<br/>
+Gewächse leben können, welche im Winter ihr Leben auf ihre<br/>
+mittlere Axe konzentriren, und ihre appendikulären Organe<br/>
+(zu deutsch: die Blätter) abwerfen können: wenn man aber eine<br/>
+Palme köpft, oder ihr die obere Krone nimt, so stirbt sie<br/>
+alsbald, und dasselbe würde geschehn, wenn sie durch den Frost<br/>
+ihr Laub verlöre; – man findet endlich das <span class="u ">Megatherion</span>, von<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/119061341">Dalton</a></span> in Bonn sehr gut beschrieben, welches von so wunderbarer<br/>
+Zusammensezung ist, dass es beinahe wie ein Aerolith aus<br/>
+einem andern Weltkörper herübergekommen zu sein scheint, ein<br/>
+Mittelding zwischen Faulthier und Armadill.</p><br/>
+<p class="dta-p">In älterer Zeit haben sich besonders um die Wissenschaft der<br/>
+vergleichenden Anatomie verdient gemacht: <span title="Personenname"><a href="http://d-nb.info/gnd/119291827">Kamper</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/118805193">Sömme-<br/>
+ring</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/116208503">Blumenbach</a></span>; in neuer Zeit <span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span> für die Knochen,<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118726048">Lamark</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/116685298">B<span class="dta-del" title="Streichung (#ow)">o</span><span class="dta-add" title="Hinzufügung (across)">r</span>ongniart</a></span> für die Thiere selbst.</p><br/>
+</div></body></html>

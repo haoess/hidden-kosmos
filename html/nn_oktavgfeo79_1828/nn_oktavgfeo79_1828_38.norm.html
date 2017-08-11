@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><span class="dta-supplied">[38. Vorlesung, 15.03.1828]</span><div class=""><div class=""><div class=""><div class=""><p class="dta-p"><span title="Original: Dieſem" class="dta-reg">Diesem</span> folgt nun die Gliederung der <span title="Original: Continente" class="dta-reg">Kontinente</span> und<br/>
+Bergketten, da die <span title="Original: höhern" class="dta-reg">höheren</span> Berge <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: ſpäter" class="dta-reg">später</span> als die <span title="Original: ter-&#xA;tiären" class="dta-reg">tertiären</span> Gebirge haben. Dies <span title="Original: ſteht" class="dta-reg">steht</span> in <span title="Original: ſehr" class="dta-reg">sehr</span> inniger <span title="Original: Ver-&#xA;bindung" class="dta-reg">Verbindung</span> mit der <span title="Original: Vertheilung" class="dta-reg">Verteilung</span> der <span title="Original: Climate" class="dta-reg">Klimata</span> und <span title="Original: giebt" class="dta-reg">gibt</span> einen<br/>
+<span title="Original: Uebergang" class="dta-reg">Übergang</span> der <span title="Original: Climatologie" class="dta-reg">Klimatologie</span> in die <span title="Original: Geognoſie" class="dta-reg">Geognosie</span>. Die<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0292 : 286.|</span><br/>
+<span title="Original: Temperaturvertheilung" class="dta-reg">Temperaturverteilung</span> hängt von dem <span title="Original: Verhältniße" class="dta-reg">Verhältnisse</span> der<br/>
+<span title="Original: feſten" class="dta-reg">festen</span> und <span title="Original: flüßigen" class="dta-reg">flüssigen</span> <span title="Original: Theile" class="dta-reg">Teile</span> ab. Wenn Afrika uns<br/>
+nicht in <span title="Original: denſelben" class="dta-reg">denselben</span> <span title="Original: Graden" class="dta-reg">Geraden</span> gegen Süden läge, <span title="Original: ſo" class="dta-reg">so</span> würden<br/>
+wir das kältere <span title="Original: Clima" class="dta-reg">Klima</span> vom nördlichen <span title="Original: Aſien" class="dta-reg">Asien</span> <span title="Original: theilen" class="dta-reg">teilen</span>,<br/>
+<span title="Original: deſſen" class="dta-reg">dessen</span> <span title="Original: öſtlicher" class="dta-reg">östlicher</span> und <span title="Original: ſüdlicher" class="dta-reg">südlicher</span> Mangel an <span title="Original: ſtarren" class="dta-reg">starren</span> <span title="Original: Theilen" class="dta-reg">Teilen</span>,<br/>
+dies kältere <span title="Original: Clima" class="dta-reg">Klima</span> bedingt.</p><br/>
+<p class="dta-p">Endlich folgt der letzte <span title="Original: Theil" class="dta-reg">Teil</span> der <span title="Original: Geognoſie" class="dta-reg">Geognosie</span>, welcher<br/>
+des <span title="Original: Anſehen" class="dta-reg">Ansehen</span> der Oberfläche <span title="Original: unſres" class="dta-reg">unseres</span> Planeten, die äußere<br/>
+Form <span title="Original: deſſelben" class="dta-reg">desselben</span> in der Gliederung der <span title="Original: Continente" class="dta-reg">Kontinente</span> und<br/>
+Bergketten, und die <span title="Original: ſie" class="dta-reg">sie</span> umgebendem <span title="Original: Waſſer-" class="dta-reg">Wasser-</span> und Luft-<br/>
+<span title="Original: Oceane" class="dta-reg">Ozeane</span> in <span title="Original: ſich" class="dta-reg">sich</span> faßt. Es <span title="Original: iſt" class="dta-reg">ist</span> dies der <span title="Original: Theil" class="dta-reg">Teil</span> welcher in<br/>
+einem <span title="Original: ſo" class="dta-reg">so</span> innigen <span title="Original: Zuſammenhange" class="dta-reg">Zusammenhänge</span> mit der Geographie<br/>
+<span title="Original: ſteht" class="dta-reg">steht</span>, die in den <span title="Original: geiſtreichen" class="dta-reg">geistreichen</span> <span title="Original: Anſichten" class="dta-reg">Ansichten</span> des <span title="H￼" class="dta-abbr">Herrn</span> <span class="aq ">Prof:<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/11860130X">Ritter</a></span></span> <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ſchön" class="dta-reg">schön</span> entwickelt <span title="Original: iſt" class="dta-reg">ist</span>; und <span title="Original: iſt" class="dta-reg">ist</span> auch der <span title="Original: anmuthig-&#xA;ſte" class="dta-reg">anmutigste</span> <span title="Original: Theil" class="dta-reg">Teil</span>, da er mit einem Blicke das Bild erkennen<br/>
+läßt, wie die entwilderten <span title="Original: Naturſcenen" class="dta-reg">Naturszenen</span> nach den <span title="Original: Be-&#xA;dürfnißen" class="dta-reg">Bedürfnissen</span> der Völker zur <span title="Original: Cultur" class="dta-reg">Kultur</span>, und wiederum zur<br/>
+jetzigen <span title="Original: äußern" class="dta-reg">äußeren</span> Bildung beigetragen haben.</p><br/>
+<p class="dta-p">Die Oberfläche <span title="Original: unſers" class="dta-reg">unseres</span> Planeten erhält ihre <span title="Original: Ge-&#xA;ſtalt" class="dta-reg">Gestalt</span> von den <span title="Original: feſten" class="dta-reg">festen</span> und <span title="Original: ſtarren" class="dta-reg">starren</span> <span title="Original: Theilen" class="dta-reg">Teilen</span> der <span title="Original: Conti-&#xA;nente" class="dta-reg">Kontinente</span> und den <span title="Original: Meern" class="dta-reg">Meeren</span>. Der <span title="Original: Contact" class="dta-reg">Kontakt</span> beider <span title="Original: beſtim̃t" class="dta-reg">bestimmt</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0293 : 287.|</span><br/>
+die Umgrenzung, Richtung und Lage des einen zu dem<br/>
+<span title="Original: andern" class="dta-reg">anderen</span>. So finden <span title="Original: ſich" class="dta-reg">sich</span> kleine Becken im <span title="Original: Innern" class="dta-reg">Inneren</span> der <span title="Original: ſtarren" class="dta-reg">starren</span><br/>
+<span title="Original: Theile" class="dta-reg">Teile</span>, von denen <span title="Original: ſelbſt" class="dta-reg">selbst</span> einige tiefer als das Niveau<br/>
+des Meeres <span title="Original: ſind" class="dta-reg">sind</span>, wie es von dem <span title="Original: caſpiſchen" class="dta-reg">kaspischen</span> Meere <span title="Original: er-&#xA;mittelt" class="dta-reg">ermittelt</span> <span title="Original: iſt" class="dta-reg">ist</span>. Andere dagegen, wie die See von <span title="Original: Tiſch" class="dta-reg">Tischelka</span><span title="Original: e" class="dta-reg"/><span title="Original: lka" class="dta-reg"/><br/>
+im <span title="Original: höhern" class="dta-reg">höheren</span> <span title="Original: Theile" class="dta-reg">Teile</span> des <span title="Original: ſüdlichen" class="dta-reg">südlichen</span> Peru, breiten ihr Becken<br/>
+aus in einer Höhe von <span title="Original: 8–9000" class="dta-reg">8-9000</span><span title="Original: ′" class="dta-reg">'</span> über dem Meere, in dem<br/>
+<span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: Fiſche" class="dta-reg">Fische</span> von eigener <span title="Original: Geſtalt" class="dta-reg">Gestalt</span> finden, und dort in einer<br/>
+Region leben, welche 3 <span title="Original: mal" class="dta-reg">Mal</span> höher als die <span title="Original: Wolken-&#xA;ſchichten" class="dta-reg">Wolkenschichten</span> der jetzigen Jahreszeit <span title="Original: iſt" class="dta-reg">ist</span>. <span title="Original: Dieſe" class="dta-reg">Diese</span> Seen zeichnen<br/>
+<span title="Original: ſich" class="dta-reg">sich</span> auch von den <span title="Original: andern" class="dta-reg">anderen</span> durch ihre <span title="Original: chemiſche" class="dta-reg">chemische</span> Natur aus<br/>
+da <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: Beſtandtheile" class="dta-reg">Bestandteile</span> enthalten, die von <span title="Original: organiſchen" class="dta-reg">organischen</span> Stoffen<br/>
+und <span title="Original: Auflöſung" class="dta-reg">Auflösung</span> der Gebirgsarten herrühren, durch die Bäche<br/>
+ihnen zu geführt wurden, und bei dem Mangel des <span title="Original: Abflußes" class="dta-reg">Abflusses</span><br/>
+<span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: ſeit" class="dta-reg">seit</span> <span title="Original: Jahrtauſenden" class="dta-reg">Jahrtausenden</span> in ihnen anhäuften, auch enthalten<br/>
+<span title="Original: ſie" class="dta-reg">sie</span> vorzüglich Salze. Die See <span title="Original: Dſchaka" class="dta-reg">Dschaka</span> von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119426943">Klapperton</a></span></span><br/>
+in Afrika gefunden, <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: wahrſcheinlich" class="dta-reg">wahrscheinlich</span> auch eine von <span title="Original: dieſen" class="dta-reg">diesen</span>.<br/>
+Die See <span title="Original: Cat" class="dta-reg">Catarigue</span><span title="Original: a" class="dta-reg"/><span title="Original: rigue" class="dta-reg"/> in Venezuela enthält <span title="Original: ſalzſauren" class="dta-reg">salzsauren</span><br/>
+Kalk und zwar ziemlich frei von <span title="Original: andern" class="dta-reg">anderen</span> <span title="Original: Subſtanzen" class="dta-reg">Substanzen</span>.<br/>
+<span title="Original: Auſſer" class="dta-reg">Außer</span> <span title="Original: dieſen" class="dta-reg">diesen</span> <span title="Original: giebt" class="dta-reg">gibt</span> es noch <span title="Original: ſchmale" class="dta-reg">schmale</span> lange <span title="Original: Waſſerbecken" class="dta-reg">Wasserbecken</span>,<br/>
+die durch <span title="Original: Bifurcationen" class="dta-reg">Bifurkationen</span> und <span title="Original: anaſtomoſe" class="dta-reg">anastomose</span> <span title="Original: Zertheilung" class="dta-reg">Zerteilung</span> in große<br/>
+Ebenen <span title="Original: Meſepotaliden" class="dta-reg">Mesepotaliden</span> oder große <span title="Original: Inſeln" class="dta-reg">Inseln</span> bilden, die ganz<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0294 : 288.|</span><br/>
+durch <span title="Original: ſolche" class="dta-reg">solche</span> <span title="Original: Waſſerverzweigungen" class="dta-reg">Wasserverzweigungen</span> von einander getrennt<br/>
+<span title="Original: ſind" class="dta-reg">sind</span>. Die größte <span title="Original: dieſer" class="dta-reg">dieser</span> <span title="Original: Inſeln" class="dta-reg">Inseln</span> <span title="Original: iſt" class="dta-reg">ist</span> die, welche der Euphrat<br/>
+und Tigris <span title="Original: einſchließt" class="dta-reg">einschließt</span>, da der <span title="Original: Perſiſche" class="dta-reg">Persische</span> <span title="Original: Meerbuſen" class="dta-reg">Meerbusen</span> beide<br/>
+<span title="Original: Flüſſe" class="dta-reg">Flüsse</span> verbindet. Eine andere <span title="Original: iſt" class="dta-reg">ist</span> die neu <span title="Original: ſpaniſche" class="dta-reg">spanische</span> J.<br/>
+Jucanan, die durch den einen Arm des <span title="Original: Orinoko" class="dta-reg">Orinoco</span>, der in<br/>
+den Rio Negro geht und der <span title="Original: ſich" class="dta-reg">sich</span> wieder in den <span title="Original: Amazonen-&#xA;ſtrom" class="dta-reg">Amazonenstrom</span> ergießt, gebildet wird. Die Breite <span title="Original: dieſer" class="dta-reg">dieser</span> Becken<br/>
+<span title="Original: ſind" class="dta-reg">sind</span> oft <span title="Original: ſo" class="dta-reg">so</span> beträchtlich, daß <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span> die Wanderungen<br/>
+der Völker hemmten, und <span title="Original: ſo" class="dta-reg">so</span> die Natur den Drang und<br/>
+des <span title="Original: Fortſchreiten" class="dta-reg">Fortschreiten</span> ganzer Nationen <span title="Original: ſteigerte" class="dta-reg">steigerte</span>, durch einen<br/>
+Damm der <span title="Original: Hinderniſſe" class="dta-reg">Hindernisse</span> ihrer <span title="Original: ſonſt" class="dta-reg">sonst</span> nicht aufzuhaltenden<br/>
+Bewegungen. Einige von ihnen in Amerika haben eine<br/>
+Breite von 30, 40,000<span title="Original: ′" class="dta-reg">'</span>, und mehrere die <span title="Original: ſich" class="dta-reg">sich</span> in Golfe<br/>
+ausdehnen erreichen eine Breite bis zu 30 Meilen.<br/>
+<span title="Original: Dieſe" class="dta-reg">Diese</span> Golfe enthalten aber <span title="Original: größtentheils" class="dta-reg">größtenteils</span> noch <span title="Original: ſüßes" class="dta-reg">süßes</span><br/>
+<span title="Original: Waſſer" class="dta-reg">Wasser</span>, da die Ebbe und <span title="Original: Fluth" class="dta-reg">Flut</span> den Ausfluß immer<br/>
+wieder zurücktreibt und nur weniges <span title="Original: Seewaſſer" class="dta-reg">Seewasser</span> mit<br/>
+<span title="Original: hineintrit" class="dta-reg">hineintritt</span>, und bei der weiten Fläche <span title="Original: verdunſtet" class="dta-reg">verdunstet</span> das<br/>
+<span title="Original: meiſte" class="dta-reg">meiste</span> das von den Strömen zugeführten <span title="Original: Waſſers" class="dta-reg">Wassers</span>.</p><br/>
+<p class="dta-p">Die Wichtigkeit des <span title="Original: Waſſers" class="dta-reg">Wassers</span> <span title="Original: iſt" class="dta-reg">ist</span> um <span title="Original: ſo" class="dta-reg">so</span> größer<br/>
+da es 4 <span title="Original: mal" class="dta-reg">Mal</span> <span title="Original: ſo" class="dta-reg">so</span> viel <span title="Original: Sauerſtoff" class="dta-reg">Sauerstoff</span> enthält als die Atmosphäre,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0295 : 289.|</span><br/>
+und bedingt durch <span title="Original: ſein" class="dta-reg">sein</span> <span title="Original: Daſein" class="dta-reg">Dasein</span> auf der Erde ein <span title="Original: or-&#xA;ganiſches" class="dta-reg">organisches</span> Leben, wie es nicht auf dem Monde <span title="Original: ſein" class="dta-reg">sein</span><br/>
+kann, weil alle Beobachtungen darin <span title="Original: übereinſtimmen" class="dta-reg">übereinstimmen</span><br/>
+daß es dort fehlt. Die <span title="Original: Exiſtenz" class="dta-reg">Existenz</span> des <span title="Original: Waſſers" class="dta-reg">Wassers</span> und<br/>
+der Luft <span title="Original: iſt" class="dta-reg">ist</span> für den Organismus <span title="Original: nothwendiger" class="dta-reg">notwendiger</span> als<br/>
+das Sonnenlicht, denn einige <span title="Original: Organiſationen" class="dta-reg">Organisationen</span> können ja<br/>
+ohne Licht <span title="Original: vegetiren" class="dta-reg">vegetieren</span>, das Leben von Pflanzen und<br/>
+<span title="Original: Thieren" class="dta-reg">Tieren</span> in tiefen Schichten <span title="Original: ſind" class="dta-reg">sind</span> Bärgen dafür.</p><br/>
+<p class="dta-p"><span title="Original: Unſer" class="dta-reg">Unser</span> Planet hat bekanntlich 2 Umhüllungen,<br/>
+als Luft und <span title="Original: Waſſer" class="dta-reg">Wasser</span>, eine allgemeine in der <span title="Original: At-&#xA;mosphäre" class="dta-reg">Atmosphäre</span> und eine partielle in dem <span title="Original: Ocean" class="dta-reg">Ozean</span>. Je höher<br/>
+wir <span title="Original: ſteigen" class="dta-reg">steigen</span> um <span title="Original: ſo" class="dta-reg">so</span> weniger <span title="Original: thieriſches" class="dta-reg">tierisches</span> Leben findet<br/>
+<span title="Original: ſich" class="dta-reg">sich</span>, und die hohen Gipfel der Berge <span title="Original: ſind" class="dta-reg">sind</span> nur einzeln<br/>
+von Geiern, Adlern, dem Condor, die in Peru bis <span title="Original: 18,000′" class="dta-reg">18,000'</span><br/>
+hoch <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: emporſchwingen" class="dta-reg">emporschwingen</span>, und ferner von <span title="Original: Inſecten" class="dta-reg">Insekten</span> <span title="Original: be-&#xA;ſonders" class="dta-reg">besonders</span> Schmetterlingen belebt. Letztere haben aber<br/>
+nicht ihren Wohnort in <span title="Original: dieſer" class="dta-reg">dieser</span> Höhe, <span title="Original: ſondern" class="dta-reg">sondern</span> geben ein<br/>
+<span title="Original: Beiſpiel" class="dta-reg">Beispiel</span> von der <span title="Original: Aſcenſion" class="dta-reg">Ascension</span> der <span title="Original: Luftſtrömungen" class="dta-reg">Luftströmungen</span> neben<br/>
+den Gebirgen hin, wodurch <span title="Original: ſie" class="dta-reg">sie</span> mit in die Höhe <span title="Original: fort-&#xA;geriſſen" class="dta-reg">fortgerissen</span> werden. Herr <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/101165250"><span title="Original: Bousſingault" class="dta-reg">Boussingault</span></a></span></span> der den<br/>
+<span title="Original: Dieſili" class="dta-reg">Diesilin</span><span title="Original: n" class="dta-reg"/> bei Carracas von neuem <span title="Original: gemeſſen" class="dta-reg">gemessen</span> hat, da man<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0296 : 290.|</span><br/>
+glaubte daß er nach dem Erdbeben <span title="Original: geſunken" class="dta-reg">gesunken</span> <span title="Original: ſei" class="dta-reg">sei</span>, aber<br/>
+<span title="Original: dieſelbe" class="dta-reg">dieselbe</span> Höhe von 1500 <span title="Original: Toiſen" class="dta-reg">Toisen</span> wie meine <span title="Original: Meſſungen" class="dta-reg">Messungen</span><br/>
+ergeben fand, beobachtete auch in jener Höhe durch<br/>
+die <span title="Original: Luftſtrömungen" class="dta-reg">Luftströmungen</span> hinaufgehobene Schmetterlinge und<br/>
+Grashalme, und der ausgezeichnete Botaniker Herr<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/115674667"><span title="Original: Kunth" class="dta-reg">kund</span></a></span>,</span> erkannte in letztere eine neue ziemlich <span title="Original: ent-&#xA;fernt" class="dta-reg">entfernt</span> davon <span title="Original: wachſende" class="dta-reg">wachsende</span> Art der Gattung <span class="aq ">Kyllingia.</span></p><br/>
+<p class="dta-p">Der <span title="Original: erſte" class="dta-reg">erste</span> Schnee welchen man im hohen Norden <span title="Original: an-&#xA;trifft" class="dta-reg">antrifft</span>, und <span title="Original: ſelbſt" class="dta-reg">selbst</span> bei uns <span title="Original: ſich" class="dta-reg">sich</span> fortpflanzt, <span title="Original: iſt" class="dta-reg">ist</span> mehr im<br/>
+Beweis dafür, daß <span title="Original: organiſche" class="dta-reg">organische</span> Anfänge in der Luft<br/>
+vorbereitet werden können, da es <span title="Original: wahrſcheinlich" class="dta-reg">wahrscheinlich</span> <span title="Original: iſt" class="dta-reg">ist</span>,<br/>
+daß <span title="Original: ſich" class="dta-reg">sich</span> die <span title="Original: Subſtanz" class="dta-reg">Substanz</span> <span title="Original: erſt" class="dta-reg">erst</span> nachdem der Schnee gefallen,<br/>
+entwickelt.</p><br/>
+<p class="dta-p">Dürre, <span title="Original: Clima" class="dta-reg">Klima</span> und Bewohnbarkeit hängen <span title="Original: gemein-&#xA;ſchaftlich" class="dta-reg">gemeinschaftlich</span> ab, von der Verbindung der <span title="Original: Uebereinſtimmung" class="dta-reg">Übereinstimmung</span><br/>
+und dem <span title="Original: Wechſel" class="dta-reg">Wechsel</span> des Meeres mit den <span title="Original: Continenten" class="dta-reg">Kontinenten</span><br/>
+<span title="Original: Climatologie" class="dta-reg">Klimatologie</span> und Geographie <span title="Original: ſtehen" class="dta-reg">stehen</span> in einem einigen<br/>
+<span title="Original: Verhältniſſe" class="dta-reg">Verhältnisse</span> zu der <span title="Original: Geognoſie" class="dta-reg">Geognosie</span>, und <span title="Original: dieſe" class="dta-reg">diese</span> 3 bilden<br/>
+ein Ganzes. Das <span title="Original: Reſultat" class="dta-reg">Resultat</span> des <span title="Original: Zuſammenwirkens" class="dta-reg">Zusammenwirkens</span><br/>
+der <span title="Original: trocknen" class="dta-reg">trockenen</span> Erde mit dem <span title="Original: Flüſſigen" class="dta-reg">Flüssigen</span>, bietet das<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0297 : 291.|</span><br/>
+mannigfaltig Gegliederte dar, und dies bedingt wieder<br/>
+auf eine mannigf. Art das <span title="Original: Clima" class="dta-reg">Klima</span> durch Erwärmung<br/>
+und die <span title="Original: wäſſrigen" class="dta-reg">wässrigen</span> <span title="Original: Theile" class="dta-reg">Teile</span> in der Atmosphäre. Die<br/>
+<span title="Original: Durchſichtigkeit" class="dta-reg">Durchsichtigkeit</span> des <span title="Original: Luftkreiſes" class="dta-reg">Luftkreises</span> <span title="Original: iſt" class="dta-reg">ist</span> nicht von der <span title="Original: Quan-&#xA;tität" class="dta-reg">Quantität</span>, <span title="Original: ſondern" class="dta-reg">sondern</span> von der <span title="Original: Beſchaffenheit" class="dta-reg">Beschaffenheit</span> der Fruchtigkeit<br/>
+in der Luft bedingt, ob <span title="Original: dieſe" class="dta-reg">diese</span> nämlich ganz <span title="Original: aufgelöſt" class="dta-reg">aufgelöst</span><br/>
+oder zu Wolken verdichtet <span title="Original: iſt" class="dta-reg">ist</span>. Die <span title="Original: Wolkenſchichten" class="dta-reg">Wolkenschichten</span><br/>
+<span title="Original: ſind" class="dta-reg">sind</span> <span title="Original: ſo" class="dta-reg">so</span> nicht <span title="Original: blos" class="dta-reg">bloß</span> eine <span title="Original: Urſache" class="dta-reg">Ursache</span> der Erkältung, indem <span title="Original: ſie" class="dta-reg">sie</span><br/>
+die Strahlen der Sonne hemmen, <span title="Original: ſondern" class="dta-reg">sondern</span> auch <span title="Original: Urſache" class="dta-reg">Ursache</span> der<br/>
+Erwärmung, weil <span title="Original: ſie" class="dta-reg">sie</span> das <span title="Original: Auſſtrahlen" class="dta-reg">Ausstrahlen</span> der Wärme des<br/>
+Erdkörpers verhindern, weshalb die <span title="Original: drückenſte" class="dta-reg">drückest</span> und <span title="Original: ſchwühlſte" class="dta-reg">schwülste</span><br/>
+Luft heißer Sommertage, uns bei bewölkten Himmel am<br/>
+<span title="Original: beſchwerlichſten" class="dta-reg">beschwerlichsten</span> fällt. Die mehr oder weniger <span title="Original: lichtſchwächende" class="dta-reg">lichtschwächende</span><br/>
+Kraft der Atmosphäre und die <span title="Original: Durchſichtigkeit" class="dta-reg">Durchsichtigkeit</span> der Schichten,<br/>
+<span title="Original: ſind" class="dta-reg">sind</span> die <span title="Original: Urſachen" class="dta-reg">Ursachen</span> der <span title="Original: Begünſtigung" class="dta-reg">Begünstigung</span> des <span title="Original: Clima's" class="dta-reg">Klimas</span> mancher <span title="Original: Ge-&#xA;genden" class="dta-reg">Gegenden</span>. Wenn es gewiß <span title="Original: iſt" class="dta-reg">ist</span>, daß die <span title="Original: Geſtalt" class="dta-reg">Gestalt</span> der <span title="Original: Schich-&#xA;tungen" class="dta-reg">Schichtungen</span> und ihre Lage über die <span title="Original: naturhiſtoriſchen" class="dta-reg">naturhistorischen</span> Zeiten hieraus<br/>
+fallen, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: iſt" class="dta-reg">ist</span> es eben <span title="Original: ſo" class="dta-reg">so</span> gewiß, daß ganze <span title="Original: Continente" class="dta-reg">Kontinente</span> durch<br/>
+ihre Hebung in jenen Zeiten ihre jetzige Lage erhielten,<br/>
+und die <span title="Original: Beſtandtheile" class="dta-reg">Bestandteile</span> lehren uns, wie die Climata hierbei<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0298 : 292.|</span><br/>
+mitgewirkt haben. Nach der Erhärtung haben die<br/>
+<span title="Original: elaſtiſchflüſſigen" class="dta-reg">elastischflüssigen</span> Kräfte mehr gegen die nördliche <span title="Original: He-&#xA;misphäre" class="dta-reg">Hemisphäre</span> gewirkt, was vielleicht eine Störung des <span title="Original: Gleich-&#xA;gewichts" class="dta-reg">Gleichgewichts</span> veranlaßte. In Amerika <span title="Original: iſt" class="dta-reg">ist</span> die neu <span title="Original: oxydirte" class="dta-reg">oxydierte</span><br/>
+Erdrinde <span title="Original: faſt" class="dta-reg">fast</span> von Pol zu Pol aufgetrieben; auf dem<br/>
+alten <span title="Original: Continente" class="dta-reg">Kontinente</span> <span title="Original: iſt" class="dta-reg">ist</span> dagegen eine größere Strecke von<br/>
+<span title="Original: Oſten" class="dta-reg">Osten</span> gegen <span title="Original: Weſten" class="dta-reg">Westen</span> gehoben.</p><br/>
+<p class="dta-p">Wie ganz anders würde der <span title="Original: Temperaturzuſtand" class="dta-reg">Temperaturzustand</span><br/>
+Europa's und in Bezug auf Ackerbau und <span title="Original: ſo" class="dta-reg">so</span> vielen <span title="Original: andern" class="dta-reg">anderen</span><br/>
+Erwerbe das ruhig <span title="Original: ſich" class="dta-reg">sich</span> darbietenden Naturlebens <span title="Original: ſein" class="dta-reg">sein</span>,<br/>
+wenn nicht das Mittelmeer <span title="Original: exiſtirte" class="dta-reg">existierte</span>. Ein weit kälteres<br/>
+<span title="Original: Clima" class="dta-reg">Klima</span> würde Europa haben, wenn es nicht durch die<br/>
+Lage Amerika's bedingt wäre, <span title="Original: ſo" class="dta-reg">so</span> aber liegt im Süden<br/>
+<span title="Original: zwiſchen" class="dta-reg">zwischen</span> dem Meridiane von <span title="Original: Liſſabon" class="dta-reg">Lissabon</span> und dem des<br/>
+Urals ein großer <span title="Original: feſter" class="dta-reg">fester</span> <span title="Original: Continent" class="dta-reg">Kontinent</span>, der eine Menge<br/>
+<span title="Original: Sonnenſtrahlen" class="dta-reg">Sonnenstrahlen</span> <span title="Original: abſorbirt" class="dta-reg">absorbiert</span> und Wärme über Europa<br/>
+verbreitet. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p"><span title="Original: Unſer" class="dta-reg">Unser</span> Europa verdankt ein milderes <span title="Original: Clima" class="dta-reg">Klima</span> <span title="Original: ſeiner" class="dta-reg">seiner</span><br/>
+<span title="Original: Erdſtellung" class="dta-reg">Erdstellung</span> <span title="Original: /" class="dta-reg">(</span><span title="Original: ſeinem" class="dta-reg">seinem</span> <span title="Original: Poſitions-Verhältniſſe" class="dta-reg">Positions-Verhältnisse</span> gegen das<br/>
+nahe Meer<span title="Original: /" class="dta-reg">)</span> und <span title="Original: ſeiner" class="dta-reg">seiner</span> gegliederten <span title="Original: Geſtaltung" class="dta-reg">Gestaltung</span>. <span title="Original: –" class="dta-reg">-</span><br/>
+Europa <span title="Original: iſt" class="dta-reg">ist</span> der <span title="Original: weſtliche" class="dta-reg">westliche</span> <span title="Original: Theil" class="dta-reg">Teil</span> des alten <span title="Original: Continents" class="dta-reg">Kontinents</span>,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0299 : 293.|</span><br/>
+und hat <span title="Original: alſo" class="dta-reg">also</span> den großen, <span title="Original: ſchon" class="dta-reg">schon</span> an <span title="Original: ſich" class="dta-reg">sich</span> kälteminderden<br/>
+und dazu noch vom <span title="Original: Golfſtrom" class="dta-reg">Golfstrom</span> <span title="Original: theilweiſe" class="dta-reg">teilweise</span> erwärmten<br/>
+<span title="Original: Atlantiſchen" class="dta-reg">Atlantischen</span> <span title="Original: Ocean" class="dta-reg">Ozean</span> in <span title="Original: Weſten" class="dta-reg">Westen</span>. <span title="Original: Zwiſchen" class="dta-reg">Zwischen</span> den <span title="Original: Meri-&#xA;dianen" class="dta-reg">Meridianen</span>, in denen Europa <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: hinſtreckt" class="dta-reg">hinstreckt</span>, fällt die <span title="Original: Aequa-&#xA;torial-Zone" class="dta-reg">Äquatorial-Zone</span> nicht in das Becken des <span title="Original: Oceans" class="dta-reg">Ozeans</span>, wie <span title="Original: ſüd-&#xA;lich" class="dta-reg">südlich</span> von dem, eben deshalb kälteren <span title="Original: Aſien" class="dta-reg">Asien</span>. Der <span title="Original: Welt-&#xA;theil" class="dta-reg">Weltteil</span>, der unter allen den größten <span title="Original: Theil" class="dta-reg">Teil</span> des <span title="Original: tropiſchen" class="dta-reg">tropischen</span><br/>
+<span title="Original: Clima's" class="dta-reg">Klimas</span> genießt, das <span title="Original: ſandbedeckte" class="dta-reg">sandbedeckte</span> Afrika, <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: gele-&#xA;gen" class="dta-reg">gelegen</span>, daß Europa von den <span title="Original: Luftſchichten" class="dta-reg">Luftschichten</span> erwärmt wird,<br/>
+welche über Afrika <span title="Original: aufſteigend" class="dta-reg">aufsteigend</span>, <span title="Original: ſich" class="dta-reg">sich</span> von dem <span title="Original: Aequator" class="dta-reg">Äquator</span><br/>
+gegen den Nordpol ergießen. Ohne die <span title="Original: Exiſtenz" class="dta-reg">Existenz</span><br/>
+des <span title="Original: mittelländiſchen" class="dta-reg">mittelländischen</span> Meeres würde der Einfluß<br/>
+des nahen Afrika's auf Temperatur und <span title="Original: geographiſche" class="dta-reg">geographische</span><br/>
+Verbreitung von Pflanzen und <span title="Original: Thieren" class="dta-reg">Tieren</span> noch <span title="Original: wirkſamer" class="dta-reg">wirksamer</span><br/>
+<span title="Original: ſein" class="dta-reg">sein</span>. Der Dritte Hauptgrund des milderen <span title="Original: Clima's" class="dta-reg">Klimas</span><br/>
+von Europa liegt darin, daß <span title="Original: dieſer" class="dta-reg">dieser</span> <span title="Original: Welttheil" class="dta-reg">Weltteil</span> <span title="Original: ſich" class="dta-reg">sich</span><br/>
+weniger weit gegen den Nordpol <span title="Original: erſtreckt" class="dta-reg">erstreckt</span> als <span title="Original: Ame-&#xA;rika" class="dta-reg">Amerika</span> und <span title="Original: Aſien" class="dta-reg">Asien</span>, je daß an dem größten <span title="Original: Buſen" class="dta-reg">Busen</span><br/>
+eisfreien <span title="Original: Meerwaſſers" class="dta-reg">Meerwassers</span> gegenüberliegt, den man<br/>
+in der ganzen Polarzone kennt. Die <span title="Schreibfehler: kälteteſten" class="dta-corr"><span title="Original: kälteſten" class="dta-reg">kältesten</span></span> Punkte<br/>
+der Erde, <span title="Original: neuerlichſt" class="dta-reg">neuerlichst</span> uneigentlich Kälte-Pole genannt,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0300 : 294.|</span><br/>
+fallen nicht wie der <span title="Original: ſonſt" class="dta-reg">sonst</span> <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ſcharfſinnige" class="dta-reg">scharfsinnige</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119440660"><span title="Original: Brewſter" class="dta-reg">Brewster</span></a></span></span> in<br/>
+der <span title="Original: engliſchen" class="dta-reg">englischen</span> Bearbeitung meiner Abhandlung von den <span title="Original: iſo-&#xA;thermen" class="dta-reg">isothermen</span> Linien zu <span title="Original: beweiſen" class="dta-reg">beweisen</span> <span title="Original: geſucht" class="dta-reg">gesucht</span> hat, mit den <span title="Original: mag-&#xA;netiſchen" class="dta-reg">magnetischen</span> Polen <span title="Original: zuſammen" class="dta-reg">zusammen</span>. Das Minimum des mittleren<br/>
+jährlichen Temperatur der Erdoberfläche liegt, nach <span title="Original: Capitain" class="dta-reg">Kapitän</span><br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11671350X"><span title="Original: Sabine" class="dta-reg">Sabine's</span></a></span><span title="Original: 's" class="dta-reg"/></span> <span title="Original: Unterſuchungen" class="dta-reg">Untersuchungen</span>, im <span title="Original: Nordweſten" class="dta-reg">Nordwesten</span> von <span title="Original: Me" class="dta-reg">Melville's</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: lvil" class="dta-reg"/></span><span title="Original: le's" class="dta-reg"/><br/>
+<span title="Original: Inſeln" class="dta-reg">Inseln</span>, im Meridian der Behrings-Straße, <span title="Original: wahrſcheinlich" class="dta-reg">wahrscheinlich</span><br/>
+in <span title="Original: 82–83" class="dta-reg">82-83</span> Grad Breite. Die Sommergrenze des <span title="Original: Eiſes" class="dta-reg">Eises</span>,<br/>
+welche <span title="Original: zwiſchen" class="dta-reg">zwischen</span> Spitzbergen und <span title="Original: Oſtgrönland" class="dta-reg">Ostgrönland</span> <span title="Original: ſich" class="dta-reg">sich</span> bis zum<br/>
+80 und 81 Grade zurückzieht, findet <span title="Original: ſich" class="dta-reg">sich</span> überall <span title="Original: zwiſchen" class="dta-reg">zwischen</span><br/>
+Nova-Zembla, den <span title="Original: Knochen-Inſeln" class="dta-reg">Knochen-Inseln</span> von Neu-Sibirien<br/>
+und dem <span title="Original: weſtlichſten" class="dta-reg">westlichsten</span> <span title="Original: amerikaniſchen" class="dta-reg">amerikanischen</span> Eiscap, <span title="Original: ſchon" class="dta-reg">schon</span> im<br/>
+75 Grade der Breite. <span title="Original: Selbſt" class="dta-reg">Selbst</span> die Wintergrenze des<br/>
+<span title="Original: Eiſes" class="dta-reg">Eises</span>, die Linie, auf welcher die Eisdecke <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: unſerm" class="dta-reg">unserem</span><br/>
+<span title="Original: Welttheile" class="dta-reg">Weltteile</span> am <span title="Original: meiſten" class="dta-reg">meisten</span> nähert, <span title="Original: umgiebt" class="dta-reg">umgibt</span> kaum die Bären-<br/>
+<span title="Original: Inſel" class="dta-reg">Insel</span>. Vom <span title="Original: Scandinaviſchen" class="dta-reg">skandinavischen</span> <span title="Original: Nordcap" class="dta-reg">Nordkap</span>, welches ein <span title="Original: ſüd-&#xA;weſtlicher" class="dta-reg">südwestlicher</span> <span title="Original: Meereſſtrom" class="dta-reg">Meeresstrom</span> erwärmt, <span title="Original: iſt" class="dta-reg">ist</span> die Fahrt zum <span title="Original: ſüd-&#xA;lichſten" class="dta-reg">südlichsten</span> Vorgebirge von Spitzbergen <span title="Original: ſelbſt" class="dta-reg">selbst</span> im <span title="Original: ſtrengſten" class="dta-reg">strengsten</span><br/>
+Winter nicht unterbrochen. Das Polareis vermindert <span title="Original: ſich" class="dta-reg">sich</span><br/>
+überall, wo es frei abfließen kann, wie in der Baffins-<br/>
+Bay und <span title="Original: zwiſchen" class="dta-reg">zwischen</span> Island und Spitzbergen. Die Lage<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0301 : 295.|</span><br/>
+des <span title="Original: atlantiſchen" class="dta-reg">atlantischen</span> <span title="Original: Oceans" class="dta-reg">Ozeans</span> hat den <span title="Original: wohlthätigſten" class="dta-reg">wohltätigsten</span> Einfluß<br/>
+auf die <span title="Original: Exiſtenz" class="dta-reg">Existenz</span> jenes, für das <span title="Original: Clima" class="dta-reg">Klima</span> von Nord-Europa<br/>
+<span title="Original: ſo" class="dta-reg">so</span> wichtigen, Eis-freien <span title="Original: Meerwaſſers" class="dta-reg">Meerwassers</span> in dem Meridian<br/>
+von <span title="Original: Oſtgrönland" class="dta-reg">Ostgrönland</span> und Spitzbergen.</p><br/>
+<p class="dta-p">Dagegen häufen <span title="Original: ſich" class="dta-reg">sich</span> die im Sommer aus der Baffins-<br/>
+Bay und Barrows-Straße <span title="Original: ſüdlich" class="dta-reg">südlich</span> getriebenen Eisberge in<br/>
+dem großen Mittelmeere an, welches die Geographen mit<br/>
+dem Namen der <span title="Original: Hudſons-Bay" class="dta-reg">Hudsons-Bay</span> bezeichnen. <span title="Original: Dieſe" class="dta-reg">Diese</span> Anhäufung<br/>
+vermehrt <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ſehr" class="dta-reg">sehr</span> die Kälte in dem benachbarten <span title="Original: Continent" class="dta-reg">Kontinent</span>,<br/>
+daß man in der <span title="Original: Factorei" class="dta-reg">Faktorei</span> York und bei der Mündung<br/>
+des <span title="Original: Hayes-Fluſſes" class="dta-reg">Hayes-Flusses</span>, nach <span title="Original: Capitain" class="dta-reg">Kapitän</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118534912"><span title="Original: Franklin" class="dta-reg">Franklin's</span></a></span><span title="Original: 's" class="dta-reg"/></span> <span title="Original: neueſten" class="dta-reg">neuesten</span><br/>
+<span title="Original: handſchriftlichen" class="dta-reg">handschriftlichen</span> Berichten, in einer Breite mit <span title="Original: Nord-Preuſſen" class="dta-reg">Nord-Preussen</span><br/>
+und <span title="Original: Curland" class="dta-reg">Kurland</span>, am Ende des <span title="Original: Auguſts" class="dta-reg">Augusts</span> und im Anfange<br/>
+des September's, beim Brunnengraben, in 4 Fuß Tiefe,<br/>
+überall Eis findet. Die <span title="Original: nördlichſten" class="dta-reg">nördlichsten</span> und <span title="Original: ſüdlichſten" class="dta-reg">südlichsten</span><br/>
+Grenzen des <span title="Original: feſten" class="dta-reg">festen</span> <span title="Original: Polar-Eiſes" class="dta-reg">Polar-Eises</span>, das heißt die Sommer-<br/>
+und Wintergrenzen, von deren Lage die Temperatur der<br/>
+nördlichen <span title="Original: Continental-Maſſen" class="dta-reg">Kontinental-Massen</span> abhängt, <span title="Original: ſcheint" class="dta-reg">scheint</span> in den <span title="Original: hiſto-&#xA;riſchen" class="dta-reg">historischen</span> Zeiten, wie gründliche <span title="Original: Unterſuchungen" class="dta-reg">Untersuchungen</span> endlich gelehrt<br/>
+haben, wenig verändert worden zu <span title="Original: ſein" class="dta-reg">sein</span>. Der <span title="Original: ſchädliche" class="dta-reg">schädliche</span> <span title="Original: Ein-&#xA;fluß" class="dta-reg">Einfluß</span>, welchen kleine, <span title="Original: iſolirte" class="dta-reg">isolierte</span>, durch Strömungen zuweilen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0302 : 296.|</span><br/>
+bis in die Nähe der Azoren getriebenen, <span title="Original: Eismaſſen" class="dta-reg">Eismassen</span> auf<br/>
+das <span title="Original: Clima" class="dta-reg">Klima</span> von Europa ausüben <span title="Original: ſollen" class="dta-reg">sollen</span>, gehört zu den Mythen,<br/>
+die von den <span title="Original: Phyſikern" class="dta-reg">Physikern</span> ausgehen und <span title="Original: ſich" class="dta-reg">sich</span> unter dem Volke<br/>
+verbreiten, wenn die <span title="Original: Phyſiker" class="dta-reg">Physiker</span> <span title="Original: längſt" class="dta-reg">längst</span> aufgehört haben,<br/>
+ihnen Glauben <span title="Original: beizumeſſen" class="dta-reg">beizumessen</span>.</p><br/>
+<p class="dta-p">Finden <span title="Original: ſich" class="dta-reg">sich</span>, unter <span title="Original: denſelben" class="dta-reg">denselben</span> Breiten-Graden, wo in dem<br/>
+nördlichen Europa noch Garten- und Ackerbau getrieben <span class="dta-supplied">[werden,]</span><br/>
+in Nord-Amerika und <span title="Original: Nord-Aſien" class="dta-reg">Nord-Asien</span> nur <span title="Original: ſumpfige" class="dta-reg">sumpfige</span>, <span title="Original: moos" class="dta-reg">moosbedeckte</span><span class="dta-supplied">[<span title="Original: be-" class="dta-reg"/>]</span><span title="Original: &#xA;deckte" class="dta-reg"/> Länder, <span title="Original: ſo" class="dta-reg">so</span> äußert dagegen die kräftige Wärme-<br/>
+Strahlung von <span title="Original: Inner-Aſien" class="dta-reg">Inner-Asien</span>, <span title="Original: zwiſchen" class="dta-reg">zwischen</span> den <span title="Original: faſt" class="dta-reg">fast</span> parallelen<br/>
+Bergketten des <span title="Original: Himalaya" class="dta-reg">Himalaja</span>, des <span title="Original: Zungling" class="dta-reg">Zunglich</span> und des Himmels-<br/>
+Gebirges, <span title="Original: /" class="dta-reg">(</span>eine Gegend über welche <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/10082451X"><span title="Original: Klaproth" class="dta-reg">Klaproth's</span></a></span><span title="Original: 's" class="dta-reg"/></span> <span title="Original: geogra-&#xA;phiſche" class="dta-reg">geographische</span> <span title="Original: Unterſuchungen" class="dta-reg">Untersuchungen</span> viel Licht verbreiten<span title="Original: /" class="dta-reg">)</span> den<br/>
+<span title="Original: glücklichſten" class="dta-reg">glücklichsten</span> Einfluß auf die <span title="Original: aſiatiſche" class="dta-reg">asiatische</span> Bevölkerung.<br/>
+Die ewige Schneegrenze liegt am nördlichen Abhange des<br/>
+<span title="Original: Himalaya" class="dta-reg">Himalaja</span> 4000<span title="Original: ′" class="dta-reg">'</span> höher als am <span title="Original: ſüdlichen" class="dta-reg">südlichen</span> Abhange, und die<br/>
+<span title="Original: phyſikaliſche" class="dta-reg">physikalische</span> Erklärung welche ich von <span title="Original: dieſer" class="dta-reg">dieser</span> <span title="Original: ſonderbaren" class="dta-reg">sonderbaren</span><br/>
+<span title="Original: Erſcheinung" class="dta-reg">Erscheinung</span> in den <span class="aq ">Annales de Chemie et de <span title="Original: Phyſique" class="dta-reg">Physique</span></span> <span class="dta-supplied">[<span class="aq "><span title="T." class="dta-abbr">Tome</span> III.</span>]</span><br/>
+<span class="aq ">p.</span> 297. <span class="aq "><span title="T." class="dta-abbr">Tome</span> IX. p.</span> 310 und <span class="aq "><span title="T." class="dta-abbr">Tome</span> XIV. p.</span> 5. gegeben, <span title="Original: iſt" class="dta-reg">ist</span> durch<br/>
+neue <span title="Original: Meſſungen" class="dta-reg">Messungen</span> und Beobachtungen in <span title="Original: Oſt-Indien" class="dta-reg">Ost-Indien</span>, nach<br/>
+Herrn <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116636688"><span title="Original: Colebrooke" class="dta-reg">Colebrooke's</span></a></span><span title="Original: 's" class="dta-reg"/></span> Berichte, <span title="Original: beſtätigt" class="dta-reg">bestätigt</span> worden. Millionen<br/>
+von <span title="Original: Menſchen" class="dta-reg">Menschen</span> <span title="Original: Thibetaniſcher" class="dta-reg">Tibetanischer</span> Abkunft und <span title="Original: düſterer" class="dta-reg">düsterer</span>, <span title="Original: religiöſer" class="dta-reg">religiöser</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0303 : 297.|</span><br/>
+<span title="Original: Gemüthsſtimmung" class="dta-reg">Gemütsstimmung</span>, bewohnen volkreiche Städte, da, wo<br/>
+bei einer minderen Ausdehnung und minderen <span title="Original: Continuität" class="dta-reg">Kontinuität</span><br/>
+der Hochebenen, Felder und Städte, das ganze Jahr<br/>
+hindurch, in tiefem Schnee vergraben <span title="Original: ſein" class="dta-reg">sein</span> würden. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">Um einen Begriff von den <span title="Original: Verhältniß" class="dta-reg">Verhältnis</span> der <span title="Original: Continente" class="dta-reg">Kontinente</span><br/>
+zu dem Meere zu erhalten, <span title="Original: iſt" class="dta-reg">ist</span> es <span title="Original: nöthig" class="dta-reg">nötig</span>, die mittlere Tiefe<br/>
+der Meere und die mittlere Höhe der <span title="Original: Continente" class="dta-reg">Kontinente</span> zu kennen.<br/>
+<span title="Original: Dieſe" class="dta-reg">Diese</span> <span title="Original: ſinnreiche" class="dta-reg">sinnreiche</span> Idee hat <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span></span> lange <span title="Original: beſchäfftigt" class="dta-reg">beschäftigt</span>. Er<br/>
+glaubte nach der Theorie der Ebbe und <span title="Original: Fluth" class="dta-reg">Flut</span> die mittlere<br/>
+Tiefe des <span title="Original: Oceans" class="dta-reg">Ozeans</span> auf <span title="Original: 60–70" class="dta-reg">60-70</span>,000<span title="Original: ′" class="dta-reg">'</span> annehmen zu können.<br/>
+Aber noch kurz vor <span title="Original: ſeinem" class="dta-reg">seinem</span> Tode gab er noch eine kleine Schrift<br/>
+heraus, worin er die mittlere Tiefe zu 900<span title="Original: ′" class="dta-reg">'</span> und <span title="Original: ebenſo" class="dta-reg">ebenso</span><br/>
+die mittlere Höhe der <span title="Original: Continente" class="dta-reg">Kontinente</span> angab. Die <span title="Original: Pendelver-&#xA;ſuche" class="dta-reg">Pendelversuche</span> <span title="Original: ſcheinen" class="dta-reg">scheinen</span> das gleiche <span title="Original: Verhältniß" class="dta-reg">Verhältnis</span> beider zu <span title="Original: beſtätigen" class="dta-reg">bestätigen</span>.<br/>
+Solche <span title="Original: Pendelverſuche" class="dta-reg">Pendelversuche</span> am Meere <span title="Original: angeſtellt" class="dta-reg">angestellt</span>, würden bei<br/>
+ungleicher <span title="Original: Attraction" class="dta-reg">Attraktion</span> oft <span title="Original: ſehr" class="dta-reg">sehr</span> <span title="Original: verſchieden" class="dta-reg">verschieden</span> <span title="Original: ſein" class="dta-reg">sein</span>, z. B. auf<br/>
+<span class="dta-supplied">[den]</span> <span title="Original: weſtlichen" class="dta-reg">westlichen</span> <span title="Original: Küſte" class="dta-reg">Küste</span> Amerika's würde das Pendel auf<br/>
+<span class="dta-supplied">[der]</span> einen Seite angezogen werden, dagegen auf der <span title="Original: andern" class="dta-reg">anderen</span><br/>
+am Boden des Meeres den <span title="Original: poſitiven" class="dta-reg">positiven</span> und negativen Ordinaten<br/>
+gleich <span title="Original: ſein" class="dta-reg">sein</span>. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536"><span title="Original: Laplace" class="dta-reg">Laplace's</span></a></span><span title="Original: 's" class="dta-reg"/> <span title="Original: A" class="dta-reg">Angabe</span></span><span title="Original: ngabe" class="dta-reg"/> der mittleren Höhe und Tiefe<br/>
+<span title="Original: iſt" class="dta-reg">ist</span> dennoch viel zu groß, denn <span title="Original: ſie" class="dta-reg">sie</span> fällt <span title="Original: zwiſchen" class="dta-reg">zwischen</span> <span title="Original: 5–600" class="dta-reg">5-600</span> Fuß.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0304 : 298.|</span><br/>
+Bei der <span title="Original: Meſſung" class="dta-reg">Messung</span> der Berge <span title="Original: iſt" class="dta-reg">ist</span> die Höhenlage der<br/>
+Ebenen <span title="Original: faſt" class="dta-reg">fast</span> gänzlich <span title="Original: vernachläſſigt" class="dta-reg">vernachlässigt</span>, obgleich ihre <span title="Original: Kennt-&#xA;niß" class="dta-reg">Kenntnis</span> <span title="Original: ſehr" class="dta-reg">sehr</span> wichtig <span title="Original: iſt" class="dta-reg">ist</span>. Die Höhe der <span title="Original: bekanntern" class="dta-reg">bekannteren</span> <span title="Original: ſind" class="dta-reg">sind</span>:</p><br/>
+<table class="dta-table"><tr><td>Die Fläche von <span title="Original: Venetianiſchen" class="dta-reg">Venezianischen</span> und der Lombardei</td><td><span title="Original: 400–480" class="dta-reg">400-480</span><span title="Original: ′" class="dta-reg">'</span></td></tr><tr><td>Im nördlichen <span title="Original: Deutſchland" class="dta-reg">Deutschland</span> die von Stettin und <span title="Original: Poſen" class="dta-reg">Posen</span></td><td><span title="Original: 180–200" class="dta-reg">180-200</span><span title="Original: ′" class="dta-reg">'</span></td></tr><tr><td>Das flache Land Rußlands nach Moskau <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: hinerſtreckend" class="dta-reg">hinerstreckend</span></td><td>870<span title="Original: ′" class="dta-reg">'</span></td></tr><tr><td>Die Ebene der Schweiz<span title="Original: 〃〃" class="dta-reg">&nbsp;&nbsp;&nbsp;</span></td><td>1300<span title="Original: ′" class="dta-reg">'</span></td></tr><tr><td>Die Ebene von Bayonne<span title="Original: 〃〃" class="dta-reg">&nbsp;&nbsp;&nbsp;</span></td><td>1560<span title="Original: ′" class="dta-reg">'</span></td></tr><tr><td>Die Ebene Spaniens von <span title="Schreibfehler: Amanza" class="dta-corr">Almanza</span> bis <span title="Original: Aſtorga" class="dta-reg">Astorga</span><span title="Original:  〃" class="dta-reg">&nbsp;&nbsp;&nbsp;</span></td><td>2100<span title="Original: ′" class="dta-reg">'</span></td></tr><tr><td>Die Ebene Mizor auf der <span title="Original: indiſchen" class="dta-reg">indischen</span> <span title="Original: Halbinſel" class="dta-reg">Halbinsel</span> <span title="Original: diſſeit" class="dta-reg">disseit</span><br/>
+&nbsp;&nbsp;&nbsp;des Ganges<span title="Original:  〃" class="dta-reg">&nbsp;&nbsp;&nbsp;</span></td><td><br/>
+2760<span title="Original: ′" class="dta-reg">'</span></td></tr><tr><td>Die Ebene Cobi in <span title="Original: Aſien" class="dta-reg">Asien</span><span title="Original: 〃〃" class="dta-reg">&nbsp;&nbsp;&nbsp;</span></td><td>3000<span title="Original: ′" class="dta-reg">'</span></td></tr></table>   <p class="dta-p">Nach den wenigen Temperaturbeobachtungen <span title="Original: ſcheint" class="dta-reg">scheint</span> das<br/>
+Plateau des Centralpunktes <span title="Original: Aſiens" class="dta-reg">Asiens</span> von Chilango und<br/>
+Tibet <span title="Original: 6000′" class="dta-reg">6000'</span> hoch zu <span title="Original: ſein" class="dta-reg">sein</span>. Auf der <span title="Original: ſüdlichen" class="dta-reg">südlichen</span> Seite des<br/>
+Himalah- oder Himalaya-Gebirges, das bekanntlich <span title="Original: Oſtindien" class="dta-reg">Ostindien</span><br/>
+von Tibet trennt, fand <span title="H￼" class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname">Ronette</span></span> in der Gegend von<br/>
+Dava <span title="Original: öſtlich" class="dta-reg">östlich</span> von Tibet <span title="Original: ſo" class="dta-reg">so</span> warme <span title="Original: Thäler" class="dta-reg">Täler</span>, daß auf eine<br/>
+Höhe von 14,000<span title="Original: ′" class="dta-reg">'</span> noch Kern <span title="Original: gebauet" class="dta-reg">gebaut</span> wurde. In Amerika<br/>
+<span title="Original: iſt" class="dta-reg">ist</span> der <span title="Original: höchſte" class="dta-reg">höchste</span> Punkt des Ackerbaues 12,000<span title="Original: ′" class="dta-reg">'</span>. Das neue<br/>
+Spanien <span title="Original: iſt" class="dta-reg">ist</span> 3mal <span title="Original: ſo" class="dta-reg">so</span> hoch als das alte. In Europa <span title="Original: ſind" class="dta-reg">sind</span> die<br/>
+am <span title="Original: höchſten" class="dta-reg">höchsten</span> gelegenen Dörfer der Schweiz und <span title="Original: beſonders" class="dta-reg">besonders</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0305 : 299.|</span><br/>
+der Pyrenäen welche die <span title="H￼" class="dta-abbr">Herren</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100240445">Parrot</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">v Buch</a></span> </span> fanden<br/>
+<span title="Original: 4000′" class="dta-reg">4000'</span> hoch, doch neuerlich fand <span title="H￼" class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname">von Velden</span></span> daß das Dorf<br/>
+Bette in den Pyrenäen <span title="Original: 7100′" class="dta-reg">7100'</span> hoch liegt.</p><br/>
+<p class="dta-p">Genaue <span title="Original: Meſſungen" class="dta-reg">Messungen</span> um die Tiefe des Meeres zu <span title="Original: er-&#xA;forſchen" class="dta-reg">erforschen</span> <span title="Original: ſind" class="dta-reg">sind</span> nicht <span title="Original: ſo" class="dta-reg">so</span> leicht zu <span title="Original: bewerkſtellen" class="dta-reg">bewerkstellen</span>, da oft die<br/>
+<span title="Original: perpendiculäre" class="dta-reg">perpendikuläre</span> Richtung des Senkbleie's durch Strömungen<br/>
+<span title="Original: ſo" class="dta-reg">so</span> verändert wird, daß <span title="Original: ſie" class="dta-reg">sie</span> einen Winkel von <span title="Original: 40–50°" class="dta-reg">40-50°</span><br/>
+macht, wodurch <span title="Original: alſo" class="dta-reg">also</span> die eigentliche Tiefe um <span title="Original: ⅓" class="dta-reg"> 1/3 </span> größer <span title="Original: er-&#xA;ſcheinen" class="dta-reg">erscheinen</span> kann. Bei dem <span title="Original: Cap" class="dta-reg">Kap</span> <span class="aq ">St. Antonio</span> wurde von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118692844">Fränklin</a></span></span><br/>
+<span title="Original: ſondirt" class="dta-reg">sondiert</span>, um die Temperatur der <span title="Original: untern" class="dta-reg">unteren</span> <span title="Original: Waſſerſchichten" class="dta-reg">Wasserschichten</span><br/>
+zu <span title="Original: meſſen" class="dta-reg">messen</span>, und er fand überall bei 7200<span title="Original: ′" class="dta-reg">'</span> Tiefe noch<br/>
+keinen Grund.</p><br/>
+<p class="dta-p">Alles Flachland der <span title="Original: Continente" class="dta-reg">Kontinente</span> hat nur eine <span title="Original: ge-&#xA;ringe" class="dta-reg">geringe</span> <span title="Original: Maſſe" class="dta-reg">Maße</span>, und die Bergketten ein <span title="Original: Verhältniß" class="dta-reg">Verhältnis</span> zum<br/>
+Ganzen nur einen kleinen Einfluß auf die <span title="Original: geſammte" class="dta-reg">gesamte</span><br/>
+Erhebung. Die Bergketten in alten und neuen <span title="Original: Con-&#xA;tinente" class="dta-reg">Kontinente</span> bilden nur <span title="Original: ſchmale" class="dta-reg">schmale</span> Mauern von <span title="Original: 15–20" class="dta-reg">15-20(-20-30</span><span title="Original: /" class="dta-reg"><span title="Original: (" class="dta-reg"/></span><span title="Original: –20–30" class="dta-reg"/><span class="dta-metamark" title="metamark">?</span><span title="Original: /" class="dta-reg">)</span> Breite.<br/>
+Vom Fuße der <span title="Original: Andeskette" class="dta-reg">Andenkette</span> bis zum <span title="Original: Amazonenſtrom" class="dta-reg">Amazonenstrom</span><br/>
+<span title="Original: ſind" class="dta-reg">sind</span> 700 Meilen, <span title="Original: zerſtreut" class="dta-reg">zerstreut</span> man deren Erhebung auf<br/>
+die ganze Fläche, <span title="Original: ſo" class="dta-reg">so</span> wird <span title="Original: ſie" class="dta-reg">sie</span> nur wenig gehoben.<br/>
+Die mittlere Höhe der <span title="Original: Continente" class="dta-reg">Kontinente</span> und Tiefe der Meere <span title="Original: ſcheint" class="dta-reg">scheint</span><br/>
+demnach <span title="Original: zwiſchen" class="dta-reg">zwischen</span> <span title="Original: 5–600" class="dta-reg">5-600</span><span title="Original: ′" class="dta-reg">'</span> zu <span title="Original: ſchweben" class="dta-reg">schweben</span>. Es <span title="Original: iſt" class="dta-reg">ist</span> weit wichtiger<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0306 : 300.|</span><br/>
+die <span title="Original: cultivirten" class="dta-reg">kultivierten</span> Ebenen als hohe Berge zu <span title="Original: meſſen" class="dta-reg">messen</span>.</p><br/>
+<p class="dta-p">Die Höhe des <span title="Original: Meeresſpiegels" class="dta-reg">Meeresspiegels</span> <span title="Original: beſtimmt" class="dta-reg">bestimmt</span> den Umriß<br/>
+der <span title="Original: Continente" class="dta-reg">Kontinente</span> und ihre <span title="Original: verſch." class="dta-reg">versch.</span> <span title="Original: Geſtalten" class="dta-reg">Gestalten</span>. So geringfügig<br/>
+die Quantität der <span title="Original: Maſſe" class="dta-reg">Maße</span> an <span title="Original: ſich" class="dta-reg">sich</span> auch <span title="Original: ſein" class="dta-reg">sein</span> mag, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: ſie" class="dta-reg">sie</span><br/>
+doch für die Oberfläche des Erdkörpers und der <span title="Original: Cultur" class="dta-reg">Kultur</span><br/>
+der <span title="Original: Continente" class="dta-reg">Kontinente</span> von der <span title="Original: großten" class="dta-reg">größten</span> Wichtigkeit, denn <span title="Original: un-&#xA;bedeutende" class="dta-reg">unbedeutende</span> Veränderungen <span title="Original: derſelben" class="dta-reg">derselben</span> würden den <span title="Original: Con" class="dta-reg">Kontakt</span><span class="dta-supplied">[<span title="Original: tact" class="dta-reg"/>]</span><br/>
+der Flächen gleich anders <span title="Original: geſtalten" class="dta-reg">gestalten</span>. Das Meer<br/>
+dürfte nur 300<span title="Original: ′" class="dta-reg">'</span> <span title="Original: ſteigen" class="dta-reg">steigen</span>, <span title="Original: ſo" class="dta-reg">so</span> würde <span title="Original: Norddeutſchland" class="dta-reg">Norddeutschland</span> und<br/>
+Polen <span title="Original: verſchwinden" class="dta-reg">verschwinden</span>. Ich ging eigens nach Temopento an den<br/>
+<span title="Original: öſtlichen" class="dta-reg">östlichen</span> Fuß der <span title="Original: Andeskette" class="dta-reg">Andenkette</span>, um die Länge zu <span title="Original: beſtimmen" class="dta-reg">bestimmen</span>,<br/>
+wo die Höhe der Gegend <span title="Original: erſt" class="dta-reg">erst</span> 1200<span title="Original: ′" class="dta-reg">'</span> betrug. Ja bei <span title="Original: Chalcha-" class="dta-reg">Chalchapados</span>
+<span title="Original: p" class="dta-reg"/><span title="Original: ados" class="dta-reg"/> <span title="Original: iſt" class="dta-reg">ist</span> eine Fläche von nicht mehr als <span title="Original: 3–400" class="dta-reg">3-400</span><span title="Original: ′" class="dta-reg">'</span>.</p><br/>
+<p class="dta-p">Die Erhöhungen und Erniedrigungen des Niveau's<br/>
+der Meere <span title="Original: ſind" class="dta-reg">sind</span> überall gleich, was man früher <span title="Original: bezwei-&#xA;felte" class="dta-reg">bezweifelte</span>. So wird angegeben, daß der Serapistempel im<br/>
+Meere <span title="Original: geſtanden" class="dta-reg">gestanden</span>, weil <span title="Original: ſeine" class="dta-reg">seine</span> Säulen mit <span title="Original: Muſcheln" class="dta-reg">Muscheln</span> <span title="Original: be-&#xA;deckt" class="dta-reg">bedeckt</span> <span title="Original: ſind" class="dta-reg">sind</span>; man glaubt deshalb, daß das Meer ihn <span title="Original: über-&#xA;ſchwemmt" class="dta-reg">überschwemmt</span> habe, allein denn müßte auch ganz <span title="Original: Aegypten" class="dta-reg">Ägypten</span><br/>
+<span title="Original: überſchwemmt" class="dta-reg">überschwemmt</span> <span title="Original: ſein" class="dta-reg">sein</span>. Andere glauben wieder daß die <span title="Original: Säu-&#xA;len" class="dta-reg">Säulen</span> in Meere gelegen haben. <span title="Original: Wahrſcheinlicher" class="dta-reg">Wahrscheinlicher</span> <span title="Original: iſt" class="dta-reg">ist</span> es aber,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0307 : 301.|</span><br/>
+daß eine Dünenreihe den Tempel umgab, in der <span title="Original: ſich" class="dta-reg">sich</span><br/>
+kleine <span title="Original: Salzſeeen" class="dta-reg">Salzseeen</span> bildeten, die dann oft höher denn <span title="Original: 8–10" class="dta-reg">8-10</span><span title="Original: ′" class="dta-reg">'</span><br/>
+über der Meeresfläche liegen, und <span title="Original: ſo" class="dta-reg">so</span> die Mollusken <span title="Original: ſich" class="dta-reg">sich</span><br/>
+an die Säulen anhafteten.</p><br/>
+<p class="dta-p">Wenn auch das Meer überall gleich hoch <span title="Original: iſt" class="dta-reg">ist</span>, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: giebt" class="dta-reg">gibt</span> es<br/>
+doch in den kleinen <span title="Original: Waſſerbecken" class="dta-reg">Wasserbecken</span> allerdings <span title="Original: Unterſchiede" class="dta-reg">Unterschiede</span>,<br/>
+wie wir dies <span title="Original: beſonders" class="dta-reg">besonders</span> vom Rothen- und <span title="Original: Caspiſchen" class="dta-reg">Kaspischen</span> Meere<br/>
+<span title="Original: wiſſen" class="dta-reg">wissen</span>. Das <span title="Original: rothe" class="dta-reg">rote</span> Meer <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: 25–30" class="dta-reg">25-30</span><span title="Original: ′" class="dta-reg">'</span> höher als das<br/>
+Mittelmeer; das <span title="Original: Kaspiſche" class="dta-reg">Kaspische</span> Meer dagegen <span title="Original: iſt" class="dta-reg">ist</span> noch viel <span title="Original: nie-&#xA;driger" class="dta-reg">niedriger</span> als das Mittelmeer. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100827365">Engelhart</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100240445">Parrot</a></span>,</span> die<br/>
+<span title="Original: ſehr" class="dta-reg">sehr</span> <span title="Original: mühſam" class="dta-reg">mühsam</span> <span title="Original: nivellirt" class="dta-reg">nivelliert</span> haben, fanden daß der Einfluß<br/>
+des <span title="Original: Cu" class="dta-reg">Cuabo</span><span title="Original: abo" class="dta-reg"/> <span title="Original: in's" class="dta-reg">ins</span> <span title="Original: ſchwarze" class="dta-reg">schwarze</span> Meer, zum Tereck der <span title="Original: ſich" class="dta-reg">sich</span> ins<br/>
+<span title="Original: Ca" class="dta-reg">Kaspische</span><span class="dta-add" title="Hinzufügung (intralinear)"><span title="Original: s" class="dta-reg"/></span><span title="Original: piſche" class="dta-reg"/> Meer ergießt, letzterer um 280<span title="Original: ′" class="dta-reg">'</span> niedriger war<br/>
+als der <span title="Original: erſtere" class="dta-reg">erstere</span>, folglich das <span title="Original: Caspiſche" class="dta-reg">Kaspische</span> Meer auch um eben<br/>
+<span title="Original: ſoviel" class="dta-reg">soviel</span> niedriger <span title="Original: ſein" class="dta-reg">sein</span> muß als das <span title="Original: Mittelländiſche" class="dta-reg">Mittelländische</span>. Andere<br/>
+<span title="Original: Meſſungen" class="dta-reg">Messungen</span> ergeben 324<span title="Original: ′" class="dta-reg">'</span>. Der <span class="aq ">Dr. <span title="Personenname">Panzer</span></span> und <span class="aq "><span title="Personenname"><span title="Original: Sozche-&#xA;goratzoff" class="dta-reg">Sozchegoratzoff</span></span></span> haben über die Richtigkeit <span title="Original: dieſer" class="dta-reg">dieser</span> Angaben <span title="Original: Zwei-&#xA;fel" class="dta-reg">Zweifel</span> erhoben, da ihr <span title="Original: Reſultat" class="dta-reg">Resultat</span> 200<span title="Original: ′" class="dta-reg">'</span> <span title="Original: Unterſchied" class="dta-reg">Unterschied</span> der Lage<br/>
+betrug. Ein genaues <span title="Original: Reſultat" class="dta-reg">Resultat</span> zu erhalten <span title="Original: iſt" class="dta-reg">ist</span> übrigens<br/>
+<span title="Original: ſehr" class="dta-reg">sehr</span> <span title="Original: ſchwierig" class="dta-reg">schwierig</span>, da <span title="Original: Barometermeſſungen" class="dta-reg">Barometermessungen</span> nicht ausreichen, und<br/>
+die Vergleichung nicht anders <span title="Original: iſt" class="dta-reg">ist</span>, als wenn man durch jene<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0308 : 302.|</span><br/>
+den Stand der <span title="Original: Nordſee" class="dta-reg">Nordsee</span> zum <span title="Original: Caspiſchen" class="dta-reg">Kaspischen</span> Meere <span title="Original: beſtimmen" class="dta-reg">bestimmen</span><br/>
+wollte. Die Alten glaubten, daß das <span title="Original: ſchwarze" class="dta-reg">schwarze</span> Meer<br/>
+früher <span title="Original: geſchloſſen" class="dta-reg">geschlossen</span> <span title="Original: geweſen" class="dta-reg">gewesen</span> <span title="Original: ſei" class="dta-reg">sei</span>, und durch 2 Schlaufen, die<br/>
+der Dardanellen und der Säulen des <span title="Original: Hercules" class="dta-reg">Herkules</span> <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: ge-&#xA;öffnet" class="dta-reg">geöffnet</span> habe. Merkwürdig <span title="Original: iſt" class="dta-reg">ist</span> die Höhe des Meeres<br/>
+bei den Antillen, wo <span title="Original: theoretiſche" class="dta-reg">theoretische</span> Beobachtungen irre<br/>
+führten. Am <span title="Original: Iſthmus" class="dta-reg">Isthmus</span> von Panama hat man geglaubt<br/>
+daß das eine Meer höher liege als das <span title="Original: andern" class="dta-reg">anderen</span>. Meine<br/>
+und <span title="H￼" class="dta-abbr">Herrn</span> <span class="aq "><span title="Personenname">Niverotti</span></span> <span title="Original: Unterſuchungen" class="dta-reg">Untersuchungen</span> fanden keinen <span title="Original: Unterſchied" class="dta-reg">Unterschied</span>,<br/>
+<span title="Original: wenigſtens" class="dta-reg">wenigstens</span> <span title="Original: iſt" class="dta-reg">ist</span> er <span title="Original: ſo" class="dta-reg">so</span> geringe, daß das <span title="Original: Antilliſche" class="dta-reg">Antillische</span> Meer<br/>
+nicht über <span title="Original: 10–12" class="dta-reg">10-12</span><span title="Original: ′" class="dta-reg">'</span> höher <span title="Original: ſein" class="dta-reg">sein</span> kann.</p></div></div></div></div></div></body></html>

@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[45. Vorlesung, 29.03.1828]</span></div><br/>
+<div class=""><div class=""><div class=""><div class=""><div class=""><div class="dta-head"><span class="u ">Allgemeine Bemerkungen und Zusätze zu dem<br/>
+<span title="Original: Frühern" class="dta-reg">Früheren</span>.</span></div><br/>
+<p class="dta-p"><span class="u ">Die Meteorologie</span> hat ihre <span title="Original: numeriſchen" class="dta-reg">numerischen</span> Elemente<br/>
+wie die <span title="Original: physiſche" class="dta-reg">physische</span> <span title="Original: Aſtronomie" class="dta-reg">Astronomie</span>. Die <span title="Original: Fortſchritte" class="dta-reg">Fortschritte</span><br/>
+die man in neueren Zeiten gemacht hat, hängen<br/>
+hauptsächlich davon ob, daß man die Analogie<br/>
+der <span title="Original: Wiſsenſchaften" class="dta-reg">Wissenschaften</span>, die <span title="Original: numeriſchen" class="dta-reg">numerischen</span> <span title="Original: Verhältniße" class="dta-reg">Verhältnisse</span><br/>
+zu <span title="Original: beſtimmen" class="dta-reg">bestimmen</span> <span title="Original: geſucht" class="dta-reg">gesucht</span> hat. Für Hygrometrie<br/>
+und Druck der Luft <span title="Original: iſt" class="dta-reg">ist</span> bereits viel <span title="Original: geſchehen" class="dta-reg">geschehen</span>,<br/>
+für die <span title="Original: electriſche" class="dta-reg">elektrische</span> Spannung noch nicht, es <span title="Original: iſt" class="dta-reg">ist</span> hier<br/>
+eine bei weitem <span title="Original: ſchwierigere" class="dta-reg">schwierigere</span> Aufgabe.</p><br/>
+<p class="dta-p">Wir <span title="Original: erwähren" class="dta-reg">erwehren</span> hier nicht die <span title="Original: chemiſche" class="dta-reg">chemische</span> <span title="Original: Beſchaffen-&#xA;heit" class="dta-reg">Beschaffenheit</span> der Luft <span title="Original: ſelbſt" class="dta-reg">selbst</span>, da <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: gemiſcht" class="dta-reg">gemischt</span> <span title="Original: iſt" class="dta-reg">ist</span>, daß<br/>
+in den <span title="Original: höhern" class="dta-reg">höheren</span> Gegenden eben <span title="Original: ſo" class="dta-reg">so</span> viel <span title="Original: Sauer-&#xA;ſtoff" class="dta-reg">Sauerstoff</span> vorhanden <span title="Original: iſt" class="dta-reg">ist</span>, als in den <span title="Original: niedrigern" class="dta-reg">niedrigeren</span>.<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span></span> hat <span title="Original: zuerſt" class="dta-reg">zuerst</span> darauf aufmerksam gemacht,<br/>
+daß man mit <span class="u "><span title="Original: numeriſchen" class="dta-reg">numerischen</span></span> <span title="Original: Inſtrumenten" class="dta-reg">Instrumenten</span> die<br/>
+Höhe der Orte <span title="Original: beſtim̃en" class="dta-reg">bestimmen</span> kann, durch den Druck<br/>
+der Luft und der Temperatur. Derselbe hat <span title="Original: vor-&#xA;geſchlagen" class="dta-reg">vorgeschlagen</span> überall <span title="Original: Inſtitute" class="dta-reg">Institute</span> zu errichten,<br/>
+um fortwährend <span title="Original: ſich" class="dta-reg">sich</span> mit dem Luftdruck der<br/>
+Temperatur <span title="nd" class="dta-abbr">und</span> dem <span title="Original: hygrometriſchen" class="dta-reg">hygrometrischen</span> <span title="Original: Zuſtand" class="dta-reg">Zustand</span> zu<br/>
+<span title="Original: beſchäftigen" class="dta-reg">beschäftigen</span>.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Beim</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0433 : 427|</span><br/>
+<p class="dta-p"><span class="u ">Beim Druck der Luft</span> hat man neuerdings<br/>
+Beobachtungen gemacht, um den <span title="Original: Unterſchied" class="dta-reg">Unterschied</span><br/>
+zu <span title="Original: beſtimmen" class="dta-reg">bestimmen</span> <span title="Original: zwiſchen" class="dta-reg">zwischen</span> dem <span title="Original: mittlern" class="dta-reg">mittleren</span> Druck<br/>
+unter dem <span title="Original: Aequator" class="dta-reg">Äquator</span> <span title="nd" class="dta-abbr">und</span> in der <span title="Original: temperirten" class="dta-reg">temperierten</span><br/>
+Zone. Es <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: Beſtim̃ung" class="dta-reg">Bestimmung</span> merkwürdig<br/>
+für alle <span title="Original: Meſsungen" class="dta-reg">Messungen</span>. Anfangs gab man den<br/>
+Druck in der Ebene zu 28<span title="Original: ″" class="dta-reg">"</span> an <span title="Original: ſpäter" class="dta-reg">später</span><br/>
+28<span title="Original: ″4" class="dta-reg">"4</span>,<span title="Original: ‴" class="dta-reg">'''</span> 5. <span title="Original: –" class="dta-reg">-</span> Unter den Tropen <span title="Original: iſt" class="dta-reg">ist</span> der Druck<br/>
+geringer, weil der <span title="Original: aufſteigende" class="dta-reg">aufsteigende</span> <span title="Original: Luftſtrom" class="dta-reg">Luftstrom</span><br/>
+weit <span title="Original: ſtärker" class="dta-reg">stärker</span> <span title="Original: iſt" class="dta-reg">ist</span>, wenn er auf einmal <span title="Original: her-&#xA;aus" class="dta-reg">heraus</span> <span title="Original: ſtrömen" class="dta-reg">strömen</span> könnte, würde der Druck=Asien.<br/>
+<span title="Original: Verſuche" class="dta-reg">Versuche</span> die <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/101165250"><span title="Original: Bonſsingau" class="dta-reg">Bonssingau</span></a></span></span> in Caracas <span title="Original: angeſtellt" class="dta-reg">angestellt</span><br/>
+hat, verglichen mit <span title="Original: andern" class="dta-reg">anderen</span>, gaben für die<br/>
+Temperatur 0° R. den <span title="Original: Barometerſtand" class="dta-reg">Barometerstand</span> für<br/>
+die <span title="Original: temperirte" class="dta-reg">temperierte</span> Zone 337<span title="Original: ‴" class="dta-reg">'''</span> 25 = 28<span title="Original: ″" class="dta-reg">"</span> 1,<span title="Original: ‴" class="dta-reg">'''</span> 2<br/>
+für die Tropen: 336, 94 = 28<span title="Original: ″" class="dta-reg">"</span> 0,<span title="Original: ‴" class="dta-reg">'''</span> 9 <span title="Original: alſo" class="dta-reg">also</span><br/>
+die Differenz etwa 0,<span title="Original: ‴" class="dta-reg">'''</span> 3.</p><br/>
+<p class="dta-p"><span class="u ">Die Frequenz der Winde</span> macht auch einen<br/>
+<span title="Original: Unterſchied" class="dta-reg">Unterschied</span> auf den Luftdruck doch <span title="Original: iſt" class="dta-reg">ist</span><br/>
+dies nur als eine Ausnahme <span title="Original: anzuſehen" class="dta-reg">anzusehen</span>.<br/>
+Nach 21 jährigen Beobachtungen die in Paris<br/>
+<span title="Original: angeſtellt" class="dta-reg">angestellt</span> worden <span title="Original: ſind" class="dta-reg">sind</span>, hat man gefunden,<br/>
+daß das Barometer um, 3,<span title="Original: ‴5" class="dta-reg">'''5</span> bei den<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Südw</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0434|</span><br/>
+Südwinden niedriger <span title="Original: ſtand" class="dta-reg">stand</span> als bei den <span title="Original: Nordſtür-&#xA;men" class="dta-reg">Nordstürmen</span>, eben <span title="Original: ſo" class="dta-reg">so</span> in der <span title="Original: Havannah" class="dta-reg">Havanna</span>. Als Ausnahme<br/>
+<span title="Original: iſt" class="dta-reg">ist</span> noch anzuführen <span class="u ">daß</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Original: (" class="dta-reg"/>?)</span> die Stürme eine feuchte<br/>
+Luft hervorbringen. <span class="b "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">Buch</a></span></span> hat <span title="Original: ſchon" class="dta-reg">schon</span> darauf<br/>
+aufmerksam gemacht, daß an der <span title="Original: Nordweſt-&#xA;küſte" class="dta-reg">Nordwestküste</span> von Skandinavien der Luftdruck bei<br/>
+weitem geringer <span title="Original: iſt" class="dta-reg">ist</span>, als bei uns dagegen<br/>
+auf den <span title="Original: canariſchen" class="dta-reg">kanarischen</span> <span title="Original: Inſeln" class="dta-reg">Inseln</span> durch ein <span title="Original: ſonderbares" class="dta-reg">sonderbares</span><br/>
+<span title="Original: Herabſteigen" class="dta-reg">Herabsteigen</span> der <span title="Original: Luftſchichten" class="dta-reg">Luftschichten</span> der Druck weit<br/>
+<span title="Original: ſtärker" class="dta-reg">stärker</span> <span title="Original: iſt" class="dta-reg">ist</span>.</p><br/>
+<p class="dta-p">Durch die <span title="Original: Paſsatwinde" class="dta-reg">Passatwinde</span> <span title="nd" class="dta-abbr">und</span> weil der <span title="Original: physiſche" class="dta-reg">physische</span> <span title="Original: Aequa-&#xA;tor" class="dta-reg">Äquator</span> mit dem Erdäquator<span class="dta-add" title="Hinzufügung (intralinear)"> (nicht?)</span> <span title="Original: zuſam̃en" class="dta-reg">zusammen</span> fällt, wird<br/>
+die Temperatur gleicher Zonen in den <span title="Original: verſchie-&#xA;denen" class="dta-reg">verschiedenen</span> Hemisphären etwas <span title="Original: verſchieden" class="dta-reg">verschieden</span>.</p><br/>
+<p class="dta-p">Die mittlere Temperatur der nördlichen <span title="Original: Hemis-&#xA;phäre" class="dta-reg">Hemisphäre</span> verhält <span title="Original: ſich" class="dta-reg">sich</span> zu der <span title="Original: mittlern" class="dta-reg">mittleren</span> Temperatur<br/>
+der <span title="Original: ſüdlichen" class="dta-reg">südlichen</span> Hemisphäre wie 9 : 10 <span class="dta-metamark" title="metamark">⎡</span> nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118855093"><span title="Original: Prevoſt" class="dta-reg">Prevost</span></a></span></span> <span class="dta-metamark" title="metamark">:|</span><br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/1069800295">John <span title="Original: Beel" class="dta-reg">Bel</span></a></span></span> in den <span class="aq ">philosophical <span title="Original: transactions" class="dta-reg">Transaktion</span></span> hat<br/>
+<span title="Original: zuerſt" class="dta-reg">zuerst</span> auf die tägl. <span title="Original: Aenderungen" class="dta-reg">Änderungen</span> des Barometer<br/>
+<span title="Original: ſtandes" class="dta-reg">Standes</span> aufmerksam gemacht. Wenn auf der einen<br/>
+Seite der Barometer Druck in den nördlichen<br/>
+Zonen größer <span title="Original: iſt" class="dta-reg">ist</span> als in den <span title="Original: ſüdlichern" class="dta-reg">südlicheren</span> <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ſind" class="dta-reg">sind</span><br/>
+<span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: Oscillationen" class="dta-reg">Oszillationen</span> in ihrer <span title="Original: Quantitaet" class="dta-reg">Quantität</span> geringer<br/>
+nach dem Pol zu.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Unter</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0435 : 429|</span><br/>
+<p class="dta-p">Unter dem <span title="Original: Aequator" class="dta-reg">Äquator</span> <span title="Original: iſt" class="dta-reg">ist</span> die <span class="u "><span title="Original: Quantitaet" class="dta-reg">Quantität</span> <span class="b ">der <span title="Original: Ba-&#xA;rometer" class="dta-reg">Barometer</span> Veränderungen</span></span> in den täglichen<br/>
+<span title="Original: Oscillationen" class="dta-reg">Oszillationen</span> 1,<span title="Original: ‴" class="dta-reg">'''</span>5. in Montpellier 0<span title="Original: ‴" class="dta-reg">'''</span>5., in<br/>
+Paris 0,<span title="Original: ‴3" class="dta-reg">'''3</span>, in Königsberg 0<span title="Original: ‴" class="dta-reg">''',1</span><span class="dta-add" title="Hinzufügung (intralinear)"><span title="Original: ," class="dta-reg"/></span><span title="Original: 1" class="dta-reg"/> wo <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118510215"><span title="Original: Besſel" class="dta-reg">Bessel</span></a></span></span><br/>
+die Beobachtungen von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/122209575">Sommer</a></span></span> berechnet hat.<br/>
+Ebenfalls <span title="Original: iſt" class="dta-reg">ist</span> in <span class="aq ">Santa Fe de Bogota</span> und durch<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/116299762"><span title="Original: Houward" class="dta-reg">Howard</span></a></span> in Paris berechnet worden, daß der<br/>
+Mond auf die Luft keinen Einfluß hat. Aus<br/>
+5900 Beobachtungen folgt nur eine <span title="Original: Verſchieden-&#xA;heit" class="dta-reg">Verschiedenheit</span> von 0,<span title="Original: ‴1" class="dta-reg">'''1</span>.</p><br/>
+<p class="dta-p">Man hat lange geglaubt, daß die Barometer auf<br/>
+den Bergen <span title="Original: ſtiegen" class="dta-reg">stiegen</span>, während <span title="Original: ſie" class="dta-reg">sie</span> in der Ebene<br/>
+<span title="Original: ſinken" class="dta-reg">sinken</span>. Es wäre dies auch leicht nach der Theorie<br/>
+der <span title="Original: Luftſtrömungen" class="dta-reg">Luftströmungen</span> zu glauben. Es <span title="Original: iſt" class="dta-reg">ist</span> dies<br/>
+aber <span title="Original: keinesweges" class="dta-reg">keineswegs</span> der Fall. Das Barometer <span title="Original: ſteigt" class="dta-reg">steigt</span><br/>
+und <span title="Original: ſinkt" class="dta-reg">sinkt</span> zu gleicher Zeit auf der Höhe und in der<br/>
+Ebene; zugleich am <span title="Original: Meereſstrande" class="dta-reg">Meeresstrande</span> in <span class="aq ">Quito</span><br/>
+und in der Hochebene von Antisana. Aber<br/>
+auf kleinen Bergen findet es <span title="Original: ſtatt" class="dta-reg">statt</span>.</p><br/>
+<p class="dta-p"><span title="Personenname"><a href="http://d-nb.info/gnd/11948496X">Piktetz</a></span> hat auf dem <span class="aq ">St. <span title="Original: Bernhardt" class="dta-reg">Bernhard</span></span> durch <span title="Original: Mit-&#xA;telzahlen" class="dta-reg">Mittelzahlen</span> gefolgert daß das Barometer<br/>
+dort <span title="Original: ſteigt" class="dta-reg">steigt</span>, wenn es in der Ebene <span title="Original: ſinkt" class="dta-reg">sinkt</span>.<br/>
+Eine große Barometer-Veränderung <span title="Original: iſt" class="dta-reg">ist</span><br/>
+fast gleichzeitig in großen <span title="Original: Erſtreckungen" class="dta-reg">Erstreckungen</span>.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Der</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0436|</span><br/>
+<p class="dta-p">Der <span title="Original: Profeſsor" class="dta-reg">Professor</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100055427">Brandes</a></span></span> hat die Schnelligkeit der<br/>
+Fortpflanzung beobachtet.</p><br/>
+<p class="dta-p">Bei den <span class="u ">Stürmen</span> <span title="Original: iſt" class="dta-reg">ist</span> das Sonderbare daß <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ge-&#xA;wöhnlich" class="dta-reg">gewöhnlich</span> dort <span title="Original: entſtehen" class="dta-reg">entstehen</span>, wo <span title="Original: ſie" class="dta-reg">sie</span> hinwehen.</p><br/>
+<p class="dta-p">Die Nordwinde werden <span title="Original: zuerſt" class="dta-reg">zuerst</span> in Georgien, und<br/>
+in Virginien, darauf in Maryland, Pensylvanien<br/>
+und endlich zuletzt in Neuengland <span title="Original: geſpürt" class="dta-reg">gespürt</span>.</p><br/>
+<p class="dta-p">Ähnlich <span title="Original: iſt" class="dta-reg">ist</span> von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">Buch</a></span></span> beobachtet worden, wenn<br/>
+die <span title="Original: Nordoſt" class="dta-reg">Nordost</span> Winde <span title="Original: ſich" class="dta-reg">sich</span> verändern in S.W. <span title="Original: ſie" class="dta-reg">sie</span><br/>
+werden <span title="Original: zuerſt" class="dta-reg">zuerst</span> an der <span title="Original: Küſte" class="dta-reg">Küste</span> zu Portugal und<br/>
+<span class="dta-marginal dta-marginal-left">in<br/>
+</span>den nördlichen Gegenden <span title="nd" class="dta-abbr">und</span> dann <span title="Original: erſt" class="dta-reg">erst</span> in <span title="Original: ſüdlichern" class="dta-reg">südlicheren</span><br/>
+gefühlt. <span title="Original: –" class="dta-reg">-</span> Auf der <span title="Original: Inſel" class="dta-reg">Insel</span> <span class="aq ">Gran Canaria</span> <span title="Original: iſt" class="dta-reg">ist</span><br/>
+das Maximum der Wärme nicht im <span class="aq "><span title="Original: Auguſt" class="dta-reg">August</span></span> <span title="Original: ſondern" class="dta-reg">sondern</span><br/>
+im <span class="aq "><span title="Original: October" class="dta-reg">Oktober</span></span>, eine <span title="Original: Erſcheinung" class="dta-reg">Erscheinung</span> die ebenfalls mit<br/>
+dem <span title="Original: Entſehen" class="dta-reg">Entsehn</span> der Winde <span title="Original: zuſam̃en" class="dta-reg">zusammen</span> hängt.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left">?<br/>
+</span>Alle Seefahrer haben <span title="Original: ſchon" class="dta-reg">schon</span> bemerkt, daß auf dem<br/>
+Pik von Teneriffa <span title="Original: ſchon" class="dta-reg">schon</span> <span title="Original: Weſtwinde" class="dta-reg">Westwinde</span> <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 2 Zeichen fehlen]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: he" class="dta-reg">herrschen</span></span><span title="Original: rrſchen" class="dta-reg"/>.<br/>
+Bei dem Ausbruch des <span class="aq ">St Vincent</span> <span title="Original: iſt" class="dta-reg">ist</span> die <span title="Original: Aſche" class="dta-reg">Asche</span> nach<br/>
+<span class="aq ">Barbadoz</span> geflogen; wenn die <span title="Original: Paſsatwinde" class="dta-reg">Passatwinde</span> <span title="Original: ge-&#xA;gangen" class="dta-reg">gegangen</span> wären, <span title="Original: ſo" class="dta-reg">so</span> hätte dies nicht <span title="Original: ſein" class="dta-reg">sein</span> könne.<br/>
+Auf <span title="Original: dieſelbe" class="dta-reg">dieselbe</span> Weise wie der <span title="Original: Oſtwind" class="dta-reg">Ostwind</span> <span title="Original: entſteht" class="dta-reg">entsteht</span>,<br/>
+muß ein <span title="Original: Weſtwind" class="dta-reg">Westwind</span> <span title="Original: entſtehn" class="dta-reg">entstehen</span>, wenn in den <span title="Original: obern" class="dta-reg">oberen</span><br/>
+Schichten die Luft vom <span title="Original: Aequator" class="dta-reg">Äquator</span> nach dem Pol <span title="Original: hinſtrömt" class="dta-reg">hinströmt</span>.<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Für</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0437 : 431|</span><br/>
+Für <span title="Original: Weſtküſten" class="dta-reg">Westküsten</span> <span title="Original: ſind" class="dta-reg">sind</span> alle <span title="Original: Oſtwinde" class="dta-reg">Ostwinde</span> erkaltend.<br/>
+Da <span title="Original: ſie" class="dta-reg">sie</span> über das Land gehen, die <span title="Original: Weſtwinde" class="dta-reg">Westwinde</span><br/>
+dagegen erwärmend; für <span title="Original: Oſtküſten" class="dta-reg">Ostküsten</span> <span title="Original: iſt" class="dta-reg">ist</span> es<br/>
+umgekehrt. Die <span title="Original: Oſtwinde" class="dta-reg">Ostwinde</span> <span title="Original: ſind" class="dta-reg">sind</span> in der <span title="Original: gemäs-&#xA;ſigten" class="dta-reg">gemässigten</span> Zone weit geringer an Zahl gegen<br/>
+die <span title="Original: Weſtwinde" class="dta-reg">Westwinde</span>. Nach 21. jährigen <span title="Original: Beobach-&#xA;tungen" class="dta-reg">Beobachtungen</span> die in Paris <span title="Original: angeſtellt" class="dta-reg">angestellt</span> wurden, <span title="Original: iſt" class="dta-reg">ist</span><br/>
+das <span title="Original: Verhältniß" class="dta-reg">Verhältnis</span> der <span title="Original: Oſtwinde" class="dta-reg">Ostwinde</span> gegen die <span title="Original: Weſt-&#xA;winde" class="dta-reg">Westwinde</span> wie 23 : 70 oder wie 1 zu 3. Wenn<br/>
+<span title="Original: dieſes" class="dta-reg">dieses</span> <span title="Original: Verhältniß" class="dta-reg">Verhältnis</span> <span title="Original: ſich" class="dta-reg">sich</span> änderte <span title="nd" class="dta-abbr">und</span> z. B. wie<br/>
+1 : 7 würde, <span title="Original: ſo" class="dta-reg">so</span> würde die <span title="Original: Tempera-&#xA;tur" class="dta-reg">Temperatur</span> in Europa um einige Grade höher<br/>
+werden, <span title="nd" class="dta-abbr">und</span> <span title="Original: ſo" class="dta-reg">so</span> auch umgekehrt, niedriger wenn<br/>
+die Zahl der <span title="Original: Oſtwinde" class="dta-reg">Ostwinde</span> zu nähme; es wurde<br/>
+dies einen großen Einfluß auf die <span title="Original: Cultur" class="dta-reg">Kultur</span><br/>
+den <span title="Original: Zuſtand" class="dta-reg">Zustand</span> des Ackerbaues u.<span title="Original: ſ.w." class="dta-reg">s.w.</span> hervor<br/>
+bringen können. <span title="Original: –" class="dta-reg">-</span> Doch <span title="Original: iſt" class="dta-reg">ist</span> nicht <span title="Original: wahrſcheinlich" class="dta-reg">wahrscheinlich</span><br/>
+daß durch die <span title="Original: Cultur" class="dta-reg">Kultur</span> eine große <span title="Original: Aenderung" class="dta-reg">Änderung</span> in<br/>
+den Winden hervorgebracht werden kann, es<br/>
+können dadurch nur kleine <span title="Original: Lokalitaets" class="dta-reg">Lokalität</span> <span title="Original: Ver-&#xA;änderungen" class="dta-reg">Veränderungen</span> <span title="Original: entſtehn" class="dta-reg">entstehen</span>. Man <span title="Original: ſieht" class="dta-reg">sieht</span> dies bei<br/>
+Amerika, obgleich viele Wälder dort <span title="Original: ausgerot&#xA;tet" class="dta-reg"><span title="Original: ausgerot-&#xA;tet" class="dta-reg">ausgerottet</span></span> <span title="Original: ſind" class="dta-reg">sind</span>, <span title="nd" class="dta-abbr">und</span> eine weit größere Gegend als<br/>
+früher angebaut <span title="Original: iſt" class="dta-reg">ist</span>, hat <span title="Original: ſich" class="dta-reg">sich</span> doch das Klima<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">nicht</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0438|</span><br/>
+nicht geändert. Das <span title="Original: Clima" class="dta-reg">Klima</span> eines Landes hängt<br/>
+von weit größeren Phänomenen ab.</p><br/>
+<p class="dta-p">Sehr auffallend <span title="Original: ſind" class="dta-reg">sind</span> die <span title="Original: ſonderbaren" class="dta-reg">sonderbaren</span> Perioden<br/>
+von großen <span title="Original: ſtarken" class="dta-reg">starken</span> Luftbewegungen, <span class="u ">die <span title="Original: Aequinoc-&#xA;tial-Stürme" class="dta-reg">Aequinoctial-Stürme</span>.</span> Man <span title="Original: ſieht" class="dta-reg">sieht</span> nicht ein, wie eine<br/>
+Abweichung der Sonne <span title="Original: ſolche" class="dta-reg">solche</span> Luftveränderungen<br/>
+hervor bringen könne. <span title="Schreibfehler: Mat" class="dta-corr">Man</span> hat bisher noch keine<br/>
+Ursache <span title="Original: dieſer" class="dta-reg">dieser</span> Stürme <span title="Original: einſehen" class="dta-reg">einsehen</span> können. <span title="Schreibfehler: Mat" class="dta-corr">Man</span> hat<br/>
+geglaubt, <span title="nd" class="dta-abbr">und</span> die <span title="Original: magnetiſchen" class="dta-reg">magnetischen</span> <span title="Original: Erſcheinungen" class="dta-reg">Erscheinungen</span> durch<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118786784"><span title="Original: Örſtädt" class="dta-reg">Örstädts</span></a></span><span title="Original: s" class="dta-reg"/> <span title="Original: Verſuche" class="dta-reg">Versuche</span> haben darauf geführt, daß eine<br/>
+Gegend im Weltraum wo die Erde <span title="Original: ſich" class="dta-reg">sich</span> um <span title="Original: dieſe" class="dta-reg">diese</span><br/>
+Zeit befinde <span title="Original: ſein" class="dta-reg">sein</span> könne, in der 2 sehr <span title="Original: magnetiſche" class="dta-reg">magnetische</span><br/>
+Pole <span title="Original: ſich" class="dta-reg">sich</span> befinden. Viel <span title="Original: wahrſcheinlicher" class="dta-reg">wahrscheinlicher</span> <span title="Original: er-&#xA;ſcheint" class="dta-reg">erscheint</span> es, daß <span title="Original: ſie" class="dta-reg">sie</span> ein <span title="Original: Effect" class="dta-reg">Effekt</span> des Gleichgewichts<br/>
+<span title="Original: ſind" class="dta-reg">sind</span>, doch <span title="Original: iſt" class="dta-reg">ist</span> es freilich auffallend, daß die<br/>
+Unterbrechung des Gleichgewicht in <span title="Original: ſo" class="dta-reg">so</span> wenigen<br/>
+Tagen wieder <span title="Original: hergeſtellt" class="dta-reg">hergestellt</span> werden kann.</p><br/>
+<p class="dta-p">Eine merkwürdige <span title="Original: Erſcheinung" class="dta-reg">Erscheinung</span> <span title="Original: iſt" class="dta-reg">ist</span>, daß die <span class="u ">leichtere<br/>
+Fortpflanzung der Schallwellen</span> mit der leichtern Fortpflanzung<br/>
+der Lichtwellen <span title="Original: zuſam̃en" class="dta-reg">zusammen</span> hängt. <span title="Original: W" class="dta-reg">Wenn</span><span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: eñ" class="dta-reg"/></span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="dta-metamark" title="metamark">⎡</span> in</span> <span title="Original: d" class="dta-reg">den</span><span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: en" class="dta-reg"/></span> Tropengegenden die<br/>
+<span title="Original: Intenſität" class="dta-reg">Intensität</span> des Lichts <span title="nd" class="dta-abbr">und</span> die des Schalls <span title="Original: zunim̃t" class="dta-reg">zunimmt</span>, <span title="Original: ſo" class="dta-reg">so</span> glaubt man<br/>
+daß die Regenzeit herannaht. Wie dies <span title="Original: zuſam̃enhängt" class="dta-reg">zusammenhängt</span> kann<br/>
+man nicht erklären, vielleicht mit der <span title="Original: aufſteigenden" class="dta-reg">aufsteigenden</span> Luft<br/>
+wodurch auch der Regen zugleich <span title="Original: entſteht" class="dta-reg">entsteht</span>.</p></div></div></div><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Feuchtigkeits</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0439 : 433|</span><br/>
+<div class=""><div class="dta-head"><span title="Original: Feuchtigkeits-Producte" class="dta-reg">Feuchtigkeits-Produkte</span>. <span title="Original: –" class="dta-reg">-</span> Meteorologie.<br/>
+Wolken.</div><br/>
+<p class="dta-p">Wenn das <span title="Original: Waſser" class="dta-reg">Wassergasdampf</span><span class="u "><span title="Original: gas" class="dta-reg"/></span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Original: (dampf" class="dta-reg"/>?) </span> in die <span title="Original: höhern" class="dta-reg">höheren</span> Regionen der<br/>
+Luft <span title="Original: ſteigt" class="dta-reg">steigt</span>, gerinnt es zu kleinen <span title="Original: Bläſchen" class="dta-reg">Bläschen</span><br/>
+<span title="Original: zuſammen" class="dta-reg">zusammen</span> deren Agregation die Wolken <span title="Original: bil-&#xA;den" class="dta-reg">bilden</span>. <span title="Original: –" class="dta-reg">-</span> Sie <span title="Original: müſsen" class="dta-reg">müssen</span> als hohl betrachtet werden<br/>
+und nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118716581">Gay <span title="Original: Lusſac" class="dta-reg">Lussacs</span></a></span><span title="Original: s" class="dta-reg"/></span> Meinung mit feuchter<br/>
+Luft gefüllt.</p><br/>
+<p class="dta-p">Das Steigen der Wolken <span title="Original: geſchieht" class="dta-reg">geschieht</span> nicht <span title="Original: blos" class="dta-reg">bloß</span><br/>
+dadurch daß die feuchte Luft in einer jeden<br/>
+<span title="Original: ſolchen" class="dta-reg">solchen</span> Montgolfiern verdünnt wird, <span title="Original: ſon-&#xA;dern" class="dta-reg">sondern</span> auch daß die <span title="Original: atmosphäriſche" class="dta-reg">atmosphärische</span> Luft die <span title="Original: da-&#xA;rinn" class="dta-reg">darin</span> enthalten <span title="Original: ſpecifiſch" class="dta-reg">spezifisch</span> leichter <span title="Original: iſt" class="dta-reg">ist</span>. Durch<br/>
+<span title="Original: optiſche" class="dta-reg">optische</span> <span title="Original: Verſuche" class="dta-reg">Versuche</span> hat man die farbige <span title="Original: Po-&#xA;larisation" class="dta-reg">Polarisation</span> und <span title="Original: Refraction" class="dta-reg">Refraktion</span> der Dünnigkeit<br/>
+der Hülle der <span title="Original: Bläſchen" class="dta-reg">Bläschen</span> beobachtet, um von<br/>
+der Natur <span title="Original: derſelben" class="dta-reg">derselben</span> und ihrer Dicke einen<br/>
+Begriff zu bekommen.</p><br/>
+<p class="dta-p"><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119032902">Fraisnel</a></span></span> hat die Beobachtung gemacht, daß die<br/>
+Wolken in der Nacht <span title="Original: ſinken" class="dta-reg">sinken</span> und bei Tage <span title="Original: ſteigen" class="dta-reg">steigen</span>,<br/>
+eben deshalb weil <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſich" class="dta-reg">sich</span> danach richten wie<br/>
+die <span title="Original: zwiſchen" class="dta-reg">zwischen</span> den <span title="Original: Bläſchen" class="dta-reg">Bläschen</span> <span title="Original: ſich" class="dta-reg">sich</span> befindende <span title="Original: atmos-&#xA;phäriſche" class="dta-reg">atmosphärische</span> Luft erkaltet oder erwärmt wird.<br/>
+<span class="aq ">Doc</span> hat bei der <span title="Original: Andeskette" class="dta-reg">Andenkette</span> gefunden, daß<br/>
+die Abnahme der Wärme an Schnelligkeit <span title="Original: ver-&#xA;liert" class="dta-reg">verliert</span>, <span title="Original: ſobald" class="dta-reg">sobald</span> man <span title="Original: ſich" class="dta-reg">sich</span> in der Wolkenregion<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">befindet</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0440|</span><br/>
+<span class="dta-marginal dta-marginal-left">?<span class="dta-metamark" title="metamark">⎡</span><br/>
+</span>befindet, 2000 <span title="Original: Toiſen" class="dta-reg">Toisen</span> Höhe. <span class="dta-metamark" title="metamark">⎡</span> <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſehr" class="dta-reg">sehr</span><br/>
+<span title="Original: ſchnell" class="dta-reg">schnell</span> <span title="Original: iſt" class="dta-reg">ist</span> vom Meere bis zu <span title="Original: dieſer" class="dta-reg">dieser</span> Region.<br/>
+Es <span title="Original: iſt" class="dta-reg">ist</span> hiervon wohl die Ursache weil die <span title="Original: Wol-&#xA;ken" class="dta-reg">Wolken</span> auf der Lichtseite erwärmt werden und das<br/>
+Durchdringen verhindern.</p><br/>
+<p class="dta-p">Wenn man einen Berg betrachtet, als in der<br/>
+<span title="Original: Luf" class="dta-reg">Luft</span><span class="dta-add" title="Hinzufügung (intralinear)"><span title="Original: t" class="dta-reg"/></span> eingesenkt mit <span title="Original: ſeinem" class="dta-reg">seinem</span> Gipfel, <span title="Original: ſo" class="dta-reg">so</span> wird er<br/>
+als <span title="Original: feſter" class="dta-reg">fester</span> Körper anders <span title="Original: ausſtralen" class="dta-reg">ausstrahlen</span>, als die ihn<br/>
+umgebende Luft, der Gipfel muß <span title="Original: ſich" class="dta-reg">sich</span> mehr <span title="Original: erkäl-&#xA;ten" class="dta-reg">erkälten</span>, daher bildet <span title="Original: ſich" class="dta-reg">sich</span> dort eine kleine Wolke.<br/>
+Eine <span title="Original: Mollecular" class="dta-reg">Molekular</span> Anziehung üben jedoch die Berge<br/>
+nicht gegen die <span title="Original: Waſserbläſchen" class="dta-reg">Wasserbläschen</span> aus, <span title="Original: ſondern" class="dta-reg">sondern</span> durch<br/>
+<span title="Original: Aufſteigen" class="dta-reg">Aufsteigen</span> und Fallen <span title="Original: derſelben" class="dta-reg">derselben</span> <span title="Original: entſteht" class="dta-reg">entsteht</span> die<br/>
+Umhüllung der Berge.</p><br/>
+<p class="dta-p">Die Wolken ziehen dagegen über die Ebenen<br/>
+hin, weil die <span title="Original: aufſteigenden" class="dta-reg">aufsteigenden</span> <span title="Original: Luftſtröme" class="dta-reg">Luftströme</span> <span title="Original: ſie" class="dta-reg">sie</span> an<br/>
+ein Verweilen hindern. Überhaupt <span title="Original: ſind" class="dta-reg">sind</span> die<br/>
+<span title="Original: aufſteigenden" class="dta-reg">aufsteigenden</span> <span title="Original: Luftſtröme" class="dta-reg">Luftströme</span> eine der <span title="Original: wichtigſten" class="dta-reg">wichtigsten</span><br/>
+Ursachen in der Meteorologie.</p><br/>
+<p class="dta-p">Die <span title="Original: Geſtalt" class="dta-reg">Gestalt</span> der Wolken <span title="Original: iſts" class="dta-reg">ist_es</span> <span title="Original: ſehr" class="dta-reg">sehr</span> <span title="Original: verſchieden" class="dta-reg">verschieden</span>,<br/>
+und richtet <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: ſehr" class="dta-reg">sehr</span> nach der <span title="Original: Geſtalt" class="dta-reg">Gestalt</span> und Art des<br/>
+<span title="Original: Erbodens" class="dta-reg">Erbodes</span> <span class="dta-metamark" title="metamark">|:</span> S. <span title="Personenname"><a href="http://d-nb.info/gnd/116817569">Buch</a></span><span title="Original: 's" class="dta-reg">es</span> Abhandlung über den Hagel <span class="dta-metamark" title="metamark">:|</span><br/>
+Mann hat den Wolken Namen beigelegt um<br/>
+<span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: unterſcheiden" class="dta-reg">unterscheiden</span> zu können. <span class="dta-metamark" title="metamark">|:</span> <span title="Personenname"><a href="http://d-nb.info/gnd/116006161"><span title="Original: Houart" class="dta-reg">Howard</span></a></span> <span class="dta-metamark" title="metamark">:|</span> die<br/>
+<span title="Original: höchſten" class="dta-reg">höchsten</span> <span title="Original: ſind" class="dta-reg">sind</span> diejenigen welche man in <span title="Original: Deutſch-&#xA;land" class="dta-reg">Deutschland</span> gewöhnlich Schäfchen nennt. <span class="aq ">Doc</span>. hat <span title="Original: ſie" class="dta-reg">sie</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">auf</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0441 : 435|</span><br/>
+auf den <span title="Original: höchſten" class="dta-reg">höchsten</span> Höhen immer noch <span title="Original: ſehr" class="dta-reg">sehr</span> hoch über<br/>
+<span title="Original: ſich" class="dta-reg">sich</span> gefunden, man glaubt daß <span title="Original: ſie" class="dta-reg">sie</span> unter den<br/>
+Tropen <span title="Original: 27000′" class="dta-reg">27000'</span> hoch gehen. Es <span title="Original: ſind" class="dta-reg">sind</span> dies <span title="Original: die-&#xA;ſelben" class="dta-reg">dieselben</span> die man in Island leuchten <span title="Original: geſehen" class="dta-reg">gesehen</span> hat,<br/>
+und denen man eine Verbindung mit den<br/>
+Nordlichtern <span title="Original: zuſchreibt" class="dta-reg">zuschreibt</span>.</p><br/>
+<p class="dta-p">Die Wolken die die <span title="Original: nächſte" class="dta-reg">nächste</span> Schicht über uns<br/>
+bilden <span title="Original: ſind" class="dta-reg">sind</span> <span title="Original: Hinsichts" class="dta-reg">Hinsicht</span> ihrer Höhe auf <span title="Original: zwei-&#xA;erlei" class="dta-reg">zweierlei</span> Art <span title="Original: gemeſsen" class="dta-reg">gemessen</span> worden: einmal<br/>
+von der Höhe der Gebirge, wie <span title="Personenname"><a href="http://d-nb.info/gnd/118678671">Dalton</a></span><br/>
+<span title="Original: gethan" class="dta-reg">getan</span> hat; es <span title="Original: iſt" class="dta-reg">ist</span> dies wegen der Luft-<br/>
+Strömungen <span class="dta-metamark" title="metamark">|:</span> <span class="aq "><span title="Original: courant" class="dta-reg">kurant</span> ascendant</span> <span class="dta-metamark" title="metamark">:|</span> an den<br/>
+Berg Abhängen nicht <span title="Original: ſehr" class="dta-reg">sehr</span> <span title="Original: zuverläſsig" class="dta-reg">zuverlässig</span>,<br/>
+und 2, durch <span title="Original: aeroſtatiſche" class="dta-reg">aerostatische</span> <span title="Original: Reiſen" class="dta-reg">Reisen</span>.</p><br/>
+<p class="dta-p">Man hat nach <span title="Original: dieſen" class="dta-reg">diesen</span> Beobachtungen die<br/>
+<span title="Original: Wolkenſchicht" class="dta-reg">Wolkenschicht</span> im Sommer in einer Höhe von<br/>
+2800 bis 3000<span title="Original: ′" class="dta-reg">'</span> gefunden. <span class="aq ">Doc</span> fand <span title="Original: ſie" class="dta-reg">sie</span> in<br/>
+den Tropen bis 4000<span title="Original: ′" class="dta-reg">'</span> Höhe. <span title="Original: –" class="dta-reg">-</span> In der <span title="Original: Andes-&#xA;kette" class="dta-reg">Andenkette</span>, wenn man zu dem Punkt kommt,<br/>
+wo die <span title="Original: China-Rinde" class="dta-reg">Chinarinde</span> aufhört bis zur Ebene<br/>
+von Antisana, und zum <span title="Original: Chimboraſso" class="dta-reg">Chimborasso</span>, <span title="Original: fin-&#xA;det" class="dta-reg">findet</span> man <span title="Original: mehre" class="dta-reg">mehrere</span> <span title="Original: Wolkenſchichten" class="dta-reg">Wolkenschichten</span> über <span title="Original: einan-&#xA;der" class="dta-reg">einander</span>. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117622974">Bouguer</a></span></span> hat der <span title="Original: Probabilitäts" class="dta-reg">Probabilität</span> <span title="Original: Rech-&#xA;nung" class="dta-reg">Rechnung</span> unterworfen, von wie viel <span title="Original: Luftſchich-&#xA;ten" class="dta-reg">Luftschichten</span>, die <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: vorſetzen" class="dta-reg">vorsetzen</span>, es abhänge, um ein<br/>
+Signal zu <span title="Original: ſehen" class="dta-reg">sehen</span> daß in der Tiefe bemerkt<br/>
+<span title="Original: iſt" class="dta-reg">ist</span>.<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Die</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0442|</span><br/>
+Die Wolken liegen auf dem Meere überall<br/>
+da, wo <span title="Original: ſelbſt" class="dta-reg">selbst</span> nur ganz flache <span title="Original: Inſeln" class="dta-reg">Inseln</span> <span title="Original: ſich" class="dta-reg">sich</span> befinden,<br/>
+<span title="Original: wahrſcheinlich" class="dta-reg">wahrscheinlich</span> herrührend aus der <span title="Original: electriſchen" class="dta-reg">elektrischen</span> <span title="Original: Span-&#xA;nung" class="dta-reg">Spannung</span> der Luft. Für die Seefahrer <span title="Original: iſt" class="dta-reg">ist</span> dies von<br/>
+großer Wichtigkeit, indem <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſo" class="dta-reg">so</span> in Stand <span title="Original: geſetzt" class="dta-reg">gesetzt</span><br/>
+<span title="Original: ſind" class="dta-reg">sind</span>, durch die Wolken die Lage der <span title="Original: Inſeln" class="dta-reg">Inseln</span> zu<br/>
+erkennen, eben <span title="Original: ſo" class="dta-reg">so</span> als wenn <span title="Original: ſich" class="dta-reg">sich</span> ein Berg von<br/>
+5000<span title="Original: ′" class="dta-reg">'</span> Höhe dort befände.</p><br/>
+<p class="dta-p"><span title="Original: Daſselbe" class="dta-reg">Dasselbe</span> findet <span title="Original: ſelbſt" class="dta-reg">selbst</span> bei Sandbänken <span title="Original: ſtatt" class="dta-reg">statt</span>.<br/>
+Da wie wir oben <span title="Original: geſehen" class="dta-reg">gesehen</span>, das <span title="Original: Waſser" class="dta-reg">Wasser</span> bei Untiefen<br/>
+kälter <span title="Original: iſt" class="dta-reg">ist</span>, <span title="Original: ſo" class="dta-reg">so</span> bilden <span title="Original: ſich" class="dta-reg">sich</span> Wolken über <span title="Original: dieſelben" class="dta-reg">dieselben</span><br/>
+Die Wolken wirken zwiefach auf die Atmosphäre:<br/>
+1, erkältend, da <span title="Original: ſie" class="dta-reg">sie</span> die <span title="Original: Intenſität" class="dta-reg">Intensität</span> des Lichts<br/>
+vermindern <span class="dta-metamark" title="metamark">|:</span> Es <span title="Original: iſt" class="dta-reg">ist</span> eine merkwürdig <span title="Original: Er-&#xA;ſcheinung" class="dta-reg">Erscheinung</span> in <span class="aq ">Peru</span>, wo die Temperatur <span title="Original: ſo" class="dta-reg">so</span> kalt <span title="Original: iſt" class="dta-reg">ist</span><br/>
+daß das Thermometer bis auf 12° R. herabsinkt,<br/>
+während in den übrigen Gegenden gleicher Breite,<br/>
+es nie bis unter 17° R. <span title="Original: ſteht" class="dta-reg">steht</span>. <span class="dta-metamark" title="metamark">:|</span></p><br/>
+<p class="dta-p">2, Wirken die Wolken weit mehr nach Wärme<br/>
+erregend indem <span title="Original: ſie" class="dta-reg">sie</span> das <span title="Original: Ausſtralen" class="dta-reg">Australen</span> des <span title="Original: Erdkör-&#xA;pers" class="dta-reg">Erdkörpers</span> <span title="Original: verhinder" class="dta-reg">verhindern</span><span class="dta-del" title="Streichung (#ow)">t</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: n" class="dta-reg"/></span>. Es wird nun dies <span title="Original: Ausſtra-&#xA;len" class="dta-reg">Australen</span> verhindert, wenn ein anderer Körper <span title="Original: ſich" class="dta-reg">sich</span><br/>
+da befindet, die dann gegenseitig <span title="Original: ausſtralen" class="dta-reg">ausstrahlen</span>,<br/>
+bis <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: hinsichts" class="dta-reg">Hinsicht</span> der Wärme <span title="Original: ſich" class="dta-reg">sich</span> im Gleichgewicht<br/>
+<span title="Original: geſetzt" class="dta-reg">gesetzt</span> haben; das Thermometer <span title="Original: ſteigt" class="dta-reg">steigt</span> dann, bei dem<br/>
+Körper, der vorher <span title="Original: we" class="dta-reg">weniger</span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="dta-metamark" title="metamark">⎡</span><span title="Original: ni" class="dta-reg"/></span><span title="Original: ge" class="dta-reg"/><span class="dta-del" title="Streichung (#ow)">n</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: r" class="dta-reg"/></span> Wärme hatte.<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/124462286">Wels</a></span></span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0443 : 437|</span><br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/124462286">Wels</a></span></span> über die Theorie des <span title="Original: Thaus" class="dta-reg">Taus</span> und der Erkältung<br/>
+<span title="Original: giebt" class="dta-reg">gibt</span> 2 Bedingungen an, die eintreten <span title="Original: müſsen" class="dta-reg">müssen</span>,<br/>
+um eine Erkältung hervorzubringen. 1, ein <span title="Original: wol-&#xA;kenleerer" class="dta-reg">wolkenleerer</span> <span title="Original: dunſtfreier" class="dta-reg">dunstfreier</span> Himmel <span title="nd" class="dta-abbr">und</span> 2 völliger <span title="Original: Man-&#xA;gel" class="dta-reg">Mangel</span> von Bewegung der Luft. Es <span title="Original: iſt" class="dta-reg">ist</span> dies zwar<br/>
+anders als bei der Kälte die durch <span title="Original: Verdunſtung" class="dta-reg">Verdunstung</span><br/>
+<span title="Original: entſteht" class="dta-reg">entsteht</span>; hier <span title="Original: iſt" class="dta-reg">ist</span> eine <span title="Original: nothwendige" class="dta-reg">notwendige</span> Bedingung, daß<br/>
+durch den Wind die <span title="Original: ſich" class="dta-reg">sich</span> bildenden <span title="Original: Dunſtſchichten" class="dta-reg">Dunstschichten</span><br/>
+weggejagt werden, damit immer wieder neue <span title="Original: Ver-&#xA;dunſtungen" class="dta-reg">Verdunstungen</span> <span title="Original: entſtehen" class="dta-reg">entstehen</span> können, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/124462286">Wels</a></span></span> hat gefunden,<br/>
+daß Körper die eine <span title="Original: größe" class="dta-reg">Größe</span> Dünnigkeit haben wie<br/>
+Gras, Blätter, Wolle, <span title="Original: Papierſtreifen" class="dta-reg">Papierstreifen</span> u.<span title="Original: ſ.w." class="dta-reg">s.w.</span> gegen<br/>
+einen wolkenlosen Himmel bis auf 6 und 7°<br/>
+erkältet werden können durchbloße <span title="Original: Ausſtralung" class="dta-reg">Ausstrahlung</span>;<br/>
+Metalflächen nur auf 2°. Hierauf beruht die<br/>
+kalte erregende <span title="Original: Eigenſchaft" class="dta-reg">Eigenschaft</span> der Wälder: nicht<br/>
+dadurch daß durch <span title="Original: ſie" class="dta-reg">sie</span> ein <span title="Original: Theil" class="dta-reg">Teil</span> der Umgegend<br/>
+in Schatten <span title="Original: geſetzt" class="dta-reg">gesetzt</span> wird, <span title="Original: ſondern" class="dta-reg">sondern</span> weil bei<br/>
+<span title="Original: unſere" class="dta-reg">unsere</span> Dicotyledonen, die Blätterorgane, das<br/>
+Apendicular <span title="Original: Sÿſtem" class="dta-reg">System</span>, <span title="Original: ſich" class="dta-reg">sich</span> mehr erkälten <span class="dta-metamark" title="metamark">|:</span> als<br/>
+dünne <span class="dta-del" title="Streichung (#s)"><span class="dta-del" title="Streichung (#ow)">Blä</span><span class="dta-add" title="Hinzufügung (across)"><span class="gap">[unleserliches Material]</span></span>tter</span> Körper<span class="dta-add" title="Hinzufügung (across)"><span class="dta-metamark" title="metamark">⎡</span></span><span class="dta-del" title="Streichung (#ow)">n</span>.</p><br/>
+<p class="dta-p">Die Winde hindern die Erkältung<br/>
+weil <span title="Original: ſie" class="dta-reg">sie</span> wärmere <span title="Original: Luft" class="dta-reg">Luftwinde</span><span class="u "><span title="Original: winde" class="dta-reg"/></span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Original: (" class="dta-reg"/><span title="Original: ſchichten" class="dta-reg">schichten</span>?) </span> herbei<br/>
+führen, daher <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: Windſtille" class="dta-reg">Windstille</span> eine <span title="Original: Bedin-&#xA;gung" class="dta-reg">Bedingung</span> bei <span title="Original: dieſer" class="dta-reg">dieser</span> Erkältung durch <span title="Original: Ausſtralung" class="dta-reg">Ausstrahlung</span>.<br/>
+<span class="dta-metamark" title="metamark">|:</span> Das Eismachen in Indien beruht hierauf <span class="dta-metamark" title="metamark">:|</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Je</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0444|</span><br/>
+Je ruhiger die Atmosphäre <span title="Original: iſt" class="dta-reg">ist</span>, um <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ſchneller" class="dta-reg">schneller</span> <span title="Original: iſt" class="dta-reg">ist</span><br/>
+<span title="Original: dieſe" class="dta-reg">diese</span> Erkältung, immer <span title="Original: iſt" class="dta-reg">ist</span> dann auch mehr <span title="Original: Thau" class="dta-reg">Tau</span> <span title="Original: ge-&#xA;fallen" class="dta-reg">gefallen</span>. Es hängt hiermit auch die <span class="u ">Theorie der<br/>
+<span title="Original: Andeskette" class="dta-reg">Andenkette</span></span> <span title="Original: zuſammen" class="dta-reg">zusammen</span>, daß der <span title="Original: rothe" class="dta-reg">rote</span> <span title="Original: Mond-&#xA;ſchein" class="dta-reg">Mondschein</span> im Anfang des Monats Mai <span title="Original: ſehr" class="dta-reg">sehr</span> <span title="Original: ſchäd-&#xA;lich" class="dta-reg">schädlich</span> <span title="Original: iſt" class="dta-reg">ist</span>, ebenso daß es friere wenn der <span title="Original: Him-&#xA;mel" class="dta-reg">Himmel</span> <span title="Original: ſternklar" class="dta-reg">sternklar</span> <span title="Original: iſt" class="dta-reg">ist</span>.</p></div></div></div></div></body></html>

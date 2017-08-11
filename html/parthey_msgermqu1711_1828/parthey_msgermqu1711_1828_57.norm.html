@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session">   <div class="dta-head"><span title="Original: 57. 21. April" class="dta-reg">57. Vorlesung, 21.04.1828</span></div><br/>
+<p class="dta-p">Einige wenige Spezies der Kryptogamen leben sporadisch, die <span title="Original: mei-&#xA;sten" class="dta-reg">meisten</span> <span title="Original: andern" class="dta-reg">anderen</span> aber gesellig: so wie es einige Arten von <span title="Original: Heul-affen" class="dta-reg">Heul-Affen</span>,<br/>
+Alonaten <span title="Original: giebt" class="dta-reg">gibt</span>, wo immer ein <span title="Original: Mänchen" class="dta-reg">Männchen</span> und ein Weibchen <span title="Original: zu-&#xA;sammen" class="dta-reg">zusammen</span> herumklettern, während <span title="Original: andre" class="dta-reg">andere</span> einzeln umherlaufen, noch<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0718 : 357v|</span><br/>
+andere in <span title="Original: Heerden" class="dta-reg">Herden</span> sich versammeln: bei den Psittaci bemerkt man<br/>
+dasselbe, von denen einige gregatim leben: auch die Arrasgeschlechter.<br/>
+Das Zusammenleben der Pflanzen verändert die Zahl der genera<br/>
+im Verhältnis zu den speciebus sehr oft. Obgleich das Genus eine<br/>
+künstliche <span title="Original: Gruppirung" class="dta-reg">Gruppierung</span> ist: so <span title="Original: mus" class="dta-reg">muss</span> es doch eine gewisse Ähnlichkeit<br/>
+der Form geben, wodurch man <span title="Original: bestimt" class="dta-reg">bestimmt</span> wird, Pflanzen zu demselben<br/>
+<span title="Original: genus" class="dta-reg">Genus</span> zu rechnen. Unter den Tropen <span title="Original: giebt" class="dta-reg">gibt</span> es allerdings mehr Spezies<br/>
+auf einem <span title="Original: bestimten" class="dta-reg">bestimmten</span> Raume zusammengedrängt, dagegen wird von<br/>
+den Tropen nach Norden zu der <span title="Original: Anblik" class="dta-reg">Anblick</span> der Natur in sofern <span title="Original: mannig-&#xA;faltiger" class="dta-reg">mannigfaltiger</span>, als die Genera im Verhältnis zu den Spezies sich vermehren:<br/>
+In <span title="Original: Lapland" class="dta-reg">Lappland</span> <span title="Original: komt" class="dta-reg">kommt</span> auf <span title="Original: 2½" class="dta-reg">21/2</span> <span class="dta-del" title="Streichung (#s)">Genus</span><span class="dta-add" title="Hinzufügung (superlinear)">Spezies</span> (denn man bei diesen numerischen <span title="Original: Ver-&#xA;hältnissen" class="dta-reg">Verhältnissen</span> auch in Brüchen reden) nur 1 <span class="dta-del" title="Streichung (#s)">Spezies</span><span class="dta-add" title="Hinzufügung (intralinear)">Genus</span>; in Frankreich<br/>
+<span title="Original: mus" class="dta-reg">muss</span> man <span title="Original: 5–6" class="dta-reg">5-6</span> Spezies aufsuchen, um ein neues Genus zu finden;<br/>
+unter den Tropen wächst das Verhältnis ungemein, und man<br/>
+<span title="Original: mus" class="dta-reg">muss</span> vielleicht 200 Spezies aufsuchen, um ein neues Genus zu <span title="Original: fin-&#xA;den" class="dta-reg">finden</span>. Daher findet man beim Bergebesteigen einen <span title="Original: scheinbar-grös-&#xA;seren" class="dta-reg">scheinbar-größeren</span> <span title="Original: Reichthum" class="dta-reg">Reichtum</span> von Pflanzen wegen der <span title="Original: grösseren" class="dta-reg">größeren</span> Menge der<br/>
+verschiedenen Blüten, dafür sind aber weniger Genera da. Für<br/>
+Deutschland und die Schweiz <span title="Original: kom" class="dta-reg">kommt</span><span class="dta-del" title="Streichung (#ow)">m</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: t" class="dta-reg"/></span><span class="dta-del" title="Streichung (#s)">en</span> auf 5 Spezies 1 Genus, bei<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0719 : 358r|</span><br/>
+Berlin auf 2 bis 3 Spezies 1 Genus, und dieser Hinsicht kann man die<br/>
+Flora von Berlin reich nennen. Wir haben nach <span title="H￼." class="dta-abbr">Herrn</span> <span title="Personenname"><a href="http://d-nb.info/gnd/117282995">v. Schlechtendahl</a></span><br/>
+420 Genera auf 1000 Spezies Phanerogamen: Frankreich 683 Genera<br/>
+auf 3600 Spezies.</p><br/>
+<p class="dta-p">Die <span title="Original: ersezenden" class="dta-reg">ersetzenden</span> Formen in den verschiedenen <span title="Original: Klimaten" class="dta-reg">Klimata</span> haben oft<br/>
+eine solche Ähnlichkeit, dass früher die Botaniker davon irre<br/>
+gemacht wurden. Daher glaubte man, dass Nordamerika viele <span title="Original: eu-&#xA;ropäische" class="dta-reg">europäische</span> Pflanzen habe, obgleich man mit demselben Rechte <span title="Original: grade" class="dta-reg">gerade</span><br/>
+das umgekehrte sagen <span title="Original: könte" class="dta-reg">könnte</span>. So glaubte <span title="Personenname"><a href="http://d-nb.info/gnd/118778390">La Condamine</a></span> in der <span title="Original: Andes-&#xA;kette" class="dta-reg">Andenkette</span> europäische Pflanzen zu finden. Die Erdbeere der Anden und die<br/>
+von Pensylvanien <span class="dta-del" title="Streichung (#s)">ist</span><span class="dta-add" title="Hinzufügung (superlinear)">sind</span> so gleichaussehend, dass man sie nur nach<br/>
+genauer Untersuchung von einander absondern kann. Besonders<br/>
+auffallend sind manche genera, die nur 2 Spezies haben, welche oft<br/>
+1000 Meilen von einander entfernt vorkommen: so der Platanus<br/>
+orientalis und occidentalis: so 2 Spezies von Valisnerien; so der<br/>
+<span class="dta-del" title="Streichung (#s)">Cy</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Original: Chi" class="dta-reg">Chirocarpus</span></span><span title="Original: rocarpus" class="dta-reg"/>, von dem früher 1 Spezies in Ostindien vorkam, die <span title="Original: andre" class="dta-reg">andere</span><br/>
+fand ich mit <span title="H￼." class="dta-abbr">Herrn</span> <span title="Personenname"><a href="http://d-nb.info/gnd/118661604">Bonpland</a></span> auf der <span title="Original: Andeskette" class="dta-reg">Andenkette</span>, beide sind sich sehr<br/>
+ähnlich; so die <span class="u ">Swenodea</span> <span class="dta-metamark" title="metamark">?</span> wovon eine Spezies in Malabar,<br/>
+<span class="dta-marginal dta-marginal-right">Sphenoclea<br/>
+</span>   die <span title="Original: andre" class="dta-reg">andere</span> in Mexiko <span title="Original: vorkömt" class="dta-reg">vorkommt</span>. <span title="Personenname"><a href="http://d-nb.info/gnd/104268190">Link</a></span> führt in seiner Flora <span title="Original: porto-" class="dta-reg">portogalensis</span>
+<span class="dta-pb" style="padding-left:15em">|#f0720 : 358v|</span><br/>
+<span title="Original: galensis" class="dta-reg"/> die Urtica candata an, welche der <span title="U." class="dta-abbr">Urtica</span> <span title="Original: dioïca" class="dta-reg">dioica</span> zum <span title="Original: verwech-&#xA;seln" class="dta-reg">verwechseln</span> ähnlich ist, eben so die Stachys germanica und russica <span class="dta-metamark" title="metamark">?</span></p><br/>
+<p class="dta-p">4, Verbreitung nach der Identität der Pflanzenarten. Dies ist<br/>
+ein so reiches und wenig angebautes Feld der Wissenschaft, dass<br/>
+in den neueren Zeiten die Physiker sehr <span title="Original: zwekmässig" class="dta-reg">zweckmäßig</span> <span title="Original: angefan-&#xA;gen" class="dta-reg">angefangen</span> haben, sich mit den beschreibenden Botanikern zu verbinden,<br/>
+um sicher zu <span title="Original: gehn" class="dta-reg">gehen</span>. Da man dies früher <span title="Original: unterlies" class="dta-reg">unterließ</span>, so entstanden<br/>
+in manchen Schriften viele <span title="Original: vague" class="dta-reg">vage</span> <span title="Original: Ideeen" class="dta-reg">Ideen</span>. So behauptete man,<br/>
+dass <span title="Original: unsre" class="dta-reg">unsere</span> gemeinen Pflanzen, wie Solanum nigrum, Portulacca,<br/>
+Medicago <span title="Original: pp" class="dta-reg">pp.</span> Kosmopoliten seien, und sich überall vorfinden. Dies<br/>
+ist durchaus falsch. Nicht einmal in dem entsprechenden Klima<br/>
+von Nordamerika finden sich ganz dieselben Pflanzen, wie bei<br/>
+uns. Man kann sagen, dass die Spezies nicht Produkte der<br/>
+<span title="Original: Klimate" class="dta-reg">Klimata</span> sind, sondern nur ihre Form nach ihnen verändern.<br/>
+So erheben sich <span title="Original: unsre" class="dta-reg">unsere</span> niedrigen Gräser unter den Tropen auf<br/>
+50 <span title="Original: Fus" class="dta-reg">Fuß</span> Höhe, und <span title="Original: unsre" class="dta-reg">unsere</span> Syngenesisten nehmen ein <span title="Original: baumar-&#xA;tiges" class="dta-reg">baumartiges</span> Ansehn an. Auf der Silla von Caracas, die 9000 <span title="Original: Fus" class="dta-reg">Fuß</span> hoch<br/>
+ist, findet sich ganz oben eine Befaria, und 250 Meilen davon<br/>
+in der <span title="Original: Andeskette" class="dta-reg">Andenkette</span> fängt eine <span title="Original: andre" class="dta-reg">andere</span> Befaria, auf derselben<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0721 : 359r|</span><br/>
+<div class="fw-top fw-sig">90.</div><br/>
+Höhe an sich zu zeigen. Diese schöne Pflanze geht so hoch hinauf,<br/>
+dass sie mit ihren <span title="Original: purpurrothen" class="dta-reg">purpurroten</span> Blüten einen Kranz um den<br/>
+Schnee bildet, etwa wie auf <span title="Original: unsern" class="dta-reg">unseren</span> Alpen Rhododendrum<br/>
+ferrugineum. (Die erste Spezies ist Befaria lilifolia, die <span title="Original: 2" class="dta-reg">2te</span><span title="￼" class="dta-abbr"><span class="sup uu "><span title="Original: te" class="dta-reg"/></span></span><br/>
+<span title="B." class="dta-abbr">Befaria</span> glauca.)</p><br/>
+<p class="dta-p">Es ist nur eine zufällige Benennung, wenn man die Gentianen,<br/>
+Cerastien, <span title="Original: Andromeden" class="dta-reg">Andromaden</span> europäische Formen <span title="Original: nent" class="dta-reg">nennt</span>. Ich fand<br/>
+ganz dieselben am <span title="Original: Chimboraço" class="dta-reg">Chimboraco</span> aufsteigend in der <span title="Original: entsprechen-&#xA;den" class="dta-reg">entsprechenden</span> Höhe, und neuerlich hat man sie auch am <span title="Original: Himalaya" class="dta-reg">Himalaja</span> <span title="Original: ent-&#xA;dekt" class="dta-reg">entdeckt</span>. Dagegen <span title="Original: giebt" class="dta-reg">gibt</span> es auch einige endemische Genera: am<br/>
+Kap der guten <span title="Original: Hofnung" class="dta-reg">Hoffnung</span> die Hermannia und <span title="Original: Antholyza " class="dta-reg">Antholyza;</span><span class="dta-del" title="Streichung (#s)"><span class="dta-metamark" title="metamark">?</span></span><span title="Original: ;" class="dta-reg"/> <span title="Original: –" class="dta-reg">-</span><br/>
+die <span title="Original: Cactusarten" class="dta-reg">Kaktusarten</span> und Fuchsien kommen allein in Amerika vor; <span title="Original: –" class="dta-reg">-</span><br/>
+in Neu Holland die Banksia und <span class="dta-add" title="Hinzufügung (intralinear)">(</span>Delia<span class="dta-add" title="Hinzufügung (intralinear)">)</span> <span class="dta-metamark" title="metamark">?</span> <span class="dta-add" title="Hinzufügung (right)">Thelyra</span></p><br/>
+<p class="dta-p">Auf die ausgeschlossenen Pflanzen bin ich besonders <span title="Original: aufmerk-&#xA;sam" class="dta-reg">aufmerksam</span> gewesen, und da ergeben sich sonderbare Resultate<span class="dta-del" title="Streichung (#ow)">;</span><span class="dta-add" title="Hinzufügung (across)">:</span> so<br/>
+<span title="Original: giebt" class="dta-reg">gibt</span> es in der ganzen südlichen Hemisphäre keine Rose und<br/>
+keine Pinusart (für die <span title="Original: lezten" class="dta-reg">letzten</span> ist die <span title="Original: Araucaria" class="dta-reg">Araukarie</span> die <span title="Original: ersezende" class="dta-reg">ersetzende</span><br/>
+Form.); <span title="Original: –" class="dta-reg">-</span> dagegen sind dieser Halbkugel die Calceolarien eigen,<br/>
+wovon wohl 50 Spezies vorkommen, die aber in Peru nicht<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0722 : 359v|</span><br/>
+einmal bis an den <span title="Original: Aequator" class="dta-reg">Äquator</span> herangehn<span class="dta-del" title="Streichung (#ow)">;</span><span class="dta-add" title="Hinzufügung (across)">:</span> So findet sich in ganz<br/>
+Amerika keine <span title="Original: Erica" class="dta-reg">Erika</span>, obgleich die <span title="Original: Andromeden" class="dta-reg">Andromaden</span> und <span title="Original: Azalea" class="dta-reg">Azalee</span> als<br/>
+ergänzende Formen auftreten.</p><br/>
+<p class="dta-p">In den <span title="Original: Graden" class="dta-reg">Geraden</span> der Verbreitung <span title="Original: herscht" class="dta-reg">herrscht</span> <span title="Original: grosse" class="dta-reg">große</span> Verschiedenheit.<br/>
+Nur die Pilze und der Schimmel sind sich in allen Zonen<br/>
+gleich. <span title="Personenname"><a href="http://d-nb.info/gnd/118529250">Ehrenberg</a></span> fand in der Oase des Jupiter Ammon <span title="Original: unsern" class="dta-reg">unseren</span><br/>
+ganz gewöhnlichen Schimmel; <span title="Schreibfehler: dagegne" class="dta-corr">dagegen</span> ist es schon falsch, dass<br/>
+unser Sonchus oleraceus überall <span title="Original: vorkömt" class="dta-reg">vorkommt</span>. Unter den Tropen, wo<br/>
+sich so viele Kryptogamen finden, sind nur einige niedrige<br/>
+Stufen auch den <span title="Original: andern" class="dta-reg">anderen</span> Ländern gemein. Diejenigen welche<br/>
+wir aus Amerika mitgebracht haben, sind erst von <span title="Personenname"><a href="http://d-nb.info/gnd/117387436">Willdenow</a></span>,<br/>
+dann von <span title="Personenname"><a href="http://d-nb.info/gnd/118643959"><span title="Original: A" class="dta-reg">Agardh</span><span class="dta-del" title="Streichung (#s)">ch</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Original: g" class="dta-reg"/></span><span title="Original: ard" class="dta-reg"/><span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (intralinear)"><span title="Original: h" class="dta-reg"/></span></a></span> untersucht worden, so dass wir völlige <span title="Original: Ge-&#xA;wisheit" class="dta-reg">Gewißheit</span> darüber haben. Zu den gemeinschaftlichen <span title="Original: Krypto-&#xA;gamen" class="dta-reg">Kryptogamen</span> für Amerika und Europa gehören: Sticta <span class="dta-del" title="Streichung (#ow)">c</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: p" class="dta-reg">pulmonacea</span></span><span title="Original: ulm" class="dta-reg"/><span class="dta-del" title="Streichung (#ow)">a</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: o" class="dta-reg"/></span><span title="Original: -&#xA;nacea" class="dta-reg"/> <span class="dta-metamark" title="metamark">?</span> und Parmelia perforata; <span title="Original: –" class="dta-reg">-</span> Dicranum <span title="Original: scopa" class="dta-reg">scoparium</span><span class="dta-del" title="Streichung (#s)">t</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Original: ri" class="dta-reg"/></span><span title="Original: um" class="dta-reg"/><br/>
+gehört zu den Pflanzen, welche die <span title="Original: gröste" class="dta-reg">größte</span> Verbreitung haben:<br/>
+man <span title="Original: trift" class="dta-reg">trifft</span> es nicht allein in den <span title="Original: Thälern" class="dta-reg">Tälern</span> von Nepal, in<br/>
+den <span title="Original: Andes" class="dta-reg">Anden</span> und Europa: sondern <span title="Personenname"><a href="http://d-nb.info/gnd/118674455">R. Brown</a></span> brachte es auch<br/>
+aus Neu Holland <span title="Original: zurük" class="dta-reg">zurück</span>. Ebenso Polytrichum juniperinum.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0723 : 360r|</span><br/>
+Von dem Genus Hypnum, welches bei Berlin fast alle Moose <span title="Original: aus-&#xA;macht" class="dta-reg">ausmacht</span>, haben wir hier 40 Spezies, von denen sich keine einzige<br/>
+in den vereinigten Staaten findet. Sehr merkwürdig ist es, dass<br/>
+an der <span title="Original: SüdWestküste" class="dta-reg">Süd-Westküste</span> von der Bretagne sich 2 Pflanzen: Sticta<br/>
+crocata und Fiscia <span title="Original: fla" class="dta-reg">flavicans</span><span class="dta-del" title="Streichung (#s)">g</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Original: v" class="dta-reg"/></span><span title="Original: i" class="dta-reg"/><span class="dta-del" title="Streichung (#s)">t</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Original: c" class="dta-reg"/></span><span title="Original: ans" class="dta-reg"/> vorfinden, welche <span title="Original: ausserdem" class="dta-reg">außerdem</span> nur<br/>
+in Jamaika angetroffen werden: so dass man auf den Gedanken<br/>
+kommen <span title="Original: könte" class="dta-reg">könnte</span>: der <span title="Original: Sa" class="dta-reg">Same</span><span class="dta-del" title="Streichung (#s)">a</span><span title="Original: me" class="dta-reg"/> sei durch die anhaltenden <span title="Original: Süd-&#xA;westwinde" class="dta-reg">Südwestwinde</span> dahingetragen worden.</p><br/>
+<p class="dta-p">Wenn die Frage entsteht, welche Pflanzen den <span class="u ">beiden</span> <span title="Original: Konti-&#xA;nenten" class="dta-reg">Kontinenten</span> eigen sind: so <span title="Original: sehn" class="dta-reg">sehen</span> wir nur sehr wenige: von 1000<br/>
+<span title="Original: Farrenkräutern" class="dta-reg">Farnkräutern</span> nur 2 Spezies: Aspidium <span class="dta-metamark" title="metamark">⎡</span> <span class="dta-metamark" title="metamark">?</span> und <span title="Original: As-&#xA;plenium" class="dta-reg">Asplenium</span> <span class="dta-metamark" title="metamark">⎡</span> <span class="dta-metamark" title="metamark">?</span> Bei den Phanerogamen und <span title="Original: Dikotyle-&#xA;donen" class="dta-reg">Dikotyledonen</span> etwas mehr; unter den Gräsern kommen 20 Spezies von<br/>
+Cyperus auch in Amerika vor, die als Beispiel der Ähnlichkeit<br/>
+angeführt werden können, und nicht mit den Juncaceen zu<br/>
+verwechseln sind.</p><br/>
+<p class="dta-p"><span title="Personenname"><a href="http://d-nb.info/gnd/118517252"><span title="Original: Büffon" class="dta-reg">Buffon</span></a></span> <span title="Original: entdekte" class="dta-reg">entdeckte</span> zuerst das <span title="Original: Gesez" class="dta-reg">Gesetz</span>, dass <span class="dta-add" title="Hinzufügung (superlinear)">die </span><span title="Original: Saugethiere" class="dta-reg">Saugetiere</span> und Vogel,<br/>
+(mit einem Worte: <span title="Original: Wirbelthiere" class="dta-reg">Wirbeltiere</span>) der Tropen bei uns nicht gefunden<br/>
+werden: die sich gleichsehenden aus dem <span title="Original: Kazengeschlecht" class="dta-reg">Katzengeschlecht</span>: Löwen,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0724 : 360v|</span><br/>
+Panther, Tiger sind doch wesentlich verschieden. Eben so ist es<br/>
+mit den Pflanzen der <span title="Original: höhern" class="dta-reg">höheren</span> Ordnungen. <span title="Original: D" class="dta-reg">Dies</span><span class="dta-del" title="Streichung (#s)">ort</span><span title="Original: ies" class="dta-reg"/> <span title="Original: Gesez" class="dta-reg">Gesetz</span> bezieht<br/>
+sich aber nicht auf die vereinigten Staaten. Rhizophora <span title="Original: Man-&#xA;gle" class="dta-reg">Mangle</span> (die <span title="Personenname"><a href="http://d-nb.info/gnd/118501828">Alexander</a></span> auf seinem Zuge um Indus fand) und <span title="Original: Avi-&#xA;cennia" class="dta-reg">Avicennia</span> tomentosa finden sich dort. <span title="Personenname"><a href="http://d-nb.info/gnd/118674455">R. Brown</a></span>, der <span title="Original: gröste" class="dta-reg">größte</span> <span title="Original: Bota-&#xA;niker" class="dta-reg">Botaniker</span> unserer Zeit, glaubte früher, dass gar keine Spezies den<br/>
+beiden Kontinenten gemein sei: man <span title="Original: entdekte" class="dta-reg">entdeckte</span> aber <span class="dta-add" title="Hinzufügung (across)"><span title="Original: Sp" class="dta-reg">Sphenoclea</span></span><span class="dta-del" title="Streichung (#ow)">P</span><span title="Original: henoclea" class="dta-reg"/> <span class="dta-metamark" title="metamark">?</span><br/>
+zeilanica auch in Surinam, und in Brasilien finden sich einige<br/>
+Spezies aus Afrika.</p><br/>
+<p class="dta-p">Die Identität der beiden <span title="Original: temperirten" class="dta-reg">temperierten</span> nördlichen Zonen ist<br/>
+sehr <span title="Original: gros" class="dta-reg">groß</span>: man <span title="Original: giebt" class="dta-reg">gibt</span> gewöhnlich an, dass 400 europäische<br/>
+Pflanzen sich in den vereinigten Staaten finden: <span title="Original: theils" class="dta-reg">teils</span> sind sie<br/>
+aber nicht genau genug untersucht, <span title="Original: theils" class="dta-reg">teils</span> hinübergebracht; <span title="Original: –" class="dta-reg">-</span><br/>
+vielleicht sind nur 180 Spezies gemeinschaftlich, wie Satyrium<br/>
+viride, Betula Nana und <span title="Original: andre" class="dta-reg">andere</span>. Kaum <span title="Original: 8–10" class="dta-reg">8-10</span> kleine <span title="Original: Farren-&#xA;kräuter" class="dta-reg">Farnkräuter</span> sind uns aus dieser <span title="Original: grossen" class="dta-reg">großen</span> Familie mit Amerika<br/>
+gemein: dahin gehören: Pteris aquilina und Aspidium<br/>
+crispum. Die <span title="Original: Farrenkräuter" class="dta-reg">Farnkräuter</span> machen bei uns <span title="Original: ⅐" class="dta-reg"/> der <span title="Original: Vegetazion" class="dta-reg">Vegetation</span><br/>
+aus; in den vereinigten Staaten hat man nur 70 Spezies <span class="dta-metamark" title="metamark">(?)</span>. <span title="Original: –" class="dta-reg">-</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0725 : 361r|</span><br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/104292350">Michaud</a></span> fand in Nord-Amerika 137 Bäume, die über 30 <span title="Original: Fus" class="dta-reg">Fuß</span> hoch<br/>
+werden, bei uns in <span title="Original: Mittel-europa" class="dta-reg">Mittel-Europa</span> <span title="Original: giebt" class="dta-reg">gibt</span> es nur 45. <span title="Original: –" class="dta-reg">-</span> In den <span title="Original: verei-&#xA;nigten" class="dta-reg">vereinigten</span> Staaten <span title="Original: giebt" class="dta-reg">gibt</span> es gegen 50 Eichenarten, bei uns 2. Dort <span title="Original: giebt" class="dta-reg">gibt</span><br/>
+es Blätter von 2 <span title="Original: Fus" class="dta-reg">Fuß</span> Länge, und an der <span title="Original: Magnolia" class="dta-reg">Magnolie</span> macrophylla<br/>
+Blüten von 3 <span title="Original: Fus" class="dta-reg">Fuß</span> Länge, in einem Klima, das dem von Danzig<br/>
+entspricht. In Amerika wird die <span title="Original: gröste" class="dta-reg">größte</span> Schönheit der <span class="dta-del" title="Streichung (#s)">F</span> <span title="Original: Vegetazion" class="dta-reg">Vegetation</span><br/>
+durch <span class="u ">die</span> Gewächse hervorgebracht, welche folia pinnata, <span title="Original: gefie-&#xA;derte" class="dta-reg">gefiederte</span> Blätter haben, wie Mimosa, <span class="dta-add" title="Hinzufügung (intralinear)">(</span><span title="Original: Strangea" class="dta-reg">Strange</span><span class="dta-add" title="Hinzufügung (intralinear)">)</span> <span class="dta-metamark" title="metamark">?</span> Laurus <span class="dta-del" title="Streichung (#s)"><span class="dta-metamark" title="metamark">?</span></span> <span title="Original: Passi-&#xA;flora" class="dta-reg">Passeflora</span> und die Orchideen <span class="dta-metamark" title="metamark">?</span> die sich von den südlichen Gegenden<br/>
+nach oben hin verbreitet haben. Bei uns hindert das <span title="Original: mit-&#xA;telländische" class="dta-reg">mittelländische</span> Meer, welches vielleicht durch einen westlichen<br/>
+Einbruch des Ozeans entstanden ist, die Verbreitung der <span title="Original: nord-&#xA;afrikanischen" class="dta-reg">nordafrikanischen</span> Gewächse.</p><br/>
+<p class="dta-p">Auch die Identität der nördlichen und südlichen <span title="Original: temperir-&#xA;ten" class="dta-reg">temperierten</span> Zone <span title="Original: läst" class="dta-reg">lässt</span> sich nachweisen, für Schweden und die <span title="Original: magella-&#xA;nische" class="dta-reg">magellanische</span> <span title="Original: Strasse" class="dta-reg">Straße</span> <span title="Original: giebt" class="dta-reg">gibt</span> es nur eine kleine Anzahl von <span title="Original: Beispie-&#xA;len" class="dta-reg">Beispielen</span>. Unser Aspidium aculeatum, findet sich bei Pritzhagen,<br/>
+auf dem Atlas und am Vorgebirge der guten <span title="Original: Hofnung" class="dta-reg">Hoffnung</span>, aber nicht<br/>
+in der dazwischen liegenden Tropenzone, in Amerika gar nicht.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0726 : 361v|</span><br/>
+Botrychium Lunaria findet sich einzig und allein bei Berlin und<br/>
+<span class="dta-marginal dta-marginal-left">nach <span title="Personenname"><a href="http://d-nb.info/gnd/118529250">Ehrenberg</a></span> auch in<br/>
+<span title="Original: Aegypten" class="dta-reg">Ägypten</span> häufig<br/>
+</span>im Feuerlande. <span class="u "><span title="Original: Adianthum" class="dta-reg">Adiantum</span></span> Capillus Venerus nur auf der Insel<br/>
+<span title="Original: Bourbon" class="dta-reg">Bourbone</span> und bei uns. In <span title="Original: NeuHolland" class="dta-reg"><span title="Original: Neu-Holland" class="dta-reg">Neuholland</span></span> sieht man <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">unser </span>Arundo <span title="Original: Ph" class="dta-reg">Phragmites</span><span class="dta-del" title="Streichung (#ow)">l</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: r" class="dta-reg"/></span><span title="Original: ag-&#xA;mites" class="dta-reg"/> sogar <span title="Original: jenseit" class="dta-reg">jenseits</span> der blauen Berge im <span title="Original: Innern" class="dta-reg">Inneren</span> des Landes, ferner<br/>
+45 <span title="Original: andre" class="dta-reg">andere</span> ganz gewöhnliche europäische Pflanzen, die aber freilich<br/>
+durch die Schiffe eingewandert sein können. Von der Oenothera<br/>
+biennis und dem Erigeron canadense ist schon die Rede gewesen.<br/>
+Noch auffallender ist aber: Galinsogea parviflora, ursprünglich<br/>
+eine peruanische Pflanze, die aber bis vor den <span title="Original: Thoren" class="dta-reg">Toren</span> von Berlin<br/>
+wild anzutreffen ist. <span title="Hr." class="dta-abbr">Herr</span> <span title="Personenname"><a href="http://d-nb.info/gnd/116478101"><span title="Original: Cavanillos" class="dta-reg">Cavaniellos</span></a></span> hat sie vor wenigen Jahren<br/>
+aus Peru nach Europa gebracht. <span title="Original: –" class="dta-reg">-</span> Bei Montpellier, wo <span title="Original: Baum-&#xA;wolle" class="dta-reg">Baumwolle</span> aus der Levante <span title="Original: getroknet" class="dta-reg">getrocknet</span> wird, finden sich viele <span title="Original: orienta-&#xA;lische" class="dta-reg">orientalische</span> Pflanzen, wie Psoralea Palestinae und Hypericum <span title="Original: cris-&#xA;pum" class="dta-reg">crispum</span><span class="dta-del" title="Streichung (#s)">,</span> ausgestreut, deren Samen ohne Zweifel mit der <span title="Original: Baum-&#xA;wolle" class="dta-reg">Baumwolle</span> eingesammelt und hinüber geführt wurden.</p><br/>
+<p class="dta-p">Wenn auch durch den <span title="Original: Akkerbau" class="dta-reg">Ackerbau</span> der <span title="Original: Anblik" class="dta-reg">Anblick</span> der Natur <span title="Original: lang-&#xA;weiliger" class="dta-reg">langweiliger</span> geworden ist, indem das <span title="Original: Vorherschen" class="dta-reg">Vorherrschen</span> einer einzigen, wenig<br/>
+malerischen Form, der mehlreichen Gräser, dadurch <span title="Original: herbeige-&#xA;führt" class="dta-reg">herbeigeführt</span> wurde: so ist die Kultur dieser Gewächse doch von so <span title="Original: gros-" class="dta-reg">großer</span>
+<span class="dta-pb" style="padding-left:15em">|#f0727 : 362r|</span><br/>
+<span title="Original: ser" class="dta-reg"/> Wichtigkeit für das Leben und den geselligen Zustand der <span title="Original: Men-&#xA;schen" class="dta-reg">Menschen</span>, dass man sich schon früh mit den Untersuchungen über<br/>
+das Vaterland der <span title="Original: Getraide" class="dta-reg">Getreide</span> beschäftigt hat; früher schon <span title="Personenname"><a href="http://d-nb.info/gnd/118654624">Bekmann</a></span>:<br/>
+dann aber mit vielem <span title="Original: Glükke" class="dta-reg">Glücke</span>: <span title="Personenname"><a href="http://d-nb.info/gnd/104268190">Link</a></span> in den Schriften der Berliner<br/>
+Akad. und in der Urwelt I, 5, II, 4, wo die Sache mehr <span title="Original: philologisch-&#xA;gründlich" class="dta-reg">philologischgründlich</span> behandelt ist, als bei den <span title="Original: neuern" class="dta-reg">neueren</span> französischen Untersuchungen.</p><br/>
+<p class="dta-p">5, Wir kommen nun zu dem wunderbaren <span title="Original: Naturgesez" class="dta-reg">Naturgesetz</span> über die<br/>
+Zahl der Arten in den Genera; wodurch es deutlich wird, dass in<br/>
+der Natur die Formen sich unter einander bestimmen. In den <span title="Original: Thier-&#xA;klassen" class="dta-reg">Tierklassen</span> ist dies derselbe Fall: wenn man die Zahl der Vögel<br/>
+in einem Lande <span title="Original: kent" class="dta-reg">kennt</span>: so kann man mir <span title="Original: grosser" class="dta-reg">großer</span> <span title="Original: Gewisheit" class="dta-reg">Gewißheit</span> auf<br/>
+die Zahl der Fische <span title="Original: schliessen" class="dta-reg">schließen</span>, die sich daselbst vorfinden müssen.<br/>
+So: wenn man die Zahl der Leguminosae hat, kann man die<br/>
+Junceen und Malvaceen bestimmen. <span title="Personenname"><a href="http://d-nb.info/gnd/118674455">R. Brown</a></span> war der erste,<br/>
+der hierauf aufmerksam machte in seinen Untersuchungen über<br/>
+die 3 <span title="Original: grossen" class="dta-reg">großen</span> Klassen: Acotyledonen, Monocotyledonen und <span title="Original: Diko-&#xA;tyledonen" class="dta-reg">Dikotyledonen</span>, <span title="Original: theils" class="dta-reg">teils</span> in seinen Schriften über die Flora von Neu-<br/>
+Holland, <span title="Original: theils" class="dta-reg">teils</span> in der Flora von Kongo, die von <span title="Personenname"><a href="http://d-nb.info/gnd/100648282"><span title="Original: Tuckey" class="dta-reg">Tuckey's</span></a></span><span title="Original: 's" class="dta-reg"/> <span title="Original: Expedizion" class="dta-reg">Expedition</span><br/>
+durch <span title="Personenname"><a href="http://d-nb.info/gnd/118126555">Smith</a></span> <span title="Original: zurükgebracht" class="dta-reg">zurückgebracht</span> wurde. Ich habe diese Arbeiten <span title="Original: fort-" class="dta-reg">fortgesetzt</span>
+<span class="dta-pb" style="padding-left:15em">|#f0728 : 362v|</span><br/>
+<span title="Original: gesezt" class="dta-reg"/>, und fand eine Sicherheit in den Resultaten, die mich in<br/>
+Erstaunen <span title="Original: sezte" class="dta-reg">setzte</span>. Eine <span title="Original: andre" class="dta-reg">andere</span> Frage bleibt es immer, wieviel Spezies sich<br/>
+in einem Lande finden. z. B. von den 1000 <span title="Original: Farrenkräutern" class="dta-reg">Farnkräutern</span>, die es <span title="Original: giebt" class="dta-reg">gibt</span>:<br/>
+findet man 300 Spezies in den Tropen von Amerika, 20 in den <span title="Original: kälte-&#xA;ren" class="dta-reg">kälteren</span> <span title="Original: Theilen" class="dta-reg">Teilen</span>, also ist das Verhältnis wie 20:300; eine <span title="Original: andre" class="dta-reg">andere</span> Frage<br/>
+wieder, wie verhält sich eine Pflanzenklasse z. B. die Agamen<br/>
+zur ganzen <span title="Original: Masse" class="dta-reg">Maße</span> der <span title="Original: Vegetazion" class="dta-reg">Vegetation</span>. Da es also 2 <span title="Original: Variabeln" class="dta-reg">Variablen</span> <span title="Original: giebt" class="dta-reg">gibt</span>:<br/>
+eine der ganzen <span title="Original: Masse" class="dta-reg">Maße</span>, eine <span title="Original: andre" class="dta-reg">andere</span> der einzelnen <span title="Original: Theile" class="dta-reg">Teile</span>: so hat man<br/>
+die Methode der Quozienten einführen können; <span class="dta-del" title="Streichung (#s)">um zu bestimmen</span><br/>
+wenn <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">man </span>aber <span title="Original: a" class="dta-reg">auch</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: u" class="dta-reg"/></span><span title="Original: ch" class="dta-reg"/> im Stande ist, zu bestimmen, wieviel Genera zu<br/>
+einer Spezies gehören: so hat dies doch nichts mit der Zahl der<br/>
+Individuen zu <span title="Original: thun" class="dta-reg">tun</span>. Bei uns <span title="Original: bedekt" class="dta-reg">bedeckt</span> <span class="u ">eine</span> Spezies von <span title="Original: Haidekraut" class="dta-reg">Heidekraut</span><br/>
+in unzählbaren Individuen an 1000 <span title="□ meilen" class="dta-abbr">Quadratmeilen</span>, <span class="u ">eine</span> Pinusart<br/>
+mehrere 100 <span title="□ meilen" class="dta-abbr">Quadratmeilen</span>. Es ist daher die Quantität der Individuen<br/>
+und der Spezies genau zu unterscheiden: Wir haben bei Berlin<br/>
+60 Spezies von Leguminosen, und wenige Juncaceen: dennoch sind<br/>
+die Individuen bei den <span title="Original: lezten" class="dta-reg">letzten</span> überwiegend an Zahl. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">Die erste Frage wäre hier: wie verhält sich die Verbreitung<br/>
+der Kryptogamen zu der der Phanerogamen: allein <span title="Original: grade" class="dta-reg">gerade</span> diese<br/>
+ist nicht genügend zu beantworten, da wir in der <span title="Original: Kentnis" class="dta-reg">Kenntnis</span> der<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0729 : 363r|</span><br/>
+<span class="ph dta-figure" type="1">
+        [Abbildung]
+        </span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0730 : 363v|</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0731 : 364r|</span><br/>
+<div class="fw-top fw-sig">91.</div><br/>
+ersten noch nicht weit genug sind: zu solchen Untersuchungen<br/>
+müssen alle <span title="Original: Theile" class="dta-reg">Teile</span> <span title="Original: gleichmässig" class="dta-reg">gleichmäßig</span> bearbeitet sein. In Frankreich <span title="Original: giebt" class="dta-reg">gibt</span><br/>
+es mehr <span title="Phanerog." class="dta-abbr">Phanerogamen</span> als Kryptogamen: das Verhältnis ist wie 1:2:<br/>
+also sind 1600 <span title="Phanerog." class="dta-abbr">Phanerogamen</span> mehr dort als <span title="Kryptog" class="dta-abbr">Kryptogamen</span>: dagegen in <span title="Original: Deutsch-&#xA;land" class="dta-reg">Deutschland</span> mit der Schweiz mehr Kryptogamen; 4300 <span title="Krypt." class="dta-abbr">Kryptogamen</span> 3400 <span title="Original: Pha-&#xA;nerogamen" class="dta-reg">Phanerogamen</span>; dasselbe Verhältnis, aber in geringerer Zahl findet in<br/>
+<span title="Original: Lapland" class="dta-reg">Lappland</span> statt. Überhaupt scheint auf die <span title="Kryptog." class="dta-abbr">Kryptogamen</span> die Temperatur<br/>
+keinen so <span title="Original: grossen" class="dta-reg">großen</span> <span title="Original: Einflus" class="dta-reg">Einfluß</span> zu haben, als auf die Phanerogamen.<br/>
+Einige Flechten können eine <span title="Original: grosse" class="dta-reg">große</span> <span title="Original: Hize" class="dta-reg">Hitze</span> erleiden, besonders wenn<br/>
+sie auf Steinen von dunkler Farbe <span title="Original: sizen" class="dta-reg">sitzen</span>, die sich weit mehr <span title="Original: er-&#xA;wärmen" class="dta-reg">erwärmen</span> als der Sand; ich habe das Thermometer an solche Steine<br/>
+gehängt, und gefunden, dass diese Flechten den ganzen Tag eine <span title="Original: Hize" class="dta-reg">Hitze</span><br/>
+von 60 bis 62° R. aushalten: die also beinahe der in den <span title="Original: therma-&#xA;len" class="dta-reg">thermalen</span> Quellen gleich <span title="Original: komt" class="dta-reg">kommt</span>.</p><br/>
+<p class="dta-p">Schon sicherer ist das Verhältnis der Monocotyledonen und <span title="Original: Di-&#xA;kotyledonen" class="dta-reg">Dikotyledonen</span>. Es ist richtig, dass das erste Aufkeimen der <span title="Original: Pflan-&#xA;zenwelt" class="dta-reg">Pflanzenwelt</span> auf <span title="Original: unserm" class="dta-reg">unserem</span> Planeten eine <span title="Original: Tropenvegetazion" class="dta-reg">Tropenvegetation</span> <span title="Original: genant" class="dta-reg">genannt</span> werden<br/>
+kann, insofern man in den darüber gelagerten <span title="Original: Gebirgsformazionen" class="dta-reg">Gebirgsformationen</span><br/>
+nur Palmen und Bambusaceen findet: dennoch <span title="Original: mus" class="dta-reg">muss</span> der <span title="Original: An-&#xA;blik" class="dta-reg">Anblick</span> der Natur in jener frühen Zeit von dem <span title="Original: Anblik" class="dta-reg">Anblick</span> der <span title="Original: jezigen" class="dta-reg">jetzigen</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0732 : 364v|</span><br/>
+Tropen sehr verschieden gewesen sein, wo die Dicotyledonen immer <span title="Original: vor-&#xA;herschen" class="dta-reg">vorherrschen</span>. Dies bestätigt aber den <span title="Original: Saz" class="dta-reg">Satz</span>, dass die <span title="Original: Vegetazion" class="dta-reg">Vegetation</span> von den<br/>
+einfachsten Formen anfing, dass nach und nach die Organe sich<br/>
+häuften, und die <span title="Original: zusammengesezten" class="dta-reg">zusammengesetzten</span> Formen bildeten.</p><br/>
+<p class="dta-p">Unter den Tropen machen die <span title="Monokotyl." class="dta-abbr">Monokotyledonen</span> <span title="Original: ⅙" class="dta-reg"> 1/6 </span> der ganzen <span title="Original: Vegetazion" class="dta-reg">Vegetation</span><br/>
+aus; in <span title="Original: Lapland" class="dta-reg">Lappland</span> schon <span title="Original: ⅓" class="dta-reg"> 1/3 </span>, weil hier die Gräser in der Kälte besser<br/>
+ausdauern können. Bei uns zwischen 44 und 55° N. B. machen die<br/>
+Gräser <span title="Original: ⅛" class="dta-reg"> 1/8 </span> von der ganzen <span title="Original: Vegetazion" class="dta-reg">Vegetation</span> der Phanerogamen aus; eben so:<br/>
+wenn man bei uns die Zahl der Schmetterlingsblumen mit 18 <span title="Original: mul-&#xA;tiplizirt" class="dta-reg">multipliziert</span>: so erhält man die Zahl aller <span title="Phanerog" class="dta-abbr">Phanerogamen</span>. Die Malvaceen<br/>
+sind bei uns nur <span class="sup "><span title="Original: 1" class="dta-reg">1/200</span></span><span title="Original: /" class="dta-reg"/><span class="sub "><span title="Original: 200" class="dta-reg"/></span>. der <span title="Original: Vegetazion" class="dta-reg">Vegetation</span>.</p><br/>
+<p class="dta-p">Die Ericineen, Amentaceen, Umbelliferen nehmen vom <span title="Original: Aequator" class="dta-reg">Äquator</span><br/>
+nach Norden und Süden zu.</p><br/>
+<p class="dta-p">Unter den Tropen <span title="Original: giebt" class="dta-reg">gibt</span> es nur eine Spezies von Umbelliferen<br/>
+und <span title="Original: Cruciferen" class="dta-reg">Kruziferen</span>.</p><br/>
+<p class="dta-p">In <span title="Original: Lapland" class="dta-reg">Lappland</span> <span title="Original: giebt" class="dta-reg">gibt</span> es gar keine Malvaceen.</p><br/>
+<p class="dta-p">In der <span title="temp." class="dta-abbr"><span title="Original: temperirten" class="dta-reg">temperierten</span></span> Zone vor Amerika, in Mexiko keine Labiaten<span title="Schreibfehler: " class="dta-corr">.</span><span class="dta-del" title="Streichung (#s)"><span class="dta-metamark" title="metamark">?</span></span></p><br/>
+<p class="dta-p">Wenn man 2 Länder betrachtet, die aneinander <span title="Original: gränzen" class="dta-reg">grenzen</span>, wie<br/>
+Deutschland und Frankreich, so bleibt das Verhältnis doch dasselbe.<br/>
+<span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117124354">Schüler</a></span></span> in Tübingen hat eine verdienstvolle Arbeit darüber gegeben.<br/>
+Ich habe vor 10 Jahren Tabellen davon gemacht.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0733 : 365r|</span><br/>
+<p class="dta-p">Wenn man sich bei den <span title="Original: Thierklassen" class="dta-reg">Tierklassen</span> denken kann, dass <span title="Original: zB." class="dta-reg">z. B.</span> die<br/>
+Vögel, welche sich von kleinen Körnern nähren, nur in den Gegenden<br/>
+vorkommen werden, wo Pflanzen wachsen, die diese Nahrung liefern,<br/>
+dass also das Dasein der Vögel durch das Dasein der Pflanzen <span title="Original: be-&#xA;dingt" class="dta-reg">bedingt</span> wird: so ist es doch mit den Pflanzenformen unter sich etwas<br/>
+anderes: hier werden Formen durch Formen <span title="Original: bestimt" class="dta-reg">bestimmt</span>: gleichsam als<br/>
+ob eine Spezies in die <span title="Original: andre" class="dta-reg">andere</span> übergegangen wäre. Im <span title="Original: Grossen" class="dta-reg">Großen</span> finden<br/>
+wir diese Verhältnisse bei den <span title="Original: Thieren" class="dta-reg">Tieren</span> wieder. In Europa <span title="Original: giebt" class="dta-reg">gibt</span><br/>
+es 400 Spezies Vögel und 80 <span title="Original: Säugethiere" class="dta-reg">Säugetiere</span>: also ist das Verhältnis<br/>
+wie 5:1; und ebenso haben wir in Europa 5 <span title="Original: mal" class="dta-reg">Mal</span> so viel <span title="Original: Synge-&#xA;nesisten" class="dta-reg">Syngenesisten</span> als Amentaceen. Eben so am Kap. Nach den kleinen<br/>
+<span title="Original: Samlungen" class="dta-reg">Sammlungen</span> von <span title="Personenname"><a href="http://d-nb.info/gnd/119174596">Lacaille</a></span>, und nach <span title="Personenname"><a href="http://d-nb.info/gnd/100190014"><span title="Original: Lichtenstein" class="dta-reg">Lichtenstein's</span></a></span><span title="Original: 's" class="dta-reg"/> Noten, der so tiefe<br/>
+zoologische <span title="Original: Kentnisse" class="dta-reg">Kenntnisse</span> vom <span title="Original: Innern" class="dta-reg">Inneren</span> von Afrika <span title="Original: besizt" class="dta-reg">besitzt</span>: ist das <span title="Verh." class="dta-abbr">Verhältnis</span><br/>
+der <span title="Original: Säugethiere" class="dta-reg">Säugetiere</span> zu den Vögeln am Kap = 1:4,8 (beinahe 5,0)<span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Überhaupt <span title="Original: giebt" class="dta-reg">gibt</span> es auf der Erde 900 <span title="Original: Säugethiere" class="dta-reg">Säugetiere</span> und 5000 Vögel, wir<br/>
+finden hier ungefähr wieder 1:5. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">Diese Betrachtungen müssen uns immer mehr davon <span title="Original: überzeu-&#xA;gen" class="dta-reg">überzeugen</span>, dass die Natur als ein <span title="Original: grosses" class="dta-reg">großes</span> Ganze zu betrachten sei, und<br/>
+die Methode der Quozienten wird uns die einzelnen Verhältnisse<br/>
+genau bestimmen lehren.</p><br/>
+</div></body></html>

@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[59. Vorlesung, 23.04.1828]</span></div><br/>
+<div class=""><div class=""><div class=""><div class="dta-head">Bemerkungen</div><br/>
+<p class="dta-p"><q class="quote"><span title="Original: „" class="dta-reg">"</span>Das <span title="Original: Thieriſche" class="dta-reg">Tierische</span> Leben <span title="Original: ſchreitet" class="dta-reg">schreitet</span> viel weiter gegen<br/>
+den Pol hin, als das <span title="Original: vegetabiliſche" class="dta-reg">vegetabilische</span> der Vögel,<br/>
+<span title="Original: Rennthiere" class="dta-reg">Rentiere</span>, <span title="Original: ſelbſt" class="dta-reg">selbst</span> kleine <span title="Original: Nagthiere" class="dta-reg">Nagetiere</span> ziehen weit hin<br/>
+bis zu den Melvils <span title="Original: Inſeln" class="dta-reg">Inseln</span> wo <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parry</a></span></span> <span title="Original: ſie" class="dta-reg">sie</span> noch fand.</q></p><br/>
+<div class=""><p class="dta-p"><q class="quote"><span class="dta-marginal dta-marginal-left"><span class="u ">Blindheit der <span title="Original: Thiere" class="dta-reg">Tiere</span>.</span><br/>
+</span>Die Vögel bilden die einzige <span title="Original: Thierklaſse" class="dta-reg">Tierklasse</span> wo <span title="Original: ſich" class="dta-reg">sich</span><br/>
+kein <span title="Original: Beiſpiel" class="dta-reg">Beispiel</span> einer völligen Blindheit findet; bei<br/>
+allen übrigen findet es <span title="Original: ſich" class="dta-reg">sich</span>. So bei den <span title="Original: Säugethieren" class="dta-reg">Säugetieren</span>:<br/>
+die Blindmaus, der Goldmaulwurf: bei den Amphibien<br/>
+die <span class="aq ">Serena</span> <span class="dta-metamark" title="metamark">|:</span> <span class="aq "><span title="Original: proteus" class="dta-reg">Proteus</span> anguinus</span> <span class="dta-metamark" title="metamark">:|</span> Unter den <span title="Original: Fiſchen" class="dta-reg">Fischen</span> die<br/>
+<span class="aq ">marena cacoa</span> <span class="dta-metamark" title="metamark">|:</span> nach <span class="aq ">Laroche</span> <span class="dta-metamark" title="metamark">:|</span>. <span title="Original: –" class="dta-reg">-</span> Unter den <span title="Original: Inſek-&#xA;ten" class="dta-reg">Insekten</span> gehören hinzu mehrere Zwitterarten von <span title="Original: A-&#xA;meiſen" class="dta-reg">Ameisen</span> und ein blinder Käfer <span class="aq "><span title="Original: ariger" class="dta-reg">areger</span></span>.<span title="Original: ”" class="dta-reg">"</span></q></p></div></div><br/>
+<div class=""><p class="dta-p"><span class="dta-marginal dta-marginal-left">4, <span class="u ">Zahl der<br/>
+Individuen.</span><br/>
+</span>In den <span title="Original: untern" class="dta-reg">unteren</span> <span title="Original: Thierklaſsen" class="dta-reg">Tierklassen</span> <span title="Original: iſt" class="dta-reg">ist</span> die Zahl der <span title="Original: Indivi-&#xA;duen" class="dta-reg">Individuen</span> am <span title="Original: meiſten" class="dta-reg">meisten</span> groß. Nach einem Gewitterregen<br/>
+<span title="Original: erſcheint" class="dta-reg">erscheint</span> im <span title="Original: Waſser" class="dta-reg">Wasser</span> eine Unzahl von <span title="Original: Infuſionsthier-&#xA;chen" class="dta-reg">Infusionstierchen</span>. In der Milch des großen Karpfen <span title="Original: ſind" class="dta-reg">sind</span> nach<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116208503">Blumenbach</a></span></span> 320 Millionen <span title="Original: Cita" class="dta-reg">Citalien</span><span title="Original: l" class="dta-reg"/><span title="Original: ien" class="dta-reg"/> enthalten.</p><br/>
+<p class="dta-p">Wenn man die <span title="Original: Thiere" class="dta-reg">Tiere</span> mit den Pflanzen <span title="Original: hinſichts" class="dta-reg">Hinsicht</span> ihrer<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Zahl</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0605 : 599|</span><br/>
+<div class="fw-top fw-sig">7.<br/>
+</div><br/>
+Zahl vergleicht <span title="Original: ſo" class="dta-reg">so</span> könnte man <span title="Original: getäuſcht" class="dta-reg">getäuscht</span> werden zu<br/>
+glauben, daß es mehr <span title="Original: Thiere" class="dta-reg">Tiere</span> geben <span title="Original: müſse" class="dta-reg">müsse</span>, wenn<br/>
+man die ungeheuren <span title="Original: Heerden" class="dta-reg">Herden</span> von großen <span title="Original: Thieren" class="dta-reg">Tieren</span><br/>
+<span title="Original: ſieht" class="dta-reg">sieht</span>. <span class="aq ">Lichtenstein</span> führt an daß <span class="aq ">Eberty</span> noch <span title="Original: Elephan-&#xA;ten" class="dta-reg">Elefanten</span> <span title="Original: Heerden" class="dta-reg">Herden</span> von 700 Stück <span title="Original: geſehen" class="dta-reg">gesehen</span> habe; <span title="Original: Rhinozeroſse" class="dta-reg">Rhinozerose</span><br/>
+findet man zu <span title="Original: Heerden" class="dta-reg">Herden</span> von 8 bis 10,000 <span title="Original: zuſammen" class="dta-reg">zusammen</span>.<br/>
+Endlich <span title="Original: iſt" class="dta-reg">ist</span> die große Anzahl von Tauben in <span title="Original: Ameri-&#xA;ka" class="dta-reg">Amerika</span> merkwürdig. Die <span class="aq ">columba migratoria</span> <span title="Original: ſchwärmt" class="dta-reg">schwärmt</span><br/>
+in <span title="Original: ſolchen" class="dta-reg">solchen</span> <span title="Original: Heerden" class="dta-reg">Herden</span>, daß mehrere Millionen <span title="Original: zuſam-&#xA;men" class="dta-reg">zusammen</span> kommen, <span title="Original: ſo" class="dta-reg">so</span> daß <span title="Original: ſie" class="dta-reg">sie</span> in ihrem Fluge wie Wolken<br/>
+<span title="Original: ausſehen" class="dta-reg">aussehen</span>, und die Sonne verdunkeln, <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: laſsen" class="dta-reg">lassen</span><br/>
+<span title="Original: ſich" class="dta-reg">sich</span> in <span title="Original: ſolcher" class="dta-reg">solcher</span> Zahl nieder daß die <span title="Original: Aeſte" class="dta-reg">Äste</span> der <span title="Original: Bäu-&#xA;me" class="dta-reg">Bäume</span> brechen, und die Bewohner <span title="Original: ſie" class="dta-reg">sie</span> mit Knütteln<br/>
+<span title="Original: todt" class="dta-reg">tot</span> <span title="Original: ſchlagen" class="dta-reg">schlagen</span> und die Schweine dorthintreibt um <span title="Original: ſie" class="dta-reg">sie</span><br/>
+zu <span title="Original: freſsen" class="dta-reg">fressen</span>.</p><br/>
+<p class="dta-p">Das <span title="Original: Merkwürdigſte" class="dta-reg">Merkwürdigste</span> <span title="Original: iſt" class="dta-reg">ist</span> aber an der <span title="Original: Südſee" class="dta-reg">Südsee</span>, wo<br/>
+man die Seevögel <span title="Original: 5–6" class="dta-reg">5-6</span> Stundenlang ununterbrochen<br/>
+wie ein großes Gewölk <span title="Original: vorüber" class="dta-reg">vorüberziehen</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: z" class="dta-reg"/></span><span title="Original: iehen" class="dta-reg"/> <span title="Original: ſieht" class="dta-reg">sieht</span>. <span title="Original: –" class="dta-reg">-</span><br/>
+Die Excremente <span title="Original: dieſer" class="dta-reg">dieser</span> Vögel geben ein gutes <span title="Original: Dün-&#xA;gungsmittel" class="dta-reg">Düngungsmittel</span>, an einige Orten wo <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſich" class="dta-reg">sich</span> einige<br/>
+Zeit aufhalten <span title="Original: entſtehen" class="dta-reg">entstehen</span> durch ihre Excremente <span title="Original: Schich-&#xA;ten" class="dta-reg">Schichten</span> von 25 bis 30<span title="Original: ′" class="dta-reg">'</span> Höhe, die <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ausſehen" class="dta-reg">aussehen</span> wie <span title="Original: unsre" class="dta-reg">unsere</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">brenn-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0606|</span><br/>
+Braunkohlen. <span title="Original: –" class="dta-reg">-</span> Sieht man aber hingegen die großen<br/>
+Wälder am <span title="Original: Orinoko" class="dta-reg">Orinoco</span>, <span title="Original: ſo" class="dta-reg">so</span> wie die vielen <span title="Original: andern" class="dta-reg">anderen</span><br/>
+im nördlichen Amerika und betrachtet die großen<br/>
+Steppen die voller Monocotyledonen <span title="Original: ſtehen" class="dta-reg">stehen</span>, <span title="Original: ſo" class="dta-reg">so</span> wird<br/>
+die Zahl der Vegetabilien doch größer <span title="Original: erſcheinen" class="dta-reg">erscheinen</span></p></div><br/>
+<div class=""><p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Verbreitung<br/>
+nach Species.</span><br/>
+</span>Bei den <span title="Original: Thieren" class="dta-reg">Tieren</span> haben wir <span title="Original: dieſelbe" class="dta-reg">dieselbe</span> Frage wie bei<br/>
+Pflanzen zu <span title="Original: unterſuchen" class="dta-reg">untersuchen</span>; ob es ein <span title="Original: Thier" class="dta-reg">Tier</span> <span title="Original: giebt" class="dta-reg">gibt</span>,<br/>
+das über die ganze Erde verbreitet <span title="Original: iſt" class="dta-reg">ist</span>. Eben <span title="Original: ſo" class="dta-reg">so</span><br/>
+wie bei den Pflanzen die größere Verbreitung <span title="Original: ſich" class="dta-reg">sich</span><br/>
+in den <span title="Original: unterern" class="dta-reg">untereren</span> Arten findet, <span title="Original: ſo" class="dta-reg">so</span> auch bei den<br/>
+<span title="Original: Thieren" class="dta-reg">Tieren</span>.</p><br/>
+<p class="dta-p">Prof. <span class="aq ">Ehrenberg</span> hat in Afrika 14 <span title="Original: Infuſionsthierchen" class="dta-reg">Infusionstierchen</span><br/>
+gefunden die <span title="Original: dieſelben" class="dta-reg">dieselben</span> <span title="Original: ſind" class="dta-reg">sind</span> wie in Europa. <span class="aq ">Monas<br/>
+termo, Monaslens etc</span>.</p><br/>
+<p class="dta-p">Gehen wir weiter hinauf, <span title="Original: ſo" class="dta-reg">so</span> finden <span title="Original: ſich" class="dta-reg">sich</span> viel <span title="Original: verbrei-&#xA;tet" class="dta-reg">verbreitet</span> <span title="Original: gewiſse" class="dta-reg">gewisse</span> <span title="Original: Inſekten" class="dta-reg">Insekten</span>, und <span title="Original: grade" class="dta-reg">gerade</span> am <span title="Original: meiſten" class="dta-reg">meisten</span> die<br/>
+Schmetterlinge. Der <span class="aq "><span title="Original: sphinx" class="dta-reg">Sphinx</span> atropos</span> <span title="Original: iſt" class="dta-reg">ist</span> in Europa,<br/>
+<span title="Original: Egypten" class="dta-reg">Ägypten</span>, und <span title="Original: ſogar" class="dta-reg">sogar</span> in Mexiko gefunden worden.<br/>
+Aber eben <span title="Original: ſo" class="dta-reg">so</span> wenig <span title="Original: Inſekten" class="dta-reg">Insekten</span>, <span title="Original: Molusken" class="dta-reg">Mollusken</span>, Vögel<br/>
+und noch weniger <span title="Original: Säugethiere" class="dta-reg">Säugetiere</span>, wie die Pflanzen<br/>
+finden <span title="Original: ſich" class="dta-reg">sich</span> überall auf der Erde verbreitet. <span title="Original: –" class="dta-reg">-</span> Von<br/>
+den Vögeln <span title="Original: giebt" class="dta-reg">gibt</span> es einige, und zwar nicht Seevögel,<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">ſon</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0607 : 601|</span><br/>
+<span title="Original: ſondern" class="dta-reg">sondern</span> Sumpfvögel die in allen Gegenden der <span title="Original: tem-" class="dta-reg">temtemperirten</span><span title="Original: &#xA;temperirten" class="dta-reg"/> und Tropen Zone gefunden worden.</p><br/>
+<p class="dta-p"><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span></span> hat es auch von der <span title="Original: Thurmeule" class="dta-reg">Turmeule</span> geglaubt; <span title="Original: Bra-&#xA;ſilien" class="dta-reg">Brasilien</span> <span title="Original: dieſelbe" class="dta-reg">dieselbe</span> <span title="Original: ſei" class="dta-reg">sei</span> wie die <span title="Original: europäiſche" class="dta-reg">europäische</span>.</p><br/>
+<p class="dta-p">Das von <span class="aq ">Buffon</span> <span title="Original: aufgeſtellte" class="dta-reg">aufgestellte</span> <span title="Original: Geſetz" class="dta-reg">Gesetz</span> daß die <span title="Original: Wir-&#xA;belthiere" class="dta-reg">Wirbeltiere</span> ganz anders im alten nur neuen <span title="Original: Continen-&#xA;te" class="dta-reg">Kontinente</span> <span title="Original: ſeien" class="dta-reg">seien</span>, <span title="Original: iſt" class="dta-reg">ist</span> nicht ganz wahr von der <span title="Original: temperirten" class="dta-reg">temperierten</span><br/>
+Zone, wohl aber von den Tropen, und zwar nicht nur<br/>
+von den <span title="Original: Wirbelthieren" class="dta-reg">Wirbeltieren</span> <span title="Original: ſondern" class="dta-reg">sondern</span> auch von alten <span title="Original: an-&#xA;dern" class="dta-reg">anderen</span> Arten. Nur einige <span title="Original: Beiſpiele" class="dta-reg">Beispiele</span> von gleichen Species<br/>
+in den beiden <span title="Original: Continenten" class="dta-reg">Kontinenten</span> gibt es von den <span title="Original: Epidop-&#xA;teren" class="dta-reg">Epidopteren</span> <span title="Original: ſo" class="dta-reg">so</span> die <span class="aq ">atalanta</span>, <span class="aq ">carapix</span>, <span class="aq ">antiope</span>.</p><br/>
+<p class="dta-p">Vergleicht man die <span title="Original: temperirten" class="dta-reg">temperierten</span> Zone im alten<br/>
+<span title="Original: Continent" class="dta-reg">Kontinent</span> und im neuen, <span title="Original: ſo" class="dta-reg">so</span> findet man allerdings<br/>
+ganz <span title="Original: verſchiedene" class="dta-reg">verschiedene</span> <span title="Original: Thiere" class="dta-reg">Tiere</span>, die man früher für <span title="Original: dieſelben" class="dta-reg">dieselben</span><br/>
+gehalten hat; <span title="Original: ſo" class="dta-reg">so</span> die <span title="Original: Hirſche" class="dta-reg">Hirsche</span> und Auer ochsen. Aber<br/>
+das <span title="Original: Rennthier" class="dta-reg">Rentier</span> und <span title="Original: Elendthier" class="dta-reg">Elendtier</span> bleibt <span title="Original: daſselbe" class="dta-reg">dasselbe</span>;<br/>
+<span class="aq ">Pallas</span> hat <span title="Original: bewieſen" class="dta-reg">bewiesen</span>, daß es von einem <span title="Original: Continent" class="dta-reg">Kontinent</span><br/>
+zu dem <span title="Original: andern" class="dta-reg">anderen</span> über das Eis gehe. Vom <span title="Original: Liber" class="dta-reg">Lieber</span> <span title="Original: ſcheint" class="dta-reg">scheint</span><br/>
+auch <span title="Original: dieſelbe" class="dta-reg">dieselbe</span> Species in den beiden <span title="Original: Continenten" class="dta-reg">Kontinenten</span> zu<br/>
+<span title="Original: ſein" class="dta-reg">sein</span>; eben <span title="Original: ſo" class="dta-reg">so</span> nach <span class="aq ">Lichtenstein</span> die Sumpfotter, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span></span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">glaubt</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0608|</span><br/>
+glaubt auch daß der Vielfraß Wolff und Fuchs<br/>
+<span title="Original: dieſelben" class="dta-reg">dieselben</span> <span title="Original: ſeien" class="dta-reg">seien</span>, von beiden <span title="Original: letztern" class="dta-reg">letzteren</span> <span title="Original: iſt" class="dta-reg">ist</span> es aber<br/>
+nach <span title="Original: neuren" class="dta-reg">neueren</span> Untersuchungen nicht <span title="Original: wahrſcheinlich" class="dta-reg">wahrscheinlich</span><br/>
+Fragen wir nach der Ähnlichkeit in den Species der<br/>
+<span title="Original: Thiere" class="dta-reg">Tiere</span> nach der nördlichen und <span title="Original: ſüdlichen" class="dta-reg">südlichen</span> <span title="Original: Hemi-&#xA;ſphäre" class="dta-reg">Hemisphäre</span> <span title="Original: ſo" class="dta-reg">so</span> finden <span title="Original: ſich" class="dta-reg">sich</span> einige <span title="Original: Beiſpiele" class="dta-reg">Beispiele</span>. Die <span title="Original: tempe-&#xA;rirte" class="dta-reg">temperierte</span> Zone von Europa hat viele Species mit der<br/>
+von Afrika gemein. Lämmergeier <span class="aq ">etc</span>.</p><br/>
+<p class="dta-p">In Neuholland <span title="Original: iſt" class="dta-reg">ist</span> nach <span class="aq ">Lichtenstein</span> <span title="Original: derſelbe" class="dta-reg">derselbe</span><br/>
+<span title="Original: Kukuk" class="dta-reg">Kuckuck</span> wie im Europa. Auch <span title="Original: giebt" class="dta-reg">gibt</span> es in Afrika<br/>
+einige Taubenarten die den <span title="Original: unſern" class="dta-reg">unseren</span> <span title="Original: ſehr" class="dta-reg">sehr</span> ähnlich<br/>
+<span title="Original: ſind" class="dta-reg">sind</span>.</p><br/>
+<p class="dta-p">Unter den <span title="Original: Thieren" class="dta-reg">Tieren</span> wie unter den Pflanzen <span title="Original: iſt" class="dta-reg">ist</span><br/>
+<span title="Original: derſelbe" class="dta-reg">derselbe</span> merkwürdige Charakter daß die <span title="Original: Tropen-&#xA;formen" class="dta-reg">Tropenformen</span> weit mehr nach Süden hin verbreitet<br/>
+<span title="Original: ſind" class="dta-reg">sind</span> als nach Norden, und daß <span title="Original: ſie" class="dta-reg">sie</span> in Amerika<br/>
+weiter nördlich hinaufgehen als in der alten<br/>
+Welt; wie <span title="Original: ſchon" class="dta-reg">schon</span> bei den Pflanzen bemerkt, <span title="Original: ſcheint" class="dta-reg">scheint</span><br/>
+auch bei den <span title="Original: Thieren" class="dta-reg">Tieren</span> <span title="Original: derſelbe" class="dta-reg">derselbe</span> Grund <span title="Original: dieſer" class="dta-reg">dieser</span> <span title="Original: Er-&#xA;ſcheinung" class="dta-reg">Erscheinung</span> <span title="Original: ſtatt" class="dta-reg">statt</span> zu finden, daß nämlich im Süden<br/>
+Europas ein Meer und die Sarah vorliegen, über<br/>
+die die <span title="Original: Thiere" class="dta-reg">Tiere</span> nicht wandern konnten, dagegen<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Am</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0609 : 603|</span><br/>
+Amerika ein fortgehender <span title="Original: Continent" class="dta-reg">Kontinent</span> <span title="Original: iſt" class="dta-reg">ist</span>, der die<br/>
+Verbreitung mehr <span title="Original: begünſtigt" class="dta-reg">begünstigt</span>. <span title="Original: –" class="dta-reg">-</span> Eben <span title="Original: ſo" class="dta-reg">so</span> wie die <span title="Original: tem-&#xA;perirten" class="dta-reg">temperierten</span> Zone von Amerika deshalb durch die große<br/>
+Mannigfaltigkeit von großen Bäumen mit großen<br/>
+Bluter <span title="Original: verſchönert" class="dta-reg">verschönert</span> wird, <span title="Original: ſo" class="dta-reg">so</span> finden <span title="Original: ſich" class="dta-reg">sich</span> auch <span title="Original: Tropen-&#xA;formen" class="dta-reg">Tropenformen</span> des <span title="Original: Thierreichs" class="dta-reg">Tierreichs</span> in den <span title="Original: nordamerikaniſchen" class="dta-reg">nordamerikanischen</span><br/>
+<span title="Original: Freiſtaat" class="dta-reg">Freistaat</span> und noch nördlicher in <span title="Original: Canada" class="dta-reg">Kanada</span>. <span class="dta-metamark" title="metamark">|:</span> <span class="aq ">Miltson</span><br/>
+und <span class="aq ">Carl Buonaparte</span> <span class="dta-metamark" title="metamark">:|</span> der Trachylus <span class="dta-metamark" title="metamark">|:</span> <span title="Original: Colibri" class="dta-reg">Kolibri</span> <span class="dta-metamark" title="metamark">:|</span><br/>
+lebt in den <span title="Original: ſüdlichen" class="dta-reg">südlichen</span> Provinzen und <span title="Original: erſcheint" class="dta-reg">erscheint</span> <span title="Original: weni-&#xA;ge" class="dta-reg">wenige</span> Monate darauf in <span title="Original: Canada" class="dta-reg">Kanada</span>, indem er in kurzer<br/>
+Zeit 280 Meilen zurückgelegt. Im März <span title="Original: iſt" class="dta-reg">ist</span> er in<br/>
+Georgien, im <span title="Original: Juny" class="dta-reg">Juni</span> im <span title="Original: Canada" class="dta-reg">Kanada</span>. <span class="aq "><span title="Original: Mak" class="dta-reg">Makenzie</span><span class="dta-del" title="Streichung (#erased)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span title="Original: enzie" class="dta-reg"/></span> hat <span title="Original: Ko-&#xA;libris" class="dta-reg">Kolibris</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span> noch bei 54° d Br. gefunden. Eine<br/>
+Folge der Continuitä des <span title="Original: Continents" class="dta-reg">Kontinents</span> <span title="Original: –" class="dta-reg">-</span> <span class="aq "><span title="Original: Capt" class="dta-reg">kappt</span> Kind</span><br/>
+<span title="Original: ſo" class="dta-reg">so</span> wie alle <span title="Original: Reiſende" class="dta-reg">Reisende</span> die im Feuerland <span title="Original: geweſen" class="dta-reg">gewesen</span><br/>
+<span title="Original: ſind" class="dta-reg">sind</span>, fanden dort Kolibris, bei 55° s Br. in der <span title="Original: Meer-&#xA;enge" class="dta-reg">Meerenge</span>.</p><br/>
+<p class="dta-p">Was aber von den Pflanzen der <span title="Original: ſüdlichen" class="dta-reg">südlichen</span> Zone <span title="Original: ge-&#xA;ſagt" class="dta-reg">gesagt</span> wurde daß <span title="Original: ſie" class="dta-reg">sie</span> weiter gehen <span title="Original: iſt" class="dta-reg">ist</span> auch von den<br/>
+<span title="Original: Thieren" class="dta-reg">Tieren</span> der Fall. In den <span title="Original: Maken" class="dta-reg">Makenzie</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: z" class="dta-reg"/></span><span title="Original: ie" class="dta-reg"/> <span title="Original: Inſeln" class="dta-reg">Inseln</span> und der<br/>
+<span title="Original: Coneble" class="dta-reg">Coneble-Insel</span><span title="Original: -Inſel" class="dta-reg"/> <span class="dta-metamark" title="metamark">|:</span> die <span title="Original: erſt" class="dta-reg">erst</span> 1810 entdeckt worden <span title="Original: iſt" class="dta-reg">ist</span> <span class="dta-metamark" title="metamark">:|</span> bei<br/>
+45° dB. findet <span title="Original: ſich" class="dta-reg">sich</span> eine <span title="Original: eigne" class="dta-reg">eigene</span> Art von <span title="Original: Papagaÿ" class="dta-reg">Papagay</span>, den <span class="aq ">Lepou</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0610|</span><br/>
+<span title="Original: derſelben" class="dta-reg">derselben</span> bei der <span class="aq "><span title="Original: Duperay" class="dta-reg">Duperayschen</span></span><span title="Original: ſchen" class="dta-reg"/> <span title="Original: Reiſe" class="dta-reg">Reise</span> mit auf dem Schiffe<br/>
+befand, <span title="Original: beſchrieben" class="dta-reg">beschrieben</span> worden <span title="Original: iſt" class="dta-reg">ist</span>.</p></div><br/>
+<div class=""><p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u ">Ersetzende Formen.</span><br/>
+</span>Unter den <span title="Original: Thieren" class="dta-reg">Tieren</span> gibt es wie unter den Pflanzen<br/>
+ebenfalls ersetzende Formen. So der <span title="Original: aſiatiſche" class="dta-reg">asiatische</span> und<br/>
+<span title="Original: afrikaniſche" class="dta-reg">afrikanische</span> <span title="Original: Elephant" class="dta-reg">Elefant</span>, von denen man merkwürdig<br/>
+genug in <span title="Original: neuern" class="dta-reg">neueren</span> Zeiten <span title="Original: verſucht" class="dta-reg">versucht</span> hat, den <span title="Original: afri-&#xA;kaniſchen" class="dta-reg">afrikanischen</span> <span class="aq ">Loxodonta</span>, als <span title="Original: beſondere" class="dta-reg">besonderes</span><span class="dta-del" title="Streichung (#s)">r</span><span title="Original: s" class="dta-reg"/> Genus zu <span title="Original: un-&#xA;terſcheiden" class="dta-reg">unterscheiden</span> wegen <span title="Original: ſeiner" class="dta-reg">seiner</span> großen Ohren und <span title="Original: grö-&#xA;ßern" class="dta-reg">größeren</span> Wildheit. Gegenwärtig <span title="Original: iſt" class="dta-reg">ist</span> ein <span title="Original: afrikaniſcher" class="dta-reg">afrikanischer</span><br/>
+<span title="Original: Elephant" class="dta-reg">Elefant</span> in Paris der eben <span title="Original: ſo" class="dta-reg">so</span> gelehrig und <span title="Original: ſanft-&#xA;müthig" class="dta-reg">sanftmütig</span> <span title="Original: iſt" class="dta-reg">ist</span> als der <span title="Original: indiſche" class="dta-reg">indische</span> <span title="Original: Elephant" class="dta-reg">Elefant</span>. Ferner <span title="Original: ſind" class="dta-reg">sind</span><br/>
+<span title="Original: ſo" class="dta-reg">so</span> ersetzende Formen in den <span title="Original: Rhinozeros Arten" class="dta-reg">Rhinozeros-Arten</span>: 2<br/>
+einförmige in Indien, und 2 zweiförmige, das<br/>
+eine am <span title="Original: Cap" class="dta-reg">Kap</span>. Das andere in Sumatra. <span title="Original: –" class="dta-reg">-</span> Eben<br/>
+<span title="Original: ſo" class="dta-reg">so</span> verhält es <span title="Original: ſich" class="dta-reg">sich</span> mit vielen Singvögeln. Ferner<br/>
+die <span class="aq ">Sumangos</span> die in der alten Welt die Kolibris von<br/>
+Amerika <span title="Original: erſetzen" class="dta-reg">ersetzen</span> <span class="dta-metamark" title="metamark">|:</span> besonders in <span title="Original: Afrika " class="dta-reg">Afrika;</span><span class="dta-metamark" title="metamark">:|</span><span title="Original: ;" class="dta-reg"/> eben <span title="Original: ſo" class="dta-reg">so</span> gibt<br/>
+es ersetzende Formen der <span title="Original: Strauß Arten" class="dta-reg">Strauß-Arten</span>. <span title="Original: –" class="dta-reg">-</span> Unter den<br/>
+Amphibien, große Schlangen von 15 bis 18<span title="Original: ′" class="dta-reg">'</span> Länge <span class="dta-metamark" title="metamark">|:</span> denn<br/>
+an <span title="Schreibfehler: ſolche" class="dta-corr"><span title="Original: ſolchen" class="dta-reg">solchen</span></span> von 30<span title="Original: ′" class="dta-reg">'</span> möchte wohl gerechter Zweifel <span title="Original: ſein" class="dta-reg">sein</span> <span class="dta-metamark" title="metamark">:|</span><br/>
+die ein <span title="Original: ſchachbrettförmiges" class="dta-reg">schachbrettförmiges</span> Fell haben: früher wurde<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">die</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0611 : 605|</span><br/>
+die <span class="aq ">Boa</span> der neuen Welt mit <span class="aq ">Piton</span> der alten Welt<br/>
+verwechselt, es <span title="Original: ſind" class="dta-reg">sind</span> nur ersetzende Formen.</p></div><br/>
+<div class=""><p class="dta-p">Eben <span title="Original: ſo" class="dta-reg">so</span> wie bei den Pflanzen hatten die <span title="Original: Thiere" class="dta-reg">Tiere</span> auf den<span class="dta-marginal dta-marginal-right"><span class="u "><span title="Original: Vertheilung" class="dta-reg">Verteilung</span> des <span title="Original: ani-&#xA;maliſchen" class="dta-reg">animalischen</span> Lebens in den<br/>
+Gebirgen.</span><br/>
+</span><br/>
+ihre <span title="Original: beſtimmte" class="dta-reg">bestimmte</span> obere und untere Grenze; doch häufig<br/>
+gehen <span title="Original: ſie" class="dta-reg">sie</span> durch Streifereien aus <span title="Original: dieſen" class="dta-reg">diesen</span> hinaus <span class="dta-metamark" title="metamark">|:</span> <span title="Original: Ueber" class="dta-reg">Über</span><br/>
+die <span title="Original: Andeskette" class="dta-reg">Andenkette</span> hat <span class="aq ">Doc</span> eine Tafel herausgegeben,<br/>
+die die Grenzen des <span title="Original: animaliſchen" class="dta-reg">animalischen</span> Lebens bezeichnet <span class="dta-metamark" title="metamark">:|</span><br/>
+Es <span title="Original: iſt" class="dta-reg">ist</span> merkwürdig wie die <span title="Original: Thiere" class="dta-reg">Tiere</span> bisweilen <span class="dta-add" title="Hinzufügung (superlinear)">Streifereien </span>machen.<br/>
+Von den Affen die eigentlich nur bis 2000<span title="Original: ′" class="dta-reg">'</span> Höhe <span title="Original: woh-&#xA;nen" class="dta-reg">wohnen</span>, finden <span title="Original: ſich" class="dta-reg">sich</span> doch einige bei 6000<span title="Original: ′" class="dta-reg">'</span> Höhe; <span title="Original: ſie" class="dta-reg">sie</span> bleiben<br/>
+aber nur kurze Zeit auf <span title="Original: ſolchen" class="dta-reg">solchen</span> Höhen, und <span title="Original: verlaſsen" class="dta-reg">verlassen</span><br/>
+<span title="Original: dieſelbe" class="dta-reg">dieselbe</span> nach wenigen Monaten wieder um nach ihrer<br/>
+eigentlichen <span title="Original: Heimath" class="dta-reg">Heimat</span> zurückzukehren. <span title="Original: –" class="dta-reg">-</span> Eben <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: ſind" class="dta-reg">sind</span><br/>
+einige <span title="Original: Insecten" class="dta-reg">Insekten</span> nur auf Höhen Koliotere, die nur<br/>
+Alpeninsekten <span title="Original: ſind" class="dta-reg">sind</span>, besonders aber Schmetterlinge die<br/>
+in Europa nur auf großen Hohen gefunden <span title="Original: wor-&#xA;den" class="dta-reg">worden</span>. <span title="Original: –" class="dta-reg">-</span> Der kleine Floh <span class="aq ">pulea penetrans</span>, findet <span title="Original: ſich" class="dta-reg">sich</span> nur<br/>
+<span title="Original: ſehr" class="dta-reg">sehr</span> wenig in der Ebene, er fängt bei <span title="Original: 8–900" class="dta-reg">8-900</span><span title="Original: ′" class="dta-reg">'</span> Höhe<span title="Schreibfehler:  ′" class="dta-corr">[…]</span><br/>
+<span class="dta-metamark" title="metamark">|:</span> Er <span title="Original: ſetzt" class="dta-reg">setzt</span> <span title="Original: ſich" class="dta-reg">sich</span> unter die Nägel der <span title="Original: Menſchen" class="dta-reg">Menschen</span>, und<br/>
+bringt dadurch große Krankheiten an den <span title="Original: Extremi-&#xA;täten" class="dta-reg">Extremitäten</span> hervor <span class="dta-metamark" title="metamark">:|</span></p><br/>
+<p class="dta-p">Wie bei den Pflanzen finden wir hier ebenfalls<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">daß</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0612|</span><br/>
+daß einige <span title="Original: Thiere" class="dta-reg">Tiere</span> in manchen Gegenden tiefer in<br/>
+<span title="Original: andern" class="dta-reg">anderen</span> höher leben. Eben <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: giebt" class="dta-reg">gibt</span> es auch bei den<br/>
+<span title="Original: Thieren" class="dta-reg">Tieren</span> merkwürdige <span title="Original: Ausſchlüſse" class="dta-reg">Ausschlüsse</span>, was besonders<br/>
+trotz der großen Ähnlichkeit der Pflanzen <span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[deutlich]</span></span><span class="dta-add" title="Hinzufügung (across)">auffallend</span><br/>
+<span title="Original: iſt" class="dta-reg">ist</span>; <span title="Original: zwiſchen" class="dta-reg">zwischen</span> Afrika und Amerika. Man findet <span title="Original: kei-&#xA;nen" class="dta-reg">keinen</span> <span title="Original: Hirſch" class="dta-reg">Hirsch</span> in Afrika, <span class="dta-metamark" title="metamark">|:</span> wird durch die Gazellen ersetzt <span class="dta-metamark" title="metamark">:|</span><br/>
+Affen <span title="Original: giebt" class="dta-reg">gibt</span> es nur bei Gibraltar, die <span title="Original: wahrſcheinlich" class="dta-reg">wahrscheinlich</span><br/>
+durch die Araber dorthin verpflanzt <span title="Original: ſind" class="dta-reg">sind</span>.</p></div><br/>
+<div class=""><p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u "><span title="Original: Vertheilung" class="dta-reg">Verteilung</span> nach<br/>
+Zahl der Genera<br/>
+in <span title="Original: Verhältniß" class="dta-reg">Verhältnis</span> zu<br/>
+den Species.</span><br/>
+</span>Von den <span title="Original: Zahlenverhältniſsen" class="dta-reg">Zahlenverhältnissen</span> bei den <span title="Original: Thieren" class="dta-reg">Tieren</span> weiß<br/>
+man nur <span title="Original: ſehr" class="dta-reg">sehr</span> wenig, <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſind" class="dta-reg">sind</span> bei weiten nicht mit<br/>
+der Genauigkeit <span title="Original: erforſcht" class="dta-reg">erforscht</span> wie bei den Pflanzen.<br/>
+Wenn man aber künftig die Genera und Species<br/>
+der <span title="Original: Thiere" class="dta-reg">Tiere</span> <span title="Original: erſt" class="dta-reg">erst</span> wird genauer untersucht haben, <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: kañ" class="dta-reg">kann</span><br/>
+man <span class="dta-del" title="Streichung (#erased)"><span class="gap">[unleserliches Material – 1 Wort fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: ſchon" class="dta-reg">schon</span></span> mit Sicherheit darauf rechnen daß <span title="Original: ſich" class="dta-reg">sich</span><br/>
+ebenfalls das Resultat ergeben wird, wie bei den<br/>
+Pflanzen, daß im Norden mehr Genera bei einer<br/>
+<span title="Original: geringern" class="dta-reg">geringeren</span> Zahl von Species <span title="Original: ſich" class="dta-reg">sich</span> befinden.</p><br/>
+<p class="dta-p">Aus allen den bis jetzt <span title="Original: beſchriebenen" class="dta-reg">beschriebenen</span> <span title="Original: Thieren" class="dta-reg">Tieren</span> aus<br/>
+der <span class="aq "><span title="Schreibfehler: Faura" class="dta-corr">Fauna</span></span> vom <span title="Original: Cap" class="dta-reg">Kap</span> und der <span class="aq "><span title="Schreibfehler: Faura" class="dta-corr">Fauna</span></span> von Europa <span title="Original: er-&#xA;gibt" class="dta-reg">ergibt</span> <span title="Original: ſo" class="dta-reg">so</span> daß es 5 <span title="Original: mal" class="dta-reg">Mal</span> <span title="Original: ſo" class="dta-reg">so</span> viel Vögel als <span title="Original: Säuge-&#xA;thiere" class="dta-reg">Säugetiere</span> gibt <span class="dta-metamark" title="metamark">|:</span> in der Vorwelt gab es 128 <span title="Original: Säugethiere" class="dta-reg">Säugetiere</span><br/>
+mehr <span class="dta-metamark" title="metamark">:|</span> Vögel und Amphibien nehmen nach den<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Tropen</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0613 : 607|</span><br/>
+<div class="fw-top fw-sig">8.<br/>
+</div><br/>
+Tropen weit mehr zu als <span title="Original: Säugethiere" class="dta-reg">Säugetiere</span>; und wenn<br/>
+man die Faunen von mehrere Landern kennen, und<br/>
+und Mittelzahlen von einigen 1000 Arealen haben <span title="Original: könn-&#xA;te" class="dta-reg">könnte</span> wo <span title="Original: ſie" class="dta-reg">sie</span> auf <span title="Original: dieſelbe" class="dta-reg">dieselbe</span> <span title="Original: Weiſe" class="dta-reg">Weise</span> wie die Pflanzen nach<br/>
+<span class="aq ">Generibu</span> und <span class="aq ">specibus</span> behandelt würden, würde man<br/>
+gewiß ganz ähnliche Resultate bei den <span title="Original: Thieren" class="dta-reg">Tieren</span> finden,<br/>
+wie <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſich" class="dta-reg">sich</span> bei den Pflanzen ergeben.</p><br/>
+<p class="dta-p">Nach der gegenwärtigen <span title="Original: Kenntniß" class="dta-reg">Kenntnis</span> verhalten <span title="Original: ſich" class="dta-reg">sich</span> die<br/>
+wiederkauenden <span title="Original: Thiere" class="dta-reg">Tiere</span>, zu den reißenden, <span title="Original: fleiſch-&#xA;freſsenden" class="dta-reg">fleischfressenden</span> <span title="Original: Thieren" class="dta-reg">Tieren</span> wie 3 : 1. Von den Pachidermen<br/>
+hat <span title="Original: ſich" class="dta-reg">sich</span> das <span title="Original: Verhältniß" class="dta-reg">Verhältnis</span> <span title="Original: ſehr" class="dta-reg">sehr</span> geändert, man hat jetzt<br/>
+nur 16 bis 18 Pachidermen, in der Vorwelt <span title="Original: ſind" class="dta-reg">sind</span> 56<br/>
+untergegangen. <span title="Original: –" class="dta-reg">-</span> Auch von den Insekten <span title="Original: ſind" class="dta-reg">sind</span> viele<br/>
+Species untergegangen, man findet <span title="Original: verſchwundene" class="dta-reg">verschwundene</span><br/>
+Species im <span title="Original: Bernſtein" class="dta-reg">Bernstein</span>, Brannkohle <span class="aq "><span title="Original: etc" class="dta-reg">etc.</span></span><span title="Original: ." class="dta-reg"/> in den <span title="Original: nor-&#xA;diſchen" class="dta-reg">nordischen</span> Gegenden.</p><br/>
+<p class="dta-p">Die Form der <span title="Original: Kengurus" class="dta-reg">Känguruhs</span> und <span title="Original: andrer" class="dta-reg">anderer</span> <span title="Original: Thier" class="dta-reg">Tier</span> Species<br/>
+in Neuholland <span title="Original: iſt" class="dta-reg">ist</span> nicht <span title="Original: iſolirt" class="dta-reg">isoliert</span>, wie wir es bei <span title="Original: ei-&#xA;nigen" class="dta-reg">einigen</span> Pflanzen gefunden haben.</p><br/>
+<p class="dta-p">Das <span title="Original: erſte" class="dta-reg">erste</span> was die <span title="Original: Naturforſcher" class="dta-reg">Naturforscher</span> gewöhnlich <span title="Original: thun" class="dta-reg">tun</span>,<br/>
+<span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: Kontraſte" class="dta-reg">Kontraste</span> aufzusuchen, <span title="Original: erſt" class="dta-reg">erst</span> nachher, mit einer<br/>
+<span title="Original: gewiſsen" class="dta-reg">gewissen</span> <span title="Original: größern" class="dta-reg">größeren</span> <span title="Original: Verſtändigkeit" class="dta-reg">Verständigkeit</span> <span title="Original: ſucht" class="dta-reg">sucht</span> man die<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">all-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0614|</span><br/>
+allgemeinen <span title="Original: Geſetze" class="dta-reg">Gesetze</span> auf: <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: iſt" class="dta-reg">ist</span> es auch hier.</p><br/>
+<p class="dta-p">Man hielt das <span title="Original: Kenguru" class="dta-reg">Känguru</span> für einzig in Neuholland,<br/>
+<span title="Original: ſpäter" class="dta-reg">später</span> fand man es aber auch in mehreren <span title="Original: Inſeln" class="dta-reg">Inseln</span><br/>
+des <span title="Original: indiſchen" class="dta-reg">indischen</span> Archipels; auf der <span title="Original: Inſel" class="dta-reg">Insel</span> Aroä, nahe bei<br/>
+<span title="Original: Banda" class="dta-reg">Bande</span>, und <span title="Original: ſelbſt" class="dta-reg">selbst</span> auf Selohr merkwürdig daß<br/>
+<span title="Original: dieſer" class="dta-reg">dieser</span> Archipel <span title="Original: ſo" class="dta-reg">so</span> große <span title="Original: Thiere" class="dta-reg">Tiere</span> in <span title="Original: ſeiner" class="dta-reg">seiner</span> Fauna<br/>
+auf den kleinen Eilanden zählt warum auf den<br/>
+<span title="Original: meiſten" class="dta-reg">meisten</span> <span title="Original: andern" class="dta-reg">anderen</span> <span title="Original: Inſeln" class="dta-reg">Inseln</span> es keine größere <span title="Original: Thiere" class="dta-reg">Tiere</span> als<br/>
+von 4 bis 5 Zoll Höhe gibt, die zu den <span title="Original: Nagtthieren" class="dta-reg">Nachttieren</span> <span title="Original: ge-&#xA;hören" class="dta-reg">gehören</span>. Von der Zahl Trinadad reden wir hier nicht, da<br/>
+<span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: ſo" class="dta-reg">so</span> nach dem <span title="Original: Continent" class="dta-reg">Kontinent</span> liegt, daß <span title="Original: ſie" class="dta-reg">sie</span> als ein<br/>
+<span title="Original: abgeriſsener" class="dta-reg">abgerissener</span> <span title="Original: Theil" class="dta-reg">Teil</span> <span title="Original: deſselben" class="dta-reg">desselben</span> betrachtet werden kann.<br/>
+Im <span title="Original: indiſchen" class="dta-reg">indischen</span> Archipel gibt es große <span title="Original: Elephanten" class="dta-reg">Elefanten</span>, <span title="Original: Rhino-&#xA;zeroſse" class="dta-reg">Rhinozerose</span>, <span title="Original: Kengurus" class="dta-reg">Känguruhs</span> <span title="Original: uſw" class="dta-reg">usw</span>. Es <span title="Original: ſpricht" class="dta-reg">spricht</span> nicht <span title="Original: dieß" class="dta-reg">dies</span> für die<br/>
+Meinung, daß die <span title="Original: Inſeln" class="dta-reg">Inseln</span> früher als großer <span title="Original: Continent" class="dta-reg">Kontinent</span><br/>
+<span title="Original: zuſammen" class="dta-reg">zusammen</span> gehangen haben.</p></div></div><br/>
+<hr/><br/>
+<div class=""><div class="dta-head"><span class="u ">Geographie des <span title="Original: Menſchen" class="dta-reg">Menschen</span></span></div><br/>
+<p class="dta-p">Am <span title="Original: weiteſten" class="dta-reg">weitesten</span> verbreitet von allen <span title="Original: Säugethieren" class="dta-reg">Säugetieren</span> auf<br/>
+der Erde <span title="Original: iſt" class="dta-reg">ist</span> der <span class="u "><span title="Original: Menſch" class="dta-reg">Mensch</span></span> nicht weil er in <span title="Original: ſeiner" class="dta-reg">seiner</span> <span title="Original: phyſiſchen" class="dta-reg">physischen</span><br/>
+<span title="Original: Beſchaffenheit" class="dta-reg">Beschaffenheit</span> <span title="Original: verſchieden" class="dta-reg">verschieden</span> von jenen <span title="Original: iſt" class="dta-reg">ist</span>, <span title="Original: ſondern" class="dta-reg">sondern</span> weil er<br/>
+durch Intelligenz die Biegsamkeit des Willens befördert,<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">ver</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0615 : 609|</span><br/>
+vermehrt. Durch <span title="Original: dieſe" class="dta-reg">diese</span> höhere Intelligenz kann er alle<br/>
+<span title="Original: Klimate" class="dta-reg">Klimata</span> ertragen, und den <span title="Original: verſchiedenartigſten" class="dta-reg">verschiedenartigsten</span> Druck<br/>
+der Luft. Wir <span title="Original: ſehen" class="dta-reg">sehen</span> am <span title="Original: deutlichſten" class="dta-reg">deutlichsten</span> daß die Intelligenz<br/>
+des <span title="Original: Menſchen" class="dta-reg">Menschen</span> <span title="Original: ſeine" class="dta-reg">seine</span> Flexibilität hervorbringt, am <span title="Original: deut-&#xA;lichſten" class="dta-reg">deutlichsten</span> wenn wir die wilden Völker betrachten, die<br/>
+noch nicht eine <span title="Original: ſo" class="dta-reg">so</span> große Intelligenz erlangt haben, und<br/>
+denen deshalb auch eine <span title="Original: ſolche" class="dta-reg">solche</span> Flexibilität fehlt. Es<br/>
+<span title="Original: iſt" class="dta-reg">ist</span> ein altes <span title="Original: ſpaniſches" class="dta-reg">spanisches</span> <span title="Original: Geſetz" class="dta-reg">Gesetz</span>, daß man die Indianer<br/>
+welche in der Ebene wohnen nicht über die Berge <span title="Original: füh-&#xA;ren" class="dta-reg">führen</span> darf, <span title="Original: ſondern" class="dta-reg">sondern</span> nur auf großen Umwegen von<br/>
+einer Ebene zur <span title="Original: andern" class="dta-reg">anderen</span>, indem <span title="Original: ſie" class="dta-reg">sie</span> den <span title="Original: geringern" class="dta-reg">geringeren</span><br/>
+Druck der Luft in der Höhe nicht ertragen können.<br/>
+Eben <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: iſt" class="dta-reg">ist</span> es mit den <span title="Original: Menſchen" class="dta-reg">Menschen</span> welche auf den Höhen<br/>
+der <span title="Original: Andeskette" class="dta-reg">Andenkette</span> leben, die nicht ohne Gefahr ihrer <span title="Original: Geſund-&#xA;heit" class="dta-reg">Gesundheit</span> <span title="Original: ſich" class="dta-reg">sich</span> in die Ebene begeben dürfen.</p><br/>
+<p class="dta-p">Wir <span title="Original: ſehen" class="dta-reg">sehen</span> überhaupt eine größere Flexibilität bei den<br/>
+Weißen als bei den Farbigen. Allerdings werden<br/>
+einige Neger weit aus ihrem Vaterlande hinweg <span title="Original: ge-&#xA;führt" class="dta-reg">geführt</span>, doch <span title="Original: ſind" class="dta-reg">sind</span> <span title="Original: dieß" class="dta-reg">dies</span> nur die <span title="Original: ſtärkſten" class="dta-reg">stärksten</span>, die <span title="Original: meiſten" class="dta-reg">meisten</span><br/>
+<span title="Original: wenigſtens" class="dta-reg">wenigstens</span> <span title="Original: ⅓" class="dta-reg"> 1/3 </span> bis ¼ bleiben auf der <span title="Original: Reiſe" class="dta-reg">Reise</span>. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p"><span title="Original: Dieſe" class="dta-reg">Diese</span> Flexibilität aber die wir dadurch <span title="Original: ſehen" class="dta-reg">sehen</span> daß<br/>
+<span title="Original: ſie" class="dta-reg">sie</span> bei mehreren <span title="Original: Menſchen" class="dta-reg">Menschen</span> geringer vorhanden <span title="Original: iſt" class="dta-reg">ist</span>,<br/>
+als bei <span title="Original: kultivirten" class="dta-reg">kultivierten</span>, <span title="Original: iſt" class="dta-reg">ist</span> gewiß eine Folge der Intelligenz<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">eines</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0616|</span><br/>
+eines <span title="Original: Beherrſchens" class="dta-reg">Beherrschens</span>, eines <span title="Original: Uebergewichts" class="dta-reg">Übergewichts</span> der <span title="Original: Willens-&#xA;kraft" class="dta-reg">Willenskraft</span> um gegen die Elemente anzukämpfen und die<br/>
+<span title="Original: Hinderniſse" class="dta-reg">Hindernisse</span> die <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: entgegenſtämmen" class="dta-reg">entgegenstemmen</span> zu wältigen.</p><br/>
+<div class=""><p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u "><span title="Original: Phyſiſche" class="dta-reg">Physische</span> <span title="Original: Beſchaf-&#xA;fenheit" class="dta-reg">Beschaffenheit</span> des <span title="Original: Menſchen" class="dta-reg">Menschen</span><br/>
+in Vergleich mit<br/>
+den <span title="Original: Wirbelthieren" class="dta-reg">Wirbeltieren</span>.</span><br/>
+</span>Die <span title="Original: phyſiſche" class="dta-reg">physische</span> <span title="Original: Beſchaffenheit" class="dta-reg">Beschaffenheit</span> des <span title="Original: Menſchen" class="dta-reg">Menschen</span> betrachtend,<br/>
+<span title="Original: ſehen" class="dta-reg">sehen</span> wir daß in den einzelnen Elementen <span title="Original: ſich" class="dta-reg">sich</span> nur <span title="Original: ſehr" class="dta-reg">sehr</span><br/>
+geringe <span title="Original: Unterſchiede" class="dta-reg">Unterschiede</span> mit der übrigen <span title="Original: Wirbelthieren" class="dta-reg">Wirbeltieren</span><br/>
+finden.</p><br/>
+<p class="dta-p">Man hat gesagt daß der <span title="Original: Menſch" class="dta-reg">Mensch</span> <span title="Original: ſich" class="dta-reg">sich</span> durch eine <span title="Original: Eigen-&#xA;thümlichkeit" class="dta-reg">Eigentümlichkeit</span> <span title="Original: ſeiner" class="dta-reg">seiner</span> <span title="Original: höhern" class="dta-reg">höheren</span> Blutwärme <span title="Original: auszeichen" class="dta-reg">aufzeigen</span>. Sie<br/>
+<span title="Original: iſt" class="dta-reg">ist</span> aber geringer als gewöhnlich angegeben wird,<br/>
+nicht 32° <span title="Original: ſondern" class="dta-reg">sondern</span> nur 30° R. <span class="aq "><span title="Original: D" class="dta-reg">Deluc</span><span title="Original: eluc" class="dta-reg"/></span> hat Untersuchungen<br/>
+<span title="Original: angeſtellt" class="dta-reg">angestellt</span> über die Blutwärme bei denjenigen <span title="Original: Volks-&#xA;ſtämmen" class="dta-reg">Volksstämmen</span> die gar kein <span title="Original: Fleiſch" class="dta-reg">Fleisch</span> <span title="Original: eſsen" class="dta-reg">essen</span>, und bei <span title="Original: den-&#xA;jenigen" class="dta-reg">denjenigen</span>, welche <span title="Original: ſich" class="dta-reg">sich</span> nur von <span title="Original: Fleiſch" class="dta-reg">Fleisch</span> nähren, und<br/>
+fand bei beiden nicht den <span title="Original: geringſten" class="dta-reg">geringsten</span> <span title="Original: Unterſchied" class="dta-reg">Unterschied</span><br/>
+ihrer Blutwärme. <span title="Original: –" class="dta-reg">-</span> Das <span title="Original: leichſte" class="dta-reg">Leicheste</span> Mittel die <span title="Original: Blutwär-&#xA;me" class="dta-reg">Blutwärme</span> zu untersuchen <span title="Original: iſt" class="dta-reg">ist</span>, wie <span class="aq "><span title="Original: D" class="dta-reg">Deluc</span><span title="Original: eluc" class="dta-reg"/></span> ebenfalls fand,<br/>
+wenn man das Thermometer unter die Zeuge hält. <span title="Original: –" class="dta-reg">-</span><br/>
+Die geringen <span title="Original: Unterſchiede" class="dta-reg">Unterschiede</span> die man in der Blutwärme<br/>
+der <span title="Original: Menſchen" class="dta-reg">Menschen</span> findet <span title="Original: iſt" class="dta-reg">ist</span> mehr Folge des Klimas als<br/>
+der <span title="Original: Race" class="dta-reg">Rasse</span>. <span title="Original: –" class="dta-reg">-</span> Bei allen Versuchen die man unter <span title="Original: Men-&#xA;ſchen" class="dta-reg">Menschen</span> und <span title="Original: Thieren" class="dta-reg">Tieren</span> <span title="Original: angeſtellt" class="dta-reg">angestellt</span> hat, betrug der <span title="Original: Unterſchied" class="dta-reg">Unterschied</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">kaum</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0617 : 611|</span><br/>
+kaum ½ und <span title="Original: ¼°" class="dta-reg">1/4°</span>. Die größte Wärme findet man <span title="Original: un-&#xA;ter" class="dta-reg">unter</span> den warmblütigen <span title="Original: Thieren" class="dta-reg">Tieren</span> bei den Vögeln, nach <span title="Original: ſehr" class="dta-reg">sehr</span><br/>
+genauen Untersuchungen <span title="Original: 32–35" class="dta-reg">32-35</span>° und merkwürdig<br/>
+genug diejenigen die in den nördlichen Gegenden leben<br/>
+wärmer, als die in den <span title="Original: ſüdlichern" class="dta-reg">südlicheren</span> <span class="dta-metamark" title="metamark">|:</span> das Höhe hat größere<br/>
+Wärme als die <span title="Original: Papagay" class="dta-reg">Papagei</span> <span class="dta-metamark" title="metamark">:|</span>. <span title="Original: –" class="dta-reg">-</span> Die <span title="Original: ſogenannten" class="dta-reg">sogenannten</span> <span title="Original: kalt-&#xA;blütigen" class="dta-reg">kaltblütigen</span> <span title="Original: Thiere" class="dta-reg">Tiere</span> <span title="Original: ſind" class="dta-reg">sind</span> <span title="Original: keinesweges" class="dta-reg">keineswegs</span> kaltblütig, <span title="Original: ſie" class="dta-reg">sie</span> haben<br/>
+alle 3 bis 4° Blutwärme mehr als die Temperatur<br/>
+des Mediums <span title="Original: iſt" class="dta-reg">ist</span>, in welchem <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: ſich" class="dta-reg">sich</span> befinden. Ja <span title="Original: ſelbſt" class="dta-reg">selbst</span><br/>
+bei den Insekten <span title="Original: iſt" class="dta-reg">ist</span> derselbe Fall wo nicht die Wärme<br/>
+von der Reibung in der Luft herkommt wie man<br/>
+<span title="Original: hypotheſiſch" class="dta-reg">hypothesisch</span> <span title="Original: aufgeſtellt" class="dta-reg">aufgestellt</span> hat, <span title="Original: ſondern" class="dta-reg">sondern</span> vom <span title="Original: Thier" class="dta-reg">Tier</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span>.<br/>
+Die <span title="Original: Geſchwindigkeit" class="dta-reg">Geschwindigkeit</span> der <span title="Original: Pulsſchläge" class="dta-reg">Pulsschläge</span> bei den <span title="Original: Menſchen" class="dta-reg">Menschen</span><br/>
+<span title="Original: iſt" class="dta-reg">ist</span> in der Ebene nicht anders wie auf der Höhe. Prof.<br/>
+<span class="aq ">Roulin</span>, hat um <span title="Original: dieß" class="dta-reg">dies</span> zu untersuchen in <span class="aq ">Bagote</span> eine<br/>
+<span title="Original: Reiſe" class="dta-reg">Reise</span> mit <span title="Original: ſeiner" class="dta-reg">seiner</span> Familie gemacht und <span title="Original: ſich" class="dta-reg">sich</span> bei <span title="Original: ver-&#xA;ſchiedenen" class="dta-reg">verschiedenen</span> Höhen von 400 <span title="Original: Toiſen" class="dta-reg">Toisen</span> aufgehalten, und<br/>
+doch keine <span title="Original: Verſchiedenheit" class="dta-reg">Verschiedenheit</span> der <span title="Original: Pu" class="dta-reg">Pulsschläge</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 2 Zeichen fehlen]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: ls" class="dta-reg"/></span><span title="Original: ſchläge" class="dta-reg"/> bemerkt.<br/>
+Auch <span title="H￼" class="dta-abbr">Herr</span> <span class="aq ">Bonpland</span> hat darüber Untersuchungen in<br/>
+Quito <span title="Original: angeſtellt" class="dta-reg">angestellt</span> und gefunden daß auch kein <span title="Original: Unter-&#xA;ſchied" class="dta-reg">Unterschied</span> bei <span title="Original: Menſchenracen" class="dta-reg">Menschenrassen</span> und <span title="Original: Klimaten" class="dta-reg">Klimata</span> <span title="Original: iſt" class="dta-reg">ist</span>, <span class="dta-metamark" title="metamark">|:</span> bei<br/>
+30 bis 40° R. in den Oasen <span class="dta-metamark" title="metamark">:|</span></p><br/>
+<p class="dta-p">Die Flexibilität der <span title="Original: Menſchen" class="dta-reg">Menschen</span> <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: ſo" class="dta-reg">so</span> groß daß er alle<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Klim-</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0618|</span><br/>
+<span title="Original: Klimate" class="dta-reg">Klimata</span> ertragen kann. Es <span title="Original: iſt" class="dta-reg">ist</span> bekannt welche Wärme<br/>
+der <span title="Original: Menſch" class="dta-reg">Mensch</span> unter den Dampfbädern zu ertragen <span title="Original: ver-&#xA;mag" class="dta-reg">vermag</span>; aber <span title="Original: dieß" class="dta-reg">dies</span> <span title="Original: iſt" class="dta-reg">ist</span> noch gar nichts gegen <span title="Original: andern" class="dta-reg">anderen</span> <span title="Original: Bei-&#xA;ſpiele" class="dta-reg">Beispiele</span>. Prof. <span class="aq "><span title="Original: Fillet" class="dta-reg">Filet</span></span> hat 1764 den Versuch gemacht ein <span title="Original: Mäd-&#xA;chen" class="dta-reg">Mädchen</span> in einen Ofen <span title="Original: einzuſperren" class="dta-reg">einzusperren</span> wo 105° R. Wärme<br/>
+war, eine Wärme bei welcher die Kartoffeln finden,<br/>
+und <span title="Original: ſie" class="dta-reg">sie</span> hatte nicht gelitten. Einen <span title="Original: andern" class="dta-reg">anderen</span> Versuch <span title="Original: mach-&#xA;ten" class="dta-reg">machten</span> vor einigen Jahren mehrere <span title="Original: Phyſiker" class="dta-reg">Physiker</span> unter denen<br/>
+<span title="H￼." class="dta-abbr">Herr</span> <span class="aq ">Bauks</span> und <span class="aq "><span title="Original: Capt" class="dta-reg">kappt</span>. <span title="Original: Fibs" class="dta-reg">Fips</span></span>, an <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span>; von dem <span title="Original: ſchon" class="dta-reg">schon</span><br/>
+früher die Rede war, <span title="Original: ſie" class="dta-reg">sie</span> hielten 8 bis 10 Minuten in <span title="Original: ei-&#xA;nem" class="dta-reg">einem</span> Raum aus in der die Temperatur 102° war, <span title="Original: ſo" class="dta-reg">so</span> daß<br/>
+<span title="Original: ſie" class="dta-reg">sie</span> ihre Uhrketten vor Hitze nicht <span title="Original: anfaſsen" class="dta-reg">anfassen</span> konnten, <span title="Original: Beaf-&#xA;ſteaks" class="dta-reg">Beafsteaks</span> neben ihnen brieten, nun Eier <span title="Original: ſogleich" class="dta-reg">sogleich</span> hart gebracht<br/>
+wurden. <span class="dta-metamark" title="metamark">|:</span> Merkwürdig genug wenn <span class="aq "><span title="Original: Capt" class="dta-reg">kappt</span> <span title="Original: Fibs" class="dta-reg">Fips</span></span> <span title="Original: erſt" class="dta-reg">erst</span> aus<br/>
+den Gegenden von Spitzbergen gekommen, wo er die<br/>
+größte Kälte ertragen hatte, und ging von da in<br/>
+<span title="Original: dieſe" class="dta-reg">diese</span> Schweißbäder <span class="dta-metamark" title="metamark">:|</span></p><br/>
+<p class="dta-p">Allerdings fühlten <span title="Original: ſie" class="dta-reg">sie</span> hier nicht die ganze Temperatur,<br/>
+indem die <span title="Original: eigne" class="dta-reg">eigene</span> <span title="Original: Ausdünſtung" class="dta-reg">Ausdünstung</span> <span title="Original: ſogleich" class="dta-reg">sogleich</span> den lebenden <span title="Original: um-&#xA;hüllt" class="dta-reg">umhüllt</span> und eine <span title="Original: eigne" class="dta-reg">eigene</span> Temperatur gibt; aber ihre <span title="Original: thieri-&#xA;ſche" class="dta-reg">tierische</span> war gar nicht vermehrt <span class="dta-metamark" title="metamark">|:</span> wiewohl bei den Hunden die<br/>
+dabei waren <span title="Original: ſehr" class="dta-reg">sehr</span> <span class="dta-metamark" title="metamark">:|</span> die <span title="Original: Pulsſchläge" class="dta-reg">Pulsschläge</span> hatten aber <span title="Original: ſehr" class="dta-reg">sehr</span> <span title="Original: zu-&#xA;genommen" class="dta-reg">zugenommen</span>.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Dieſe</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0619 : 613|</span><br/>
+<p class="dta-p"><span title="Original: Dieſe" class="dta-reg">Diese</span> <span title="Original: Biegſamkeit" class="dta-reg">Biegsamkeit</span> <span title="Original: iſt" class="dta-reg">ist</span> demnach <span title="Original: ſo" class="dta-reg">so</span> groß, daß die <span title="Original: Be-&#xA;wohnbarkeit" class="dta-reg">Bewohnbarkeit</span> des Erdbodens von <span title="Original: derſelben" class="dta-reg">derselben</span> <span title="Original: Menſchenrace" class="dta-reg">Menschenrasse</span><br/>
+noch <span title="Original: iſt" class="dta-reg">ist</span>. Von der Tiefe der Taucherglocken bis zur <span title="Original: höch-&#xA;ſten" class="dta-reg">höchsten</span> Höhe <span title="Original: iſt" class="dta-reg">ist</span> der <span title="Original: Menſch" class="dta-reg">Mensch</span> einer <span title="Original: Verſchiedenheit" class="dta-reg">Verschiedenheit</span> des <span title="Original: Luft-&#xA;drucks" class="dta-reg">Luftdrucks</span> <span title="Original: ausgeſetzt" class="dta-reg">ausgesetzt</span> von <span title="Original: 13¼" class="dta-reg">131/4</span><span title="Original: ″" class="dta-reg">"</span> bis 60<span title="Original: ″" class="dta-reg">"</span>. <span title="Original: –" class="dta-reg">-</span> <span class="dta-metamark" title="metamark">|:</span> Natürliche<br/>
+Wärme kann der <span title="Original: Menſch" class="dta-reg">Mensch</span> bis 75 und 80° ertragen und<br/>
+darin leben <span class="dta-metamark" title="metamark">:|</span> <span title="Original: –" class="dta-reg">-</span> Bei der Temperatur von 40° unter<br/>
+dem Gefrier Punkt leben die Eskimos, ein <span title="Original: ſehr" class="dta-reg">sehr</span> frohes,<br/>
+<span title="Original: heitres" class="dta-reg">heiteres</span> Volk, und von <span title="Original: dieſer" class="dta-reg">dieser</span> Kälte bis zu der <span title="Original: Wär-&#xA;me" class="dta-reg">Wärme</span> von 105° unter dem Gefrier Punkt, also ein<br/>
+<span title="Original: Unterſchied" class="dta-reg">Unterschied</span> von 145° kann der <span title="Original: Menſch" class="dta-reg">Mensch</span> leben.</p></div></div></div></div></body></html>

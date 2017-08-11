@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session">   <div class="dta-head"><span title="Original: 27. Febr.Februar 33." class="dta-reg">33. Vorlesung, 27.02.1828</span></div><br/>
+<p class="dta-p">Bei den Erdbeben müssen im Innern der Erde grosse Verände-<br/>
+rungen vorgehn: denn nicht immer kehren die erschütterten<br/>
+Erdschichten in dieselbe Lage zurük, in der sie vorher waren.<br/>
+Beispiele davon finden sich zwar nicht bei allen Erdbeben, aber<br/>
+doch bei einigen der heftigsten: ein sehr starkes erlebte ich<br/>
+an der Küste von Südamerika, <span class="dta-del" title="Streichung (#s)">welches</span><span class="dta-add" title="Hinzufügung (intralinear)">wodurch</span> eine Untiefe in<br/>
+dem Hafen von Chili <span class="dta-metamark" title="metamark">(?)</span> entstand, die seitdem geblieben ist.<br/>
+In Chili erhoben sich Kalksteinschichten bis 4–5 Fus, und<br/>
+blieben in Bänken stehn. <span title="Personenname">Reinhart</span>, dem wir viele Nachrich-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0379 : 188r|</span><br/>
+ten über die molukkischen Inseln verdanken, erwähnt einer Er-<br/>
+scheinung, wo eine Erweichung stattfand; ein obsidianartiger<br/>
+Trachyt erhob sich mehrere Jahre lang aber äusserst langsam;<br/>
+besonders war dies in Bunda und Ternate der Fall. In der Südsee<br/>
+findet man Korallenfelsen von mehreren 100 Fus <span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)">E</span>rhebung,<br/>
+auf deren Spizen sich Versteinerungen zeigen, während d<span class="dta-del" title="Streichung (#ow)">as</span><span class="dta-add" title="Hinzufügung (across)">er</span> noch<br/>
+im Meere stehende Theil die lebendige Korallenbildung ent-<br/>
+hält.</p><br/>
+<p class="dta-p">Ein ähnliches Phänomen zeigt sich auffallend genug in Schwe-<br/>
+den. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118653326">Celsius</a></span></span> bemerkte, dass an einem Theil der südlichen Küste<br/>
+von Schweden der Meerespiegel bedeutend sinkt. Die ältesten<br/>
+Beobachtungen sind von 1730. Da man aber diese Sinken an<br/>
+den übrigen Küsten der Ostsee nicht bemerkte, so ist es nach<br/>
+hydrostatischen Gesezen unmöglich, dass es in Schweden allein<br/>
+der Fall sei. <span title="Personenname"><a href="http://d-nb.info/gnd/116817569">L. von <span class="u ">Buch</span></a></span> äusserte zuerst den scharfsinnigen<br/>
+Gedanken, dass also wohl der Kontinent sich erheben müsse;<br/>
+<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">u</span>nd so ist es wirklich, obwohl die Erhebung sehr langsam geht,<br/>
+in 100 Jahren 3–4 Fus.</p><br/>
+<p class="dta-p">Im englischen Guiana will man bemerkt haben, dass Gra-<br/>
+nitschichten sich gehoben.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0380 : 188v|</span><br/>
+<p class="dta-p">Auf einigen Inseln der Südsee hat man am Meere Fus-<br/>
+steige angelegt, wo sonst der Wasserspiegel stand.</p><br/>
+<p class="dta-p">Dies alles sind dynamische Erscheinungen, welche von elasti-<br/>
+schen Dämpfen hervorgebracht werden.</p><br/>
+<p class="dta-p"><span class="u ">Von den heissen Quellen.</span></p><br/>
+<p class="dta-p">Wenn man jede Quelle eine Thermalquelle nennen wollte,<br/>
+die heisser ist als die umgebende Athmosphäre, so wür-<br/>
+den bei uns alles Thermalquellen sein, unter den Tropen<br/>
+dagegen ist es ungewis. Im algemeinen ist eine grosse<br/>
+Hize <span class="dta-del" title="Streichung (#s)">bei</span><span class="dta-add" title="Hinzufügung (superlinear)">in</span> den Quellen nicht häufig; und äusserst selten<br/>
+gehen sie bis zum Siedpunkte: schon von 60–70° R. kom-<br/>
+men sie nicht oft vor. Bei <span class="u ">Caracas</span> fand ich eine Quelle<br/>
+von 72° R. Die wärmste, welche ich je getroffen ist in<br/>
+Mexiko bei Gualaxuata, und sprudelt aus einem Basalt-<br/>
+konglomerat; da wo ich die Hand darüber halten konte,<br/>
+hatte sie 77° R. <span title="Schreibfehler: als" class="dta-corr">also</span> nur 3° <span class="dta-del" title="Streichung (#s)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span>weniger als den Siedpunkt,<br/>
+und ich zweifle <span class="dta-del" title="Streichung (#s)">ich</span><span class="dta-add" title="Hinzufügung (intralinear)">nicht</span>, dass, wenn es möglich gewesen<br/>
+wäre, das Thermometer einige Fus tiefer einzusenken,<br/>
+so würde es bis 80° gestiegen sein.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0381 : 189r|</span><br/>
+<p class="dta-p">In der Auvergne giebt es eine Quelle von 70° R.</p><br/>
+<p class="dta-p">Alle diese entspringen aus dem Urgebirge, und sind<br/>
+nichts anderes als niedergeschlagene heisse Dämpfe von<br/>
+reinem distillirten Wasser. Schon <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/104268190">Link</a></span></span> bemerkte dies auf<br/>
+seiner Reise nach Portugal, wo er einige schöne Untersu-<br/>
+chungen darüber angestelt hat. Ich habe ebenfals Versuche<br/>
+gemacht, und gezeigt, dass man aus vielen durch alle mög-<br/>
+lichen Reagenzien keinen Niederschlag erhält. <span title="Hr." class="dta-abbr">Herr</span> <span title="Personenname"><a href="http://d-nb.info/gnd/101165250">Bous-<br/>
+singault</a></span> wiederholte meine Versuche, und fand bei einer Quelle<br/>
+von 35° R. Stikgas<span title="Schreibfehler: ." class="dta-corr">[…]</span> als Bestandtheil des Wassers. In<br/>
+einer Quelle bei Aachen hat man Schwefelwasserstofgas<br/>
+finden wollen, allein hiebei ist wahrscheinlich eine Ver-<br/>
+wechselung vorgegangen, oder man hat sich durch den Geruch<br/>
+täuschen lassen, oder auch das <span title="Schw." class="dta-abbr">Schwefel</span><span title="w." class="dta-abbr">wasser</span>stofgas hat sich<br/>
+erst an der Luft gebildet.</p><br/>
+<p class="dta-p">Noch merkwürdiger sind die Wasser, welche freie Schwefel-<br/>
+säure enthalten, <span class="dta-del" title="Streichung (#s)">ist</span> in <span class="u ">Popayan</span> ist ein Flus unter dem<br/>
+Namen des Essigflusses bekant, der sich in den Cauca<br/>
+ergiest. Von dieser Stelle an sterben im Cauca die Fische<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0382 : 189v|</span><br/>
+auf viele Meilen weit, welches für die Einwohner von Popayan<br/>
+sehr traurig ist, da sie nicht wissen, wo sie in den Fasten<br/>
+ihre Nahrung hernehmen sollen. Dieser Essigflus enthält<br/>
+freie <span title="Schw." class="dta-abbr">Schwefel</span>säure und überdies noch Salzsäure.</p><br/>
+<p class="dta-p">Eben dasselbe findet sich in einem Kratersee auf Java.</p><br/>
+<p class="dta-p">Ein andres Faktum findet sich beim Vulkan von Xorullo:<br/>
+dieser hat zu seinen Füssen eine Ebne, die sich dem Süd-<br/>
+meere zusenkt, früher gab es hier 2 Flüschen von 15° R.<br/>
+<span title="Schreibfehler: als" class="dta-corr">Als</span> aber 1759 der Vulkan erschien, verschwanden sie<br/>
+beide, und brechen nun an einem ganz andern Orte mit<br/>
+einer Temperatur von 60° R. hervor. Das Wasser komt<br/>
+also mit heissen Dämpfen in Berührung die sich in<br/>
+ihm niederschlagen, und ihm ihre Wärme mittheilen.</p><br/>
+<p class="dta-p">Bei andern Quellen ist die Menge ihrer Bestandtheile zu<br/>
+bewundern; so gehört der Karlsbader Sprudel zu denen, wel-<br/>
+che fast die meisten Bestandtheile enthalten. <span title="Personenname"><a href="http://d-nb.info/gnd/118510185">Berzelius</a></span><br/>
+fand bei seiner vortreflichen Analyse 12. Dazu gehören<br/>
+ganz neue, früher nicht gekante, wie Flusspathsäure,<br/>
+Strontian, Mangan <span title="Original: pp" class="dta-reg">pp.</span> In Eger und Pyrmont fand man<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0383 : 190r|</span><br/>
+<div class="fw-top fw-sig">48.</div><br/>
+Lithion. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117350176">Struve</a></span></span> und <span class="u "><span title="Personenname">Soltmann</span></span> haben viele analysirt, und<br/>
+bilden sie nach, ja selbst den schwierigen Karlsbader Spru-<br/>
+del. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118531921">Faraday</a></span></span> hat diese Wasser analysirt, und keinen Un-<br/>
+terschied gegen die natürlichen gefunden.</p><br/>
+<p class="dta-p">Die Einwendungen, welche man gegen diese <span class="dta-del" title="Streichung (#ow)">V</span><span class="dta-add" title="Hinzufügung (across)">v</span>olkomne Nach-<br/>
+bildung der Heilquellen gemacht hat, beziehn sich mei-<br/>
+stens auf Begriffe, die nicht zur Klarheit gekommen sind,<br/>
+indem man behauptete, dass ausser den sichtbaren Bestand-<br/>
+theilen auch noch unsichtbare vorhanden seien. Dass die<br/>
+künstlichen Wasser schneller ihre Wärme verlieren, als die<br/>
+natürlichen, ist nicht gegründet: man hat darüber genaue<br/>
+Versuche von 1 zu 1 Grad des Thermometers angestelt. In<br/>
+Wisbaden will man in dieser Hinsicht wunderbare Versuche an-<br/>
+gestelt, und gefunden haben, dass man die natürlichen Was-<br/>
+ser bei 58° R. in den Mund nehmen könne, ohne sich zu<br/>
+verbrennen; es<span class="dta-del" title="Streichung (#s)">t</span> ist aber erwiesen, dass man sich schon bei<br/>
+41–42° R. stark verbrent. Auch wolte man mit dem vor-<br/>
+treflichen <span title="Personenname"><a href="http://d-nb.info/gnd/118795775">Schweigger</a></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/116250836">Poggendorf</a></span>schen Multiplikator<br/>
+Versuche in künstlichen Wässern gemacht, und eine Abweichung<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0384 : 190v|</span><br/>
+der Magnetnadel von 15° gefunden haben: allein dies ist durch-<br/>
+aus nicht gegründet: nach <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/116106875">Becquerel</a></span>s</span> schöner Entdekkung<br/>
+ist zwar immer mit jedem Übergange irgend eines Körpers<br/>
+aus dem festen in den flüssigen oder aus diesem in den<br/>
+gasförmigen Zustand ein kleines elektro-magnetisches<br/>
+Gewitter verbunden: allein wenn man dies bei den Brunnen<br/>
+fand: so liegt der Grund nicht in den Wassern, sondern eben<br/>
+in der veränderten elektrischen Spannung.</p><br/>
+<p class="dta-p">Von <span title="Personenname"><a href="http://d-nb.info/gnd/117350176">Struve</a></span> haben wir eine schöne Arbeit über das Aus-<br/>
+laugen der Gebirgsarten: er lies distillirtes Wasser durch<br/>
+feingepulverte Gesteine gehn, unter einem sehr geringen<br/>
+Druk von kaum 2–3 Athmosphären, und wenig Tagen erhielt<br/>
+er eine Flüssigkeit, die den natürlichen Quellen, welche aus<br/>
+diesem Gestein hervorbrechen, zwar nicht gleich aber doch sehr<br/>
+ähnlich ist: so hat man z. B. das Biliner Wasser erhalten,<br/>
+und durch diesen Prozes erst hat man gefunden, dass der<br/>
+Basalt Lithion enthält, welches früher nicht unter seinen<br/>
+Bestandtheilen bekant war. In der Geyserquelle besteht fast<br/>
+⅓ der festen Bestandtheile aus Kiesel. In andern Quellen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0385 : 191r|</span><br/>
+findet sich ein vegetabilisch-animalischer Bestandtheil, den<br/>
+die Spanier <span class="u ">moja</span> nennen, und welcher, sonderbar genug, Am-<br/>
+moniak enthält. Von dieser Art giebt es mehrere Quellen<br/>
+in Südamerika.</p><br/>
+<p class="dta-p">Man hielt früher die Quellen für eine Lokalerscheinung:<br/>
+d. h. man glaubte, dass sie an demselben Orte entspringen,<br/>
+wo sie hervorbrechen, wenigstens nicht weit davon. Um die<br/>
+heissen Quellen zu erklären, nahm man seine Zuflucht<br/>
+zu dem Brennen von Steinkohlenflözen, oder man hatte die<br/>
+unchemische und unphysische Idee von einer galvanischen<br/>
+Kette im Innern der Erde, welche durch übereinanderliegende<br/>
+verschiedenartige Schichten gebildet werde, und welche die Er-<br/>
+wärmung veranlaste: man bedachte aber nicht, dass wenn<br/>
+eine solche <span class="dta-del" title="Streichung (#s)">Lager</span> Kette wirklich existirte, sie sich in jedem<br/>
+Augenblick entladen <span class="dta-del" title="Streichung (#s)">w</span> und mithin ihre ganze Wirkung ver-<br/>
+lieren würde.</p><br/>
+<p class="dta-p">Manche Quellen haben eine äusserst geringe Quantität von festen<br/>
+Bestandtheilen, und sind doch von der grösten Wirkung, wie Gastein<br/>
+und Pfeffers. Die Berliner Brunnen geben nach den treflichen Unter-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0386 : 191v|</span><br/>
+suchungen von <span title="H." class="dta-abbr">Herrn</span> <span title="Personenname"><a href="http://d-nb.info/gnd/118602640">Rose</a></span> auf ein Pfund Wasser von 3–12 Gran<br/>
+feste Bestandtheile: d<span class="dta-del" title="Streichung (#ow)">a</span><span class="dta-add" title="Hinzufügung (across)">e</span>r Brunnen in Landek auf 1 Pfund 3 Gran.<br/>
+Gastein nur 2 Gran, und man ist auf den Einfall gekommen, die<br/>
+grosse Wirksamkeit diese Heilquellen als eine Folge Rein-<br/>
+heit selbst anzusehn.</p><br/>
+<p class="dta-p">Eine andre merkwürdige Eigenschaft ist die Gleichheit dies Gehaltes<br/>
+und der festen Bestandtheile. Der Karlsbader Sprudel ist 1770<br/>
+von <span title="Personenname"><a href="http://d-nb.info/gnd/143652559">Becher</a></span> analysirt worden, und hatte damals 59° Wärme,<br/>
+wie jezt: auch die Analysen desselben von <span title="Personenname"><a href="http://d-nb.info/gnd/118723367">Klaproth</a></span> und<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118510185">Berzelius</a></span>, welche gegen 30 Jahr auseinanderliegen, stimmen im<br/>
+Ganzen sehr überein.</p><br/>
+<p class="dta-p">Dagegen giebt es andre Quellen, welche ihre Temperatur und<br/>
+ihren Gehalt verändert haben: wenigstens vermuthet man es<br/>
+von denen in Pyrmont und in Marienbad.</p><br/>
+<p class="dta-p">Noch andre Quellen stossen blosse Luft aus: man hielt dies<br/>
+früher für ein Ausströmen von brennbarer Luft: es ist aber<br/>
+eigentlich eine natürliche Naphta-distillazion im Grossen. –<br/>
+Eine solche findet sich bei Pietra-mala in Italien, eine andre fand<br/>
+<span title="Personenname">Hofbauer</span> an der südlichen Küste von Kleinasien, und derselben<br/>
+Natur sind die zahlreichen Naphtaquellen bei Baku am kaspi-<br/>
+schen Meere. – Die älteste Gaserleuchtung gründet sich auf<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0387 : 192r|</span><br/>
+dieses Phänomen, und findet in den Tempeln der Bramapriester am<br/>
+Himalaya: man sah, dass Wasserstofgas, aus der Erde ausströmend,<br/>
+sich entzünden lies, und fortbrante, über solchen Stellen wurden<br/>
+dann die Tempel gebaut.</p><br/>
+<p class="dta-p">Aus allen heissen Quellen schlägt sich bei der Verdampfung<br/>
+etwas nieder, und dies sind schon Anfänge der Gebirgsarten, die<br/>
+sich, wie der <span class="dta-del" title="Streichung (#ow)">F</span><span class="dta-add" title="Hinzufügung (across)">T</span>ufstein, noch täglich vor unsern Augen bilden.<br/>
+Besonders bilden sich aber diejenigen Quellen, welche Alkalien<br/>
+enthalten, ihr eignes Bekken, manchmal von ganz besonderer<br/>
+Gestalt. Im obern Peru ist eine heisse Quelle, (auf derselbe Ebne,<br/>
+wo der unglükliche Inka Huanka <span class="dta-metamark" title="metamark">(?)</span> getödtet wurde) die aus einer<br/>
+sehr bedeutenden Höhe herab kömt. Diese hat sich eine eigne Mauer<br/>
+von 50–60 Fus Höhe, und von 12 Fus Breite gebildet, die aus nichts<br/>
+als kohlensaurer Talkerde besteht.</p><br/>
+<p class="dta-p">Von den Luftvulkanen, die bei den Italiänern Salse heissen,<br/>
+findet sich das älteste Beispiel in der Moccaluba bei Girgenti.<br/>
+Dies ist ein Lettenhügel von 150–160 Fus Höhe, auf dessen Spize<br/>
+sich viele kleinen Öfnungen befinden, aus denen Koth in die<br/>
+Höhe gestossen wird. Dieser fliest anfangs in ganz hellgrauen<br/>
+Streifen am Rande der kleinen Krater herab, wird aber nachher<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0388 : 192v|</span><br/>
+dunkler. Eine andre ähnliche Erscheinung beobachtete ich in<br/>
+Südamerika bei Carthagena: die Eingebornen nennen die Ge-<br/>
+gend: Volcancitos. In einem kleinen Umkreise erheben sich<br/>
+Kegel von Letten von 10–12 Fus Höhe, und verschwinden wieder.<br/>
+Ich fand ihre Stellung, wenn ich den nächsten Tag wiederkam,<br/>
+durchaus verändert. Oben ist ein kleiner Krater, wenn man<br/>
+ihn so nennen darf, nur von 8–9 Zoll Durchmesser, mit kal-<br/>
+tem Wasser angefült, aus welchem sich beständig Gas entwikkelt.<br/>
+Wenn ein Krater einige Zeit ruhig bleibt, so kömt darauf ge-<br/>
+wöhnlich ein starker Ausbruch, so dass man sich in einem<br/>
+Augenblikke ganz mit Schlamm bedekt sieht. Es findet sich<br/>
+auch bei den Bewohnern dieser Gegend die Tradizion, dass man<br/>
+Flammen aus den Kegeln habe aufsteigen sehn. Oft werden<br/>
+auch Steine aus den Kratern aufgeworfen, aus deren Unter-<br/>
+suchung es hervorgeht, dass das Phänomen der Erzeugung<br/>
+sehr tief liegt. Das entwikkelte Gas ist aber we<span class="dta-del" title="Streichung (#s)">r</span>der Kohlen-<br/>
+säure noch Hydrogen, wie man wohl früher geglaubt hat,<br/>
+sondern Stikgas. Wenigstens fand ich dies bei allen Quellen, die<br/>
+ich Amerika untersuchte.</p><br/>
+<p class="dta-p">In Italien, wo es leider fast gänzlich an Untersuchungen der<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0389 : 193r|</span><br/>
+Quellen fehlt, glaubt man Schwefelwasserstofgas gefunden zu ha-<br/>
+ben: allein es ist ungewis.</p><br/>
+<p class="dta-p">Ein andres Phänomen findet man auf dem Vulkan von Popayan,<br/>
+demselben in dessen Nähe der Essigflus entspringt, dessen Wasser<br/>
+freie Schwefelsäure und Salzsäure<span title="Schreibfehler: " class="dta-corr"> enthält</span>. Als ich diesen Vulkan er-<br/>
+stiegen hatte, fand ich oben keinen Krater, wie auf den meisten<br/>
+übrigen Vulkanen, sondern einen schön-gewölbten Dom von<br/>
+reinem Obsidiantrachyt, in dem eine Menge Öfnungen sich be-<br/>
+finden, welche Schwefeldämpfe ausstossen: dabei hört man einen<br/>
+gewaltigen Lärm wie von 30–40 Schmiede-essen, der von dem<br/>
+kochenden Schwefel hervorgebracht wird. Es mus hier ohne<br/>
+Zweifel ein grosser Vorrath von Schwefel angehäuft sein: denn<br/>
+in einiger Tiefe unter den kleinen Öfnungen findet man ihn<br/>
+fast ganz rein vorliegend: auch das Phänomen des schwefel-<br/>
+säurehaltigen Wassers in Essigflus liesse sich damit in<br/>
+Verbindung bringen.</p><br/>
+<p class="dta-p"><span class="u ">Von den Vulkanen.</span></p><br/>
+<p class="dta-p">Man ist erst in neueren Zeiten darauf gekommen, dass die<br/>
+Vulkane nicht blos zerstören, sondern auch hervorbringen, und<br/>
+dass sie in der innigsten Verbindung mit der Bildung der kör-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0390 : 193v|</span><br/>
+nigen Gebirgsarten stehn, deren Entstehung aus dem Feuer jezt<br/>
+Niemand mehr in Zweifel zieht.</p><br/>
+<p class="dta-p">Eine Definizion des Vulkan's ist schwer zu geben: denn die<br/>
+einzelnen Öfnungen auf der Spize beweisen nichts, auch nicht die<br/>
+vulkanische Entstehung. So hat <span title="Personenname"><a href="http://d-nb.info/gnd/116817569">L. v. Buch</a></span> zuerst 1794 darauf<br/>
+aufmerksam gemacht, dass man den Monte Nuovo bei Bajae,<br/>
+der bei einem Ausbruche des Vesuv in einer Nacht entstand,<br/>
+eben so wenig wie die Monti Rossi am Ätna, besondere Vul-<br/>
+kane nennen könne.</p><br/>
+<p class="dta-p">Einen Vulkan nennen wir: einen hohen Kegel von Trachyt,<br/>
+der auf seiner Oberfläche (nicht immer grade auf der Spize)<br/>
+eine Öfnung hat, die mit dem innern glühenden Kerne der<br/>
+Erde zusammenhängt. Bei Explosionen fliessen Erdarten aus<br/>
+dem Krater, wie aus einer Erdquelle, die eine sehr hohe Tempe-<br/>
+ratur haben.</p><br/>
+<p class="dta-p">In der Verbindung mit dem Innern der Erde mus man eine<br/>
+Graduazion annehmen. Ganz Quito ist ein einziger Vulkan:<br/>
+eine grosse Glokke von Trachyt, über das unterir<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 2 Zeichen fehlen]</span></span><span class="dta-add" title="Hinzufügung (across)">di</span>sche Feuer<br/>
+gestürzt: der Cotopaxi und Pichincha sind einzelne brennende<br/>
+Essen: allein diese Erklärung würde nicht ganz richtig sein: denn<br/>
+jeder Vulkan ist wie ein Zentrum von eignen Erscheinungen an-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0391 : 194r|</span><br/>
+<div class="fw-top fw-sig">49.</div><br/>
+zusehn, die wohl in ihrer Grundursach, aber nicht immer unter<br/>
+sich zusammenhangen. In Amerika scheint eine grosse Spalte<br/>
+von Osten nach Westen zu gehn, auf der die meisten Vulkane<br/>
+stehn: auch der von Xorullo ist in dieser Richtung entstanden,<br/>
+und wenn man gewust hätte, dass ein Vulkan sich bilden sollte:<br/>
+so hätte man voraussagen können, dass er in keiner andern<br/>
+Richtung sich zeigen <span class="dta-del" title="Streichung (#s)">kon</span><span class="dta-add" title="Hinzufügung (intralinear)">werde</span>. Seit 2 Jahrhunderten scheint sich<br/>
+in Amerika das Feuer von Norden nach Süden gezogen zu haben,<br/>
+weil die nördlichen Vulkane weniger speien. In dem Zentralvul-<br/>
+kan von Teneriffa ist nur ein Krater, aber bei dem Ausbruch von<br/>
+Lancerote mus ein andrer unter dem Meere entstanden sein,<br/>
+und zwar da, wo das Gestein am schwächsten, also leicht zu<br/>
+durchbrechen war.</p><br/>
+</div></body></html>

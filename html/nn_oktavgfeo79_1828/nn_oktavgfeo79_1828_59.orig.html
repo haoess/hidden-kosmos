@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><span class="dta-supplied">[59. Vorlesung, 23.04.1828]</span><div class=""><div class=""><div class=""><p class="dta-p">In der Erkennung und Betrachtung der<br/>
+höhern Organiſation des Thierreichs, haben <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span></span> und<br/>
+<span class="aq ">Lichtenſtein</span> bei den Säugethieren, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117339385">Valancianne</a></span></span><br/>
+bei den Fiſchen, und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116862831">Latraille</a></span></span> bei den Inſecten ſich<br/>
+beſonders hervor gethan.</p><br/>
+<p class="dta-p">In der Auseinanderſetzung des Vorhergehenden,<br/>
+haben wir beſonders abgehandelt:</p><br/>
+<p class="dta-p">1. Die allgemeine Verbreitung des thieriſchen Lebens,<br/>
+die ſich weiter nach den Polen wie die der Pflanzen<br/>
+erſtreckt. Wölfe, Rennthiere <span class="aq ">etc.</span> machen große Reiſen<br/>
+über das. <span title="H￼" class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parry</a></span></span> ſchoß deren mehrere auf der Mall-<br/>
+wills Inſel unter 75° Br. bei einer Kälte von - 40° R.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0557 : 551.|</span><br/>
+<p class="dta-p">2. Geben wir das Zahlenverhältniß der Thiere nach<br/>
+den Arten. Bei den Vögeln iſt kein Beiſpiel der<br/>
+Blindheit bekannt. Bei den Säugethieren mehrere, die<br/>
+Augen der Blindmaus und des Goldmaulwurfs ſind mit<br/>
+einer Haut bedeckt, die wenig oder gar kein Licht durch-<br/>
+läßt. Unter den Amphibien giebt es auch mehrere,<br/>
+ſo z. B. iſt der <span class="aq ">Proteus ſanguineus</span> nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/115526641">Rudolphi</a></span></span><br/>
+beinahe blind. Auch giebt es blinde Fiſche, obgleich<br/>
+ſeltener, nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/123544890">la Roche</a></span></span> Unterſuchungen die <span class="aq ">Mor<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 2 Zeichen fehlen]</span></span><span class="dta-add" title="Hinzufügung (across)">en</span>a loka</span><br/>
+und <span class="aq ">ſecutiens.</span> Ferner giebt es auch einige blinde<br/>
+Inſecten, wie die Zwitterameiſen, und einige Käfer.</p><br/>
+<p class="dta-p">Bei der großen Menge der Fiſche die nach den Erd-<br/>
+revolutionen übrig blieben, laſſen uns die vielen Ver-<br/>
+ſteinerungen ſchließen, wie ſehr die Meere in ihrer<br/>
+frühern Ausdehnung gefällt ſein mußten, da ſie ver-<br/>
+ſteinert in großen Maſſen von den älteſten Flötz-<br/>
+gebirgen an bis zur Kreide in's tertiäre Gebirge<br/>
+übergehend ſich zeigen, wo neben ihnen noch <span class="aq ">Dicotyle-<br/>
+donen</span> gelagert ſind.</p><br/>
+<p class="dta-p">3. Die relative Gröſſe der Arten in den verſchie-<br/>
+denen Klaſſen. Hier läßt uns die Organiſation<br/>
+erkennen, wie ſie von der äußerſten Gröſſe, weit<br/>
+unter die Grenzen der natürliche Sehkraft zuſammenſchrumpft,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0558 : 552.|</span><br/>
+indem das Infuſionsthierchen 23,000000 Mal kleiner<br/>
+als der Pottfiſch iſt, und etwa daſſelbe Verhältniß<br/>
+giebt wie der Aerolith von 5′ Durchmeſſer zum Jupiter.<br/>
+Solche Vergleichungen ſind naht Spiele der Phantaſie,<br/>
+ſondern auf Meſſungen gegründet, deren Vergleichungen<br/>
+treffliche Analogien geben.</p><br/>
+<p class="dta-p">4. Die Zahl der Individuen. Beſonders in den<br/>
+untern Klaſſen iſt dieſe ungeheuer groß; z. B. nach<br/>
+einen Gewitterregen, iſt die Menge der Infuſions-<br/>
+thierchen ſo groß, daß man ſie nicht nach Millionen be-<br/>
+rechnen kann, ſondern nur zu Betrachtungen der Un-<br/>
+endlichkeit des thieriſchen Lebens führen. In der Milch<br/>
+eines großen Karpfen fand <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11696474X">Woldmann</a></span></span> 250 tauſend<br/>
+Millionen von Infuſionsthierchen. Der <span class="aq ">Prof. <span title="Personenname"><a href="http://d-nb.info/gnd/100190014">Lichten-<br/>
+ſtein</a></span></span> führt an, daß <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/104317981">Alberti</a></span></span> noch Heerden von 300<br/>
+Elephanten beiſammen geſehen hat, von denen welche<br/>
+14′ hoch waren. Eine nicht mindern thieriſche Maſſe<br/>
+iſt in den Heerden der Biſons von 8–10,000 Stück-<br/>
+vereint. Die Wandertaube <span title="Original: /" class="dta-reg">(</span><span class="aq ">Columba migratoria</span><span title="Original: /" class="dta-reg">)</span><br/>
+kommt in ſolchen Zügen nach Penſÿlvanien und den ver-<br/>
+einten Freiſtaaten, daß ſie zu vielen Millionen tage-<br/>
+lang die Sonne verdunkeln, und da wo ſie ſich nieder-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0559 : 553.|</span><br/>
+laſſen, brechen die Zweige der Bäume, ſie werden<br/>
+von den Einwohnern vorzüglich von den Hirten denn in<br/>
+Maſſe mit Knitteln erſchlagen, und nachher die Schweine<br/>
+hin getrieben um ſie zu verzehren. In ähnlichen Scharen<br/>
+erſcheinen Strandvögel am Orinoko, noch häufiger aber<br/>
+ſind dieſe an den Ufern der Südſee, wo nicht ſelten<br/>
+eine Wolke derſelben 5–6 Stunden lang über einen<br/>
+Punct hinweg ziehen ſieht, und von deren Excrementen,<br/>
+<span title="Original: /" class="dta-reg">(</span>Gruner genannt<span title="Original: /" class="dta-reg">)</span> an einigen Orten Schichten 25–30′ hoch<br/>
+liegen, die wie Steinkohlenlagerungen ausſehen, und zur<br/>
+Düngung gebraucht werden. Wenn man der Maſſe<br/>
+nach alle dieſe thieriſchen Subſtanzen mit der Maſſe der<br/>
+Pflanzen vergleicht, ſo finden wir aber doch, wie auch ſchon<br/>
+erwähnt, daß die Maſſe der letztern weit überwiegend<br/>
+iſt, und ihr Extrem zwiſchen den 20–25° in der neuen<br/>
+Welt erreicht, wo unzertheilte Urwälder von ſtarken<br/>
+Bäumen 6–7′ in Durchmeſſer ſich ausbreiten. –</p><br/>
+<p class="dta-p">Bei den Thieren entſteht dieſelbe Frage wie bei<br/>
+den Pflanzen, ob nämlich welche über den ganzen Erd-<br/>
+boden verbreitet ſind. Die niedere Stuffen ſind auch<br/>
+<span class="dta-supplied">[hier]</span>, ebenſo wie die Pflanzen, am weiteſten verbreitet,<br/>
+<span class="dta-supplied">[denn]</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118529250">Ehrenberg</a></span></span> fand in Aegypten dieſelben Infuſionsthierchen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0560 : 554.|</span><br/>
+wie bei uns, da dort <span class="aq ">Monos Therma</span> und <span class="aq ">Monos Lens</span><br/>
+eben ſo gewöhnlich ſind. Auch manche Inſecten ſind<br/>
+weit verbreitet, und unter dieſen beſonders mehrere<br/>
+Schmetterlinge. So kommt der <span class="aq ">Papilio Carlo</span> im ſüdlichen<br/>
+Europa, in Aegypten, Syrien, am Kap und in Oſtindien<br/>
+vor. Der <span class="aq ">Sphinx Acropus</span> kommt in Aegypten vor<br/>
+und iſt auch von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/1049517539">Deppe</a></span></span> aus Mexico mitgebracht. Von den<br/>
+Vögeln giebt es einige Sumpfvögel, die in allen tem-<br/>
+perirten und Tropenzonen vorkommen, nur nicht in den<br/>
+kalten arctiſchen Ländern. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span></span> glaubte daß die<br/>
+Thurmeule die größte Verbreitung habe, es iſt aber<br/>
+noch zweifelhaft ob die in Mexico identiſch iſt. Das<br/>
+Geſetz von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118517252">Buffon</a></span>,</span> daß die Wirbelthiere der alten<br/>
+und neuen Welt ganz voneinander abweichen ſollen, findet<br/>
+nur für die Tropen eine Anwendung; dann keine Säugethiere,<br/>
+kein Singvogel, kein Süßwaſſerfiſch kommt in den Tropen<br/>
+beiden Welttheile zugleich vor. Nur die <span class="aq ">Hymenoptera</span><br/>
+machen wir der <span class="aq ">Papilio altanticas,</span> eine Ausnahme.<br/>
+In der temperirten und kalten Zone finden ſich dagegen<br/>
+Thiere aller Klaſſen, die der alten und neuen Welt<br/>
+zugleich angehören. Wohl hat man früher den Auerochſen<br/>
+und den Biſon für gleich gehalten, wie auch die Hirſcharten<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0561 : 555.|</span><br/>
+welche Afrika nicht aufzuweiſen hat. Dagegen Renn-<br/>
+und Elendthiere ſind dieſelben, und gehen oft über das<br/>
+Eis der Beringsſtraße. Vom Sumpfotter und dem<br/>
+Bieber iſt es gleichfalls wahrſcheinlich, daß es dieſelben ſind.<br/>
+Ebenſo hält <span title="H￼" class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span></span> den Wolf und Fuchs für<br/>
+gleiche Arten, doch iſt dies neuerlich in Zweifel gezogen.</p><br/>
+<p class="dta-p">Eine andere Frage iſt die, ob die nördliche und ſüdliche<br/>
+Hemisphäre gleiche Thiere hat? Der gemäßigte Theil von<br/>
+Afrika hat mehrere mit Europa gemein. Unſer Lämmer-<br/>
+geier findet ſich in ſüdlichen Afrika, und unſer Kuckuk<br/>
+kommt nach in Neuholland vor. Unter den Thieren wie<br/>
+unter den Pflanzen iſt eine weiter Verbreitung der<br/>
+tropiſchen Formen gegen den Südpol, als gegen den<br/>
+Nordpol zu. Auch dehnen ſie ſich in der neuen Welt<br/>
+mehr gegen Norden aus wie in der alten. Wie ſich in<br/>
+den vereinigten Staaten noch eine Menge ſchön blühender<br/>
+Bäume ſelbſt Mimoſenarten finden, ſo beſitzen ſie auch<br/>
+noch mehrere tropiſche Vögelformen. Der Kolibri z. B.<br/>
+geht bis zu den Seen von Kanada, wo er im Mai<br/>
+ankommt; da er doch im Mai auch noch im Florida iſt, er<br/>
+legt alſo in kurzer Zeit 270–280 Meilen zurück. In<br/>
+<span class="gap">[unleserliches Material – 3 Zeichen fehlen]</span>zies hat noch Kolibri's unter den 54° N. Br. gefunden,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0562 : 556.|</span><br/>
+alſo in einer Breite von Danzig. Nach den Berichten<br/>
+des Kapt. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/122441281">Kings</a></span>,</span> der gegenwärtig den Archipel des<br/>
+Feuerlandes unterſucht, traf er noch Kolibri's unter<br/>
+dem 55° in der ſüdlichen Hemisphäre an. Beſonders auf-<br/>
+fallend iſt, daß baumartigen Farrenkräuter ſich bis zum<br/>
+Vandiemenslande <span title="Original: /" class="dta-reg">(</span>41–43°<span title="Original: /" class="dta-reg">)</span> ſüdlich erſtrecken. Auf<br/>
+der ſüdöſtlich von Neu-Seeland entdeckten Kampels-<br/>
+inſel unter den 55° S. Br. hat man ſogar noch eine neue<br/>
+Art Papagei entdeckt.</p><br/>
+<p class="dta-p">Unter den Thieren giebt es ebenſo Erſetzungsformen<br/>
+wie unter den Pflanzen. Afrika und Aſien zeichnen<br/>
+ſich beſonders hierin aus. Die Elephanten des erſtere<br/>
+Welttheils zeichnen ſich von denen das andere durch die<br/>
+Krone der Zähne, der gewölbten Stirn und den Augen aus<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span></span> hat ſie beſchrieben und gezeigt, daß die der<br/>
+Carthager nicht allein Aſiaten waren. Sie zeigen beide<br/>
+gleiche Gelehrigkeit. Ebenſo giebt es 2 Rhinocerosarten<br/>
+mit 2 und mit 1 Horne, letzteres davon iſt am Kap,<br/>
+das andern in Sumatra. Der Tapir auf Malacca<br/>
+iſt von dem auf Sumatra verſchieden. Von andern Thiere<br/>
+finden wir auch Erſetzungsformen in der neuen Welt. So<br/>
+giebt es 2 Strauſſe, manche Schlangen die 20–23′<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0563 : 557.|</span><br/>
+lang werden, <span title="Original: /" class="dta-reg">(</span>ob es welche von 30′ Länge giebt, be-<br/>
+zweifle ich, obgleich es oft erwähnt iſt.<span title="Original: /" class="dta-reg">)</span> auch Krokodillen<br/>
+die in unſer Uebereinſtimmung verſchieden Welttheilen<br/>
+angehören. Mit den letztern dürfen die in Südamerika<br/>
+häufigen Alligators nicht verwechſelt werden.</p><br/>
+<p class="dta-p">Wie die Pflanzen der Ebenen von den Formen<br/>
+auf Gebirgen verſchieden ſind, ſo finden wir es auch<br/>
+bei den Theorien. Bisweilen giebt es muthige Thiere<br/>
+welche Streifzüge machen, je 5–6000′ hinauf ſteigen.<br/>
+Ganze Bänden geſellſchaftlichen Affen leben häufig 5<br/>
+bis 6 Monate in dieſen höhern Gegenden, die ſonſt nicht<br/>
+über 2–3000′ hoch ſich hinaus verbreiten. Die Alpen<br/>
+haben auch ihre eigenthümlichen Inſecten, und beſonders<br/>
+Schmetterlinge, die überhaupt ſehr hoch gehen, vorzüglich<br/>
+die aus der Gattung <span class="aq ">Hiparcha</span> kommen nur in höhern<br/>
+Regionen vor. Der kleine Sandfloh <span title="Original: /" class="dta-reg">(</span><span class="aq ">Pulex penetrans</span><span title="Original: /" class="dta-reg">)</span><br/>
+der ſo läſtig für Reiſende iſt, lebt nur in der Höhen<br/>
+von etwa 1000′ über der Meeresfläche, iſt wenigſtens höchſt<br/>
+ſelten niedriger anzutreffen, und geht nicht über 5000′ hinaus.<br/>
+Der <span class="aq ">Papilio Pollo</span> der in den Ebenen des nördlichen<br/>
+Europa's lebt, iſt im ſüdlichen Frankreich erſt in einer<br/>
+Höhe von 4000′ zu finden.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0564 : 558.|</span><br/>
+<p class="dta-p">Wie es bei den Pflanzen Ausſchlieſſungen<br/>
+giebt, daß keine <span class="aq "><span title="Original: Pinus-" class="dta-reg">Pinus-,</span></span> keine Roſenart in der ſüdlichen<br/>
+Hemisphäre, keine Heide in der neuen Welt vorkommt,<br/>
+ſo beſitzt auch Afrika keine Hirſche, ſondern nur Ga-<br/>
+zellen. Dagegen ſind die Pflanzen des Atlas größten-<br/>
+theils mit denen in Spanien identiſch. Von 1500 Pfl.-<br/>
+Arten die <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/104130717">Desfontaines</a></span></span> am Atlas fand, ſind bis auf<br/>
+400 auch in Spanien gefunden. Es ſcheint, daß der<br/>
+Durchbruch des Meere's zu einer Zeit geſchah, wonach<br/>
+dieſe Thiere nicht exiſtirten. Man hat Affen auf<br/>
+Gibraltar gefunden, die aber von Matroſen da<br/>
+ausgeſetzt ſind.</p><br/>
+<p class="dta-p">Ein Blick auf die Zahlenverhältniſſe der Arten zu<br/>
+den Geſchlechtern zeigt uns, wie auch beiden Thieren die<br/>
+Formen in den kältern Ländern mannigfaltiger werden,<br/>
+je mehr die Zahl der Arten abnimmt. Wir kennen<br/>
+5 mal ſo viel Vögel als Säugethiere, von denen<br/>
+128 Arten der Vorwelt untergegangen ſind. Vögel,<br/>
+beſonders aber Amphibien nehmen gegen die Tropen<br/>
+weit ſchneller zu als die Säugethiere. Die Maſſe der<br/>
+Sümpfe und größere Feuchtigkeit der Luft ſind dort<br/>
+ihnen günſtiger, ſo daß das Zahlenverhältniß kälterer Ge-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0565 : 559.|</span><br/>
+genden von jenen bedeutend abweicht. Die unter-<br/>
+gegangenen Arten waren beſonders Wiederkäuer, und<br/>
+55 Arten hatte die alte Welt mehr, da bis jetzt<br/>
+nur noch ⅓ der frühere, etwa 16–18 Species übrig<br/>
+geblieben ſind. Von den 900 bekannten Arten der<br/>
+Säugethiere gehört ⅓ zu den reiſſenden und fleiſchfreſſende<br/>
+Thieren, und ⅔ leben von Vegetabilien. Auch Inſecten<br/>
+ſind untergegangen, da die im Bernſtein vorkommenden<br/>
+nicht mehr lebende Arten ſind. Vom Schnabelthiere<br/>
+iſt es noch nicht erwieſen, ob es zu den Säugethieren ge-<br/>
+hört, oder Eier legt. Der indiſche Archipelagus<br/>
+unterſcheidet ſich weſentlich von den Inſeln des Att-<br/>
+lantiſchen Oceans oder Weſtindien's, da hier auf keiner<br/>
+derſelben ſich über 4–5 Zoll hohe Säugethiere finden,<br/>
+und die größten von ihnen gehören zu den Nagethieren.<br/>
+Die Inſel Trinidad macht hiervon jedoch eine Ausnahme.<br/>
+Der indiſche Archipelagus dagegen theilt die größten<br/>
+Thiere des feſten Landes, wie Elephanten, Rhinoceros<br/>
+und Tapir, ſo wie die ſonderbaren Geſtalten der<br/>
+verſchiedenen Arten der Kängeruh's <span title="Schreibfehler: ihne" class="dta-corr">ihnen</span> allein eigen<br/>
+ſind, wenn wir Neuholland mit dazu rechnen.</p><br/>
+</div>
+<span class="dta-pb" style="padding-left:15em">|#f0566 : 560.|</span><br/>
+<div class="">   <div class="dta-head"><span class="u ">Der Menſch</span>.</div>   <br/>
+<p class="dta-p">Unter den Thierklaſſen höherer Organiſation<br/>
+iſt aber der Menſch am weiteſten verbreitet, der<br/>
+durch die Kraft und die Stärke des eigenen Willens,<br/>
+einer Biegſamkeit <span title="Original: /" class="dta-reg">(</span><span class="aq ">Flexibilität</span><span title="Original: /" class="dta-reg">)</span> fähig iſt, wie ſie<br/>
+unſern Begriffen kaum erreichbar ſcheint. Was der<br/>
+Willen vermag ſehen wir beim Vergleich der <span class="u ">wilden</span><br/>
+mit den <span class="u ">civiliſirten</span> Völkern, auf die bei den Aeuſſe-<br/>
+rungen der immer mehr fortſchreitenden Entwickelung<br/>
+innerer Anlagen, auch weit weniger einflußreich die<br/>
+Wirkungen verſchiedener Temperaturen ſind, als bei jenen<br/>
+die nur den phyſiſchen Geſetzen nachleben. So ſehen wir<br/>
+eine weit größere Flexibilität unter den weiſſen,<br/>
+als unter den farbigen Menſchen, was nicht in der<br/>
+materiallen Maſſe, ſondern allein in den ſtärkern Willen<br/>
+der geiſtigen Intelligenz zu liegen ſcheint.</p><br/>
+<p class="dta-p">Auf der höchſten Stuffe, die der Menſch auf unſerm<br/>
+Erdkörper erlangt, wollen wir ihn nun betrachten.<br/>
+Das letzte Ziel der Erkenntniß der Natur, iſt die Be-<br/>
+obachtung unſerer eigenen Thätigkeit und geiſtigen Ent-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0567 : 561.|</span><br/>
+wickelung. – Unter den verſchiedenſten Einwir-<br/>
+kungen der Elemente, ſind faſt alle Theile des Erd-<br/>
+körpers von Menſchen bewohnt, und jene veranlaſſen<br/>
+bei dieſen einen weit geringern Unterſchied, wie wir ihn<br/>
+bei allen Wirbelthieren finden. Die Blutwärme der<br/>
+Menſchen beträgt nach den genaueſten Meſſungen von<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117626708">J. Davy</a></span></span> kaum 30° R. und iſt bei allen verſchiedenen<br/>
+Racen gleich, denn ſowohl die von Fleiſch ſich nähernden,<br/>
+wie die Indianer am Ganges und die Wadas in<br/>
+Ceylon, welche nur Grasarten und Früchte genieſſen,<br/>
+haben gleiche Blutwärme. Dieſe iſt leicht zu meſſen, da<br/>
+die Wurzel der Zeuge dieſelbe Temperatur hat, man darf<br/>
+alſo nur des Thermometer unter die Wurzel der Zunge<br/>
+bringen; alle hierüber angeſtellten Unterſuchungen, ſo-<br/>
+wohl beim Menſchen als Elephanten und andern Thieren<br/>
+haben nur zuweilen einer Unterſchied von ¼ höchſtens.<br/>
+½ Grad gezeigt. Wir haben ſchon erwähnt daß die<br/>
+Vögel die größte Blutwärme haben, und auffallend iſt es<br/>
+daß die der nördlichen Zone wie das Höhe z. B., wärmeres<br/>
+Blut beſitzen, als die der heiſſen Zone, wo der Papagei<br/>
+nur 33° hat. Die ſo genannten kaltblütigen Thiere haben<br/>
+fälſchlich und nur in Vergleich zu den andern dieſen Namen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0568 : 562.|</span><br/>
+erhalten, da ihre Blutwärme immer 3–4° mehr beträgt,<br/>
+als das Medium der Umgebung worin ſie leben. Selbſt<br/>
+bei den Inſecten können wir eine geringe Wärme nachweiſen.</p><br/>
+<p class="dta-p">Die kleinen Unterſchiede der verſchiedenen Menſchenſtäm̃e<br/>
+ſind nicht Folge beſonderer Racen, ſondern von den Einwir-<br/>
+kungen klimatiſcher Verhältniſſe abhängig, wie wir es bei<br/>
+den Bewohnern von Europa und Amerika ſehen. –<br/>
+Wenn die Menſchen von der Ebene auf die Höhe der<br/>
+Berge ſteigen, iſt ſelbſt der Puls nicht verſchieden, obgleich<br/>
+ſie doch einen geringern Luftdruck zu ertragen haben. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117597074">Rulliet</a></span></span><br/>
+ſtellte hierüber bei Bogota Verſuche an, als er mit<br/>
+mehrere Reiſenden verſchiedenen Alters die dortiger Höhen<br/>
+beſtieg, mit ihnen von 400 zu 400 Toiſen weilte und Be-<br/>
+obachtungen machte, aber keiner Unterſchied fand. Bei<br/>
+gleichen Verſuchen erhielt <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118661604">Bonpland</a></span></span> bei Quito daſſelbe<br/>
+Resultat.</p><br/>
+<p class="dta-p">Daß die große Flexibilität der Menſchen eine Folge<br/>
+der Willenskraft iſt, zeigen uns die Dampfbäder oder die<br/>
+Themaskals, wie die Spanier in Mexiko ſie nennen, am deut-<br/>
+lichſten, wo ſie freiwillig eine ſo große Hitze ertragen. Der<br/>
+Franzoſe <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/14097847X">Guillet</a></span></span> ſperrte im Jahre 1764 ein Mädchen 10<br/>
+Minuten lang in einem Ofen von + 105° R. ohne daß ſie<br/>
+beſchädigt wurde. Der Kapit. <span class="aq "><span title="Personenname">Tigs</span></span> und der Lord <span class="aq "><span title="Personenname">Molgret</span></span><br/>
+ſahen, wie die Bewohner von Spitzbergen aus einer Kälte von<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0569 : 563.|</span><br/>
+−30° R. ſogleich in die heiſſen Dampfbäder von 102° R. gingen,<br/>
+ſo daß Beefſteck neben ihnen bereitet wurde. Wirkte<br/>
+hier die Hitze unmittelbar auf den menſchlichen Körper, ſo<br/>
+würde ſie unmöglich zu ertragen ſein; die Hitze aber veran-<br/>
+laßt eine ſtärkere Ausdünſtung, die der Körper gleich einer<br/>
+Atmosphäre ſchützend umhüllt, und verhindert daß die thieriſche<br/>
+Wärme verändert wird, wenigſtens nicht merklich, dann das<br/>
+Blut nimmt kaum 1½° an Wärme zu; ähnliche Ver-<br/>
+ſuche mit Hunden angeſtellt haben daſſelbe Resultat gegeben.<br/>
+Die Flexibilität der menſchlichen Organiſation geſtattet<br/>
+daher, daß der Erdkörper unter den verſchiedenſten Einwirkungen<br/>
+der Temperatur bewohnbar iſt. Auch in Taucherglocken hält<br/>
+der Menſch oft 60″ Luftdruck aus, ohne ihn ſchädlich zu<br/>
+ſein. – Der Menſch kann daher bei 40° unter dem<br/>
+Gefrierpunkt, als auch bei einer künſtliche Hitze von 105° R.<br/>
+leben, alſo einen Unterſchied der <span title="T." class="dta-abbr">Temperatur</span> von 145° ertragen.<br/>
+Unter den Völkern die an den Extremen der Baffinsbai<br/>
+wohnen, wo im Winter das Thermometer gewöhnlich bis auf<br/>
+35° R. herabſinkt, ſind beſonders die Eskimòs die fröhlich-<br/>
+ſten Menſchen und ihre Heiterkeit kann nur aus der<br/>
+Herrſchaft der Geiſteskräfte hervorgehen.</p></div></div></div></div></body></html>

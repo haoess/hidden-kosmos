@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span title="Original: D. 25 Maerz." class="dta-reg">42. Vorlesung, 25.03.1828</span></div><br/>
+<p class="dta-p">Jn dieſer Stunde werden wir die Tem-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Temperatur<br/>
+der Oberfläche des<br/>
+Meeres.</span><br/>
+</span>peratur des Meeres auf der Oberfläche<br/>
+deſſelben betrachten, die den größten<br/>
+Einfluß auf die Klimate, u. ſomit auf<br/>
+die Agrikultur u. Entwilderung der<br/>
+Völker hat u. gehabt hat. Jn der letz-<br/>
+ten Stunde ſprachen wir von dem<br/>
+Leuchten des Meeres. Es giebt zwar<br/>
+leuchtende Thierchen im Meere Zb. die<br/>
+Meduſen, die oft in einer Größe von<br/>
+ein Fuß Durchmeſſer als leuchtende Voll-<br/>
+mondſcheiben auf dem Grunde des Meeres<br/>
+liegen, u. dadurch die Behauptung wiederle-<br/>
+gen, als weñ ſie nur in Verbindung<br/>
+mit dem Oxigen der Atmoſphäre leuchten;<br/>
+doch der größte Theil des Leuchtens des<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Meeres</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0273 : 256.|</span><br/>
+Meeres kom̃t von kleinen organiſchen Pa<span class="dta-supplied">[r-]</span><br/>
+tikeln u. Faſern, die im Meere ſchwim̃en, d<span class="dta-supplied">[ie]</span><br/>
+den bittern eckelhaften Geſchmack erregen<br/>
+u. unter beſondern Bedingungen, wohin na-<br/>
+mentlich die Erſchütterung gehört, leuchtend<br/>
+werden. Dies veranlaßt, daß aus dem<br/>
+Kiele des ſegelnden Schiffs Flam̃en zu ſchlage<span class="dta-supplied">[n]</span><br/>
+ſcheinen, u. das ſchöne Phänomen des Leuchten<span class="dta-supplied">[s]</span><br/>
+einer Brandung. Genau hat dies wie geſagt<br/>
+der Reiſende <span title="H￼." class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118529250">Ehrenberg</a></span></span> mikroskopiſch<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Färbung<br/>
+des Meeres</span><br/>
+</span>unterſucht. Noch der Färbung des Meeres<br/>
+will ich hier erwähnen, die als ein optiſch<span class="dta-supplied">[er]</span><br/>
+Gegenſtand ſehr ſchwierig zu beſtim̃en iſt<span class="dta-supplied">[.]</span><br/>
+Daß S<span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)">een</span> ſich oft blau, dañ wieder<br/>
+grün ſpiegeln, giebt Anlaß zu den ver<span class="dta-supplied">[-]</span><br/>
+wickelſten Erſcheinungen. Unter den Tropen<br/>
+ſpiegelt ſich das Meer Jndigoblau u. iſt<br/>
+dieſe Färbung keineswegs der Reflex des<br/>
+blauen Him̃els, ſondern dieſe bleibt ſelbſt<br/>
+weñ der Him̃el mit weißen Wolken bedeckt<br/>
+iſt. Obgleich <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117654167">Scoresby</a></span></span> auch im hohen Norden<br/>
+das Meer zuweilen blau fand; ſo iſt doch<br/>
+deſſen Färbung mehr graſgrün, u. h<span class="dta-supplied">[ier]</span><br/>
+halten ſich beſonders Wallfiſche häufig au<span class="dta-supplied">[f,]</span><br/>
+da es gleichſam ſchwim̃ende Bänke von<br/>
+organiſchen Producten ſind. Wie tief<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Wie<br/>
+tief das Licht<br/>
+ins Waſſer dringe</span><br/>
+</span>das Licht in das Gewäſſer dringe, iſt eben<span class="dta-supplied">[-]</span><br/>
+falls ſchwer zu beſtim̃en. Nach eigner Er-<br/>
+fahrung ſieht man in einer Taucherglocke<br/>
+in einer Tiefe von 20 Fuß wenig vom Ta-<br/>
+geslichte. Jn einer Tiefe von 40 Fuß muß<br/>
+man ſich ſtets des Lichtes bedienen. Es<br/>
+hängt ſehr davon ab, ob die Oberfläche<br/>
+glatt oder gekräuſelt iſt; letzteres<br/>
+hindert das Licht auf die Tiefe zu wirken.<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Man</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0274 : 257.|</span><br/>
+Man hat daher verſucht Oehl auf die Ober-<br/>
+fläche zu gießen, um dies kräuſeln zu hin-<br/>
+dern, wie <span title="Personenname"><a href="http://d-nb.info/gnd/118534912">Franklin</a></span> lehrte, die <span title="Brandung￼" class="dta-abbr">Brandungen</span><br/>
+dadurch unſchädlicher zu machen. Das fac-<br/>
+tum iſt nicht zu läugnen, u. in der Wellen-<br/>
+theorie von den Gebrüdern <span title="Personenname"><a href="http://d-nb.info/gnd/118765817">Weber</a></span> iſt dies<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Aenderung<br/>
+der Oberfläche.</span><br/>
+</span>erwieſen. Jede Aenderung der Oberfläche<br/>
+auch durch die düñſte Haut verändert<br/>
+die Bewegung des Meeres u. die Wellenos-<br/>
+cillation. Jn den Tropen, wo große Regen-<br/>
+tropfen niederſchlagen, werden die Wogen<br/>
+durch einen Regenguß, wo eine Haut ſüßen<br/>
+Waſſers ſich gleichſam bildet ſofort ver-<br/>
+ringert. Um das Kräuſeln der Wellen<br/>
+zu verhindern, haben Taucher ſeit Jahrtau-<br/>
+ſenden ſchon, ohne Glocke, ſich des Oels be-<br/>
+dient. Weñ man das Meer von einer<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Grund<br/>
+des Meeres<br/>
+ſichtbar</span><br/>
+</span><span title="benachbart￼" class="dta-abbr">benachbarten</span> Anhöhe betrachtet, ſo ſieht man<br/>
+oft den Grund des Meeres wie eine Karte<br/>
+vor ſich <span title="lieg￼" class="dta-abbr">liegen</span>, welches nahe bei, nicht der<br/>
+Fall iſt. Dies fand <span title="H￼." class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> auf <span class="aq ">Yoiza</span><br/>
+in einer Höhe von 300 Toiſen, wo er ſich<br/>
+befand. Es rührt davon her, daß in<br/>
+der Nähe des Gewäſſers, der Reflex<br/>
+des Tageslichts von der Oberfläche ſo<br/>
+ſtark iſt, daß das Auge gehindert<br/>
+wird den ſchwachen Lichteindruck von<br/>
+dem Boden des Meeres zu erhalten.<br/>
+Erſt in einer gewiſſen <span class="dta-del" title="Streichung (#s)">Tiefe</span><span class="dta-add" title="Hinzufügung (superlinear)">Höhe</span> vermag man<br/>
+die Tiefe zu ſehen. – Wie geſagt<br/>
+hat die Temperatur des Waſſers einen<br/>
+großen Einfluß auf Klimatologie.<br/>
+Wir werden hiebei betrachten zuerſt<br/>
+die Oberfläche oder obern Schichten, als,<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">dañ</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0275 : 258.|</span><br/>
+dañ die tiefern Schichten u. endlich die<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Wichtigſter<br/>
+Moment bei der<br/>
+Temperatur.</span><br/>
+</span>Sandbänke. Der wichtigſte Moment de<span class="dta-supplied">[r]</span><br/>
+Vertheilung der Temperatur, iſt die Ver<span class="dta-supplied">[-]</span><br/>
+theilung der feſten u. <span title="flüßig￼" class="dta-abbr">flüßigen</span> Hülle d<span class="dta-supplied">[er]</span><br/>
+Oberfläche der Erde. Man muß hiebei da<span class="dta-supplied">[s]</span><br/>
+Meer in ſeiner Ruhe u. in ſeiner Ström<span class="dta-supplied">[ung]</span><br/>
+oder Bewegung betrachten. Das Waſſer<br/>
+nim̃t ſtets nur einen Theil der Tempera-<br/>
+tur der äußern Atmoſphäre an. Die<br/>
+genauere Keñtniß der Klimatologie mu<span class="dta-supplied">[ß]</span><br/>
+eigentlich von der Tropengegend ausgehen<br/>
+wo die Geſetze deutlich zu erkeñen ſind. u.<br/>
+nicht von den Beobachtungen in den nördli-<br/>
+chen Zonen, die ſo oft perturbirt wer-<br/>
+den. Die Geſetze der Temperatur unter<br/>
+den Tropen ſind ſo beſtim̃t, daß der Unt<span class="dta-supplied">[er-]</span><br/>
+ſchied zwiſchen der des Tages u. der Nac<span class="dta-supplied">[ht]</span><br/>
+6–7° R. nur beträgt. Jm Meerwa<span class="dta-supplied">[ſ-]</span><br/>
+ſer ſelbſt iſt der Wechſel der Tempera-<br/>
+tur ſo gering, daß iñerhalb 24 <span title="Stund￼" class="dta-abbr">Stunden</span><br/>
+eigentlich gar kein Unterſchied ſtatt finde<span class="dta-supplied">[t.]</span><br/>
+Dieſen Jrrthum habe ich ſelbſt getheilt, bis<br/>
+die franzöſiſchen Reiſenden <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117663476">Duperret</a></span></span> u. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/124760295">Fr<span class="dta-supplied">[es-]</span><br/>
+sinet</a></span></span> u. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117626708">Joe Davids</a></span></span> den Unterſchied<br/>
+von ½ u. ¾° R. fanden. Dies beſtätig<span class="dta-supplied">[te]</span><br/>
+der Obriſt <span class="aq "><span title="Personenname">Wilson</span></span>, der auf der erſten<br/>
+Reiſe mit einem Dampfſchiffe nach <span class="aq ">Kalkut<span class="dta-supplied">[ta]</span></span><br/>
+hierüber Beobachtungen anſtellte. Merk-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Tendenz<br/>
+des Meerwaſſer<br/>
+zur Erwärmung</span><br/>
+</span>würdig iſt die Tendenz des Meerwaſſer<br/>
+zur Erwärmung ſelbſt. Weñ <span class="dta-del" title="Streichung (#s)">es</span><span class="dta-add" title="Hinzufügung (superlinear)">das Waſſer</span> erkalte<span class="dta-supplied">[t]</span><br/>
+wird <span class="dta-del" title="Streichung (#s)">das </span>es dichter u. die Oberfläche<br/>
+ſtrahlt beſtändig Warme aus. Die ſo<br/>
+erkaltete kleine Haut, ſinkt daher nied<span class="dta-supplied">[er]</span><br/>
+u. kañ nicht heraufkom̃en, u. durch dieſe<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Ver-</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0276 : 259.|</span><br/>
+Verſchiebbarkeit der Oberfläche entſteht die<br/>
+Tendenz der Meere, ſich im̃er in wärmere Zu-<br/>
+ſtande zu erhalten. Jm Ganzen haben auch die<br/>
+neueren Reiſenden <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/124760295">Fressinet</a></span></span> u. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117663476">Duperret</a></span></span> gefunden<br/>
+daß zwiſchen dem Aequator u. 48° 50′ N. u.<br/>
+S. B. im Som̃er u. Winter die Oberfl. des Waſſer<br/>
+ſtets wärmer iſt als die Luft. Jch dringe um<br/>
+ſo mehr auf dies gefundene Reſultat, als das<br/>
+Gegentheil von mehrern Seiten behauptet worden<br/>
+iſt. Außer den Tropen iſt die monatl. Verän-<br/>
+derung der Meere 7 mal, unter den Tropen<br/>
+6 mal geringer als die <span title="Veränderung￼" class="dta-abbr">Veränderungen</span> der Luft.<br/>
+Erſt vor <span title="wenig￼" class="dta-abbr">wenigen</span> Monaten habe ich es volkom̃en<br/>
+eruirt, daß der weſtliche Theil des <span title="Atlantiſch￼" class="dta-abbr">Atlantiſchen</span><br/>
+Ozeans, von dem Europa die Wärme durch<br/>
+die herſtrömenden Weſtwinde erhält, eine Bedeu-<br/>
+tend erhöhete Temperatur hat. Es iſt dies klar<br/>
+bewieſen durch eine Maſſe von Beobachtungen<br/>
+die wir <span title="H￼." class="dta-abbr">Herrn</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118788353">Renel</a></span></span> verdanken, einem 80 <span title="jährig￼" class="dta-abbr">jährigen</span><br/>
+Greiſe, der ſeine <span title="Entdeckung￼" class="dta-abbr">Entdeckungen</span> über die <span title="Strömung￼" class="dta-abbr">Strömungen</span><br/>
+im Atlant. Ozean herauszugeben beabſichtigt.<br/>
+Ströme warmen Waſſers verbreiten ſich nach den<br/>
+kältern Regionen. Das Reſultat iſt, daß<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Temperat.<br/>
+des <span title="Atlantiſch￼" class="dta-abbr">Atlantiſchen</span><br/>
+Ozeans.</span><br/>
+</span>unter 50–52° N. B. <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Wort fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">der</span> Atlantiſche Ozean ſich<br/>
+nie mehr erkaltet, als 6–7° über den Gefrier-<br/>
+punkt, weñ bei uns das Termometer 7–8°<br/>
+unter dem Gefrierpunkt zeigt. Die Tempera-<br/>
+tur des Atlant. Ozeans iſt daher am kälteſten<br/>
+wie es in Berlin im Monat <span class="aq ">Mai</span> in der<br/>
+mittlern Temperatur iſt. Zwiſchen 65–70°<br/>
+N. Br. iſt die mittlere Temperatur des Atlant.<br/>
+Meeres nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118788353">Renel</a></span></span> u. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11671350X">Sebbin</a></span></span> 4½° über<br/>
+den Gefrierpunkt, weñ die mittlere Tempera-<br/>
+tur des <span title="correſpondirend￼" class="dta-abbr">correſpondirenden</span> Continents 2°<br/>
+unter dem Gefrierpunkt iſt. Die Mittlere<br/>
+Temperatur des Meeres unter den Tropen<br/>
+iſt 21–22°+ R. gleich der Wärme des<br/>
+Waſſers des Orinokoſtromes. Dieſe Temperatur<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">hat</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0277 : 260.|</span><br/>
+hat dorten jedes Trinkwaſſer. So oft Seef<span class="dta-supplied">[ah-]</span><br/>
+rer den Aequator durchſchneiden finden ſie d<span class="dta-supplied">[ie]</span><br/>
+Temperatur der Oberfl. des Waſſers zunehme<span class="dta-supplied">[n.]</span><br/>
+Das <span class="aq ">Maximum</span> der größten Wärme iſt aber<br/>
+nicht ſtets unter dem Aequator, ſondern im<br/>
+Parallelen der Kurve, die die Declination<br/>
+der Soñe beſchreibt. Hier finden die Schiff<span class="dta-supplied">[ah-]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Größte<br/>
+Wärme des<br/>
+Seewaſſers.</span><br/>
+</span>rer ſtets das <span class="aq ">Maximum</span> der größten Wärme<br/>
+des Waſſers 24 – 24½+ R. Jn der Südſee<br/>
+am Jſtmus von Panama u. in Quito habe<br/>
+ich das <span class="aq ">Maximum</span> der Meerwärme 24¾°+ <span class="dta-supplied">[R.]</span><br/>
+gefunden. Treten Windſtillen ein, ſo ver<span class="dta-supplied">[-]</span><br/>
+mehren dieſe zufällig die Wärme, man <span class="gap">[unleserliches Material – 1 Wort fehlt]</span><br/>
+daher dieſe <span title="Unterſuchung￼" class="dta-abbr">Unterſuchungen</span> anſtellen weñ die<br/>
+Oberfläche gekräuſelt iſt. Wir habe<span class="dta-supplied">[n]</span><br/>
+die Gewäſſer in ihrer gewöhnl. Ruhe beobach-<br/>
+tet, wir kom̃en jetzt dazu weñ ſie in Be-<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Strömungen der<br/>
+Meere.</span><br/>
+</span>wegung ſind, oder in Strömungen. Man ka<span class="dta-supplied">[ñ]</span><br/>
+dieſe Meerſtröme mit Flüſſen ſüßen Waſſ<span class="dta-supplied">[ers]</span><br/>
+vergleichen, die ebenfalls durch Ufer einge-<br/>
+ſchloſſen werden, die hier das Waſſer ſelb<span class="dta-supplied">[ſt]</span><br/>
+bilden. Gehen ſie aus Biñenmeeren Zb. de<span class="dta-supplied">[m]</span><br/>
+Antilliſchen Meere, ſo ſchießt ein Strom<br/>
+ſalzigen Waſſers ſo breit wie die Meer<span class="dta-supplied">[-]</span><br/>
+enge aus demſelben, der nach Norden zu br<span class="dta-supplied">[ei-]</span><br/>
+ter u. breiter wird. Jn einem Fall wird<br/>
+aus dem Süden warmes Waſſer nach Norde<span class="dta-supplied">[n]</span><br/>
+im andern Fall kaltes Waſſer nach Süden ge-<br/>
+führt. Europa hat in Hinſicht des Klimas de<span class="dta-supplied">[n]</span><br/>
+Gewiñ, daß nicht nur das Atlant. Meer ih<span class="dta-supplied">[r]</span><br/>
+Wärme giebt, ſondern daß ſich ein Stro<span class="dta-supplied">[m]</span><br/>
+erwärmten Waſſers ſeinen Küſten näher<span class="dta-supplied">[t.]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Urſache.</span><br/>
+</span>Der Golfſtrom der von den Afrikaniſchen<br/>
+Küſten herkom̃t iſt Folge der Rotation des<br/>
+Meeres von Oſten nach Weſten. Wäre Pana-<br/>
+ma geöffnet, ſo käme dieſer Strom nicht<br/>
+her, u. dieſer Zuſam̃enhang des <span title="neu￼" class="dta-abbr">neuen</span> Continent<span class="dta-supplied">[s]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">iſt</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0278 : 261.|</span><br/>
+iſt von lange her die Bürgſchaft der <span title="politiſch￼" class="dta-abbr">politiſchen</span><br/>
+Sicherheit von Japan u. China, die durch eine<br/>
+leichtere Com̃unication von Europa aus ge-<br/>
+fährdet werden köñte. Der Aequatorial-<br/>
+Strom von der weſtl. Küſte Afrikas, wird<br/>
+durch den Jſthmus aufgehalten, geht daher<br/>
+zwiſchen Kuba u. Jukatan in den Golf von<br/>
+Mexico, bildet hier bei <span class="aq ">Veracruz</span> einen<br/>
+gewaltigen Wirbel u. geht bei Florida<br/>
+ins Atlantiſche Meer. Dieſer Strom war-<br/>
+men Waſſers geht ohne die Temperatur<br/>
+des Nordens anzunehmen auf die Bank<br/>
+von Neufundland. Hier theilt er ſich u.<br/>
+ein Arm geht nach den S. O. den <span title="Azor￼" class="dta-abbr">Azoren</span><br/>
+zu, der ſtärkere aber nach N. O. u.<br/>
+ſtößt ſich an den Küſten von Jrland, Schott-<br/>
+land, den Hebriden u. Scandinavien. Ein<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Beiſpiele<br/>
+von Strömungen</span><br/>
+</span>auffallendes Beiſpiel iſt es, daß als am<br/>
+Kap <span class="aq ">Lopez</span> in Afrika ein Schiff ſtrandete<br/>
+welches mit Fäſſern Palmöhl beladen vor-<br/>
+theile des Schiffs u. Oehlfäſſe mit vollſtändi-<br/>
+gen Signatur nach 1½ J. in Jrland u.<br/>
+Schottland ankamen, die in dieſer Zeit<br/>
+zweimal den Ozean durchſchnitten hatten.<br/>
+Sämereien von den Tropen Zb. <span class="aq ">mimosa<br/>
+scandens</span> kom̃en häufig nach den Hebri-<br/>
+den. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/104364440">Necker</a></span></span> in ſeinen Reiſen erzählt, daß<br/>
+in neuern Zeiten, zwei Jahre hintereinander<br/>
+volle Weinfäſſe an den Garten eines<br/>
+Einwohners auf den Hebriden angeſchwom-<br/>
+men ſind, die <span title="geſtrandet￼" class="dta-abbr">geſtrandeten</span> <span title="Schiff￼" class="dta-abbr">Schiffen</span> in Amerika<br/>
+<span title="angehört￼" class="dta-abbr">angehörten</span>. Schon 1283 u. 1684 kamen Eski-<br/>
+mos in ihren Kähnen von Seehundsfell nach<br/>
+den Hebriden u. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118783025">Pamponius Mela</a></span></span> u. <span class="aq "><span title="Personenname">Plinius</span></span><br/>
+erzählen, daß Jnder in Gallien geſtrandet,<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">die</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0279 : 262.|</span><br/>
+die der dortige König zu Solaren mach<span class="dta-supplied">[te]</span><br/>
+u. den <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/102399433">Metellus Celer</a></span></span> zum Geſchenk ſandte. <span class="dta-supplied">[Auf]</span><br/>
+ähnliche Weiſe wie aus dem Atlantiſchen<br/>
+Ozean erwärmtes Waſſer nach Norden ſtr<span class="dta-supplied">[ömt]</span><br/>
+kom̃t kaltes Waſſer in wärmere Zonen<span class="dta-supplied">[.]</span><br/>
+Dies iſt an der Weſtküſte Amerikas des Fa<span class="dta-supplied">[ll]</span><br/>
+wo eine Strömung in der Südſee nach Nord<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Strömungen haben<br/>
+Einfluß auf das<br/>
+Klima.</span><br/>
+</span>zieht. Auf das ſonderbare Klima von<br/>
+<span class="aq ">Lima</span>, wo oft nur eine Wärme von 12–13<span class="dta-supplied">[°]</span><br/>
+herrſcht, glaubte man, daß die entfernt<span class="dta-supplied">[en]</span><br/>
+Schneeberge Einfluß hätten. Ein Haupt<span class="dta-supplied">[-]</span><br/>
+grund iſt wohl die Bedeckung des Him̃el<span class="dta-supplied">[s]</span><br/>
+mit Wolkenſchichten, die Monate lang di<span class="dta-supplied">[e]</span><br/>
+Einwirkung der Soñenſtrahlen hindert, u. <span class="gap">[verlorenes Material – 1 Wort fehlt]</span><br/>
+das Meer ſelbſt. Als ich vom Amazonen<span class="dta-supplied">[-]</span><br/>
+ſtrom kam, wo unter 10° S. B. das Mee<span class="dta-supplied">[r]</span><br/>
+22–23°+ R. erwärmt ſein ſollte, fan<span class="dta-supplied">[d]</span><br/>
+ich daſſelbe nur +12°. Die Berge ſind d<span class="dta-supplied">[aher]</span><br/>
+nicht die Urſache des Klimas, ſondern di<span class="dta-supplied">[e]</span><br/>
+kalten Gewäſſer der ſüdlichen Zone, die dur<span class="dta-supplied">[ch]</span><br/>
+den Meerſtrom dem Aequator näher ge-<br/>
+bracht werden. Als ich nach <span class="aq ">Akapulko</span> <span class="dta-supplied">[ging]</span><br/>
+fand ich die Wärme des Waſſer ſchon 15° +<span class="gap">[verlorenes Material]</span><br/>
+das <span class="aq ">Maximum</span> derſelben unter den Tropen<br/>
+iſt 24° + R u. das <span class="aq ">Minimum</span> 12½°+ R<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Tiefe der-<br/>
+ſelben</span><br/>
+</span>Die <span title="Strömung￼" class="dta-abbr">Strömungen</span> ſelbſt bewegen ſich in gr<span class="dta-supplied">[o-]</span><br/>
+ßer Tiefe. Auf der Aquilias-Bank<br/>
+wo die Decl. der Magnetnadel gleich 0 <span class="gap">[verlorenes Material]</span><br/>
+u. wo ein Strom um das Cap <span class="aq ">Horn</span> u<span class="dta-supplied">[.]</span><br/>
+ein anderer um das <span class="aq ">Cap</span> <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">d. guten Hoffnung </span>ſich begegnen u<span class="dta-supplied">[.]</span><br/>
+in das Atlantiſche Meer <span title="ſchließ￼" class="dta-abbr">ſchließen</span>, hat die<br/>
+Strömung 500 Fuß Tiefe. – Weñ ma<span class="dta-supplied">[n]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Verſchiedenheit<br/>
+der Waſſer und<br/>
+Lufttemperatur</span><br/>
+</span>von der Erdoberfläche herauf u. von<br/>
+der Waſſeroberfl. herunter ſteigt, ſo<br/>
+nim̃t die Temperatur höchſt ungleich<br/>
+ab. Der Gefrier-Punkt in der Höhe i<span class="dta-supplied">[ſt]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">ungefähr</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0280 : 263.|</span><br/>
+ungefähr bei 8000 Fuß. Jm Waſſer<br/>
+nim̃t die Temperatur acht mal ſchneller<br/>
+ab als in der Luft. u. die Bewohner der<br/>
+Meere köñen mit leichter Mühe in alle<br/>
+Zonen ſich verſetzen. Die beſten Beobach-<br/>
+tungen hierüber hat der Aſtronom <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11671350X">Sebin</a></span></span><br/>
+unter den Tropen angeſtellt. Die Ober-<br/>
+fläche des Meeres fand er + 22½° R.<br/>
+u. in ſenkrechten Tiefe von 6–7000 Fuß<br/>
+war die Temperatur + 4<span class="sup ">4</span>/<span class="sub ">10</span>° R. Dies<br/>
+giebt die Differenz von 1° R für jede<br/>
+70 Fuß Tiefe. Jn der Luft dagegen muß<br/>
+man ſich 5–600′ erheben, bis das Termome-<br/>
+ter 1° R. ſinkt. Jn geringern Tiefen müſſen<br/>
+natürl. dieſe Verſuche ungleich ausfallen.<br/>
+<span title="H￼." class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118936530">Perron</a></span></span> u. Andern haben hieraus geſchlos-<br/>
+ſen, daß auf dem Boden des Meeres Eis<br/>
+ſein müßte, dies iſt aber unrichtig; deñ<br/>
+das Meerwaſſer kañ in der Tiefe nie eine<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Temperatur<br/>
+des Waſſers in<br/>
+der Tiefe.</span><br/>
+</span>tiefere Temperatur als + <span class="dta-del" title="Streichung (#ow)">4</span><span class="dta-add" title="Hinzufügung (across)">3</span>½° R. añeh-<br/>
+men. Das Waſſer wird grade in dieſer<br/>
+Temperatur am dichteſten, u. dehnt ſich<br/>
+wieder aus, weñ es noch mehr erkaltet.<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117654167">Scoresby</a></span></span> u. Andere haben es häufig gefun-<br/>
+den, daß bei Spitzbergen die Oberfläche<br/>
+des Meeres gleich − 1,5° R. war, u. im<br/>
+einer Tiefe von 1200–2400 Fuß die Tem-<br/>
+peratur + 1,7 = + 2° Wärme gefunden<br/>
+wurde. Ein offenbarer Beweis, daß die<br/>
+wärmern Waſſer eine größere Schwere haben<br/>
+als die, die dem Gefrierpunkt nahe ſind.<br/>
+Von dieſer untern Erwärmung iſt der<br/>
+Golfſtrom die Urſache, der ſich mit<br/>
+Jnflection dem Strom von <span class="aq ">Novaja Sembla</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">begegnet</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0281 : 264.|</span><br/>
+begegnet. Weñ die Gewäſſer dem <span class="aq ">Maxim<span class="dta-supplied">[um]</span></span><br/>
+von 4°+ R. nahe ſind, ſo ſi<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">nk</span>en ſie de<span class="dta-supplied">[ñ]</span><br/>
+herab. Jn den Seen der Tropengegen-<br/>
+den giebt es nie Partikel die dieſe Temp<span class="dta-supplied">[e-]</span><br/>
+ratur erhalten köñen. Die Kälte, di<span class="dta-supplied">[e]</span><br/>
+man ſelbſt unter dem Aequator verſpür<span class="dta-supplied">[t]</span><br/>
+wird durch die Strömung kalten Waſſers v<span class="dta-supplied">[er-]</span><br/>
+anlaßt, die von Norden dorten hinkom̃<span class="dta-supplied">[t.]</span></p></div></body></html>

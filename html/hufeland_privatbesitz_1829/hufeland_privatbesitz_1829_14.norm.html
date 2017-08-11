@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[14te Vorlesung]</span></div><br/>
+<p class="dta-p">Die Weltansicht als <span title="Original: Product" class="dta-reg">Produkt</span> der menschlichen Intelligenz hat nicht<br/>
+in allen Perioden gleiche Fortschritte gemacht, indem wir bald<br/>
+eine Tendenz zur <span title="Original: speculativen" class="dta-reg">spekulativen</span> Philosophie, bald zum dichterischen<br/>
+Schaffen vorherrschend sehen. Die Hauptentwicklung gehört <span title="Original: unstrei-&#xA;tig" class="dta-reg">unstreitig</span> der neusten Zeit an. Bei den Alten fand die Entwicklung<br/>
+der <span title="Original: Cultur" class="dta-reg">Kultur</span> fast nur um das Mittelmeer <span title="Original: Statt" class="dta-reg">Stadt</span>, wogegen später<br/>
+die <span title="Original: Civilisation" class="dta-reg">Zivilisation</span> sich räumlich weiter ausgebreitet hat. <span title="Original: Weñ" class="dta-reg">Wenn</span> aber<br/>
+von den <span title="Original: Neuern" class="dta-reg">Neueren</span> alle Zweige der Wissenschaft mehr gleichzeitig<br/>
+ausgebildet wurden, so <span title="Original: kañ" class="dta-reg">kann</span> man doch darum die Fortschritte<br/>
+nicht <span title="Original: gleichmässig" class="dta-reg">gleichmäßig</span> nennen, die vielmehr in den meisten <span title="Original: Wissen-&#xA;schaften" class="dta-reg">Wissenschaften</span> von jeher mehr stoßweise erfolgten. Einzelne Zweige<br/>
+des Wissens, z. B. die Beobachtungen der magnetischen <span title="Original: Erschei-&#xA;nungen" class="dta-reg">Erscheinungen</span> scheinen oft lange <span title="Original: gewissermassen" class="dta-reg">gewissermaßen</span> zu ruhen, um <span title="Original: dañ" class="dta-reg">dann</span><br/>
+mit einem Male desto größere <span title="u" class="dta-abbr">und</span> bedeutendere Fortschritte<br/>
+zu machen. <span title="Original: –" class="dta-reg">-</span> So berechtigte die große Entdeckung der <span title="Original: Contacts-&#xA;electricität" class="dta-reg">Contactselectricität</span> im letzten <span title="Original: Jahrzehend" class="dta-reg">Jahrzehnt</span> des vorigen Jahrhunderts zu<br/>
+bedeutenden Hoffnungen, die durch die Fortschritte in dieser <span title="Original: Wis-&#xA;senschaft" class="dta-reg">Wissenschaft</span> <span title="Original: vollkom̃en" class="dta-reg">vollkommen</span> erfüllt sind. Im Jahre 1791 entdeckte <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/104238135">Aloys<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0120 : 116|</span><br/>
+Galvani</a></span></span> ein Arzt zu <span class="aq "><span title="Original: Bolo" class="dta-reg">Bologna</span><span class="dta-del" title="Streichung (#ow)">ng<span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: gna" class="dta-reg"/></span></span> zufällig, daß der abgeschnittene <span title="u" class="dta-abbr">und</span> von der<br/>
+Haut entblößte Schenkel eines Frosches in dem Augenblicke Zuckungen <span title="Original: be-&#xA;kam" class="dta-reg">bekam</span>, wo man zwei Metalle, wovon das eine einen Nerv, das andere<br/>
+einen Muskel berührte, unter sich in Berührung brachte. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119292556">Volta</a></span><span title="Original: ’s" class="dta-reg">es</span></span> <span title="Original: Scharf-&#xA;siñ" class="dta-reg">Scharfsinn</span> <span title="Original: erkañte" class="dta-reg">erkannte</span> den Grund dieser Erscheinung in einer schwachen, <span title="Original: entge-&#xA;gengesetzten" class="dta-reg">entgegengesetzten</span> <span title="Original: Electricität" class="dta-reg">Elektrizität</span>, welche durch die <span title="Original: Be" class="dta-reg">Berührung</span><span class="dta-supplied">[<span title="Original: r" class="dta-reg"/>]</span><span title="Original: ührung" class="dta-reg"/> zweier Metalle<br/>
+erregt werde. Nicht Zufall, sondern Nachdenken leitete ihn auf die<br/>
+Entdeckung des Mittels, wodurch diese Art der <span title="Original: Electricität" class="dta-reg">Elektrizität</span> auf eine<br/>
+bewunderungswürdige Weise verstärkt werden kann und führte<br/>
+ihn auf die <span title="Original: Construction" class="dta-reg">Konstruktion</span> der <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119292556"><span title="Original: Volta" class="dta-reg">Voltaschen</span></a></span></span><span title="Original: schen" class="dta-reg"/> Säule. So kam diese Entdeckung,<br/>
+auf die man früher für die Physiologie große, aber nicht <span title="Original: realisir-&#xA;te" class="dta-reg">realisierte</span> Hoffnungen gegründet hatte, der Physik <span title="u" class="dta-abbr">und</span> Chemie zu gute <span title="u" class="dta-abbr">und</span><br/>
+wurde das Mittel, die Wissenschaften auf eine zuvor nicht <span title="Original: geahn-&#xA;dete" class="dta-reg">geahndete</span> Höhe zu fördern. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118510185">Berzelius</a></span></span>, noch vor <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118524089">Davy</a></span></span> benutzte die <span title="Original: Wirk-&#xA;samkeit" class="dta-reg">Wirksamkeit</span> dieser Säule, welche sich so unglaublich steigern läßt, zur<br/>
+Zerlegung verschiedener Stoffe, welche man bisher für einfach<br/>
+gehalten hatte. Auf demselben Wege entdeckte <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118524089">Humphry Davy</a></span></span><br/>
+1807 das metallische <span title="Original: Radical" class="dta-reg">Radikal</span> des <span class="aq ">Kali</span>, dem bald das der übrigen<br/>
+Alkalien <span title="u" class="dta-abbr">und</span> der meisten Erden folgte, in denen man <span title="Original: säm̃tlich" class="dta-reg">sämtlich</span><br/>
+Metalle erkannte, die sich in einem <span title="Original: oxydirten" class="dta-reg">oxydierten</span> Zustande <span title="Original: befin-&#xA;den" class="dta-reg">befinden</span>, aus dem sie sich regulinisch herstellen lassen. So lernten wir<br/>
+ein <span class="aq ">Kalium (Potassium)</span>, ein Metall von ausgezeichneten <span title="Original: Eigenschaf-&#xA;ten" class="dta-reg">Eigenschaften</span> kennen, das leichter als Wasser, bei 55° R. völlig <span title="Original: fliessend" class="dta-reg">fließend</span>, <span title="Original: un-&#xA;ter" class="dta-reg">unter</span> dem Wasser entzündbar ist. Die nähere <span title="Original: Bekañtschaft" class="dta-reg">Bekanntschaft</span> mit <span title="Original: die-&#xA;sen" class="dta-reg">diesen</span> unentdeckten Metalloiden läßt uns für die Folge Aufklärung<br/>
+noch manches unentwickelten Phänomens hoffen; insbesondere <span title="Original: schei-&#xA;nen" class="dta-reg">scheinen</span> diese Stoffe, die höchstwahrscheinlich im <span title="Original: unoxydirten" class="dta-reg">unoxydierten</span> <span title="Original: ungesäu-&#xA;erten" class="dta-reg">ungesäuerten</span> Zustande in großen Massen im <span title="Original: Iñern" class="dta-reg">Innern</span> der Erde sich <span title="Original: be-" class="dta-reg">befinden</span>
+<span class="dta-pb" style="padding-left:15em">|#f0121 : 117|</span><br/>
+<span title="Original: finden" class="dta-reg"/>, mit den vulkanischen Erscheinungen <span title="Original: zusam̃enzuhängen" class="dta-reg">zusammenzuhängen</span>, deren<br/>
+Veranlassung man vielleicht in denselben zu suchen hat.</p><br/>
+<p class="dta-p">Von merkwürdigem Umfang <span title="u" class="dta-abbr">und</span> einflußreicher Wirkung sind <span title="Original: insbe-&#xA;sondere" class="dta-reg">insbesondere</span> die Entdeckungen, welche seit 15 bis 20 Jahren <span class="u ">in der Optik</span><br/>
+gemacht worden. Einige diese Untersuchungen betreffende <span title="Original: Erscheinun-&#xA;gen" class="dta-reg">Erscheinungen</span> waren der Beobachtung früherer Naturforscher gänzlich <span title="Original: entgan-&#xA;gen" class="dta-reg">entgangen</span>, wie <span title="Original: dieß" class="dta-reg">dies</span> insbesondere mit der Polarisation des Lichts der Fall<br/>
+war, welche Erweiterung der Wissenschaft wir dem früh <span title="Original: verstorbe-&#xA;nen" class="dta-reg">verstorbenen</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117541052">Malus</a></span></span> verdanken. Das Hauptsächlichste dieser Entdeckung besteht<br/>
+darin, daß ein unter gewissen Winkeln <span title="Original: reflectirtes" class="dta-reg">reflektiertes</span> Licht der<br/>
+Zurückwerfung von einem zweiten in anderer Richtung sich<br/>
+befindenden Spiegel entgehen kann.</p><br/>
+<p class="dta-p">Schon längst <span title="Original: k" class="dta-reg">kannte</span><span class="dta-supplied">[<span title="Original: a" class="dta-reg"/>]</span><span title="Original: nnte" class="dta-reg"/> man an dem <span title="Original: chrystallisirten" class="dta-reg">kristallisierten</span> Kalkspath, dem <span title="Original: sogenañ-&#xA;ten" class="dta-reg">sogenannten</span> Isländischen Doppelspath, die Eigenschaft, jeden Lichtstrahl, der in <span title="Original: den-&#xA;selben" class="dta-reg">denselben</span> eindringt, in Strahlen zu spalten. Der eine <span title="Original: Theil" class="dta-reg">Teil</span> des <span title="Original: gebroche-&#xA;nen" class="dta-reg">gebrochenen</span> Strahls befolgt das allgemeine Brechungsgesetz und diesen <span title="Original: neñt" class="dta-reg">nennt</span><br/>
+man den gewöhnlich gebrochenen, oder schlechthin, den gebrochenen<br/>
+Strahl; der andere <span title="Original: Theil" class="dta-reg">Teil</span>, der ungewöhnliche Strahl folgt einem <span title="Original: ver-&#xA;wickelteren" class="dta-reg">verwickelteren</span> Gesetz und erscheint aus der Richtung des gewöhnlichen<br/>
+Strahls ein wenig abwärts getrieben. <span title="Original: –" class="dta-reg">-</span> Diese <span title="Original: eigenthümliche" class="dta-reg">eigentümliche</span> Art<br/>
+der Brechung erklärt die Entstehung der doppelten Bilder, welche<br/>
+der Kalkspath in gewissen Richtungen erscheinen läßt.</p><br/>
+<p class="dta-p">Neuere Beobachtungen haben gelehrt, daß die meisten natürlichen<br/>
+und künstlichen <span title="Original: Chrystallisationen" class="dta-reg">Kristallisationen</span> mehr oder weniger die Eigenschaft<br/>
+der doppelten Strahlenbrechung enthalten. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> hat die <span title="Original: Verschieden-&#xA;heit" class="dta-reg">Verschiedenheit</span> des von glühenden festen oder flüssigen Körpern und des von<br/>
+verbrennenden Gasarten ausgehenden Lichtes untersucht <span title="u" class="dta-abbr">und</span> <span title="Original: gefun-&#xA;den" class="dta-reg">gefunden</span>, daß im ersteren Falle das Licht <span title="Original: theilweise" class="dta-reg">teilweise</span> <span title="Original: polarisirt" class="dta-reg">polarisiert</span> wird,<br/>
+während dagegen die Strahlen des <span title="Original: letztern" class="dta-reg">letzteren</span> unter denselben <span title="Original: Um-" class="dta-reg">Umständen</span>
+<span class="dta-pb" style="padding-left:15em">|#f0122 : 118|</span><br/>
+<span title="Original: ständen" class="dta-reg"/> kein Zeichen davon geben. <span title="Original: –" class="dta-reg">-</span> Diese Beobachtung ist wichtig für<br/>
+die <span title="Original: Kenntniß" class="dta-reg">Kenntnis</span> des Zustandes der Weltkörper und eine <span title="Original: Bereiche-&#xA;rung" class="dta-reg">Bereicherung</span> der physischen Astronomie, da sie uns erkennen lehrt, ob das<br/>
+ausströmende Licht von einem gasförmigen oder festen Körper<br/>
+<span title="Original: kom̃t" class="dta-reg">kommt</span>. Das Sonnenlicht erweist sich, wie das einer Lampe von <span title="Original: Was-&#xA;serstoffgas" class="dta-reg">Wasserstoffgas</span> nicht <span title="Original: polarisirt" class="dta-reg">polarisiert</span> <span title="u" class="dta-abbr">und</span> berechtigt uns zu der Annahme, daß<br/>
+es aus einer gasförmigen Umhüllung des festen, <span title="Original: dunkeln" class="dta-reg">dunklen</span> <span title="Original: Sonnen-&#xA;körpers" class="dta-reg">Sonnenkörpers</span> seinen Ursprung nehme.</p><br/>
+<p class="dta-p">So erkennen wir an der Erscheinung der farbigen oder <span title="Original: unfar-&#xA;bigen" class="dta-reg">unfarbigen</span> Polarisation, ob ein leuchtender Körper im <span title="Original: Lichtproceß" class="dta-reg">Lichtprozeß</span> <span class="dta-supplied">[<span title="Original: be-" class="dta-reg">begriffen</span>]</span><span title="Original: &#xA;griffen" class="dta-reg"/> ist, oder ob sein Licht ein <span title="Original: reflectirtes" class="dta-reg">reflektiertes</span> sei, welches die<br/>
+Complementarfarben gibt. Die <span title="Original: colorirte" class="dta-reg">colorierte</span> Polarisation des <span title="Original: Co-&#xA;metenlichts" class="dta-reg">Kometenlichts</span> lehrt uns, daß diese Körper kein <span title="Original: eignes" class="dta-reg">eigenes</span> Licht <span title="Original: aus-&#xA;strahlen" class="dta-reg">ausstrahlen</span>, sondern wie die Planeten ein <span title="Original: reflectirtes" class="dta-reg">reflektiertes</span> Licht <span title="Original: ver-&#xA;breiten" class="dta-reg">verbreiten</span>.</p><br/>
+<p class="dta-p"><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117533777">Rochon</a></span></span> hat bei seinem <span title="Original: Micrometer" class="dta-reg">Mikrometer</span> von der doppelten Brechung<br/>
+der Crystalle eine Anwendung auf die Messung kleiner <span title="Original: Winckel" class="dta-reg">Winkel</span><br/>
+gemacht, die für Astronomie <span title="u" class="dta-abbr">und</span> Physik von großem Nutzen ist.<br/>
+Zur Messung des scheinbaren Durchmessers der <span title="Original: Him̃elskörper" class="dta-reg">Himmelskörper</span> wird<br/>
+das System der beiden Prismen von Bergcrystall oder Doppelspath<br/>
+in ein astronomisches Fernrohr eingesetzt. <span title="Original: –" class="dta-reg">-</span> Dasselbe Instrument<br/>
+findet eine wichtige Anwendung als Distanzmesser bei <span title="Original: militä-&#xA;rischen" class="dta-reg">militärischen</span> Operationen. So auch läßt sich damit auf dem Meere die<br/>
+Entfernung eines Schiffes messen <span title="u" class="dta-abbr">und</span> auf Stundenweite entscheiden,<br/>
+ob es herannaht oder sich entfernt, indem im <span title="Original: letztern" class="dta-reg">letzteren</span> Falle der<br/>
+Winkel, unter dem das Bild zweier Masten erscheint, stets <span title="Original: grö-&#xA;ßer" class="dta-reg">größer</span> <span title="u" class="dta-abbr">und</span> größer erscheint.</p><br/>
+<p class="dta-p">Die letztverflossenen 5 bis 6 Jahre sind für die Wissenschaft <span title="Original: merk-" class="dta-reg">merkwürdig</span>
+<span class="dta-pb" style="padding-left:15em">|#f0123 : 119|</span><br/>
+<span title="Original: würdig" class="dta-reg"/> geworden durch die wichtigsten Entdeckungen über den <span title="Original: Magnetis-&#xA;mus" class="dta-reg">Magnetismus</span>, dessen Identität mit der <span title="Original: Electricität" class="dta-reg">Elektrizität</span> die berühmten Versuche von<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118786784"><span title="Original: Oerstedt" class="dta-reg">Östet</span></a></span></span> wahrscheinlich gemacht haben. Wenn ich zuvor die <span title="Original: physiologi-&#xA;schen" class="dta-reg">physiologischen</span> <span title="u" class="dta-abbr">und</span> chemischen Wirkungen anführte, welche ein stetiger Strom<br/>
+von <span title="Original: Electricität" class="dta-reg">Elektrizität</span> in der <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119292556"><span title="Original: Volta" class="dta-reg">Voltaschen</span></a></span></span><span title="Original: schen" class="dta-reg"/> Säule hervorbringt, indem er<br/>
+durch lebende Körper oder leitende Flüssigkeiten hindurchgeht, welche<br/>
+<span title="Original: treñbare" class="dta-reg">trennbare</span> Grundstoffe enthalten, so hat <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118786784"><span title="Original: Oerstedt" class="dta-reg">Östet</span></a></span></span> an diesem Strom noch<br/>
+ein anderes Vermögen entdeckt. <span title="Original: Weñ" class="dta-reg">Wenn</span> <span class="dta-del" title="Streichung (#s)">man</span><span class="dta-add" title="Hinzufügung (superlinear)">er</span> <span title="Original: nehmlich" class="dta-reg">nämlich</span> Metalle, <span title="Original: wel-&#xA;cher" class="dta-reg">welcher</span> Art sie auch sein mögen, durchläuft, so <span title="Original: ertheilt" class="dta-reg">erteilt</span> er ihnen <span title="Original: momen-&#xA;tan" class="dta-reg">momentan</span> die magnetische Kraft <span title="u" class="dta-abbr">und</span> macht sie fähig, weiches <span title="Original: unmagne-&#xA;tisirtes" class="dta-reg">unmagnetisiertes</span> Eisen anzuziehen. <span title="Original: –" class="dta-reg">-</span> <span title="Original: Weñ" class="dta-reg">Wenn</span> man den <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119292556"><span title="Original: Volta" class="dta-reg">Voltaschen</span></a></span></span><span title="Original: schen" class="dta-reg"/> Kreis durch<br/>
+einen <span title="Original: Metalldrath" class="dta-reg">Metalldraht</span> schließt, so entsteht in diesem <span title="Original: Drath" class="dta-reg">Draht</span>, der nun<br/>
+die <span title="Original: electrische" class="dta-reg">elektrische</span> Berührung zwischen beiden Metallen bewirkt, eine<br/>
+<span title="Original: electrische" class="dta-reg">elektrische</span> <span title="Original: Spañung" class="dta-reg">Spannung</span>. Der <span title="Original: Drath" class="dta-reg">Draht</span> wird dabei magnetisch <span title="u" class="dta-abbr">und</span> <span title="Original: verän-&#xA;dert" class="dta-reg">verändert</span> die Lage einer in seine Nähe gebrachten Magnetnadel.<br/>
+Aber diese Veränderung in der Richtung der Magnetnadel ist<br/>
+oberhalb <span title="u" class="dta-abbr">und</span> unterhalb des <span title="Original: Draths" class="dta-reg">Drahts</span> verschieden. Die magnetische<br/>
+Polarität ist der Art, daß, <span title="Original: weñ" class="dta-reg">wenn</span> sie kräftig genug ist, die <span title="Original: Wir-&#xA;kung" class="dta-reg">Wirkung</span> des Erdmagnetismus auf die Nadel zu überwinden, diese<br/>
+in eine Stellung versetzt wird, daß sie mit dem <span title="Original: Drath" class="dta-reg">Draht</span> rechte<br/>
+Winkel bildet, so daß die nach Nord <span title="u" class="dta-abbr">und</span> <span title="Original: Süd" class="dta-reg">Süden</span> gerichtete Nadel<br/>
+unterhalb des <span title="Original: Draths" class="dta-reg">Drahts</span> nach West, oberhalb desselben nach Ost <span title="Original: ab-&#xA;weicht" class="dta-reg">abweicht</span>. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p"><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118645048">Ampere</a></span></span> hat dieser Beobachtung noch hinzugefügt, daß<span class="dta-del" title="Streichung (#s)">,</span> <span class="dta-del" title="Streichung (#s)">weñ</span> zwei<br/>
+<span title="Original: Dräthe" class="dta-reg">drehte</span> einander anziehen, welche galvanische Paare entladen,<br/>
+in denen die <span title="Original: Electricität" class="dta-reg">Elektrizität</span> nach derselben Richtung strömt, aber<br/>
+einander <span title="Original: abstossen" class="dta-reg">abstoßen</span>, <span title="Original: weñ" class="dta-reg">wenn</span> die <span title="Original: Electricität" class="dta-reg">Elektrizität</span> in <span title="Original: entgegengesetz-&#xA;ter" class="dta-reg">entgegengesetzter</span> Richtung strömt. Der ausladende <span title="Original: Drath" class="dta-reg">Draht</span> wird von einem<br/>
+ihm genäherten Magnet auf der einen Seite angezogen, auf der<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0124 : 120|</span><br/>
+<span title="Original: andern" class="dta-reg">anderen</span> <span title="Original: abgestossen" class="dta-reg">abgestoßen</span>. <span title="Original: N" class="dta-reg">Nähnadeln</span><span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: ä" class="dta-reg"/></span><span title="Original: hnadeln" class="dta-reg"/>, rechtwinklig gegen den <span title="Original: Drath" class="dta-reg">Draht</span> gelegt,<br/>
+werden magnetisch und <span title="Original: dieß" class="dta-reg">dies</span> in <span title="Original: höherm" class="dta-reg">höherem</span> Grade, <span title="Original: weñ" class="dta-reg">wenn</span> der <span title="Original: Drath" class="dta-reg">Draht</span> <span title="Original: spi-&#xA;ralförmig" class="dta-reg">spiralförmig</span> um eine Glasröhre gewunden wird, in welcher eine<br/>
+Nadel sich befindet, wobei die Pole der Nadel eine verschiedene <span title="Original: Rich-&#xA;tung" class="dta-reg">Richtung</span> <span title="Original: bekom̃en" class="dta-reg">bekommen</span>, wenn die Spirale rechts oder links gewunden ist.</p><br/>
+<p class="dta-p">Man möchte annehmen, daß in Folge dieser Beobachtung ein<br/>
+Schiff, das durch Zufall seiner Magnetnadel beraubt worden ist,<br/>
+im Stande wäre, diesen Verlust zu ersetzen. Kupfer um etwas<br/>
+nasse Pappe oder feuchtes Leder würde einen Apparat bilden,<br/>
+um einen leidlichen <span title="Original: Compaß" class="dta-reg">Kompaß</span> dadurch herzustellen.</p><br/>
+<p class="dta-p">In Verfolg dieser interessanten Versuche und Beobachtungen<br/>
+machte <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> endlich die große Entdeckung, <span class="u ">daß alle Körper<br/>
+transitorisch von magnetischen Kräften <span title="Original: sollicitirt" class="dta-reg">sollizitiert</span> werden<br/>
+können.</span> <span title="Original: –" class="dta-reg">-</span> Der ältesten Annahme gemäß glaubte man, daß<br/>
+der Magnetismus dem Eisen <span title="u" class="dta-abbr">und</span> den Eisenerzen allein <span title="Original: ange-&#xA;höre" class="dta-reg">angehöre</span>, später bemerkte man, daß Stahl, <span title="Original: /" class="dta-reg">(</span>eine <span title="Original: Legirung" class="dta-reg">Legierung</span> von<br/>
+Eisen mit einer kleinen Menge von Kohle<span title="Original: /" class="dta-reg">)</span> länger <span title="Original: magne-&#xA;tisch" class="dta-reg">magnetisch</span> bleibe, weshalb man sich desselben ausschließlich zum <span title="Original: Com-&#xA;paß" class="dta-reg">Kompaß</span> bediente. Neuerdings fand man, daß <span title="Original: Kobald" class="dta-reg">Kobalt</span> <span title="u" class="dta-abbr">und</span> <span title="Original: Nikel" class="dta-reg">Nickel</span><br/>
+so wie die Meteorsteine, in denen sich Eisen oft mit jenen<br/>
+Metallen vereinigt findet, ebenfalls geeignet sind, die Körper<br/>
+länger magnetisch zu machen.</p><br/>
+<p class="dta-p">Schon <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118670239">Coulomb</a></span></span> hatte durch Versuche mit seiner Drehwaage <span title="Original: gefun-&#xA;den" class="dta-reg">gefunden</span>, daß alle Körper auf die Magnetnadel wirken; die <span title="Original: Resul-&#xA;tate" class="dta-reg">Resultate</span>, welche er erhielt, waren jedoch keineswegs entscheidend,<br/>
+und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> wird mit Recht die Entdeckung des <span title="Original: transitori-&#xA;schen" class="dta-reg">transitorischen</span> Magnetismus zugeschrieben. <span title="Original: –" class="dta-reg">-</span> Zufällig war ich bei dem<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0125 : 121|</span><br/>
+Versuche gegenwärtig, welcher zu dieser Entdeckung Veranlassung gab. Ich<br/>
+befand mich mit <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> auf einem Hügel bei <span class="aq ">Greenwich</span>, um mit ihm<br/>
+Versuche über die Intensität der magnetischen Kräfte zu machen,<br/>
+die vom Pol zum <span title="Original: Aequator" class="dta-reg">Äquator</span> zunehmend, in der Entfernung von Paris<br/>
+nach London schon bemerkbar wachsen. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> ließ eine <span title="Original: Magnet-&#xA;nadel" class="dta-reg">Magnetnadel</span>, die früher in Paris frei geschwungen, in einem hölzernen<br/>
+Kasten schwingen und zählte. Er bemerkte, daß die Schwingungen<br/>
+stark <span title="Original: retardirten" class="dta-reg">retardierten</span> und bald aufhörten, wodurch der Gedanke<br/>
+erweckt wurde, daß der hölzerne Kasten <span title="Original: atr" class="dta-reg">atractorisch</span><span title="Original: a" class="dta-reg"/><span title="Original: ctorisch" class="dta-reg"/> wirke,<br/>
+was sich <span title="Original: vollkom̃en" class="dta-reg">vollkommen</span> bestätigte. In Verfolg dieser Beobachtung<br/>
+entdeckte er, daß die Nähe eines jeden Körpers einen <span title="Original: hem̃en-&#xA;den" class="dta-reg">hemmenden</span> Einfluß auf die Nadel <span title="Original: äussert" class="dta-reg">äußert</span>, was man so erklären<br/>
+kann, daß dieselbe temporär in jedem Körper einen Pol<br/>
+erweckt, der auf sie <span title="Original: hem̃end" class="dta-reg">hemmend</span> zurückwirkt, <span title="Original: weñ" class="dta-reg">wenn</span> sie in <span title="Original: Bewe-&#xA;gung" class="dta-reg">Bewegung</span> ist.</p><br/>
+<p class="dta-p">Ein von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118795775">Schweigger</a></span></span> <span title="Original: angegebner" class="dta-reg">angegebener</span> sinnreicher Apparat, um<br/>
+die Wirkung eines <span title="Original: electrischen" class="dta-reg">elektrischen</span> Stromes nach <span title="Original: Willkühr" class="dta-reg">Willkür</span> zu<br/>
+verstärken, hat den passenden Namen eines <span title="Original: electro-magne-&#xA;tischen" class="dta-reg">elektromagnetischen</span> <span title="Original: Multiplicators" class="dta-reg">Multiplikators</span> erhalten. <span title="Original: Dieß" class="dta-reg">Dies</span> Instrument gewährt<br/>
+den <span title="Original: Vortheil" class="dta-reg">Vorteil</span>, die Entwicklung der beiden <span title="Original: Electricitäten" class="dta-reg">Elektrizitäten</span> unter<br/>
+einer unendlichen Menge von Umständen sichtbar <span title="u" class="dta-abbr">und</span> meßbar<br/>
+zu machen.</p><br/>
+<p class="dta-p"><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116106875">Becquerel</a></span></span> hat mit <span title="Original: Hülfe" class="dta-reg">Hilfe</span> desselben die <span title="Original: Electricitätsentwicklung" class="dta-reg">Elektrizitätsentwicklung</span><br/>
+<span title="Original: dargethan" class="dta-reg">dargetan</span>, welche bei jeder chemischen <span title="Original: Thätigkeit" class="dta-reg">Tätigkeit</span> <span title="Original: Statt" class="dta-reg">Stadt</span> findet.<br/>
+Seine Versuche beweisen, daß <span title="zB" class="dta-abbr">zum Beispiel</span> bei jeder Auflösung <span title="Original: Electri-&#xA;cität" class="dta-reg">Elektrizität</span> frei werde und er war im Stande, durch die <span title="Original: Magnet-&#xA;nadel" class="dta-reg">Magnetnadel</span> so kleine <span title="Original: Theile" class="dta-reg">Teile</span> Säure zu entdecken, als man durch<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0126 : 122|</span><br/>
+Reagenzien nie würde haben auffinden können. Diese <span title="Original: Wirkun-&#xA;gen" class="dta-reg">Wirkungen</span> sind gleichsam wie ein kleines <span title="Original: magnetisch electrisches" class="dta-reg"><span title="Original: magnetisch-electrisches" class="dta-reg">magnetisch-elektrisches</span></span> <span title="Original: Gewit-&#xA;ter" class="dta-reg">Gewitter</span> zu betrachten, da hier, ebenso wie im Großen, die <span title="Original: verschie-&#xA;denartige" class="dta-reg">verschiedenartige</span> <span title="Original: electrische" class="dta-reg">elektrische</span> <span title="Original: Spañung" class="dta-reg">Spannung</span> sich in ein Gleichgewicht zu setzen<br/>
+sucht.</p><br/>
+<p class="dta-p">Schon vor <span title="Original: mehrern" class="dta-reg">mehreren</span> Jahren war es dem Professor <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/101697406">Morechini</a></span></span> in<br/>
+<span class="aq ">Rom</span> geglückt, durch den violetten Strahl im prismatischen <span title="Original: Farben-&#xA;bilde" class="dta-reg">Farbenbilde</span> Stahlnadeln zu <span title="Original: magnetisiren" class="dta-reg">magnetisieren</span>, welche Entdeckung bald <span title="Original: bestrit-&#xA;ten" class="dta-reg">bestritten</span>, bald bestätigt worden. Neuere ausführliche <span title="Original: Untersuchun-&#xA;gen" class="dta-reg">Untersuchungen</span> haben aber <span title="Original: dieß" class="dta-reg">dies</span> Verhalten <span title="Original: ausser" class="dta-reg">außer</span> Zweifel gesetzt, so wie<br/>
+auch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/101697406"><span title="Original: Morechini" class="dta-reg">Morechini's</span></a></span><span title="Original: ’s" class="dta-reg"/></span> Versuche durch eine sehr interessante <span title="Original: Wieder-&#xA;holung" class="dta-reg">Wiederholung</span> derselben durch <span class="aq ">Mistr. <span title="Personenname"><a href="http://d-nb.info/gnd/117476560">Sommerville</a></span></span> in <span class="aq ">London</span> <span title="Original: vollkom-&#xA;men" class="dta-reg">vollkommen</span> bestätigt worden.</p><br/>
+<p class="dta-p">Wie groß <span title="u" class="dta-abbr">und</span> folgenreich auch die Entdeckungen sein mögen, <span title="Original: wo-&#xA;durch" class="dta-reg">wodurch</span> in <span title="Original: neuern" class="dta-reg">neueren</span> Zeiten alle Zweige der <span title="Original: Naturwissenschaf-&#xA;ten" class="dta-reg">Naturwissenschaften</span> gefördert wurden, so sind doch die <span class="u ">Fortschritte in der <span title="Original: Keñt-&#xA;niß" class="dta-reg">Kenntnis</span> des Himmels</span> von allen die bedeutendsten. Diese <span title="Original: vor-&#xA;züglichere" class="dta-reg">vorzüglichere</span> Ausbildung des astronomischen Wissens ist wohl<br/>
+hauptsächlich dem glücklichen Umstande zuzuschreiben, daß eine<br/>
+Reihe großer für die Wissenschaft bedeutender Männer<br/>
+in ununterbrochener Folge die Zeitepoche ausfüllt, von der<br/>
+Entdeckung Amerikas bis auf <span title="Personenname"><a href="http://d-nb.info/gnd/118535749">Friedrich II</a></span>: <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118565273">Nicolaus <span title="Original: Coperni-&#xA;cus" class="dta-reg">Copernicus</span></a></span></span> <span title="Original: 1473–1543" class="dta-reg">1473-1543</span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118514237">Tycho de Brahe</a></span></span> <span title="Original: 1546–1601" class="dta-reg">1546-1601</span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118561448">Keppler</a></span></span> <span title="Original: 1571–" class="dta-reg">1571-</span><br/>
+1630, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118537229">Galilei</a></span></span> <span title="Original: 1564–1642" class="dta-reg">1564-1642</span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118587544">Isaac Newton</a></span></span> <span title="Original: 1642–1727" class="dta-reg">1642-1727</span>. <span title="Original: –" class="dta-reg">-</span> Diese<br/>
+5 großen <span title="Original: Mäñer" class="dta-reg">Männer</span> haben zum <span title="Original: Vortheil" class="dta-reg">Vorteil</span> der Wissenschaft<br/>
+fast alle ein ziemlich hohes Alter erreicht, und man<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0127 : 123|</span><br/>
+könnte fast sagen, einander abgelöst, da der folgende beim Tode<br/>
+des vorangehenden immer schon geboren war.</p><br/>
+<p class="dta-p"> Wenn <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118565273">Copernicus</a></span></span> als der Schöpfer einer <span title="Original: richtigern" class="dta-reg">richtigeren</span> Ansicht des <span title="Original: Welt-&#xA;systems" class="dta-reg">Weltsystems</span> betrachtet werden muß, so hat sich <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118514237">Tycho de Brahe</a></span></span> um<br/>
+die beobachtende Astronomie bedeutende Verdienste erworben.<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118537229">Galilei</a></span></span> danken wir insbesondere ein treffliches Werk über<br/>
+die Gesetze der Bewegung, die sowohl für Astronomie wie<br/>
+Physik eine gleich wichtige Anwendung finden. Von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118561448">Keppler</a></span></span>, dem<br/>
+bedeutendsten dieser Männer, kann mit Recht gesagt werden,<br/>
+daß er den Grund gelegt habe zu der Höhe, welche die Astronomie<br/>
+als Wissenschaft auszeichnet. Zu <span class="aq ">Wiel</span> im <span title="Original: Würtembergschen" class="dta-reg">Württembergischen</span> <span title="Original: gebo-&#xA;ren" class="dta-reg">geboren</span>, Sohn eines <span title="Original: Gastwirths" class="dta-reg">Gastwirts</span>, hatte er sein ganzes Leben hindurch<br/>
+mit <span title="Original: Armuth" class="dta-reg">Armut</span> <span title="u" class="dta-abbr">und</span> Dürftigkeit zu kämpfen. Obgleich ausübender <span title="Original: Astro-&#xA;nom" class="dta-reg">Astronom</span> zu <span class="aq ">Prag</span>, Professor zu <span class="aq "><span title="Original: Graetz" class="dta-reg">Grätz</span></span> <span title="u" class="dta-abbr">und</span> Astronom des Herzogs von<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118628755">Wallenstein</a></span></span>, wurde ihm doch während der unruhigen Zeit des 30-<br/>
+jährigen Kriegs keine seiner Besoldungen ausgezahlt, und er<br/>
+starb <span title="Schreibfehler: in" class="dta-corr">im</span> Mangel zu <span class="aq ">Regensburg</span>, wohin er gegangen war, um<br/>
+eine geringe Pension zu erbitten. Seine unsterblichen <span title="Original: Verdien-&#xA;ste" class="dta-reg">Verdienste</span> fanden erst bei der dankbaren Nachwelt ihre verdiente<br/>
+Verehrung. Die von ihm entdeckten Gesetze des Planetenlaufs,<br/>
+die sogenannten drei <span class="aq "><span title="Original: Keppler" class="dta-reg">Kaleschen</span></span><span title="Original: schen" class="dta-reg"/> Regeln, gaben <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118587544">Newton</a></span></span> die<br/>
+nähere Veranlassung zu seinen Entdeckungen.</p><br/>
+<p class="dta-p">Es darf nicht übersehen werden, daß unsere Lage auf der Erde<br/>
+eine sehr günstige für die <span title="Original: Kenntniß" class="dta-reg">Kenntnis</span> des Weltgebäudes ist, in<br/>
+sofern wir auf einem nicht leuchtenden Weltkörper wohnen.<br/>
+Befänden wir uns innerhalb der Photosphäre der Sonne, so <span title="Original: wür-&#xA;den" class="dta-reg">würden</span> wir von der Existenz der übrigen Sterne nichts wissen.
+<span class="dta-pb" style="padding-left:15em">|#f0128 : 124|</span><br/>
+Demungeachtet ist nicht zu verkennen, daß auch den Planeten<br/>
+mehr oder weniger ein gewisses <span class="u ">Selbstleuchten</span> zugeschrieben<br/>
+werden kann, insofern sie einen <span title="Original: Theil" class="dta-reg">Teil</span> des Lichts nicht von der <span title="Original: Soñe" class="dta-reg">Sonne</span><br/>
+erhalten, sondern <span title="Original: dieß" class="dta-reg">dies</span> von einem <span title="Original: Phosphoresciren" class="dta-reg">Phosphoreszieren</span> herzurühren<br/>
+scheint, das vielleicht in der Urwelt größer gewesen sein mag.<br/>
+Zu einer Zeit, als der Druck der Stoffe auf einander anderer<br/>
+Art, vielleicht größer war, als der innere Zustand des <span title="Original: Erd-&#xA;kerns" class="dta-reg">Erdkerns</span>, unabhängig von der Stellung gegen die Sonne, mehr<br/>
+Wärme ausstrahlte, können auch Lichterscheinungen durch <span title="Original: tel-&#xA;lurische" class="dta-reg">tellurische</span> Verhältnisse entwickelt worden sein, welche sich <span title="Original: vermin-&#xA;dert" class="dta-reg">vermindert</span> haben. Noch jetzt aber erkennen wir, wahrscheinlich als ein<br/>
+Substrat der <span class="dta-del" title="Streichung (#erased)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: magnet" class="dta-reg">magnetischen</span></span><span title="Original: ischen" class="dta-reg"/> <span title="Original: Spañung" class="dta-reg">Spannung</span>, ein Leuchten der Erde, das<br/>
+an den Polen ausgestrahlt und mit dem Namen des <span title="Original: Nord-&#xA;lichts" class="dta-reg">Nordlichts</span> bezeichnet wird, so <span class="dta-supplied">[<span title="Original: w" class="dta-reg">wie</span>]</span><span title="Original: ie" class="dta-reg"/> es nicht zu bezweifeln steht,<br/>
+daß auf der <span title="Original: dunkeln" class="dta-reg">dunklen</span> Seite der Venus ebenfalls ein <span title="Original: Licht-&#xA;proceß" class="dta-reg">Lichtprozeß</span> <span title="Original: Statt" class="dta-reg">Stadt</span> findet.</p><br/>
+<p class="dta-p">Schon lange hat man den Einfluß beobachtet, welchen das <span class="u "><span title="Original: Nord-&#xA;licht" class="dta-reg">Nordlicht</span></span> auf die Magnetnadel ausübt, und neuere <span title="Original: Untersu-&#xA;chungen" class="dta-reg">Untersuchungen</span> bestätigen immer mehr den <span title="Original: Zusam̃enhang" class="dta-reg">Zusammenhang</span> dieses<br/>
+Phänomens mit der magnetischen Polarität der Erde. Das<br/>
+Resultat der genauen Beobachtungen, welche während der<br/>
+Nordpolexpedition des <span class="aq "><span title="Original: Capt" class="dta-reg">kappt</span>. <span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parry</a></span></span> über diese Naturerscheinung<br/>
+angestellt wurden, ist, daß sich das Nordlicht nicht so hoch über<br/>
+die Oberfläche der Erde hinaufzieht, als man <span title="Original: vermuthet" class="dta-reg">vermutet</span> hat,<br/>
+und nach den Messungen in <span class="aq ">Cumberlandhaven</span> nur etwa<br/>
+eine Meile hoch erscheint; auch hat man es oft unter Wolken<br/>
+beobachtet, die sehr niedrig lagen. Man hat viel darüber<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0129 : 125|</span><br/>
+gestritten, ob das Nordlicht von einem <span title="Original: eignen" class="dta-reg">eigenen</span> Geräusche begleitet<br/>
+werde. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Parry</a></span></span> will es auf seiner ersten Reise am <span title="Original: ChurchillFlusse" class="dta-reg"><span class="aq "><span title="Original: Churchill" class="dta-reg">Churchill-Flusse</span></span><span title="Original: -Flusse" class="dta-reg"/></span><br/>
+gehört haben, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118788736">Richardson</a></span></span> dagegen, welcher den <span class="aq "><span title="Original: Capt" class="dta-reg">kappt</span>. <span title="Personenname"><a href="http://d-nb.info/gnd/118692844">Franklin</a></span></span> auf<br/>
+der Landreise in den nördlichsten <span title="Original: Theilen" class="dta-reg">Teilen</span> von Amerika <span title="Original: beglei-&#xA;tete" class="dta-reg">begleitete</span> und ordentliche Tagebücher über <span title="Original: dieß" class="dta-reg">dies</span> Phänomen geführt hat,<br/>
+will während 200 Nächten, wo er Nordlichte beobachtete, nicht<br/>
+ein einziges Mal irgend ein Geräusch gehört haben. <span title="Original: Vielfälti-&#xA;ge" class="dta-reg">Vielfältige</span> Beobachtungen beweisen, daß die Magnetnadel plötzlichen <span title="Original: Ver-&#xA;änderungen" class="dta-reg">Veränderungen</span> ausgesetzt ist, welche beim Erscheinen des Nordlichts<br/>
+eintreten. <span title="Original: –" class="dta-reg">-</span> <span title="Original: Weñ" class="dta-reg">Wenn</span> diese leuchtenden Strahlen in Menge <span title="Original: erschei-&#xA;nen" class="dta-reg">erscheinen</span>, so ordnet sich die Substanz des Meteors fast <span title="Original: im̃er" class="dta-reg">immer</span> in <span title="Original: meh-&#xA;rere" class="dta-reg">mehrere</span> <span title="Original: concentrische" class="dta-reg">konzentrische</span> Kreisbogen, welche sich nach dem magnetischen<br/>
+Pole hinneigen, also von ihm angezogen werden. Bei sehr <span title="Original: star-&#xA;ken" class="dta-reg">starken</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119292556"><span title="Original: Volta" class="dta-reg">Voltaschen</span></a></span></span><span title="Original: schen" class="dta-reg"/> Säulen erscheint bei dem <span title="Original: Ueberströmen" class="dta-reg">Überströmen</span> der <span title="Original: electri-&#xA;schen" class="dta-reg">elektrischen</span> Materie durch 2 Kohlen eine Flamme von 2-4 Zoll Länge,<br/>
+welche das Nordlicht vorstellt. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> hat durch einen Magnet, <span title="Original: wel-&#xA;cher" class="dta-reg">welcher</span> den magnetischen Pol der Erde <span title="Original: repräsentirt" class="dta-reg">repräsentiert</span>, die Flamme<br/>
+abgelenkt <span title="u" class="dta-abbr">und</span> zwar so, daß der Nordpol des <span title="Original: Magn" class="dta-reg">Magnets</span><span class="dta-del" title="Streichung (#ow)">t</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: e" class="dta-reg"/></span><span title="Original: ts" class="dta-reg"/> sie anzog,<br/>
+der Südpol sie abstieß.</p><br/>
+<p class="dta-p"><span title="Original: Weñ" class="dta-reg">Wenn</span> wir es jetzt dahin gestellt sein lassen, in wiefern die Erde<br/>
+ein <span title="Original: eigenthümliches" class="dta-reg">eigentümliches</span> Licht verbreitet, so haben wir auf jeden Fall<br/>
+uns Glück zu wünschen, daß wir einen Körper bewohnen, der<br/>
+wenigstens nicht in hohem Grade selbst leuchtend ist.</p><br/>
+<p class="dta-p"><span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11858975X">Olbers</a></span></span> hat zuerst die Frage aufgeworfen, weshalb es Nachts nicht<br/>
+so hell sei, wie am Tage? bei der großen <span title="Original: Masse" class="dta-reg">Maße</span> von Sternen,<br/>
+bei den Millionen leuchtender Körper, welche dichter oder <span title="Original: dün" class="dta-reg">dünner</span><span class="dta-del" title="Streichung (#s)">m</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: n" class="dta-reg"/></span><span title="Original: er" class="dta-reg"/><br/>
+gewebt einen wahren Sternenteppich über das Himmelsgewölbe <span title="Original: de" class="dta-reg">decken</span><span class="dta-supplied">[<span title="Original: ck" class="dta-reg"/>]</span><span title="Original: en" class="dta-reg"/>?<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0130 : 126|</span><br/>
+Diese Untersuchung hat auf die Annahme einer <span class="u ">lichtextinguirenden<br/>
+Materie,</span> eines <span title="Original: hem̃enden" class="dta-reg">hemmenden</span> <span title="Original: Princips" class="dta-reg">Prinzips</span> in den <span title="Original: Him̃elsräumen" class="dta-reg">Himmelsräumen</span> <span title="Original: ge-&#xA;führt" class="dta-reg">geführt</span>, wodurch die Lichtverbreitung mit wachsender Entfernung<br/>
+beschränkt wird. Auf diese Weise ließ sich auch die wunderbare<br/>
+Erscheinung der dunkelschwarzen Stellen, Kohlensäcke, erklären,<br/>
+die in der südlichen Hemisphäre sichtbar werden. Wenn<br/>
+man sich das <span title="Original: Him̃elsgewölbe" class="dta-reg">Himmelsgewölbe</span> aus vielen Sternenschichten <span title="Original: über-&#xA;einander" class="dta-reg">übereinander</span> bestehend vorstellt, so sind diese schwarzen Stellen ein<br/>
+Durchbruch derselben, gleichsam längere Röhren, die in die<br/>
+Schichten hineingehen und uns in die <span title="Original: äussersten" class="dta-reg">äußersten</span> Grenzen des<br/>
+Weltraums einen Blick werfen lassen, von deren Entfernung<br/>
+wir gar keinen Begriff haben können, da nicht einmal das<br/>
+Licht davon bis zu uns gelangen könnte. Diese <span title="Original: Bewandniß" class="dta-reg">Bewandtnis</span><br/>
+mag es mit dem großen Flecken im südlichen Kreuz haben,<br/>
+den wir uns <span title="Original: gewissermassen" class="dta-reg">gewissermaßen</span> als ein Loch im Firmament<br/>
+denken können; anstatt daß <span title="Original: d" class="dta-reg">die</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 2 Zeichen fehlen]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: ie" class="dta-reg"/></span> weniger <span title="Original: dunkel" class="dta-reg">dunkele</span><span class="dta-del" title="Streichung (#ow)">n</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: e" class="dta-reg"/></span>, <span title="Original: 4–5" class="dta-reg">4-5</span><br/>
+Mondbreiten große<span class="dta-del" title="Streichung (#s)">n</span> Stelle im Scorpion wohl auch eine<br/>
+<span title="Original: Oeffnung" class="dta-reg">Öffnung</span> sein kann, aber nicht so tief hineingehend.</p><br/>
+<p class="dta-p">Wenn dieser lichtverlöschende <span title="Original: Aether" class="dta-reg">Äther</span> die <span title="Original: Him̃elsräume" class="dta-reg">Himmelsräume</span> nicht<br/>
+erfüllte, so würden die Millionen Sonnen am Firmament<br/>
+eine Helle verbreiten, die uns, in einem Lichtmeere <span title="Original: schwe-&#xA;bend" class="dta-reg">schwebend</span>, hindern müßte, die Sterne zu sehen. Dieser Mangel<br/>
+würde aber auf die Ausbildung des menschlichen Geschlechts<br/>
+den wesentlichsten Einfluß haben. Der Ideenkreis würde sich<br/>
+in einem eingeschränkteren Raume bewegen, während er<br/>
+jetzt die entferntesten Weiten umfaßt <span title="Original: –" class="dta-reg">-</span> auch auf die<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0131 : 127|</span><br/>
+Entwicklung religiöser Gefühle müßte dieser Zustand einwirkend <span title="Original: ge-&#xA;wesen" class="dta-reg">gewesen</span> sein, da unstreitig nichts mehr geeignet ist, eine religiöse<br/>
+Betrachtung hervorzurufen, als die Betrachtung des Gesetzmässigen<br/>
+in der Bewegung der <span title="Original: Him̃elskörper" class="dta-reg">Himmelskörper</span>. <span title="Original: –" class="dta-reg">-</span> Alle tellurischen Messungen<br/>
+würden sich nur höchst <span title="Original: unvollkom̃en" class="dta-reg">unvollkommen</span> <span title="u" class="dta-abbr">und</span> unbequem ausführen lassen,<br/>
+da ein großer <span title="Original: Theil" class="dta-reg">Teil</span> sich auf die Vergleichung entsprechender <span title="Original: Mes-&#xA;sungen" class="dta-reg">Messungen</span> am <span title="Original: Him̃el" class="dta-reg">Himmel</span> gründet. Es würden uns noch die Pendelversuche<br/>
+übrigbleiben, um die Gestalt der Erde zu <span title="Original: bestim̃en" class="dta-reg">bestimmen</span>, aber wie <span title="Original: un-&#xA;gewiß" class="dta-reg">ungewiß</span>, ob man ohne vorhergegangene allgemeine <span title="Original: Keñtniß" class="dta-reg">Kenntnis</span> auf<br/>
+diese Versuche gefallen wäre. <span title="Original: –" class="dta-reg">-</span> Die <span title="Original: Schiffa" class="dta-reg">Schiffahrt</span><span class="dta-add" title="Hinzufügung (intralinear)"><span title="Original: h" class="dta-reg"/></span><span title="Original: rt" class="dta-reg"/><span class="dta-del" title="Streichung (#s)">h</span> <span title="Schreibfehler: " class="dta-corr">würde</span> ihrer sichersten Stütze<br/>
+der Sternbeobachtung beraubt und die höhere Mathematik, insofern<br/>
+sie auf die Berechnung der Bahnen jener entfernten <span title="Original: Weltkör-&#xA;per" class="dta-reg">Weltkörper</span> <span class="dta-del" title="Streichung (#ow)">bez</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: ang" class="dta-reg">angewendet</span></span><span title="Original: ewendet" class="dta-reg"/> wird, würde ganz fehlen. <span title="Original: –" class="dta-reg">-</span> Wir sehen, daß die<br/>
+<span title="Original: Keñtniß" class="dta-reg">Kenntnis</span> der Gestirne nicht allein vom größten Einfluß auf die<br/>
+Gefühle, sondern auch auf die <span title="Original: Cultur" class="dta-reg">Kultur</span> des Menschengeschlechts<br/>
+ist. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">Eine Annäherung an den Zustand, in dem die Existenz der Gestirne<br/>
+uns verborgen bliebe, finden wir <span title="Original: temporair" class="dta-reg">temporär</span> auf der Erde, <span title="u" class="dta-abbr">und</span> zwar<br/>
+nicht etwa unter den Polen, sondern in dem schönen <span title="Original: Tropencli-&#xA;ma" class="dta-reg">Tropenklima</span> von Peru, wo ein nebelartiger Dunst, <span class="aq ">la <span title="Original: garña" class="dta-reg">garnna</span></span>, den <span title="Original: Him̃el" class="dta-reg">Himmel</span><br/>
+Monate lang so verhüllt, daß man die Sonne nur als eine<br/>
+<span title="Original: rothe" class="dta-reg">rote</span> Scheibe aufgehen sieht, <span title="Original: /" class="dta-reg">(</span>wie in dem denkwürdigen Jahre<br/>
+1783, als ein dichter Heerrauch uns so lange den Anblick des<br/>
+Himmels entzog,<span title="Original: /" class="dta-reg">)</span> und die Stelle des Mondes oft gar nicht <span title="Original: un-&#xA;terschieden" class="dta-reg">unterschieden</span> werden kann. <span title="Original: –" class="dta-reg">-</span> Eben deshalb, weil die Peruaner<br/>
+oft die Sonne, wie durch ein Blendglas, erblicken, waren sie<br/>
+auch schon im <span title="Original: 16" class="dta-reg">16ten</span><span title="t" class="dta-abbr"><span class="sup uu "><span title="Original: ten" class="dta-reg"/></span></span> <span title="saec." class="dta-abbr"><span class="aq ">saeculum</span></span> bei der Entdeckung Amerikas mit den<br/>
+Sonnenflecken bekannt, deren <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/12116117X">Acosta</a></span></span> in seiner Reise erwähnt.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0132 : 128|</span><br/>
+<p class="dta-p">Bei aller Sorgfalt in der Beobachtung der Lichterscheinungen können wir<br/>
+doch den Täuschungen nicht entgehen. So erscheinen <span title="Original: unserm" class="dta-reg">unserem</span> Auge Sonne<br/>
+<span title="u" class="dta-abbr">und</span> Mond nur als Scheiben, alle <span title="Original: andern" class="dta-reg">anderen</span> <span title="Original: Him̃elskörper" class="dta-reg">Himmelskörper</span> als strahlende<br/>
+<span class="dta-del" title="Streichung (#ow)">Körp</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: Pun" class="dta-reg">Punkte</span></span><span title="Original: cte" class="dta-reg"/>, selbst die Planeten werden erst vor dem Fernrohr zu<br/>
+kleinen Flächen, dagegen verlieren die Fixsterne ihre Strahlen<br/>
+und schrumpfen zu kleinen leuchtenden <span title="Original: Puncten" class="dta-reg">Punkten</span> zusammen. Mit<br/>
+<span title="Original: blossen" class="dta-reg">bloßen</span> Augen findet man bei Fixsternen <span title="u" class="dta-abbr">und</span> Planeten <span class="u ">die <span title="Original: Poly-&#xA;gonalfigur" class="dta-reg">Polygonalfigur</span></span> und selbst Venus mit einem Durchmesser von 1 <span title="Original: Mi-&#xA;nute" class="dta-reg">Minute</span> zeigt sie noch sehr deutlich. Von ihr bis zum Monde, der <span title="Original: ½°" class="dta-reg">1/2°</span><br/>
+Durchmesser hat, haben wir leider keinen <span title="Original: Uebergang" class="dta-reg">Übergang</span>. Die <span title="Original: interes-&#xA;sante" class="dta-reg">interessante</span> Frage muß also unentschieden bleiben, wie groß der<br/>
+scheinbare Durchmesser eines Sterns sein müsse, um, als Kreis<br/>
+sich uns darstellend, ihn mit <span title="Original: blossen" class="dta-reg">bloßen</span> Augen zu sehen.</p><br/>
+<p class="dta-p">Die nach dem Individuum verschiedene Entfernung des deutlichen<br/>
+<span title="Original: Sehens" class="dta-reg">Sehen_es</span> beruht auf der Beschaffenheit unseres Auges, indem der<br/>
+von einem Bilde ausgehende Strahlenkegel vor oder hinter die<br/>
+Netzhaut fällt, also zu früh oder zu spät von derselben <span title="Original: durch-&#xA;schnitten" class="dta-reg">durchschnitten</span> wird, erscheint in beiden Fällen das Bild undeutlich.<br/>
+Hieraus erklärt sich die scheinbare Dilatation der Sterne,<br/>
+welche von der Irradiation herrührt. Dieser Zerstreuungskreis<br/>
+bewirkt, daß beim Anblick des Mondes im ersten Viertel, die<br/>
+dunkle aschfarbene Scheibe kleiner zu sein scheint, als der<br/>
+leuchtende <span title="Original: Theil" class="dta-reg">Teil</span>.</p><br/>
+<p class="dta-p">Die Polygonalfiguren der Sterne, welche einen <span title="Original: andern" class="dta-reg">anderen</span> Grund<br/>
+der Täuschung abgeben, scheinen ebenfalls auf der <span title="Original: Construction" class="dta-reg">Konstruktion</span><br/>
+des Auges zu beruhen <span title="u" class="dta-abbr">und</span> abhängig von der Art zu sein, wie<br/>
+dasselbe aufgeschlitzt ist. <span title="Original: –" class="dta-reg">-</span> So ist die Zahl <span title="u" class="dta-abbr">und</span> Neigung der <span title="Original: Strah-&#xA;len" class="dta-reg">Strahlen</span> verschieden, welche von <span title="Original: verschiednen" class="dta-reg">verschiedenen</span> Menschen an den Sternen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0133 : 129|</span><br/>
+bemerkt werden. Einige zählen bei Sternen erster Größe <span title="Original: 5–7" class="dta-reg">5-7</span>,<br/>
+andere 8 Strahlen. Daß die Beschaffenheit des Auges darauf <span title="Original: ein-&#xA;wirkt" class="dta-reg">einwirkt</span>, läßt sich beweisen, indem man nur das Auge zu drehen,<br/>
+<span title="dh" class="dta-abbr">d.h.</span> den Kopf rechts oder links zu neigen braucht, um die Strahlen<br/>
+<span title="Original: willkührlich" class="dta-reg">willkürlich</span> zu <span title="Original: supprimiren" class="dta-reg">supprimieren</span> oder auseinander fahren zu <span title="Original: las-&#xA;sen" class="dta-reg">lassen</span>: wenn man den Kopf in <span title="Original: verticaler" class="dta-reg">vertikaler</span> Richtung senkt, so<br/>
+verschwinden die <span title="Original: obern" class="dta-reg">oberen</span> Strahlen <span title="u" class="dta-abbr">und</span> umgekehrt, wenn man<br/>
+ihn hebt, so verschwinden die <span title="Original: untern" class="dta-reg">unteren</span>.</p><br/>
+<p class="dta-p">Das Funkeln der Sterne ist nicht, wie man früher glaubte, eine<br/>
+Folge der Dünste in der <span title="Original: Athmosphäre" class="dta-reg">Atmosphäre</span>, sondern es beruht auf<br/>
+<span title="Original: andern" class="dta-reg">anderen</span> optischen Erscheinungen, für die man in dem neusten<br/>
+System der Optik einen befriedigenden Grund gefunden hat. Schon<br/>
+der englische Astronom <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/1022525581">Mitchell</a></span></span> beobachtete, daß die scheinbare<br/>
+Größe des Sterns sich beim Funkeln vermindere und daß <span title="Original: dieß" class="dta-reg">dies</span><br/>
+<span title="Original: intermittirend" class="dta-reg">intermittierend</span> bis zu 5 Mal in einer Sekunde vorkomme.<br/>
+Nach <span title="Original: neuern" class="dta-reg">neueren</span> Entdeckungen glaubt man, daß <span title="Original: dieß" class="dta-reg">dies</span> Phänomen<br/>
+mit der Interferenz des Lichts <span title="Original: zusam̃enhänge" class="dta-reg">zusammenhänge</span>, nach der 2 <span title="Original: Licht-&#xA;strahlen" class="dta-reg">Lichtstrahlen</span>, jenachdem sie in entgegengesetzter Richtung aus <span title="Original: ver-&#xA;schiedener" class="dta-reg">verschiedener</span> Entfernung einander treffen, sich zerstören können<br/>
+und <span title="Original: Finsterniß" class="dta-reg">Finsternis</span> hervorbringen, oder wenn sie in derselben<br/>
+Richtung <span title="Original: zusam̃en" class="dta-reg">zusammen</span> sich <span title="Original: addiren" class="dta-reg">addieren</span>. Schon im <span title="Original: 17" class="dta-reg">17ten</span><span title="t" class="dta-abbr"><span class="sup uu "><span title="Original: ten" class="dta-reg"/></span></span> <span title="saec." class="dta-abbr"><span class="aq ">saeculum</span></span> hatte <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/123408571"><span title="Original: Grimal-&#xA;di" class="dta-reg">Grimaldi</span></a></span></span> in <span class="aq ">Rom</span> merkwürdige Versuche gemacht über die Beugung<br/>
+und <span title="Original: Diffraction" class="dta-reg">Diffraktion</span> des Lichts. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118808184">Thomas Young</a></span></span> in <span class="aq ">London</span> hat aber<br/>
+diese, so wie verschiedene Farbenerscheinungen durch eine <span title="Original: siñ-&#xA;reiche" class="dta-reg">sinnreiche</span> Hypothese, welche er das <span title="Original: Princip" class="dta-reg">Prinzip</span> der Interferenz <span title="Original: neñt" class="dta-reg">nennt</span>,<br/>
+unter einen gemeinsamen Gesichtspunkt zu bringen gesucht.<br/>
+Nur durch die Theorie der <span title="Original: Fibration" class="dta-reg">Vibration</span> lassen sich diese Phänomene<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0134 : 130|</span><br/>
+genügend erklären; für welche die Emanationshypothese nicht ausreicht.<br/>
+Man <span title="Original: nim̃t" class="dta-reg">nimmt</span> an, daß wenn das Licht in Undulationen besteht, und die <span title="Original: Un-&#xA;dulation" class="dta-reg">Undulation</span> des einen Strahls das <span class="aq ">maximum</span> von <span title="Original: El" class="dta-reg">Elevation</span><span class="dta-del" title="Streichung (#ow)">a</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: e" class="dta-reg"/></span><span title="Original: vation" class="dta-reg"/> <span title="Original: bekom̃t" class="dta-reg">bekommt</span> auf <span title="Original: dem-&#xA;selben" class="dta-reg">demselben</span> Punkte, wo der andere das <span class="aq "><span title="Original: minimum" class="dta-reg">Minimum</span></span> <span title="Original: bekom̃t" class="dta-reg">bekommt</span>, die eine Welle<br/>
+die Wirkung der <span title="Original: andern" class="dta-reg">anderen</span> aufhebt und Dunkelheit entsteht. Wird <span title="Original: dañ" class="dta-reg">dann</span><br/>
+der eine Strahl um eine halbe Welle <span title="Original: retardirt" class="dta-reg">retardiert</span>, so fällt ihr <span class="aq "><span title="Original: maxi-&#xA;mum" class="dta-reg">maximum</span></span> von Elevation auf denselben Punkt <span title="u" class="dta-abbr">und</span> sie <span title="Original: addiren" class="dta-reg">addieren</span> ihre <span title="Original: Wir-&#xA;kung" class="dta-reg">Wirkung</span>.</p><br/>
+<p class="dta-p">Die Wellenbewegung, welche zwei in eine Flüssigkeit geworfene<br/>
+Steine erregen, kann als <span title="Original: Gleichniß" class="dta-reg">Gleichnis</span> dienen: An denjenigen Stellen,<br/>
+wo die entstandenen Kreise sich berühren, wird die Bewegung<br/>
+entweder verstärkt oder aufgehoben, jenachdem der Wellenberg<br/>
+oder das <span title="Original: Wellenthal" class="dta-reg">Wellental</span> <span title="Original: /" class="dta-reg">(</span>die <span title="Original: convexe" class="dta-reg">konvexe</span> oder <span title="Original: concave" class="dta-reg">konkave</span> Seite<span title="Original: /" class="dta-reg">)</span> <span title="Original: zusam̃en-&#xA;stossen" class="dta-reg">zusammenstoßen</span>. So wie, <span title="Original: weñ" class="dta-reg">wenn</span> das Meer von Stürmen aufgewühlt wird,<br/>
+die <span title="Original: coincidirenden" class="dta-reg">koinzidierenden</span> Wellen ihre Wirkung auf eine so schreckbare<br/>
+Weise verdoppeln, so hemmen <span title="u" class="dta-abbr">und</span> vernichten sich dieselben, wenn<br/>
+der <span title="Original: convexe" class="dta-reg">konvexe</span> und <span title="Original: concave" class="dta-reg">konkave</span> <span title="Original: Theil" class="dta-reg">Teil</span> auf einander treibt. Es entsteht<br/>
+Ruhe. Was bei der tropfbaren Flüssigkeit Ruhe ist, wird <span title="Original: Fin-&#xA;sterniß" class="dta-reg">Finsternis</span> bei dem Lichte. <span title="Original: –" class="dta-reg">-</span></p><br/>
+<p class="dta-p">Da durch die uns umgebende gemengte <span title="Original: At" class="dta-reg">Atmosphäre</span><span class="dta-del" title="Streichung (#s)">h</span><span title="Original: mosphäre" class="dta-reg"/> die <span title="Original: Lichtwel-&#xA;len" class="dta-reg">Lichtwellen</span> an entfernten Gestirnen unser Auge nicht mit vollkommen<br/>
+gleicher Geschwindigkeit erreichen können, so entsteht durch ungleich<br/>
+<span title="Original: zusam̃entreffende" class="dta-reg">zusammentreffende</span> Undulationen momentane <span title="Original: Finsterniß" class="dta-reg">Finsternis</span> oder <span title="Original: er-&#xA;höhtes" class="dta-reg">erhöhtes</span> Licht; <span title="Original: dieß" class="dta-reg">dies</span> erklärt das Funkeln der Sterne und ebendaher<br/>
+findet diese Erscheinung in <span title="Original: geringerm" class="dta-reg">geringerem</span> <span title="Original: Maasse" class="dta-reg">Maße</span> <span title="Original: Statt" class="dta-reg">Stadt</span> bei <span title="Original: denjeni-&#xA;gen" class="dta-reg">denjenigen</span>, welche uns im <span title="Original: Zenith" class="dta-reg">Zenit</span> stehen, indem nach dieser Richtung sie<br/>
+uns näher stehen und das Aufeinanderstossen nicht <span class="aq ">aliquoter</span><br/>
+<span title="Original: Lichttheile" class="dta-reg">Lichtteile</span> weniger wahrscheinlich ist. Der größeren Reinheit der<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0135 : 131|</span><br/>
+Atmosphäre wegen, in der <span title="Original: seltner" class="dta-reg">seltener</span> eine Zerstreuung des Lichtes <span title="Original: Statt" class="dta-reg">Stadt</span><br/>
+findet, leuchten auch die Sterne unter den Tropen mit einem <span title="Original: rei-&#xA;nern" class="dta-reg">reineren</span> planetarischen Lichte. Nach den Jahreszeiten ist der Anblick des<br/>
+tropischen <span title="Original: Him̃els" class="dta-reg">Himmels</span> ein sehr verschiedener; <span title="Original: weñ" class="dta-reg">wenn</span> die Regenzeit <span title="Original: eintre-&#xA;ten" class="dta-reg">eintreten</span> soll, und die wässerigen Dünste, welche zuvor die Atmosphäre<br/>
+aufgelöst enthielt, anfangen, sich zu vereinigen, <span title="Original: dañ" class="dta-reg">dann</span> funkeln die<br/>
+Sterne mit so lebhaftem Glanz, als bei uns.</p><br/>
+<p class="dta-p">Bei den leuchtenden Scheiben bemerken wir das Funkeln nicht, weil<br/>
+bei diesen ein zerstörter Lichtpunkt sogleich durch einen <span title="Original: andern" class="dta-reg">anderen</span><br/>
+ersetzt wird.</p><br/>
+<p class="dta-p">Man hat nicht ohne Erfolg das <span title="Original: Princip" class="dta-reg">Prinzip</span> der Interferenz zur <span title="Original: Erklä-&#xA;rung" class="dta-reg">Erklärung</span> der <span class="u ">Nebenfarben des Regenbogens,</span> der Höfe an <span title="Original: Soñe" class="dta-reg">Sonne</span> <span title="u" class="dta-abbr">und</span> Mond,<br/>
+so wie der Farben fein gestreifter Flächen angewendet. <span title="Original: Ueber" class="dta-reg">Über</span><br/>
+letztere Erscheinung haben <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119440660">Brewster</a></span></span> in <span class="aq ">Edinburgh</span> <span title="u" class="dta-abbr">und</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116746599"><span title="Original: Frauenhofer" class="dta-reg">Frauenhofe</span></a></span></span><br/>
+in <span class="aq ">München</span> verdienstliche Untersuchungen angestellt; letzterer <span title="Original: ins-&#xA;besondere" class="dta-reg">insbesondere</span> hat diesen Versuchen die größte <span title="Original: Vollkom̃enheit" class="dta-reg">Vollkommenheit</span> <span title="Original: gege-&#xA;ben" class="dta-reg">gegeben</span>. Er fand, daß die schillernden Farben der Perlmutter von<br/>
+<span title="Original: äusserst" class="dta-reg">äußerst</span> feinen Strichen oder Rissen auf der Oberfläche herrühren;<br/>
+durch dergleichen feine, den <span title="Original: blossen" class="dta-reg">bloßen</span> Augen unsichtbare, parallele<br/>
+Risse, in gleichem Abstand von einander, in solcher Menge <span title="Original: ge-&#xA;zogen" class="dta-reg">gezogen</span>, daß mehrere Tausend auf einen Zoll gehen, hat er <span title="Original: me-&#xA;tallischen" class="dta-reg">metallischen</span> Oberflächen eben diese Regenbogenfarben gegeben.<br/>
+In England hat man <span title="Original: dieß" class="dta-reg">dies</span> Farbenspiel fein gestreifter <span title="Original: Oberflä-&#xA;chen" class="dta-reg">Oberflächen</span> zu <span title="Original: Zierrathen" class="dta-reg">Zieraten</span> angewandt.</p><br/>
+<p class="dta-p">Eine der unzweideutigsten Beobachtungen über <span class="u ">die Beugung<br/>
+des Lichts</span> bietet sich den Astronomen dar, <span title="Original: weñ" class="dta-reg">wenn</span> der am <span title="Original: Him-&#xA;mel" class="dta-reg">Himmel</span> fortrückende Mond einen Fixstern bedeckt, <span title="Original: /" class="dta-reg">(</span>welches man<br/>
+eine Occultation, für die <span title="Original: Bestim̃ung" class="dta-reg">Bestimmung</span> der Länge so <span title="Original: äusserst" class="dta-reg">äußerst</span> wichtig,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0136 : 132|</span><br/>
+nennt,<span title="Original: /" class="dta-reg">)</span> oder einen bedeckten verläßt. In beiden Fällen scheint der<br/>
+Stern einige <span title="Original: Secunden" class="dta-reg">Sekunden</span> lang unbeweglich an dem Rande des Mondes<br/>
+zu kleben, weil man ihn durch gebeugtes Licht sehen kann, wenn<br/>
+er selbst ein klein wenig hinter dem Monde steht.</p><br/>
+<p class="dta-p">Auch für den technischen Gebrauch hat man von diesen <span title="Original: neuern" class="dta-reg">neueren</span><br/>
+Entdeckungen eine Anwendung gemacht, durch die Einrichtung eines<br/>
+Ariometers oder Wollmessers. Ein Lichtstrahl, welcher bei einem<br/>
+feinen Faden Wolle vorbeigeht, erleidet eine Beugung <span title="u" class="dta-abbr">und</span> bildet<br/>
+farbige <span title="Original: Fran" class="dta-reg">Fransen</span><span title="Original: z" class="dta-reg"/><span title="Original: en" class="dta-reg"/> oder Ringe, die um so breiter erscheinen, als<br/>
+der Faden <span class="dta-del" title="Streichung (#ow)">be</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: za" class="dta-reg">zarter</span></span><span title="Original: rter" class="dta-reg"/> oder dünner ist. In einem <span title="Original: eignen" class="dta-reg">eigenen</span> kleinen<br/>
+<span title="Original: microscopähnlichen" class="dta-reg">mikroskopähnlichen</span> Apparate wird die Breite dieser Ringe <span title="Original: ge-&#xA;messen" class="dta-reg">gemessen</span>, wonach sich die Feinheit der Wolle ergibt.</p><br/>
+<p class="dta-p">So hat der Scharfsinn der Gelehrten eine schöne Entdeckung für<br/>
+das gemeine Leben anwendbar gemacht und das ähnliche <span title="Original: In-&#xA;strument" class="dta-reg">Instrument</span> dient dazu, die Güte der Wolle zu messen <span title="u" class="dta-abbr">und</span> die<br/>
+Natur der Weltkörper zu <span title="Original: bestim̃en" class="dta-reg">bestimmen</span>.</p></div></body></html>

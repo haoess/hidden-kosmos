@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span title="Original: D. 29. Dcbr." class="dta-reg">16. Vorlesung, 29.12.1827</span></div><br/>
+<p class="dta-p">Wir haben 1., <span class="u ">die entferntern Nebelflecke</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Ueberſicht</span><br/>
+</span><span class="u ">betrachtet</span>, deñ ſind wir 2., <span class="u ">zu der betrach-<br/>
+tung unſerer iſolirten Sterninſeln,</span> wozu<br/>
+unſer Planetenſyſtem gehört übergegan-<br/>
+gen u. 3., <span class="u ">werden wir uns mit der Topo-<br/>
+graphie unſeres Soñenſyſtems ſelbſt beſch<span class="dta-supplied">[äf-]</span></span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Fortgeſetzte Betrach-<br/>
+tung der Sternſchicht, zu<br/>
+der unſer Planetenſyſtem<br/>
+gehört.</span><br/>
+</span><span class="u ">tigen.</span> Wir fahren fort <span class="u ">ad 2.</span> <span class="dta-del" title="Streichung (#ow)"><span class="u "><span class="gap">[unleserliches Material – 1 Wort fehlt]</span></span></span><span class="dta-add" title="Hinzufügung (across)"><span class="u ">Wir</span></span> <span class="u ">bleib<span class="dta-supplied">[en]</span><br/>
+<span title="ſteh￼" class="dta-abbr">ſtehen</span> bei den <span title="Revolution￼" class="dta-abbr">Revolutionen</span> die ſich in die-<br/>
+ſen fernen Räumen ereignen</span>, u. ich hoffe<br/>
+in der <span title="heutig￼" class="dta-abbr">heutigen</span> Stunde mit dem zu <span title="ſchließ￼" class="dta-abbr">ſchließen</span><br/>
+was ſich auf unſe<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">r</span>e Sternſchicht bezieht.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Form derſelben</span><br/>
+</span>Weñ <span class="u ">die Form</span> derſelben beſtim̃t werden<br/>
+ſoll, ſo muß bei den Sternen zweierlei<br/>
+unterſucht werden 1. Jhre Entfernung<br/>
+von der Erde u. 2. die Gründe für di<span class="dta-supplied">[e]</span><br/>
+Geſtalt <span title="derſelb￼" class="dta-abbr">derſelben</span> in der Erſcheinung. Wi<span class="dta-supplied">[ll]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Entfernung<br/>
+von uns</span><br/>
+</span>man añehmen alle Sterne <span title="wär￼" class="dta-abbr">wären</span> gleich<br/>
+groß, ſo folgt bei ihrer <span class="u "><span title="ungleich￼" class="dta-abbr">ungleichen</span> Erſchein<span class="dta-supplied">[ung,]</span></span><br/>
+<span title="dß" class="dta-abbr">daß</span> ſie verſchiedene <span title="Weit￼" class="dta-abbr">Weiten</span> <span title="hab￼" class="dta-abbr">haben</span> müßte<span class="dta-supplied">[n]</span><br/>
+u. umgekehrt, daß weñ ſie alle gleich<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">weit</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0107 : 103.|</span><br/>
+weit entfernt wären, ſie eine ſehr<br/>
+ungleiche Größe haben müßten. Eine mittlere<br/>
+Größe derſelbe kañ aber hier jeden Falls<br/>
+angenom̃en werden u. es iſt Wahrſcheinlich-<br/>
+keit wie 50000 : 1. daß einige uns viel<br/>
+näher ſind u. als Folge der Projection<br/>
+ſich näher einzeln zu <span title="ſteh￼" class="dta-abbr">ſtehen</span> ſcheinen. <span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Her-</a></span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Stern-Eichun-<br/>
+gen.</span><br/>
+</span><span title="Personenname"><a href="http://d-nb.info/gnd/118841920">ſchel</a></span> hat <span class="u ">dieſe Stern-Eichungen</span> vorgenom-<br/>
+men u. die <span title="Tief￼" class="dta-abbr">Tiefen</span> unterſucht. Jn der Milch-<br/>
+ſtraße ſind alle Sterne am <span title="häufigſt￼" class="dta-abbr">häufigſten</span> zuſam-<br/>
+mengedrängt, am Ende derſelben nehmen<br/>
+ſie mehr ab u. die Pole der Milchſtraße<br/>
+ſind faſt leer von Sternen. Wäre die<br/>
+Milchſtraße nicht Projection, ſo wäre<br/>
+es ſonderbar, daß grade im größten<br/>
+Kreiſe für unſer ſo höchſt unbedeutendes<br/>
+Planetenſyſtem die Sterne ſo zuſam̃en-<br/>
+gedrängt ſein ſollten. Es giebt einen<br/>
+iñern Grund dafür, daß die ſternan-<br/>
+häufende Kraft im Jñern ſtärker zu-<br/>
+ſam̃engedrängt erſcheint, als im äußern.<br/>
+Nach <span title="Wahrſcheinlichkeitsmeſſung￼" class="dta-abbr">Wahrſcheinlichkeitsmeſſungen</span> kañ man<br/>
+añehmen daß <span class="u ">die große Axe der Stern-</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Axe unſerer<br/>
+Sternſchicht</span><br/>
+</span>ſchicht 800 <span title="Syriusweit￼" class="dta-abbr">Syriusweiten</span>, die kleinere<br/>
+140–150 ſolcher <span title="Weit￼" class="dta-abbr">Weiten</span> beträgt. Ob<br/>
+unſere Ster<span class="dta-add" title="Hinzufügung (intralinear)">n</span>inſeln von ſternenleeren<br/>
+Räumen ganz umgeben wären iſt ſchwer<br/>
+zu beſtim̃en, doch bemerken wir, daß<br/>
+ſich <span title="denſelb￼" class="dta-abbr">denſelben</span> an den <span title="Pol￼" class="dta-abbr">Polen</span> beſonders Nebel-<br/>
+flecke <span title="derſelb￼" class="dta-abbr">derſelben</span> nähern, u. ſie mit <span title="ander￼" class="dta-abbr">anderen</span><br/>
+<span title="Sternenſchicht￼" class="dta-abbr">Sternenſchichten</span> vielleicht in Verbindung ſtehen.<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Wo ſteht un-<br/>
+ser Planeten<br/>
+Syſtem</span><br/>
+</span>Unſer Syſtem ſteht nach <span title="Wahrſcheinlichkeit￼" class="dta-abbr">Wahrſcheinlichkeiten</span><br/>
+<span class="u ">zwiſchen dem Adler u. Syrius</span>, in dem<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Ver-</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0108 : 104.|</span><br/>
+Verhältniß wie 3 : 5. Keineswegs iſt<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Milchſtraße</span><br/>
+</span>die Jdee neu, <span class="u ">unſere Milchſtraße</span> als eine<br/>
+Anhäufung der Sterne zu betrachten, ſon-<br/>
+dern dies war in den <span title="früheſt￼" class="dta-abbr">früheſten</span> <span title="Zeit￼" class="dta-abbr">Zeiten</span> be-<br/>
+kañt. Die Milchſtr. <span class="aq ">via lactea</span>, von<br/>
+einem <span title="ſpaniſch￼" class="dta-abbr">ſpaniſchen</span> Mönche, Jakobsſtraße genãt,<br/>
+theilt ſich beim Schwan, wo ſie zwei Sterne<br/>
+theilen, bei den Füßen des Centauren.<br/>
+Am ſchmällſten iſt ſie bei dem Kreutze.<br/>
+Eine Zone von Nebelfleck<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (intralinear)">en</span> geht durch<br/>
+die Jungfrau, nach der Bildhauerwerckſtatt.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="b u ">Bewegung<br/>
+die bei deñ<br/>
+Fixſternen beo-<br/>
+bachtet wird</span><br/>
+</span>Wir kom̃en <span class="u ">zur Bewegung der Fixſterne</span><br/>
+u. <span title="verſteh￼" class="dta-abbr">verſtehen</span> hierunter nicht die relative<br/>
+Bewegung der Doppelſterne, die nicht Fo<span class="dta-supplied">[lge]</span><br/>
+der Projection, oder Aberration oder<br/>
+<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 2 Zeichen fehlen]</span></span><span class="dta-add" title="Hinzufügung (across)">Ro</span>tation der Erdaxe iſt, ſondern die<br/>
+der Fixſterne allen eigenthümlich iſt in ſo-<br/>
+fern ſie ihre Stelle unter einander ver-<br/>
+ändern. Unſer Soñenſyſtem ſcheint ſich <span title="geg￼" class="dta-abbr">gegen</span><br/>
+das kein des Herkules zu bewegen u. die<br/>
+Bewegung der Fixſterne koñte ſomit Folge<br/>
+unſerer eignen <span class="aq ">translation</span> ſein. Hierüb<span class="dta-supplied">[er]</span><br/>
+<span title="wurd￼" class="dta-abbr">wurden</span> viele <span title="Unterſuchung￼" class="dta-abbr">Unterſuchungen</span> angeſtellt,<br/>
+u. weñ erſtere Bewegung gleich in An-<br/>
+rechnung gebracht wird; ſo bleiben<br/>
+deñoch kleine eigenthüml. Beweg. für d<span class="dta-supplied">[ie]</span><br/>
+Fixſterne übrig, wie ich dies ſelbſt be-<br/>
+obachtet habe u. dabei <span title="geſeh￼" class="dta-abbr">geſehen</span>, <span title="dß" class="dta-abbr">daß</span> ſeit<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119174596">la Caille</a></span></span>, welches jetzt von <span class="aq "><span title="Personenname"><a href="http://viaf.org/viaf/197242413">Felloid</a></span></span> am<br/>
+Cap beſtätigt iſt, <span class="dta-del" title="Streichung (#s)">daß </span>die Sterne 1<span class="sup u ">ſter</span><br/>
+Größe am ſüdl. Him̃el eine kl. Bewegung<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">absolute<br/>
+Entfernung</span><br/>
+</span>äußere <span class="dta-del" title="Streichung (#ow)">z</span><span class="dta-add" title="Hinzufügung (across)">Z</span>b. <span class="aq ">Aldebaran</span>. <span class="u ">Die abſolu<span class="dta-supplied">[te]</span><br/>
+Entfernung</span> der Sterne iſt uns freilich n<span class="dta-supplied">[icht]</span><br/>
+bekañt, wir <span title="Original: koñ￼koñen" class="dta-reg">köñen</span> ſie aber deñoch z<span class="dta-supplied">[iem-]</span><br/>
+lich genau beſtim̃en. Es geht uns hier, wi<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">e</span><br/>
+es faſt bei <span title="ſämtlich￼" class="dta-abbr">ſämtlichen</span> <span title="ſtatiſtiſch￼" class="dta-abbr">ſtatiſtiſchen</span> Nachrichten<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">de</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0109 : 105.|</span><br/>
+der Fall iſt, daß die <span title="Beſtim̃ung￼" class="dta-abbr">Beſtim̃ungen</span> zwiſchen<br/>
+<span title="Grenz￼" class="dta-abbr">Grenzen</span> die bekañt ſind, eingeſchloſſen<br/>
+werden, wie man ſagt, der Mañ befin-<br/>
+det ſich in einem Alter <span title="zwiſch￼" class="dta-abbr">zwiſchen</span> 30–40 Jahren.<br/>
+Faſt alle Zahlen über den Staatshaushalt<br/>
+ſind in <span title="ſolch￼" class="dta-abbr">ſolchen</span> <span title="Grenz￼" class="dta-abbr">Grenzen</span> eingeſchloſſen, u. dar-<br/>
+um doch richtig. Wir lernen die Entfer-<br/>
+nung der Geſtirne durch deren Paralaxe<br/>
+keñen. Die Weltbeſchr. begnügt ſich frei-<br/>
+lich nur hier als Thatſache anzuführen, daß<br/>
+ſich die Fixſterne in einer nicht zu meſſenden<br/>
+Entfernung befinden, von denen die nächſtens<br/>
+von uns 4 <span title="Billion￼" class="dta-abbr">Billionen</span> Meilen abſtehen. <span class="u ">Paralaxe</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Paralaxe<br/>
+derſelben</span><br/>
+</span>derſelben heißt der optiſche Ort den<br/>
+die Sterne eiñehmen, weñ die Erdbahn<br/>
+<span title="ein￼" class="dta-abbr">einen</span> Durchmeſſer von 40 Mill. <span title="Meil￼" class="dta-abbr">Meilen</span> hat,<br/>
+u. die Erde in 6 <span title="Monat￼" class="dta-abbr">Monaten</span> an <span title="beid￼" class="dta-abbr">beiden</span> <span title="End￼" class="dta-abbr">Enden</span><br/>
+des Durchmeſſers ſich befindet. Ungeach-<br/>
+tet dieſes ſo verſch. Standpunktes der<br/>
+Erde wird eine Veränderung der<br/>
+Geſtirne doch nicht wahrgenom̃en. Mit<br/>
+unſern <span title="vollkom̃en￼" class="dta-abbr">vollkom̃enen</span> <span title="Jnſtrument￼" class="dta-abbr">Jnſtrumenten</span> köñen<br/>
+wir jetzt Winkel <span title="unterſcheid￼" class="dta-abbr">unterſcheiden</span> von 1 Sec <span class="gap">[verlorenes Material]</span><br/>
+ja auf <span class="sup ">3</span>/<span class="sub ">10</span> Sec. Hieraus läßt ſich genau<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Wirkliche<br/>
+Entfernung der<br/>
+Fixſterne</span><br/>
+</span>beſtim̃en daß <span class="u ">der nächſte Fixſterne durch<br/>
+200,000 <span title="Erdweit￼" class="dta-abbr">Erdweiten</span> entfernt iſt.</span> <span title="Weg￼" class="dta-abbr">Wegen</span><br/>
+Beſtim̃ung der Paralaxe der Fixſterne<br/>
+glaubte <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11763137X">Brinklei</a></span></span> in Dublin, bei dem<br/>
+α in der Leier, der <span title="weg￼" class="dta-abbr">wegen</span> ſeiner Lichtſtärke<br/>
+ſich auszeichnet, eine ſ<span class="b ">olche bemer</span>kt zu<br/>
+haben. <span title="H￼." class="dta-abbr">Herr</span> <span title="Personenname"><a href="http://d-nb.info/gnd/116265671">Pont</a></span> in Grenwich hat hierüber<br/>
+die <span title="genaueſt￼" class="dta-abbr">genaueſten</span> <span title="Beobachtung￼" class="dta-abbr">Beobachtungen</span> mit <span title="eingemauert￼" class="dta-abbr">eingemauerten</span><br/>
+<span title="Teleskop￼" class="dta-abbr">Teleskopen</span> angeſtellt u. <span title="gefund￼" class="dta-abbr">gefunden</span>, <span title="dß" class="dta-abbr">daß</span> die<br/>
+<span class="aq ">Paralaxe</span> noch nicht <span class="sup ">2</span>/<span class="sub ">10</span> einer Sec. betrage<br/>
+u. dieſer <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">Stern </span>dieſen wenigſtens 4 Bill. <span title="Meil￼" class="dta-abbr">Meilen</span><br/>
+entfernt ſein mu<span class="dta-del" title="Streichung (#s)"> ſen</span><span class="dta-add" title="Hinzufügung (across)"><span class="b ">ß</span></span>.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Bei</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0110 : 106.|</span><br/>
+<p class="dta-p">Bei Sternen erſter Größe kañ man auch<br/>
+den Durchmeſſer ſo genau <span title="beſtim̃￼" class="dta-abbr">beſtim̃en</span>, <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">als </span>wie ich<br/>
+<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (intralinear)">Zb. </span>sage; der Mañ iſt wenigſtens über 40 Jahre<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Añähernde<br/>
+Beſtim̃ung des Durch-<br/>
+meſſers der Fixſterne.</span><br/>
+</span>alt. Der Mond giebt nämlich in einer<br/>
+Zeit-Secunde, eine halbe Sec. des Bogen<span class="dta-supplied">[s.]</span><br/>
+Hätte der Stern eine Secunde Raum, ſo<br/>
+würde der Mond 2 Sec. Zeit <span title="brauch￼" class="dta-abbr">brauchen</span> ihn<br/>
+zu decken, dieſe Bedeckung iſt aber au-<br/>
+genblicklich, abgerechnet die zuweilen<br/>
+bemerkt Jnflection des Lichtes. Der Stern<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b u ">Größe des<br/>
+Sterns <span class="aq ">Veja</span></span><br/>
+</span><span class="aq ">Veja</span> hat <span title="Personenname"><a href="http://d-nb.info/gnd/118841920">Herſchel</a></span> wie <span class="u ">eine kl. Scheibe ge-<br/>
+ſehen von ⅓ Sec.</span> Durchmeſſer, daher der<br/>
+<span class="dta-del" title="Streichung (#s)">Durchmeſſer</span><span class="dta-add" title="Hinzufügung (superlinear)">Entfernung</span> wenigſtens 4 Bill. ſein muß,<br/>
+u. der Durchmeſſer 34 mal größer, als<br/>
+der der Soñe. Durch die Reſultate der<br/>
+<span title="Unterſuchung￼" class="dta-abbr">Unterſuchungen</span> von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118639749">Huÿgens</a></span></span> u. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118720066">Hallei</a></span></span><br/>
+iſt die Beobachtung der Fixſterne <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">jetzt </span>nicht mehr<br/>
+ein Theil der Beſchauenden ſondern<span class="dta-del" title="Streichung (#s)"> jetzt</span><br/>
+<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (intralinear)"><span class="b ">der</span> </span>meſſenden Aſtronomie geworden.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="b u ">Meinungen<br/>
+der Alten über<br/>
+die Geſtirne</span><br/>
+</span>Schon im <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118595237">Plutarch</a></span></span> kom̃t es vor, daß<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118645714">Ariſtarch von Samos</a></span> behauptet, daß die<br/>
+Soñe ein Fixſtern ſei u. <span title="dß" class="dta-abbr">daß</span> die Erde um<br/>
+die Soñe ſich drehe. <span title="Personenname"><a href="http://d-nb.info/gnd/118801732">Thales</a></span> behauptet <span class="dta-supplied">[eben-]</span><br/>
+falls, die Soñe ſei ein Fixſtern. <span title="Personenname"><a href="http://d-nb.info/gnd/118710621"><span class="aq ">Heracl<span class="dta-supplied">[ides]</span></span><br/>
+von <span class="aq ">Pontus</span></a></span> ſagt, die Sterne beſtänden<br/>
+aus Erde Luft u. Waſſer. Die <span class="aq ">Pytago-<br/>
+raeer</span> <span title="lehrt￼" class="dta-abbr">lehrten</span>, daß die Fixſterne eine Rotati-<br/>
+on haben.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="b u ">Was wir mit<br/>
+Sicherheit von den<br/>
+Sternen ſchon wiſſen</span><br/>
+</span>Wir <span title="woll￼" class="dta-abbr">wollen</span> jetzt <span title="unterſuch￼" class="dta-abbr">unterſuchen</span> was<br/>
+wir <span class="u ">mit Sicherheit von</span> den <span title="Stern￼" class="dta-abbr">Sternen</span> <span title="wiſſ￼" class="dta-abbr">wiſſen</span><br/>
+Wir <span title="wiſſ￼" class="dta-abbr">wiſſen</span> die Exiſtenz <span title="derſelb￼" class="dta-abbr">derſelben</span> u. der<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Exiſtenz</span><br/>
+</span>Lichtnebel ganz unumſtößlich; wir erblick<span class="dta-supplied">[en]</span><br/>
+ſie deutlich durch das Herrſchelſche Fern-<br/>
+rohr, welches die <span title="Trabant￼" class="dta-abbr">Trabanten</span> des Saturn<br/>
+u. Uranus ſichtbar machte. Dañ <span title="keñ￼" class="dta-abbr">keñen</span><br/>
+wir mit Gewißheit die Zahl derſelben.<br/>
+Dañ die Farben, wie ſie ſelbſt bei einige<span class="dta-supplied">[n]</span><br/>
+ſich <span title="verändert￼" class="dta-abbr">veränderten</span>. – Jhre Geſtalt<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">keñt</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0111 : 107.|</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Allgem. Bemerk.<br/>
+Um eines Anhalt u. Ueberſicht zu <span title="geb￼" class="dta-abbr">geben</span>, will<br/>
+ich hier <span title="mittheil￼" class="dta-abbr">mittheilen</span>, wie ich die Zeit <span class="dta-del" title="Streichung (#s)"><span title="eintheil￼" class="dta-abbr">eintheilen</span></span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="verwend￼" class="dta-abbr">verwenden</span></span><br/>
+will, um die Gegenſtände der Vorleſung<br/>
+abzuhandeln</span>:<br/>
+den <span title="Prolegomen￼" class="dta-abbr">Prolegomenen</span> widmete ich 9 Stunden<br/>
+der Allgem. Materie – 1&nbsp;&nbsp;&nbsp;„&nbsp;&nbsp;&nbsp;<br/>
+der Aſtronomie will ich <span title="widm￼" class="dta-abbr">widmen</span> 10&nbsp;&nbsp;&nbsp;„&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;u. zwar: den Nebelfleck u. Fixſtern – 5 St.<br/>
+&nbsp;&nbsp;&nbsp;den <span title="Planet￼" class="dta-abbr">Planeten</span> u. <span title="Comet￼" class="dta-abbr">Cometen</span> – 5 „<br/>
+der Beſchreibung der Erde: 22 Stunden<br/>
+&nbsp;&nbsp;&nbsp;u. zwar: dem feſten Theil der Erde – 5 St.<br/>
+&nbsp;&nbsp;&nbsp;dem Ozean u. Luftkreiſe 5 „<br/>
+&nbsp;&nbsp;&nbsp;der geogr. d. Pfl. u. Thiere 6 „<br/>
+&nbsp;&nbsp;&nbsp;den verſch. <span title="Menſchenraç￼" class="dta-abbr">Menſchenraçen</span> 6 „<br/>
+Obgleich man ſich in <span title="ſolch￼" class="dta-abbr">ſolchen</span> <span title="Ding￼" class="dta-abbr">Dingen</span> nur zu leicht<br/>
+<span title="verrechn￼" class="dta-abbr">verrechnen</span> mag.<br/>
+</span>keñt man nicht, wohl aber die Geſtalt<br/>
+der Gruppen. Ferner <span title="keñ￼" class="dta-abbr">keñen</span> wir das<br/>
+<span class="aq ">Minimum</span> der mittlere Gruppen der Ent-<br/>
+fernung, das <span class="aq ">Minimum</span> ihres Durchmeſſers.<br/>
+<span title="Vollkom̃￼" class="dta-abbr">Vollkom̃en</span> ungewiß iſt noch, was ſich auf<br/>
+ihre Projection bezieht; ungewiß was<br/>
+zu unſerm Syſtem gehört; ungewiß<br/>
+ob die Nebelflecke entfernter als die<br/>
+Sterne 3 u. 4<span class="sup u ">ter</span> Größe ſind; obgleich<br/>
+es wahrſcheinlich iſt, <span title="dß" class="dta-abbr">daß</span> die Sterne 3<span title="t￼" class="dta-abbr"><span class="sup u ">ter</span></span><br/>
+Größe weiter ſein <span title="köñ￼" class="dta-abbr">köñen</span>.</p></div></body></html>

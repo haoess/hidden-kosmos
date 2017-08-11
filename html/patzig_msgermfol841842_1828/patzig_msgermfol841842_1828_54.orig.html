@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span title="Original: D. 16 April." class="dta-reg">54. Vorlesung, 16.04.1828</span></div><br/>
+<p class="dta-p">Wir gehen in dieſer Stunde zur Geographie<br/>
+der Organismus über: Viele Phyſiker haben<br/>
+die Electricität der Materie, die Chemie ſelbſt<br/>
+als Lebensthätigkeit betrachtet u. dieſe<br/>
+Erſcheinung Leben genañt; dieſem bin ich<br/>
+fremd u. rede hier vom <span title="organiſch￼" class="dta-abbr">organiſchen</span> <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Wort fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">im</span> Ge-<br/>
+genſatz des unorganiſchen. Von erſterm<br/>
+koñen wir nur das telluriſche, indem ich<br/>
+der organiſche Dinge, die man auf dem Monde<br/>
+geſehen haben will, nicht erwähne. Sollte es<br/>
+ſelbſt Gewächſe wie auf der Erde von 200<br/>
+Fuß Höhe <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">dort </span>geben, ſo wäre mit unſern Jnſtrumen-<br/>
+ten bei ihrer Düñigkeit doch der Schatten der-<br/>
+ſelben nicht zu beobachten. Hier <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Wort fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">auf</span> der Erde<br/>
+iſt gleichſam eine organiſche Rinde, auf u. in<br/>
+welcher das Leben ausgegoſſen iſt auf die ſtar-<br/>
+re Maſſe. Jm Starren u. flüßigen bemerkt<br/>
+man die größte Unregelmäßigkeit, die Maſſe<br/>
+beſiegt die Form, im Organiſchen Leben iſt dies<br/>
+umgekehrt der Fall; dort iſt Ordnung als<br/>
+Ausnahme, hier Regel. Dies Auffinden der<br/>
+Ordnung iſt das verſöhnende Princip mit<br/>
+den <span title="Erſcheinung￼" class="dta-abbr">Erſcheinungen</span> in denen unſer Leben treibt.<br/>
+Beſonders giebt ein ruhiges Bild der Eindruck<br/>
+der Pflanzenwelt. Die Blumen die den ewi-<br/>
+gen Geſetzen getreu ſich ſeit Jahrtauſenden<br/>
+enthalten, werden jeden Frühling nach Jahr-<br/>
+tauſenden noch eben ſo ſchmücken. Der Phyſi-<br/>
+ker, der im Sturm bewegten Meer die Höhen<br/>
+der Wellen mißt, oder die Klüfte des iñern<br/>
+unterſucht, wird von dem entgegen geſetzten<br/>
+widerſtreitenden ergriffen. Jn die Pflan-<br/>
+zen u. Thierwelt läßt ſich der telluriſche<br/>
+Zuſam̃enhang leichter bringen, u. eine geogra-<br/>
+phiſche Beſchreibung des Aufenthalts derſelben<br/>
+entwerfen. Die Unterſcheidung des orga-<br/>
+niſchen vom unorganiſchen giebt ein<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">ſicheres</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0355 : 338.|</span><br/>
+ſicheres Kriterium wozu der Gegenſtand<br/>
+gehört. Sobald eine organiſche Maſſe aufh<span class="dta-supplied">[ört]</span><br/>
+ein Ganzes zu ſein, behält es nicht mehr die<br/>
+urſprüngl. chemiſche Miſchung, welches im<br/>
+unorgan. nie der Fall iſt. Jn zuſam̃eng<span class="dta-supplied">[e-]</span><br/>
+ſetzten Thieren u. Pflanzen, zu welchen letzt<span class="dta-supplied">[ere]</span><br/>
+Bäume, mit ihren Zweigen u. Knoſpen zu r<span class="dta-supplied">[ech-]</span><br/>
+nen, kañ ich nicht in beliebiger Richtung <span title="Tren-&#xA;nung￼" class="dta-abbr">Tren<span class="dta-supplied">[-]</span><br/>
+nungen</span> vornehmen, ohne das Daſein zu<br/>
+zerſtöhren. Dieſe Bedingung iſt der org<span class="dta-supplied">[an.]</span><br/>
+Character des Jndividuums. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118650130">Ariſtoteles</a></span></span><br/>
+definirt natürliche Körper, die ihren Beſt<span class="dta-supplied">[im-]</span><br/>
+mungsgrund der Exiſtenz in ſich ſelbſt trag<span class="dta-supplied">[en.]</span><br/>
+Chemiſche Ziehkräfte köñen wohl allenth<span class="dta-supplied">[al-]</span><br/>
+ben wirken, aber bedingt; deñ der ele<span class="dta-supplied">[k-]</span><br/>
+trochemiſche Proceß im Zuſtande des org<span class="dta-supplied">[a-]</span><br/>
+niſchen Körpers der ihn zwingt zu beharr<span class="dta-supplied">[en]</span><br/>
+iſt nicht verſchieden von dem des unorga-<br/>
+niſchen; jedoch im erſtern abhängig vo<span class="dta-supplied">[n]</span><br/>
+complicirten Bedingungen, die uns noch<br/>
+nicht bekañt ſind. Jnſofern köñte man<br/>
+wohl todte Kräfte belebt neñen, doch<br/>
+würde dies nur Verwirrung herbei f<span class="dta-supplied">[ühren.]</span><br/>
+Eigentliches Leben muß Reſultat der Ex<span class="gap">[verlorenes Material]</span><br/>
+in ſich ſelbſt haben.</p><br/>
+<p class="dta-p">Jm Organiſchen entſteht die ſucceſſive<br/>
+Entwickelung der Theile entweder aus A<span class="dta-supplied">[b-]</span><br/>
+ſtam̃ung von andern oder Entwickelung.<br/>
+Es findet <span class="dta-del" title="Streichung (#s)">da</span>bei <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">org. Körper </span>eine Periodicität ſtatt<br/>
+wo entweder das Ganze oder einzelne<br/>
+Theile abſterben. Gewiße Elemente ſtoß<span class="dta-supplied">[en]</span><br/>
+dieſelben aus u. von der Maſſe vo<span class="dta-supplied">[n]</span><br/>
+50–52 Stoffen welche die Chemiker añeh<span class="dta-supplied">[men]</span><br/>
+gehen nur wenige ins Org. Leben übe<span class="dta-supplied">[r.]</span><br/>
+Nie iſt <span class="aq ">Nickel</span>, <span class="aq ">Kobald</span> <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span> im <span title="Organiſch￼" class="dta-abbr">Organiſchen</span> <span title="gfunden" class="dta-abbr">gef<span class="dta-supplied">[unden]</span></span><span class="dta-supplied">[.]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Die</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0356 : 339.|</span><br/>
+Die muhtige Lehre der <span title="chemiſch￼" class="dta-abbr">chemiſchen</span> Proportio-<br/>
+nen geben dieſe Verſchiedenheit an. Bei<br/>
+unorg. <span class="dta-del" title="Streichung (#s)">Stoffen </span>Elementen haben die erſten<br/>
+Stoffe eine binäre Verbindung, bei org.<br/>
+eine tri- u. quatrimäre. Zuletzt<br/>
+iſt auch zu bemerken, daß aller Organis-<br/>
+mus der Thiere u. Pflanzen gewiſſen Haupt-<br/>
+reitzen folgt, von denſelben Reitzen ſtimu-<br/>
+lirt werden k<span class="dta-del" title="Streichung (#ow)">ö</span><span class="dta-add" title="Hinzufügung (across)">a</span>ñ<span class="dta-del" title="Streichung (#s)">en</span>. Chlor Zb. reitzt<br/>
+den Sammen der Pflanzen ſo, daß Kreſſe<br/>
+in 5–6 Stunden keimt; eben ſo iſt dies für<br/>
+thieriſche Subſtanzen der Fall. Arſenik<br/>
+u. andere metalliſche Stoffe in Pflanzen<br/>
+geimpft, wirken gleich nachtheilig auf die<br/>
+Gefäße der Pflanzen, wie auf die Fibern<br/>
+der Thiere. Bis jetzt hat man noch keine<br/>
+wichtige Definition über Unterſchied der Pflanzen<br/>
+u. Thiere gegeben. Nach <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="d￼" class="dta-abbr">den</span> <span title="Myth￼" class="dta-abbr">Mythen</span> von </span>Prometheus iſt das<br/>
+Him̃elslicht allein Urſache alles organ. Lebens.<br/>
+Es iſt wahr, daß Licht auf der Erdrinde Leben<br/>
+entwickelt, doch finden wir auch in der Tie-<br/>
+fe unterirdiſche Pflanzen. Es ſind dies nicht<br/>
+keine, die mit dem Holz in Gruben gebracht,<br/>
+ich fand in der Gailenreuther-Höhle in<br/>
+neu geſprengten Gängen epheuartige Gewäch-<br/>
+ſe, die im verwelkten Zuſtande grünliche Blät-<br/>
+ter trugen. Der Samme köñte durch Waſſer-<br/>
+circulation in die Tiefe geführt ſein.<br/>
+Aber auch <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Wort fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">in</span> einer Tiefe des Meeres von 5–600<br/>
+Fuß wo kein Lichtſtrahl hindringt, iſt es mir<br/>
+<span title="gelung￼" class="dta-abbr">gelungen</span>, vollkom̃en grüne Pflanzen herauf<br/>
+zu ziehen. Jn den <span class="aq ">Ramens</span> u. <span class="aq ">Citrus</span><br/>
+Arten findet man mitten in der Frucht<br/>
+ſchon grüne Keime. Dies hängt ſicher mit<br/>
+der Gasart <span title="zuſam̃￼" class="dta-abbr">zuſam̃en</span>, die wie in Gruben<br/>
+wenig Sauerſtoff <span title="enthalt￼" class="dta-abbr">enthalten</span> u. grün färben<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">ferner</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0357 : 340.|</span><br/>
+ferner finden ſich Würmer in den Einge-<br/>
+weiden der Thiere u. auffallend dieſelben<br/>
+in unſere Reharten u. den Gazellen u.<br/>
+Kangeruhs andrer Erdtheile. Licht iſt<br/>
+daher zum erſten Organismus nicht<br/>
+nöthig. Das erſte Aufkeimen vegetab.<br/>
+u. animaliſcher Subſtanzen iſt wenig ver-<br/>
+ſchieden. Erſt in den letzten Jahren iſt der<br/>
+Unterſchied zwiſchen Thier u. Pflanze erſt<br/>
+gefunden worden. Es walteten lange<br/>
+Zweifel ob, was die <span title="Personenname"><a href="http://d-nb.info/gnd/118793357">Pryſtlei</a></span>ſche Mat<span class="dta-supplied">[e-]</span><br/>
+rie eigentlich ſei. Man hat mehrfach<span class="dta-supplied">[e]</span><br/>
+Stoffe in denſelben entdeckt. 1., conver<span class="dta-supplied">[-]</span><br/>
+ven, pflanzenartige Gewächſe; dañ<br/>
+2., <span title="oſcillatori￼" class="dta-abbr">oſcillatorien</span> oder Faſern mit will-<br/>
+kührlicher Bewegung u. 3., Maſſen vo<span class="dta-supplied">[n]</span><br/>
+<span title="Jnfuſionsthierch￼" class="dta-abbr">Jnfuſionsthierchen</span> oder Gymnogenen<br/>
+Es iſt Streit darüber entſtanden, ob<br/>
+hiebei verſch. Entwickelungen ſtatt finden<br/>
+u. die <span title="Jnfuſionsthierch￼" class="dta-abbr">Jnfuſionsthierchen</span> als nach Ruhe<br/>
+ſich ſehnend, entrückt ihrem Zuſtande in<br/>
+pflanzenartige Faſern ſich einhüllten.<br/>
+Man hat Converven ähnl. Stoffe unter-<br/>
+ſucht u. gefunden, daß Pflanzen-Entſte-<br/>
+hung nichts ſei als zuſam̃engeſetzte Thier<span class="dta-supplied">[-]</span><br/>
+ſtoffe u. daß die Oſcillatorien mit<br/>
+Undulationen ſich zuſam̃en fügen u.<br/>
+verbinden. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/142837660">Turpin</a></span></span> glaubt daß noch<br/>
+nicht Gründe genug vorhanden ſind<br/>
+zu dieſem Reſultate zu gelangen.<br/>
+Täuſchung iſt hierin allerdings ſehr <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">mög</span>lich<br/>
+die Haupturſache derſelben liegt wohl<br/>
+darin, daß die erſtern Keime des <span title="organi-&#xA;ſch￼" class="dta-abbr">org<span class="dta-supplied">[ani-]</span><br/>
+ſchen</span> Lebens entweder als abgeſendet oder<br/>
+als Theile eines <span title="zuſam̃engeſetzt￼" class="dta-abbr">zuſam̃engeſetzten</span> Körpers be-<br/>
+trachtet werden. Hiemit hängt eine an<span class="dta-supplied">[dre]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Beobachtung</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0358 : 341.|</span><br/>
+Beobachtung zuſam̃en, daß in einer Waſſer-<br/>
+Pflanze, der <span class="aq ">chara flexilis</span>, Röhren wie Ba-<br/>
+rometerröhren enthalten ſind, in denen eine<br/>
+beſtändige Bewegung iſt ſo lange ſie recht<br/>
+im vollen Wachsthum iſt, <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">in</span>dem kleine Körner<br/>
+beſtändig herauf u. herunter ſteigen.<br/>
+Unterbindet man die Pflanzen, ſo ſchneidet<br/>
+ſich die Lebensſtrömung ab u. oberhalb bilden<br/>
+ſich neue Lebensſtröme. Dies giebt tiefe<br/>
+Blicke in das Jñern des Organiſchen.<br/>
+Schon 1774 wurde dies entdeckt u. jetzt haben<br/>
+ſich mit dieſer Erſcheinung aufs Neue <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117416959">Trevira-<br/>
+nus</a></span></span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117542547">Meier</a></span></span> in <span class="aq ">Bonn</span> u. <span class="aq ">Dr. <span title="Personenname">Meyer</span></span> beſchäf-<br/>
+tigt. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117542547">Meier</a></span></span> bemerkte eine eigne Bewegung<br/>
+dieſer <span title="Kügelch￼" class="dta-abbr">Kügelchen</span>, ſelbſt weñ ſie ſich von<br/>
+der Chara treñen. Dies Umtreiben der<br/>
+Lebensſphären geſchieht auch bei mehreren<br/>
+Thieren durch die Blutkügelchen. Kom̃en dieſe<br/>
+<span class="aq ">Bioſphaeren</span> zur Ruhe, ſo tragen ſie als<br/>
+Faſern zur Maſſe bei. Beobachtet man die<br/>
+Thierſäfte, ſo ſind dieſe <span title="Blutkügelch￼" class="dta-abbr">Blu<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">t</span>kügelchen</span> bei<br/>
+unterſchiedenen Thieren nach Form u. Größe<br/>
+einerlei. Die Anatomen nehmen bekañtlich<br/>
+zwei Stoffe an, nämlich gewoñene Maſſe<br/>
+u. Blutkugelchen. Zu erſterer gehört das<br/>
+Gehirn, Nerven <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span> ſelbſt der Eiter der als<br/>
+gewiñbare Maſſe ſich unter unſern Augen<br/>
+bildet. Nach philoſophiſcher Anſicht bilden<br/>
+ſich hieraus zwei Stoffe, entweder Blätt-<br/>
+chen oder Faſern. Das Zollgewebe beſteht<br/>
+aus beiden. Dieſe Betrachtungen führen<br/>
+uns zu künſtlichen Beneñungen, u. ſchneidend<br/>
+hat man abſondern wollen Pflanzen u.<br/>
+Thiere. Jn untern Stufen wandeln aber beide<br/>
+auf einem Wege, in den obern Stufen<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">ſind</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0359 : 342.|</span><br/>
+ſind ſie verſchieden, wie Säugethier u.<br/>
+Vogel, Palme u. Fiſch. Alle bisherigen<br/>
+<span title="Definition￼" class="dta-abbr">Definitionen</span> zwiſchen Thier u. Pflanzen, köñen<br/>
+durch häufige Ausnahmen widerlegt<br/>
+werden. Die älteſte Definition des Thie-<br/>
+res, enthielt die willkührliche Bewegung<br/>
+deſſelben. Es giebt aber Thiere auch ohne<br/>
+Bewegung, ſo wie Pfl. mit Bewegung<br/>
+wie Zb. das <span class="aq ">Hedycorum gerans</span>, wo die<br/>
+<span class="aq ">ſtipulae</span> willkührlich ſich auch im finſtern<br/>
+bewegen, nachdem die Drehung der Blätte<span class="dta-supplied">[r]</span><br/>
+längſt aufgehört hat. Eine andere Defini-<br/>
+tion iſt die, daß die Genitalien bei den<br/>
+Thieren permanent bleiben, bei den Pflanzen<br/>
+aber abfallen. Dies iſt eine eben ſo unglückl.<br/>
+Definition. Jch kañ bei den <span title="Pflanz￼" class="dta-abbr">Pflanzen</span> die Ge-<br/>
+ſchlechtstheile als getreñt anſehen, u. es giebt<br/>
+Hem̃en mit Staubfäden, auch nicht. So lange<br/>
+das Ganze lebt, lebt auch dies Jndividuum<br/>
+u. nicht länger. Eben ſo iſt es mit der<br/>
+Definiton aus der Chemie hergeleitet,<br/>
+daß die Thiere Stickſtoff <span title="erzeug￼" class="dta-abbr">erzeugen</span> u.<br/>
+Pflanzen nicht. Die Nahrung iſt zwar<br/>
+bei beiden verſchieden, aber die Perſpira-<br/>
+tion ganz gleich u. ähnlich. Hier findet<br/>
+aber ein merkwürdiger Unterſchied bei<br/>
+höhern Thier- u. <span title="Pflanzenordnung￼" class="dta-abbr">Pflanzenordnungen</span> ſtatt<br/>
+u. ein Gegenſatz des Verkehrs mit der<br/>
+Atmoſphäre. <span title="Pflanz￼" class="dta-abbr">Pflanzen</span> zerſetzen u. ver-<br/>
+mindern die Kohlenſäure, die Thiere<br/>
+grade hervorbringen.</p><br/>
+<p class="dta-p">Betrachten wir die Geſam̃tmaſſe des<br/>
+org. Stoffes, ſo ſehen wie eine größere<br/>
+Maſſe <span title="Vegetabili￼" class="dta-abbr">Vegetabilien</span> als thieriſche Körper.<br/>
+Man erſtaunt, weñ man Zb. auf Ceylon<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">auf</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0360 : 343.|</span><br/>
+auf einer Jagd 100 Elephanten getödtet<br/>
+ſieht, oder weñ 50–60 Krokodille von<br/>
+den Andesgewäſſern zuſam̃en getrieben<br/>
+werden; über die Maſſe des org. thieri-<br/>
+ſche Stoffes. Was iſt dies aber Alles, ſelbſt<br/>
+die Maſſe <span title="Molusk￼" class="dta-abbr">Molusken</span> dazu gerechnet im<br/>
+Vergleich zu den Urwäldern Amerikas<br/>
+u. Jndiens, wo 200 Fuß hohe Bäume wach-<br/>
+ſen von 6–10 Fuß Durchmeſſer, daß man<br/>
+einen Menſchen auf der andern Seite des<br/>
+gefällten Baumes nicht erblicken kañ.<br/>
+Man betrachte die Steinkohlenlager, Pal-<br/>
+menhölzer <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span> die noch jetzt 14000′ hoch zu<br/>
+finden, wo nur kleine Kräuter noch wach-<br/>
+ſen. Die Bemerkung kañ man daher <span title="mach￼" class="dta-abbr">machen</span><br/>
+daß die <span title="vegetabiliſch￼" class="dta-abbr">vegetabiliſchen</span> Waſſer größer ſind<br/>
+als die höhern Organiſchen <span title="animaliſch￼" class="dta-abbr">animaliſchen</span>.<br/>
+<span title="Vergleich￼" class="dta-abbr">Vergleichen</span> wir die Continente mit den<br/>
+Meeren, ſo iſt dies umgekehrt. Weñ<br/>
+in den Continenten 50000 Species von<br/>
+Pflanzen gezählt werden, ſo giebt es <span title="unt￼" class="dta-abbr">unter</span><br/>
+den <span title="Waſſerpflanz￼" class="dta-abbr">Waſſerpflanzen</span> kaum 300 Species.</p></div></body></html>

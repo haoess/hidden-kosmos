@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[40. Vorlesung, 22.03.1828]</span></div><br/>
+<div class=""><div class=""><p class="dta-p">wie <span title="z.B." class="dta-abbr">zum Beispiel</span> <span class="aq ">Mont Roſe</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Mont Blanc</span> an den<br/>
+Punkten liegen wo die <span class="aq ">Alpen</span> ſich zu wenden<br/>
+beginen. So iſt auch <span class="aq ">Chimborazzo</span> an einem<br/>
+Punkte gelegen, wo bis an 80 <span title="Mlen" class="dta-abbr">Meilen</span> weit<br/>
+in der <span title="ſüdl." class="dta-abbr">ſüdlichen</span> <span class="aq ">Provinz Quito</span> bis an <span class="aq ">Laxa</span><br/>
+wo ſich die <span class="aq ">China</span>wälder erheben, die <span class="aq "><span title="Original: Andes" class="dta-reg">Andes-</span></span><br/>
+kette die niedrigſten Gipfel erhebt von<br/>
+einer Höhe die der der <span class="aq ">Pyrinaeen</span> gleicht.<br/>
+Die Berge untereinander bilden Thäler.<br/>
+Es ſind 1) Querthäler welche mit der<br/>
+Axe der Gebürgskette <span class="aq ">paralell</span> laufen,<br/>
+oder dieſelbe senkrecht durchſchneiden,<br/>
+oder es ſind 2) Längenthäler die oft<br/>
+von einer beträchtlichen Höhe ſind. Das<br/>
+Längenthal <span class="dta-del" title="Streichung (#s)">von </span>der <span class="aq ">Andes</span>kette iſt an<br/>
+8000 <span class="aq ">Fuss</span> hoch und erfreuet ſich deßhalb<br/>
+eines milden <span class="aq ">Clima</span>, die <span title="Schreibfehler: mehrſten" class="dta-corr">meisten</span><br/>
+Städte von <span class="aq ">Quito</span> breiten ſich auf<br/>
+<span title="dſr" class="dta-abbr">dieſer</span> Ebene aus. Das Längenthal von<br/>
+<span class="aq ">Vallis</span> wo die <span class="aq ">Rhone</span> ihren Urſprung<br/>
+nim̃t hat 1300 <span class="aq ">Fuss absoluter</span> Höhe. –</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0125 : 260|</span><br/>
+<p class="dta-p">Die Verhältniſſe von Berg <span title="ud" class="dta-abbr">und</span> Thal von<br/>
+Tief <span title="ud" class="dta-abbr">und</span> Hochländer würde ſich ganz ändern<br/>
+weñ wir uns die Meere ausgetrocknet<br/>
+dächten. Alle unſere Niederungen <span title="Original: wurden" class="dta-reg">würden</span><br/>
+die Geſtalt <span title="Schreibfehler: hohen" class="dta-corr">hoher</span> <span class="aq ">Plateau</span>'s annehmen,<br/>
+den Gegensatz zwiſchen Vertiefungen<br/>
+und Erhöhungen würde ein <span class="aq "><span title="Schreibfehler: colosſalen" class="dta-corr">colosſaler</span></span><br/>
+ſein, die Unebenheiten, würden denen<br/>
+auf dem Monde gleichen, die <span class="aq ">absolute</span><br/>
+Höhe würde verſchwinden, weil dieſe ſich<br/>
+blos nach dem Stande <span title="ds" class="dta-abbr">des</span> Meeres Spie-<br/>
+gels richtet, die Temperatur, die Thier <span title="ud" class="dta-abbr">und</span><br/>
+Pflanzenwelt würde <span title="Schreibfehler: ein" class="dta-corr">eine</span> ganz andere<br/>
+ſein. –</p><br/>
+<p class="dta-p">Der Ort wo die Ausbrüche der Gebürge<br/>
+geſchehen iſt merkwürdig; auf dem<br/>
+neuen <span class="aq ">Continente</span> ſind alle Höhen von<br/>
+9000 <span title="F." class="dta-abbr">Fuss</span> im <span title="Schreibfehler: Weſtlichen" class="dta-corr">weſtlichen</span> Theile desſelben<br/>
+in der <span class="aq ">Andes</span>kette unweit den Küſten<br/>
+zuſam̃engedrängt. Man kañ dazu die<br/>
+etwas höhern <span class="aq ">Sta Marta</span> kette reihen<br/>
+zwiſchen der nord <span title="ud" class="dta-abbr">und</span> West-Kette der<br/>
+<span class="aq ">Andes</span>. In <span class="aq ">Südamerika</span> findet ſich<br/>
+auf einer Fläche von 3000 □ <span title="Mlen" class="dta-abbr">Meilen</span><br/>
+in dem Gebürge <span title="v" class="dta-abbr">von</span> <span class="aq ">Braſilien</span> kein<br/>
+einz-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0126 : 261|</span><br/>
+einziger Schneeberg, <span title="ud" class="dta-abbr">und</span> wie ganz<br/>
+anders iſt es in den Gebürgen der<br/>
+alten Welt. –</p><br/>
+<p class="dta-p">Es iſt bei den Gebürgen der Rücken<br/>
+von den Gipfeln zu unterſcheiden<span class="dta-marginal dta-marginal-right">Das Verhältniß des<br/>
+Rückens zu dem<br/>
+Gipfel <span title="dr" class="dta-abbr">der</span> Berge.<br/>
+</span><br/>
+der erſte iſt eine ungeheuere <span class="aq "><span title="Schreibfehler: Ovale" class="dta-corr">ovale</span></span><br/>
+Maſſe, über welcher ſich erſt ein<br/>
+Kegel, der <span title="eigentl" class="dta-abbr">eigentliche</span> Gipfel <span title="ds" class="dta-abbr">des</span> Berges<br/>
+erhebt. Bei allen <span class="aq ">Trachyt</span>bergen<br/>
+bilden die Gipfel domartige Kuppeln<br/>
+bei anderen, wie bei den <span class="aq ">Alpen</span> ſind<br/>
+es zackige zugespitzte Felsen. Beyde<br/>
+der Rücken <span title="ud" class="dta-abbr">und</span> der Gipfel ſind oft von<br/>
+einerlei Gesteine, oft aber iſt der<br/>
+Rücken von Granit Gnei<span class="dta-del" title="Streichung (#ow)">t</span><span class="dta-add" title="Hinzufügung (across)">s</span>, während<br/>
+der Gipfel ſelbſt einen <span class="aq ">Vulcan</span> bildet<br/>
+aus <span class="aq ">Porphyr</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Sienit</span>arten zuſam̃en<br/>
+geſetzt. Zwiſchen den Rücken <span title="ud" class="dta-abbr">und</span><br/>
+den Gipfeln der Gebürge findet ein<br/>
+<span class="aq ">constantes</span> Verhältniß ſtatt. Der<br/>
+Rücken iſt gewöhnlich die Hälfte<br/>
+des Gipfels. Bei allen Gebürgsketten<br/>
+finden ſich viele Pässe, dieſe bilden<br/>
+ſich im̃er an den niedrigſten Punkten<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0127 : 262|</span><br/>
+der Gebürgsmauer, nim̃t man die<br/>
+höchſten Gipfel der Kette, ſo hat<br/>
+man ein <span class="aq ">Maximum</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Minimum</span><br/>
+dazwiſchen liegt die mittlere Höhe<br/>
+<span title="ds" class="dta-abbr">des</span> Rückens als Resultat, weñ man<br/>
+die mittlere Höhe <span title="dr" class="dta-abbr">der</span> Pässe zu der der<br/>
+höchſten Gipfel adirt <span title="ud" class="dta-abbr">und</span> durch 2 dividirt.<br/>
+Das Verhältniß des Glückens zum<br/>
+Gipfel iſt 1 : 2 oder 1 : 1,8. Es hat ſich<br/>
+bei den meiſten Gebürgszügen be-<br/>
+währt. Bei den <span class="aq ">Alpen</span> iſt <span title="dr" class="dta-abbr">der</span> Rücken<br/>
+1200 <span class="aq "><span title="Original: toiſen" class="dta-reg">Toiſen</span></span> hoch (1 <span class="aq ">Toiſe</span> = 6 <span class="aq ">Fuss</span>) die höchste<br/>
+Spitze <span title="dr" class="dta-abbr">der</span> <span class="aq ">Alpen <span title="M." class="dta-abbr">Mont</span> blanc</span> iſt 2<span class="dta-del" title="Streichung (#ow)">2</span><span class="dta-add" title="Hinzufügung (across)">4</span>60 <span class="aq "><span title="Original: toiſen" class="dta-reg">Toiſen</span></span>.<br/>
+In der <span class="aq ">Andes</span>kette iſt d<span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)">er</span> Rücken 1815<br/>
+<span class="aq ">Toiſen</span>. Der <span class="aq ">Chimborazzo</span> 3350 <span class="aq ">Toiſen</span> hoch.<br/>
+Bei dem <span class="aq ">Himalaja</span> <span title="Schreibfehler: gebürge" class="dta-corr">Gebürge</span> hat ſich<br/>
+aus den 14 bis jetzt bekañten Pässen<br/>
+die Höhe des Rückens <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">auf </span>2420 <span class="aq "><span title="Original: toiſen" class="dta-reg">Toiſen</span></span> ergeben<br/>
+der <span class="aq ">Dubalagiri</span> iſt 4400 <span class="aq ">Toiſen</span> hoch<span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Bei <span class="aq ">Caucaſus</span> iſt nach den Meſſungen<br/>
+<span title="v" class="dta-abbr">von</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/1055022120">Miszewski</a></span></span> der höchste Berg <span class="aq ">Elbus</span><span class="dta-add" title="Hinzufügung (superlinear)">?</span><br/>
+2640<span class="dta-add" title="Hinzufügung (superlinear)">?</span> <span class="aq "><span title="Toiſ:" class="dta-abbr">Toiſen</span></span> der Rücken beträgt 1326 <span class="aq "><span title="Original: toiſ" class="dta-reg">Toiſen</span></span>.<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Bei</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0128 : 263|</span><br/>
+Bei <span class="aq ">Alegari</span> Gebürge iſt die höchste<br/>
+Spitze 1400 der <span title="Original: Rucken" class="dta-reg">Rücken</span> 550 <span class="aq "><span title="toiſ." class="dta-abbr">Toiſen</span></span> hoch.<br/>
+Fast daſſelbe <span title="Verhältß" class="dta-abbr">Verhältniß</span> ist in dem<br/>
+<span class="aq ">brasiliani</span>ſchen Gebürge. Das Gebürge<br/>
+<span class="aq ">Venezoella</span> ein nordweſtlicher Zweig der<br/>
+<span class="aq ">Andes</span> hat zum höchſten Berge <span class="aq ">Sẽe de<br/>
+Caraccas</span> 1315 <span class="aq "><span title="Toiſ:" class="dta-abbr">Toiſen</span></span> und der Rücken be-<br/>
+trägt 715. Die <span class="aq ">Pyryneen</span> machen eine<br/>
+Ausnahme deñ ihr höchster Gipfel<br/>
+<span class="aq ">pique Netu</span> bei <span class="aq ">Maladetta</span> iſt nur 1790<br/>
+<span class="aq "><span title="Original: toiſen" class="dta-reg">Toiſen</span></span> hoch, alſo viel niedriger als <span class="aq "><span title="Mt" class="dta-abbr">Mont</span><br/>
+blanc</span>, ihre Pässe aber ſind aber bedeutend<br/>
+höher als die der <span class="aq ">Alpen</span>. Indeſſen ſtehen<br/>
+die <span class="aq ">Piryneen</span> mit den <span class="aq ">Alpen</span> in <span title="Verbindug" class="dta-abbr">Verbindung</span><br/>
+und beyde Gruppen köñen, als <span class="u ">eine</span><br/>
+betrachtet werden die zu ihrer Spitze<br/>
+den <span class="aq "><span title="Mt" class="dta-abbr">Mont</span> blanc</span> <span title="ud" class="dta-abbr">und</span> <span class="aq "><span title="Mt" class="dta-abbr">Mont</span> Roſe</span> hat. Bedeutend<br/>
+iſt auch der Unterſchied bei den <span class="aq ">Apeninen</span><span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Aus den 3 Pässen, wovon den 2 zwiſchen<br/>
+<span class="aq ">Spoletto</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Maggiorata</span> <span title="ud" class="dta-abbr">und</span> zwiſchen<br/>
+<span class="aq ">Bologna</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Florenz</span> liegen, erhob ſich<br/>
+die Rückenhöhe auf 400 <span class="aq "><span title="Original: toiſe" class="dta-reg">Toiſen</span></span>. der<br/>
+höchste Gipfel der <span class="aq ">Apeninen</span> aber iſt 1490<br/>
+<span class="aq "><span title="Original: toiſen" class="dta-reg">Toiſen</span></span>.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0129 : 264|</span><br/>
+<span title="Schreibfehler: während" class="dta-corr">Während</span> alſo bei den <span class="aq ">Pyrynaeen</span> die<br/>
+Pässe zu hoch ſind ſo ſind ſie hier zu<br/>
+niedrig. Daſſelbe wie bei den <span class="aq ">Apeninen</span><br/>
+findet bei den <span class="aq ">Scandinavi</span>ſchen Ge-<br/>
+bürgen ſtatt. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100827268">Hieſinger</a></span></span> hat 13 Pässe<br/>
+gemeſſen, daraus ergab ſich die mittlere<br/>
+Rückenhöhe 420 <span class="aq "><span title="toiſ:" class="dta-abbr">Toiſen</span></span> der Gipfel beträgt<br/>
+1200. Aus dieſen Betrachtungen er-<br/>
+giebt ſich <span title="dß" class="dta-abbr">daß</span> der Rücken der <span class="aq ">Alpen</span><br/>
+dem Gipfel der <span class="aq "><span title="Scandinav." class="dta-abbr">scandinaviſchen</span></span> Gebürge gleicht<br/>
+der Gipfel der <span class="aq ">Alpen</span> dem Rücken<br/>
+des <span class="aq ">Himalaia</span>. Weñ man ſich <span class="aq ">St Gothard</span><br/>
+auf <span class="aq ">Chimborazzo</span> gelegt denkt erhält<br/>
+man den Gipfel des <span class="aq ">Himalaja</span>.</p><br/>
+<p class="dta-p"><span title="Vergl:" class="dta-abbr">Vergleiche</span> <span title="v." class="dta-abbr">von</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118554700">Humboldt</a></span></span> „über das Verhältniß<br/>
+der Rücken zu den Gipfeln der Gebürge.”<br/>
+Alle dieſe Geſetzmäßigkeit würde<br/>
+verſchwinden, weñ der Meeresspiegel<br/>
+sinken würde, deñ er bildet die <span class="aq ">Baſis</span><br/>
+der Verhältniſſe; dieſe Geſetze deuten<br/>
+aber auf die Neuheit der Gebürge,<br/>
+welche mit der Erhebung der Waſſer-<br/>
+maſſen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0130 : 265|</span><br/>
+im Zuſam̃enhang ſtehen müſſen.</p><br/>
+<p class="dta-p">Die Axenlegung kañ ſich nach 5 <span class="aq ">Ele</span>-<span class="dta-marginal dta-marginal-right">Die Axen der Gebürge.<br/>
+</span><br/>
+<span class="aq ">menten</span> richten. 1.) man legt die<br/>
+Axe durch die Gebürgskette ſelbſt,<br/>
+was gewöhnlich geſchieht 2) man<br/>
+legt ſie durch die Waſſerſcheide<br/>
+<span class="aq ">Diuortia aquarum,</span> <span title="d.h." class="dta-abbr">das heißt</span> durch die Orte<br/>
+wo die Gewässer nach zwei verſchiedenen<br/>
+Seiten abweichen 3) durch die <span class="aq ">Culmi-<br/>
+nationspunkte</span> oder die höchſten Gipfel<br/>
+der Gebürge 4) durch die Natur der<br/>
+Gesteinarten 5) durch die Streichung<br/>
+der Schichten, welche gewöhnlich, oft<br/>
+aber nicht, dem Ausgehen der Gebürgs-<br/>
+form <span class="aq ">paralell</span> laufen. Alle dieſe<br/>
+Axen brauchen gar nicht mit einan-<br/>
+der <span class="aq ">paralell</span> laufen. Bei den Grenz-<br/>
+streitigkeiten <span class="aq ">Spaniens</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Frankreichs</span><br/>
+zeigte ſich, <span title="dß" class="dta-abbr">daß</span> die Linie <span title="dr" class="dta-abbr">der</span> Waſſer-<br/>
+ſcheide, die als Grenzlinie beſtim̃t<br/>
+worden iſt, eine ganz andere <span title="Richtug" class="dta-abbr">Richtung</span><br/>
+hat, als die Axe durch die Gebürge ſelbſt.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0131 : 266|</span><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left">Streichung der Schichten.<br/>
+</span>Auf die Streichung der Erdſchichten<br/>
+haben weit abliegende Ketten Einfluß,<br/>
+und ſie iſt gar nicht zufällig, ſie ver-<br/>
+breitet ſich in großen Strecken, die<br/>
+oft 2–3 mal ſo groß ſind als Deutſchland<br/>
+und iſt beſtim̃ten Geſetzen unter-<br/>
+worfen. Nach dieſer Streichung der<br/>
+Schichten hat <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">L. Buch</a></span></span> Deutſchland in<br/>
+4 <span class="aq ">Systeme</span> eingetheilt 1.) das niederlän-<br/>
+diſche wozu die brittiſchen Inſeln<br/>
+gehören, die Streichen gehen von <span class="aq ">Belgien</span><br/>
+von Nord Oſt nach <span title="S." class="dta-abbr">Süd</span> West 2) das nord-<br/>
+östliche System begreift die <span class="aq ">balti</span>ſchen<br/>
+Länder von <span class="aq ">Teutoburger</span> Wald bis<br/>
+<span class="aq ">Donau</span> unterhalb <span class="aq ">Regenſburg</span> 3) das<br/>
+<span class="aq ">Rheinsystem</span> 4) das <span class="aq ">Alpensystem</span>. –</p><br/>
+<p class="dta-p">Der Richtung der Erdſchichten entſpricht<br/>
+<span class="dta-del" title="Streichung (#s)">cht</span> die der Flüſſe <span title="ud" class="dta-abbr">und</span> Gebürgszüge<span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Nimt man <span title="z.B." class="dta-abbr">zum Beispiel</span> <span title="ds" class="dta-abbr">das</span> 2<span class="sup u ">te</span> <span class="aq ">System</span> <span title="v" class="dta-abbr">von</span> Deutſchland,<br/>
+da iſt die <span class="dta-del" title="Streichung (#s)">Reh </span>Streichung von <span title="N" class="dta-abbr">Nord</span> West<br/>
+nach Süd Oſt, dieſelbe Richtung hat<br/>
+das <span class="aq ">Eulen</span>gebürge das Harzgebürge<br/>
+das <span title="grße" class="dta-abbr">große</span> <span class="aq ">Alpen</span>gebürge <span title="weſtl" class="dta-abbr">westlich</span> <span title="v" class="dta-abbr">von</span> <span class="aq ">Regenſburg</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0132 : 267|</span><br/>
+und die Flüſſe. Nach den Beſtim̃ungen<br/>
+<span class="aq "><span title="Personenname">Hoffman</span>̃</span>'s bildet die Spree <span title="ud" class="dta-abbr">und</span> <span class="aq ">Havel</span><br/>
+die <span title="Verbündug" class="dta-abbr">Verbindung</span> zwiſchen <span title="dr" class="dta-abbr">der</span> <span class="aq ">Oder</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Elbe</span><br/>
+ſollen <span title="dſe" class="dta-abbr">dieſe</span> zwei <span title="grße" class="dta-abbr">großen</span> Waſſerſyſteme<br/>
+der Streichung entſprechen, ſo hat<br/>
+die <span class="aq ">Oder</span> ihre Mündung in dem Busen<br/>
+von <span class="aq ">Hamburg</span>, die <span class="aq ">Elbe</span> in dem Busen<br/>
+von <span class="aq ">Bremen</span>. –</p><br/>
+<p class="dta-p">Es giebt keinen <span class="aq ">absoluten</span> Unterſchied<span class="dta-marginal dta-marginal-right"><span class="u ">Ebenen</span><br/>
+</span><br/>
+zwiſchen Ebenen und Bergen. Die<br/>
+größten Ebenen bilden die Steppen<br/>
+welche die Folge des längeren Aufent-<br/>
+halts <span title="ds" class="dta-abbr">des</span> Waſſers zu ſein ſcheinen.<br/>
+In <span class="aq ">Europa</span> würden nur die Niede-<br/>
+rungen in <span class="aq ">Ungarn</span>, die man dort<br/>
+<span class="aq ">Pustas</span> neñt, eine <span title="Erwähnug" class="dta-abbr">Erwähnung</span> verdienen<br/>
+ſie ziehen ſich zwiſchen den Flüſſen<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq ">Theiſs</span><br/>
+</span><span class="aq ">Teichs</span><span class="dta-add" title="Hinzufügung (superlinear)">?</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Donau</span>. Die Natur ſolcher<br/>
+Ebenen iſt die, <span title="dß" class="dta-abbr">daß</span> man auf ihnen,<br/>
+wie auf dem Meere<span class="dta-del" title="Streichung (#s)">s</span> die Gestirne<br/>
+auf und untergehen ſieht. Sie ziehen<br/>
+oft über 1700 Meilen weit. Sie ſind<br/>
+nicht im̃er baumlos, <span title="ud" class="dta-abbr">und</span> überhaupt<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0133 : 268|</span><br/>
+iſt die Wüste nicht der <span class="aq ">Character</span> einer<br/>
+Steppe. In <span class="aq ">America</span> ſind 0 Hauptebe-<br/>
+nen 1) die zwiſchen <span class="aq ">Orinocco</span> <span title="fl." class="dta-abbr">Fluss</span> <span title="ud" class="dta-abbr">und</span><br/>
+<span class="aq ">Caraccas</span> 2) längst dem <span class="aq ">Amazonen</span>fluſſe<br/>
+die iſt voll von Waldungen ſo <span title="dß" class="dta-abbr">daß</span><br/>
+weñ ſie nicht durch Flußthäler durch-<br/>
+ſchnitten wären die Affen von Zweig<br/>
+zu Zweig an 700 <span title="Ml" class="dta-abbr">Meilen</span> weit, springen<br/>
+köñten, ſie zieht vom <span title="ſüdl" class="dta-abbr">südlichen</span> <span class="aq ">Madera</span><br/>
+bis zu nördlichen <span class="aq ">Orinocco</span> <span title="Fl" class="dta-abbr">Fluss</span>. Der<br/>
+dicken Waldungen wegen iſt dieſe<br/>
+Ebene lange vorkom̃t geweſen.<br/>
+3) Die Steppe <span title="v" class="dta-abbr">von</span> <span class="aq ">Pampas</span> oder <span class="aq ">Boenos<br/>
+Aires</span> zieht von <span class="aq ">La Plata</span> Strom bis nach<br/>
+<span class="aq ">Cap Horn</span>. Die Ebenen <span title="v" class="dta-abbr">von</span> <span class="aq ">Africa</span> ſind<br/>
+von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118529250">Ehrenberg</a></span></span> unterſucht worden. Vor<br/>
+einigen Monaten iſt ſein Werk<br/>
+darüber erſchienen. Er fand <span title="dß" class="dta-abbr">daß</span> es<br/>
+nicht durchgängige Sandwüſten ſind,<br/>
+<span title="dß" class="dta-abbr">daß</span> dieſe in Verhältniß zur ganzen<br/>
+Ebene nur kleine Regionen einnehmen.<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">Flüſſe</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0134 : 269|</span><br/>
+Die Flüſſe brechen in den Längenthälern<span class="dta-marginal dta-marginal-right">Flüſſe.<br/>
+</span><br/>
+hervor, verlaſſen das Gebürge durch die<br/>
+Querthäler, laufen eine gewiſſe Strecke<br/>
+<span class="aq ">paralell</span> mit dem Gebürgszuge, und dringen<br/>
+in ganz anderer <span title="Richtug" class="dta-abbr">Richtung</span> in die <span title="Schreibfehler: ebenen" class="dta-corr">Ebenen</span><span class="dta-marginal dta-marginal-right">der Lauf<br/>
+</span><br/>
+Länder herein. Dieſe Anſichten hat <span title="bſndrs" class="dta-abbr">besonders</span><br/>
+<span title="Pf." class="dta-abbr">Professor</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11860130X">Ritter</a></span></span> entwickelt. Da wo große Ebenen<br/>
+ſind, bilden ſich in der Mitte der <span class="aq ">Continente</span><br/>
+ganz <span title="Schreibfehler: dieſelbe" class="dta-corr">dieſelben</span> Erſcheinungen, wie an den<br/>
+Meeresufern, förmliche <span class="aq ">Delta</span>land-<br/>
+ſchaften. Das Flußthal iſt ein System<br/>
+von Punkten, wo alle Linien von verſchie-<br/>
+dener Steigung in eine Rinne zuſam̃en-<br/>
+kom̃en. Weñ Flüſſe nahe an dem<br/>
+Grate fließen <span title="d.h." class="dta-abbr">das heißt</span> an der Grenze<br/>
+welche das Flußthal beſtim̃t, und ein Punkt<br/>
+daſelbſt niedriger iſt, ſo entſteht eine<span class="dta-marginal dta-marginal-right">die <span class="aq ">bifocation</span><br/>
+</span><br/>
+<span class="aq ">bifocation</span> <span title="d.h." class="dta-abbr">das heißt</span> <span title="dß" class="dta-abbr">daß</span> ein Fluß 2 Thälern<br/>
+zugehört<span title="Schreibfehler: " class="dta-corr">.</span> <span title="Vergl:" class="dta-abbr">Vergleich</span> die Abhandlung: „<span class="aq ">sur les rives</span>”<br/>
+<span class="aq ">dans les memoires de l'éccole polytechnique<br/>
+par Humboldt et Bron's</span>. Der <span class="aq ">Orinocco</span><br/>
+<span title="ud" class="dta-abbr">und</span> der <span class="aq ">Amazonen</span>ſtrom ſind auf <span title="dſe" class="dta-abbr">dieſe</span> Art<br/>
+durch 2 Arme die dazwiſchen liegen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0135 : 270|</span><br/>
+mit einander verbunden. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117528145">Arno</a></span></span> in <span class="aq ">Italien</span><br/>
+hat eben einen ſolchen Arm <span class="aq ">Arno Tiberoni</span><br/>
+genañt der durch das <span class="aq ">Valle de Kiana</span><br/>
+fließt nahe <span title="Schreibfehler: an" class="dta-corr">am</span> <span class="aq ">Traſimeni</span>ſchen See<span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116817569">L. Buch</a></span></span> iſt der Fluß <span class="aq ">Kaliſel</span> bei <span class="aq ">Torneo</span><br/>
+<span title="ud" class="dta-abbr">und</span> <span title="dr" class="dta-abbr">der</span> <span title="Fl." class="dta-abbr">Fluss</span> <span class="aq ">Torneo</span> in ſolchem Zuſam̃enhange<span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Une<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">n</span>twickelte Flußſyſteme können<br/>
+die <span class="aq ">difocation</span> hindern. Die <span class="aq ">Delta's</span> ſind<br/>
+nur <span class="aq ">difocation</span>, da wo ſie fehlen<br/>
+köñen ſie durch ſtarke Regengüsse<br/>
+bewirkt werden, wie es bei dem <span class="aq ">ameri-<br/>
+kani</span>ſchen Fluße <span class="aq ">Oreo</span> der Fall iſt. Ver-<br/>
+möge einer ſolchen <span class="aq ">bifocation</span> iſt auch die<br/>
+Südsee mit <span class="aq ">atlanti</span>ſchen Oceane verbunden<br/>
+durch den <span class="aq ">Canal aspuduna</span> der die Quellen<br/>
+2 großer <span title="amerik:" class="dta-abbr">amerikaniſcher</span> Flüſſe verbindet in der<br/>
+Gegend bei <span class="aq ">Guanama</span>. Der <span class="aq ">Canal</span> iſt erſt<br/>
+während des letzten <span class="aq "><span title="amerik:" class="dta-abbr">amerikaniſchen</span></span> <span title="Krges" class="dta-abbr">Krieges</span> er-<br/>
+weitert worden, anfangs war es nur<br/>
+<span class="gap">[unleserliches Material – 1 Wort fehlt]</span> eine <span title="Ableitg" class="dta-abbr">Ableitung</span> der Gewässer der<br/>
+einen Quellen zu denen der anderen,<br/>
+welche ein einzelner Mönch gemacht<br/>
+hat, um Fiſche von beiden Flüſſen zu haben.<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0136 : 271|</span><br/>
+Da nun die <span class="aq ">bifocation</span> entſteht, <span title="dß" class="dta-abbr">daß</span> die Schei-<br/>
+degrenze zwiſchen 2 Flußbetten in das<br/>
+eine ſich neigt, ſo wird, weñ der eine<br/>
+Fluß ein kleinerer iſt, <span class="dta-del" title="Streichung (#ow)">s</span><span class="dta-add" title="Hinzufügung (across)">d</span>er ganze Fluß<br/>
+abgelenkt, umgekehrt, iſt der Fluß, der<br/>
+abgeleitet wird ein größerer, ſo ent-<br/>
+ſteht in dem kleineren eine gefährliche<br/>
+<span title="Waſſeranſchwellug" class="dta-abbr">Wasseranschwellung</span> – D<span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)">er</span> Fl<span class="dta-del" title="Streichung (#ow)">ü</span><span class="dta-add" title="Hinzufügung (across)">u</span>ſſ<span class="dta-del" title="Streichung (#s)">e</span> ſelbſt<span class="dta-marginal dta-marginal-right">das Flußbette.<br/>
+</span><br/>
+bildet nur bei geringen Strömen ein<br/>
+Bette, bei allen großen Flüſſen, iſt<br/>
+jeder Strom ein System von Strömen<br/>
+welche Furchenweise an einander gereiht<br/>
+ſind, und oft iſt zwiſchen je zwei ſolchen<br/>
+Furchen eine ſeichte Ebene von 2 bis 3000<br/>
+<span class="aq ">Fuss</span> lang, ſo iſt es bei dem <span class="aq ">La Plata</span> <span title="Fl." class="dta-abbr">Fluss</span><br/>
+bei dem <span class="aq ">Amazonen</span>ſtrom. Bei dem letzten<br/>
+iſt wegen der hier in Maſſen lebenden<br/>
+<span class="aq ">Crocodille</span>, das durchwaden der ſeichten<br/>
+Stellen ſehr gefährlich.</p></div></div></div></body></html>

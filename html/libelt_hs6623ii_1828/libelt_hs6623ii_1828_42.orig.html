@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span class="dta-supplied">[42. Vorlesung, 25.03.1828]</span></div><br/>
+<div class=""><div class=""><p class="dta-p">Die Strahlthierchen<br/>
+<span class="dta-del" title="Streichung (#ow)">v</span><span class="dta-add" title="Hinzufügung (across)">ſ</span>ind meist ſehr klein, einzelne auch einen<br/>
+Fuß lang, ſie beſtehen ganz aus <span title="Schreibfehler: gelartartige" class="dta-corr">gelartiger</span><br/>
+durchſichtigen <span class="aq ">Materie</span>, nach den <span title="Beobachtugen" class="dta-abbr">Beobachtungen</span><br/>
+von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118529250">Ehrenberg</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/118554700">Humboldt</a></span></span>, <span title="ud" class="dta-abbr">und</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100190014">Lichtenstein</a></span></span> am<br/>
+<span class="aq ">Cap</span> der guten <span title="Hoffug" class="dta-abbr">Hoffnung</span>.</p><br/>
+<p class="dta-p">Die Farbe des Meeres iſt ein noch ſchwieri-<span class="dta-marginal dta-marginal-right">Die Farbe <span title="ds" class="dta-abbr">des</span> <span title="M." class="dta-abbr">Meeres</span><br/>
+</span><br/>
+gerer Gegenſtand. Sie iſt bald grünlich bei<br/>
+den Bergſtrö<span class="dta-del" title="Streichung (#ow)">n</span><span class="dta-add" title="Hinzufügung (across)">m</span>e<span class="dta-del" title="Streichung (#ow)">m</span><span class="dta-add" title="Hinzufügung (across)">n</span>, bläulich bei <span title="dr" class="dta-abbr">der</span> <span class="aq ">Rhone</span><span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Das ſalzige <span title="Wſſr" class="dta-abbr">Waſſer</span> <span title="ds" class="dta-abbr">des</span> Meeres hat in den <span class="aq ">Tro-<br/>
+penzonen</span> ein Indigoblau. Dies iſt <span title="kne" class="dta-abbr">keine</span> Folge<br/>
+der <span class="aq ">Reflexion</span> der Bläue <span title="dr" class="dta-abbr">der</span> Luft, deñ ſie bleibt<br/>
+weñ <span title="Schreibfehler: euch" class="dta-corr">auch</span> weiße Wolken die Luft über-<br/>
+ziehen. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117654167">Scoresbi</a></span></span> ſagt, <span title="dß" class="dta-abbr">daß</span> an gewiſſen Orten<br/>
+in gewiſſen Zeiten <span title="ds" class="dta-abbr">das</span> Meer eine gras-<br/>
+grüne Farbe añimt, <span title="ud" class="dta-abbr">und</span> das ſeien im̃er<br/>
+die Orte der Wallfiſche. Er unterſuchte<br/>
+<span title="ds" class="dta-abbr">das</span> Waſſer <span title="ud" class="dta-abbr">und</span> fand <span title="dß" class="dta-abbr">daß</span> eine Menge von<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0151 : 286|</span><br/>
+<span class="aq ">Molusken</span> d<span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)">en</span> Inhalt des <span title="Wſſrs" class="dta-abbr">Waſſers</span> ausmachte<span title="Schreibfehler: " class="dta-corr">.</span></p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left">Die Durchſichtigkeit <span title="ds" class="dta-abbr">des</span> M.<br/>
+</span>Es war oft die Frage wie tief <span title="ds" class="dta-abbr">das</span> Licht in<br/>
+das Meer hereindringt. Man hat ſich in Taucher<span title="Schreibfehler: " class="dta-corr">-</span><br/>
+glocken herunter gelaſſen und fand in Tiefe<br/>
+von 22 <span class="aq ">Fuss</span> ſchon Finsterniß. Dieſes rührt<br/>
+meiſtens von der Bewegung her die an der<br/>
+Oberfläche ſtatt findet, und durch das hin<br/>
+<span title="ud" class="dta-abbr">und</span> her kreuzen des Waſſers. Um<br/>
+dieſes zu finden haben ſchon die Alten auf<br/>
+die Oberfläche Oel gegossen, um auf <span title="dſn" class="dta-abbr">dieſen</span><br/>
+Ort dieſelbe zu ebenen. Daſſelbe thuen<br/>
+bis jetzt noch die freien Taucher, ſie gießen<br/>
+in der Tiefe Oel heraus, um in den Boden<br/>
+beſſer zu ſchauen. Jede <span title="Veränderug" class="dta-abbr">Veränderung</span> <span title="dr" class="dta-abbr">der</span> Ober-<br/>
+fläche <span title="ud" class="dta-abbr">und</span> jede fremdartige <span title="Wſſr" class="dta-abbr">Waſſer</span>ſchicht<br/>
+verändert die Wellen<span class="aq ">oscillation</span>. Die Beobach-<br/>
+tungen <span title="ds" class="dta-abbr">des</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118534912">Benjamin Franklin</a></span></span> <span title="ud" class="dta-abbr">und</span> der<br/>
+beyden <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118765817">Weber</a></span></span> ſind darüber ſehr reichhaltig.<br/>
+Viel beſſer ſieht man den Grund des<br/>
+Meeres, <span title="ud" class="dta-abbr">und</span> hat ihn ſogar wie eine<br/>
+Landcharte vor ſich, weñ <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">man </span>ſich von der<br/>
+Oberfläche <span title="ds" class="dta-abbr">des</span> Meeres entfernt be-<br/>
+findet. Daher die <span class="aq ">Matroſen</span> den höchſten<br/>
+Mastbaum beſteigen um eine Bank<br/>
+zu entdecken. Merkwürdig iſt <span title="ds" class="dta-abbr">das</span> <span class="aq ">Fenomen</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0152 : 287|</span><br/>
+auf dem ſtillen Meere um die Inſel<br/>
+<span class="aq ">Cuba</span>, wo man aus einer Höhe von 1800<br/>
+<span class="aq ">Fuss</span>, den Grund des Meeres überſchaut<span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Die Urſache davon iſt, <span title="dß" class="dta-abbr">daß</span> je <span class="dta-del" title="Streichung (#s)"><span title="grßr" class="dta-abbr">größer</span></span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="klnr" class="dta-abbr">kleiner</span></span> <span title="dr" class="dta-abbr">der</span> Un-<br/>
+terſchied iſt vom Lichte das von der Ober-<br/>
+fläche des <span title="M." class="dta-abbr">Meeres</span> <span class="aq ">reflectirt</span> wird, und von dem,<br/>
+das vom Boden des <span title="M." class="dta-abbr">Meeres</span> <span class="aq ">reflectirt</span> wird<br/>
+deſto mehr kañ man in die Tiefe ſchauen<span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Sind nur <span title="de" class="dta-abbr">die</span> <span title="Oberfl." class="dta-abbr">Oberflächen</span> nahe ſo iſt das davon<br/>
+<span class="aq ">reflectirte</span> Licht ſehr groß im Verhältniß<br/>
+des Lichtes das vom Boden <span title="ds" class="dta-abbr">des</span> <span title="M." class="dta-abbr">Meeres</span> <span class="aq ">refletirt</span> <span title="w." class="dta-abbr">wird</span><br/>
+je weiter man ſich entfernt deſto ſchwächer<br/>
+wird das erſte Licht, deſto mehr kañ<br/>
+<span title="ds" class="dta-abbr">das</span> 2<span class="sup u ">te</span> Licht zum Vorſchein kom̃en.</p><br/>
+<p class="dta-p">Die <span class="aq ">Temperatur</span> des <span title="M." class="dta-abbr">Meeres</span> iſt von dem größten<span class="dta-marginal dta-marginal-right">Die Temperatur <span title="ds" class="dta-abbr">des</span> <span title="M." class="dta-abbr">Meeres</span><br/>
+</span><br/>
+Einfluß auf die <span class="aq ">Climatologie</span>. Um ſie<br/>
+zu beſtim̃en muß man die oberſten <span title="ud" class="dta-abbr">und</span><br/>
+die tiefſten Schichten <span title="ds" class="dta-abbr">des</span> <span title="M." class="dta-abbr">Meeres</span>, die Sandbänke<br/>
+<span title="ud" class="dta-abbr">und</span> die <span class="aq ">relative</span> Lage <span title="dr" class="dta-abbr">der</span> Meere betracht<span class="dta-del" title="Streichung (#ow)">ug</span><span class="dta-add" title="Hinzufügung (across)">en</span><span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Das <span class="aq ">Areal</span>verhältniß der flüſſigen <span title="ud" class="dta-abbr">und</span><br/>
+der fester Maſſe iſt das Haupt<span class="aq ">moment</span><br/>
+der Vertheilung der Wärme in der<br/>
+<span class="aq ">Atmosphere</span>. Ein weſentlicher <span title="Untrſchd" class="dta-abbr">Untrſchied</span><br/>
+bei <span title="dſr" class="dta-abbr">dieſer</span> <span title="Betrachtug" class="dta-abbr">Betrachtung</span> iſt der, ob <span title="ds" class="dta-abbr">das</span> Meer in<br/>
+Ruhe oder im Strömen iſt. Im erſten<br/>
+Falle iſt an der Oberfläche <span title="ds" class="dta-abbr">des</span> Meers<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0153 : 288|</span><br/>
+fast dieſelbe <span class="aq "><span title="Tmprt" class="dta-abbr">Temperatur</span></span> als in der <span class="aq ">Atmosphere</span><br/>
+wie in den <span class="aq ">Tropen</span>gegenden. Von hier muß<br/>
+man mit <span title="dſer" class="dta-abbr">dieſer</span> <span class="aq ">meterologiſchen</span> <span title="Betrachtug" class="dta-abbr">Betrachtung</span><br/>
+ausgehen, ſolange man dieſe in den<br/>
+<span class="aq ">temperirten Zonen</span> <span title="ud" class="dta-abbr">und</span> im <span class="aq ">Norden</span>, wo<br/>
+die <span class="aq ">perturbationen</span> groß ſind, angeſtellt<br/>
+hat, ſo koñte man nie zu richtigen Re-<br/>
+sultaten kom̃en. – Unter den <span class="aq ">Tropen</span><br/>
+iſt der Unterſchied der Wärme des Tages<br/>
+<span title="ud" class="dta-abbr">und</span> die der Nacht in der Luft 6–7° R.<br/>
+<span title="dr" class="dta-abbr">der</span> Unterſchied im Meere iſt während<br/>
+den 24 Stunden fast keiner nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117626708">Deli</a></span></span><br/>
+nach <span title="ſnr" class="dta-abbr">ſeiner</span> Reise von <span class="aq ">Ceylon. <span title="Personenname"><a href="http://d-nb.info/gnd/117663476">Duperet</a></span></span> <span title="ud" class="dta-abbr">und</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/124760295">Freſiné</a></span></span><br/>
+haben den Unterſchied auf ½°–¾° R. <span class="aq ">reducirt</span><br/>
+dieſelbe Angabe iſt von Oberſt <span class="aq "><span title="Personenname">Wildſon</span></span><br/>
+dem Freunde von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118554700">Humboldt</a></span>,</span> der mit dem erſten<br/>
+Dampfſchiffe nach <span class="aq ">Calcutta</span> fuhr, und<br/>
+mit guten <span class="aq ">Instrumenten</span> die <span class="aq ">meteorologi</span>ſchn<br/>
+Beobachtungen gemacht hat. Das <span title="Wſſr" class="dta-abbr">Waſſer</span><br/>
+hat von Natur aus eine Tendenz zur<br/>
+Erwärmung, deñ es wird dichter je mehr<br/>
+es ſich erkältet, da nun die dichteren<br/>
+alſo ſchwereren <span class="dta-del" title="Streichung (#s)">Theil </span> Schichten, nach<br/>
+unten ſteigen müßten, ſo iſt das<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0154 : 289|</span><br/>
+der Kraft zuwider, nach welche <span title="ds" class="dta-abbr">das</span> Meer<br/>
+ſich von der Erde treñen will. Zwiſchen<br/>
+dem <span class="aq ">Equator</span> <span class="dta-del" title="Streichung (#s)"><span title="ud" class="dta-abbr">und</span> </span>den 2 <span class="aq ">Paralell</span><span title="krſen" class="dta-abbr">kreiſen</span> unter<br/>
+50° <span title="n." class="dta-abbr">nördlicher</span> <span title="ud" class="dta-abbr">und</span> <span title="s." class="dta-abbr">südlicher</span> <span title="Br." class="dta-abbr">Breite</span> iſt ein Som̃er, wie im<br/>
+Winter das Meer im̃er wärmer als<br/>
+die Luft, nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/124760295">Fresiné</a></span></span> <span title="ud" class="dta-abbr">und</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117663476">Duperet</a></span>.</span> D<span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)">a</span>s Gegen-<br/>
+theil iſt fälſchlich von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11922139X">Kirman</a></span></span> be-<br/>
+hauptet worden. Dieſe <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">höhren </span><span class="aq "><span title="Tmprt" class="dta-abbr">Temperaturen</span></span> <span title="ds" class="dta-abbr">des</span> Meeres<br/>
+der <span class="aq ">Tropenzone</span> hat <span title="grßen" class="dta-abbr">großen</span> Einfluß auf<br/>
+die Winde welche über dieſe Gegenden<br/>
+auf die <span class="aq ">Continente</span> kom̃en. Die <span class="aq ">monatliche</span><br/>
+Verſchiedenheit der <span class="aq ">Temperatur</span> in der<br/>
+Luft in den Tropen iſt 6 mal <span title="Original: kalter" class="dta-reg">kälter</span> im<br/>
+Winter als im Som̃er, die des Meeres<br/>
+7 mal. Vor einem Jahre hat <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118554700">Humboldt</a></span></span> ein<br/>
+merkwürdiges <span class="aq ">Factum</span> entdeckt in der<br/>
+Beſtim̃ung <span title="dr" class="dta-abbr">der</span> Größe der Kälte zu welcher<br/>
+die <span class="aq "><span title="Tmprt." class="dta-abbr">Temperatur</span></span> des <span class="aq ">atlanta</span> <span title="M." class="dta-abbr">Meeres</span> herabsinkt. Da<br/>
+die Westwinde über <span title="dſen" class="dta-abbr">dieſen</span> Ocean kom̃end, fast<br/>
+durch ⅔ <span title="ds" class="dta-abbr">des</span> Jahres in <span class="aq ">Europa</span> wehen, ſo iſt dies<br/>
+eine weſentliche Beſtim̃ug in der <span class="aq ">Climatologie</span><br/>
+<span title="dſes" class="dta-abbr">dieſes</span> Erdtheils. Der <span class="aq ">Major <span title="Personenname"><a href="http://d-nb.info/gnd/118788353">Rennelt</a></span></span> ein 80jä-<br/>
+riger Greis beſchäftigt ſich eben ein Werk<br/>
+über die Strömungen <span title="ds" class="dta-abbr">des</span> <span class="aq "><span title="atlant." class="dta-abbr">atlantiſchen</span></span> Ocean<br/>
+herauszugeben. Aus einzelnen <span title="Thlen" class="dta-abbr">Theilen</span> des<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0155 : 290|</span><br/>
+<span class="aq ">Manuscripts</span>, die er <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118554700">Humboldt</a></span></span> mitgetheilt hat,<br/>
+ergiebt ſich die Beſtim̃ug <span title="dr" class="dta-abbr">der</span> <span class="aq "><span title="Tmprt" class="dta-abbr">Temperatur</span></span> <span title="dſes" class="dta-abbr">dieſes</span> Oceanes<br/>
+an mehreren Orten, und die Angabe, <span class="dta-del" title="Streichung (#ow)">wie</span><span class="dta-add" title="Hinzufügung (across)">daß</span><br/>
+man bei öfteren Eintauchen <span title="ds" class="dta-abbr">des</span> <span class="aq ">Termometers</span>,<br/>
+weñ man einen ſchnellen Wechſel <span title="dr" class="dta-abbr">der</span> <span class="aq "><span title="Tmprt." class="dta-abbr">Temperatur</span></span><br/>
+wahrnimt, die <span title="Richtug" class="dta-abbr">Richtung</span> <span title="dr" class="dta-abbr">der</span> Meeresſtröme<br/>
+finden kañ. Der Gürtel zwiſchen dem 50–52°<br/>
+<span title="n. Br." class="dta-abbr">nördlicher Breite</span> im <span title="atl. M." class="dta-abbr">atlantiſchen Meer</span> welches gerade unſere<br/>
+<span class="aq ">Zone</span> iſt erkaltet <span title="ds" class="dta-abbr">das</span> <span title="M." class="dta-abbr">Meer</span> nie unter + 6°<br/>
+oder + 7° R. während auf dem <span class="aq ">Continente</span><br/>
+unter gleicher <span title="Brte" class="dta-abbr">Breite</span> 8–10° (–) ſein kañ.<br/>
+Da + 6–7° die <span class="aq ">May</span>wärme bei uns iſt<br/>
+ſo iſt dieſe der Winter<span class="aq "><span title="tmprt" class="dta-abbr">temperatur</span></span> des Oceans<br/>
+gleich. Zwiſchen 65–70° <span title="n. Br." class="dta-abbr">nördlicher Breite</span> iſt die<br/>
+mittlere <span class="aq "><span title="Tmprt" class="dta-abbr">Temperatur</span></span> <span title="ds" class="dta-abbr">des</span> Oceans, nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11671350X">Sebi</a></span></span><br/>
+(der die berühmten Pendelverſuche bei<br/>
+<span class="aq ">Spitzbergen</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Groenland</span> angeſtellt<br/>
+hat) 4½ +, während die <span title="ds" class="dta-abbr">des</span> <span class="aq ">Continentes</span><br/>
+− 2° R. iſt<span title="Schreibfehler: ." class="dta-corr">[…]</span> was bei <span title="mittl." class="dta-abbr">mittlerer</span> <span class="aq "><span title="Tmprt" class="dta-abbr">Temperatur</span></span>, ein<br/>
+erſtaunlicher <span title="Unterſchd" class="dta-abbr">Unterſchied</span> iſt. Unter<br/>
+dem <span class="aq ">Equator</span> iſt die <span title="mittl." class="dta-abbr">mittlere</span> <span title="Original: gewehnliche" class="dta-reg">gewöhnliche</span><br/>
+<span class="aq "><span title="Tmprt" class="dta-abbr">Temperatur</span></span> <span title="ds" class="dta-abbr">des</span> <span title="M." class="dta-abbr">Meeres</span> 21½–22° R. und man<br/>
+trinkt auf dem benachbarten<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0156 : 291|</span><br/>
+<span class="aq ">Continente</span> ein kälteres Waſſer<span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Indeſſen iſt grade unter dem <span class="aq ">Equator</span><br/>
+nicht das <span class="aq ">Maximum</span> der Erwärmung<br/>
+<span title="ds" class="dta-abbr">des</span> Meeres. Dieſe liegt in einer<br/>
+<span class="aq ">Zone,</span> die eine <span class="aq ">Curve</span> bildet, welche den<br/>
+<span class="aq ">Equator</span> durchſchneidet. <span title="Dſe" class="dta-abbr">Dieſe</span> <span class="aq ">Curve</span> ändert ſich<br/>
+etwas, gegen den <span class="aq "><span title="Nord." class="dta-abbr">Norden</span></span> oder gegen den<br/>
+Süden je nach der Jahreszeit oder dem<br/>
+Stande <span title="dr" class="dta-abbr">der</span> Soñe. <span class="aq ">Cf. <span title="Personenname"><a href="http://d-nb.info/gnd/118554700">Humboldt</a></span></span> über die<br/>
+<span class="aq ">Isoternen</span>linien, wovon <span class="dta-del" title="Streichung (#ow)">eine</span><span class="dta-add" title="Hinzufügung (across)">neue</span> Ausgabe<br/>
+bald erfolgen wird. In <span title="dſem" class="dta-abbr">dieſem</span> <span title="Wrke" class="dta-abbr">Werke</span><br/>
+giebt <span title="dr" class="dta-abbr">der</span> Verfaſſer die Lage <span title="dſr" class="dta-abbr">dieſer</span> <span class="aq ">Curve</span><br/>
+an. Nach Beobachtungen von 30 Jahren<br/>
+iſt das <span class="aq ">Maximum</span> der Wärme in <span title="dſen" class="dta-abbr">dieſen</span><br/>
+Regionen im̃er auf 24–24½° R geblie-<br/>
+ben, obgleich nicht im̃er an denſelben Orten.<br/>
+In der Südsee iſt ein Ort bei <span class="aq ">Cap</span> <span title="v" class="dta-abbr">von</span> <span class="aq ">Guafacamo</span><br/>
+weſtlich von <span class="aq ">Quito</span> <span title="ud" class="dta-abbr">und</span> dem <span class="aq ">Isthmus</span> <span title="v" class="dta-abbr">von</span> <span class="aq ">Panama</span><br/>
+wo der <span class="aq "><span title="Daen:" class="dta-abbr">dänische</span></span> Seeofizier <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100837654">Dunking</a></span></span>, beim <span class="aq ">termo-<br/>
+metriren</span> eine Wärme von 24¾° R. fand<span title="Schreibfehler: " class="dta-corr">.</span><br/>
+Alle dieſe Verhältniſſe gelten nur weñ<br/>
+ein sanfter Wind <span title="ds" class="dta-abbr">das</span> <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">offene </span>Meer bewegt. Die<br/>
+bei völliger Windſtille, und bei ſeichten<br/>
+Orten wo ſelbſt <span title="dr" class="dta-abbr">der</span> Boden erwärmt<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0157 : 292|</span><br/>
+wird, ſteigt die Höhe <span title="dr" class="dta-abbr">der</span> <span class="aq "><span title="Tmprt." class="dta-abbr">Temperatur</span></span> <span title="ds" class="dta-abbr">des</span> <span title="MWaſſers" class="dta-abbr">Meerwassers</span><br/>
+bedeutend beträchtlicher.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left">Die Strömungen <span title="dr" class="dta-abbr">der</span> Meere.<br/>
+</span>Die Strömungen durchſchneiden in langen<br/>
+Windungen d<span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)">a</span>s offene Meer, wie die<br/>
+Flüſſe <span title="ds" class="dta-abbr">des</span> <span class="aq ">Continent</span>. Nur ſind ſolche aeomischn<br/>
+Flüſſe von ungeheuerer Breite. Der<br/>
+große <span class="aq ">Golf</span>ſtrom der aus dem Wirbel<br/>
+im <span class="aq ">Mexicani</span>ſchen Busen entſtehen, und<br/>
+aus der Meerenge zwiſchen <span title="dr" class="dta-abbr">der</span> ½ Inſel <span class="aq ">Florida</span><br/>
+<span title="ud" class="dta-abbr">und</span> der <span title="Inſl" class="dta-abbr">Inſel</span> <span class="aq ">Cuba</span> ſich hervordrängt, hat an-<br/>
+fangs die Breite dieſer Meerenge. In<br/>
+der <span title="Richtug" class="dta-abbr">Richtung</span> nach <span class="aq ">Nord West</span> verbreitet er<br/>
+ſich im̃er mehr und mehr: wichtig iſt<br/>
+auch die <span title="Richtug" class="dta-abbr">Richtung</span> des Stromes, ob er vom<br/>
+<span class="aq ">Equator</span> nach den <span class="aq ">Temperirten Zonen</span> oder<br/>
+umgekehrt zieht, im erſten Falle treibt<br/>
+er warmes Waſſer tief in den <span class="aq ">Norden</span><br/>
+<span title="ud" class="dta-abbr">und</span> mildert die Kälte, im zweiten treibt<br/>
+es <span title="ds" class="dta-abbr">das</span> Kalte nordiſche Waſſer nach den<br/>
+Süden und mildert die Gluth. <span title="Dr" class="dta-abbr">Der</span> <span class="aq ">Golf</span>ſtrom<br/>
+des <span class="aq "><span title="atlant:" class="dta-abbr">atlantiſchen</span></span> Oceans hat großen Einfluß<br/>
+auf <span title="ds" class="dta-abbr">das</span> <span class="aq ">Clima</span> von <span class="aq ">Europa</span>, weil er grade<br/>
+in Winterzeiten, ihren Westküſten<br/>
+warme Waſſermaſſen zusendet.<br/>
+Er fängt von der <span class="aq "><span title="african:" class="dta-abbr">africaniſchen</span></span> Küſte an<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">geht</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0158 : 293|</span><br/>
+geht mit der <span class="aq "><span title="Rotat:" class="dta-abbr">Rotation</span></span> <span title="dr" class="dta-abbr">der</span> Erde in <span title="dr" class="dta-abbr">der</span> <span title="Richtug" class="dta-abbr">Richtung</span><br/>
+von Oſten nach Weſten, und ſtaud es an<br/>
+dem <span class="aq ">Isthmus</span> <span title="v" class="dta-abbr">von</span> <span class="aq ">Panama</span> an. Wäre <span title="dſe" class="dta-abbr">dieſe</span> ge-<br/>
+öffnet durch einen <span class="aq ">Canal</span>, ſo würde die Schifffahrt<br/>
+nach dem östlichen <span class="aq ">Aſien</span>, nach <span class="aq ">China</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Japan</span><br/>
+ungemein erleichtert. Auf <span title="dſe" class="dta-abbr">dieſe</span> Art iſt <span title="dſr" class="dta-abbr">dieſer</span><br/>
+<span class="aq ">Isthmus</span> ein Bollwerk <span title="dr" class="dta-abbr">der</span> <span title="Strömug" class="dta-abbr">Strömung</span> zugleich<br/>
+eine <span class="aq ">politiſche</span> Sicherheit für die ſonſt ſchwa-<br/>
+chen <span class="aq ">Provinzen</span> Oſt <span class="aq ">Aſiens</span> geworden. Der<br/>
+Strom macht nun einen Wirbelkreis<br/>
+um den <span class="aq "><span title="Mexi:" class="dta-abbr">mexikanischen</span></span> Busen herum und geht bei<br/>
+<span class="aq ">Havarna</span> heraus in <span title="dr" class="dta-abbr">der</span> <span title="Richtug" class="dta-abbr">Richtung</span> von Süd <span title="Wſt" class="dta-abbr">Weſt</span> nach<br/>
+<span class="aq ">Nord</span> Oſt bei der Bank <span title="v" class="dta-abbr">von</span> <span class="aq ">Ternove</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Neu-<br/>
+fundland</span> vorbei, hier geht ein <span title="Thl" class="dta-abbr">Teil</span> <span title="ſüdöstl" class="dta-abbr">südöstlich</span><br/>
+zu den <span class="aq ">Azoren</span>, der andere, <span class="dta-del" title="Streichung (#s)">der andr </span>nord:<br/>
+östlich nach <span class="aq ">Schotland Irland</span> <span title="ud" class="dta-abbr">und</span> <span class="aq ">Scandinavien</span><br/>
+Ein Schiff <span class="dta-del" title="Streichung (#ow)">ds</span><span class="dta-add" title="Hinzufügung (across)">hat</span> bei <span class="aq ">C. Lopez</span> an <span class="aq ">Equator</span> ge-<br/>
+ſtrandet <span class="dta-del" title="Streichung (#s)">hat</span>, die ganze Ladung von einigen<br/>
+hundert Toñen Palmöls folgten der<br/>
+Strömung und kamen in 1½ <span title="Jhrn" class="dta-abbr">Jahren</span> an<br/>
+die Küſten von <span class="aq ">Szotland</span> an. Daſelbſt werden<br/>
+jährlich <span class="aq ">tropiſche</span> Pflanzen, wie <span class="aq ">jotichus urens</span> etc, in Mengen ausgeworfen. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/104364440">Nekkert</a></span></span><br/>
+in <span title="ſnen" class="dta-abbr">ſeinen</span> Reiſen erzählt <span title="dß" class="dta-abbr">daß</span> er während<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0159 : 294|</span><br/>
+ſeines Aufenthaltes auf einer der<br/>
+<span class="aq ">Hebridi</span>ſchen Inſeln durch zwei Jahre<br/>
+den ſchönſten französiſchen Wein genoß<br/>
+der Toñenweise auf den Strand gewor-<br/>
+fen wurde. <span class="aq ">Esquimos</span> in ihre Häuter<br/>
+eingeneht wurden 1682 auf <span title="dr" class="dta-abbr">der</span> <span title="Insl" class="dta-abbr">Insel</span> <span class="aq ">Edda</span><br/>
+<span title="ud" class="dta-abbr">und</span> 1684 auf <span class="aq ">Weſtra</span> ausgeworfen. Das<br/>
+was <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118783025">Pomponius Mela</a></span></span> <span title="Schreibfehler: erzahl" class="dta-corr">erzählt</span> <span title="dß" class="dta-abbr">daß</span> <span class="aq ">Indier</span> von<br/>
+bräunlicher Farbe an den Küſten von <span class="aq ">Gallien</span><br/>
+<span title="ud" class="dta-abbr">und</span> <span class="aq ">Bretanien</span> gestrandet hatten, <span title="ud" class="dta-abbr">und</span> der <span class="aq ">Britti</span>ſche<br/>
+König ſie dem <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">Pro </span><span class="aq ">Conſul <span title="Personenname"><a href="http://d-nb.info/gnd/102399433">Clitius Metellus</a></span></span> geſchenkt<br/>
+hat, der ſie nach <span class="aq ">Rom</span> sendete, deutet wahr-<br/>
+ſcheinlich auch auf <span class="aq ">Esquimos</span> die hier durch<br/>
+die <span title="Strömug" class="dta-abbr">Strömung</span> getrieben wurden. Die Strö-<br/>
+mung in der Südsee hat <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118554700">Humboldt</a></span></span> beobachtet<br/>
+ſie zieht längst <span title="dr" class="dta-abbr">der</span> Küſte <span title="v" class="dta-abbr">von</span> <span class="aq ">Peru</span> in der<br/>
+Nähe der Schneegebürge. Das milde <span class="aq ">Clima</span><br/>
+von <span class="aq ">Peru</span> hängt davon ab, deñ der Strom von<br/>
+Süd <span class="aq ">Pol</span> kom̃end bringt ungeheuern kalte<br/>
+Maſſen mit ſich. In <span class="aq ">Lima</span> iſt die <span class="aq "><span title="Tmprt" class="dta-abbr">Temperatur</span></span><br/>
+gewöhnlich 12–14° R. was für eine <span class="aq ">Tropen</span><br/>
+gegend fast eine Kälte iſt. Eine andere<br/>
+Urſache <span title="dr" class="dta-abbr">der</span> Milde der <span class="aq "><span title="Tmprt." class="dta-abbr">Temperatur</span></span> iſt die Nähe<br/>
+der Schneegebürge, <span title="ud" class="dta-abbr">und</span> die <span title="Bedeckug" class="dta-abbr">Bedeckung</span> des<br/>
+Him̃els mit einer Wolkenſchicht <span class="aq ">Garua</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0160 : 295|</span><br/>
+genañt, durch einen großen <span title="Thl" class="dta-abbr">Theil</span> <span title="ds" class="dta-abbr">des</span> Jahres,<br/>
+durch die die Sonne nicht ſo wirken kañ<br/>
+der Strom ſelbſt unter 10° <span title="s. B." class="dta-abbr">südlicher Breite</span> ſtatt 22° R<br/>
+zu haben hat nur 12½°. Nördlich von <span class="aq ">Lima</span><br/>
+iſt ein großes vorſtehendes <span class="aq ">Cap</span>land, da<br/>
+wird der Strom auswärts geworfen,<br/>
+<span title="ud" class="dta-abbr">und</span> man kom̃t plötzlich in eine <span title="Metmprtr" class="dta-abbr">Meertemperatur</span><br/>
+von 22–23° R.</p><br/>
+<p class="dta-p">Auch die Tiefe beſtim̃t die <span title="Richtug" class="dta-abbr">Richtung</span> <span title="ds" class="dta-abbr">des</span> Stromes<br/>
+der Strömung welche zwiſchen den amwei-<br/>
+teſten hervorragenden <span class="gap">[unleserliches Material – Zeichen fehlt]</span>s <span title="v" class="dta-abbr">von</span> <span class="aq ">Africa</span> <span title="d" class="dta-abbr">und</span><br/>
+<span class="aq ">America</span>, mit der größten Gewalt fort-<br/>
+zieht kom̃t im Süden von <span class="aq ">Africa</span> auf die<br/>
+große Sandbank <span class="aq ">Agulias</span> 80 <span class="aq ">brahe</span> = 500 <span class="aq ">Fuss</span><br/>
+Tiefe <span title="ud" class="dta-abbr">und</span> die <span title="Richtug" class="dta-abbr">Richtung</span> <span title="dr" class="dta-abbr">der</span> <span title="Strömug" class="dta-abbr">Strömung</span> wird<br/>
+plötzlich verändert –</p><br/>
+<p class="dta-p">Weñ die Oberfläche <span title="ds" class="dta-abbr">des</span> Waſſers als die<span class="dta-marginal dta-marginal-right">Die Erwärmung der<br/>
+verſchiedenen Schichten<br/>
+des Meeres.<br/>
+</span><br/>
+Scheidelinie zwiſchen der Luft und Waſſer<span title="Schreibfehler: " class="dta-corr">-</span><br/>
+umhüllung genom̃en wird ſo iſt in ihrer<br/>
+<span class="aq ">Zone</span> <span title="ds" class="dta-abbr">das</span> <span class="aq ">Maximum</span> <span title="dr" class="dta-abbr">der</span> Wärme, je weiter<br/>
+man von beiden Seiten ſich von ihr<br/>
+entfernt, deſto mehr nim̃t die <span class="aq "><span title="Tmprtr" class="dta-abbr">Temperatur</span></span> ab<br/>
+allein in verſchiedenen Verhältniſſen<br/>
+die Abnahme iſt im Oceane 7–8 mal<br/>
+ſchneller als in der Luft. <span title="Dſe" class="dta-abbr">Diese</span> Abnahme<br/>
+verursacht <span title="dß" class="dta-abbr">daß</span> man unter den <span class="aq ">Tropen</span><br/>
+den See <span class="aq ">Organiſmus</span> des hohen <span class="aq ">Nordens</span> findet<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0161 : 296|</span><br/>
+ſo wie auf den hohen Bergen in <span class="aq ">Tropen-</span><br/>
+länder, die <span class="aq ">Produkte</span> der kalten <span title="ud" class="dta-abbr">und</span><br/>
+<span class="aq ">temperirten Continente</span> ſich finden. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11671350X">Sabi</a></span></span><br/>
+fand bei <span class="aq "><span title="C." class="dta-abbr">Cap</span> St. Antonio</span>, bei einer <span title="Original: Warme" class="dta-reg">Wärme</span><br/>
+an der Oberfläche von 22½° R., in einer<br/>
+Tiefe von 7000 <span title="F." class="dta-abbr">Fuss</span> 4,4°, darnach nehme die<br/>
+<span class="aq "><span title="Tmpr" class="dta-abbr">Temperatur</span></span> alle 70 <span class="aq ">Fuss</span> einen Grad ab, wozu<br/>
+in der Luft 5–600 <span class="aq ">Fuss</span> erforderlich ſind<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/118936530"><span class="aq "><span class="dta-del" title="Streichung (#ow)">N</span><span class="dta-add" title="Hinzufügung (across)">P</span>erron</span></a></span> auf der <span class="aq ">Boden</span>ſchen <span title="Rſe" class="dta-abbr">Reise</span> glaubte<br/>
+<span title="dß" class="dta-abbr">daß</span> bei dieſer ſteigenden Abnahme an<br/>
+Wärme, im Grunde <span title="ds" class="dta-abbr">des</span> <span title="M." class="dta-abbr">Meeres</span> ſich Eis vor-<br/>
+finden müſſte. Allein das iſt nicht der<br/>
+Fall. Es iſt die <span title="merkw:" class="dta-abbr">merkwürdige</span> Eigenſchaft des<br/>
+Waſſers, <span title="dß" class="dta-abbr">daß</span> es an Dichtigkeit zunimt mit<br/>
+Abnahme <span title="dr" class="dta-abbr">der</span> Wärme bis 4¾° + R. von da<br/>
+an nim̃t es wieder an Dichtigkeit ab. Da<br/>
+nun das weniger dichtere <span title="Wſſr" class="dta-abbr">Waſſer</span> im̃er nach<br/>
+oben ſteigt ſo folgt, <span title="dß" class="dta-abbr">daß</span> in den größten<br/>
+Tiefen der Oceane das <span title="Wſſr" class="dta-abbr">Waſſer</span> nie unter<br/>
++ 4¾° R. fallen kañ. Eine weise <span title="Einrich-&#xA;tug" class="dta-abbr">Einrichtung</span> <span title="dr" class="dta-abbr">der</span> <span title="Ntr" class="dta-abbr">Natur</span> zur <span title="Erhaltug" class="dta-abbr">Erhaltung</span> <span title="ds" class="dta-abbr">des</span> <span class="aq ">Organiſmus</span> in<br/>
+den Meeresabgründen. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117654167">Scoresbi</a></span></span> der<br/>
+Wallfiſchfänger fand bei Spitzbergen<br/>
+in einer Tife von 4000 <span title="F." class="dta-abbr">Fuss</span> + 2° R. während<br/>
+an der Oberfläche − 1½° R. war. Dies war<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0162 : 297|</span><br/>
+die Folge des Golfſtromes, der ſeine <span title="Wſſr" class="dta-abbr">Waſſer</span><span title="Schreibfehler: " class="dta-corr">-</span><br/>
+maſſen von den <span class="aq ">Tropen</span> bis in <span title="dſen" class="dta-abbr">dieſen</span> <span class="aq ">Norden</span><br/>
+sendet <span title="ud" class="dta-abbr">und</span> ſich bei <span class="aq ">Nord Cap</span> herumdreht<span title="Schreibfehler: " class="dta-corr">.</span><br/>
+</p></div></div></div></body></html>

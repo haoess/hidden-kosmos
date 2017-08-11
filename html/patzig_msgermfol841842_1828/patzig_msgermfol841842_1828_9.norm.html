@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span title="Original: D. 1. Dcbr. 1827." class="dta-reg">9. Vorlesung, 01.12.1827</span></div><br/>
+<p class="dta-p"><span class="u "><span title="Original: Dieſe" class="dta-reg">Diese</span> <span title="Original: Geſetze" class="dta-reg">Gesetze</span> der Einheit <span title="Original: ſind" class="dta-reg">sind</span> bis jetzt</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u "><span title="Original: Geſetze" class="dta-reg">Gesetze</span> der Einheit<br/>
+finden wir leichter, <span title="Original: beſtim̃ten" class="dta-reg">bestimmten</span><br/>
+bei entfernten als naher<br/>
+<span title="Original: Erſcheinungen" class="dta-reg">Erscheinungen</span>.</span><br/>
+</span><span class="u ">viel richtiger, <span title="Original: ſicherer" class="dta-reg">sicherer</span> u. <span title="Original: beſtim̃ter" class="dta-reg">bestimmter</span> bei <span title="Original: Er-&#xA;ſcheinungen" class="dta-reg">Erscheinungen</span> gefunden dies uns am <span title="Original: entfern-&#xA;teſten" class="dta-reg">entferntesten</span> <span title="Original: ſind" class="dta-reg">sind</span>, als bei denen die uns näher<br/>
+liegen u.</span> uns umgeben. So <span title="Original: iſt" class="dta-reg">ist</span> es gelungen<br/>
+die Trabanten des Jupiters bis auf die<br/>
+<span title="Original: Secunde" class="dta-reg">Sekunde</span> zu berechnen, <span title="Original: weñ" class="dta-reg">wenn</span> <span title="Original: ſie" class="dta-reg">sie</span> in die<br/>
+Schatten ihres Planeten treten, während<br/>
+<span title="Original: unſere" class="dta-reg">unsere</span> <span title="Original: Lufterſcheinungen" class="dta-reg">Lufterscheinungen</span> noch ganz <span title="Original: unbe-&#xA;ſtim̃t" class="dta-reg">unbestimmt</span> <span title="Original: ſind" class="dta-reg">sind</span>. <span class="u ">Der große <span title="Original: Unterſchied" class="dta-reg">Unterschied</span> <span title="Original: zwi-" class="dta-reg">zwischen</span></span><span title="Original: " class="dta-reg"/>
+<span class="dta-marginal dta-marginal-left"><span class="u "><span title="Original: Unterſchied" class="dta-reg">Unterschied</span><br/>
+<span title="Original: zwiſchen" class="dta-reg">zwischen</span> <span title="Original: coeleſtiſchen" class="dta-reg">coelestischen</span><br/>
+u. <span title="Original: telluriſchen" class="dta-reg">tellurischen</span> <span title="Original: Erſchein" class="dta-reg">Erschein</span>.</span><br/>
+</span><span class="u "><span title="Original: ſchen" class="dta-reg"/> den Beobachtungen der <span title="Original: phyſiſchen" class="dta-reg">physischen</span> <span title="Original: Aſtro-&#xA;nomie" class="dta-reg">Astronomie</span> u. der <span title="Original: telluriſchen" class="dta-reg">tellurischen</span> <span title="Original: Erſcheinungen" class="dta-reg">Erscheinungen</span><br/>
+liegt darin,</span> daß wir uns bei <span title="Original: erſten" class="dta-reg">ersten</span> bloß<br/>
+auf räumliche, quantitative, <span title="Original: mechaniſche" class="dta-reg">mechanische</span><br/>
+<span title="Original: Verhältniße" class="dta-reg">Verhältnisse</span> beziehen dürfen, u. bei <span title="Original: letz-&#xA;tern" class="dta-reg">letzteren</span> außer <span title="Original: dieſen" class="dta-reg">diesen</span> <span title="Original: Erſcheinungen" class="dta-reg">Erscheinungen</span> des Maßes<br/>
+u. der Bewegung noch die Quantität,<br/>
+dh. die Heterogenität des Stoffes in<br/>
+<span title="Original: Anſchlag" class="dta-reg">Anschlag</span> bringen <span title="Original: müſſen" class="dta-reg">müssen</span>. <span title="Original: Jn" class="dta-reg">In</span> der <span title="Original: phÿſi-&#xA;ſche" class="dta-reg">physische</span> <span title="Original: Aſtronomie" class="dta-reg">Astronomie</span> haben <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118568698"><span title="Original: Lagr" class="dta-reg">Lagrange</span><span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: a" class="dta-reg"/></span><span title="Original: nge" class="dta-reg"/></a></span></span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536"><span title="Original: La-&#xA;place" class="dta-reg">Laplace</span></a></span></span> wunderbares <span title="Original: geleiſtet" class="dta-reg">geleistet</span> u. <span title="Original: auf-&#xA;geſtellt" class="dta-reg">aufgestellt</span>; wohingegen in den <span title="Original: telluriſchen" class="dta-reg">tellurischen</span><br/>
+<span title="Original: Verhältnißen" class="dta-reg">Verhältnissen</span> noch <span title="Original: im̃er" class="dta-reg">immer</span> Röhrungen <span title="Original: ſich" class="dta-reg">sich</span><br/>
+ereignen, nach welchen bis jetzt <span title="Original: keines-&#xA;wegs" class="dta-reg">keineswegs</span> die Einheit der <span title="Original: Geſetze" class="dta-reg">Gesetze</span> <span title="Original: aufgefun-&#xA;den" class="dta-reg">aufgefunden</span>, die wir bei der Mechanik des<br/>
+<span title="Original: Him̃els" class="dta-reg">Himmels</span> <span title="Original: erkañt" class="dta-reg">erkannt</span> haben. <span title="Original: Uebrigens" class="dta-reg">Übrigens</span> bleibt<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u "><span title="Original: Vorurtheil" class="dta-reg">Vorurteil</span> der<br/>
+<span title="Original: neuern" class="dta-reg">neueren</span> Zeit.</span><br/>
+</span>hier noch das <span title="Original: Vorurtheil" class="dta-reg">Vorurteil</span> der <span title="Original: neuern" class="dta-reg">neueren</span><br/>
+Zeit zu widerlegen, als <span title="Original: weñ" class="dta-reg">wenn</span> bei den<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">große</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0061 : 5[7]|</span><br/>
+großen <span title="Original: Kataſtrophen" class="dta-reg">Katastrophen</span> des Erdballs viele<br/>
+Kräfte <span title="Original: gemeinſam" class="dta-reg">gemeinsam</span> wirkten u. daß <span title="Original: ſomit" class="dta-reg">somit</span><br/>
+bei der vereinzelten <span title="Original: Unterſuchung" class="dta-reg">Untersuchung</span> <span title="Original: einfa-" class="dta-reg">einfacher</span><span title="Original: &#xA;cher" class="dta-reg"/> Stoffe kein Licht über die <span title="Original: Erſchei-&#xA;nungen" class="dta-reg">Erscheinungen</span> verbreitet werden <span title="Original: kañ" class="dta-reg">kann</span>. Grade<br/>
+das <span title="Original: Gegentheil" class="dta-reg">Gegenteil</span>; <span title="Original: deñ" class="dta-reg">denn</span> welche Entdeckungen<br/>
+knüpfen <span title="Original: ſich" class="dta-reg">sich</span> nicht an den <span title="Original: Verſuch" class="dta-reg">Versuch</span> mit der<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/119292556"><span title="Original: Volta" class="dta-reg">Voltaischen</span></a></span><span title="Original: iſchen" class="dta-reg"/> Säule, u. <span title="Original: ſo" class="dta-reg">so</span> müßten wir<br/>
+auf ähnlichem Wege auch die Natur des<br/>
+Nordlichts, die <span title="Original: Erſcheinung" class="dta-reg">Erscheinung</span> des <span title="Original: Gewitter-&#xA;regens" class="dta-reg">Gewitterregens</span>, der gleichzeitig oft hunderten<br/>
+von Kubik Meilen oder <span title="Original: Atmoſphäre" class="dta-reg">Atmosphäre</span><br/>
+in Bewegung <span title="Original: ſetzt" class="dta-reg">setzt</span>, zu <span title="Original: erforſchen" class="dta-reg">erforschen</span><br/>
+u. unter <span title="Original: Geſetze" class="dta-reg">Gesetze</span> zu bringen <span title="Original: ſuchen" class="dta-reg">suchen</span>.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u "><span title="Original: Litteratur" class="dta-reg">Literatur</span><br/>
+der Kosmographie</span><br/>
+</span><span class="u ">Wir <span title="Original: kom̃en" class="dta-reg">kommen</span> jetzt zur <span title="Original: Litteratur" class="dta-reg">Literatur</span> der<br/>
+Kosmographie oder</span> zu den Quellen der<br/>
+<span title="Original: Wiſſenſchaft" class="dta-reg">Wissenschaft</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span>. <span title="Original: Dieſe" class="dta-reg">Diese</span> <span title="Original: ſind" class="dta-reg">sind</span> einmal<br/>
+das Studium der Natur <span title="Original: ſelbſt" class="dta-reg">selbst</span>, u. <span title="Original: dañ" class="dta-reg">dann</span><br/>
+das Studium der Schriften, wo die <span title="Original: Beobach-&#xA;tungen" class="dta-reg">Beobachtungen</span> u. Erfahrungen <span title="Original: geſam̃elt" class="dta-reg">gesammelt</span> <span title="Original: ſind" class="dta-reg">sind</span>. Was<br/>
+im Gebiete der Natur <span class="dta-del" title="Streichung (#ow)">e</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: E" class="dta-reg">Einer</span></span><span title="Original: iner" class="dta-reg"/> beobachtet <span title="Original: iſt" class="dta-reg">ist</span><br/>
+unendlich gering gegen das, was im Laufe<br/>
+eines Jahrhunderts <span class="dta-del" title="Streichung (#ow)">v</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: V" class="dta-reg">Viele</span></span><span title="Original: iele" class="dta-reg"/> <span title="Original: allmählig" class="dta-reg">allmählich</span> <span title="Original: ſam̃el-&#xA;ten" class="dta-reg">sammelten</span> u. <span title="Original: ſomit" class="dta-reg">somit</span> <span title="Original: iſt" class="dta-reg">ist</span> eine <span title="Original: vielſeitiges" class="dta-reg">vielseitiges</span> Studium<br/>
+hier <span title="Original: unerlaßlich" class="dta-reg">unerläßlich</span>. <span class="u "><span title="Original: Nothwendig" class="dta-reg">Notwendig</span> wird es zugleich</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u "><span title="Original: Nothwendig" class="dta-reg">Notwendig</span><br/>
+irgendeinen <span title="Original: Theil" class="dta-reg">Teil</span> der<br/>
+Natur <span title="Original: ſelbſt" class="dta-reg">selbst</span> zu <span title="Original: ſtudiren" class="dta-reg">studieren</span>.</span><br/>
+</span><span class="u ">daß man irgend einen <span title="Original: Theil" class="dta-reg">Teil</span> der Natur <span title="Original: ſelbſt" class="dta-reg">selbst</span><br/>
+beobachtet habe,</span> weil dem Ganzen <span title="Original: da-&#xA;durch" class="dta-reg">dadurch</span> Leben gegeben u. die von <span title="Original: andern" class="dta-reg">anderen</span><br/>
+gemachten Beobachtungen <span title="Original: beſſer" class="dta-reg">besser</span> <span title="Original: verſtanden" class="dta-reg">verstanden</span><br/>
+u. gewürdigt werden. Man muß bei <span title="Original: dieſen" class="dta-reg">diesen</span><br/>
+Beobachtungen aber wohl <span title="Original: unterſcheiden" class="dta-reg">unterscheiden</span>, was<br/>
+nützlich <span title="Original: iſt" class="dta-reg">ist</span> für den Lehrer oder <span title="Original: Wiſſenſchaft" class="dta-reg">Wissenschaft</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">selbſt u.</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0062 : 58.|</span><br/>
+<span title="Original: selbſt" class="dta-reg">selbst</span>, u. was für diejenigen, die <span title="Original: weni-&#xA;ger" class="dta-reg">weniger</span> Zeit auf <span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: Beſchäftigung" class="dta-reg">Beschäftigung</span> anwenden<br/>
+<span title="Original: köñen" class="dta-reg">können</span>. Die <span title="Original: beſte" class="dta-reg">beste</span> Quelle <span title="Original: dieſer" class="dta-reg">dieser</span> <span title="Original: Wiſſenſchaft" class="dta-reg">Wissenschaft</span><br/>
+bleibt <span title="Original: ſtets" class="dta-reg">stets</span> das Studium der <span title="Original: ſpeciellen" class="dta-reg">speziellen</span> <span title="Original: Ab-&#xA;handlung" class="dta-reg">Abhandlung</span> über einen <span title="Original: Gegenſtand" class="dta-reg">Gegenstand</span>. Diejenigen <span title="Original: ſind" class="dta-reg">sind</span><br/>
+glücklich in der <span title="Original: Erkeñtniß" class="dta-reg">Erkenntnis</span> des Genereller<br/>
+die das <span title="Original: Specielle" class="dta-reg">Spezielle</span> <span title="Original: beſonders" class="dta-reg">besonders</span> gefaßt u.<br/>
+denen das hier <span title="Original: gemeinſame" class="dta-reg">gemeinsame</span> Gut aller <span title="Original: Natio-&#xA;nen" class="dta-reg">Nationen</span>, die gleichzeitig <span title="Original: angeſtellten" class="dta-reg">angestellten</span> Beobachtungen<br/>
+der Natur, zugänglich geworden. Ohne dies<br/>
+<span title="Original: iſt" class="dta-reg">ist</span> es unmöglich zu einer reinen großen <span title="Original: Na-&#xA;turanſicht" class="dta-reg">Naturansicht</span> zu gelangen. <span class="u "><span title="Original: Kom̃en" class="dta-reg">Kommen</span> wir jetzt</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u "><span title="Original: Litteratur" class="dta-reg">Literatur</span></span><br/>
+<span title="Original: ſelbſt" class="dta-reg">selbst</span><br/>
+<span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118803948">Barenius</a></span></span><br/>
+</span><span class="u ">zur <span title="Original: Litteratur" class="dta-reg">Literatur</span> der <span title="Original: Phyſikaliſchen" class="dta-reg">Physikalischen</span> <span title="Original: Erdbeſchrei-&#xA;bung" class="dta-reg">Erdbeschreibung</span> <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: zuerſt" class="dta-reg">zuerst</span> hier</span> <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118803948">Barenius</a></span></span></span>, aus der<br/>
+Mitte des <span title="Original: 17" class="dta-reg">17te</span><span class="u "><span title="Original: te" class="dta-reg"/></span> Jahrhunderts zu werken, in <span title="Original: ſeine" class="dta-reg">seine</span><br/>
+<span class="aq ">Geograhia generalis et <span title="Original: ſpecialis" class="dta-reg">specialis</span></span>. Es <span title="Original: iſt" class="dta-reg">ist</span> den<br/>
+<span title="Original: erſte" class="dta-reg">erste</span> Anregung, nur das generelle mit dem<br/>
+<span title="Original: ſpecielle" class="dta-reg">spezielle</span> zu <span title="Original: ſehr" class="dta-reg">sehr</span> <span title="Original: verwechſelt" class="dta-reg">verwechselt</span>. Der Stoff<br/>
+<span title="Original: iſt" class="dta-reg">ist</span> nicht ganz bezähmt u. <span title="Original: geſondert" class="dta-reg">gesondert</span> aus <span title="Original: ein-&#xA;zeln" class="dta-reg">einzeln</span> wichtig oder unwichtig <span title="Original: iſt" class="dta-reg">ist</span>. <span title="Original: Dañ" class="dta-reg">Dann</span> <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: ſpä-" class="dta-reg">später</span>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/121787109">Culof</a></span></span><br/>
+</span><span title="Original: ter" class="dta-reg"/> zu merken <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/121787109">Lulof</a></span></span>: Einleitung in<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/119384981"><span title="Original: Bergmañ" class="dta-reg">Bergmann</span></a></span></span> u. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/139373365"><span title="Original: Mitter-&#xA;bacher" class="dta-reg">Mitterbacher</span></a></span></span></span>.<br/>
+</span>die Natur <span class="u ">u.</span> <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/119384981"><span title="Original: Bergmann" class="dta-reg">Bergmanns</span></a></span><span title="Original: s" class="dta-reg"/></span> u. <span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/139373365"><span title="Original: Mitter-&#xA;bacher" class="dta-reg">Mitterbachers</span></a></span><span title="Original: s" class="dta-reg"/></span></span> <span title="Original: phyſiſche" class="dta-reg">physische</span> <span title="Original: Erdbeſchreibung" class="dta-reg">Erdbeschreibung</span>. <span title="Original: Jn" class="dta-reg">In</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118559796">Kant</a></span></span><br/>
+</span>neuerer Zeit <span title="Original: iſt" class="dta-reg">ist</span> <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118559796"><span title="Original: Kant" class="dta-reg">Kants</span></a></span><span title="Original: s" class="dta-reg"/></span> <span title="Original: phÿſiſche" class="dta-reg">physische</span> <span title="Original: Geogra-&#xA;phie" class="dta-reg">Geographie</span> berühmt geworden. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118559796">Kant</a></span></span> <span title="Original: iſt" class="dta-reg">ist</span> es jedoch<br/>
+wie dem Mineralogen <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118767089">Werner</a></span></span> gegangen.<br/>
+Es blieben <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">von </span>beiden unglücklicher <span title="Original: Weiſe" class="dta-reg">Weise</span> eine<br/>
+Menge Hefte übrig, mit oft unrichtigen<br/>
+<span title="Original: Zuſätzen" class="dta-reg">Zusätzen</span>, wo beiden in der Folge zu <span title="Original: ge-&#xA;ſchrieben" class="dta-reg">geschrieben</span> wurde, was ihren <span title="Original: Anſichten" class="dta-reg">Ansichten</span><br/>
+gar nicht gehört. Ein <span title="Original: beſſeres" class="dta-reg">besseres</span> Werk<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">iſt hi</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0063 : 5[9]|</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/116653531">Delametrie</a></span></span><br/>
+</span><span title="Original: iſt" class="dta-reg">ist</span> hier <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/116653531">Delametrie</a></span>: <span title="Original: theorie" class="dta-reg">Theorie</span> de la terre</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/11754096X">Malte-Brun</a></span></span><br/>
+</span>4 Bde; ferner <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/11754096X">Malte-Brun</a></span>: Geographie<br/>
+<span title="Original: univerſelle" class="dta-reg">universelle</span></span>. Letzteres Werk enthält eine<br/>
+<span title="Original: ſehr" class="dta-reg">sehr</span> <span title="Original: ſpecielle" class="dta-reg">spezielle</span> <span title="Original: Beſchreibung" class="dta-reg">Beschreibung</span>, freilich auch mit<br/>
+dem Fehler, <span title="dß" class="dta-abbr">daß</span> <span title="ds" class="dta-abbr">das</span> Generelle u. <span title="Original: Specielle" class="dta-reg">Spezielle</span><br/>
+nicht genug <span title="Original: geſchieden" class="dta-reg">geschieden</span> <span title="Original: iſt" class="dta-reg">ist</span>. Er hebt <span title="Original: beſonders" class="dta-reg">besonders</span><br/>
+die <span title="Original: Anſicht" class="dta-reg">Ansicht</span> über die <span title="Original: verſch." class="dta-reg">versch.</span> <span title="Original: Menſchen-Racen" class="dta-reg">Menschen-Raken</span><br/>
+hervor, wie überhaupt <span title="ds" class="dta-abbr">das</span>, was auf<br/>
+die <span title="Original: organiſche" class="dta-reg">organische</span> Natur Bezug hat; jedoch<br/>
+muß das ganze Werk mit <span title="Original: Vorſicht" class="dta-reg">Vorsicht</span> <span title="Original: ſtudirt" class="dta-reg">studiert</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname">Parer</span></span><br/>
+</span>werden. Ferner <span title="Original: iſt" class="dta-reg">ist</span> zu beachten <span class="aq u "><span title="Personenname">Parer</span></span>:<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/116921617"><span title="Original: Hochſtaedter" class="dta-reg">Hochstäter</span></a></span></span></span> <span class="u "><span title="Original: Grundſätze" class="dta-reg">Grundsätze</span> der <span title="Original: Geo" class="dta-reg">Geologie</span></span><span class="dta-del" title="Streichung (#ow)"><span class="u ">g</span></span><span class="dta-add" title="Hinzufügung (across)"><span class="u "><span title="Original: l" class="dta-reg"/></span></span><span class="u "><span title="Original: ogie" class="dta-reg"/> 1815, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116921617"><span title="Original: Hochſtaedt-&#xA;ter" class="dta-reg">Hochstädter</span></a></span></span>: <span title="Original: Phyſiſche" class="dta-reg">Physische</span> Geographie: 1820,</span> <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/117181641">Munker</a></span></span></span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/117181641">Munker</a></span></span><br/>
+</span>Anfangsgründe der <span title="Original: mathematiſchen" class="dta-reg">mathematischen</span> u. <span title="Original: phy-&#xA;ſikaliſchen" class="dta-reg">physikalischen</span> Geographie. Eine von <span title="Original: letzterm" class="dta-reg">letztem</span><br/>
+<span title="Original: Verfaſſer" class="dta-reg">Verfasser</span> mit <span title="Original: beſondern" class="dta-reg">besonderen</span> Fleiß bearbeitete<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/100055427">Brandes</a></span></span><br/>
+</span>Abhandlung des Artikels: <span class="u ">Erde in</span> <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/100055427">Brandes</a></span></span> <span title="Original: p" class="dta-reg"><span class="aq "><span title="Original: etc" class="dta-reg">etc.</span></span><span title="Original: ." class="dta-reg"/></span></span><br/>
+<span title="Original: phyſikaliſchem" class="dta-reg">physikalischem</span> Wörterbuche <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: beſonders" class="dta-reg">besonders</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/104268190">Link</a></span></span><br/>
+</span>wohl gelungen. <span class="u ">Auch</span> <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/104268190"><span title="Original: Link" class="dta-reg">Links</span></a></span><span title="Original: s" class="dta-reg"/></span></span>, <span class="u "><span title="Original: Betrachtun-" class="dta-reg">Betrachtungen</span></span><span title="Original: &#xA;gen" class="dta-reg"/> der Urwelt <span title="Original: ſind" class="dta-reg">sind</span> außerordentlich <span title="Original: Lehr-" class="dta-reg">Lehrreich</span>
+<span class="dta-del" title="Streichung (#ow)"><span class="dta-supplied">[R]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: r" class="dta-reg"/></span><span title="Original: eich" class="dta-reg"/>. <span title="Original: Anſichten" class="dta-reg">Ansichten</span> vom ausgedehnten <span title="Original: Welt-&#xA;raume" class="dta-reg">Weltraume</span> u. vom Gebiete der <span title="Original: Aſtronomie" class="dta-reg">Astronomie</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span></span><br/>
+</span><span title="Original: giebt" class="dta-reg">gibt</span> <span title="Original: beſonders" class="dta-reg">besonders</span> <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span></span> in <span title="Original: ſeinem" class="dta-reg">seinem</span> <span title="Original: ſchönen" class="dta-reg">schönen</span><br/>
+Werke: <span class="aq "><span title="Original: Sÿſtem" class="dta-reg">System</span> du <span title="Original: monde" class="dta-reg">Monde</span></span>. Kein Volk<br/>
+<span title="Original: kañ" class="dta-reg">kann</span> ein gleichartiges Buch <span title="Original: aufweiſen" class="dta-reg">aufweisen</span>. <span title="Original: Dañ" class="dta-reg">Dann</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/117108278">Schubert</a></span></span><br/>
+</span><span title="Original: iſt" class="dta-reg">ist</span> auch <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/117108278">Schubert</a></span></span> mit <span title="Original: ſeinen" class="dta-reg">seinen</span> <span title="Original: aſtronomiſchen" class="dta-reg">astronomischen</span><br/>
+Werken hier anzuführen. Bücher die<br/>
+<span title="Original: ſich" class="dta-reg">sich</span> zugleich auf <span title="Original: Naturgeſchichte" class="dta-reg">Naturgeschichte</span> beziehen<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118774662">v. <span title="Original: Hoff" class="dta-reg">Hoffe</span></a></span>.</span><br/>
+</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: ſind" class="dta-reg">sind</span></span> <span title="Original: H" class="dta-reg">Herrn</span><span title="Original: E" class="dta-reg"/><span title="Original: rrn" class="dta-reg"/> <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118774662">v. <span title="Original: Hoff" class="dta-reg">Hoffs</span></a></span><span title="Original: s" class="dta-reg"/></span> <span title="Original: Geſchichte" class="dta-reg">Geschichte</span>, der durch<br/>
+<span title="Original: Ueberlieferungen" class="dta-reg">Überlieferungen</span> <span title="Original: nachgewieſenen" class="dta-reg">nachgewiesenen</span> <span title="Original: Ver-&#xA;änderungen" class="dta-reg">Veränderungen</span> der Oberfläche der Erde<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">worin</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0064 : 60.|</span><br/>
+worin die <span title="Original: Geſchichte" class="dta-reg">Geschichte</span> der <span title="Original: verſch." class="dta-reg">versch.</span> <span title="Original: Hypotheſe" class="dta-reg">Hypothese</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/117280607">Uckert</a></span></span><br/>
+</span><span title="Original: lehr" class="dta-reg">lehrreich</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: re" class="dta-reg"/></span><span title="Original: ich" class="dta-reg"/> <span title="Original: dargeſtellt" class="dta-reg">dargestellt</span> <span title="Original: ſind" class="dta-reg">sind</span>, u. <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/117280607"><span title="Original: Uckert" class="dta-reg">Uckerts</span></a></span><span title="Original: s" class="dta-reg"/></span><br/>
+mathem. u. <span title="Original: phyſikal." class="dta-reg">physikal.</span> <span title="Original: Erdbeſchreibung" class="dta-reg">Erdbeschreibung</span><br/>
+der Griechen u. Römer <span title="Original: 1816–1821" class="dta-reg">1816-1821</span>.</p><br/>
+<p class="dta-p">Es bleibt nur noch übrig <span title="Original: Anhangsreiſe" class="dta-reg">Anhangsreise</span><br/>
+nicht als eigentliche Quellen des Studiums, <span title="Original: ſon-&#xA;dern" class="dta-reg">sondern</span> mehr zur Belebung der <span title="Original: Einbildungs-" class="dta-reg">Einbildungskraft</span>
+<span class="dta-marginal dta-marginal-left"><span class="u "><span title="Original: Aeſtetiſche" class="dta-reg">Ästhetische</span> <span title="Original: Be-&#xA;handlung" class="dta-reg">Behandlung</span> <span title="Original: großerñNaturſcenen" class="dta-reg">großernnNaturscenen</span></span>.<br/>
+</span><span title="Original: kraft" class="dta-reg"/>, <span class="u ">der <span title="Original: äſtetiſchen" class="dta-reg">ästhetischen</span> Behandlung großer<br/>
+<span title="Original: Naturſcenen" class="dta-reg">Naturszenen</span> zu erwähnen.</span> Es <span title="Original: iſt" class="dta-reg">ist</span> dies<br/>
+ein neuer Zweig der <span title="Original: Litteratur" class="dta-reg">Literatur</span> <span title="Original: gewor-&#xA;den" class="dta-reg">geworden</span>, der <span title="Original: ſo" class="dta-reg">so</span> gut dazu beiträgt, wie die<br/>
+<span title="Original: botaniſchen" class="dta-reg">botanischen</span> Gärten mit ihren <span title="Original: exotiſchen" class="dta-reg">exotischen</span> <span title="Original: Pflan-&#xA;zenformen" class="dta-reg">Pflanzenformen</span>, der <span title="Original: Wunſch" class="dta-reg">Wunsch</span> wozu regen, fremde<br/>
+Länder zu <span title="Original: ſchauen" class="dta-reg">schauen</span>. Hinzu <span title="Original: geſellet" class="dta-reg">gesellet</span> <span title="Original: ſich" class="dta-reg">sich</span> die<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u "><span title="Original: Landſchaftsmalerei" class="dta-reg">Landschaftsmalerei</span></span><br/>
+</span><span class="u "><span title="Original: Landſchaftsmalerei" class="dta-reg">Landschaftsmalerei</span></span>, die <span title="Original: ſich" class="dta-reg">sich</span> jetzt weniger<br/>
+mit den <span title="Original: Maſſen" class="dta-reg">Massen</span> der Gegend <span title="Original: beſchäftigt" class="dta-reg">beschäftigt</span>,<br/>
+als auf die Richtigkeit der Natur- u. <span title="Original: beſon-&#xA;ders" class="dta-reg">besonders</span> <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">der </span>Pflanzenformen <span title="Original: ſieht" class="dta-reg">sieht</span>. <span class="u ">Bei Griechen</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u "><span title="Original: Geſchmack" class="dta-reg">Geschmack</span> der <span title="Original: Grie-&#xA;chen" class="dta-reg">Griechen</span> u. Römer</span><br/>
+</span><span class="u ">u. Römern war die <span title="Original: äſtetiſche" class="dta-reg">ästhetische</span> Behandlung<br/>
+erhabener <span title="Original: Naturſcenen" class="dta-reg">Naturszenen</span></span> nur bei den Dichter<br/>
+zu finden; die <span title="Original: Proſaiker" class="dta-reg">Prosaiker</span> erzählten nur<br/>
+Schlachten u. <span title="Original: beſchrieben" class="dta-reg">beschrieben</span> die Schlachtfelder<br/>
+u. rohe Völker in <span title="Original: dieſem" class="dta-reg">diesem</span> <span title="Original: Geiſte" class="dta-reg">Geiste</span> u. <span title="Original: weñ" class="dta-reg">wenn</span><br/>
+von großen <span title="Original: Naturſcenen" class="dta-reg">Naturszenen</span> die Rede <span title="Original: iſt" class="dta-reg">ist</span>, <span title="Original: ſo" class="dta-reg">so</span><br/>
+<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">sind</span> <span title="Original: dieſe" class="dta-reg">diese</span> nur der Hintergrund, für ihre<br/>
+<span title="Original: hiſtoriſchen" class="dta-reg">historischen</span> Figuren u. Gruppen. Alles <span title="Original: w" class="dta-reg">was</span><span class="dta-supplied">[<span title="Original: as" class="dta-reg"/>]</span><br/>
+<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (intralinear)">mit </span>dem <span title="Original: Leidenſchaften" class="dta-reg">Leidenschaften</span> der <span title="Original: Menſchen" class="dta-reg">Menschen</span> <span title="Original: zuſam̃en-&#xA;hängt" class="dta-reg">zusammenhängt</span> u. aus <span title="Original: denſelben" class="dta-reg">denselben</span> hervorgeht u.<br/>
+hinwieder auf <span title="Original: ſie" class="dta-reg">sie</span> einwirkt, das lag<br/>
+ihnen <span title="Original: beſonders" class="dta-reg">besonders</span> nahe. Dabei hatten <span title="Original: ſie" class="dta-reg">sie</span><br/>
+allerdings <span title="Original: Siñ" class="dta-reg">Sinn</span> für Natur; dies <span title="Original: beweiſe" class="dta-reg">beweise</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">ihre</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0065 : [61]|</span><br/>
+ihre <span title="Original: ſehr" class="dta-reg">sehr</span> <span title="Original: geſchmakvoll" class="dta-reg">geschmackvoll</span> angelegten Gärten<br/>
+u. ihr Genuß der <span title="Original: ſie" class="dta-reg">sie</span> in der Natur<br/>
+fanden, wie aus dies <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118520814">Cicero</a></span></span> u. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118595091">Plinius</a></span></span><br/>
+in ihren Briefen zu <span title="Original: erkeñen" class="dta-reg">erkennen</span> geben; doch<br/>
+war dies ein irgend eine <span title="Original: Hauptſache" class="dta-reg">Hauptsache</span> in<br/>
+ihrer <span title="Original: Litteratur" class="dta-reg">Literatur</span>, <span title="Original: ſondern" class="dta-reg">sondern</span> nur <span title="Original: im̃er" class="dta-reg">immer</span> der<br/>
+Hintergrund, um ihren lebenden Figuren<br/>
+<span title="Original: Anmuth" class="dta-reg">Anmut</span> u. Gewicht zu geben. <span class="u ">Die <span title="Original: äſte-" class="dta-reg">ästhetische</span></span><span title="Original: " class="dta-reg"/>
+<span class="dta-marginal dta-marginal-left"><span class="u "><span title="Original: Dieſe" class="dta-reg">Diese</span> <span title="Original: äſtetiſche" class="dta-reg">ästhetische</span><br/>
+Behandlung der Natur<br/>
+mehr dem <span title="Original: Judiſch-Germa-" class="dta-reg">Jüdisch-germanischen</span></span><span title="Original: &#xA;niſchen" class="dta-reg"/> <span title="Original: Stam̃e" class="dta-reg">Stamme</span> eigen.<br/>
+</span><span class="u "><span title="Original: tiſche" class="dta-reg"/> Behandlung der Natur war mehr<br/>
+dem <span title="Original: Jndiſch-Germaniſchen" class="dta-reg">Indisch-germanischen</span> <span title="Original: Stam̃e" class="dta-reg">Stamme</span> eigen</span>.<br/>
+Die <span title="Original: Jnder" class="dta-reg">Inder</span> bewahren das <span title="Original: tiefſte" class="dta-reg">tiefste</span> Gefühl<br/>
+für das Unbelebte, beobachten die <span title="Original: R" class="dta-reg">Riten</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 2 Zeichen fehlen]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: it" class="dta-reg"/></span><span title="Original: en" class="dta-reg"/><br/>
+der <span title="Original: Thiere" class="dta-reg">Tiere</span> <span title="Original: p" class="dta-reg"><span class="aq "><span title="Original: etc" class="dta-reg">etc.</span></span><span title="Original: ." class="dta-reg"/></span> wie wir es bei den Alten<br/>
+ganz entbehren. <span title="Original: Jm" class="dta-reg">Im</span> Mittelalter war<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118658115">Bembo</a></span></span><br/>
+</span><span title="Original: zuerſt" class="dta-reg">zuerst</span> <span class="u ">der <span title="Original: Cardinal" class="dta-reg">Kardinal</span></span> <span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118658115">Bembo</a></span></span></span>, der in <span title="Original: ſeine" class="dta-reg">seine</span><br/>
+Jugend über die Vegetation der <span title="Original: Pflanzen-&#xA;welt" class="dta-reg">Pflanzenwelt</span> <span title="Original: ſchrieb" class="dta-reg">schrieb</span>. <span title="Original: Jn" class="dta-reg">In</span> neueren Zeit <span title="Original: iſt" class="dta-reg">ist</span> überall<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118517252">Buffon</a></span></span><br/>
+</span><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118517252">Buffon</a></span></span> berühmt geworden, nur <span title="Original: herrſchte" class="dta-reg">herrschte</span><br/>
+bei ihm allenthalben eine Kälte vor, die<br/>
+daraus <span title="Original: entſpringt" class="dta-reg">entspringt</span>, daß er nicht <span title="Original: eigne" class="dta-reg">eigene</span><br/>
+<span title="Original: Selbſtanſicht" class="dta-reg">Selbstansicht</span> von den <span title="Original: Naturgegenſtänden" class="dta-reg">Naturgegenständen</span><br/>
+<span title="Original: beſaß" class="dta-reg">besaß</span>. Hier gebührt vor Allem ein<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118534416">Georg <span title="Original: Forſter" class="dta-reg">Forster</span></a></span></span><br/>
+</span>großes <span title="Original: Verdienſt" class="dta-reg">Verdienst</span> dem <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118534416">Georg <span title="Original: Forſter" class="dta-reg">Forster</span></a></span></span><br/>
+durch <span title="Original: ſeine" class="dta-reg">seine</span> herrliche <span title="Original: ſchöne" class="dta-reg">schöne</span> <span title="Original: Beſchreibung" class="dta-reg">Beschreibung</span><br/>
+der <span title="Original: Südſee-Jnſeln" class="dta-reg">Südsee-Jnseln</span>. <span title="Original: Jn" class="dta-reg">In</span> einen <span title="Original: vor-" class="dta-reg">vortrefflichen</span>
+<span title="Original: treflichen" class="dta-reg"/> <span title="Original: Gemählde" class="dta-reg">Gemälde</span> finden wir alle <span title="Original: er-&#xA;habenen" class="dta-reg">erhabenen</span> <span title="Original: Naturſcenen" class="dta-reg">Naturszenen</span> der Tropenwelt<br/>
+vereinigt u. auf das <span title="Original: natürlichſte" class="dta-reg">natürlichste</span> u.<br/>
+<span title="Original: ſchlüße" class="dta-reg">Schlüsse</span> <span title="Original: geſchildert" class="dta-reg">geschildert</span>, dies <span title="Original: iſt" class="dta-reg">ist</span> in den Werke<br/>
+<span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118604945">Bernandin de St.<br/>
+Pierre</a></span></span><br/>
+</span>von <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118604945">Bernandin de St. Pierre</a></span></span>: Paul<br/>
+u. Virgiel. <span title="Original: Aehnliche" class="dta-reg">Ähnliche</span> große <span title="Original: Gemählde" class="dta-reg">Gemälde</span><br/>
+der Naturwerke finden <span class="u ">wir in </span><span title="Personenname"><a href="http://d-nb.info/gnd/118520237"><span class="u "><span title="Original: Ch" class="dta-reg">Chatau-</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: a" class="dta-reg"/></span><span title="Original: t" class="dta-reg"/><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: au" class="dta-reg"/></span><span title="Original: -" class="dta-reg"/></span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span class="u ">briand's</span></div></a></span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0066 : 62.|</span><br/>
+<span class="aq "><span class="u "><span title="Personenname"><a href="http://d-nb.info/gnd/118520237"><span title="Original: Chataubriand" class="dta-reg">Chataubriands</span></a></span><span title="Original: s" class="dta-reg"/> Attala</span>, le Martyr</span> <span title="Original: pp" class="dta-reg"><span class="aq "><span title="Original: etc" class="dta-reg">etc.</span></span><span title="Original: ." class="dta-reg"/> <span class="aq ">etc</span>.</span></p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118540238">Goethe</a></span></span><br/>
+</span><span title="Original: Ebenſo" class="dta-reg">Ebenso</span> dringen <span class="aq u "><span title="Personenname"><a href="http://d-nb.info/gnd/118540238"><span title="Original: Goethe" class="dta-reg">Goethes</span></a></span><span title="Original: s" class="dta-reg"/></span> <span title="Original: unſterbliche" class="dta-reg">unsterbliche</span> <span title="Original: Ver-&#xA;dienſte" class="dta-reg">Verdienste</span> um die <span title="Original: Aeſtetik" class="dta-reg">Ästhetik</span> <span title="allenthalb￼" class="dta-abbr">allenthalben</span> durch<br/>
+u. wie er <span title="Original: ſelbſt" class="dta-reg">selbst</span> das Gebiet der Natur<br/>
+durch <span title="Original: ſeine" class="dta-reg">seine</span> <span title="Original: treflichen" class="dta-reg">trefflichen</span> <span title="Original: optiſchen" class="dta-reg">optischen</span> <span title="Original: Verſuche" class="dta-reg">Versuche</span> <span title="Original: er-&#xA;leuchtet" class="dta-reg">erleuchtet</span>. Allerdings <span title="Original: iſt" class="dta-reg">ist</span> dabei nicht zu<br/>
+<span title="Original: läugnen" class="dta-reg">leugnen</span>, <span class="u ">daß die <span title="Original: äſtetiſche" class="dta-reg">ästhetische</span> Behandlung<br/>
+der Natur auch auf gewaltige Abwege<br/>
+geführt hat</span>; <span title="Original: deñ" class="dta-reg">denn</span> viele <span title="Original: Reiſende" class="dta-reg">Reisende</span> haben<br/>
+bloß <span title="Original: poetiſch" class="dta-reg">poetisch</span> <span title="Original: geſchildert" class="dta-reg">geschildert</span>, aber dabei nicht<br/>
+wahr. Sie waren nicht genug gebildet<br/>
+mit dem Studium der Natur vertraut, u.<br/>
+wurden <span title="Original: ſomit" class="dta-reg">somit</span> <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Wort fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">in</span> ihren <span title="Original: Beſchreibungen" class="dta-reg">Beschreibungen</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Natur<br/>
+des wahrhaft <span title="Original: poe-&#xA;tiſchen" class="dta-reg">poetischen</span></span><br/>
+</span><span title="Original: geſchmacklos" class="dta-reg">geschmacklos</span>. <span class="u ">Das wahrhaft <span title="Original: poetiſche" class="dta-reg">poetische</span><br/>
+<span title="Original: kañ" class="dta-reg">kann</span> nur aus der Tiefe des <span title="Original: eigenſten" class="dta-reg">eigensten</span> <span class="gap">[unleserliches Material]</span>-<br/>
+<span title="Original: ſten" class="dta-reg">sten</span> <span title="Original: Gemüthes" class="dta-reg">Gemütes</span> <span title="Original: entſtehen" class="dta-reg">entstehen</span>,</span> u. jeder fremde<br/>
+Schmuck in die Schilderung großer <span title="Original: Scenen" class="dta-reg">Szenen</span><br/>
+gebracht, <span title="Original: iſt" class="dta-reg">ist</span> <span title="Original: im̃er" class="dta-reg">immer</span> <span title="Original: ſehr" class="dta-reg">sehr</span> gefährlich. <span title="Original: Deſſen" class="dta-reg">Dessen</span> <span title="Original: un-&#xA;geachtet" class="dta-reg">ungeachtet</span> <span title="Original: kañ" class="dta-reg">kann</span> Wahrheit in die Schilderung <span title="kom̃￼" class="dta-abbr"><span title="Original: kom̃en" class="dta-reg">kommen</span></span>,<br/>
+u. nie braucht <span title="Original: ſie" class="dta-reg">sie</span> des <span title="Original: poetiſchen" class="dta-reg">poetischen</span> Bildes zu<br/>
+entbehren; man muß nur nichts <span title="Original: hinzuſetzen" class="dta-reg">hinzusetzen</span><br/>
+wollen. Die Größe der Natur muß <span class="dta-supplied">[nie]</span><br/>
+<span title="Original: ſelbſt" class="dta-reg">selbst</span> <span title="Original: angeſchaut" class="dta-reg">angeschaut</span> werden, u. die Schilderung<br/>
+muß nicht <span title="Original: ſchwächern" class="dta-reg">schwächeren</span> Eindruck machen auf<br/>
+den der es <span title="Original: lieſt" class="dta-reg">liest</span>, als die Natur <span title="Original: ſelbſt" class="dta-reg">selbst</span><br/>
+auf den, der es zur <span title="Original: Darſtellung" class="dta-reg">Darstellung</span> <span title="Original: brach-&#xA;te" class="dta-reg">brachte</span>. <span class="u "><span title="Original: Ueber" class="dta-reg">Über</span> <span title="Original: dieſer" class="dta-reg">dieser</span> <span title="Original: äſtetiſchen" class="dta-reg">ästhetischen</span> <span title="Original: Natur-" class="dta-reg">Naturbeschreibung</span></span><span title="Original: " class="dta-reg"/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Näheres<br/>
+über die <span title="Original: Landſchfts-&#xA;malerei" class="dta-reg">Landschftsmalerei</span></span><br/>
+</span><span class="u "><span title="Original: beſchreibung" class="dta-reg"/> <span title="Original: iſt" class="dta-reg">ist</span> auch die <span title="Original: Landſchaftsma-&#xA;lerei" class="dta-reg">Landschaftsmalerei</span> zu werken.</span> Bei den Griechen u. <span title="Original: Rö-&#xA;mern" class="dta-reg">Römern</span> war dies kein <span title="Original: eigner" class="dta-reg">eigener</span> <span title="Original: Gegenſtand" class="dta-reg">Gegenstand</span> <span class="dta-supplied">[der]</span><br/>
+<span title="Original: Kunſt" class="dta-reg">Kunst</span>, <span title="Original: ſondern" class="dta-reg">sondern</span> <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: blühete" class="dta-reg">blühte</span> <span title="Original: zuerſt" class="dta-reg">zuerst</span> auf in<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">der</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0067 : [63].|</span><br/>
+der von <span title="Original: Eyckſchen" class="dta-reg">Eyckschen</span> Schule. Als die <span title="Original: hiſto-&#xA;riſchen" class="dta-reg">historischen</span> Figuren verkleinert wurden, war<br/>
+dies zugleich der Anfang u. <span title="Original: begiñ" class="dta-reg">beginn</span> der <span title="Original: Land-&#xA;ſchaftsmalerei" class="dta-reg">Landschaftsmalerei</span>, <span title="Original: wenigſtens" class="dta-reg">wenigstens</span> wurde <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: da-&#xA;durch" class="dta-reg">dadurch</span> vorbereitet. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118622994">Tizian</a></span></span>, <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/122262727">Bassano</a></span></span> u.<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118519255">Carragio</a></span></span> waren weniger treu u. <span title="Original: Nach-&#xA;ahnung" class="dta-reg">Nachahnung</span> <span title="Original: exotiſchen" class="dta-reg">exotischen</span> Formen. <span title="Original: Erſt" class="dta-reg">Erst</span> um die Mitte<br/>
+des 17 Jahrhdts wurde <span title="Original: dieſe" class="dta-reg">diese</span> mit mehr<br/>
+Wahrheit nachgebildet. <span title="Original: Jm" class="dta-reg">Im</span> J. 1647.<br/>
+ging der <span title="Original: holländiſche" class="dta-reg">holländische</span> Maler <span class="dta-metamark" title="metamark">⎡</span><br/>
+mit Graf <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118738097">Nassau</a></span></span> nach <span title="Original: Braſilien" class="dta-reg">Brasilien</span>, er <span title="Original: ſehe" class="dta-reg">sehe</span><br/>
+die gewaltigen Ufer des <span title="Original: Amazonenflüſſes" class="dta-reg">Amazonenflüsse</span><br/>
+u. treffend <span title="Original: ſind" class="dta-reg">sind</span> <span title="Original: ſeine" class="dta-reg">seine</span> in <span class="aq ">Schleicheim</span><br/>
+befindlichen <span title="Original: Gemählde" class="dta-reg">Gemälde</span>; aber <span title="Original: ſo" class="dta-reg">so</span> wahr<br/>
+<span title="Original: ſind" class="dta-reg">sind</span> die Abbildungen der Ufer des Ganges<br/>
+von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/123488893"><span title="Original: Hagges" class="dta-reg">Hages</span></a></span></span>. Die <span title="Original: Phÿſiognomik" class="dta-reg">Physiognomik</span> der<br/>
+Welt <span title="Original: maleriſch" class="dta-reg">malerisch</span> <span title="Original: darzuſtellen" class="dta-reg">darzustellen</span> <span title="Original: iſt" class="dta-reg">ist</span> nicht <span title="Original: un-&#xA;wichtig" class="dta-reg">unwichtig</span> <span title="Original: geweſen" class="dta-reg">gewesen</span>, die <span title="Original: Luſt" class="dta-reg">Lust</span> an <span title="Original: Reiſen" class="dta-reg">Reisen</span> zu<br/>
+erwecken u. dadurch zur <span title="Original: Ver" class="dta-reg">Vermehrung</span><span title="Original: m" class="dta-reg"/><span title="Original: ehrung" class="dta-reg"/><br/>
+u. Erweiterung der <span title="Original: Weltanſicht" class="dta-reg">Weltansicht</span> zu <span title="Original: ge-" class="dta-reg">gelangen</span>
+<span class="dta-marginal dta-marginal-left"><span class="u "><span title="Original: Veranlaſſung" class="dta-reg">Veranlassung</span><br/>
+der <span title="Original: Reiſen" class="dta-reg">Reisen</span> des<br/>
+<span title="H￼." class="dta-abbr">Herrn</span> <span title="Original: p" class="dta-reg"><span class="aq "><span title="Original: etc" class="dta-reg">etc.</span></span><span title="Original: ." class="dta-reg"/></span> <span title="Personenname"><a href="http://d-nb.info/gnd/118554700">v <span title="Original: Humbold" class="dta-reg">Humboldt</span></a></span></span><br/>
+</span><span title="Original: langen" class="dta-reg"/>. <span class="u "><span title="Original: Weñ" class="dta-reg">Wenn</span> ich mich <span title="Original: ſelbſt" class="dta-reg">selbst</span> frage, was<br/>
+mich <span title="Original: zuerſt" class="dta-reg">zuerst</span> bewog fremde Länder u.<br/>
+die Tropenwelt zu <span title="Original: beſuchen" class="dta-reg">besuchen</span>,</span> <span title="Original: ſo" class="dta-reg">so</span> waren<br/>
+dies <span title="Original: zunächſt" class="dta-reg">zunächst</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118534416">Georg <span title="Original: Forſter" class="dta-reg">Forsters</span></a></span><span title="Original: s" class="dta-reg"/></span> <span title="Original: Beſchreibung" class="dta-reg">Beschreibung</span><br/>
+der <span title="Original: Südſee-Jnſeln" class="dta-reg">Südsee-Jnseln</span>, u. der Anblick der<br/>
+wunderbaren Formen des <span title="Original: Drachenbau-&#xA;mes" class="dta-reg">Drachenbaumes</span> in dem <span title="Original: hieſigen" class="dta-reg">hiesigen</span> <span title="Original: botaniſchen" class="dta-reg">botanischen</span> Garten.</p><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="u "><span title="Original: Ueberſicht" class="dta-reg">Übersicht</span><br/>
+der <span title="Original: Propedeutik" class="dta-reg">Propädeutik</span></span><br/>
+</span><span class="u ">Die <span title="Original: Propedeutik" class="dta-reg">Propädeutik</span> der</span> <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span class="u "><span title="Original: Natur-" class="dta-reg">Natur-Wissenschaft</span></span></span><span class="u "><span title="Original: Wiſſenſchaft" class="dta-reg"/><br/>
+wie ich <span title="Original: hiemit" class="dta-reg">hiermit</span> <span title="Original: ſchließen" class="dta-reg">schließen</span>.</span> Wir haben uns<br/>
+<div class="dta-list"><span class="dta-list-item">1., mit einer <span title="Original: Ueberſicht" class="dta-reg">Übersicht</span> der <span title="Original: Natur-Erſchei-&#xA;nungen" class="dta-reg">Natur-Erscheinungen</span> im Weltraume</span>
+<span class="dta-list-item">2., mit <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: d" class="dta-reg">der</span></span><span title="Original: er" class="dta-reg"/> <span title="Original: Definition" class="dta-reg">Definitione</span><span title="Original: e" class="dta-reg"/> der <span title="Original: Wiſſenſchaft" class="dta-reg">Wissenschaft</span></span>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">3.,</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0068 : 64.|</span><br/>
+<span class="dta-list-item">3., mit der <span title="Original: Geſchichte" class="dta-reg">Geschichte</span> der <span title="Original: Wiſſenſchaft" class="dta-reg">Wissenschaft</span></span>
+<span class="dta-list-item">u. 4., mit den Quellen des Studiums <span title="derſelb￼" class="dta-abbr"><span title="Original: derſelben" class="dta-reg">derselben</span></span>,<br/>
+<span title="Original: ſowohl" class="dta-reg">sowohl</span> mit der <span title="Original: Litteratur" class="dta-reg">Literatur</span>, als den<br/>
+Anreizungsmitteln zum lebendigen Studium<br/>
+der Erdkunde <span title="Original: beſchäftiget" class="dta-reg">beschäftiget</span>; wir gehen<br/>
+jetzt zur <span title="Original: Wiſſenſchaft" class="dta-reg">Wissenschaft</span> der <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Original: phyſikaliſchen" class="dta-reg">physikalischen</span> </span><span title="Original: Weltbeſchreibung" class="dta-reg">Weltbeschreibung</span>￼<span class="dta-marginal dta-marginal-left">nicht <span title="Original: phyſiſche" class="dta-reg">physische</span> Geographie.<br/>
+</span><br/>
+als ein Natur-Ganzes <span title="Original: ſelbſt" class="dta-reg">selbst</span> über<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Betrachtung<br/>
+der <span title="Original: Wiſſenſchaft" class="dta-reg">Wissenschaft</span> <span title="Original: ſelbſt" class="dta-reg">selbst</span>.</span><br/>
+</span><span class="u ">u. betrachten die Anhäufung der Materie</span><br/>
+<div class="dta-list"><span class="dta-list-item"><span class="u ">1., nach ihrer absoluten u. relativen Größe</span></span>
+<span class="dta-list-item"><span class="u ">2., nach dem <span title="Original: Unterſchiede" class="dta-reg">Unterschiede</span> ihrer <span title="Original: iñern" class="dta-reg">inneren</span> od. <span title="Original: chemiſchen" class="dta-reg">chemischen</span><br/>
+Natur u.</span></span>
+<span class="dta-list-item"><span class="u ">3., nach ihren Entfernungen von einander</span></span>
+</div></span>
+</div></p>  <p class="dta-p"><span class="dta-marginal dta-marginal-left">1. <span class="u ">absolute u. relative<br/>
+Größe der Materie.</span><br/>
+</span><span class="u ">Sehen wir <span title="Original: zuerſt" class="dta-reg">zuerst</span> auf die absolute oder<br/>
+relative Größe der Weltkörper;</span> <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: wer-&#xA;den" class="dta-reg">werden</span> wir dabei nicht die Berechnungen <span title="Original: aufſtellen" class="dta-reg">aufstellen</span><br/>
+um den <span title="Original: Unterſchied" class="dta-reg">Unterschied</span> des Volumens eines <span title="Original: Sund-&#xA;karas" class="dta-reg">Sundkaras</span> u. des <span title="Original: Soñenkörpers" class="dta-reg">Sonnenkörpers</span> <span class="dta-del" title="Streichung (#s)">berechnen</span><span class="dta-add" title="Hinzufügung (superlinear)">zu <span title="Original: beſtim̃en" class="dta-reg">bestimmen</span></span>; <span title="Original: ſon-&#xA;dern" class="dta-reg">sondern</span> nur in welchen <span title="Original: Verhältniſſen" class="dta-reg">Verhältnissen</span> der<br/>
+Weltkörper <span title="Original: ſtehen" class="dta-reg">stehen</span>. <span class="u ">So <span title="Original: iſt" class="dta-reg">ist</span> Zb. der <span title="Original: Durchmeſſer" class="dta-reg">Durchmesser</span></span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Vergleich des <span title="Original: Aero-&#xA;lith" class="dta-reg">Aerolith</span> zur <span title="Original: Veſts" class="dta-reg">Fests</span> u. dies.<br/>
+zu einem Central-Körper</span><br/>
+</span><span class="u ">der <span title="Original: Veſta" class="dta-reg">Vesta</span> <span title="Original: 59–60" class="dta-reg">59-60</span> <span title="Original: deutſche" class="dta-reg">deutsche</span> Meilen u. der <span title="Original: größe" class="dta-reg">Größe</span><br/>
+Aerolith der bis jetzt in Amerika gefunden<br/>
+etwa 5 Fuß im <span title="Original: Durchmeſſer" class="dta-reg">Durchmesser</span>.</span> <span title="Original: D" class="dta-reg">Der</span><span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: er" class="dta-reg"/></span> <span title="Original: Durch-&#xA;meſſer" class="dta-reg">Durchmesser</span> der <span title="Original: Veſta" class="dta-reg">Vesta</span>, verhält <span title="Original: ſich" class="dta-reg">sich</span> zum <span title="Original: Durchmeſſer" class="dta-reg">Durchmesser</span><br/>
+der Aerolithen ungefähr wie 270,000 : 1.<br/>
+Der <span title="Original: Durchmeſſer" class="dta-reg">Durchmesser</span> de <span title="Original: Soñe" class="dta-reg">Sonne</span> hingegen zum <span title="Original: Durch-&#xA;meſſer" class="dta-reg">Durchmesser</span> der <span title="Original: Veſta" class="dta-reg">Vesta</span> wie 3300 : 1; daher<br/>
+<span title="Original: iſt" class="dta-reg">ist</span> der <span title="Original: Durchmeſſer" class="dta-reg">Durchmesser</span> der <span title="Original: Veſta" class="dta-reg">Vesta</span> etwa 80 <span title="Original: mal" class="dta-reg">Mal</span><br/>
+größer im <span title="Original: Verhältniß" class="dta-reg">Verhältnis</span> des <span title="Original: Durchmeſſers" class="dta-reg">Durchmessers</span> der<br/>
+Aerolithen, als der <span title="Original: Durchmeſſer" class="dta-reg">Durchmesser</span> der <span title="Original: Soñe" class="dta-reg">Sonne</span><br/>
+zu dem der <span title="Original: Veſta" class="dta-reg">Vesta</span>. Die <span title="Original: Fixſterne" class="dta-reg">Fixsterne</span> <span class="aq "><span title="Original: Sy" class="dta-reg">Sirius</span><span class="dta-supplied">[<span title="Original: ri-" class="dta-reg"/>]</span><span title="Original: &#xA;us" class="dta-reg"/></span> oder <span class="aq ">Veja</span> <span title="Original: ſind" class="dta-reg">sind</span> <span title="Original: indeß" class="dta-reg">indes</span> Beiläufig 34<br/>
+od. 35 <span title="Original: mal" class="dta-reg">Mal</span> größer im <span title="Original: Durchmeſſer" class="dta-reg">Durchmesser</span> als die<br/>
+<span title="Original: Soñe" class="dta-reg">Sonne</span>; vergleiche ich die <span title="Original: Veſta" class="dta-reg">Vesta</span> mit <span title="Original: dieſer" class="dta-reg">dieser</span><br/>
+<span title="Original: ſo" class="dta-reg">so</span> verkleinert <span title="Original: ſich" class="dta-reg">sich</span> <span title="Original: dieſe" class="dta-reg">diese</span> in ihrem <span title="Original: Verhält-&#xA;niß" class="dta-reg">Verhältnis</span> zur <span title="Original: Soñe" class="dta-reg">Sonne</span> u. in ihrem <span title="Original: Verhältniße" class="dta-reg">Verhältnisse</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">zum</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0069 : [65]|</span><br/>
+zum Aerolithen übertrifft <span title="Original: ſie" class="dta-reg">sie</span> <span title="Original: denſelben" class="dta-reg">denselben</span><br/>
+nur 2 bis 3 <span title="Original: mal" class="dta-reg">Mal</span>; <span title="Original: deñ" class="dta-reg">denn</span> der <span title="Original: Durchmeſſer" class="dta-reg">Durchmesser</span><br/>
+<span title="Original: de" class="dta-reg">der</span><span class="dta-del" title="Streichung (#ow)">s</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: r" class="dta-reg"/></span> Aerolithen: zu dem <span title="dr" class="dta-abbr">der</span> <span title="Original: Veſta" class="dta-reg">Vesta</span> =<br/>
+1 : 270000 u. der der <span title="Original: Veſta" class="dta-reg">Vesta</span>, zum<br/>
+Veja = 1 : 112,000. Vergleiche ich<br/>
+jetzt einen Saturns-Trabant od. <span title="ein￼" class="dta-abbr">einen</span> der<br/>
+kl. <span title="Original: Cometen" class="dta-reg">Kometen</span>, mit <span title="Original: dieſem" class="dta-reg">diesem</span> großen <span title="Original: Central-&#xA;körper" class="dta-reg">Zentralkörper</span> <span title="Original: ſo" class="dta-reg">so</span> <span title="Original: iſt" class="dta-reg">ist</span> das <span title="Original: Verhältniß" class="dta-reg">Verhältnis</span> wie 1 :<br/>
+224000, weil <span title="Original: dieſe" class="dta-reg">diese</span> die Hälfte des <span title="Original: Durch-&#xA;meſſers" class="dta-reg">Durchmessers</span> der <span title="Original: Veſta" class="dta-reg">Vesta</span> haben, u. der <span title="Original: Durchmeſſer" class="dta-reg">Durchmesser</span><br/>
+des Aerolithen: zu dem des <span title="Original: Saturnſtra-&#xA;banten" class="dta-reg">Saturnstrabanten</span> 1 : 135000 u. nun finde ich, daß<br/>
+der <span title="Original: Durchmeſſer" class="dta-reg">Durchmesser</span> des <span title="Original: Satellits" class="dta-reg">Satellit</span> im Vergleich<br/>
+mit dem des großen Weltkörpers kleiner <span title="Original: iſt" class="dta-reg">ist</span>,<br/>
+als der <span title="Original: Durchmeſſer" class="dta-reg">Durchmesser</span> des <span title="Original: Meteorſteines" class="dta-reg">Meteorsteines</span> zum<br/>
+dem des Satelliten, oder, 135000 Aerolithen<br/>
+bilden einen <span title="Original: Cometen" class="dta-reg">Kometen</span> oder Satelliten<br/>
+von der Größe der halben <span title="Original: Veſta" class="dta-reg">Vesta</span>, <span title="Original: wäh-&#xA;rend" class="dta-reg">während</span> 224000 Satelliten <span title="Original: erſt" class="dta-reg">erst</span> der Größe<br/>
+des <span title="Original: Centralkörpers" class="dta-reg">Zentralkörpers</span> gleich <span title="Original: ſind" class="dta-reg">sind</span> u. der<br/>
+Aerolith wurde <span title="Original: ſich" class="dta-reg">sich</span> zum <span title="Original: Centralkörper" class="dta-reg">Zentralkörper</span><br/>
+verhalten wie 1 : 28,000 Mill. So <span title="laſſ￼" class="dta-abbr"><span title="Original: laſſen" class="dta-reg">lassen</span></span><br/>
+<span title="Original: ſich" class="dta-reg">sich</span> alle <span title="Original: dieſe" class="dta-reg">diese</span> <span title="Original: Beſtim̃ungen" class="dta-reg">Bestimmungen</span> <span title="Original: zwiſchen" class="dta-reg">zwischen</span> den<br/>
+Grenzen des <span class="aq "><span title="Original: maximu" class="dta-reg">maximum</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: m" class="dta-reg"/></span></span> u. <span class="aq "><span title="Original: minimu" class="dta-reg">Minimums</span><span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: ms" class="dta-reg"/></span></span> <span title="Original: an-&#xA;geben" class="dta-reg">angeben</span> u. es <span title="Original: laſſen" class="dta-reg">lassen</span> <span title="Original: ſich" class="dta-reg">sich</span> alle Anhäufungen<br/>
+der Materie unter einem <span title="Original: Geſichtspunkte" class="dta-reg">Gesichtspunkte</span><br/>
+betrachten. Bis jetzt haben wir die<br/>
+<span title="Original: ſtarren" class="dta-reg">starren</span> Materien mit den <span title="Original: ſtarren" class="dta-reg">starren</span> <span title="Original: ver-&#xA;gleichen" class="dta-reg">vergleichen</span>; außer <span title="Original: dieſen" class="dta-reg">diesen</span> <span title="Original: giebt" class="dta-reg">gibt</span> es eine große<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Betrachtung<br/>
+der <span title="Original: dunſtförmigen" class="dta-reg">dunstförmigen</span><br/>
+Materie</span><br/>
+</span><span class="u ">Anhäufung <span title="Original: dunſtförmiger" class="dta-reg">dunstförmiger</span> Materie</span> die<br/>
+zum <span title="Original: Theil" class="dta-reg">Teil</span> <span title="Original: ſichtbar" class="dta-reg">sichtbar</span> <span class="dta-del" title="Streichung (#erased)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: iſt" class="dta-reg">ist</span>, <span title="Original: t" class="dta-reg">teils</span></span><span title="Original: heils" class="dta-reg"/> auch <span title="Original: gefol-&#xA;gert" class="dta-reg">gefolgert</span> werden <span title="Original: kañ" class="dta-reg">kann</span>. So <span title="Original: giebt" class="dta-reg">gibt</span> es einen<br/>
+<span title="Original: Lichtſchim̃er" class="dta-reg">Lichtschimmer</span> am Horizonte, der nicht zur<br/>
+<span title="Original: Soñenatmoſphäre" class="dta-reg">Sonnenatmosphäre</span> gehörig <span title="Original: iſt" class="dta-reg">ist</span>, das<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Zodiakal-</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0070 : 66.|</span><br/>
+Zodiakal- oder <span title="Original: Thierkreislicht" class="dta-reg">Tierkreislicht</span>, welches<br/>
+bei uns nur zu Zeiten im Frühjahr u. <span title="Original: H" class="dta-reg">Herbst</span><span title="Original: erbſt" class="dta-reg"/><br/>
+unter den Tropen aber <span title="Original: faſt" class="dta-reg">fast</span> täglich zu <span title="Original: ſehen" class="dta-reg">sehen</span><br/>
+u. von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119408007">Cassini</a></span></span> <span title="Original: zuerſt" class="dta-reg">zuerst</span> beobachtet <span title="Original: iſt" class="dta-reg">ist</span>.<br/>
+Es leuchtet <span title="Original: ſtoßweiſe" class="dta-reg">stoßweise</span>. Außer <span title="Original: dieſem" class="dta-reg">diesem</span><br/>
+Lichte <span title="Original: giebt" class="dta-reg">gibt</span> es Nebelflecke im <span title="Original: Weltrau-&#xA;me" class="dta-reg">Weltraume</span>, die nicht bloß <span title="Original: ſcheinbar" class="dta-reg">scheinbar</span> <span title="Original: ſich" class="dta-reg">sich</span> in <span title="Original: Ster-&#xA;nenhäufen" class="dta-reg">Sternenhäufen</span> <span title="Original: auflöſen" class="dta-reg">auflösen</span>, <span title="Original: ſondern" class="dta-reg">sondern</span> wirklich<br/>
+<span title="Original: unauflöſlich" class="dta-reg">unauflöslich</span> <span title="Original: ſind" class="dta-reg">sind</span>, in welche kein einzigen<br/>
+Körper <span title="Original: eingeſenkt" class="dta-reg">eingesenkt</span> <span title="Original: iſt" class="dta-reg">ist</span> u. welche bei<br/>
+einer 70, <span title="Original: 80–900" class="dta-reg">80-900</span> <span title="Original: maligen" class="dta-reg">Maliern</span> Vergrößerung<br/>
+<span title="Original: dieſelbe" class="dta-reg">dieselbe</span> gleichmäßigen Erleuchtung <span title="Original: behat-&#xA;ten" class="dta-reg">behatten</span>. So <span title="Original: giebt" class="dta-reg">gibt</span> es Grunde auch auf die<br/>
+<span title="Original: Exiſtenz" class="dta-reg">Existenz</span> anderer <span title="Original: dunſtförmigen" class="dta-reg">dunstförmigen</span> <span title="Original: Maſſen" class="dta-reg">Massen</span><br/>
+zu <span title="Original: ſchließen" class="dta-reg">schließen</span>, durch welche z.B. die <span title="Original: Come-&#xA;ten" class="dta-reg">Kometen</span> in ihrem Lauf aufgehalten werden<br/>
+u. welche <span title="Original: d" class="dta-reg">dem</span><span class="dta-del" title="Streichung (#ow)">ie</span><span class="dta-add" title="Hinzufügung (across)"><span title="Original: em" class="dta-reg"/></span> Lauf der <span title="Original: ſtarren" class="dta-reg">starren</span> Körper nicht <span title="Original: hem̃en" class="dta-reg">hemmen</span><br/>
+<span title="Original: kañ" class="dta-reg">kann</span>. Es <span title="Original: iſt" class="dta-reg">ist</span> eine <span title="Original: ſiñreiche" class="dta-reg">sinnreiche</span> Bemerkung<br/>
+von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118720066">Halle</a></span></span> <span title="Original: zuerſt" class="dta-reg">zuerst</span> u. <span title="Original: deñ" class="dta-reg">denn</span> von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11858975X">Olbers</a></span></span><br/>
+<span title="Original: ausgeſprochen" class="dta-reg">ausgesprochen</span>. Durch Teleskope <span title="Original: ſehen" class="dta-reg">sehen</span><br/>
+wir <span title="Original: nehmlich" class="dta-reg">nämlich</span> <span title="Original: Geſtirne" class="dta-reg">Gestirne</span> des <span title="Original: fernſten" class="dta-reg">fernsten</span> <span title="Original: Weltall" class="dta-reg">Weltalls</span><span class="dta-supplied">[<span title="Original: s" class="dta-reg"/>]</span><br/>
+u. erblicken in jedem Raume einen erhellenden<br/>
+<span class="dta-marginal dta-marginal-left"><span class="u ">Warum <span title="Original: erſcheint" class="dta-reg">erscheint</span><br/>
+uns das Himmelsgewölbe<br/>
+nicht als ein leuchtender Stern</span><br/>
+</span>Körper der aus <span title="Original: ſein" class="dta-reg">sein</span> Licht zu <span title="Original: ſendet" class="dta-reg">sendet</span>. <span class="u ">Hieraus<br/>
+folgt daß uns das ganze <span title="Original: Him̃elsgewölbe" class="dta-reg">Himmelsgewölbe</span> als<br/>
+ein leuchtender Stern <span title="Original: erſcheinen" class="dta-reg">erscheinen</span> müßte,</span> <span title="Original: weñ" class="dta-reg">wenn</span><br/>
+nicht eine <span title="Original: lichtſchwächende" class="dta-reg">lichtschwächende</span> Materie dies <span title="Original: hindete" class="dta-reg">hinderte</span><span class="dta-supplied">[.]</span><br/>
+<span title="Original: Jn" class="dta-reg">In</span> <span title="Original: erſterm" class="dta-reg">ersterem</span> Falle wären <span title="Original: ſelbſt" class="dta-reg">selbst</span> von der<br/>
+<span title="Original: Soñe" class="dta-reg">Sonne</span> nur ihre <span title="Original: Dunkeln" class="dta-reg">Dunklen</span> <span title="Original: Flecke" class="dta-reg">Fleck</span> zu <span title="Original: ſehen" class="dta-reg">sehen</span> u.<br/>
+die Planeten würden <span title="Original: ſich" class="dta-reg">sich</span> um <span title="Original: Him̃elsgewöl-&#xA;be" class="dta-reg">Himmelsgewölbe</span> wie <span title="Original: ſchwarze" class="dta-reg">schwarze</span> Punkte bewegen, daher<br/>
+<span title="Original: ſchloß" class="dta-reg">schloß</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/11858975X">Olbers</a></span></span> mit Reiht auf dies <span title="Original: Hinde-&#xA;rungsmittel" class="dta-reg">Hinderungsmittel</span> des Lichtes.</p></div></body></html>

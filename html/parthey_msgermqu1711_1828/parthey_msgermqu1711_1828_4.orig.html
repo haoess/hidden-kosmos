@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session">   <div class="dta-head"><span title="Original: 4. 14 Nov.November" class="dta-reg">4. Vorlesung, 14.11.1827</span></div><br/>
+<p class="dta-p">Allerdings ist der Einfallswinkel der Sonnenstralen bei der<br/>
+Klimalehre von grosser Wichtigkeit, doch ist er es nicht allein,<br/>
+der die Temperatur eines Landes bestimt: je grösser dieser Winkel<br/>
+wird, um desto geringer ist der Unterschied, den er auf Wärme<br/>
+und Kälte hervorbringt: von 60–90° ist fast gar keine Verschiedenheit:<br/>
+daher haben die Länder unter dem Aequator bis 15° drüber und<br/>
+drunter fast ganz dasselbe Klima.</p><br/>
+<p class="dta-p">Im Ganzen hat der Ozean eine wärmere Temperatur, <span class="dta-del" title="Streichung (#s)">als</span><span class="dta-add" title="Hinzufügung (superlinear)">an</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0036 : 16v|</span><br/>
+seiner Oberfläche, als in der Tiefe. 1, weil nur die durchschei-<br/>
+nenden Theile sich leicht erwärmen 2, weil die kälteren Theile<br/>
+zu Boden sinken, die wärmeren aber aufsteigen. Wir müssen<br/>
+im Meere dreierlei Temperaturen annehmen.<br/>
+<div class="dta-list">   <span class="dta-list-item"><p class="dta-p">1, von <span class="u ">oben nach unten</span> nimmt <span class="dta-del" title="Streichung (#s)">di</span><span class="dta-add" title="Hinzufügung (intralinear)">sie</span> überall auf gleiche<br/>
+Weise ab, und in den Tiefen der Aequatorialmeere herrscht <span class="dta-add" title="Hinzufügung (right)">eine</span><br/>
+Polarkälte.</p></span>
+<span class="dta-list-item"><p class="dta-p">2, schon <span title="Personenname"><a href="http://d-nb.info/gnd/118534912">Franklin</a></span> machte die Beobachtung, dass auf den<br/>
+<span class="u ">Untiefen</span> das Wasser kälter sei, als ringsumher: man könte<br/>
+also mit dem Thermometer die Gefahr erraten: ich erkläre diese<br/>
+Kälte aus einer Mischung der obern und untern Schichten,<br/>
+welche durch die unter dem Wasser befindlichen Spizen von<br/>
+Inseln (nichts anderes sind die Untiefen) aus ihrem Gleich-<br/>
+gewichte gebracht werden.</p></span>
+<span class="dta-list-item"><p class="dta-p">3, die Temperatur der <span class="u ">Strömungen</span>, deren es im<span class="dta-del" title="Streichung (#s)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span> Wasser<br/>
+wie in der Luft giebt, ist gleichfals von der allgemeinen<br/>
+unterschieden: ich erinre hier nur an den Golfstrom, der an<br/>
+der östlichen Küste von Südamerika in die Höhe steigend,<br/>
+durch die Bocca del Dragone schiest, dann in dem Meer-<br/>
+busen von Mexiko einen grossen Wirbel beschreibt, durch<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0037 : 17r|</span><br/>
+die Bahama-strasse wieder herausfliest, und nun sich ge-<br/>
+gen die Küste von Irland wendet. Daher findet man nicht<br/>
+selten Tropenprodukte an die Küste von Schottland getrieben,<br/>
+und zwar ist dieses seit den ältesten Zeiten der Fall. Vor einem<br/>
+halben Jahrtausend, wurde Amerika durch <span title="Personenname"><a href="http://d-nb.info/gnd/118564994">Kolumbus</a></span> ent-<br/>
+dekt, vor einem Jahrtausend durch die Normannen, aber<br/>
+ein noch älteres Faktum hat uns <span title="Personenname"><a href="http://d-nb.info/gnd/118747681">Corn. Nepos</a></span> in einer seiner<br/>
+Biographien aufgezeichnet, wo es heist, dass ein keltischer<br/>
+König Inder erlangt habe, die durch Schifbruch an seine Küste<br/>
+verschlagen worden. Ohne Zweifel waren dies Eskimaux: denn<br/>
+unter Indern verstanden die Alten alle Völker von dunkler<br/>
+Hautfarbe: an Ost-indier ist in diesem Falle ohnehin nicht<br/>
+zu denken. Auch noch i<span class="dta-del" title="Streichung (#ow)">n</span><span class="dta-add" title="Hinzufügung (across)">m</span> <span class="dta-del" title="Streichung (#s)">neuer Zeit</span><span class="dta-add" title="Hinzufügung (superlinear)">Mittelalter</span> ist ein lebender Eski-<br/>
+maux in seinem Boote in Schottland angekommen, und das<br/>
+Boot wird noch jezt in der <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">uralten </span>Kirche eines kleinen Städtchens<br/>
+aufbewahrt.</p></span>
+</div></p>   <hr/><br/>
+<p class="dta-p">Wir gehn nun zur Betrachtung der organischen Theile unseres<br/>
+Erdbodens über, und müssen hier zuerst anführen, dass über<br/>
+das Aufkeimen der organischen Materie, wie über alle Anfänge<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0038 : 17v|</span><br/>
+der geschaffenen Welt, eine grosse Ungewisheit herrscht.<br/>
+Unendlich viel Versuche hat man über die sogenante <span title="Personenname"><a href="http://d-nb.info/gnd/118793357">Priest-<br/>
+ley</a></span>sche Materie, die Oszillatorien, Lamelliten, Infusorien <span title="Original: pp" class="dta-reg">pp.</span> <span title="Schreibfehler: " class="dta-corr">angestellt,</span><br/>
+und es hat noch nicht einmal bestimt werden können, ob<br/>
+diese Uranfänge sich in eine vegetabilische <span class="dta-del" title="Streichung (#s)">oder</span><span class="dta-add" title="Hinzufügung (superlinear)">und</span> animalische<br/>
+Masse scheiden lassen, oder ob die animalische durch eine grosse<br/>
+Anhäufung von <span title="Schreibfehler: vegetabilischen" class="dta-corr">vegetabilischer</span> entstehe. Dies ist der schwie-<br/>
+rigste Theil der Naturgeschichte, weil er nur auf mikro-<br/>
+skopischen Untersuchungen beruht, wobei der Übelstand<br/>
+eintrit, dass der eine etwas ganz anderes sieht, als der andre,<br/>
+und dass Laien fast gar nichts von dem sehn, was den Adepten<br/>
+deutlich ist: indessen können wir hier unbedingt den Män-<br/>
+nern trauen, die sich so lange mit diesen Gegenständen be-<br/>
+schäftigt haben. <span title="Personenname"><a href="http://d-nb.info/gnd/100050395">Bory de S<span class="sup u ">t</span> Vincent</a></span> hat in neuster<br/>
+Zeit der gröste Verdienst, und <span title="Personenname"><a href="http://d-nb.info/gnd/116862831">Latreille</a></span> hat in seiner<br/>
+Naturgeschichte diese mikroskopischen Thiere als ein<br/>
+4<span class="sup uu ">tes</span> Naturreich aufgenommen.</p><br/>
+<p class="dta-p">Man glaubte früher, dass zur Hervorbringung jedes<br/>
+animalischen Lebens <span class="u ">Licht</span> erforderlich sei. <span title="Personenname"><a href="http://d-nb.info/gnd/11857034X">Lavoisier</a></span><br/>
+erklärte daher auf eine geistreiche Art die Fabel des<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0039 : 18r|</span><br/>
+<div class="fw-top fw-sig">5.</div><br/>
+Prometheus, welche nur den Saz ausspricht; dass das Feuer<br/>
+organische Stoffe hervorruft. – Man hat sich indessen in<br/>
+der neusten Zeit überzeugt, dass auch ohne Licht ein orga-<br/>
+nisches Dasein Statt finden kann: die organischen Stoffe<br/>
+gehn tiefer als all' unser Bergbau<span class="dta-metamark" title="metamark">⎡</span>: beim Sprengen ist<br/>
+<span class="dta-marginal dta-marginal-right"><span class="dta-metamark" title="metamark">⎡</span>ein Gegenstand, mit dem ich mich in meiner frühsten Jugend beschäftigte.<br/>
+</span>   man auf unterirdische Höhlen gestossen, in welche durchaus<br/>
+kein Licht dringen konte, und die dennoch einige Flechten<br/>
+beher<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">be<span title="Schreibfehler: " class="dta-corr">r</span></span>gten; in der Tiefe des Meeres, wohin fast so wenig<br/>
+ein Lichtstral dringt als in die Bergwerke, existiren<br/>
+grüne Vegetabilien: ich schöpfte in den antillischen Meeren<br/>
+aus einer sehr beträchtlichen Tiefe eine<span class="dta-del" title="Streichung (#s)">n</span> Art von grü-<br/>
+nem Fucus. Man kent <span title="Schreibfehler: bisj ezt" class="dta-corr">bis jezt</span> 1000 Species von Einge-<br/>
+weidewürmern, welche zwar in einer sehr gleichmässigen<br/>
+Temperatur, aber durchaus ohne Licht leben; in dem neusten<br/>
+Werke von <span title="Personenname"><a href="http://d-nb.info/gnd/115526641">Rudolphi</a></span> über die Thierklasse finden wir die<br/>
+höchst wichtige Entdeckung ausgesprochen, dass in denselben<br/>
+Organen derselben Thierklasse unter ganz verschiedenen<br/>
+Himmelstrichen sich dieselben Würmer finden, <span title="Original: zB." class="dta-reg">z. B.</span><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0040 : 18v|</span><br/>
+in den Eingeweiden des europäischen Rehes und der afri-<br/>
+kanischen Gazelle.</p><br/>
+<p class="dta-p">Kehren wir nun zu den <span class="u ">Pflanzenanfängen</span> in's be-<br/>
+sondere zurük, so müssen wir zuerst auf den rothen<br/>
+Schnee des Polareises aufmerksam machen, welcher aus<br/>
+jenen nördlichen Regionen zu uns gebracht, mehrere<br/>
+Jahre in England ausgehalten hat. Man fand, dass die<br/>
+rothe Farbe von nichts anderem herrühre, als von klei-<br/>
+nen organischen Körnern: anfangs nante man sie:<br/>
+Uredo n<span class="dta-del" title="Streichung (#ow)">o</span><span class="dta-add" title="Hinzufügung (across)">i</span>valis, später gab ihr der grosse <span title="Personenname"><a href="http://d-nb.info/gnd/118674455">Brown</a></span> den<br/>
+Namen: Tremella nivea: dies<span class="dta-add" title="Hinzufügung (intralinear)">er </span><span class="dta-del" title="Streichung (#s)">Thier</span><span class="dta-add" title="Hinzufügung (superlinear)">Pilz</span> vegetirt tief unter<br/>
+dem Gefrierpunkt, und ist fast immer von Schnee ein-<br/>
+geschlossen; man entdekte nun auch <span class="dta-del" title="Streichung (#s)">dieselben Thiere</span><span class="dta-add" title="Hinzufügung (superlinear)">ähnliche Bildungen</span><br/>
+an andern Orten in England und Frankreich, und eine<br/>
+andre Art, <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">von Usneen </span>welche sich in Quellen von 60–68° Reaumur<br/>
+Hize aufha<span class="dta-add" title="Hinzufügung (intralinear)">̈</span>lt<span class="dta-del" title="Streichung (#s)">en</span>. Es giebt kaum einen grösseren Kontrast,<br/>
+als zwischen diesen mikroskopischen Gegenständen, als<br/>
+den Anfängen der vegetabilen und animalen Natur, und<br/>
+den Riesenprodukten der heissen Zone, unter denen sich<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0041 : 19r|</span><br/>
+die Palmen der Tropenländern von 280–300′ Höhe auszeich-<br/>
+nen, welche also den meisten unsrer europäischen Kirch-<br/>
+thürme an Höhe gleichkommen. Ganz ungeheure Exem-<br/>
+plare fand <span class="dta-metamark" title="metamark">⎡</span><span class="dta-del" title="Streichung (#s)">ich</span><span class="dta-add" title="Hinzufügung (superlinear)"><span title="Personenname"><a href="http://d-nb.info/gnd/117651656">Douglas</a></span></span> am Rio Columbia und <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">ich selbst </span>am Orénoco. Doch<br/>
+auch das nördliche Deutschland hat unter seinen Eichen<br/>
+und <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">Buchen </span>Produkte von einer sehr bedeutenden Grösse auf-<br/>
+zuweisen.</p><br/>
+<p class="dta-p">Bei der Vertheilung der Pflanzen ist nichts bewun-<br/>
+dernswürdiger, als die grosse <span class="u ">Einheit der Natur</span>, welche<br/>
+auch hier nach so bestimten Gesezen verfahren ist,<br/>
+dass man sogar ihre Operazionen der Rechnung hat un-<br/>
+terwerfen können, eine so grosse Übereinstimmung<br/>
+her<span class="dta-del" title="Streichung (#s)">r</span>scht in der Verbreitung der einzelnen Spezies. Es ist<br/>
+hinlänglich, in einer bestimten Gegend die Zahl der Arten<br/>
+einer bestimten Gattung zu kennen, um daraus die über-<br/>
+raschendsten Resultate zu ziehn: indem man nämlich jene<br/>
+Zahl mit bestimten Quo<span class="dta-del" title="Streichung (#ow)">t</span><span class="dta-add" title="Hinzufügung (across)">z</span>ienten multiplizirt, erhält man<br/>
+sehr genau nicht nur die Anzahl der Spezies der andern<br/>
+Gattungen, sondern auch die Zahl der Arten überhaupt, welche<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0042 : 19v|</span><br/>
+in jener Gegend vorkommen. Noch ist hiebei die auffallende<br/>
+Erscheinung zu bemerken, dass diese numerischen Verhältnisse<br/>
+sich keinesweges nach der Zahl der einzelnen Pflanzenindivi-<br/>
+duen richten, sondern nach den Formen im allgemeinen.</p><br/>
+<p class="dta-p">Zur Karakteristik der Pflanzen gehört es ferner, dass<br/>
+sie nicht alle über den Erdball gleichmässig vertheilt<br/>
+sind, sondern dass jeder Form ihr bestimter Wohnplaz<br/>
+angewiesen ist: gewisse Familien könte man nordische,<br/>
+andre wieder tropische nennen, wobei jedoch nicht zu<br/>
+verkennen ist, dass die Gränzen <span class="dta-del" title="Streichung (#s)">nicht</span><span class="dta-add" title="Hinzufügung (intralinear)">nirgend</span> scharf<br/>
+gezogen, sondern sehr in einander übergehend sind. Die<br/>
+Euphorbiaceen und Malvaceen nehmen nach dem Norden<br/>
+zu ab, – die Ericeen und andre werden nach dem Süden<br/>
+zu seltener. Auch in Hinsicht auf die <span class="dta-del" title="Streichung (#s)">Breiten</span><span class="dta-add" title="Hinzufügung (superlinear)">Längen</span>grade<br/>
+herscht eine grosse Verschiedenheit in den verschiedenen<br/>
+Welttheilen: die Vegetazion von Nordamerika ist von<br/>
+der europäischen ganz verschieden; man hat versucht,<br/>
+in dieser Hinsicht gewisse Formenlinien zu ziehn, welche<br/>
+diesen Unterschied angeben sollen. Zu den seltnern For-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0043 : 20r|</span><br/>
+men in Nordamerika gehören die Labiaten und Cruciferen,<br/>
+die sich wieder bei uns in grosser Menge finden.</p><br/>
+<p class="dta-p">Es läst sich berechnen, dass die Masse der beschriebenen<br/>
+und bekanten Pflanzen sich auf 60,000 Spezies beläuft.<br/>
+<span title="Schreibfehler: von" class="dta-corr">Von</span> der grösseren Menge, welche auf dem ganzen Erdboden<br/>
+sich befindet, läst sich nicht einmal eine Schäzung<br/>
+machen. Das gröste Herbarium auf der Welt hat <span title="Hr." class="dta-abbr">Herr</span><br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/116652292">Lambert</a></span> in England zusammengebracht, und in diesem<br/>
+finden sich <span class="dta-del" title="Streichung (#s)"><span class="gap">[unleserliches Material – 2 Zeichen fehlen]</span></span><span class="dta-add" title="Hinzufügung (superlinear)">allein</span> 30,000 Phanerogamen. Das ganze Reich<br/>
+der Vegetabilien läst sich nicht in einzelne grosse Klas-<br/>
+sen theilen: denn die Natur kent dieselben nicht, und<br/>
+hat die feinsten Übergänge von einer in die andre: man<br/>
+hat daher in neuer Zeit mit grossem Rechte angefan-<br/>
+gen, diese gewaltige Masse von Gewächsen in kleinere<br/>
+Gruppen, in natürliche Familien zu theilen, bei denen es<br/>
+zwar auch schwer, aber doch eher möglich ist, die gemein-<br/>
+schaftlichen Kennzeichen zu bestimmen und festzuhalten.</p><br/>
+<p class="dta-p">Bei dem Pflanzenleben im grossen drängen sich uns<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0044 : 20v|</span><br/>
+einige interessante Betrachtungen auf: einige Pflanzen<br/>
+leben vereinzelt, andre gesellig: einen grossen Unterschied<br/>
+bemerkt man zwischen dem alten und neuen Kontinente:<br/>
+während auf dem alten Kontinente unabsehbare Strekken<br/>
+Landes mit derselben Baumgattung, welche die Wälder<br/>
+bildet, bedekt sind, so wechselt diese Erscheinung sehr<br/>
+schnell in Amerika: am Orinoco besteht ein Wald auf<br/>
+jeder Quadratmeile aus andern Pflanzen, und es ist oft<br/>
+schwer, hier das Material der Wälder im Ganzen zu<br/>
+bestimmen. Es braucht hiebei kaum bemerkt zu werden,<br/>
+welchen entscheidenden Einflus diese starke Vegetazion<br/>
+auf die Kultur unter den Tropen <span class="dta-del" title="Streichung (#s)">eingewirkt</span><span class="dta-add" title="Hinzufügung (superlinear)">gehabt</span> hat: wäh-<br/>
+rend wir in den Urwäldern ganze Völker von Jägern<br/>
+und Fischern auf derselben Stufe der Ausbildung<br/>
+sehn, so müssen wir nicht verkennen, dass das noma-<br/>
+dische Leben, welche wir in den Steppen von Hochasien,<br/>
+in Arabien, und an andern Stellen der alten Welt be-<br/>
+obachten durch die Abwesenheit von hohen Baum-<br/>
+stämmen bedingt werde.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0045 : 21r|</span><br/>
+<p class="dta-p">Es darf ferner nicht übergangen werden, dass da, wo die<br/>
+Vegetazion ärmer ist, sich eine scheinbare Mannigfaltig-<br/>
+keit zeigt, weil zwar der Formen im Ganzen weniger sind,<br/>
+sich aber Repräsentanten jeder Form überal vorfinden<br/>
+müssen.</p><br/>
+<p class="dta-p">Gehn wir nun zu den <span class="u ">Thieranfängen</span> in's besondere über,<br/>
+so mus vorangeschikt werden, dass die Locumotivität der<br/>
+Thiere grösser ist als die der Pflanzen: bei diesen findet<br/>
+sie nur <span class="u ">im Eie</span> statt, bei jenen dauert sie das ganze Leben<br/>
+hindurch. Bei den unförmlichen Gestalten der Acephalen<br/>
+und Gasteropoden ist sie freilich nur sehr gering: denn<br/>
+diese scheinen von der Natur angewiesen zu sein, auf der<br/>
+Stelle zu bleiben, wo sie entstanden. Die Echinus oder<br/>
+Seeigel bewegen sich volkomner, indem sie lange weisse<br/>
+Fäden aus mehreren Öfnungen herausstrekken: dennoch<br/>
+sind sie nur Zoophyten. Eben wegen jener Locumotivität<br/>
+streifen die Thiere durch mehrere Klimaten, wovon wir auf-<br/>
+fallende Beispiele unter den Fischen finden: man trift<br/>
+dieselben Arten von den Inseln des grünen Vorgebirges bis<br/>
+zum Kap der guten Hofnung hinunter. Diese Erscheinung<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0046 : 21v|</span><br/>
+läst sich aber sehr gut erklären, wenn man bedenkt, dass<br/>
+die Fische in den verschiedenen Tiefen des Meeres alle verschie-<br/>
+denen Temperaturen antreffen, mithin weniger an das<br/>
+Klima, welches grade an der Oberfläche herscht, gebunden sind.</p><br/>
+<div class="dta-list">   <div class="dta-list-item">Man zälte bis jezt 45000 Insekten,</div>
+<div class="dta-list-item"><span class="et ">5000 Vögel</span></div>
+<div class="dta-list-item"><span class="et ">2000 Fische</span></div>
+<div class="dta-list-item"><span class="et ">700 Säugethiere.</span></div>
+</div><br/>
+<p class="dta-p">Die Säugethiere machen in den meisten Ländern ⅕ der Vögel<br/>
+aus: dies Verhältnis muss aber früher ein anderes gewesen<br/>
+sein. Vor der ersten grossen U<span class="dta-del" title="Streichung (#ow)">nn</span><span class="dta-add" title="Hinzufügung (across)">m</span>wälzung unseres Planeten<br/>
+mus es mehr Säugethiere gegeben haben: der Grund aber,<br/>
+warum wir deren mehr in den Versteinerungen finden, liegt<br/>
+nicht allein darin, dass sie in grösserer Menge vorhanden<br/>
+waren, sondern offenbar auch in der grösseren Locumotivi-<br/>
+tät der Vögel, welche sich leichter retten konten. Verloren<br/>
+gegangen sind besonders solche Säugethiere, welche sich unsern<br/>
+Schweinen, Pferden und Elephanten nähern. Wir müssen hier<br/>
+wiederum die grosse Einheit der Natur bewundern, die <span class="dta-del" title="Streichung (#s)">einer</span><span class="dta-add" title="Hinzufügung (intralinear)">eine</span><br/>
+solche Übereinstimmung in ihren Bildungen beobachtet, dass es<br/>
+uns möglich wird, aus einem einzelnen Organe auf alle übrigen,<br/>
+auf die ganze Gestalt des Thieres mit grosser Sicherheit zu schliessen.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0047 : 22r|</span><br/>
+<div class="fw-top fw-sig">6.</div><br/>
+<p class="dta-p">Unter den Amphibien sind verloren gegangen der <span class="u ">Megalosaurus</span>,<br/>
+eine ungeheure Eidexe von der Höhe eines Ochsen, und von 60–70′<br/>
+Länge, während die grösten heutigen Krokodille, welche ich ge-<br/>
+messen habe, nur 22–24′ lang sind; der <span class="u ">Pleisiosaurus</span>, ein grosses<br/>
+Krokodil mit einem Schwanenhalse, der fast die halbe Länge des<br/>
+Körpers ausmacht: wir müssen uns denken, dass dieses gefährliche<br/>
+Thier am Ufer im Wasser gelegen, und von da aus mit dem lan-<br/>
+gen Halse seine Beute erhascht habe; der <span class="u ">Ichthyosaurus</span>, den<br/>
+man in den Juraformazionen antrift: er zeichnet sich durch<br/>
+seine grossen runden Fischaugen aus, während alle andern Kro-<br/>
+kodille kleine geschlizte Augen haben.</p><br/>
+<p class="dta-p">Es mus ferner in Betrachtung gezogen werden, dass auf den<br/>
+Südseeinseln sich fast lauter kleine mausartige Thiere finden,<br/>
+im indischen Ozean dagegen sehr grosse, <span title="Original: zB." class="dta-reg">z. B.</span> ein Rhinozeros<br/>
+mit 2 Hörnern. Tief in Sumatra und in der Nähe von<br/>
+Paris fand man Tapirskelette, und so werden die entferntesten<br/>
+Länder auf diese Weise mit einander verbunden.</p><br/>
+<hr/><br/>
+<p class="dta-p">Das höchste Ziel aller Naturbeobachtung ist die Erkentnis unsrer<br/>
+eignen Natur, daher beschliesse ich das Naturbild, welches<br/>
+ich bis hieher zu entwerfen versucht habe, mit einer Darstel-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0048 : 22v|</span><br/>
+lung der Menschenraçen. Ob es wirklich einen spezifischen Unter-<br/>
+schied in der Menschennatur gebe, lasse ich noch dahin gestelt<br/>
+sein, und bemerke nur, dass man zu der Eintheilung in Racen<br/>
+die verschiedenartigsten <span class="dta-del" title="Streichung (#s)">Gegenstände</span><span class="dta-add" title="Hinzufügung (superlinear)">Merkmale</span>, wie: Knochenbau, Haut-<br/>
+farbe, Dermoïdalsystem, Haare <span title="Original: pp" class="dta-reg">pp.</span> gewählt hat.</p><br/>
+<p class="dta-p"><span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span> nimt 3 Menschenraçen an: eine weisse, gelbe und schwarze.<br/>
+<span title="Personenname"><a href="http://d-nb.info/gnd/116208503">Blumenbach</a></span> hat diesen noch 2 hinzugefügt.</p><br/>
+<p class="dta-p">Wie unbestimt alle diese Eintheilungen sind, will ich nur an<br/>
+einem Beispiele zeigen: im Alterthume hielt man die<br/>
+Aethiopen für ein einziges grosses <span class="dta-metamark" title="metamark">⎡</span><span title="Original: NegerVolk" class="dta-reg"><span class="dta-add" title="Hinzufügung (superlinear)">Neger-</span>Volk</span> von derselben Bildung:<br/>
+krauses Haar, <span title="Original: ein gequetschte" class="dta-reg">eingequetschte</span> Nase, unangenehm aufgeworfene<br/>
+Lippen waren die Kennzeichen desselben: in neuerer Zeit ent-<br/>
+dekte man aber Negervölker, welche keinesweges diese Merk-<br/>
+male zeigten, deren Bildung sich vielmehr schon der euro-<br/>
+päischen näherte.</p><br/>
+<p class="dta-p">Man kam nun auf einen Ein<span class="dta-supplied">[thei]</span>lungsgrund, der allerdings<br/>
+viel für sich zu haben scheint, nämlich auf die Sprachverschie-<br/>
+denheit. Meines Bruders, <span title="Personenname"><a href="http://d-nb.info/gnd/118554727">W. v. Humboldt</a></span>: philosophische<br/>
+Untersuchungen über die Vertheilung der Sprachen auf der ganzen<br/>
+Erde beweisen indessen die Gleichheit der körperlichen Anlagen<br/>
+bei den verschiedenartigen Völkern, so dass zuweilen in einer<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0049 : 23r|</span><br/>
+und derselben Race die gröste Sprachver<span class="dta-del" title="Streichung (#s)">wirrung</span>schiedenheit herscht,<br/>
+während in den Sprachen der entferntesten Völker sich Analogien<br/>
+finden: so bemerkt man eine Sprachähnlichkeit zwischen den Kopten,<br/>
+den Bewohnern von Kongo und den Vaskischen Völkern.</p><br/>
+<p class="dta-p">Bei andern <span class="dta-del" title="Streichung (#ow)">V</span><span class="dta-add" title="Hinzufügung (across)">E</span>intheilungen sind die Namen der Unterschei-<br/>
+dungsmerkmale sehr unbestimt gewählt. So braucht <span title="Personenname"><a href="http://d-nb.info/gnd/116863498">Meiners</a></span><br/>
+den Ausdruk volkomne und unvolkomne Racen, und rechnet die<br/>
+Chinesen, troz ihrer uralten und ausgebreiteten Kultur, die<br/>
+Inder, troz ihrer Poesie und Philosophie zu den unvolkomnen:<br/>
+doch hat er in seinen lezten Jahren diese Meinung geändert.</p><br/>
+<p class="dta-p">Man mus also auch hier, wie dies bereits in der Zoologie<br/>
+und Botanik geschehn ist, die allgemeinen Eintheilungen<br/>
+verlassen, und sich nur an die Betrachtung kleinerer Gruppen<br/>
+halten, bei denen man die Merkmale eher fixiren kann.</p><br/>
+<hr/><br/>
+<p class="dta-p">Wir haben also im Ganzen folgende 6 Abtheilungen durchzugehn.<br/>
+<div class="dta-list">   <span class="dta-list-item">1, Astronomie.</span>
+<span class="dta-list-item">2, Geognosie. Betrachtung der festern Erdrinde.</span>
+<span class="dta-list-item">3, Klimatologie <span title="Original: ―" class="dta-reg">〃 〃</span> flüssigen Hüllen. (Meer &amp; Luft)</span>
+<span class="dta-list-item">4, Geographie der Pflanzen.</span>
+<span class="dta-list-item">5, <span title="Original: ―" class="dta-reg">〃 〃</span> Thiere.</span>
+<span class="dta-list-item">6, Betrachtungen über die <span class="u ">Menschenraçen</span>.</span>
+</div></p><br/>
+<hr/><br/>
+</div></body></html>

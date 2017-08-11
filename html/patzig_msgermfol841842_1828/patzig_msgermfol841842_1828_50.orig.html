@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:200px; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><div class="dta-head"><span title="Original: D. 10 April." class="dta-reg">50. Vorlesung, 10.04.1828</span></div><br/>
+<p class="dta-p">Geht man vom Aequator nach Norden, ſo<br/>
+iſt die Temperatur nach dem Syſtem der iſoter-<br/>
+men Linien ſehr verſchieden, u. beſonders kañ<br/>
+man ein cisatlantiſches u. tranſatlanti-<br/>
+ſches Syſtem añehmen. Schreite ich von der<br/>
+Hudſonsbai nach dem Aequator, ſo kom̃e<br/>
+ich viel ſchneller in ein wärmeres Klima<br/>
+als in Europa. Betrachtet man über-<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">haupt</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0327 : 310.|</span><br/>
+haupt die Temper. von Süden nach Norden<br/>
+von 10 zu 10°, ſo findet man die ſchnell<span class="dta-supplied">[ſte]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Schnellſte<br/>
+Abnahme der<br/>
+Wärme</span><br/>
+</span>Abnahme der Wärme zwiſchen 40–45°.<br/>
+Dies iſt nicht allein in mathem. u. phyſikal<span class="dta-supplied">[.]</span><br/>
+Hinſicht merkwürdig, ſondern auch in Hinſicht<br/>
+auf die Kultur der Menſchheit ſehr wichtig<span class="dta-supplied">[.]</span><br/>
+Hier, wo der Oelbaum wächſt, u. durch<br/>
+die verſch. Wärmegrade die mañigfalt<span class="dta-supplied">[ig-]</span><br/>
+ſten Produckte erzeugt werden, mußte<br/>
+zuerſt d<span class="dta-del" title="Streichung (#ow)">as</span><span class="dta-add" title="Hinzufügung (across)">er</span> Handelsverkehr belebt werden<br/>
+der Ackerbau blühen, u. dies auf die Ci<span class="dta-supplied">[-]</span><br/>
+viliſation wirken. Wichtig iſt es zu be<span class="dta-supplied">[ach-]</span><br/>
+ten, daß in der temperirten Zone <span class="gap">[]</span> die<br/>
+Temperatur der Jahre ſehr verſchieden<br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Verſchiedene<br/>
+Temper. der Jahre.</span><br/>
+</span>iſt. Dieſe Verſchiedenheit beträgt ein Jahr<br/>
+um das andere 2–3°, faſt ¼ der mittler<span class="dta-supplied">[n]</span><br/>
+Temper. Hievon iſt das Reifen der Cerea-<br/>
+lien, de<span class="dta-del" title="Streichung (#ow)">r</span><span class="dta-add" title="Hinzufügung (across)">s</span> Weins, des Obſtes abhängig: Di<span class="dta-supplied">[es]</span><br/>
+ſind die glücklichen Jahre wo mehr Wär<span class="dta-supplied">[me]</span><br/>
+vorherrſchend iſt; deñoch köñen auch b<span class="dta-supplied">[ei]</span><br/>
+minder wärmern Jahren <span title="Cereali￼" class="dta-abbr">Cerealien</span> wohl<br/>
+gedeihen, da ſie auf kurze friſt einer gewi<span class="dta-supplied">[ß]</span><br/>
+<span title="ſtark￼" class="dta-abbr">ſtarken</span> Wärme nur bedürfen. Da nun d<span class="dta-supplied">[ie]</span><br/>
+mittl. Temper. in einem Jahre ſo verſchied<span class="dta-supplied">[en]</span><br/>
+iſt, ſo wird es nothwendig, eine größere<br/>
+Maſſe von Jahren zu beobachten u. die <span class="dta-supplied">[Mit-]</span><br/>
+telzahl von 8000 Beob. zu nehmen, weñ<br/>
+man etwa jährl. 800 Beobacht. mac<span class="dta-supplied">[ht.]</span><br/>
+Unter dem Aequator iſt dies anders,<br/>
+u. die Quant. der mittlere Wärme wär<span class="dta-supplied">[e]</span><br/>
+nur höchſtens um <span class="sup ">1</span>/<span class="sub ">20</span>, wie ich dies ſelbſt<br/>
+beobachtet. Jn der temper. Zone iſt d<span class="dta-supplied">[ie]</span><br/>
+Verſchiedenheit in der Temperatur der M<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">on<span class="dta-supplied">[ate]</span></span><br/>
+noch größer. Jn <span class="aq ">Paris</span> <span title="variir￼" class="dta-abbr">variiren</span> die<br/>
+Wintermonate um 5–6° u. die mittl.<br/>
+Som̃erwärme im <span class="aq ">Aug</span>. 14–17°.</p><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Noch</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0328 : 311.|</span><br/>
+<p class="dta-p"><span class="dta-marginal dta-marginal-left"><span class="b "><span class="aq ">Maximum</span><br/>
+der Wärme.</span><br/>
+</span>Noch einiges will ich über das <span class="aq ">Maximum</span><br/>
+der Wärme hinzuſetzen, wo ſo vieles bis<br/>
+jetzt falſch angegeben iſt, u. die <span class="aq ">reverberation</span><br/>
+des Lichts durch Gebäude <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span> nicht in Anſchlag<br/>
+gebracht wurde. <span title="H￼." class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118847767">Arago</a></span></span> u. ich haben<br/>
+die <span title="genaueſt￼" class="dta-abbr">genaueſten</span> Verſuche angeſtellt, u. <span title="Beobach-&#xA;tung￼" class="dta-abbr">Beobach-<br/>
+tungen</span> geprüft, wonach ſich ergiebt, daß<br/>
+in reiner Atmoſphäre ohne Sand, in der<br/>
+Höhe von 9 Fuß über der Erde, die Wärme<br/>
+nie höher als + 37° R. im Schatten beobachtet<span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)"> iſt</span>.<br/>
+Die genaueſten Jnſtrumente von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118668889">Kewendiſh</a></span></span><br/>
+zeigten in Jndien Nachts + 29–30°. Cap.<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100648282">Tuki</a></span></span> fand in Afrika bei Tage + 36° Nachts<br/>
++ 28° R. der Reiſenden <span class="aq "><span title="Personenname"><a href="https://www.wikidata.org/wiki/Q2383937">Ritſchi</a></span></span>, der<br/>
+in <span class="aq ">Maurzuk</span> ſtarb, fand daſelbſt Nachmit-<br/>
+tags 38–40° Wärme; da man jedoch die<br/>
+ganze Atmoſphäre mit Staub erfüllt. Das<br/>
+Licht geht durch die Luftſchichten, ohne dieſelben<br/>
+zu erwärmen, aber die erhitzten feinen<br/>
+Sandkörnchen <span title="ſchlag￼" class="dta-abbr">ſchlagen</span> an das Termometer<br/>
+u. veranlaſſe die hohe Wärme, die den<br/>
+Menſchen eben ſo empfindlich iſt. Mehrere Mo-<br/>
+nate leben die Einwohner von <span class="aq ">Murzak</span><br/>
+in einer Wärme von + 43°, jedoch <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">wie geſagt </span>nicht in<br/>
+reiner, ſondern ſandiger Atmoſphäre.<br/>
+Nicht im̃er ſo iſt dies unter den Tropen<br/>
+der Fall, u. ſelten ſteigt das Termometer<br/>
+daſelbſt ſo hoch als es in Berlin alle 8–10<br/>
+Jahre ſteigt, nämlich + 26–28° R. Wegen<br/>
+der Körper unſerer Nächte entſteht zuwei-<br/>
+len die Anhäufung dieſer großen Wärme.<br/>
+Jn <span class="aq ">Paris</span> iſt die Wärme + 29½ u. + 30,7°<br/>
+geſtiegen. Jn den <span title="letzt￼" class="dta-abbr">letzten</span> 20 Jahren<br/>
+acht mal auf + 28°. Jn Dampfbädern<br/>
+wird noch größere Hitze wie die in <span class="aq ">Murzak</span><br/>
+erzeugt, die Menſchen ſehr gut ertragen.<br/>
+Dies widerſpricht der Meinung, daß der Menſch<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">höchſtens</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0329 : 312.|</span><br/>
+höchſtens die eigene Blutwärme ertrag<br/>
+köñe, die nicht + 32° ſondern nur + 30° iſt<br/>
+Vögel haben das heißeſte Blut von + 32–<span class="dta-supplied">[35°]</span><br/>
+u. die Taube hat ſchon höhere Blutwärm<span class="dta-supplied">[e]</span><br/>
+<span class="dta-marginal dta-marginal-left"><span class="b ">Hitze<br/>
+die ein Menſch<br/>
+ertragen kañ</span><br/>
+</span>wie der Menſch. Beiſpiele hat man<br/>
+daß Menſchen 8 <span title="Minut￼" class="dta-abbr">Minuten</span> lang in eine<br/>
+Hitze von + 102° R. ausdauerten, ſtär-<br/>
+ker als ſiedendes Waſſer. <span title="Uhrkett￼" class="dta-abbr">Uhrketten</span><br/>
+<span title="wurd￼" class="dta-abbr">wurden</span> ſo heiß, daß ohne Verletzun<span class="dta-supplied">[g]</span><br/>
+ſie nicht berührt werden koñten. Um<br/>
+den Menſchen ſelbſt bildet ſich von der<br/>
+Verdünſtung eine Hülle, die in ſtete<span class="dta-supplied">[m]</span><br/>
+Widerſtreit mit der <span title="umgebend￼" class="dta-abbr">umgebenden</span> Luft,<br/>
+ihn auf gewiſſe Zeit ſchützt. Den Sa<span class="dta-supplied">[nd]</span><br/>
+in den Tropenzonen findet man oft 50<span class="dta-supplied">[–]</span><br/>
+54° erhitzt. Jn den <span title="Katarakt￼" class="dta-abbr">Katarakten</span> de<span class="dta-supplied">[s]</span><br/>
+<span class="aq ">Orinoco</span> bilden ſich ſchwarze Steine<br/>
+die ſich ſo <span title="erhitz￼" class="dta-abbr">erhitzen</span>, daß ſie in der Nach<span class="dta-supplied">[t]</span><br/>
+ſelbſt durch die lederne Unterdecke wa<span class="gap">[verlorenes Material]</span><span class="dta-supplied">[-]</span><br/>
+ten u. 42° Wärme <span title="enthielt￼" class="dta-abbr">enthielten</span>. Mer<span class="dta-supplied">[k-]</span><br/>
+würdig iſt es, daß ſie als leicht aus<br/>
+ſtrahlende Körper dieſe Wärme noc<span class="dta-supplied">[h]</span><br/>
+behalten. Die größte Kälte die mi<span class="dta-supplied">[t]</span><br/>
+Weingeiſt-Termometer, <span title="verglich￼" class="dta-abbr">verglichen</span> von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/1055408878"><span class="gap">[verlorenes Material]</span><br/>
+laston</a></span></span>, beobachtet u. die der Menſch ertra<span class="dta-supplied">[gen]</span><br/>
+kañ iſt − 40°. Die <span title="Eingeborn￼" class="dta-abbr">Eingebornen</span>, Eskimo<span class="dta-supplied">[s]</span><br/>
+gehören dabei zu den <span title="fröhlichſt￼" class="dta-abbr">fröhlichſten</span> Menſch<span class="dta-supplied">[en]</span><br/>
+die unter Halbwilden gefunden werde<span class="dta-supplied">[n.]</span><br/>
+Jhre Hütten haben ewig ſich erneuernde E<span class="dta-supplied">[is-]</span><br/>
+ſcheiben. Ohne Wind koñte <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116048166">Perry</a></span></span> mehre<span class="dta-supplied">[re]</span><br/>
+Stunden bei 40° Kälte <span title="ſpatzier￼" class="dta-abbr">ſpatzieren</span> gehen. A<span class="dta-supplied">[ls]</span><br/>
+das Termometer von − 40° auf − 5° ſt<span class="dta-supplied">[ieg]</span><br/>
+ſo <span title="fühlt￼" class="dta-abbr">fühlten</span> Alle eine Beklom̃enheit, ein gedr<span class="dta-supplied">[ück-]</span><br/>
+tes Gefühl der <span title="unbehaglich￼" class="dta-abbr">unbehaglichen</span> Wärme, das<br/>
+Fenſtern geöffnet werden mußten. Dies,<br/>
+<span class="dta-add" title="Hinzufügung (left)">umgekehrt </span>der Fall in Amerika, Zb. <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">in </span>Guayaquil, wo, <span class="gap">[verlorenes Material – 1 Wort fehlt]</span><br/>
+die Spanier nach dem Mantel greifen, no<span class="dta-supplied">[ch]</span><br/>
+im̃er + 18° R. iſt.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0330 : 313.|</span><br/>
+<p class="dta-p">So wäre auch 37–38° die größte beobachtete<br/>
+Kälte am Pole wie 37–38° größte beobach-<br/>
+tete Wärme am Aequator wohl anzuneh-<br/>
+men. Trotz der mittlere Temper. kañ das<br/>
+Termometer an einzelnen Orten zu großer<br/>
+Kälte herabſinken. So iſt die größte beob.<br/>
+Kälte unter 60° <span class="dta-metamark" title="metamark">⎡</span><span class="dta-add" title="Hinzufügung (superlinear)">N B. </span>in <span class="aq ">Petersburg</span> − 39,2°<br/>
+gleich der unter 70–71° N Br. Jn <span class="aq ">Berlin</span><br/>
+iſt die größte Kälte bis − 21,5° <span title="geſtieg￼" class="dta-abbr">geſtiegen</span><br/>
+Nach allen kritiſchen Beobachtungen iſt in<br/>
+27 Jahren das Termometer zweimal<br/>
+auf 21,5° u. zwar d. 24 <span class="aq ">Jan</span>. 1823 u.<br/>
+1809 geſunken, u. 4 mal auf − 17°.<br/>
+Jn <span class="aq ">Paris</span> war die größte Kälte 1795<br/>
+− 19°. Jn <span class="aq ">Marseille</span> bei einen mittlere Tem-<br/>
+per. von + 11½° war 1789 die Kälte − 13,5°,<br/>
+welches eine augenblickliche Erkältung ohne<br/>
+zuſam̃enhang mit der mittlere Temper. zeigt.<br/>
+Die mittl. Kälte in <span class="aq ">Paris</span> iſt − 8½°, Berlin<br/>
+− 12½° Petersburg − 24½°, in einem Zeitraum<br/>
+von 5 Jahren beobachtet. Daß eine zu-<br/>
+fällige Erkältung ſtatt finden kañ, lehrt<br/>
+die Geſchichte der Araber, wonach es gewiß<br/>
+iſt, daß 829 der Nil gefroren geweſen.<br/>
+Es ſcheint noch in <span class="aq ">Liſſabon</span>, <span class="aq ">Cairo</span>, <span class="aq ">Algier</span><br/>
+30–36° N Br. Ein Klima wo gar keine<br/>
+Kälte mehr ſtatt findet, exiſtirt in Europa<br/>
+nicht u. fängt erſt bei dem 29° N B. an.<br/>
+Nicht die Quantität der Wärme iſt nicht das<br/>
+wichtigſte, ſondern wichtiger iſt die <span title="Vertheil" class="dta-abbr">Vertheilung</span><br/>
+derſelben in <span title="verſchieden￼" class="dta-abbr">verſchiedenen</span>Jahreszeiten, deñ<br/>
+hiervon hängt der Einfluß auf das Reifen<br/>
+der Früchte ab. Jm <span title="wohlthätig￼" class="dta-abbr">wohlthätigen</span> <span title="weſtlich￼" class="dta-abbr">weſtlichen</span><br/>
+Klima in Europa iſt ein geringern Unterſchied<br/>
+zwiſchen Som̃er u. Winter; der hingegen auf<br/>
+der iſotermen Linie Amerikas höchſt bedeutend<br/>
+iſt. Jenes öſtl. Klima kañ man daher mit<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Recht</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0331 : 314.|</span><br/>
+Recht das exceſſive Klima neuen. Es iſt<br/>
+eine zu ſtarke Verſch. zwiſchen Som̃er u.<br/>
+Winter Zb. in <span class="aq ">Neu-York</span> unter 30–40° N Br<br/>
+iſt der Som̃er wie in Rom, der Winter wie<br/>
+in <span class="aq ">Copenhagen</span>. Die iſotermen Linie ge-<br/>
+hen auch parallel in der Nähe des Aequa-<br/>
+tors, aber höchſt divergirend nach dem<br/>
+Pole hin. Quebek hat <span title="Schreibfehler: Som̃erwäre" class="dta-corr">Som̃erwärme</span> wie <span class="aq ">Par<span class="dta-supplied">[is]</span></span><br/>
+u. Winterkälte wie <span class="aq ">Petersburg</span>. Es iſt mög<span class="dta-supplied">[lich]</span><br/>
+daß dieſe unglückl. Tendenz der Witterung<br/>
+bewirkt, daß die Bewohner ſehr empfängl<span class="dta-supplied">[.]</span><br/>
+für das gelbe Fieber ſind. Man hat be-<br/>
+merkt, daß Perſonen, die in einer Zone leb<span class="dta-supplied">[en]</span><br/>
+wo Wärme u. Kälte wie zwiſchen <span class="aq ">Palermo</span><br/>
+u. <span class="aq ">Upsala</span> wechſelt, leicht von dieſer Kran<span class="dta-supplied">[k-]</span><br/>
+heit afficirt werden, die Menſchen welch<span class="dta-supplied">[e]</span><br/>
+unter dem Aequator leben, nicht <span title="empfind￼" class="dta-abbr">empfinden</span><span class="dta-supplied">[.]</span></p><br/>
+<p class="dta-p">Ehe wir zu der Temperatur der Luft auf<br/>
+den Bergen übergehen, will ich noch des Unter-<br/>
+ſchiedes des Klimas zwiſchen der nördl. u. ſüdl.<br/>
+Hemiſphäre erwähnen. Das Vorurtheil, das<br/>
+die ſüdl. Erdhälfte kälter als die nördl. ſo<br/>
+hat ſelbſt der große <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118522027">Coock</a></span></span> beſtätigt. D<span class="gap">[unleserliches Material]</span><br/>
+iſt in neuerer völlig ungegründet gefunden. N<span class="dta-supplied">[eu-]</span><br/>
+Schottland am Südpol liegt frei von Eis u. le<span class="dta-supplied">[ichter]</span><br/>
+wäre es von da nach dem Südpol zu gelang<span class="dta-supplied">[en]</span><br/>
+als den Nordpol zu beſuchen. Die Temper<span class="dta-supplied">[a-]</span><br/>
+tur in <span class="aq ">Chili</span> 36° S. Br. u. die in <span class="aq ">Cadix</span>, <span class="aq ">Cal<span class="dta-supplied">[a-]</span><br/>
+brien</span> <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span> 36° N B. iſt genau unterſucht u. genau<br/>
+übereinſtim̃end gefunden worden. Die Cont<span class="dta-supplied">[inen-]</span><br/>
+te im Süden die in Pyramidalformen ſich er<span class="dta-supplied">[-]</span><br/>
+ſtrecken u. die unter gleicher S. Breite von<br/>
+33–34° liegen haben ebenfalls dieſelbe Te<span class="dta-supplied">[m-]</span><br/>
+peratur. Vorgeb. der <span title="gut￼" class="dta-abbr">guten</span> Hoffnung hat <span class="dta-supplied">[eine]</span><br/>
+mittl. Temper. von + 15,5° <span class="aq ">Port Jackson</span><br/>
++ 15,4° <span class="aq ">Buenos Ayres</span> + 15,8°. Erſt zwiſch<span class="dta-supplied">[en]</span><br/>
+51–52° S. Br. fängt in der ſüdl. Hemiſphär<span class="dta-supplied">[e]</span><br/>
+eine größere Kälte, als in der ihn correſpond<span class="dta-supplied">[iren-]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">den</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0332 : 315.|</span><br/>
+den nördlichen an. Als Grund dieſer Erſchei-<br/>
+nung glaubt man, daß da die Erde in unſerm<br/>
+Winter der Soñe umher ſteht als in dem Winter<br/>
+der ſüdl. Erdhälfte u. dies etwa acht Tage dau-<br/>
+ert, daß bei uns der Winter Körper iſt als<br/>
+dorten, dies einen Verluſt der Wärme veran-<br/>
+laßt. Doch da nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118568876">Lamberts</a></span></span> Theorie die Er-<br/>
+leuchtung beider <span title="Hemiſphär￼" class="dta-abbr">Hemiſphären</span> gleich u. auch die<br/>
+Quantität der Wärme gleich iſt, ſo würden dieſe<br/>
+acht Tage Differenz wohl <span title="ein￼" class="dta-abbr">einen</span> äußerſt <span title="gering￼" class="dta-abbr">geringen</span><br/>
+Unterſchied der Temperatur veranlaſſen. Ge-<br/>
+wiſſer iſt die Urſache der Mangel an <span title="Continent￼" class="dta-abbr">Continenten</span><br/>
+in der kalten Zone des Südens. Das Meer<br/>
+als tranſparenter Körper wärmt lange nicht<br/>
+ſo ſehr als ein opaker Gegenſtand u. ſtrahlt<br/>
+nicht ſo viel Wärme aus. Der Unterſchied<br/>
+des Klimas <span title="zwiſch￼" class="dta-abbr">zwiſchen</span> Norden u. Süden mußte hiernach<br/>
+noch viel bedeutender ſein, weñ nicht unter dem<br/>
+Aequator eine Compenſation ſtatt fände. Selbſt<br/>
+weñ die <span title="Pyramidalform￼" class="dta-abbr">Pyramidalformen</span> ſich nur nördlicher<br/>
+endeten würde der Unterſchied größte ſich er-<br/>
+geben.</p><br/>
+<p class="dta-p">Jch gehe jetzt zu den Verhältniſſen des<br/>
+Luftkreiſes auf den Bergen über. Die Keñtniß<br/>
+der obern Luftſchichten auf den Bergen war<br/>
+bis zur Erfindung der Aeroſtaten 1782 höchſt<br/>
+mangelhaft. Die Wärmeabnahme auf den Ber-<br/>
+gen iſt eine Folge der Wärmeſtrahlung der<br/>
+Ebene ſelbſt. Auch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118656503">Dan. Bernoulli</a></span></span> zweifelte<br/>
+noch an der Abnahme der Temperatur in der<br/>
+Höhe u. behauptet die obern <span title="Luftſchicht￼" class="dta-abbr">Luftſchichten</span> über<br/>
+den Bergen wären heiß. Die Jndianer u.<br/>
+Creolen in Amerika beharren noch im̃er auf<br/>
+ihre von den Arabern entlehnten Principien,<br/>
+daß der Schnee aus Salzen beſtehe. Die <span title="Aero-&#xA;naut￼" class="dta-abbr">Aero-<br/>
+nauten</span> haben dies Alles widerlegt, wie <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118716581">Jai<br/>
+Luſſac</a></span></span> der ſich zu der Höhe des <span class="aq ">Chimborazzo</span><br/>
+erhob und ſofort in die kälteſte Luftſchichten<br/>
+kam. Mit Unrecht behauptet man, daß die Alten<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          "><span title="dieſelb￼" class="dta-abbr">dieſelben</span></div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0333 : 316.|</span><br/>
+dieſelben Jdee hierüber wie <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118656503">D. Bernoulli</a></span></span> hat<span class="dta-supplied">[-]</span><br/>
+ten. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118650130">Ariſtoteles</a></span></span> ſagt es in <span title="ſein￼" class="dta-abbr">ſeinen</span> naturhiſtor.<br/>
+Werken ſehr ſchön, daß in der Ebene unten<br/>
+die Wärme ſtralender wie oben ſei. Jn<br/>
+der größten Höhe nahm er freilich eine warme<br/>
+Aetherſchicht an, wie überhaupt die Alten glaub-<br/>
+ten daß nach einem Extrem dieſelbe erſte<br/>
+Erſcheinung wiederkehre. Das <span class="aq ">Riphaei</span>ſche<br/>
+Gebirge war nach ihnen der kälteſte Punkt<br/>
+u. dañ finge wieder die Wärme an. Eben<span class="dta-supplied">[-]</span><br/>
+mäßig ſollte der Aequator ſehr kalt ſein<span class="dta-supplied">[.]</span><br/>
+Gewiße Berge ſollten in die warmen Luft-<br/>
+ſchichten reichen, wo der behagliche Sitz der<br/>
+Götter wäre. Die allgemeine Keñtniß<br/>
+der obern Luftſchichten iſt nicht allein wichtig<br/>
+viele Phänomene zu erklären, ſie iſt auch<br/>
+wichtig für die Kultur der Menſchheit. Jn<br/>
+der temperirten Zone ſind die Ebenen wo<br/>
+Menſchen leben ſehr niedrig. Baÿern iſt nur<br/>
+1500′ hoch. Weñ gleich einzelne Dörfer zb<span class="dta-supplied">[.]</span><br/>
+<span class="aq ">Betta</span> 7100′ hoch liegt, ſo leben doch im Gan-<br/>
+zen ſelbſt Gebirgsvölker tief in den Thäler<br/>
+u. es giebt keine <span title="Original: HochEbenen" class="dta-reg">Hochebenen</span>. Jn den Tropen<br/>
+freilich ſind hohe Bergjöcher wo <span title="Million￼" class="dta-abbr">Millionen</span><br/>
+Menſchen leben. Jn nördl. Breiten von<br/>
+40–45° leben in der Höhe von 7000′ die<br/>
+Völker nicht. Jn Süd Amerika, Habeſch <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span><br/>
+da ſind Plat<span class="dta-del" title="Streichung (#ow)">os</span><span class="dta-add" title="Hinzufügung (across)">ea</span>us von 6–7000 Fuß Höhe.<br/>
+Jn Tibet wo verſchiedene Gebirgsketten<br/>
+das Himalaja Gebirge, d<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">er</span> Bogdo, Altai<br/>
+zuſam̃enſtoßen, giebt es Gebirgshöhen von<br/>
+einem Flächeninhalt wie Neuholland u.<br/>
+wird dorten der Akerbau bis zu einer<br/>
+Höhe von 14000 Fuß getrieben. An ande<span class="dta-supplied">[rn]</span><br/>
+Orten iſt ſelbſt unter dem Aequator eine<br/>
+ſolche Höhe mit Eis bedeckt u. die Urſache<br/>
+iſt die Strahlung der Ebene in dieſer<br/>
+Höhe. <span title="Million￼" class="dta-abbr">Millionen</span> Menſchen leben hier in hoher Region<span class="dta-supplied">[.]</span><br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">Die</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0334 : 317.|</span><br/>
+Die Urſache der Kälte auf den Bergen iſt<br/>
+ein Gegenſtand des wichtigſten Streites der Phÿſiker<br/>
+geworden. Das Licht durchſtreicht die Luft<br/>
+ohne ſie zu erwärmen, erſt durch die Abſorb-<br/>
+tion des Lichts wird die Wärme hervorge-<br/>
+bracht. Bei geringem Winkel <span title="dring￼" class="dta-abbr">dringen</span> nur<br/>
+wenige Strahlen in die Oberfläche, die andern<br/>
+reflectiren, umgekehrt iſt es weñ bei grö-<br/>
+ßern Winkel Strahlen auf die Ebene Fallen.<br/>
+Dieſe Lichtſchwächende Kraft der Materie<br/>
+bewirkt die Wärme, u. ſelbſt auf dem Meere<br/>
+wird um 2 Uhr N. M. die Luft etwas wärmer.<br/>
+Die Oberfläche des Erdkörpers muß daher<br/>
+als die Quelle der Wärme angeſehen werden,<br/>
+als wie eine Eiſenbarre, in welche Termome-<br/>
+ter von 100 Fuß, 50 Fuß, 40 Fuß <span title="Original: p" class="dta-reg"><span class="aq ">etc</span>.</span> Ent-<br/>
+fernung eingeſenkt ſind, deren ein Ende im<br/>
+Feuer liegt. Je weiter von der Quelle<br/>
+des Feuers entfernt, deſto mehr nim̃t die<br/>
+Wärme ab. Dies kañ man auf die Erd-<br/>
+höhen anwenden. Die untern dunſtreichen<br/>
+Luftſchichten machen, daß unten mehr Wärme<br/>
+zurückgehalten wird u. dieſe Waſſergas-<br/>
+dünſte veranlaßen, daß Strahlen wärme<br/>
+nicht in obern Regionen ſteigt. Wäre gar<br/>
+keine Atmoſphäre ſo würde es in einen Höhe<br/>
+von 24000 Fuß nicht kälter als unten ſein; aber<br/>
+jetzt ſind Gründe vorhanden, <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material]</span></span><span class="dta-add" title="Hinzufügung (across)">warum</span> die ſtrah-<br/>
+lende Wärme zurückgehalten wird. HErr<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117669849">Leslie</a></span></span> u. auch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726536">Laplace</a></span></span> glaubten, daß die<br/>
+Urſache die Ausdehnung den Luft ſei, wobei<br/>
+ſie ſich erkältet. Steigen die <span title="gedrückt￼" class="dta-abbr">gedrückten</span> untern<br/>
+Luftſchichten <span class="dta-del" title="Streichung (#s)">iſt </span>in die Höhe, ſo <span title="dehn￼" class="dta-abbr">dehnen</span> ſie ſich<br/>
+dorten aus Mangel an Druck aus u.<br/>
+rauben durch dieſe Capacität ſich ſelbſt u.<br/>
+den Benachbarten <span title="Lufttheilch￼" class="dta-abbr">Lufttheilchen</span> die Wärme.<br/>
+Man muß jedoch bedenken, daß jede aufſtei-<br/>
+<div class="&#xA;            fw-bottom-catch&#xA;          ">gende</div><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0335 : 318.|</span><br/>
+aufſteigende Luftſäule auch eine niederſtei-<br/>
+gende bedingt u. eine compenſation doch nicht<br/>
+ſtatt findet, da zwar Wärme nach oben<br/>
+geht, aber nicht herabſteigt. Allerdings ent-<br/>
+ſteht durch den Druck der Luft im iñern der<br/>
+Bergwerke bedeutende Wärme, aber hiebei<br/>
+iſt nicht zu vergeßen, daß ein ſtetes <span title="Aufſteig￼" class="dta-abbr">Aufſteigen</span><br/>
+von untern Luftſchichten ſtatt findet. Die<br/>
+Oberfläche der Erde muß daher als allei-<br/>
+nige Quelle der Wärme angeſehen werden<br/>
+u. es wird kälter je weiter man von<br/>
+der Quelle entfernt ſteht.</p></div></body></html>

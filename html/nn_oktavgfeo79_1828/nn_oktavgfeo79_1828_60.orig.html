@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"/><style type="text/css">
+            body { font-size:14pt; margin-left:1em; margin-right:1em; max-width:1000px; position:absolute }
+          </style><style type="text/css">
+        .head  { text-align:center; font-size:1.2em; margin-top:1em }
+        .dta-head  { text-align:center; font-size:1.2em; margin-bottom:.5em }
+        
+        .fw-top          { text-align:center; margin-bottom:2em; color:#666 }
+        .fw-pageNum      { display:none }
+        .fw-bottom-sig   { margin-top:1em; font-size:.8em; color:#666 }
+        .fw-bottom-catch { text-align:right; margin-top:1em; margin-right:1em; font-size:.8em; color:#666 }
+        
+        /* quote mess */
+        blockquote:before, blockquote:after, q:before, q:after {
+          /* see http://www.paulchaplin.com/blog/css-reset-and-quirky-quotes */
+          content:""; content:none;
+        }
+        
+        /* place holders */
+        .ph, .phbl { color:#666 }
+        .phbl      { display:block; text-align:center }
+        
+        .titlepage   { text-align:center }
+        .byline      { font-size:.9em; margin:1em 0 }
+        .dta-anzeige { color:#aaa }
+        .dedication  { padding-left:2em }
+        
+        .footnote       { color:#333; font-size:.8em; margin-top:.5em; margin-left:1em }
+        .endnote        { color:#333; font-size:.8em; margin-top:.5em; margin-bottom:.5em }
+        .endnote-indent { text-indent:1em }
+        .fn-intext      { vertical-align:super; font-size:.8em }
+        .fn-sign        { vertical-align:super; font-size:.8em }
+
+        .dta-marginal       { position:absolute; width:140px; text-indent:0; background:#fff; padding:0 4px; border:1px solid #D1C5A4; font-size:smaller; z-index:10000 }
+        .dta-marginal-left  { left:-150px; text-align:right }
+        .dta-marginal-right { right:-150px; text-align:left }
+        
+        .dta-argument { text-align:center; font-size:.9em }
+
+        .dta-metamark { color:#666 }
+        
+        .dta-cb { font-size:.8em; color:#666; text-align:center; display:block; margin:5px }
+        
+        .poem       { padding-left:2em; margin-bottom:1em }
+        .dta-salute { margin-top:1em; display:inline }
+        .speaker    { font-weight:bold }
+        .stage      { font-style:italic; font-size:.9em }
+        .stage .c   { font-style:italic; font-size:.9em }
+        div.stage   { margin-bottom:.5em }
+        
+        div.dta-figure { font-size:.9em; margin-top:1em; margin-bottom:1em }
+        div.dta-figure p { margin-left:1em; display:inline }
+        .dta-figure img {  }
+        
+        .titlepart           { font-size:1em }
+        .titlepart-main      { margin-bottom:1em; font-size:1.6em }
+        .titlepart-volume    { font-size:1em }
+        .titlepart-edition   { font-size:1em }
+        .titlepart-copyright { font-size:1em }
+        .titlepart-desc      { font-size:1em }
+        .titlepart-sub       { font-size:1.3em; margin-bottom:.5em }
+        
+        .docauthor { font-size:1em; margin-bottom:.5em }
+        
+        .gap       { color:#666 }
+        
+        .dta-foreign { color:#666 }
+        .dta-foreign:before { content:"[" }
+        .dta-foreign:after { content:"]" }
+        
+        .dta-corr { border-bottom:dotted 2px #97002d }
+        .dta-reg  { border-bottom:dotted 2px #2d9700 }
+        .dta-abbr { border-bottom:dotted 2px #002D97 }
+        .dta-supplied { color:#2D9700 }
+        .dta-del  { background:#f0f0f0;color:darkred;text-decoration:line-through }
+        .dta-add  { background:#f0f0f0;color:darkgreen }
+        
+        /* dramae */
+        .dta-sp    { margin-bottom:1em }
+        .dta-in-sp { display:inline }
+        .dta-actor { float:right }
+        
+        /* lb @n */
+        .dta-lb-n { float:right }
+        
+        /* renditions inline */
+        .aq       { font-family:sans-serif }
+        .b        { font-weight:bold }
+        .blue     { color:blue }
+        .fr       { border:1px dotted silver }
+        .g        { letter-spacing:0.125em }
+        .g:before { content:''; margin-left:0.125em }
+        .g:after  { content:''; margin-right:0em }
+        .i        { font-style:italic }
+        .in       { font-size:150% }
+        .k        { font-variant:small-caps }
+        .larger   { font-size:larger }
+        .red      { color:red }
+        .s        { text-decoration: line-through }
+        .smaller  { font-size:smaller }
+        .sub      { vertical-align:sub; font-size:.7em }
+        .sup      { vertical-align:super; font-size:.7em }
+        .u        { text-decoration:underline }
+        .uu       { border-bottom:double 3px #000 }
+        
+        /* renditions block */
+        .c     { display:block; text-align:center }
+        .et    { display:block; margin-left:2em; text-indent:0 }
+        .et2   { display:block; margin-left:4em; text-indent:0 }
+        .et3   { display:block; margin-left:6em; text-indent:0 }
+        .dta-in-sp .et { display:inline; text-indent:2em }
+        .right { display:block; text-align:right }
+        .cw    { text-align:right }
+        
+        /* cast lists */
+        table.dta-castgroup { border-collapse:collapse; border-spacing:0; margin:0; width:100% }
+        td.castitem         { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px }
+        .castitem           { margin-bottom:5px }
+        td.roledesc         { vertical-align:middle; padding-left:5px }
+        
+        /* tables */    
+        .dta-table      { margin-top:0; margin-left:auto; margin-right:auto; background:#fff; border-collapse:collapse }
+        .dta-table td   { vertical-align:top; border:1px solid #ccc; padding:3px }
+        caption h1,
+        caption h2,
+        caption h3,
+        caption h4,
+        caption h5,
+        caption h6 { font-size:1em; white-space:nowrap; padding-bottom:5px }
+        
+        /* lists */
+        ul.dta    { list-style-type:none; padding-left:2em }
+        ul.dta li { margin-bottom:3px }
+        
+        .dta-bibl { font-size:.9em }
+        
+        .dta-columntext { white-space:normal }
+        .dta-columntext td { padding-left:10px; padding-right:2em }
+        
+        table.list          { border-collapse:collapse; border-spacing:0; margin:0 }
+        td.item-right       { border-left:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.item-left        { border-right:1px solid #333; padding-right:10px; padding-left:0; padding-bottom:5px; padding-left:2em }
+        td.dta-list-trailer { vertical-align:middle; padding-left:5px; text-indent:0 !important }
+        td.dta-list-head    { vertical-align:middle; padding-right:2em }
+        .dta-list           { padding-left:2em; margin-bottom:1em }
+        .dta-list-item      { text-indent:-1em; margin-bottom:.5em }
+        .dta-list-item-noindent { text-indent:0em; margin-bottom:.5em !important }
+        .dta-list-item table { text-indent:0em }
+        
+        /* all things brace ... */
+        .braced-base       { display:inline-block; vertical-align:middle; padding:0 5px 0 5px }
+        p .braced-base     { text-indent:0 !important }
+        .braced-left-right { border-left:1px solid #333; border-right:1px solid #333; margin-left:1em }
+        .braced-left       { border-left:1px solid #333; margin-left:1em }
+        .braced-right      { border-right:1px solid #333 }
+        .braced-base .dta-list-item { text-indent:0; margin-bottom:0 }
+        
+        .dta-pb { color:#666; font-size:.9em }
+        .dta-p { text-indent:1em; margin:0px 0 }
+        p {
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          -webkit-margin-start: 0px;
+          -webkit-margin-end: 0px;
+        }
+      </style></head><body><div class="session"><span class="dta-supplied">[60. Vorlesung, 24.04.1828]</span><div class=""><div class=""><div class=""><p class="dta-p">Zu den Gegenſtänden, die mit einer beſondern, ſelbſt ge-<br/>
+<span class="dta-supplied">[häſ]</span>ſigen Lebendigkeit betrieben ſind, gehört auch die Unter-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0570 : 564.|</span><br/>
+ſuchung der Menſchenracen. Bei ihren Betrachtung ſind gleich<br/>
+der Geognoſie Sachen vereinigt, die im Bezug auf dieſen Gegen-<br/>
+ſtand den Unterſuchungen fremd bleiben müßen. Große hiſtoriſche<br/>
+Entdeckungen des innern Aſiens, haben auch ein Licht über<br/>
+die Bewohner Europa's verbreitet, die als von den alten<br/>
+Iberiern abſtammend, betrachtet werden können.</p><br/>
+<p class="dta-p">Bei den Unterſuchungen hat man früher das verwechſelt,<br/>
+was blos geſchichtlich iſt, mit dem was den Beobachtungen<br/>
+angehört; beides werden wir trennen. Und da <span class="dta-del" title="Streichung (#ow)">L</span><span class="dta-add" title="Hinzufügung (across)">l</span>etzteres<br/>
+uns nur zu Muthmaßungen führt, ſo werden wir uns länger<br/>
+bei der Geſchichte und den verſchiedenen Betrachtungen, die<br/>
+ſie darbietet, aufhalten.</p><br/>
+<p class="dta-p">Von den phyſiſchen Eigenſchaften der Menſchen iſt ſchon die<br/>
+Rede geweſen, bei deren Flexibilität ſie ſich von Pol zu Pol<br/>
+ausbreiten können. Wie die herrſchende Kraft des Intellec-<br/>
+tuellen im Menſchen über den phyſiſchen Theil deſſelben hiervon<br/>
+die Urſache iſt, ſehen wir beſonders bei den Wilden, die<br/>
+nach heut zu Tage lange keine ſo große Flexibilität haben;<br/>
+denn nur bei großen Opfern können die Wald-Indianer<br/>
+der Gebirge von Amerika in den Ebenen leben, da ⅓ und<br/>
+noch weit mehr bei dieſem Wechſel ſterben. Und ſo iſt es<br/>
+auch umgekehrt der Fall, wenn die Kupferindianer der<br/>
+Ebenen nach den Höhen gebracht werden.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0571 : 565.|</span><br/>
+<p class="dta-p">Bei den Negern hingegen finden war, daß ſie den Weiſſen<br/>
+eine näher ſtehende Flexibilität haben, da ſie oft aus der<br/>
+Hitze ihres Vaterlandes in ziemlich kalte Länder als<br/>
+Sclaven verſetzt worden, und ſich an eine ganz andere Tempera-<br/>
+tur gewöhnen; doch muß hierbe<span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 1 Zeichen fehlt]</span></span><span class="dta-add" title="Hinzufügung (across)">i</span> berückſichtigt werden, daß<br/>
+gerade nur die Kräftigſten dieſer Nationen durch die <span class="u ">unwür-<br/>
+digſte</span> Habſucht dieſem Schickſale Preis <span title="Schreibfehler: gegegeben" class="dta-corr">gegeben</span> ſind, und<br/>
+daher auch leichter dem veränderten Klima widerſtehen.</p><br/>
+<p class="dta-p">Es bleibt uns nun noch übrig, von einigen andern angeblichen<br/>
+Verſchiedenheiten zwiſchen der Organiſation der Menſchen<br/>
+und der höhern Thierorganiſation zu reden. Lange hat man<br/>
+geglaubt, daß die Menſchen allein Stimmorgane beſitzen,<br/>
+doch die beiden großen Anatomen <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117397350">Victaſin</a></span></span> und <span class="aq "><span title="Personenname">Cammanon</span></span><br/>
+behaupten, daß ſie auch den Affen nicht verſagt ſind.<br/>
+Die Neger in Amerika haben den Glauben, daß die Affen<br/>
+nur leiſe und heimlich mit einander reden, da ſie ſonſt von den<br/>
+Weiſſen, wenn dieſe es wüßten, zur Arbeit gezwungen<br/>
+würden. Scherzhaft hat man auch wohl von den Affen geſagt,<br/>
+daß ſie deshalb ſtumm wären, weil ſie über nichts zu ſprechen<br/>
+müßten.</p><br/>
+<p class="dta-p">Die Thiere haben Laute, die Menſchen aber articulirte<br/>
+Töne, die nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/115526641">Rudolphi</a></span></span> nicht in dem Phyſiſchen ſondern in den<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0572 : 566.|</span><br/>
+Anlagen der Seele begründet ſind. Es giebt vielleicht eines<br/>
+Urtypus der Menſchen, aber das was ſie eigentlich characte-<br/>
+riſirt, muß nicht im Bau der Organe ſondern in der geiſtigen<br/>
+Intelligenz geſucht werden. Denn im Geiſtigen iſt wohl nur<br/>
+allein der Unterſchied zu ſuchen. Was den Menſchen am<br/>
+meiſten characteriſirt, iſt das Uebergewicht des Gehirns und<br/>
+ſein aufrechter Gang, wodurch er ſich ſeiner Bildung nach<br/>
+vor allen andern Thieren auszeichnet.</p><br/>
+<p class="dta-p">Eine niedere Entwickelung der Beiß- und Kauorgane<br/>
+und des Geruchs erzeugt ſtarke Ausbildungen der Kiefern,<br/>
+und ein Zurückſinken der Stirn, wie wir es in einem ſtär-<br/>
+kern oder geringern Grade bei allen Wirbelthieren finden.<br/>
+Dies giebt uns Anlaß zu den Unterſuchungen des <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/119291827">Kamp</a></span>-<br/>
+ſchen</span> Geſichtswinkel. Bei den Helenen, Cirkaſſiern und<br/>
+den kaukaſiſchen Völkern, wurde die Schönheit durch den Geſichts-<br/>
+winkel zwiſchen 80–85° bedingt, und unter den Kunſtwerken<br/>
+dieſer früher Zeit, finden ſich übertriebene Geſichtswinkel, die<br/>
+die Natur wohl ſchwerlich erzeugt haben konnte, in deſſen An-<br/>
+wendung jedoch ſich eine richtige Idee von Schönheit ausſpricht.<br/>
+Bei den Negern geht der Geſichtswinkel bis zum 70<span title="Original: t￼" class="dta-reg"><span class="sup uu ">ten</span></span> Grade.<br/>
+Bei den Neu-Seeländern, die zu der malaiiſchen Race ge-<br/>
+hören und auf den Inſelgruppen des ſtillen Meeres wohnen,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0573 : 567.|</span><br/>
+beträgt er nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117669962">Lishon</a></span></span> und <span class="aq "><span title="Personenname"><a href="https://viaf.org/viaf/17612241">Garrot</a></span></span> die mit <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117663476">Duperet</a></span></span> reiſten<br/>
+65°. Herr <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118805193">Sömmering</a></span></span> hat keinen Affen gefunden, der einen<br/>
+Geſichtswinkel über 58° gehabt hätte, und nur kaum erreichen<br/>
+ſie dieſen; ſelbſt beim Champanca hat er nur 50°; und<br/>
+wenn man von Orangutang ſagt, daß er 65° habe, ſo iſt<br/>
+dies eine Unwahrheit.</p><br/>
+<p class="dta-p">Das Verhältniß des Gehirns zu den Nerven nimmt<br/>
+nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116988703">Mickel</a></span></span> in Halle bei den Negern ab, wo das 5<span class="sup uu ">te</span><br/>
+Paar der Nerven ſtärker iſt, als bei andern Menſchenracen.<br/>
+Diejenigen welche ſich freuen, wozu ich aber nicht gehöre,<br/>
+daß die Neger vor den Weiſſen etwas Thieriſches haben,<br/>
+ſuchen hierin einen Beweisgrund, und wenn gleich eine ſolche<br/>
+Annahme albern iſt, ſo ſcheinen ſie ſich doch mehr dem thieriſchen<br/>
+Character zu nähern.<span class="dta-metamark" title="metamark">?</span> – Noch einige weniger wichtige<br/>
+Verſchiedenheiten des Menſchen, liegen in der mehr ausge-<br/>
+drückten Exiſtenz des Kinns, einer regelmäßigen Anweſen-<br/>
+heit des Hirnſandes, den aber auch die Hirſche beſitzen, eine<br/>
+ſchiefe Lage des Herzens, mit der Spitze nach unten, und in den<br/>
+mehr entwickelten größern Naſe. Die <span class="aq ">Simia roſtrata</span><br/>
+hat aber ebenfalls eine ſehr entwickelte Naſe. Herr<br/>
+<span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118726102">de la Metri</a></span>,</span> Herausgeber des <span class="aq ">Journal de phyſique</span> ſagt ſcherz-<br/>
+hafterweiſe, daß wenn die Affen ſich wie wir aus ſchnaubten,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0574 : 568.|</span><br/>
+ſie auch eine größere und ſpitzere Naſe bekommen würden;<br/>
+gleich wie die Sumpfvögel dadurch ſo hochbeinig geworden wären,<br/>
+weil ſie ſich ſtets hüteten naß zu werden. Wenn aber auch<br/>
+dieſes wirklich die Geſtalt verändern ſollte, ſo ſind doch ſolche<br/>
+Ideen in dieſer Ausdehnung irrig.</p><br/>
+<p class="dta-p">Es liegt in den neuern Unterſuchungen etwas liebloſes,<br/>
+wenn man von einer Stuffenleiter der Humanität der Menſchen<br/>
+ſpricht; einige <span class="dta-del" title="Streichung (#ow)"><span class="gap">[unleserliches Material – 3 Zeichen fehlen]</span></span><span class="dta-add" title="Hinzufügung (across)">geh</span>en von den höher organiſirten Thieren<br/>
+ſelbſt bis zu den Menſchen über, was ſich aber nicht an-<br/>
+nehmen läßt. Nach <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116863498">Meiners</a></span></span> ſoll dieſe aufſteigend<br/>
+vom Orangutang zu den Waldnegern oder den Menſchenfreſſen<br/>
+und von dieſen zu den Buſchhottentotten ſein; dieſen reihen<br/>
+ſich nach ihm die Capus von Neu Guinea an, dann folgen<br/>
+die Mongolen und einige tartariſche Völker, bis er<br/>
+zu den Kaukaſen zu uns ſelbſt kommt.</p><br/>
+<p class="dta-p">Da in neuern Zeiten viel Licht über die Affen ver-<br/>
+breitet iſt, ſo will ich 2 derſelben anführen, die dem Menſchen<br/>
+noch am ähnlichſten ſind. Eine große Ungewißheit<br/>
+herrſcht über die Thiere, welche unter dem Namen Orang-<br/>
+utang beſchrieben ſind. Seine Name iſt von <span class="aq ">orang</span> <span title="Original: /" class="dta-reg">(</span>klug<span title="Original: /" class="dta-reg">)</span><br/>
+und <span class="aq ">utang</span> <span title="Original: /" class="dta-reg">(</span>wild<span title="Original: /" class="dta-reg">)</span> hergeleitet. In neueren Zeiten ſind 3<br/>
+lebendige in Europa geweſen, von denen ich 2 ſah, es waren<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0575 : 569.|</span><br/>
+junge<span class="dta-del" title="Streichung (#erased)">n</span> Individuen, des in ältern Jahren ſehr bösartigen<br/>
+Affen Pongo. Sie blieben nur kurze Zeit am Leben, und<br/>
+waren 35–36″ hoch, jedoch ſollen ſie in ihrer Heimath gegen 4′<br/>
+hoch werden.</p><br/>
+<p class="dta-p">Je mehr man ſich den Affenländern nähert, hören auch die<br/>
+Fabeln über ſie auf, die oft an das Wunderbare grenzen.<br/>
+So ſollten ſie unter andere in Maisfeldern links gedrehte<br/>
+Knoten machen. Eben ſo hat man die große Fertigkeit in den<br/>
+Daumen der Affen, <span title="Original: /" class="dta-reg">(</span>wodurch ſie ſich mit von den übrigen Thieren<br/>
+unterſcheiden<span title="Original: /" class="dta-reg">)</span> in Uebereinſtimmung mit den Menſchen gebracht,<br/>
+und geglaubt, daß die Exiſtenz beider durch die Anweſenheit<br/>
+derſelben bedingt ſei. Wenn dies auch der Fall wäre, ſo<br/>
+kann man vom Menſchen nicht auf den Affen ſchlieſſen, da die<br/>
+4 Daumen ihm nur zur Hülfe beim Klettern verliehen ſind.</p><br/>
+<p class="dta-p">Auch den Orangutang den der Lord <span class="aq "><span title="Personenname">Armhorſt</span></span> beſaß habe ich<br/>
+geſehen. – Auch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100565565">Tileſius</a></span></span> hat gefunden in neuern Zeiten,<br/>
+daß alle für Orangutangs ausgegebenen Affen, junge Thiere<br/>
+waren, und ihm ſtimmen <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118677578">Cuvier</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/115526641">Rudolphi</a></span></span> bei, daß dieſe<br/>
+artigen Geſchöpfe in ſpätern Zeiten ſehr häßliche und bös-<br/>
+artige Affen werden. Es iſt alſo ſehr wahrſcheinlich, daß<br/>
+der Orangutang ein Abkömmling des bösartigen Pongo iſt.<span class="dta-add" title="Hinzufügung (right)"> –</span><br/>
+In Menagerien hat man gefunden, daß die Paviane, deren Kopf<br/>
+wie bei einem Hunde geſtaltet iſt, mit kugelrunden Köpfen geboren werden.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0576 : 570.|</span><br/>
+<p class="dta-p">Ein anderes Thier iſt der Jocko, ein afrikaniſcher Affe,<br/>
+auch Chimpanze genannt, welcher mit dem Orangutang häufig<br/>
+verwechſelt wird. Er iſt aber noch weniger dem Menſchen<br/>
+ähnlich; man hat ihn aber ſo weit gebracht daß er als Be-<br/>
+diente agiren kann, und ſelbſt Thee in einer Geſellſchaft mit<br/>
+trinkt. – Der ſchwarze <span class="aq ">Gibbon</span> hat faſt keine Stirn,<br/>
+und iſt am ganzen Körper mit Haaren bewachſen. –<br/>
+Eine ſolche Scala der Humanität kann es alſo nicht gut<br/>
+geben, wie <span title="H￼" class="dta-abbr">Herr</span> <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116863498">Meiners</a></span></span> ausgesprochen hat.</p><br/>
+<p class="dta-p">Die Unterſuchung ob es unter den Menſchen mehrere<br/>
+Arten oder nur eine Species und Varietäten giebt, iſt<br/>
+ſeit den letzten 80 Jahren ſehr lebendig betrieben. Man<br/>
+hat dieſe Unterſuchungen mit der Verwandſchaft der Spra-<br/>
+chen in Verbindung gebracht, da es aber mongoliſche Völ-<br/>
+ker giebt, die türkiſch reden, andern aber auch die ſich ganz<br/>
+verſchiedener Sprachen bedienen, die in keiner Verwand-<br/>
+ſchaft mit jener ſtehen, ſo kann dieſe Art der Unterſuchung<br/>
+nur zu Irrthümern führen. Ebenſo iſt die europäiſche Sprache<br/>
+aus der griechiſchen und römiſchen entſtanden oder mehr<br/>
+ausgebildet. So iſt auch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118571249">Leibnitz</a></span></span> ſchon durch die Unter-<br/>
+ſuchung über die Abſtammung der Sprachen irre geführt.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0577 : 571.|</span><br/>
+<p class="dta-p">Durch <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/100318371">Abel Remuſat</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/10082451X">Julius Klaproth</a></span></span> iſt in neuern<br/>
+Zeiten über die Analogie der Völker heimiſchen Ur-<br/>
+ſprungs, aus den ſalzigen Ebenen vom Kaspiſchen Meere und<br/>
+Aralsſee gegen die chineſiſche Mauer zu, viel Licht verbreitet.<br/>
+Die Samskritſprache iſt von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118659332">Boch</a></span>, <span title="Personenname"><a href="http://d-nb.info/gnd/118607987">Schlegel</a></span></span> und <span title="Personenname"><a href="http://d-nb.info/gnd/118554727">meinem<br/>
+Bruder</a></span> geprüft; die Keilſchriften ſind von <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/116760648">St. Martin</a></span></span><br/>
+entdeckt.</p><br/>
+<p class="dta-p">Die Griechen und Römer unterſchieden nur 3 Stämmen:<br/>
+Eingeboren, Erdgeborne und Eingewanderte. <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118549855">Herodot</a></span></span> giebt<br/>
+4 Stämme an, 2 einheimiſche und 2 fremde. In Afrika hatte<br/>
+es vor der Einwanderung der Saracenen, ſchon 3 bis 4 mal<br/>
+Einwanderungen gegeben, von Perſern, Medern und andern<br/>
+kaukaſiſchen Völkern, auch die Hykſos ein arabiſcher Stamm,<br/>
+fiel ſchon in frühen Zeiten ins nördliche Aegypten ein, und<br/>
+faſt mit Gewißheit kann man ſie für arabiſche Hirten-<br/>
+völker halten, da ein großer Contraſt zwiſchen den Nord-<br/>
+ägyptern und denen gegen Merä hin jetzt noch ſtatt findet,<br/>
+und wovon ſich der Abklang in der ägyptiſchen Mythologie<br/>
+zeigt. Eine 3<span title="Original: t￼" class="dta-reg"><span class="sup uu ">te</span></span> Einwanderung geſchah ſpäter, bei der ſo-<br/>
+genannten Völkerwanderung durch die Vandalen, von denen<br/>
+ſich noch jetzt auf dem weſtlichen Atlas ein Stamm die<br/>
+Cubaien findet.</p><br/>
+<span class="dta-pb" style="padding-left:15em">|#f0578 : 572.|</span><br/>
+<p class="dta-p">Wenn auch <span title="Personenname"><a href="http://d-nb.info/gnd/118549855">Herodot</a></span> nicht an die Unterſuchungen über<br/>
+den Urſprung der Menſchen dachte, da dieſe erſt eine Folge<br/>
+des Chriſtenthums waren, ſo ſpricht ſich doch in der Lebens-<br/>
+geſchichte des <span title="Personenname"><span class="aq ">Fabius</span> von <span class="aq ">Agricola</span></span> ein Gedenke aus;<br/>
+der darauf hindeutet, daß alle Völker eine Abſtammung haben.<br/>
+Die Idee der Einheit des Menſchengeſchlechts wurde erſt<br/>
+durchs Chriſtenthum aufgeſtellt und herrſchend, und eine der<br/>
+wichtigſten Wohlthaten deſſelben iſt, daß es die perſönliche<br/>
+Freiheit eines großen Theils des Menſchengeſchlechts ge-<br/>
+gründet hat, und die Menſchheit in eine nähere Beziehung<br/>
+brachte.</p><br/>
+<p class="dta-p">Als Amerika entdeckt wurde, entſtand die Frage, ob die<br/>
+dort Eingebornen als Menſchen betrachte werden könnten,<br/>
+der Pabſt entſchied dieſe durch einige Bullen, welche die<br/>
+Einheit des Menſchengeſchlechts in allen Ländern der Erde<br/>
+bekannt machten. Die Lebensweiſe jener neu ent-<br/>
+deckten Völker war anderer Art, als die der alten Welt<br/>
+ſie waren nicht Hirtenvölker, waren ſie von der Natur<br/>
+durch die unermeßlichen Waldungen wohl verhindert wurden.<br/>
+Es iſt wunderbar genug daß dieſe Völker ſich nicht einmal<br/>
+der Biſons bedienten, ſo wie andere Völker in öſtlichen<br/>
+Aſien ſich nicht die Milch und das Fleiſch nutzbar zu machen wußten,<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0579 : 573.|</span><br/>
+obgleich ſie von Hirtenvölkern umgeben waren. –<br/>
+Daſſelbe iſt auch bei den amerikaniſchen Völkerſtämmen<br/>
+der Fall, da einige Denkmäler derſelben uns ganz früher<br/>
+Zeit erkennen laſſen, daß ein großer Verkehr zwiſchen<br/>
+dem öſtlichen Theile von Aſien und dem weſtlichen Amerika<br/>
+ſtatt gefunden hat.</p><br/>
+<p class="dta-p">Die Sclaverei als ſie ſich im 15 Jahrhundert ausbrei-<br/>
+tete, wo man die Caraiben und Neger gewaltſam aus<br/>
+ihrem Vaterlande wegſchleppſte, muß man jedoch den größen<br/>
+Reichthum an Ländern zuſchreiben, da man ſoviel Land<br/>
+ohne Hände für die Benutzung deſſelben entdeckte.</p><br/>
+<p class="dta-p">Bei der nähern Betrachtung der Menſchenracen, wollen<br/>
+wir 2 Fragen aufwerfen: 1. Welche Verſchiedenheit<br/>
+des menſchlichen Körpers bietet ſich bei den Völker-<br/>
+ſtämmen gegenwärtig dar? 2. Wie ſind dieſe Ver-<br/>
+ſchiedenheiten auf dem Erdkörper verbreitet?</p><br/>
+<p class="dta-p">In dem Cauſal zuſammenhange der Erſcheinungen bieten<br/>
+ſich zwei Möglichkeiten über die Verbreitung der Menſchen<br/>
+dar, denn entweder gab es einen Urtypus und eine ge-<br/>
+meinſchaftliche Abſtammung, die durch Degenerationen und<br/>
+Abweichungen von der urſprünglichen Art bei Einwirkungen<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0580 : 574.|</span><br/>
+des Klimas und der Lebensweiſe die Menſchenbildungen<br/>
+ſo verſchieden geſtaltete, wie wir ſie gegenwärtig ſehen;<br/>
+oder es haben ſich mehrere Urtypen über den Erdball<br/>
+verbreitet.</p><br/>
+<p class="dta-p">Im erſten Falle haben <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/118591371">Pallas</a></span></span> und <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117697206">Pritſcha</a></span></span> angenommen,<br/>
+daß die ſchwarze Farbe und deren Formen die Urſtämme ge-<br/>
+weſen ſind, von welchen die Mongolen als Unterabtheilung<br/>
+durch Zeit und Klima weiß geworden wären, durch die<br/>
+Beobachtung, daß die dunkele Farbe der Thiere allmählig<br/>
+zur hellern übergeht, wurden ſie hierzu verleitet, was<br/>
+aber wenig Beifall findet. – Herr <span class="aq "><span title="Personenname"><a href="http://d-nb.info/gnd/117632368">Denham</a></span></span> hat<br/>
+bei ſeiner Zurückkunft verſichert, daß ſeine weiße Farbe<br/>
+und lange Naſe in Borneo und Murſuk bei den Negern<br/>
+Uebelkeiten erregte, die beſonders auffallend bei den<br/>
+Frauen hervortreten, die nicht allein vor ihm ausſpuckten,<br/>
+ſondern ſogar in Ohnmacht fielen. –</p><br/>
+<p class="dta-p">Ideen von Schönheit und Häßlichkeit hängen von na-<br/>
+tionellen Vorurtheilen ab, jede Nation ſucht die Schönheit<br/>
+in ihren eigenen Individualitäten. Es giebt aber allgemeine<br/>
+Begriffe von Schönheit der Formen und Anmuth der Züge,<br/>
+die aber nur zum völligen Ebenmaß, durch den Ausdruck der<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0581 : 575.|</span><br/>
+Ideen, die einer höhern Welt angehören, gelangen.<br/>
+So zart und ſammetartig die ſchwarze Haut auch iſt, ſo<br/>
+fehlt ihr doch der Ausdruck der zarteſten Anregungen des<br/>
+Gefühls im Erröthen. Negerfrauen werden zwar bisweilen<br/>
+röthlich, aber denn ſind es andere Einwirkungen; auch drücken<br/>
+Gram und Leiden, oder große Gemäße der Freuden durch<br/>
+die Wirkung des innern Gefühls ſich dadurch aus, daß eine<br/>
+Bläſſe die angeborne Schwärze verdrängt.</p><br/>
+<p class="dta-p">Der Streit über die Abſtammung von einem oder<br/>
+mehreren Typen, kann aber ſo wenig geſchlichtet werden,<br/>
+als der, ob alle Sprachen von einer Urſprache ab-<br/>
+ſtammen. Wohl zeigt es ſich in vielen indiſchen und<br/>
+andern Schriften der Inſeln des indiſchen Archipels, daß<br/>
+es mehrere Unterſchiede in den Schriftzeichen als den<br/>
+Sprachen giebt; und man kann allerdings allgemeine<br/>
+Formeln anführen, die in allen unſere Sprachen, in den<br/>
+Trümmern wie in den Wurzeln ſich zeigen und den Ur-<br/>
+typus bilden, die aber immer nur die Verbindung der<br/>
+Völkerſtämme andeuten, ohne eine Uebereinſtimmung<br/>
+der Menſchenracen ergründen zu laſſen.</p><br/>
+<p class="dta-p">Bei einem phyſiſchen Naturgemälde und einer Welt-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0582 : 576.|</span><br/>
+beſchreibung, beſchränke ich mich auf Vergleiche. Das<br/>
+Chriſtenthum nahm die Idee auf daß alle Menſchen von<br/>
+einem Paare abſtammten, wie es die moſaiſchen Tradi-<br/>
+tionen lehrten. Doch dieſen iſt es blos eigen die Natur-<br/>
+geſetzen unſers Erdkörpers ſowohl durch den Lauf der<br/>
+Geſchichte darzuthun, wie die Einheit des Menſchengeſchlechts<br/>
+als Folge einer abſoluten Abſtammung herzuleiten.</p><br/>
+<p class="dta-p">Es iſt aber auch kein Grund vorhanden, die Abſtam-<br/>
+mung von einem Menſchenpaare gerade zu leugnen zu können,<br/>
+da Uebergänge von Stamm zu Stamm vorhanden ſind,<br/>
+wo das Klima verſchieden darauf wirkte. Dieſelben kli-<br/>
+matiſchen Verſchiedenheiten finden wir auch bei den Thier-<br/>
+racen, als bei Hunden, Ochſen, Schafen <span class="aq ">etc.</span> die den Menſchen<br/>
+überall folgten. Solche bleibende Abänderungen wie<br/>
+das Thier- und Pflanzenreich ſie aufzuweiſen hat, be-<br/>
+weiſen die neuern abnormen Bildungen deren Entſtehen<br/>
+hiſtoriſch nach zuweiſen iſt, wie z. B. das neuerdings in<br/>
+Connecticut geborene, und von <span class="aq "><span title="Personenname">Asconſchy</span></span> beſchriebene Schaf<br/>
+mit krummen ſäbelartigen Vorderbeinen, das wie die Känge-<br/>
+ruhs hüpft, und dadurch den Vortheil darbietet, daß es <span class="dta-supplied">[nicht]</span><br/>
+über die Hecken ſpringen kann, von denen man jetzt in Eng-<br/>
+<span class="dta-pb" style="padding-left:15em">|#f0583 : 577.|</span><br/>
+land und Nordamerika <span title="Schreibfehler: ganz" class="dta-corr">ganze</span> Heerden zu gezogen hat, bei<br/>
+denen ſich die krummen Beine treu fortpflanzen. Die<br/>
+früher angeführte <span class="aq ">Fragaria monophylla</span> giebt ein an-<br/>
+deres Beiſpiel, aber ſo die Schweine in Ungarn ohne<br/>
+Haare. Alles dieſes erinnert an die Wahrſcheinlich-<br/>
+keit, daß eine Urtype der menſchlichen Formen durch kli-<br/>
+matiſche Einwirkungen große Veränderungen erlitten hat.</p></div></div></div></div></body></html>
