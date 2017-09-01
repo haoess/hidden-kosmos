@@ -3,6 +3,11 @@
     <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.de"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
   </div>
   <h1>Personenverzeichnis „Hidden Kosmos“</h1>
+
+  <p>Dieses Personenverzeichnis wurde auf Grundlage der Nachschriften zu Alexander von Humboldts „Kosmos-Vorträgen“ erstellt, die im DTA im Volltext digitalisiert vorliegen. Das Verzeichnis listet alle in den Nachschriften erwähnten Personen auf: In der ersten Spalte sind die Personen nach Namen in der Ansetzungsform der GND gelistet, die zweite Spalte führt alle Vorkommen in den Nachschriften auf; dabei wird zwischen den Nachschriften differenziert und eine Gesamtzahl der Nennungen angegeben. Die Nachschriften aus dem Singakademie-Zyklus (2 Nachschriften) werden durch Rottöne repräsentiert, die aus dem Universitätszyklus (8 Nachschriften) durch Grüntöne. Die dritte Spalte führt alle Namensformen auf, wie sie die Nachschreiber notiert haben (darunter auch entstellende Falschschreibungen u. Ä.) und verlinkt jeweils auf die betreffende Seite im Digitalisat (gleiches Farbschema). Die vierte Spalte enthält einen Link zu den Normdaten (in der Regel GND, gelegentlich auch VIAF oder Wikidata). Insgesamt werden 8861 Mal Personennamen genannt, die auf ca. 900 individuelle Personen verweisen. Davon konnten 765 bislang eindeutig identifiziert mit Normdaten versehen werden.
+    [<a href="[% base %]person/csv_all">CSV</a>]
+    <span class="small" style="cursor:pointer" id="toggle-single-stats">[Einzelstatistiken anzeigen]</span>
+  </p>
 </div>
 
 <div class="row">
@@ -16,7 +21,7 @@
     </p>
   </div>
   [% FOREACH entry IN stat.file.pairs %]
-    <div class="col-md-4">
+    <div class="col-md-4 single-stat" style="display:none">
       <p class="bg-info" style="padding:10px">
         <b class="[% entry.key | html %]">[% entry.key | html %]</b><br />
         Auszeichnungen mit <tt>&lt;persName&gt;</tt> insgesamt: [% entry.value.total | html %]<br />
@@ -100,10 +105,16 @@
 </table>
 
 [% BLOCK js %]
+<!-- <style type="text/css">
+  .single-stat { display:none }
+</style> -->
+
 <script type="text/javascript">
   // http://stackoverflow.com/questions/25944854/sorting-alphabetical-order-to-ignore-empty-cells-datatables
   jQuery.extend( jQuery.fn.dataTableExt.oSort, {
     "non-empty-string-asc": function (str1, str2) {
+      str1 = str1.replace(/<[^>]+>/g, '').replace(/^\s+/, '');
+      str2 = str2.replace(/<[^>]+>/g, '').replace(/^\s+/, '');
       if(str1 == "N/A")
         return 1;
       if(str2 == "N/A")
@@ -112,6 +123,8 @@
     },
 
     "non-empty-string-desc": function (str1, str2) {
+      str1 = str1.replace(/<[^>]+>/g, '').replace(/^\s+/, '');
+      str2 = str2.replace(/<[^>]+>/g, '').replace(/^\s+/, '');
       if(str1 == "N/A")
         return 1;
       if(str2 == "N/A")
@@ -145,6 +158,10 @@
       ]
     });
     new $.fn.dataTable.FixedHeader( t );
+
+    $('#toggle-single-stats').click( function() {
+      $('.single-stat').toggle();
+    });
   });
 </script>
 [% END %]

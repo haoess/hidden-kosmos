@@ -4,6 +4,7 @@ use namespace::autoclean;
 
 BEGIN { extends 'Catalyst::Controller'; }
 
+use Text::CSV_XS;
 use URI::Escape;
 use XML::LibXML;
 use XML::LibXSLT;
@@ -40,6 +41,43 @@ sub index :Path :Args(0) {
         html     => $html,
     );
 }
+
+=head2 csv
+
+=cut
+
+sub csv :Local {
+    my ( $self, $c ) = @_;
+    my $xml = XML::LibXML->load_xml( location => '/home/wiegand/src/hidden-kosmos/lists/avh-instruments.xml' );
+    my $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
+
+    my $csv = Text::CSV_XS->new({ always_quote => 1 });
+    open( my $fh, '>', \my $out ) or die $!;
+
+    $csv->say( $fh, [ qw(name alternatives wikipedia search_avhkv search_humboldt) ] );
+
+    my @list = $xpc->findnodes('//instrument');
+    foreach my $i ( @list ) {
+        my $name         = $i->findnodes('name', $i)->to_literal;
+        my $wikipedia    = $i->findnodes('name/@ref', $i)->to_literal;
+        my $alternatives = $i->findnodes('alternative_names', $i)->to_literal;
+        my $avhkv        = $i->findnodes('grep[@type="avhkv"]', $i)->to_literal;
+        my $humboldt     = $i->findnodes('grep[@type="humboldt"]', $i)->to_literal;
+
+        $avhkv    = $avhkv    && $avhkv    ne 'no hit' ? _avhkv($avhkv) : '';
+        $humboldt = $humboldt && $humboldt ne 'no hit' ? _humboldt($humboldt) : '';
+
+        $csv->say( $fh, [ $name, $alternatives, $wikipedia, $avhkv, $humboldt ]);
+    }
+
+    close $fh or die $!;
+
+    $c->res->content_type( 'text/plain; charset=utf-8' );
+    $c->res->body( $out );
+}
+
+sub _avhkv    { 'http://www.deutschestextarchiv.de/search?in=text&q=' . URI::Escape::uri_escape_utf8( $_[0] ) . '+%23has%5Bflags%2C%2Favhkv%2F%5D' }
+sub _humboldt { 'http://www.deutschestextarchiv.de/search?in=text&q=' . URI::Escape::uri_escape_utf8( $_[0] ) . '+%23has%5Bauthor%2C%2Fhumboldt%2Fi%5D' }
 
 __PACKAGE__->meta->make_immutable;
 

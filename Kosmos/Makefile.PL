@@ -17,6 +17,8 @@ requires 'Moose';
 requires 'namespace::autoclean';
 requires 'Config::General'; # This should reflect the config file format you've chosen
                  # See Catalyst::Plugin::ConfigLoader for supported formats
+requires 'Text::CSV_XS' => '1.31';
+requires 'Path::Class::File' => '0.37';
 test_requires 'Test::More' => '0.88';
 catalyst;
 

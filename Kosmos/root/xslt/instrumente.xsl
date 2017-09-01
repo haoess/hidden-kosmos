@@ -64,7 +64,8 @@
     <xsl:when test="text() = 'no hit'"/>
     <xsl:otherwise>
       <xsl:element name="a">
-        <xsl:attribute name="href">http://kaskade.dwds.de/dstar/dta/dstar.perl?fmt=html&amp;q=<xsl:value-of select="k:urlencode(text())"/>+%23has%5Bflags%2C%2Favhkv%2F%5D</xsl:attribute>
+        <!-- <xsl:attribute name="href">http://kaskade.dwds.de/dstar/dta/dstar.perl?fmt=html&amp;q=<xsl:value-of select="k:urlencode(text())"/>+%23has%5Bflags%2C%2Favhkv%2F%5D</xsl:attribute> -->
+        <xsl:attribute name="href">http://www.deutschestextarchiv.de/search?in=text&amp;q=<xsl:value-of select="k:urlencode(text())"/>+%23has%5Bflags%2C%2Favhkv%2F%5D</xsl:attribute>
         <xsl:text>Nachschriften</xsl:text>
       </xsl:element>
     </xsl:otherwise>
@@ -76,7 +77,8 @@
     <xsl:when test="text() = 'no hit'"/>
     <xsl:otherwise>
       <xsl:element name="a">
-        <xsl:attribute name="href">http://kaskade.dwds.de/dstar/dta/dstar.perl?fmt=html&amp;q=<xsl:value-of select="k:urlencode(text())"/>+%23has%5Bauthor%2C%2Fhumboldt%2Fi%5D</xsl:attribute>
+        <!-- <xsl:attribute name="href">http://kaskade.dwds.de/dstar/dta/dstar.perl?fmt=html&amp;q=<xsl:value-of select="k:urlencode(text())"/>+%23has%5Bauthor%2C%2Fhumboldt%2Fi%5D</xsl:attribute> -->
+        <xsl:attribute name="href">http://www.deutschestextarchiv.de/search?in=text&amp;q=<xsl:value-of select="k:urlencode(text())"/>+%23has%5Bauthor%2C%2Fhumboldt%2Fi%5D</xsl:attribute>
         <xsl:text>Humboldt-Korpus</xsl:text>
       </xsl:element>
     </xsl:otherwise>

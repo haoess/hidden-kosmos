@@ -77,6 +77,22 @@ sub csv :Local {
     $c->res->content_type( 'text/plain; charset=utf-8' );
 }
 
+=head2 csv_all
+
+=cut
+
+sub csv_all :Local {
+    my ( $self, $c ) = @_;
+
+    my @files = glob '/home/wiegand/src/hidden-kosmos/xml/*.xml';
+    $c->forward( 'calc', [ \@files ] );
+    $c->stash(
+        template => 'person/csv_all.tt',
+        view     => 'Plain',
+    );
+    $c->res->content_type( 'text/plain; charset=utf-8' );
+}
+
 =head2 calc
 
 =cut

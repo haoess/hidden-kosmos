@@ -30,7 +30,14 @@ The root page (/)
 
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
-    $c->forward( 'overview_uni' );
+    $c->stash(
+        template => 'index.tt',
+    );
+}
+
+sub codingdavinci :Local {
+    my ( $self, $c ) = @_;
+    $c->detach( 'index' );
 }
 
 =head2 overview_uni
