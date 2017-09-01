@@ -1,0 +1,131 @@
+<div>
+  <div style="float:right">
+    <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.de"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+  </div>
+  <h1>Bibliographie „Hidden Kosmos“</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <p>Diese Bibliographie verzeichnet einen Teil der in den Nachschriften zu Alexander von Humboldts „Kosmos-Vorträgen“ zitierten, genannten und auf andere Weise referenzierten Werke und verweist auf im Internet vorliegende Digitalisate der Titel (in der Regel retrodigitalisiert).</p>
+    <p>Ein zentraler Bezugspunkt ist der von Henry Stevens angefertigte Katalog der Humboldtschen Bibliothek, die verbrannte, ehe sie nach Humboldts Tod verkauft werden konnte. Daher steht in der ersten Spalte die dem Katalog entnommene Auktionsnummer, sofern das Werk dort aufgelistet ist; die zweite Spalte enthält ggf. Anmerkungen hierzu. Spalte drei und vier nennen die Autoren, in der fünften Spalte folgt der Titel des Werkes. In der sechsten Spalte folgen alle weiteren bibliographischen Angaben (Verlag, Ort und Jahr, Reihenangaben etc.). Spalte sieben nennt das Erscheinungsjahr noch einmal explizit (vor allem aus Gründen der besseren Sortierbarkeit). In der achten Spalte folgt ggf. ein Kommentar zur Ausgabe. Darauf folgt die für die Digitalisierung verantwortliche Bibliothek, Institution oder Firma (Spalte neun), dann folgt bei einbändigen Werken die URL (zehnte Spalte), URLs auf mehrbändige Werke sind in den Spalten 11–32 angegeben (jeweils ein Band pro Spalte). Anschließend folgen in Spalte 33–50 die Fundstellen in den Manuskripten, in denen Humboldt auf die Werke hinweist. Immer abwechselnd steht eine Fundstelle pro Spalte und in der nächsten die URL, die dorthin verweist. Die Nachschriften aus dem Singakademie-Zyklus (2 Nachschriften) werden durch Rottöne repräsentiert, die aus dem Universitätszyklus (8 Nachschriften) durch Grüntöne.</p>
+    <p>Bislang wurden 110 Schriften in die Bibliographie aufgenommen. Sie versteht sich als fortlaufende Arbeit und beruht auf einer Bachelorarbeit von Benjamin Fiechter (Humboldt-Universität zu Berlin, 2016).
+      [<a href="[% base %]bibliographie/csv_all">CSV</a>]
+    </p>
+    <h2>Referenzen</h2>
+    <ul>
+      <li>
+        <a href="https://www.culture.hu-berlin.de/de/forschung/projekte/hidden-kosmos/veroeffentlichte-nachschriften">Nachschriften der Kosmos-Vorträge</a>
+      </li>
+      <li>
+        <a href="https://archive.org/stream/bub_gb_KA5bAAAAcAAJ">Stevens, Henry: The Humboldt Library: A Catalogue of the Library of Alexander von Humboldt. London 1863.</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<table id="data" class="table table-striped table-condensed" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      [% FOREACH field IN header_row %]
+        <th>[% field | html %]</th>
+      [% END %]
+    </tr>
+  </thead>
+  <tbody>
+    [% FOREACH row IN csv %]
+      <tr>
+        [% FOREACH field IN row %]
+          <td>
+            [% uri_find(field) %]
+          </td>
+        [% END %]
+      </tr>
+    [% END %]
+  </tbody>
+</table>
+
+[% BLOCK js %]
+<script type="text/javascript">
+  jQuery.extend( jQuery.fn.dataTableExt.oSort, {
+    "numeric-kosmos-asc": function (str1, str2) {
+      str1 = parseInt( str1.replace(/<[^>]+>/g, '').replace(/^\s+|\s+$/g, '') );
+      str2 = parseInt( str2.replace(/<[^>]+>/g, '').replace(/^\s+|\s+$/g, '') );
+      if ( isNaN(str1) ) str1 = 1000000;
+      if ( isNaN(str2) ) str2 = 1000000;
+      console.log( str1, str2 )
+      return ((str1 < str2) ? -1 : ((str1 > str2) ? 1 : 0));
+    },
+
+    "numeric-kosmos-desc": function (str1, str2) {
+      str1 = parseInt( str1.replace(/<[^>]+>/g, '').replace(/^\s+|\s+$/g, '') );
+      str2 = parseInt( str2.replace(/<[^>]+>/g, '').replace(/^\s+|\s+$/g, '') );
+      if ( isNaN(str1) ) str1 = 0;
+      if ( isNaN(str2) ) str2 = 0;
+      return ((str1 < str2) ? 1 : ((str1 > str2) ? -1 : 0));
+    }
+  });
+
+  $(document).ready(function() {
+    var t = $('#data').dataTable({
+      'pageLength': -1,
+      'paginate': false,
+      'bLengthChange': false,
+      'order': [[ 2, 'asc' ]],
+      'aoColumns': [
+        { sType:'numeric-kosmos' },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 10
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 20
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 30
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null, // 40
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null // 50
+      ]
+    });
+    new $.fn.dataTable.FixedHeader( t );
+  });
+</script>
+[% END %]
