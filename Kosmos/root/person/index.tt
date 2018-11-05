@@ -6,14 +6,20 @@
 
   <p>Dieses Personenverzeichnis wurde auf Grundlage der Nachschriften zu Alexander von Humboldts „Kosmos-Vorträgen“ erstellt, die im DTA im Volltext digitalisiert vorliegen. Das Verzeichnis listet alle in den Nachschriften erwähnten Personen auf: In der ersten Spalte sind die Personen nach Namen in der Ansetzungsform der GND gelistet, die zweite Spalte führt alle Vorkommen in den Nachschriften auf; dabei wird zwischen den Nachschriften differenziert und eine Gesamtzahl der Nennungen angegeben. Die Nachschriften aus dem Singakademie-Zyklus (2 Nachschriften) werden durch Rottöne repräsentiert, die aus dem Universitätszyklus (8 Nachschriften) durch Grüntöne. Die dritte Spalte führt alle Namensformen auf, wie sie die Nachschreiber notiert haben (darunter auch entstellende Falschschreibungen u. Ä.) und verlinkt jeweils auf die betreffende Seite im Digitalisat (gleiches Farbschema). Die vierte Spalte enthält einen Link zu den Normdaten (in der Regel GND, gelegentlich auch VIAF oder Wikidata). Insgesamt werden 8861 Mal Personennamen genannt, die auf ca. 900 individuelle Personen verweisen. Davon konnten 765 bislang eindeutig identifiziert mit Normdaten versehen werden.
     [<a href="[% base %]person/csv_all">CSV</a>]
-    <span class="small" style="cursor:pointer" id="toggle-single-stats">[Einzelstatistiken anzeigen]</span>
+    [% IF c.req.params.file %]
+    <a class="small" style="color:#337ab7" href="[% base %]person">[Gesamtstatistiken anzeigen]</a>
+    [% ELSE %]
+    <span class="small" style="cursor:pointer;color:#337ab7" id="toggle-single-stats">[Einzelstatistiken anzeigen]</span>
+    [% END %]
   </p>
+  <span style="font-size:smaller">(Stand: [% USE date; date.format(latest, '%Y-%m-%d %H:%M:%S') | html %])</span>
 </div>
 
 <div class="row">
   <div class="col-md-4">
     <p class="bg-info" style="padding:10px">
-      <b>Alle Dokumente</b> <span style="font-size:smaller">(Stand: [% USE date; date.format(latest, '%Y-%m-%d %H:%M:%S') | html %])</span><br />
+      <b>[% IF c.req.params.file; c.req.params.file | uri | html; ELSE; 'Alle Dokumente'; END %]</b>
+      <br />
       Auszeichnungen mit <tt>&lt;persName&gt;</tt> insgesamt: [% stat.total | html %]<br />
       <tt>&lt;persName&gt;</tt>s mit <tt>@ref</tt>: [% stat.with_ref | html %]<br />
       <tt>&lt;persName&gt;</tt>s ohne <tt>@ref</tt>: [% stat.without_ref | html %]<br />
@@ -23,7 +29,8 @@
   [% FOREACH entry IN stat.file.pairs %]
     <div class="col-md-4 single-stat" style="display:none">
       <p class="bg-info" style="padding:10px">
-        <b class="[% entry.key | html %]">[% entry.key | html %]</b><br />
+        <!--<b class="[% entry.key | html %]">[% entry.key | html %]</b> <span class="small">[<span style="cursor:pointer;color:#337ab7" class="d-filter" data-id="[% entry.key %]">Liste filtern</span>]</span><br />-->
+        <b class="[% entry.key | html %]">[% entry.key | html %]</b> <span class="small">[<a href="[% base %]person?file=[% entry.key | uri | html %]" style="color:#337ab7">Personenliste</a>]</span><br />
         Auszeichnungen mit <tt>&lt;persName&gt;</tt> insgesamt: [% entry.value.total | html %]<br />
         <tt>&lt;persName&gt;</tt>s mit <tt>@ref</tt>: [% entry.value.with_ref | html %]<br />
         <tt>&lt;persName&gt;</tt>s ohne <tt>@ref</tt>: [% entry.value.without_ref | html %]<br />
@@ -40,6 +47,7 @@
       <th>Vorkommen</th>
       <th>Vorlageform(en)</th>
       <th>Normdaten</th>
+      <th>externe Links</th>
     </tr>
   </thead>
   <tbody>
@@ -84,6 +92,11 @@
             <a href="[% person.key | html %]">[% person.key | html %]</a>
           [% ELSE %]
             [% person.key | html %]
+          [% END %]
+        </td>
+        <td>
+          [% IF person.value.ehd %]
+            <a href="[% person.value.ehd | html %]">edition humboldt digital</a>
           [% END %]
         </td>
       </tr>
@@ -146,7 +159,7 @@
   } );
 
   $(document).ready(function() {
-    var t = $('#data').dataTable({
+    var t = $('#data').DataTable({
       'pageLength': -1,
       'paginate': false,
       'bLengthChange': false,
@@ -161,6 +174,16 @@
 
     $('#toggle-single-stats').click( function() {
       $('.single-stat').toggle();
+    });
+
+    $('.d-filter').click( function () {
+      var id = $(this).data('id');
+      if ( id == '__all__' ) {
+        t.columns(1).search('').draw();
+      }
+      else {
+        t.columns(1).search(id).draw();
+      }
     });
   });
 </script>

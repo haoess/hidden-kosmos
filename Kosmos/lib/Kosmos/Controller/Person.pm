@@ -4,6 +4,7 @@ use namespace::autoclean;
 
 use File::Basename qw(basename);
 use List::MoreUtils qw(uniq);
+use LWP::UserAgent;
 use XML::LibXML;
 
 BEGIN { extends 'Catalyst::Controller'; }
@@ -22,11 +23,21 @@ Catalyst Controller.
 
 =cut
 
+my $xml_path = '/home/wiegand/src/hidden-kosmos/xml';
+
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
 
-    my @files = glob '/home/wiegand/src/hidden-kosmos/xml/{parthey_msgermqu1711_1828,nn_msgermqu2124_1827,hufeland_privatbesitz_1829,nn_oktavgfeo79_1828,nn_msgermqu2345_1827,libelt_hs6623ii_1828,patzig_msgermfol841842_1828,riess_f2e1853_1828,nn_n0171w1_1828,willisen_humboldt_1827}*.xml';
-
+    my @files;
+    if ( exists $c->req->params->{file} ) {
+        my $file = $c->req->params->{file};
+        $file =~ tr{./}{}d;
+        $c->detach('/default') unless -e sprintf "%s/%s.TEI-P5.xml", $xml_path, $file;
+        @files = glob sprintf "%s/%s*.xml", $xml_path, $file;
+    }
+    else {
+        @files = glob "$xml_path/*.xml";
+    }
     $c->forward( 'calc', [ \@files ] );
 }
 
@@ -177,6 +188,8 @@ sub calc :Private {
         forms => [ uniq @{ $persons{$_}->{forms} } ],
     } } keys %persons;
 
+    $c->forward( 'ehd' );
+
     while ( my ($key, $value) = each %persons ) {
         next unless $key =~ m{http://d-nb.info/gnd/};
         my ( $gnd ) = $key =~ m{/([^/]+)$};
@@ -198,6 +211,8 @@ sub calc :Private {
 
         my ( $death ) = $xpc->findnodes('//gndo:dateOfDeath');
         $persons{ $key }{ death } = $death->textContent if $death;
+
+        $persons{ $key }{ ehd } = $c->stash->{ehd}{$gnd};
 
         for ( $persons{ $key }{ birth }, $persons{ $key }{ death } ) {
             next unless $_;
@@ -223,6 +238,33 @@ sub normalize_text {
         s/-\s([[:lower:]])/$1/g;
     }
     return $s;
+}
+
+# edition humboldt digital
+sub ehd :Private {
+    my ( $self, $c ) = @_;
+    my $ua = LWP::UserAgent->new;
+    my $res = $ua->get( 'https://edition-humboldt.de/api/v1/beacon.xql' );
+    return unless $res->is_success;
+    my $prefix;
+    my %ehd;
+    my @lines = split /\n/, $res->decoded_content;
+    foreach my $line ( @lines ) {
+        # skip empty lines
+        next if $line =~ /^\s*$/;
+
+        # catch target prefix
+        if ( $line =~ /^#TARGET:\s*(.*)/ ) {
+            $prefix = $1;
+            next;
+        }
+
+        #skip comments;
+        next if $line =~ /^#/;
+
+        ($ehd{$line} = $prefix) =~ s/\{ID\}/$line/;
+    }
+    $c->stash->{ehd} = \%ehd;
 }
 
 __PACKAGE__->meta->make_immutable;
