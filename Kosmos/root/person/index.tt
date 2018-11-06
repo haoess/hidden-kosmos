@@ -43,6 +43,7 @@
 <table id="data" class="display compact" cellspacing="0" width="100%">
   <thead>
     <tr>
+      <th></th>
       <th>Name (Ansetzungsform der GND)</th>
       <th>Vorkommen</th>
       <th>Vorlageform(en)</th>
@@ -54,6 +55,7 @@
     [% FOREACH person IN persons.pairs %]
       [% NEXT IF person.key == 'nognd' %]
       <tr>
+        <td></td>
         <td>
           [% IF person.key.search('http://d-nb.info/gnd/') %]
             <a name="gnd-[% person.key.replace('http://d-nb.info/gnd/', '') %]"></a>
@@ -104,6 +106,7 @@
     [% FOREACH person IN persons.nognd.hits.pairs %]
       [% FOREACH nogndhit IN person.value %]
         <tr>
+          <td></td>
           <td>[% person.key OR 'N/A' | html %]</td>
           <td style="text-align:right"><span class="[% nogndhit.doc | html %]">1</span> (1)</td>
           <td>
@@ -165,14 +168,22 @@
       'paginate': false,
       'bLengthChange': false,
       'aoColumns': [
+        { 'sWidth': '30px' },
         { 'sWidth': '240px', 'sType': 'non-empty-string', 'sClass': 'persname' },
         { 'sWidth': '120px', 'sType': 'count' },
         { 'sWidth': '200px' },
         { 'sWidth': '150px' },
         { 'sWidth': '150px' }
-      ]
+      ],
+      "order": [[ 1, "asc" ]]
     });
     new $.fn.dataTable.FixedHeader( t );
+
+    t.on( 'order.dt search.dt', function () {
+      t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+        cell.innerHTML = i+1;
+      } );
+    } ).draw();
 
     $('#toggle-single-stats').click( function() {
       $('.single-stat').toggle();
@@ -181,10 +192,10 @@
     $('.d-filter').click( function () {
       var id = $(this).data('id');
       if ( id == '__all__' ) {
-        t.columns(1).search('').draw();
+        t.columns(2).search('').draw();
       }
       else {
-        t.columns(1).search(id).draw();
+        t.columns(2).search(id).draw();
       }
     });
   });
