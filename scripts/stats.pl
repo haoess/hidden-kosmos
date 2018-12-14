@@ -4,11 +4,9 @@ use 5.012;
 use warnings;
 
 use File::Temp qw(tempfile);
+use List::MoreUtils qw(uniq);
 
-binmode( STDERR, ':utf8' );
-binmode( STDOUT, ':utf8' );
-
-say "Dokument\tSeiten\tZeichen\tTokens";
+say "Dokument\tSeiten\tZeichen\tTokens\tTypes";
 
 foreach my $file ( @ARGV ) {
     # count <pb>
@@ -43,5 +41,6 @@ foreach my $file ( @ARGV ) {
     unlink $tmp_name;
     
     my $count_token = grep { /[[:alnum:]]/ } map { utf8::decode($_); $_ } @token;
-    say sprintf "%s\t%d\t%d\t%d", $file, $count_pb, $count_char, $count_token;
+    my $count_types = uniq @token;
+    say sprintf "%s\t%d\t%d\t%d\t%d", $file, $count_pb, $count_char, $count_token, $count_types;
 }
