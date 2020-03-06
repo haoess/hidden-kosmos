@@ -29,8 +29,6 @@ sub index :Path :Args(0) {
     $c->stash(
         template => 'gliederung/index.tt',
     );
-
-    use Data::Dumper; warn Dumper $c->stash->{map};
 }
 
 =head2 parse_uni
