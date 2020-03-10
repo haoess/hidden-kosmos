@@ -172,6 +172,7 @@ sub calc :Private {
 
             my @refs = split /\s+/, $ref;
             foreach my $value ( @refs ) {
+                next if $value =~ m{^\Qhttp://www.deutschestextarchiv.de\E};
                 $persons{ $value }{ count }{ $basename }++;
                 push @{ $persons{ $value }{ forms } }, normalize_text($text);
                 push @{ $persons{ $value }{ hits }{ normalize_text($text) } }, {
