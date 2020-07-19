@@ -23,7 +23,7 @@ Catalyst Controller.
 
 =cut
 
-my $xml_path = '/home/wiegand/src/hidden-kosmos/xml';
+my $xml_path = Kosmos->path_to('../xml');
 
 sub index :Path :Args(0) {
     my ( $self, $c ) = @_;
@@ -48,7 +48,7 @@ sub index :Path :Args(0) {
 sub complete :Local {
     my ( $self, $c ) = @_;
 
-    my @files = glob '/home/wiegand/src/hidden-kosmos/xml/*.xml';
+    my @files = glob sprintf '%s/*.xml', $xml_path;
 
     $c->forward( 'calc', [ \@files ] );
     $c->stash(
@@ -63,7 +63,7 @@ sub complete :Local {
 sub beacon :Local {
     my ( $self, $c ) = @_;
 
-    my @files = glob '/home/wiegand/src/hidden-kosmos/xml/*.xml';
+    my @files = glob sprintf '%s/*.xml', $xml_path;
     $c->forward( 'calc', [ \@files ] );
     $c->stash(
         template => 'person/beacon.tt',
@@ -79,7 +79,7 @@ sub beacon :Local {
 sub csv :Local {
     my ( $self, $c ) = @_;
 
-    my @files = glob '/home/wiegand/src/hidden-kosmos/xml/*.xml';
+    my @files = glob sprintf '%s/*.xml', $xml_path;
     $c->forward( 'calc', [ \@files ] );
     $c->stash(
         template => 'person/csv.tt',
@@ -95,7 +95,7 @@ sub csv :Local {
 sub csv_all :Local {
     my ( $self, $c ) = @_;
 
-    my @files = glob '/home/wiegand/src/hidden-kosmos/xml/*.xml';
+    my @files = glob sprintf '%s/*.xml', $xml_path;
     $c->forward( 'calc', [ \@files ] );
     $c->stash(
         template => 'person/csv_all.tt',
@@ -195,7 +195,7 @@ sub calc :Private {
         next unless $key =~ m{http://d-nb.info/gnd/};
         my ( $gnd ) = $key =~ m{/([^/]+)$};
         next unless $gnd;
-        my $file = "/home/wiegand/src/hidden-kosmos/gnd/$gnd";
+        my $file = sprintf '%s/gnd/%s', $c->path_to('..'), $gnd;
         my $xml; eval { $xml = XML::LibXML->new->parse_file( $file ); 1 };
         if ( $@ ) {
             use Data::Dumper; warn Dumper "Could not parse $file: $@";

@@ -38,7 +38,7 @@ sub index :Path :Args(0) {
 sub parse_uni :Private {
     my ( $self, $c ) = @_;
 
-    open( my $fh, '<:utf8', '/home/wiegand/src/hidden-kosmos/lists/Gliederung_Universitaet.txt' ) or die $!;
+    open( my $fh, '<:utf8', sprintf('%s/lists/Gliederung_Universitaet.txt', $c->path_to('..')) ) or die $!;
 
     my ( %last, %data, %hours, @topics );
 
@@ -87,7 +87,7 @@ sub parse_uni :Private {
 sub parse_sa :Private {
     my ( $self, $c ) = @_;
 
-    open( my $fh, '<:utf8', '/home/wiegand/src/hidden-kosmos/lists/Gliederung_Singakademie.txt' ) or die $!;
+    open( my $fh, '<:utf8', sprintf('%s/lists/Gliederung_Singakademie.txt', $c->path_to('..')) ) or die $!;
 
     my ( %last, %data, %hours, @topics );
 

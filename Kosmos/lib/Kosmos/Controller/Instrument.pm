@@ -32,7 +32,7 @@ sub index :Path :Args(0) {
     my $style_doc  = XML::LibXML->load_xml( location => $c->path_to('root/xslt/instrumente.xsl'), no_cdata => 1 );
     my $stylesheet = $xslt->parse_stylesheet( $style_doc );
 
-    my $source = XML::LibXML->load_xml( location => '/home/wiegand/src/hidden-kosmos/lists/avh-instruments.xml' );
+    my $source = XML::LibXML->load_xml( location => $c->path_to('../lists/avh-instruments.xml') );
     my $results = $stylesheet->transform( $source);
     my $html = $stylesheet->output_as_chars( $results );
 
@@ -48,7 +48,7 @@ sub index :Path :Args(0) {
 
 sub csv :Local {
     my ( $self, $c ) = @_;
-    my $xml = XML::LibXML->load_xml( location => '/home/wiegand/src/hidden-kosmos/lists/avh-instruments.xml' );
+    my $xml = XML::LibXML->load_xml( location => $c->path_to('../lists/avh-instruments.xml') );
     my $xpc = XML::LibXML::XPathContext->new( $xml ) or die $!;
 
     my $csv = Text::CSV_XS->new({ always_quote => 1 });
