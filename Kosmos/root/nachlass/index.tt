@@ -1,0 +1,109 @@
+<div style="width:800px;margin:auto;margin-bottom:20px">
+  <h1>Results of preliminary study on Humboldt's legacy (being part of the project »Hidden Kosmos«)</h1>
+
+  <p>
+    The more than 50 signatures listed here contain roughly 300 single
+    manuscripts that could be identified as (former) parts of Alexander von
+    Humboldt’s original manuscripts for the <i>Kosmos-Lectures</i> or as
+    auxiliary material he collected or obtained from other sources and used
+    during the lectures.
+  </p>
+
+  <p>
+    The first column of the table contains the number of the respective lesson of
+    Alexander von Humboldt's <i>Kosmos-Lectures</i> at the Berlin University in
+    1827/28 in which the topic at hand was dealt with and for which Humboldt
+    evidently used material now preserved in his legacy. The second column
+    contains the general topic and the specific aspects that was dealt with. The
+    third column contains the exact signature of the archival material from the
+    Berlin State Library and, if available, a link to the digitized resource
+    itself. Columns 3–5 contain additional information on the material types at
+    hand, its time and date of creation and its (co-)creators. The last column
+    contains further remarks wherever found necessary to indicate further
+    connections to other documents in our corpus.
+  </p>
+</div>
+
+<table id="data" class="display compact" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Stunde</th>
+      <th>Thema</th>
+      <th>Signatur</th>
+      <th>Material</th>
+      <th>Ort/Datum</th>
+      <th>Person</th>
+      <th>Bemerkungen</th>
+    </tr>
+  </thead>
+  <tbody>
+    [% FOREACH item IN list %]
+      <tr>
+        <td class="text-right">
+          <a href="http://www.deutschestextarchiv.de/parthey_msgermqu1711_1828/[% hourmap.${item.stunde} | uri | html %]">[% item.stunde | html %]</a>
+        </td>
+        <td>[% item.thema | html %]</td>
+        <td>[% item.signatur %]</td>
+        <td>[% item.art | html %]</td>
+        <td>[% item.datum | html %]</td>
+        <td>[% item.name %]</td>
+        <td class="small">[% item.bemerkungen %]</td>
+      </tr>
+    [% END %]
+  </tbody>
+</table>
+
+[% BLOCK js %]
+  <style type="text/css">
+    .wrap-urls {
+      -ms-word-break: break-all;
+      /* Be VERY careful with this, breaks normal words wh_erever */
+      word-break: break-all;
+      /* Non standard for webkit */
+      word-break: break-word;
+      -webkit-hyphens: auto;
+      -moz-hyphens: auto;
+      hyphens: auto;
+    }
+    td { vertical-align:top }
+  </style>
+  <script type="text/javascript" language="javascript">
+    jQuery.fn.dataTableExt.oSort['my-sorting-asc']  = function(a,b) {
+      a = a.replace(/<.*?>/g, ""); //exclude html tags
+      a = a.toLowerCase();
+      a = a.replace(/ä/g, "ae"); //replace german Umlauts
+      a = a.replace(/ö/g, "oe");
+      a = a.replace(/ü/g, "ue");
+      a = a.replace(/ß/g, "ss");
+      a = a.replace(/^(?:der|die|das|ein|eine)\s/i, "");
+
+      b = b.replace(/<.*?>/g, "");
+      b = b.toLowerCase();
+      b = b.replace(/ä/g, "ae");
+      b = b.replace(/ö/g, "oe");
+      b = b.replace(/ü/g, "ue");
+      b = b.replace(/ß/g, "ss");
+      b = b.replace(/^(?:der|die|das|ein|eine)\s/i, "");
+
+      return (a == b) ? 0 : (a > b) ?  1 : -1;
+    };
+
+    $(document).ready(function() {
+      var t = $('#data').dataTable({
+        'pageLength': -1,
+        'paginate': false,
+        'bLengthChange': false,
+        'aoColumns': [
+          { 'sWidth': '70px' },
+          { "sType": "my-sorting", 'sWidth': '400px' },
+          { 'sWidth': '200px' },
+          { 'sWidth': '100px' },
+          { 'sWidth': '150px' },
+          { 'sWidth': '200px', 'sClass': 'wrap-urls' },
+          { 'sWidth': '200px', 'sClass': 'wrap-urls' }
+        ]
+      });
+      new $.fn.dataTable.FixedHeader( t );
+    });
+  </script>
+[% END %]
