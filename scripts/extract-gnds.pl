@@ -29,7 +29,7 @@ foreach my $file ( @ARGV ) {
 
         my @values = split /\s+/, $value;
         foreach my $value ( @values ) {
-            next unless $value =~ m{http://d-nb.info/gnd/};
+            next unless $value =~ m{https?://d-nb.info/gnd/};
 
             my ( $gnd ) = $value =~ m{/([^/]+)$};
             next unless $gnd;
